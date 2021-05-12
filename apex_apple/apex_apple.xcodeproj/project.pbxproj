@@ -6,15 +6,57 @@
 	objectVersion = 50;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		9A15A59B264B53DC0080670E /* apex_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A15A59A264B53DC0080670E /* apex_apple.h */; };
-		9A15A59D264B53DC0080670E /* apex_apple.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A15A59C264B53DC0080670E /* apex_apple.m */; };
-/* End PBXBuildFile section */
+/* Begin PBXContainerItemProxy section */
+		9A15A5F5264B55050080670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A15A5F0264B55050080670E /* acme.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A68A41425114352008DABD2;
+			remoteInfo = acme;
+		};
+		9A15A5F7264B55050080670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A15A5F0264B55050080670E /* acme.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AD692B6251A753A00C0EBD7;
+			remoteInfo = ios_acme;
+		};
+		9A15A5FD264B55050080670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A15A5F9264B55050080670E /* acme_posix.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A0C1638264A281D00B5CC33;
+			remoteInfo = acme_posix;
+		};
+		9A15A604264B55060080670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A15A5FF264B55050080670E /* apex.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A68A446251143F8008DABD2;
+			remoteInfo = apex;
+		};
+		9A15A606264B55060080670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A15A5FF264B55050080670E /* apex.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AD695C2251A754800C0EBD7;
+			remoteInfo = ios_apex;
+		};
+		9A15A60C264B551C0080670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A15A608264B551B0080670E /* acme_apple.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A15A582264B536C0080670E;
+			remoteInfo = acme_apple;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9A15A597264B53DC0080670E /* libapex_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libapex_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A15A59A264B53DC0080670E /* apex_apple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = apex_apple.h; sourceTree = "<group>"; };
-		9A15A59C264B53DC0080670E /* apex_apple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = apex_apple.m; sourceTree = "<group>"; };
+		9A15A5F0264B55050080670E /* acme.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme.xcodeproj; path = ../../../source/app/acme/acme.xcodeproj; sourceTree = "<group>"; };
+		9A15A5F9264B55050080670E /* acme_posix.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_posix.xcodeproj; path = "../../platform-posix/acme_posix/acme_posix.xcodeproj"; sourceTree = "<group>"; };
+		9A15A5FF264B55050080670E /* apex.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex.xcodeproj; path = ../../../source/app/apex/apex.xcodeproj; sourceTree = "<group>"; };
+		9A15A608264B551B0080670E /* acme_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_apple.xcodeproj; path = ../acme_apple/acme_apple.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +73,10 @@
 		9A15A58E264B53DC0080670E = {
 			isa = PBXGroup;
 			children = (
-				9A15A599264B53DC0080670E /* apex_apple */,
+				9A15A5F0264B55050080670E /* acme.xcodeproj */,
+				9A15A5FF264B55050080670E /* apex.xcodeproj */,
+				9A15A5F9264B55050080670E /* acme_posix.xcodeproj */,
+				9A15A608264B551B0080670E /* acme_apple.xcodeproj */,
 				9A15A598264B53DC0080670E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,13 +89,38 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A15A599264B53DC0080670E /* apex_apple */ = {
+		9A15A5F1264B55050080670E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A15A59A264B53DC0080670E /* apex_apple.h */,
-				9A15A59C264B53DC0080670E /* apex_apple.m */,
+				9A15A5F6264B55050080670E /* libacme.dylib */,
+				9A15A5F8264B55050080670E /* libios_acme.a */,
 			);
-			path = apex_apple;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A15A5FA264B55050080670E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A15A5FE264B55050080670E /* libacme_posix.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A15A600264B55050080670E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A15A605264B55060080670E /* libapex.dylib */,
+				9A15A607264B55060080670E /* libios_apex.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A15A609264B551B0080670E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A15A60D264B551C0080670E /* libacme_apple.dylib */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,7 +130,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A15A59B264B53DC0080670E /* apex_apple.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +177,24 @@
 			mainGroup = 9A15A58E264B53DC0080670E;
 			productRefGroup = 9A15A598264B53DC0080670E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A15A5F1264B55050080670E /* Products */;
+					ProjectRef = 9A15A5F0264B55050080670E /* acme.xcodeproj */;
+				},
+				{
+					ProductGroup = 9A15A609264B551B0080670E /* Products */;
+					ProjectRef = 9A15A608264B551B0080670E /* acme_apple.xcodeproj */;
+				},
+				{
+					ProductGroup = 9A15A5FA264B55050080670E /* Products */;
+					ProjectRef = 9A15A5F9264B55050080670E /* acme_posix.xcodeproj */;
+				},
+				{
+					ProductGroup = 9A15A600264B55050080670E /* Products */;
+					ProjectRef = 9A15A5FF264B55050080670E /* apex.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9A15A596264B53DC0080670E /* apex_apple */,
@@ -115,12 +202,56 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		9A15A5F6264B55050080670E /* libacme.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libacme.dylib;
+			remoteRef = 9A15A5F5264B55050080670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A15A5F8264B55050080670E /* libios_acme.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_acme.a;
+			remoteRef = 9A15A5F7264B55050080670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A15A5FE264B55050080670E /* libacme_posix.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libacme_posix.dylib;
+			remoteRef = 9A15A5FD264B55050080670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A15A605264B55060080670E /* libapex.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libapex.dylib;
+			remoteRef = 9A15A604264B55060080670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A15A607264B55060080670E /* libios_apex.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_apex.a;
+			remoteRef = 9A15A606264B55060080670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A15A60D264B551C0080670E /* libacme_apple.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libacme_apple.dylib;
+			remoteRef = 9A15A60C264B551C0080670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A15A594264B53DC0080670E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A15A59D264B53DC0080670E /* apex_apple.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

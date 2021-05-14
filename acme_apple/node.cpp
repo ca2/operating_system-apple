@@ -17,7 +17,7 @@ namespace acme
 {
 
 
-   namespace posix
+   namespace apple
    {
 
 
@@ -602,8 +602,7 @@ namespace acme
       }
 
 
-   } // namespace posix
-
+   } // namespace apple
 
 
 } // namespace acme

@@ -12,18 +12,14 @@ namespace acme
 {
 
 
-   namespace posix
+   namespace apple
    {
 
 
       class CLASS_DECL_ACME node :
-         virtual public ::acme::node
+         virtual public ::acme::posix::node
       {
       public:
-
-
-         //gpointer m_pGtkSettingsDefault;
-         string m_strTheme;
 
 
          node();
@@ -92,7 +88,7 @@ namespace acme
       };
 
 
-   } // namespace posix
+   } // namespace apple
 
 
 } // namespace acme

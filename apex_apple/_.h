@@ -1,14 +1,14 @@
 #pragma once
 
 
-#include "apex/_.h"
-#include "acme_posix/_.h"
+#include "apex_posix/_.h"
+#include "acme_apple/_.h"
 
 
-#if defined(_APEX_POSIX_LIBRARY)
-   #define CLASS_DECL_APEX_POSIX  CLASS_DECL_EXPORT
+#if defined(_APEX_APPLE_LIBRARY)
+   #define CLASS_DECL_APEX_APPLE  CLASS_DECL_EXPORT
 #else
-   #define CLASS_DECL_APEX_POSIX  CLASS_DECL_IMPORT
+   #define CLASS_DECL_APEX_APPPE  CLASS_DECL_IMPORT
 #endif
 
 
@@ -16,19 +16,17 @@ namespace apex
 {
 
 
-   namespace posix
+   namespace apple
    {
 
 
       class node;
 
 
-   } // namespace posix
+   } // namespace apple
 
 
 } // namespace apex
-
-
 
 
 

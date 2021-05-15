@@ -4,7 +4,7 @@
 #pragma once
 
 
-namespace posix
+namespace apple
 {
 
 
@@ -14,7 +14,7 @@ namespace posix
    public:
 
 
-      virtual ::payload length(const ::file::path & path, ::payload * pvarQuery) override;
+//      virtual ::payload length(const ::file::path & path, ::payload * pvarQuery) override;
 
 
    };

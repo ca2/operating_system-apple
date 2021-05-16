@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A655E30264F9123004892ED /* libapex_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A788048264F6A28003DF8A0 /* libapex_posix.dylib */; };
+		9A7862AD265038A90034A0E1 /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787EB6264EE55E003DF8A0 /* factory_exchange.cpp */; };
 		9A787EE4264EE934003DF8A0 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787EAC264EE55E003DF8A0 /* node.cpp */; };
+		9A78804C264F6A39003DF8A0 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A15A5F6264B55050080670E /* libacme.dylib */; };
+		9A78804D264F6A39003DF8A0 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A15A60D264B551C0080670E /* libacme_apple.dylib */; };
+		9A78804E264F6A39003DF8A0 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A15A5FE264B55050080670E /* libacme_posix.dylib */; };
+		9A78804F264F6A39003DF8A0 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A15A605264B55060080670E /* libapex.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,48 @@
 			remoteGlobalIDString = 9A15A582264B536C0080670E;
 			remoteInfo = acme_apple;
 		};
+		9A78803C264F6A28003DF8A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A15A5F0264B55050080670E /* acme.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A68A41325114352008DABD2;
+			remoteInfo = acme;
+		};
+		9A78803E264F6A28003DF8A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A15A5FF264B55050080670E /* apex.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A68A445251143F8008DABD2;
+			remoteInfo = apex;
+		};
+		9A788040264F6A28003DF8A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A15A5F9264B55050080670E /* acme_posix.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A0C1637264A281D00B5CC33;
+			remoteInfo = acme_posix;
+		};
+		9A788042264F6A28003DF8A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A788039264F6A28003DF8A0 /* apex_posix.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A0C167F264A29B800B5CC33;
+			remoteInfo = apex_posix;
+		};
+		9A788044264F6A28003DF8A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A15A608264B551B0080670E /* acme_apple.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A15A581264B536C0080670E;
+			remoteInfo = acme_apple;
+		};
+		9A788047264F6A28003DF8A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A788039264F6A28003DF8A0 /* apex_posix.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A0C1680264A29B800B5CC33;
+			remoteInfo = apex_posix;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +134,7 @@
 		9A787EC0264EE55E003DF8A0 /* system_color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = system_color.cpp; sourceTree = "<group>"; };
 		9A787EC1264EE55E003DF8A0 /* timer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = timer.mm; sourceTree = "<group>"; };
 		9A787EC3264EE55E003DF8A0 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
+		9A788039264F6A28003DF8A0 /* apex_posix.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_posix.xcodeproj; path = "/Users/camilo/solution/basis/archive/platform-posix/apex_posix/apex_posix.xcodeproj"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +142,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A78804C264F6A39003DF8A0 /* libacme.dylib in Frameworks */,
+				9A78804E264F6A39003DF8A0 /* libacme_posix.dylib in Frameworks */,
+				9A78804D264F6A39003DF8A0 /* libacme_apple.dylib in Frameworks */,
+				9A78804F264F6A39003DF8A0 /* libapex.dylib in Frameworks */,
+				9A655E30264F9123004892ED /* libapex_posix.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,11 +157,13 @@
 			isa = PBXGroup;
 			children = (
 				9A15A5F0264B55050080670E /* acme.xcodeproj */,
-				9A15A5FF264B55050080670E /* apex.xcodeproj */,
 				9A15A5F9264B55050080670E /* acme_posix.xcodeproj */,
 				9A15A608264B551B0080670E /* acme_apple.xcodeproj */,
+				9A15A5FF264B55050080670E /* apex.xcodeproj */,
+				9A788039264F6A28003DF8A0 /* apex_posix.xcodeproj */,
 				9A787EA1264EE55E003DF8A0 /* apex_apple */,
 				9A15A598264B53DC0080670E /* Products */,
+				9A788049264F6A39003DF8A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +241,21 @@
 			name = apex_apple;
 			sourceTree = "<group>";
 		};
+		9A78803A264F6A28003DF8A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A788048264F6A28003DF8A0 /* libapex_posix.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A788049264F6A39003DF8A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -209,6 +280,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A78803D264F6A28003DF8A0 /* PBXTargetDependency */,
+				9A788041264F6A28003DF8A0 /* PBXTargetDependency */,
+				9A788045264F6A28003DF8A0 /* PBXTargetDependency */,
+				9A78803F264F6A28003DF8A0 /* PBXTargetDependency */,
+				9A788043264F6A28003DF8A0 /* PBXTargetDependency */,
 			);
 			name = apex_apple;
 			productName = apex_apple;
@@ -255,6 +331,10 @@
 				{
 					ProductGroup = 9A15A600264B55050080670E /* Products */;
 					ProjectRef = 9A15A5FF264B55050080670E /* apex.xcodeproj */;
+				},
+				{
+					ProductGroup = 9A78803A264F6A28003DF8A0 /* Products */;
+					ProjectRef = 9A788039264F6A28003DF8A0 /* apex_posix.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -307,6 +387,13 @@
 			remoteRef = 9A15A60C264B551C0080670E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9A788048264F6A28003DF8A0 /* libapex_posix.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libapex_posix.dylib;
+			remoteRef = 9A788047264F6A28003DF8A0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -315,10 +402,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A787EE4264EE934003DF8A0 /* node.cpp in Sources */,
+				9A7862AD265038A90034A0E1 /* factory_exchange.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A78803D264F6A28003DF8A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = acme;
+			targetProxy = 9A78803C264F6A28003DF8A0 /* PBXContainerItemProxy */;
+		};
+		9A78803F264F6A28003DF8A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = apex;
+			targetProxy = 9A78803E264F6A28003DF8A0 /* PBXContainerItemProxy */;
+		};
+		9A788041264F6A28003DF8A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = acme_posix;
+			targetProxy = 9A788040264F6A28003DF8A0 /* PBXContainerItemProxy */;
+		};
+		9A788043264F6A28003DF8A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = apex_posix;
+			targetProxy = 9A788042264F6A28003DF8A0 /* PBXContainerItemProxy */;
+		};
+		9A788045264F6A28003DF8A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = acme_apple;
+			targetProxy = 9A788044264F6A28003DF8A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9A15A59E264B53DC0080670E /* Debug */ = {
@@ -327,7 +443,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -376,9 +492,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/archive",
-					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)/storage-$(PLATFORM_MODIFIER)/library/$(CONFIGURATION)",
-					"$(WorkspaceDir)/archive",
-					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)/storage-$(PLATFORM_MODIFIER)/third/library/$(CONFIGURATION)",
+					"$(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/library/$(CONFIGURATION)",
 					"$(WorkspaceDir)/time/$(PLATFORM_MODIFIER)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
@@ -395,6 +509,8 @@
 					"$(WorkspaceDir)/archive",
 					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)/_include",
+					"$(WorkspaceDir)/archive/platform-apple",
+					"$(WorkspaceDir)/archive/platform-posix",
 					"$(WorkspaceDir)/source/third/include",
 					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include/include",
 					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include",
@@ -412,7 +528,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -473,6 +589,8 @@
 					"$(WorkspaceDir)/archive",
 					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)/_include",
+					"$(WorkspaceDir)/archive/platform-apple",
+					"$(WorkspaceDir)/archive/platform-posix",
 					"$(WorkspaceDir)/source/third/include",
 					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include/include",
 					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include",

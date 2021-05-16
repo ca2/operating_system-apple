@@ -23,7 +23,7 @@ void throw_ns_exception();
 
 
 volatile i32 UncaughtExceptionCount = 0;
-const i32 UncaughtExceptionMaximum = 10;
+//const i32 UncaughtExceptionMaximum = 10;
 
 //extern void translator_signal_handler(int signal);
 //void SignalHandler(int signal)

@@ -207,32 +207,34 @@
 - (NSString *)stringByConditionallyResolvingAlias
 {
    
-	NSString *resolvedPath = nil;
-#ifdef MACOS
-
-	CFURLRef url = CFURLCreateWithFileSystemPath
-		(kCFAllocatorDefault, (CFStringRef)self, kCFURLPOSIXPathStyle, NO);
-	if (url != NULL)
-	{
-		FSRef fsRef;
-		if (CFURLGetFSRef(url, &fsRef))
-		{
-			Boolean targetIsFolder, wasAliased;
-			OSErr err = FSResolveAliasFileWithMountFlags(
-				&fsRef, false, &targetIsFolder, &wasAliased, kResolveAliasFileNoUI);
-			if ((err == noErr) && wasAliased)
-			{
-				CFURLRef  resolvedUrl= CFURLCreateFromFSRef(kCFAllocatorDefault, &fsRef);
-				if (resolvedUrl != NULL)
-				{
-               resolvedPath = (__bridge NSString *)CFURLCopyFileSystemPath(resolvedUrl, kCFURLPOSIXPathStyle);
-               CFRelease(resolvedUrl);
-				}
-			}
-		}
-		CFRelease(url);
-	}
-#endif
+   NSString *resolvedPath = self;
+   
+//NSString *resolvedPath = nil;
+//#ifdef MACOS
+//
+//	CFURLRef url = CFURLCreateWithFileSystemPath
+//		(kCFAllocatorDefault, (CFStringRef)self, kCFURLPOSIXPathStyle, NO);
+//	if (url != NULL)
+//	{
+//		FSRef fsRef;
+//		if (CFURLGetFSRef(url, &fsRef))
+//		{
+//			Boolean targetIsFolder, wasAliased;
+//			OSErr err = FSResolveAliasFileWithMountFlags(
+//				&fsRef, false, &targetIsFolder, &wasAliased, kResolveAliasFileNoUI);
+//			if ((err == noErr) && wasAliased)
+//			{
+//				CFURLRef  resolvedUrl= CFURLCreateFromFSRef(kCFAllocatorDefault, &fsRef);
+//				if (resolvedUrl != NULL)
+//				{
+//               resolvedPath = (__bridge NSString *)CFURLCopyFileSystemPath(resolvedUrl, kCFURLPOSIXPathStyle);
+//               CFRelease(resolvedUrl);
+//				}
+//			}
+//		}
+//		CFRelease(url);
+//	}
+//#endif
 	return resolvedPath;
 }
 

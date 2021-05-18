@@ -34,14 +34,14 @@ char * ns_string(NSString * str)
 
 
 
-char * mm_ca2_command_line()
-{
-   
-   return ns_string([[NSBundle mainBundle] objectForInfoDictionaryKey:@"ca2_command_line"]);
-   
-}
-
-
+//char * mm_ca2_command_line()
+//{
+//   
+//   return ns_string([[NSBundle mainBundle] objectForInfoDictionaryKey:@"ca2_command_line"]);
+//   
+//}
+//
+//
 
 
 

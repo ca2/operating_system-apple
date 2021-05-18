@@ -102,22 +102,22 @@ i32 defer_run_system()
 
 }
 
-
-i32 defer_run_system(const char * pszFileName)
-{
-
-   return __start_system_with_file(pszFileName);
-
-}
-
-
-i32 defer_run_system(char ** pszaFileName, int iFileCount)
-{
-
-   return __start_system_with_file((const char **) pszaFileName, iFileCount);
-
-}
-
+//
+//i32 defer_run_system(const char * pszFileName)
+//{
+//
+//   return __start_system_with_file(pszFileName);
+//
+//}
+//
+//
+//i32 defer_run_system(char ** pszaFileName, int iFileCount)
+//{
+//
+//   return __start_system_with_file((const char **) pszaFileName, iFileCount);
+//
+//}
+//
 
 
 

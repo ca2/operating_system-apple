@@ -1,14 +1,14 @@
 #pragma once
 
 
-#include "aura/_.h"
-#include "apex_posix/_.h"
+#include "aura_posix/_.h"
+#include "apex_apple/_.h"
 
 
-#if defined(_AURA_POSIX_LIBRARY)
-   #define CLASS_DECL_AURA_POSIX  CLASS_DECL_EXPORT
+#if defined(_AURA_APPLE_LIBRARY)
+   #define CLASS_DECL_AURA_APPLE  CLASS_DECL_EXPORT
 #else
-   #define CLASS_DECL_AURA_POSIX  CLASS_DECL_IMPORT
+   #define CLASS_DECL_AURA_APPLE  CLASS_DECL_IMPORT
 #endif
 
 
@@ -16,17 +16,17 @@ namespace aura
 {
 
 
-   namespace posix
+   namespace apple
    {
 
 
       class node;
 
 
-   } // namespace posix
+   } // namespace apple
 
 
-} // namespace aura_posix
+} // namespace aura
 
 
 

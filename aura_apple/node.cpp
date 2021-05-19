@@ -2,9 +2,7 @@
 // Created by camilo on 19/01/2021. --<33ThomasBS!!
 //
 #include "framework.h"
-#include "node.h"
 #include "acme/filesystem/filesystem/acme_dir.h"
-#include <X11/Xlib-xcb.h>
 
 
 namespace aura

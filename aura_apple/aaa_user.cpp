@@ -1,4 +1,6 @@
 #include "framework.h"
+
+#ifdef WITH_X11
 #include "gnome_gnome.h"
 //#include "apex/os/linux/appindicator.h"
 
@@ -145,6 +147,6 @@ namespace os
 
 } // namespace os
 
-
+#endif // define(WITH_X11)
 
 

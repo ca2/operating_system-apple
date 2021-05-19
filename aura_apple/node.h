@@ -12,20 +12,15 @@ namespace aura
 {
 
 
-	namespace posix
+	namespace apple
 	{
 
 
-      class CLASS_DECL_AURA_POSIX node :
-         virtual public ::aura::node,
-         virtual public ::apex::posix::node
+      class CLASS_DECL_AURA_APPLE node :
+         virtual public ::aura::posix::node,
+         virtual public ::apex::apple::node
       {
       public:
-
-
-         void *                                 m_pX11Display;
-         void *                                 m_pxcbconnection;
-
 
          node();
          virtual ~node();
@@ -34,24 +29,13 @@ namespace aura
          virtual ::e_status initialize(::object * pobject) override;
 
 
-         virtual ::e_status _allocate_Display_and_connection();
-
-
-         void * _get_Display();
-         void * _get_connection();
-
-
-         virtual ::file::path get_desktop_file_path(::apex::application * papp) const override;
-
-
       };
 
 
-   } // namespace posix
+   } // namespace apple
 
 
-} // namespace node_linux
-
+} // namespace aura
 
 
 

@@ -15,7 +15,7 @@ namespace apex
    {
 
 
-      class CLASS_DECL_ACME node :
+      class CLASS_DECL_APEX_APPLE node :
          virtual public ::apex::posix::node,
          virtual public ::acme::apple::node
       {

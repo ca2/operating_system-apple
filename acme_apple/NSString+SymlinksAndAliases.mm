@@ -12,9 +12,8 @@
 //  appreciated but not required.
 //
 
-#include "_mm.h"
+#include "framework.h"
 
-#import "NSString+SymlinksAndAliases.h"
 #include <sys/stat.h>
 
 @implementation NSString (SymlinksAndAliases)

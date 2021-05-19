@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -74,40 +74,33 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9A2489A02452D74C00F23D28 /* PBXContainerItemProxy */ = {
+		9AC2D15126542B1400CC8096 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A24899A2452D74C00F23D28 /* aura.xcodeproj */;
+			containerPortal = 9AC2D14B26542B1400CC8096 /* aura.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9A98A6151771D67E000AE16E;
 			remoteInfo = aura;
 		};
-		9A2489A22452D74C00F23D28 /* PBXContainerItemProxy */ = {
+		9AC2D15326542B1400CC8096 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A24899A2452D74C00F23D28 /* aura.xcodeproj */;
+			containerPortal = 9AC2D14B26542B1400CC8096 /* aura.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 077A080B1B4D7403001C85FF;
+			remoteGlobalIDString = 9A20198A24772E9000A31CBF;
 			remoteInfo = ios_aura;
 		};
-		9A2489A42452D74C00F23D28 /* PBXContainerItemProxy */ = {
+		9AC2D15526542B1400CC8096 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A24899A2452D74C00F23D28 /* aura.xcodeproj */;
+			containerPortal = 9AC2D14B26542B1400CC8096 /* aura.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9AE24D431904CEFE001AEFFB;
 			remoteInfo = aura_iosTests;
 		};
-		9A7422C82474258D003902E5 /* PBXContainerItemProxy */ = {
+		9AC2D15726542B2B00CC8096 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A24899A2452D74C00F23D28 /* aura.xcodeproj */;
+			containerPortal = 9AC2D14B26542B1400CC8096 /* aura.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 9A98A6031771D67E000AE16E;
 			remoteInfo = aura;
-		};
-		9A7422CA24742594003902E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A24899A2452D74C00F23D28 /* aura.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9A20198924772E9000A31CBF;
-			remoteInfo = ios_aura;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -115,7 +108,6 @@
 		07E25F501B4FFC2100752DE1 /* libios_draw2d_quartz2d.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_draw2d_quartz2d.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1B496316A494A600875A94 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9A1B496616A4A10100875A94 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
-		9A24899A2452D74C00F23D28 /* aura.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura.xcodeproj; path = ../aura/aura.xcodeproj; sourceTree = "<group>"; };
 		9A4E5C9425192FFE00CC6817 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4E5C9625192FFE00CC6817 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6B40CC17BBE291008391AD /* bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bitmap.cpp; sourceTree = "<group>"; };
@@ -148,6 +140,7 @@
 		9AA2192A1DC6B04B00C06987 /* mm_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mm_ios.mm; sourceTree = "<group>"; };
 		9AA2192D1DC6B1A300C06987 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		9AB287E621320E8A002A0AFF /* mm_apple.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = mm_apple.mm; sourceTree = "<group>"; };
+		9AC2D14B26542B1400CC8096 /* aura.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura.xcodeproj; path = ../../../source/app/aura/aura.xcodeproj; sourceTree = "<group>"; };
 		9AE24E151904CF99001AEFFB /* draw2d_quartz2d_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = draw2d_quartz2d_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE24E201904CF99001AEFFB /* draw2d_quartz2d_iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "draw2d_quartz2d_iosTests-Info.plist"; sourceTree = "<group>"; };
 		9AE24E221904CF99001AEFFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -190,16 +183,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A24899B2452D74C00F23D28 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9A2489A12452D74C00F23D28 /* libaura.dylib */,
-				9A2489A32452D74C00F23D28 /* libios_aura.a */,
-				9A2489A52452D74C00F23D28 /* aura_iosTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		9AA2192C1DC6B1A300C06987 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +196,16 @@
 				9AA2192D1DC6B1A300C06987 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AC2D14C26542B1400CC8096 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AC2D15226542B1400CC8096 /* libaura.dylib */,
+				9AC2D15426542B1400CC8096 /* libios_aura.a */,
+				9AC2D15626542B1400CC8096 /* aura_iosTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		9AE24E1E1904CF99001AEFFB /* draw2d_quartz2d_iosTests */ = {
@@ -235,7 +228,7 @@
 		A1CFD76D154F5EA7007447E2 = {
 			isa = PBXGroup;
 			children = (
-				9A24899A2452D74C00F23D28 /* aura.xcodeproj */,
+				9AC2D14B26542B1400CC8096 /* aura.xcodeproj */,
 				9A8997BC177D0E7D00C7761E /* Carbon.framework */,
 				9AA1B449176361950019E812 /* Cocoa.framework */,
 				A1CFD896154FB715007447E2 /* draw2d_quartz2d */,
@@ -351,7 +344,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9A7422CB24742594003902E5 /* PBXTargetDependency */,
 			);
 			name = ios_draw2d_quartz2d;
 			productName = os;
@@ -386,7 +378,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9A7422C92474258D003902E5 /* PBXTargetDependency */,
+				9AC2D15826542B2B00CC8096 /* PBXTargetDependency */,
 			);
 			name = draw2d_quartz2d;
 			productName = os;
@@ -420,8 +412,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9A24899B2452D74C00F23D28 /* Products */;
-					ProjectRef = 9A24899A2452D74C00F23D28 /* aura.xcodeproj */;
+					ProductGroup = 9AC2D14C26542B1400CC8096 /* Products */;
+					ProjectRef = 9AC2D14B26542B1400CC8096 /* aura.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -434,25 +426,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A2489A12452D74C00F23D28 /* libaura.dylib */ = {
+		9AC2D15226542B1400CC8096 /* libaura.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libaura.dylib;
-			remoteRef = 9A2489A02452D74C00F23D28 /* PBXContainerItemProxy */;
+			remoteRef = 9AC2D15126542B1400CC8096 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A2489A32452D74C00F23D28 /* libios_aura.a */ = {
+		9AC2D15426542B1400CC8096 /* libios_aura.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libios_aura.a;
-			remoteRef = 9A2489A22452D74C00F23D28 /* PBXContainerItemProxy */;
+			remoteRef = 9AC2D15326542B1400CC8096 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A2489A52452D74C00F23D28 /* aura_iosTests.xctest */ = {
+		9AC2D15626542B1400CC8096 /* aura_iosTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = aura_iosTests.xctest;
-			remoteRef = 9A2489A42452D74C00F23D28 /* PBXContainerItemProxy */;
+			remoteRef = 9AC2D15526542B1400CC8096 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -523,16 +515,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9A7422C92474258D003902E5 /* PBXTargetDependency */ = {
+		9AC2D15826542B2B00CC8096 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = aura;
-			targetProxy = 9A7422C82474258D003902E5 /* PBXContainerItemProxy */;
-		};
-		9A7422CB24742594003902E5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ios_aura;
-			platformFilter = ios;
-			targetProxy = 9A7422CA24742594003902E5 /* PBXContainerItemProxy */;
+			targetProxy = 9AC2D15726542B2B00CC8096 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -669,7 +655,6 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				EXECUTABLE_EXTENSION = dylib;
@@ -710,29 +695,8 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SYSTEM_HEADER_SEARCH_PATHS = (
-					"$(WorkspaceDir)/archive",
-					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/include",
-					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include/include",
-					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include",
-					"$(WorkspaceDir)/source/third/include",
-					"$(WorkspaceDir)/source/app",
-				);
-				USER_HEADER_SEARCH_PATHS = (
-					.,
-					"$(WorkspaceDir)/source",
-					"$(WorkspaceDir)/source/include",
-					"$(WorkspaceDir)/source/app",
-					"$(WorkspaceDir)/source/app/_include",
-					"$(WorkspaceDir)/archive",
-					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)",
-					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)/_include",
-					"$(WorkspaceDir)/source/third/include",
-					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include/include",
-					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include",
-					"$(PROJECT_DIR)",
-					"$(HOME)/sensitive/sensitive/include",
-				);
+				SYSTEM_HEADER_SEARCH_PATHS = "$(WorkspaceDir)/archive $(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/include $(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include/include $(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include $(WorkspaceDir)/source/third/include $(WorkspaceDir)/source/app";
+				USER_HEADER_SEARCH_PATHS = ". $(WorkspaceDir)/source $(WorkspaceDir)/source/include $(WorkspaceDir)/source/app $(WorkspaceDir)/source/app/_include $(WorkspaceDir)/archive $(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER) $(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)/_include $(WorkspaceDir)/source/third/include $(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include/include $(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include $(PROJECT_DIR) $(HOME)/sensitive/sensitive/include";
 				USE_HEADERMAP = NO;
 				WorkspaceDir = "$(SRCROOT)/../../..";
 			};
@@ -804,29 +768,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SYSTEM_HEADER_SEARCH_PATHS = (
-					"$(WorkspaceDir)/archive",
-					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/include",
-					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include/include",
-					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include",
-					"$(WorkspaceDir)/source/third/include",
-					"$(WorkspaceDir)/source/app",
-				);
-				USER_HEADER_SEARCH_PATHS = (
-					.,
-					"$(WorkspaceDir)/source",
-					"$(WorkspaceDir)/source/include",
-					"$(WorkspaceDir)/source/app",
-					"$(WorkspaceDir)/source/app/_include",
-					"$(WorkspaceDir)/archive",
-					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)",
-					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)/_include",
-					"$(WorkspaceDir)/source/third/include",
-					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include/include",
-					"$(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include",
-					"$(PROJECT_DIR)",
-					"$(HOME)/sensitive/sensitive/include",
-				);
+				SYSTEM_HEADER_SEARCH_PATHS = "$(WorkspaceDir)/archive $(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/include $(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include/include $(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include $(WorkspaceDir)/source/third/include $(WorkspaceDir)/source/app";
+				USER_HEADER_SEARCH_PATHS = ". $(WorkspaceDir)/source $(WorkspaceDir)/source/include $(WorkspaceDir)/source/app $(WorkspaceDir)/source/app/_include $(WorkspaceDir)/archive $(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER) $(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)/_include $(WorkspaceDir)/source/third/include $(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include/include $(WorkspaceDir)/archive/third-$(PLATFORM_MODIFIER)/third/include $(PROJECT_DIR) $(HOME)/sensitive/sensitive/include";
 				USE_HEADERMAP = NO;
 				WorkspaceDir = "$(SRCROOT)/../../..";
 			};

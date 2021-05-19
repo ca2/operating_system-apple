@@ -29,7 +29,7 @@
 		9AC2CFF12653DAF000CC8096 /* aaa_user.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFD42653DAF000CC8096 /* aaa_user.cpp */; };
 		9AC2CFF22653DAF000CC8096 /* appindicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD52653DAF000CC8096 /* appindicator.h */; };
 		9AC2CFF32653DAF000CC8096 /* x_window.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD62653DAF000CC8096 /* x_window.h */; };
-		9AC2CFF42653DAF000CC8096 /* _aura_posix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD72653DAF000CC8096 /* _aura_posix.h */; };
+		9AC2CFF42653DAF000CC8096 /* _aura_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD72653DAF000CC8096 /* _aura_apple.h */; };
 		9AC2CFF52653DAF000CC8096 /* shell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFD82653DAF000CC8096 /* shell.cpp */; };
 		9AC2CFF62653DAF000CC8096 /* x_window_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD92653DAF000CC8096 /* x_window_system.h */; };
 		9AC2CFF72653DAF000CC8096 /* x_window_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFDA2653DAF000CC8096 /* x_window_system.cpp */; };
@@ -91,12 +91,13 @@
 		9AC2CFD42653DAF000CC8096 /* aaa_user.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aaa_user.cpp; sourceTree = "<group>"; };
 		9AC2CFD52653DAF000CC8096 /* appindicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appindicator.h; sourceTree = "<group>"; };
 		9AC2CFD62653DAF000CC8096 /* x_window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x_window.h; sourceTree = "<group>"; };
-		9AC2CFD72653DAF000CC8096 /* _aura_posix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _aura_posix.h; sourceTree = "<group>"; };
+		9AC2CFD72653DAF000CC8096 /* _aura_apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _aura_apple.h; sourceTree = "<group>"; };
 		9AC2CFD82653DAF000CC8096 /* shell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shell.cpp; sourceTree = "<group>"; };
 		9AC2CFD92653DAF000CC8096 /* x_window_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x_window_system.h; sourceTree = "<group>"; };
 		9AC2CFDA2653DAF000CC8096 /* x_window_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = x_window_system.cpp; sourceTree = "<group>"; };
 		9AC2CFDB2653DAF000CC8096 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9AC2D04A2653DBA900CC8096 /* aura_posix.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura_posix.xcodeproj; path = "../../platform-posix/aura_posix/aura_posix.xcodeproj"; sourceTree = "<group>"; };
+		9AC2D1F126543B3200CC8096 /* _mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +133,8 @@
 			children = (
 				9AC2CFCD2653DAF000CC8096 /* _.cpp */,
 				9AC2CFDB2653DAF000CC8096 /* _.h */,
-				9AC2CFD72653DAF000CC8096 /* _aura_posix.h */,
+				9AC2CFD72653DAF000CC8096 /* _aura_apple.h */,
+				9AC2D1F126543B3200CC8096 /* _mm.h */,
 				9AC2CFC12653DAF000CC8096 /* aaa_application.cpp */,
 				9AC2CFBD2653DAF000CC8096 /* aaa_application.h */,
 				9AC2CFD42653DAF000CC8096 /* aaa_user.cpp */,
@@ -189,7 +191,7 @@
 				9AC2CFE62653DAF000CC8096 /* xim_keyboard.h in Headers */,
 				9AC2CFF02653DAF000CC8096 /* framework.h in Headers */,
 				9AC2CFEA2653DAF000CC8096 /* node.h in Headers */,
-				9AC2CFF42653DAF000CC8096 /* _aura_posix.h in Headers */,
+				9AC2CFF42653DAF000CC8096 /* _aura_apple.h in Headers */,
 				9AC2CFF22653DAF000CC8096 /* appindicator.h in Headers */,
 				9AC2CFE32653DAF000CC8096 /* display_lock.h in Headers */,
 			);
@@ -403,6 +405,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

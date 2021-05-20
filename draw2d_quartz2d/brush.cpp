@@ -83,14 +83,14 @@ namespace draw2d_quartz2d
             
          }
          
-         components[0] = m_color1.m_iR / 255.f;
-         components[1] = m_color1.m_iG / 255.f;
-         components[2] = m_color1.m_iB / 255.f;
-         components[3] = m_color1.m_iA / 255.f;
-         components[4] = m_color2.m_iR / 255.f;
-         components[5] = m_color2.m_iG / 255.f;
-         components[6] = m_color2.m_iB / 255.f;
-         components[7] = m_color2.m_iA / 255.f;
+         components[0] = m_color1.red / 255.f;
+         components[1] = m_color1.green / 255.f;
+         components[2] = m_color1.blue / 255.f;
+         components[3] = m_color1.alpha / 255.f;
+         components[4] = m_color2.red / 255.f;
+         components[5] = m_color2.green / 255.f;
+         components[6] = m_color2.blue / 255.f;
+         components[7] = m_color2.alpha / 255.f;
          
          locations[0] = 0.0;
          locations[1] = 1.0;
@@ -114,10 +114,10 @@ namespace draw2d_quartz2d
             
          }
 
-         components[0] = m_color.m_iR / 255.f;
-         components[1] = m_color.m_iG / 255.f;
-         components[2] = m_color.m_iB / 255.f;
-         components[3] = m_color.m_iA / 255.f;
+         components[0] = m_color.red / 255.f;
+         components[1] = m_color.green / 255.f;
+         components[2] = m_color.blue / 255.f;
+         components[3] = m_color.alpha / 255.f;
          
          m_colorref = CGColorCreate(m_colorspaceref, components);
          

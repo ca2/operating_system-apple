@@ -9,7 +9,7 @@ namespace aura
 {
 
 
-   namespace posix
+   namespace apple
    {
 
 
@@ -181,7 +181,7 @@ namespace aura
 
 
 
-   } // namespace posix
+   } // namespace apple
 
 
 } // namespace aura

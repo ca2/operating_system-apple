@@ -32,7 +32,7 @@ namespace draw2d_quartz2d
 
       //virtual const color32_t * get_data() const override;
 
-      virtual bool stretch_image(::image * pimage) override;
+      bool stretch(::image * pimage) override;
 
       bool dc_select(bool bSelect = true) override;
 
@@ -44,9 +44,11 @@ namespace draw2d_quartz2d
 
 
 
-      bool from(const ::point_i32 & pointDest, ::draw2d::graphics * pgraphics, const ::point_i32 & point, const ::size_i32 & sz) override;
-      bool to(::draw2d::graphics * pgraphics, const ::point_i32 & point, const ::size_i32 & size, const ::point_i32 & pointSrc) override;
+//      bool from(const ::point_i32 & pointDest, ::draw2d::graphics * pgraphics, const ::point_i32 & point, const ::size_i32 & sz) override;
+//      bool to(::draw2d::graphics * pgraphics, const ::point_i32 & point, const ::size_i32 & size, const ::point_i32 & pointSrc) override;
 
+      virtual bool _draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, const ::point_i32 & pointSrc) override;
+      
       ::e_status SetIconMask(::draw2d::icon * picon, i32 cx, i32 cy) override;
 
       virtual bool set_mapped() override;

@@ -150,7 +150,7 @@ namespace draw2d_quartz2d
       
    }
 
-   bool path::internal_add_text_out(int x, int y, const string & strText, ::write_text::font_pointer spfont, ::draw2d_quartz2d::graphics * p)
+   bool path::internal_add_text_out(int x, int y, const string & strText, ::write_text::font * pfont, ::draw2d_quartz2d::graphics * p)
    {
       
       x+= m_pointOffset.x;
@@ -159,7 +159,9 @@ namespace draw2d_quartz2d
       
       CGContextSaveGState(p->m_pdc);
       
-      p->internal_show_text(spfont,nullptr,nullptr, x, y, 0, DT_TOPLEFT, strText, kCGTextInvisible);
+      p->internal_show_text(x, y, 0, strText, kCGTextInvisible, e_align_top_left, e_draw_text_none, true,
+         nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+         pfont);
       
       CGPathAddPath(m_path, nullptr, CGContextCopyPath(p->m_pdc));
 
@@ -273,49 +275,48 @@ namespace draw2d_quartz2d
 //   }
    
    
-   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::begin * pbegin)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::enum_shape & eshape)
    {
+      
+      if(eshape == e_shape_close_figure)
+      {
+         
+         CGPathCloseSubpath(m_path);
+         
+      }
 
       return true;
       
    }
 
 
-   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::arc * parc)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::arc & arc)
    {
    
       ::rectangle_f64 rectangle;
       
-      rectangle.left = parc->m_pointCenter.x - parc->m_sizeRadius.cx;
-      rectangle.right = parc->m_pointCenter.x + parc->m_sizeRadius.cx;
-      rectangle.top = parc->m_pointCenter.y - parc->m_sizeRadius.cy;
-      rectangle.bottom = parc->m_pointCenter.y + parc->m_sizeRadius.cy;
-      
+      rectangle.left = arc.m_pointCenter.x - arc.m_sizeRadius.cx;
+      rectangle.right = arc.m_pointCenter.x + arc.m_sizeRadius.cx;
+      rectangle.top = arc.m_pointCenter.y - arc.m_sizeRadius.cy;
+      rectangle.bottom = arc.m_pointCenter.y + arc.m_sizeRadius.cy;
       
       rectangle.offset(m_pointOffset);
       
-      return internal_add_arc(rectangle, parc->m_angleBeg.radian(), parc->m_angleEnd.radian(), parc->m_angleEnd < parc->m_angleBeg);
+      return internal_add_arc(rectangle, arc.m_angleBeg.radian(), arc.m_angleEnd2.radian(), arc.m_angleEnd2 < arc.m_angleBeg);
       
    }
    
+
    
-//   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::move & move)
-//   {
-//
-//      return internal_add_move(move.m_x, move.m_y);
-//
-//   }
-   
-   
-   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::rectangle_i32 * prectangle)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::rectangle & rectangle)
    {
    
       CGRect r;
       
-      r.origin.x = prectangle->m_rectangle.left;
-      r.origin.y = prectangle->m_rectangle.top;
-      r.size.width = prectangle->m_rectangle.width();
-      r.size.height = prectangle->m_rectangle.height();
+      r.origin.x = rectangle.left;
+      r.origin.y = rectangle.top;
+      r.size.width = rectangle.width();
+      r.size.height = rectangle.height();
       
       r.origin.x += m_pointOffset.x;
       r.origin.y += m_pointOffset.y;
@@ -327,12 +328,12 @@ namespace draw2d_quartz2d
    }
                     
 
-   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::lines * plines)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::lines & lines)
    {
    
       ::array < CGPoint > points;
       
-      ::papaya::array::__copy(points, plines->m_pointa);
+      ::papaya::array::__copy(points, lines);
       
       for(auto & point : points)
       {
@@ -349,12 +350,12 @@ namespace draw2d_quartz2d
    }
                     
 
-   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::polygon_i32 * ppolygon)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::polygon & polygon)
    {
 
       ::array < CGPoint > points;
       
-      ::papaya::array::__copy(points, ppolygon->m_pointa);
+      ::papaya::array::__copy(points, polygon);
       
       for(auto & point : points)
       {
@@ -373,22 +374,22 @@ namespace draw2d_quartz2d
    }
 
 
-   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::line * pline)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::line & line)
    {
       
-      if(pline->m_pointBeg != m_pointBeg)
+      if(line.m_p1 != m_pointBeg)
       {
          
-         internal_add_line(pline->m_pointBeg.x, pline->m_pointBeg.y);
+         internal_add_line(line.m_p1.x, line.m_p1.y);
          
       }
       
-      return internal_add_line(pline->m_pointEnd.x, pline->m_pointEnd.y);
+      return internal_add_line(line.m_p2.x, line.m_p2.y);
       
    }
 
 
-   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::text_out * ptextout)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::write_text::text_out & textout)
    {
       
       return false;
@@ -396,7 +397,7 @@ namespace draw2d_quartz2d
    }
    
 
-   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::draw_text * pdrawtext)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::write_text::draw_text & drawtext)
    {
       
       return false;
@@ -404,14 +405,14 @@ namespace draw2d_quartz2d
    }
    
 
-   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::close * pclose)
-   {
-
-      CGPathCloseSubpath(m_path);
-      
-      return true;
-   
-   }
+//   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::close * pclose)
+//   {
+//
+//      CGPathCloseSubpath(m_path);
+//
+//      return true;
+//
+//   }
 
 
 

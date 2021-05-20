@@ -70,39 +70,39 @@ namespace draw2d_quartz2d
     }
 
     */
-
-
-   ::u32 palette::GetPaletteEntries(::u32 nStartIndex, ::u32 nNumEntries, LPPALETTEENTRY lpPaletteColors) const
-   {
-
-      //ASSERT(get_os_data() != nullptr);
-      //return ::GetPaletteEntries((HPALETTE)get_os_data(), nStartIndex, nNumEntries, lpPaletteColors);
-
-      return 0;
-
-   }
-
-
-   ::u32 palette::SetPaletteEntries(::u32 nStartIndex, ::u32 nNumEntries, LPPALETTEENTRY lpPaletteColors)
-   {
-
-      //ASSERT(get_os_data() != nullptr);
-      //return ::SetPaletteEntries((HPALETTE)get_os_data(), nStartIndex, nNumEntries, lpPaletteColors);
-
-      return 0;
-
-   }
-
-
-   void palette::AnimatePalette(::u32 nStartIndex, ::u32 nNumEntries, LPPALETTEENTRY lpPaletteColors)
-   {
-
-      //ASSERT(get_os_data() != nullptr);
-
-      //::AnimatePalette((HPALETTE)get_os_data(), nStartIndex, nNumEntries, lpPaletteColors);
-
-   }
-
+//
+//
+//   ::u32 palette::GetPaletteEntries(::u32 nStartIndex, ::u32 nNumEntries, LPPALETTEENTRY lpPaletteColors) const
+//   {
+//
+//      //ASSERT(get_os_data() != nullptr);
+//      //return ::GetPaletteEntries((HPALETTE)get_os_data(), nStartIndex, nNumEntries, lpPaletteColors);
+//
+//      return 0;
+//
+//   }
+//
+//
+//   ::u32 palette::SetPaletteEntries(::u32 nStartIndex, ::u32 nNumEntries, LPPALETTEENTRY lpPaletteColors)
+//   {
+//
+//      //ASSERT(get_os_data() != nullptr);
+//      //return ::SetPaletteEntries((HPALETTE)get_os_data(), nStartIndex, nNumEntries, lpPaletteColors);
+//
+//      return 0;
+//
+//   }
+//
+//
+//   void palette::AnimatePalette(::u32 nStartIndex, ::u32 nNumEntries, LPPALETTEENTRY lpPaletteColors)
+//   {
+//
+//      //ASSERT(get_os_data() != nullptr);
+//
+//      //::AnimatePalette((HPALETTE)get_os_data(), nStartIndex, nNumEntries, lpPaletteColors);
+//
+//   }
+//
 
    ::u32 palette::GetNearestPaletteIndex(color32_t crColor) const
    {

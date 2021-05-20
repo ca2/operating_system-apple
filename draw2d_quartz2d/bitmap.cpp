@@ -97,14 +97,14 @@ namespace draw2d_quartz2d
       
    }
    
-   
-   bool bitmap::CreateBitmapIndirect(::draw2d::graphics * pgraphics, LPBITMAP lpBitmap)
-   {
-      
-      return false;
-      
-   }
-   
+//
+//   bool bitmap::CreateBitmapIndirect(::draw2d::graphics * pgraphics, LPBITMAP lpBitmap)
+//   {
+//
+//      return false;
+//
+//   }
+//
    
    bool bitmap::create_bitmap(::draw2d::graphics * pgraphics, const ::size_i32 & size, void ** ppdata, int * piStride)
    {
@@ -229,13 +229,13 @@ namespace draw2d_quartz2d
    }
    
    
-   i32 bitmap::GetBitmap(BITMAP* pBitMap)
-   {
-      
-      return 0;
-      
-   }
-   
+//   i32 bitmap::GetBitmap(BITMAP* pBitMap)
+//   {
+//      
+//      return 0;
+//      
+//   }
+//   
 
    void bitmap::dump(dump_context & dumpcontext) const
    {

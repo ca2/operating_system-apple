@@ -45,11 +45,15 @@ namespace draw2d_quartz2d
       if(m_fontName == nullptr)
       {
          
-         //auto psystem = ::get_context_system();
+         auto psystem = m_psystem->m_paurasystem;
          
-         auto & draw2d = psystem->draw2d();
-         
-         draw2d.fonts().m_pfontenumeration->adapt_font_name(m_strFontFamilyName);
+         auto * pdraw2d = psystem->draw2d();
+
+         auto * pwritetext = pdraw2d->write_text();
+
+         auto * pfonts = pwritetext->fonts();
+
+         pfonts->m_pfontenumeration->adapt_font_name(m_strFontFamilyName);
          
          m_fontName = CFStringCreateWithCString(kCFAllocatorDefault, m_strFontFamilyName, kCFStringEncodingUTF8);
          

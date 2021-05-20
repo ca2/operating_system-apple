@@ -66,13 +66,13 @@ namespace draw2d_quartz2d
    }
    
    
-   object * graphics_object_allocator(::base::application * papp, HANDLE h)
-   {
-      
-      return nullptr;
-      
-   }
-   
+//   object * graphics_object_allocator(::base::application * papp, HANDLE h)
+//   {
+//
+//      return nullptr;
+//
+//   }
+//
    
    bool object::delete_object()
    {
@@ -85,7 +85,7 @@ namespace draw2d_quartz2d
    void object::dump(dump_context & dumpcontext) const
    {
 
-      ::object::dump(dumpcontext);
+      ::draw2d::object::dump(dumpcontext);
       
    }
    
@@ -93,7 +93,7 @@ namespace draw2d_quartz2d
    void object::assert_valid() const
    {
 
-      ::object::assert_valid();
+      ::draw2d::object::assert_valid();
 
    }
    

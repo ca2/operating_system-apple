@@ -40,7 +40,7 @@ namespace draw2d_quartz2d
       if(m_eregion == ::draw2d::e_region_rect)
       {
 
-         CGRect rectangle_i32;
+         CGRect rectangle;
 
          rectangle.origin.x = m_x1;
          rectangle.origin.y = m_y1;
@@ -63,10 +63,10 @@ namespace draw2d_quartz2d
          }
 
       }
-      else if(m_eregion == ::draw2d::e_region_oval)
+      else if(m_eregion == ::draw2d::e_region_ellipse)
       {
 
-         CGRect rectangle_i32;
+         CGRect rectangle;
 
          rectangle.origin.x = m_x1;
          rectangle.origin.y = m_y1;

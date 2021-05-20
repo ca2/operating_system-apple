@@ -162,7 +162,7 @@ namespace draw2d_quartz2d
 
       }
 
-      from(point_i32(), pgraphics, point_i32(), size);
+      m_pgraphics->draw(pgraphics);
 
       return true;
 
@@ -193,18 +193,19 @@ namespace draw2d_quartz2d
    }
 
 
-   bool image::to(::draw2d::graphics * pgraphics, const ::point_i32 & point, const ::size_i32 & size, const ::point_i32 & pointSrc)
-   {
+//   bool image::to(::draw2d::graphics * pgraphics, const ::point_i32 & point, const ::size_i32 & size, const ::point_i32 & pointSrc)
+//   {
+//
+//      return pgraphics->BitBlt(point.x, point.y, size.cx, size.cy, get_graphics(), pointSrc.x, pointSrc.y);
+//
+//   }
+//
 
-      return pgraphics->BitBlt(point.x, point.y, size.cx, size.cy, get_graphics(), pointSrc.x, pointSrc.y);
-
-   }
-
-
-   bool image::from(const ::point_i32 & pointDest, ::draw2d::graphics * pgraphics, const ::point_i32 & point, const ::size_i32 & size)
+bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, const ::point_i32 & pointSrc)
    {
       
-      return m_pgraphics->BitBlt(pointDest.x, pointDest.y, size.cx, size.cy, pgraphics, point.x, point.y);
+      return m_pgraphics->draw(rectDst, pimageSrc, pointSrc);
+      
       
    }
 
@@ -232,36 +233,24 @@ namespace draw2d_quartz2d
       
       pimage1->set_rgb(255, 255, 255);
 
-      pimage1->g()->DrawIcon(
-      0, 0,
-      picon,
-      cx, cy,
-      0,
-      nullptr,
-      DI_IMAGE | DI_MASK);
+      pimage1->g()->draw(
+      ::rectangle_dimension(0, 0, cx, cy),
+      picon);
 
       // Black blend image
       auto pimage2 = create_image({cx,  cy});
       pimage2->fill(0, 0, 0, 0);
 
-      pimage2->get_graphics()->DrawIcon(
-      0, 0,
-      picon,
-      cx, cy,
-      0,
-      nullptr,
-      DI_IMAGE | DI_MASK);
+      pimage2->get_graphics()->draw(
+      rectangle_dimension(0, 0, cx, cy),
+      picon);
 
       // Mask image
       auto pimageM= create_image({cx,  cy});
 
-      pimageM->g()->DrawIcon(
-      0, 0,
-      picon,
-      cx, cy,
-      0,
-      nullptr,
-      DI_MASK);
+      pimageM->g()->draw(
+      rectangle_dimension(0, 0, cx, cy),
+      picon);
 
       byte * r1=(byte*)pimage1->colorref();
       byte * r2=(byte*)pimage2->colorref();
@@ -313,10 +302,10 @@ namespace draw2d_quartz2d
    }
 
 
-   bool image::stretch_image(::image * pimage)
+   bool image::stretch(::image * pimage)
    {
 
-      return ::image::stretch_image(pimage);
+      return ::image::stretch(pimage);
 
    }
 

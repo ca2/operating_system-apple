@@ -22,6 +22,7 @@ namespace aura
       {
       public:
 
+         
          node();
          virtual ~node();
 

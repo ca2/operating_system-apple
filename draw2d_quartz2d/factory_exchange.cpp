@@ -1,23 +1,10 @@
 #include "framework.h"
 
 
-//namespace draw2d_quartz2d
-//{
-//   
-//
-//   void factory_exchange()
-//   {
-//      
-//     
-//
-//   }
-//   
-//   
-//} // namespace draw2d_quartz2d
-
-
-extern "C" void draw2d_factory_exchange(::factory_map * pfactorymap)
+extern "C"
+void draw2d_quartz2d_factory_exchange(::factory_map * pfactorymap)
 {
+
    
    create_factory < ::draw2d_quartz2d::image        , ::image >();
    create_factory < ::draw2d_quartz2d::graphics     , ::draw2d::graphics > ();
@@ -29,6 +16,10 @@ extern "C" void draw2d_factory_exchange(::factory_map * pfactorymap)
    create_factory < ::draw2d_quartz2d::font         , ::write_text::font > ();
    create_factory < ::draw2d_quartz2d::path         , ::draw2d::path > ();
 
+
+   create_factory < ::draw2d_quartz2d::draw2d        , ::draw2d::draw2d >();
+
+   
 }
 
 

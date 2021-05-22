@@ -1,12 +1,9 @@
 #pragma once
 
 
-#define SECURITY_WIN32
-
-
 #include "aura/_.h"
-
 #include <CoreText/CoreText.h>
+
 
 #define CLASS_DECL_DRAW2D_QUARTZ2D
 
@@ -22,16 +19,9 @@
 #include "brush.h"
 #include "region.h"
 
-
-
-#include "factory_exchange.h"
-
 #include "cgcontextcreate.h"
 
+#include "draw2d.h"
 
-
-
-
-#include <CoreText/CoreText.h>
 
 

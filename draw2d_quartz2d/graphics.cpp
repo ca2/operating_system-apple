@@ -4681,7 +4681,7 @@ namespace draw2d_quartz2d
          if(m_pfont.is_null())
          {
 
-            m_pfont.create();
+            m_pfont.create(this);
             
             auto psystem = m_psystem;
             

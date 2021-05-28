@@ -4635,7 +4635,7 @@ namespace draw2d_quartz2d
    bool graphics::GetTextExtent(size_f64 & size, const string & str)
    {
 
-      return GetTextExtent(size, str);
+      return ::draw2d::graphics::GetTextExtent(size, str);
 
    }
 
@@ -4650,6 +4650,8 @@ namespace draw2d_quartz2d
       internal_set_fill_color(color);
 
       CGContextFillRect(m_pdc, rectangle);
+      
+      return true;
 
    }
 
@@ -5455,6 +5457,8 @@ namespace draw2d_quartz2d
          
          }
          break;
+            default:
+               break;
          };
 
       }
@@ -5928,11 +5932,11 @@ namespace draw2d_quartz2d
       if(edrawtext & e_draw_text_single_line)
       {
 
-         str.replace("\::rectangle_f64\n", " ");
+         str.replace("::rectangle_f64\n", " ");
 
          str.replace("\n", " ");
 
-         str.replace("\::rectangle_f64", " ");
+         str.replace("::rectangle_f64", " ");
 
          internal_show_text(
          rectangle.left,

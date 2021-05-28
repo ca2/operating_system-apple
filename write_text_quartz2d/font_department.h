@@ -2,11 +2,11 @@
 #pragma once
 
 
-namespace write_text_pango
+namespace write_text_quartz2d
 {
 
 
-   class CLASS_DECL_WRITE_TEXT_PANGO font_department :
+   class CLASS_DECL_WRITE_TEXT_QUARTZ2D font_department :
       virtual public ::font_department
    {
    public:
@@ -74,7 +74,7 @@ namespace write_text_pango
    };
 
 
-} // namespace write_text_pango
+} // namespace write_text_quartz2d
 
 
 

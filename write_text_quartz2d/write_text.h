@@ -2,11 +2,11 @@
 #pragma once
 
 
-namespace write_text_pango
+namespace write_text_quartz2d
 {
 
 
-   class CLASS_DECL_WRITE_TEXT_PANGO write_text :
+   class CLASS_DECL_WRITE_TEXT_QUARTZ2D write_text :
       virtual public ::write_text::write_text
    {
    public:
@@ -23,7 +23,7 @@ namespace write_text_pango
    };
 
 
-} // namespace write_text_pango
+} // namespace write_text_quartz2d
 
 
 

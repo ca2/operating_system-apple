@@ -1,10 +1,10 @@
 // Created by camilo 2021-02-10 <3TBS_!!
 #include "framework.h"
 #include "acme/os/ansios/_pthread.h"
-#include <pango/pangocairo.h>
+//#include <pango/pangocairo.h>
 
 
-namespace write_text_pango
+namespace write_text_quartz2d
 {
 
 
@@ -59,43 +59,32 @@ namespace write_text_pango
    void font_department::enum_fonts(::write_text::font_enum_item_array & itema)
    {
 
-      //synchronous_lock ml(cairo_mutex());
-
-      PangoFontMap * pfontmap = pango_cairo_font_map_get_default();
-
-      PangoFontFamily ** families;
-
-      int n_families = 0;
-
-      pango_font_map_list_families(pfontmap, &families, &n_families);
-
-      printf("Total fonts: %d", n_families);
-
-      __pointer(::write_text::font_enum_item) item;
-
-      for (int i = 0; i < n_families; i++)
-      {
-
-         item = __new(::write_text::font_enum_item);
-
-         PangoFontFamily * pfamily = families[i];
-
-         string strFileName = pango_font_family_get_name(pfamily);
-
-         item->m_mapFileName[0] = strFileName;
-
-         item->m_strName = strFileName;
-
-         itema.add(item);
-
-      }
-
-      g_free(families);
+      //
+      //      char ** p;
+      //
+      //      unsigned long c = apple_get_fonts(&p);
+      //
+      //      if(c > 0)
+      //      {
+      //
+      //         for(unsigned long u = 0; u < c; u++)
+      //         {
+      //
+      //            itema.add(__new(::write_text::font_enum_item(p[u], p[u])));
+      //
+      //            free(p[u]);
+      //
+      //         }
+      //
+      //         free(p);
+      //
+      //      }
+      //
 
    }
 
 
-} // namespace write_text_pango
+} // namespace write_text_quartz2d
 
 
 

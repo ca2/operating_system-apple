@@ -1,7 +1,7 @@
 #pragma once
 
 
-namespace write_text_pango
+namespace write_text_quartz2d
 {
 
 
@@ -41,7 +41,7 @@ namespace write_text_pango
 //   };
 
 
-} // namespace write_text_pango
+} // namespace write_text_quartz2d
 
 
 

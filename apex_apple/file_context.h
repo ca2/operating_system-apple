@@ -9,7 +9,7 @@ namespace apple
 
 
    class CLASS_DECL_ACME_POSIX file_context :
-      virtual public ::file_context
+      virtual public ::posix::file_context
    {
    public:
 

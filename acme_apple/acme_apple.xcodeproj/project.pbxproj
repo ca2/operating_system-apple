@@ -59,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A0705FD26627549004E8CB4 /* image.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image.mm; sourceTree = "<group>"; };
 		9A15A582264B536C0080670E /* libacme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A15A5D0264B54B70080670E /* acme_posix.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_posix.xcodeproj; path = "../../platform-posix/acme_posix/acme_posix.xcodeproj"; sourceTree = "<group>"; };
 		9A15A60E264B56520080670E /* apple_timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = apple_timer.cpp; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 				9A787E65264E22CB003DF8A0 /* factory_exchange.cpp */,
 				9A787E5C264E22CB003DF8A0 /* framework.cpp */,
 				9A787E66264E22CB003DF8A0 /* framework.h */,
+				9A0705FD26627549004E8CB4 /* image.mm */,
 				9A787E5E264E22CB003DF8A0 /* node.cpp */,
 				9A787E60264E22CB003DF8A0 /* node.h */,
 				9A787E5F264E22CB003DF8A0 /* NSObject+DDExtensions.h */,

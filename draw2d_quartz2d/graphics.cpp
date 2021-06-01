@@ -552,7 +552,7 @@ namespace draw2d_quartz2d
 
       CGContextScaleCTM(m_pdc, w/2.0, h/2.0);
 
-      CGContextAddArc(m_pdc, 0.f, 0.f, 1.0f, start * 3.1415 / 180.0, end * 3.1415 / 180.0, extends < 0.0);
+      CGContextAddArc(m_pdc, 0.f, 0.f, 1.0f, start, end, extends < 0.0);
 
       CGContextRestoreGState(m_pdc);
 
@@ -5198,17 +5198,29 @@ namespace draw2d_quartz2d
 
          _clip(m_pregion);
 
-         CGPoint myStartPoint, myEndPoint;
+         CGPoint point1, point2;
 
-         myStartPoint.x = pbrush->m_point1.x;
+         point1.x = pbrush->m_point1.x;
 
-         myStartPoint.y = pbrush->m_point1.y;
+         point1.y = pbrush->m_point1.y;
 
-         myEndPoint.x = pbrush->m_point2.x;
+         point2.x = pbrush->m_point2.x;
 
-         myEndPoint.y = pbrush->m_point2.y;
+         point2.y = pbrush->m_point2.y;
+         
+         CGRect r;
+         
+         r.origin = point1;
+         r.size.width = point2.x - point1.x;
+         r.size.height = point2.y - point1.y;
+         
 
-         CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], myStartPoint, myEndPoint, 0);
+         CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], point1, point2, 0);
+         
+         //CGContextAddRect(pgraphics, r);
+
+         //CGContextFillPath(pgraphics);
+
 
       }
       else if(pbrush->m_etype == ::draw2d::brush::type_pattern)
@@ -6180,7 +6192,7 @@ namespace draw2d_quartz2d
 
                bFill = true;
 
-               crFill = ::is_null(pbrushDraw) ? argb(255, 0, 0, 0) : pbrushDraw->m_color;
+               crFill = ::is_null(pbrush) ? argb(255, 0, 0, 0) : pbrush->m_color;
 
             }
 
@@ -6298,13 +6310,15 @@ namespace draw2d_quartz2d
 
       }
 
-      if(emode != kCGTextInvisible && bDraw)
+//      if(emode != kCGTextInvisible && bDraw && (bFill || bStroke || emode == kCGTextClip))
+         if(emode != kCGTextInvisible && bDraw && (bFill || bStroke))
       {
 
          CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
 
          CGFloat components[4];
 
+         //if(bFill || emode == kCGTextClip)
          if(bFill)
          {
 
@@ -6343,7 +6357,6 @@ namespace draw2d_quartz2d
 
       }
 
-      
       CFDictionaryRef attributes = CFDictionaryCreate(
                                    kCFAllocatorDefault,
                                    pkeys.get_data(),
@@ -6410,8 +6423,22 @@ namespace draw2d_quartz2d
             y += cy;
    
          }
-         
+//         if(pbrush)
+//         {
+//
+//            pbrush->m_point1.y += ascent;
+//            pbrush->m_point2.y += ascent;
+//
+//         }
          internal_draw_text(emode, x, y + ascent, line, pbrush);
+         //internal_draw_text(emode, x, y, line, pbrush);
+//         if(pbrush)
+//         {
+//
+//            pbrush->m_point1.y -= ascent;
+//            pbrush->m_point2.y -= ascent;
+//
+//         }
 
       }
 
@@ -6476,29 +6503,46 @@ namespace draw2d_quartz2d
       
       CGContextRef pgraphics = m_pdc;
 
+      
+      CGContextSetTextPosition(pgraphics, 0, 0);
+
+
       // CGContextSetTextMatrix(pgraphics, CGAffineTransformScale(CGAffineTransformMakeTranslation(x, y), 1.f, -1.f));
-      //CGContextTranslateCTM(pgraphics, x, y);
-      //CGContextScaleCTM(pgraphics, 1.0, -1.0);
+      CGContextTranslateCTM(pgraphics, x, y);
+      CGContextScaleCTM(pgraphics, 1.0, -1.0);
 
       //CGContextSetTextMatrix(pgraphics, CGAffineTransformIdentity);
-      CGContextSetTextMatrix(pgraphics, CGAffineTransformScale(CGAffineTransformMakeTranslation(x, y), 1.f, -1.f));
+      //CGContextSetTextPosition(pgraphics, 0, 0);
+      
+      //CGContextSetTextMatrix(pgraphics, CGAffineTransformMakeScale(1.f, -1.f));
       //CGContextTranslateCTM(pgraphics, x, y);
       //CGContextScaleCTM(pgraphics, 1.0, -1.0);
       // CGContextSetTextMatrix(pgraphics, CGAffineTransformScale(CGAffineTransformMakeTranslation(x, y), 1.f, -1.f));
+      
+      //CGContextSetTextMatrix(pgraphics, CGA,0ffineTransformMakeScale(1.f, -1.f));
+      
       
       CGContextSetTextDrawingMode(pgraphics, emode);
 
       CTLineDraw(line, pgraphics);
 
-      //CGContextScaleCTM(pgraphics, 1.0, -1.0);
-      //CGContextTranslateCTM(pgraphics, -x, -y);
-
+      CGContextScaleCTM(pgraphics, 1.0, -1.0);
+      CGContextTranslateCTM(pgraphics, -x, -y);
+      
       if(pbrush != nullptr)
       {
  
+         //pbrush->m_point1 -= point_i32(x, y);
+         //pbrush->m_point2 -= point_i32(x, y);
+         //_fill(pbrush, emode >= kCGTextFillClip);
          _fill(pbrush, false);
+         //pbrush->m_point1 += point_i32(x, y);
+         //pbrush->m_point2 += point_i32(x, y);
 
       }
+
+      //CGContextSetTextMatrix(pgraphics, CGAffineTransformMakeScale(1.f, -1.f));
+
 
    }
 

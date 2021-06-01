@@ -3,6 +3,7 @@
 #include "acme/os/ansios/_pthread.h"
 //#include <pango/pangocairo.h>
 
+unsigned long apple_get_fonts(char ***p);
 
 namespace write_text_quartz2d
 {
@@ -59,27 +60,27 @@ namespace write_text_quartz2d
    void font_department::enum_fonts(::write_text::font_enum_item_array & itema)
    {
 
-      //
-      //      char ** p;
-      //
-      //      unsigned long c = apple_get_fonts(&p);
-      //
-      //      if(c > 0)
-      //      {
-      //
-      //         for(unsigned long u = 0; u < c; u++)
-      //         {
-      //
-      //            itema.add(__new(::write_text::font_enum_item(p[u], p[u])));
-      //
-      //            free(p[u]);
-      //
-      //         }
-      //
-      //         free(p);
-      //
-      //      }
-      //
+      
+            char ** p;
+      
+            unsigned long c = apple_get_fonts(&p);
+      
+            if(c > 0)
+            {
+      
+               for(unsigned long u = 0; u < c; u++)
+               {
+      
+                  itema.add(__new(::write_text::font_enum_item(p[u], p[u])));
+      
+                  free(p[u]);
+      
+               }
+      
+               free(p);
+      
+            }
+      
 
    }
 

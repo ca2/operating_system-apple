@@ -21,6 +21,8 @@
 		9A6A47352660CB61004ED97A /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A47342660CB61004ED97A /* libacme.dylib */; };
 		9A6A47372660CB61004ED97A /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A47362660CB61004ED97A /* libapex.dylib */; };
 		9A6A47382660CB83004ED97A /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A472C2660CB45004ED97A /* libaura.dylib */; };
+		9AE12D962661D4C0009F476A /* enum.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AE12D952661D4C0009F476A /* enum.mm */; };
+		9AE12D9A2661D577009F476A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE12D992661D577009F476A /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		9A6A47252660CB45004ED97A /* aura.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura.xcodeproj; path = ../../../source/app/aura/aura.xcodeproj; sourceTree = "<group>"; };
 		9A6A47342660CB61004ED97A /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6A47362660CB61004ED97A /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AE12D952661D4C0009F476A /* enum.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = enum.mm; sourceTree = "<group>"; };
+		9AE12D992661D577009F476A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE12D9A2661D577009F476A /* AppKit.framework in Frameworks */,
 				9A6A47382660CB83004ED97A /* libaura.dylib in Frameworks */,
 				9A6A47352660CB61004ED97A /* libacme.dylib in Frameworks */,
 				9A6A47372660CB61004ED97A /* libapex.dylib in Frameworks */,
@@ -118,6 +123,7 @@
 				9A64C1B12660C6730074030F /* framework.h */,
 				9A64C1A92660C6730074030F /* write_text.cpp */,
 				9A64C19A2660C6730074030F /* write_text.h */,
+				9AE12D952661D4C0009F476A /* enum.mm */,
 			);
 			name = write_text_quartz2d;
 			sourceTree = "<group>";
@@ -135,6 +141,7 @@
 		9A6A47332660CB61004ED97A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AE12D992661D577009F476A /* AppKit.framework */,
 				9A6A47342660CB61004ED97A /* libacme.dylib */,
 				9A6A47362660CB61004ED97A /* libapex.dylib */,
 			);
@@ -248,6 +255,7 @@
 				9A64C1C62660C6730074030F /* font_department.cpp in Sources */,
 				9A64C1C32660C6730074030F /* framework.cpp in Sources */,
 				9A64C1C52660C6730074030F /* write_text.cpp in Sources */,
+				9AE12D962661D4C0009F476A /* enum.mm in Sources */,
 				9A64C1C02660C6730074030F /* font_enum.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

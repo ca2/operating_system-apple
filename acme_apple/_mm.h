@@ -24,7 +24,7 @@ void set_apex_system_as_thread();
 
 char * ns_string(NSString * str);
 
-void ns_main_sync(dispatch_block_t block, unsigned int uiMillis = -1);
+void ns_main_sync(dispatch_block_t block);
 void ns_main_async(dispatch_block_t block);
 
 

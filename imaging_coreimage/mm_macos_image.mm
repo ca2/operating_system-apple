@@ -108,14 +108,5 @@ void * get_jpeg_image_data(unsigned long & size, CGImageRef cgimage)
 }
 
 
-void * ns_image_get_image_data(int & width, int & height, int & iScan, NSImage * image)
-{
-   
-   CGImageRef inputCGImage = [image CGImageForProposedRect:NULL context:NULL hints:NULL];
-   
-   return cg_image_get_image_data(width, height, iScan, inputCGImage);
-   
-}
-
 
 

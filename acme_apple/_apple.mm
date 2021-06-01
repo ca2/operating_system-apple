@@ -131,13 +131,8 @@ void ns_main_async(dispatch_block_t block)
 }
 
 
-void ns_main_sync(dispatch_block_t block, unsigned int)
+void ns_main_sync(dispatch_block_t block)
 {
-   
-   //   dispatch_block_t block = ^{
-   //      // Code for the method goes here
-   //   };
-   //
    
    if ([NSThread isMainThread])
    {
@@ -154,9 +149,12 @@ void ns_main_sync(dispatch_block_t block, unsigned int)
    
 }
 
+
 class matter;
 
+
 CLASS_DECL_ACME ::e_status __call(::matter * prunnable);
+
 
 void main_async_runnable(::matter * prunnable)
 {
@@ -181,7 +179,7 @@ void _main_sync_runnable(::matter * prunnable, DWORD dwMillis)
                    
                     __call(prunnable);
                    
-                }, dwMillis);
+                });
    
    //[[mmos get] runRunnableOnMainThread: prunnable];
    

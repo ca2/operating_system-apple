@@ -65,9 +65,9 @@ namespace draw2d_quartz2d
 
       }
 
-      m_pbitmap.defer_create();
+      m_pbitmap.defer_create(this);
 
-      m_pgraphics.defer_create();
+      m_pgraphics.defer_create(this);
 
       if(m_pbitmap.is_null() || m_pgraphics.is_null())
       {

@@ -600,6 +600,30 @@ namespace acme
          return ::success;
 
       }
+   
+   
+      string node::audio_get_default_library_name()
+      {
+
+         return "audio_core_audio";
+
+      }
+
+   
+      string node::multimedia_audio_mixer_get_default_library_name()
+      {
+
+         return "audio_mixer_core_audio";
+
+      }
+   
+   
+      string node::veriwell_multimedia_music_midi_get_default_library_name()
+      {
+
+         return "music_midi_core_midi";
+
+      }
 
 
    } // namespace apple

@@ -90,13 +90,13 @@ namespace multimedia
 
          ASSERT(m_estate == e_state_initial);
 
-         m_pwaveformat->wFormatTag        = 0;
-         m_pwaveformat->nChannels         = (::u16) uiChannelCount;
-         m_pwaveformat->nSamplesPerSec    = uiSamplesPerSec;
-         m_pwaveformat->wBitsPerSample    = (::u16) uiBitsPerSample;
-         m_pwaveformat->nBlockAlign       = m_pwaveformat->wBitsPerSample * m_pwaveformat->nChannels / 8;
-         m_pwaveformat->nAvgBytesPerSec   = m_pwaveformat->nSamplesPerSec * m_pwaveformat->nBlockAlign;
-         m_pwaveformat->cbSize            = 0;
+         m_pwaveformat->m_waveformat.wFormatTag        = 0;
+         m_pwaveformat->m_waveformat.nChannels         = (::u16) uiChannelCount;
+         m_pwaveformat->m_waveformat.nSamplesPerSec    = uiSamplesPerSec;
+         m_pwaveformat->m_waveformat.wBitsPerSample    = (::u16) uiBitsPerSample;
+         m_pwaveformat->m_waveformat.nBlockAlign       = m_pwaveformat->m_waveformat.wBitsPerSample * m_pwaveformat->m_waveformat.nChannels / 8;
+         m_pwaveformat->m_waveformat.nAvgBytesPerSec   = m_pwaveformat->m_waveformat.nSamplesPerSec * m_pwaveformat->m_waveformat.nBlockAlign;
+         //m_pwaveformat->m_waveformat.cbSize            = 0;
 
          __zero(&m_dataformat);
 
@@ -154,13 +154,13 @@ namespace multimedia
 
          }
 
-         int iFrameSize = m_pwaveformat->wBitsPerSample * m_pwaveformat->nChannels / 8;
+         int iFrameSize = m_pwaveformat->m_waveformat.wBitsPerSample * m_pwaveformat->m_waveformat.nChannels / 8;
 
          int iBufferSize = iBufferSampleCount * iFrameSize;
 
          out_get_buffer()->PCMOutOpen(this, iBufferSize, iBufferCount, 64, m_pwaveformat, m_pwaveformat);
 
-         m_pprebuffer->open( m_pwaveformat->nChannels, iBufferCount, iBufferSampleCount);
+         m_pprebuffer->open( m_pwaveformat->m_waveformat.nChannels, iBufferCount, iBufferSampleCount);
 
          m_estate = e_state_opened;
 
@@ -405,46 +405,46 @@ namespace multimedia
       }
 
 
-      imedia_time out::out_get_time()
-      {
-
-         single_lock sLock(mutex(), true);
-
-         OSStatus                status;
-
-         AudioTimeStamp          stamp;
-
-         if(m_Queue != nullptr)
-         {
-
-
-            AudioQueueTimelineRef timeLine;
-
-            status = AudioQueueCreateTimeline(m_Queue, &timeLine);
-            if(status != noErr)
-               return 0;
-
-            status = AudioQueueGetCurrentTime(m_Queue, timeLine, &stamp, nullptr);
-
-            if(status != 0)
-               return 0;
-
-
-
-
-            if(!(stamp.mFlags & kAudioTimeStampSampleTimeValid))
-               return 0;
-
-            imedia_time iTime = (imedia_time) stamp.mSampleTime * 1000 / m_pwaveformat->nSamplesPerSec;
-
-            return iTime;
-
-         }
-         else
-            return 0;
-
-
-      }
+//      imedia_time out::out_get_time()
+//      {
+//
+//         single_lock sLock(mutex(), true);
+//
+//         OSStatus                status;
+//
+//         AudioTimeStamp          stamp;
+//
+//         if(m_Queue != nullptr)
+//         {
+//
+//
+//            AudioQueueTimelineRef timeLine;
+//
+//            status = AudioQueueCreateTimeline(m_Queue, &timeLine);
+//            if(status != noErr)
+//               return 0;
+//
+//            status = AudioQueueGetCurrentTime(m_Queue, timeLine, &stamp, nullptr);
+//
+//            if(status != 0)
+//               return 0;
+//
+//
+//
+//
+//            if(!(stamp.mFlags & kAudioTimeStampSampleTimeValid))
+//               return 0;
+//
+//            imedia_time iTime = (imedia_time) stamp.mSampleTime * 1000 / m_pwaveformat->m_waveformat.nSamplesPerSec;
+//
+//            return iTime;
+//
+//         }
+//         else
+//            return 0;
+//
+//
+//      }
 
 
       imedia_time out::out_get_time()

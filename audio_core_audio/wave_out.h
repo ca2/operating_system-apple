@@ -29,7 +29,7 @@ namespace multimedia
 
          void install_message_routing(::channel * pchannel) override;
 
-         virtual imedia_time out_get_time() override;
+         //virtual imedia_time out_get_time() override;
          imedia_time out_get_time() override;
          virtual void out_filled(index iBuffer) override;
 

@@ -84,6 +84,11 @@ namespace acme
          virtual ::e_status install_sigchld_handler() override;
 
 
+         string audio_get_default_library_name() override;
+      
+         string multimedia_audio_mixer_get_default_library_name() override;
+      
+         string veriwell_multimedia_music_midi_get_default_library_name() override;
 
       };
 

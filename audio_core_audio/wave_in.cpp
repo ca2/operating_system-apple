@@ -59,7 +59,7 @@ namespace multimedia
 
       void in::pre_translate_message(::message::message * pmessage)
       {
-         __pointer(::user::message) pusermessage(pmessage);
+         //__pointer(::user::message) pusermessage(pmessage);
          //ASSERT(GetMainWnd() == nullptr);
          /*         if(pusermessage->m_uiMessage == MM_WIM_OPEN ||
                      pusermessage->m_uiMessage == MM_WIM_CLOSE ||
@@ -69,7 +69,7 @@ namespace multimedia
                      if(pusermessage->m_bRet)
                         return;
                   }*/
-         return thread::pre_translate_message(pusermessage);
+         return thread::pre_translate_message(pmessage);
       }
 
       ::e_status     in::in_open(i32 iBufferCount, i32 iBufferSampleCount)

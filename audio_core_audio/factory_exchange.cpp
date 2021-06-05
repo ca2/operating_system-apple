@@ -34,8 +34,9 @@ void audio_core_audio_factory_exchange(::factory_map * pfactorymap)
 {
 
    //::multimedia::audio_core_audio::factory_exchange factoryexchange();
-   create_factory < ::multimedia::audio_core_audio::in, ::wave::in >();
-   create_factory < ::multimedia::audio_core_audio::out, ::wave::out >();
+   pfactorymap->create_factory < ::multimedia::audio_core_audio::in, ::wave::in >();
+   pfactorymap->create_factory < ::multimedia::audio_core_audio::out, ::wave::out >();
+   
 }
 
 

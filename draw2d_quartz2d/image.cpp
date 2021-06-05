@@ -234,7 +234,7 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
       pimage1->set_rgb(255, 255, 255);
 
       pimage1->g()->draw(
-      ::rectangle_dimension(0, 0, cx, cy),
+      ::rectangle_i32_dimension(0, 0, cx, cy),
       picon);
 
       // Black blend image
@@ -242,14 +242,14 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
       pimage2->fill(0, 0, 0, 0);
 
       pimage2->get_graphics()->draw(
-      rectangle_dimension(0, 0, cx, cy),
+      rectangle_i32_dimension(0, 0, cx, cy),
       picon);
 
       // Mask image
       auto pimageM= create_image({cx,  cy});
 
       pimageM->g()->draw(
-      rectangle_dimension(0, 0, cx, cy),
+      rectangle_i32_dimension(0, 0, cx, cy),
       picon);
 
       byte * r1=(byte*)pimage1->colorref();

@@ -16,8 +16,8 @@ namespace multimedia
          waveformatex.mReserved         = 0;
          FillOutASBDForLPCM (
          waveformatex,
-         (Float64) pwaveformat->nSamplesPerSec,
-         pwaveformat->nChannels,
+         (Float64) pwaveformat->m_waveformat.nSamplesPerSec,
+         pwaveformat->m_waveformat.nChannels,
          8 * sizeof(::wave::WAVEBUFFERDATA),
          8 * sizeof(::wave::WAVEBUFFERDATA),
          false,

@@ -14,7 +14,6 @@
 		9A1B496716A4A10100875A94 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B496616A4A10100875A94 /* framework.cpp */; };
 		9A741585266BD04C00552531 /* libaudio.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A741580266BCDCE00552531 /* libaudio.dylib */; };
 		9A74158D266BD08500552531 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A74158C266BD08500552531 /* libacme_apple.dylib */; };
-		9A74158E266BD09E00552531 /* libapex_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A74158B266BD07800552531 /* libapex_apple.dylib */; };
 		9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8997BC177D0E7D00C7761E /* Carbon.framework */; };
 		9A8EAF3317C563A300C458D1 /* command.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2817C563A300C458D1 /* command.h */; };
 		9A8EAF3417C563A300C458D1 /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2917C563A300C458D1 /* factory_exchange.cpp */; };
@@ -76,13 +75,6 @@
 			remoteGlobalIDString = 9ACA44792453EAEE007277DD;
 			remoteInfo = audio;
 		};
-		9A74158A266BD07800552531 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A741586266BD07800552531 /* apex_apple.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9A15A597264B53DC0080670E;
-			remoteInfo = apex_apple;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -93,7 +85,7 @@
 		9A1B496316A494A600875A94 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9A1B496616A4A10100875A94 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9A74157A266BCDCE00552531 /* audio.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = audio.xcodeproj; path = "../../../source/app-core/audio/audio.xcodeproj"; sourceTree = "<group>"; };
-		9A741586266BD07800552531 /* apex_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_apple.xcodeproj; path = "/Users/camilo/solution/basis/source/app-core/audioaura/../../../archive/platform-apple/apex_apple/apex_apple.xcodeproj"; sourceTree = "<absolute>"; };
+		9A741586266BD07800552531 /* apex_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_apple.xcodeproj; path = ../apex_apple/apex_apple.xcodeproj; sourceTree = "<group>"; };
 		9A74158C266BD08500552531 /* libacme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A86864122CC3B0200186E72 /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -131,7 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A74158E266BD09E00552531 /* libapex_apple.dylib in Frameworks */,
 				9A74158D266BD08500552531 /* libacme_apple.dylib in Frameworks */,
 				9A741585266BD04C00552531 /* libaudio.dylib in Frameworks */,
 				9AAEB4DC25291CFF00B39BA1 /* libacme.dylib in Frameworks */,
@@ -151,14 +142,6 @@
 			children = (
 				9A741580266BCDCE00552531 /* libaudio.dylib */,
 				9A741582266BCDCE00552531 /* aios_audio.dylib */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9A741587266BD07800552531 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9A74158B266BD07800552531 /* libapex_apple.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,10 +304,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9A741587266BD07800552531 /* Products */;
-					ProjectRef = 9A741586266BD07800552531 /* apex_apple.xcodeproj */;
-				},
-				{
 					ProductGroup = 9A74157B266BCDCE00552531 /* Products */;
 					ProjectRef = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
 				},
@@ -350,13 +329,6 @@
 			fileType = "compiled.mach-o.dylib";
 			path = aios_audio.dylib;
 			remoteRef = 9A741581266BCDCE00552531 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A74158B266BD07800552531 /* libapex_apple.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libapex_apple.dylib;
-			remoteRef = 9A74158A266BD07800552531 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

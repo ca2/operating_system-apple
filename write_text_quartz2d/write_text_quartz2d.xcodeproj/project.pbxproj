@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A64C1C02660C6730074030F /* font_enum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1992660C6730074030F /* font_enum.cpp */; };
+		9A64C1C02660C6730074030F /* font_enumeration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1992660C6730074030F /* font_enumeration.cpp */; };
 		9A64C1C12660C6730074030F /* write_text.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C19A2660C6730074030F /* write_text.h */; };
-		9A64C1C22660C6730074030F /* font_enum.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C19D2660C6730074030F /* font_enum.h */; };
+		9A64C1C22660C6730074030F /* font_enumeration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C19D2660C6730074030F /* font_enumeration.h */; };
 		9A64C1C32660C6730074030F /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C19E2660C6730074030F /* framework.cpp */; };
 		9A64C1C42660C6730074030F /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1A82660C6730074030F /* _.cpp */; };
 		9A64C1C52660C6730074030F /* write_text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1A92660C6730074030F /* write_text.cpp */; };
@@ -58,9 +58,9 @@
 
 /* Begin PBXFileReference section */
 		9A64C1712660C62C0074030F /* libwrite_text_quartz2d.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libwrite_text_quartz2d.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A64C1992660C6730074030F /* font_enum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = font_enum.cpp; sourceTree = "<group>"; };
+		9A64C1992660C6730074030F /* font_enumeration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = font_enumeration.cpp; sourceTree = "<group>"; };
 		9A64C19A2660C6730074030F /* write_text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = write_text.h; sourceTree = "<group>"; };
-		9A64C19D2660C6730074030F /* font_enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font_enum.h; sourceTree = "<group>"; };
+		9A64C19D2660C6730074030F /* font_enumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font_enumeration.h; sourceTree = "<group>"; };
 		9A64C19E2660C6730074030F /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9A64C1A82660C6730074030F /* _.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
 		9A64C1A92660C6730074030F /* write_text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = write_text.cpp; sourceTree = "<group>"; };
@@ -117,8 +117,8 @@
 				9A64C1AF2660C6730074030F /* factory_exchange.cpp */,
 				9A64C1AB2660C6730074030F /* font_department.cpp */,
 				9A64C1B52660C6730074030F /* font_department.h */,
-				9A64C1992660C6730074030F /* font_enum.cpp */,
-				9A64C19D2660C6730074030F /* font_enum.h */,
+				9A64C1992660C6730074030F /* font_enumeration.cpp */,
+				9A64C19D2660C6730074030F /* font_enumeration.h */,
 				9A64C19E2660C6730074030F /* framework.cpp */,
 				9A64C1B12660C6730074030F /* framework.h */,
 				9A64C1A92660C6730074030F /* write_text.cpp */,
@@ -158,7 +158,7 @@
 				9A64C1CA2660C6730074030F /* _.h in Headers */,
 				9A64C1C82660C6730074030F /* framework.h in Headers */,
 				9A64C1C92660C6730074030F /* font_department.h in Headers */,
-				9A64C1C22660C6730074030F /* font_enum.h in Headers */,
+				9A64C1C22660C6730074030F /* font_enumeration.h in Headers */,
 				9A64C1C12660C6730074030F /* write_text.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,7 +256,7 @@
 				9A64C1C32660C6730074030F /* framework.cpp in Sources */,
 				9A64C1C52660C6730074030F /* write_text.cpp in Sources */,
 				9AE12D962661D4C0009F476A /* enum.mm in Sources */,
-				9A64C1C02660C6730074030F /* font_enum.cpp in Sources */,
+				9A64C1C02660C6730074030F /* font_enumeration.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

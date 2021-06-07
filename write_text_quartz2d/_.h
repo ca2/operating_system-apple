@@ -34,10 +34,10 @@
 //#include "font_enum.h"
 
 
-#include "font_department.h"
-
-
-#include "write_text.h"
+//#include "font_department.h"
+//
+//
+//#include "write_text.h"
 
 
 

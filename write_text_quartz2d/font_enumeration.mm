@@ -4,16 +4,12 @@
 //
 //  Created by Camilo Sasuke on 28/05/21.
 //
-
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
 
-
-
 unsigned long apple_get_fonts(char ***p)
 {
-
 
    NSArray *fonts = [[NSFontManager sharedFontManager] availableFontFamilies];
    
@@ -37,8 +33,9 @@ unsigned long apple_get_fonts(char ***p)
       
    }
    
-   
    return c;
 
-
 }
+
+
+

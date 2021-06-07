@@ -13,7 +13,7 @@ namespace write_text_quartz2d
 
 
       font_enumeration();
-      ~wingdi_font_enum() override;
+      ~font_enumeration() override;
 
 
       ::e_status on_enumerate_fonts() override;

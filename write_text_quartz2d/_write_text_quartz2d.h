@@ -2,11 +2,21 @@
 //  _write_text_quartz2d.h
 //  write_text_quartz2d
 //
-//  Created by Camilo Sasuke on 06/06/21.
+//  Created by Camilo Sasuke on 2021-06-06 20:32 BRT <3ThomasBorregaardSørensen__!!
 //
-
-#ifndef _write_text_quartz2d_h
-#define _write_text_quartz2d_h
+#pragma once
 
 
-#endif /* _write_text_quartz2d_h */
+#include "aura/operating_system.h"
+
+
+#include "font_enumeration.h"
+
+
+#include "write_text.h"
+
+
+#include "fonts.h"
+
+
+

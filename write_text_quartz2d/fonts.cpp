@@ -1,4 +1,4 @@
-// Created by camilo 2021-02-10 <3TBS_!!
+// Created by camilo 2021-02-10 <3ThomasBorregaardSørensen__!!
 #include "framework.h"
 #include "acme/os/ansios/_pthread.h"
 
@@ -7,24 +7,24 @@ namespace write_text_quartz2d
 {
 
 
-   font_department::font_department()
+   fonts::fonts()
    {
 
 
    }
 
 
-   font_department::~font_department()
+   fonts::~fonts()
    {
 
 
    }
 
 
-   ::e_status font_department::initialize(::object * pobject)
+   ::e_status fonts::initialize(::object * pobject)
    {
 
-      auto estatus = ::font_department::initialize(pobject);
+      auto estatus = ::write_text::fonts::initialize(pobject);
 
       if (!estatus)
       {
@@ -38,26 +38,26 @@ namespace write_text_quartz2d
    }
 
 
-   ::e_status font_department::finalize()
-   {
-
-      auto estatus = ::font_department::finalize();
-
-      if(!estatus)
-      {
-
-         return estatus;
-
-      }
-
-      return estatus;
-
-   }
-
-
-   void font_department::enum_fonts(::write_text::font_enum_item_array & itema)
-   {
-   }
+//   ::e_status font_department::finalize()
+//   {
+//
+//      auto estatus = ::font_department::finalize();
+//
+//      if(!estatus)
+//      {
+//
+//         return estatus;
+//
+//      }
+//
+//      return estatus;
+//
+//   }
+//
+//
+//   void font_department::enum_fonts(::write_text::font_enum_item_array & itema)
+//   {
+//   }
 
 
 } // namespace write_text_quartz2d

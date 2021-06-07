@@ -13,15 +13,15 @@
 		9A64C1C32660C6730074030F /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C19E2660C6730074030F /* framework.cpp */; };
 		9A64C1C42660C6730074030F /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1A82660C6730074030F /* _.cpp */; };
 		9A64C1C52660C6730074030F /* write_text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1A92660C6730074030F /* write_text.cpp */; };
-		9A64C1C62660C6730074030F /* font_department.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1AB2660C6730074030F /* font_department.cpp */; };
+		9A64C1C62660C6730074030F /* fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1AB2660C6730074030F /* fonts.cpp */; };
 		9A64C1C72660C6730074030F /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1AF2660C6730074030F /* factory_exchange.cpp */; };
 		9A64C1C82660C6730074030F /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C1B12660C6730074030F /* framework.h */; };
-		9A64C1C92660C6730074030F /* font_department.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C1B52660C6730074030F /* font_department.h */; };
+		9A64C1C92660C6730074030F /* fonts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C1B52660C6730074030F /* fonts.h */; };
 		9A64C1CA2660C6730074030F /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C1B92660C6730074030F /* _.h */; };
 		9A6A47352660CB61004ED97A /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A47342660CB61004ED97A /* libacme.dylib */; };
 		9A6A47372660CB61004ED97A /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A47362660CB61004ED97A /* libapex.dylib */; };
 		9A6A47382660CB83004ED97A /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A472C2660CB45004ED97A /* libaura.dylib */; };
-		9AE12D962661D4C0009F476A /* enum.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AE12D952661D4C0009F476A /* enum.mm */; };
+		9AE12D962661D4C0009F476A /* font_enumeration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AE12D952661D4C0009F476A /* font_enumeration.mm */; };
 		9AE12D9A2661D577009F476A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE12D992661D577009F476A /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A4124B0266D924E00C3FF0E /* _write_text_quartz2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _write_text_quartz2d.h; sourceTree = "<group>"; };
 		9A64C1712660C62C0074030F /* libwrite_text_quartz2d.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libwrite_text_quartz2d.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A64C1992660C6730074030F /* font_enumeration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = font_enumeration.cpp; sourceTree = "<group>"; };
 		9A64C19A2660C6730074030F /* write_text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = write_text.h; sourceTree = "<group>"; };
@@ -64,15 +65,15 @@
 		9A64C19E2660C6730074030F /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9A64C1A82660C6730074030F /* _.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
 		9A64C1A92660C6730074030F /* write_text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = write_text.cpp; sourceTree = "<group>"; };
-		9A64C1AB2660C6730074030F /* font_department.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = font_department.cpp; sourceTree = "<group>"; };
+		9A64C1AB2660C6730074030F /* fonts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fonts.cpp; sourceTree = "<group>"; };
 		9A64C1AF2660C6730074030F /* factory_exchange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = factory_exchange.cpp; sourceTree = "<group>"; };
 		9A64C1B12660C6730074030F /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
-		9A64C1B52660C6730074030F /* font_department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font_department.h; sourceTree = "<group>"; };
+		9A64C1B52660C6730074030F /* fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fonts.h; sourceTree = "<group>"; };
 		9A64C1B92660C6730074030F /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9A6A47252660CB45004ED97A /* aura.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura.xcodeproj; path = ../../../source/app/aura/aura.xcodeproj; sourceTree = "<group>"; };
 		9A6A47342660CB61004ED97A /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6A47362660CB61004ED97A /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AE12D952661D4C0009F476A /* enum.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = enum.mm; sourceTree = "<group>"; };
+		9AE12D952661D4C0009F476A /* font_enumeration.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = font_enumeration.mm; sourceTree = "<group>"; };
 		9AE12D992661D577009F476A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -114,16 +115,17 @@
 			children = (
 				9A64C1A82660C6730074030F /* _.cpp */,
 				9A64C1B92660C6730074030F /* _.h */,
+				9A4124B0266D924E00C3FF0E /* _write_text_quartz2d.h */,
 				9A64C1AF2660C6730074030F /* factory_exchange.cpp */,
-				9A64C1AB2660C6730074030F /* font_department.cpp */,
-				9A64C1B52660C6730074030F /* font_department.h */,
+				9A64C1AB2660C6730074030F /* fonts.cpp */,
+				9A64C1B52660C6730074030F /* fonts.h */,
 				9A64C1992660C6730074030F /* font_enumeration.cpp */,
 				9A64C19D2660C6730074030F /* font_enumeration.h */,
+				9AE12D952661D4C0009F476A /* font_enumeration.mm */,
 				9A64C19E2660C6730074030F /* framework.cpp */,
 				9A64C1B12660C6730074030F /* framework.h */,
 				9A64C1A92660C6730074030F /* write_text.cpp */,
 				9A64C19A2660C6730074030F /* write_text.h */,
-				9AE12D952661D4C0009F476A /* enum.mm */,
 			);
 			name = write_text_quartz2d;
 			sourceTree = "<group>";
@@ -157,7 +159,7 @@
 			files = (
 				9A64C1CA2660C6730074030F /* _.h in Headers */,
 				9A64C1C82660C6730074030F /* framework.h in Headers */,
-				9A64C1C92660C6730074030F /* font_department.h in Headers */,
+				9A64C1C92660C6730074030F /* fonts.h in Headers */,
 				9A64C1C22660C6730074030F /* font_enumeration.h in Headers */,
 				9A64C1C12660C6730074030F /* write_text.h in Headers */,
 			);
@@ -252,10 +254,10 @@
 			files = (
 				9A64C1C42660C6730074030F /* _.cpp in Sources */,
 				9A64C1C72660C6730074030F /* factory_exchange.cpp in Sources */,
-				9A64C1C62660C6730074030F /* font_department.cpp in Sources */,
+				9A64C1C62660C6730074030F /* fonts.cpp in Sources */,
 				9A64C1C32660C6730074030F /* framework.cpp in Sources */,
 				9A64C1C52660C6730074030F /* write_text.cpp in Sources */,
-				9AE12D962661D4C0009F476A /* enum.mm in Sources */,
+				9AE12D962661D4C0009F476A /* font_enumeration.mm in Sources */,
 				9A64C1C02660C6730074030F /* font_enumeration.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

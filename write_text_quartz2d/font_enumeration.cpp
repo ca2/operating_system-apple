@@ -25,6 +25,8 @@ namespace write_text_quartz2d
 
    ::e_status font_enumeration::on_enumerate_fonts()
    {
+      
+      __defer_construct_new(m_pfontenumerationitema);
 
       char ** ppszFontNames = nullptr;
 
@@ -47,7 +49,7 @@ namespace write_text_quartz2d
             
             auto pfontenumerationitem = __new(::write_text::font_enumeration_item(pszFontName, pszFontName));
 
-            m_pitema->add(pfontenumerationitem);
+            m_pfontenumerationitema->add(pfontenumerationitem);
 
             free(pszFontName);
 

@@ -54,6 +54,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A3D15FD266EEC8A00AE9A5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A741586266BD07800552531 /* apex_apple.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A15A597264B53DC0080670E;
+			remoteInfo = apex_apple;
+		};
 		9A74157F266BCDCE00552531 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
@@ -137,6 +144,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A3D15FA266EEC8A00AE9A5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A3D15FE266EEC8A00AE9A5E /* libapex_apple.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9A74157B266BCDCE00552531 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +319,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 9A3D15FA266EEC8A00AE9A5E /* Products */;
+					ProjectRef = 9A741586266BD07800552531 /* apex_apple.xcodeproj */;
+				},
+				{
 					ProductGroup = 9A74157B266BCDCE00552531 /* Products */;
 					ProjectRef = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
 				},
@@ -317,6 +336,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		9A3D15FE266EEC8A00AE9A5E /* libapex_apple.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libapex_apple.dylib;
+			remoteRef = 9A3D15FD266EEC8A00AE9A5E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9A741580266BCDCE00552531 /* libaudio.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";

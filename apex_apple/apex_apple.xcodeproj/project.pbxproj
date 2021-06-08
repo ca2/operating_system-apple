@@ -38,6 +38,13 @@
 			remoteGlobalIDString = 9A0C1680264A29B800B5CC33;
 			remoteInfo = apex_posix;
 		};
+		9A413CDE266EC33F00C3FF0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A788039264F6A28003DF8A0 /* apex_posix.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A0C1680264A29B800B5CC33;
+			remoteInfo = apex_posix;
+		};
 		9A788044264F6A28003DF8A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A15A608264B551B0080670E /* acme_apple.xcodeproj */;
@@ -132,6 +139,14 @@
 			isa = PBXGroup;
 			children = (
 				9A41255F266DD82F00C3FF0E /* libapex_posix.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A413CDB266EC33F00C3FF0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A413CDF266EC33F00C3FF0E /* libapex_posix.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +257,10 @@
 					ProjectRef = 9A15A608264B551B0080670E /* acme_apple.xcodeproj */;
 				},
 				{
+					ProductGroup = 9A413CDB266EC33F00C3FF0E /* Products */;
+					ProjectRef = 9A788039264F6A28003DF8A0 /* apex_posix.xcodeproj */;
+				},
+				{
 					ProductGroup = 9A412559266DD82E00C3FF0E /* Products */;
 					ProjectRef = 9A412558266DD82E00C3FF0E /* apex_posix.xcodeproj */;
 				},
@@ -266,6 +285,13 @@
 			fileType = "compiled.mach-o.dylib";
 			path = libapex_posix.dylib;
 			remoteRef = 9A41255E266DD82F00C3FF0E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A413CDF266EC33F00C3FF0E /* libapex_posix.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libapex_posix.dylib;
+			remoteRef = 9A413CDE266EC33F00C3FF0E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

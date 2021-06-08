@@ -1,53 +1,49 @@
 #include "framework.h"
 
 
-//namespace music
-//{
-//   
-//   
-//   namespace midi
-//   {
-//      
-//      
-//      namespace core_midi
-//      {
-//         
-//
-//         factory_exchange::factory_exchange()
-//         {
-//
-//            //create_factory < sequence        , ::music::midi::sequence >();
-//            create_factory < file            , ::music::midi::file>();
-//            //create_factory < sequence_thread , ::music::midi::sequence_thread>();
-//            create_factory < player          , ::music::midi::player>();
-//            create_factory < midi            , ::music::midi::midi> ();
-//
-//         }
-//
-//
-//         factory_exchange::~factory_exchange()
-//         {
-//         }
-//
-//         
-//      } // namespace core_midi
-//
-//      
-//   } // namespace midi
-//
-//
-//} // namespace music
-//
-
-extern "C" void music_midi_core_midi_factory_exchange(::factory_map * pfactorymap)
+namespace music
 {
 
-   //::music::midi::core_midi::factory_exchange factoryexchange();
-   //create_factory < sequence        , ::music::midi::sequence >();
-//   create_factory < ::music::midi::core_midi::buffer            , ::music::midi::file>();
-//   //create_factory < sequence_thread , ::music::midi::sequence_thread>();
-//   create_factory < ::music::midi::core_midi::player          , ::music::midi::player>();
-   create_factory < ::music::midi::core_midi::midi            , ::music::midi::midi> ();
+
+   namespace midi
+   {
+      
+      namespace port
+      {
+
+
+      factory_exchange::factory_exchange(::aura::application * papp) :
+      ::object(papp)
+      {
+
+         System.factory().cloneable_large < sequence               >  (System.type_info < ::music::midi::sequence                  > ());
+         System.factory().cloneable_large < buffer              >  (System.type_info < ::music::midi::file::buffer                 > ());
+         System.factory().cloneable_large < sequence_thread              >  (System.type_info < ::music::midi::sequence_thread                 > ());
+         System.factory().cloneable_large < ::music::midi::port::player::player              >  (System.type_info < ::music::midi::player::player                 > ());
+         System.factory().cloneable_large < ::music::midi::port::player:: player              >  (System.type_info < ::music::midi::player::player                 > ());
+         System.factory().cloneable_large < ::music::midi::port::midi              >  (System.type_info < ::music::midi::midi               > ());
+
+      }
+
+
+      factory_exchange::~factory_exchange()
+      {
+      }
+
+      } // namespace port
+
+   } // namespace midi
+
+
+} // namespace music
+
+
+extern "C"
+void factory_exchange(::aura::application * papp)
+{
+
+   ::music::midi::port::factory_exchange factoryexchange(papp);
+
 }
 
 

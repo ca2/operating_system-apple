@@ -31,6 +31,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A413D75266EDEA500C3FF0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5D72DE26550CC900D5C39E /* aura.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A98A6151771D67E000AE16E;
+			remoteInfo = aura;
+		};
+		9A413D77266EDEA500C3FF0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5D72DE26550CC900D5C39E /* aura.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A20198A24772E9000A31CBF;
+			remoteInfo = ios_aura;
+		};
+		9A413D79266EDEA500C3FF0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5D72DE26550CC900D5C39E /* aura.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AE24D431904CEFE001AEFFB;
+			remoteInfo = aura_iosTests;
+		};
 		9A5D72C426550BED00D5C39E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A5D72BF26550BED00D5C39E /* acme.xcodeproj */;
@@ -228,6 +249,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9A413D69266EDEA500C3FF0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A413D76266EDEA500C3FF0E /* libaura.dylib */,
+				9A413D78266EDEA500C3FF0E /* libios_aura.a */,
+				9A413D7A266EDEA500C3FF0E /* aura_iosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9A5D72C026550BED00D5C39E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +442,10 @@
 					ProjectRef = 9A5D73292655118700D5C39E /* aura.xcodeproj */;
 				},
 				{
+					ProductGroup = 9A413D69266EDEA500C3FF0E /* Products */;
+					ProjectRef = 9A5D72DE26550CC900D5C39E /* aura.xcodeproj */;
+				},
+				{
 					ProductGroup = 9AC2D04B2653DBA900CC8096 /* Products */;
 					ProjectRef = 9AC2D04A2653DBA900CC8096 /* aura_posix.xcodeproj */;
 				},
@@ -423,6 +458,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		9A413D76266EDEA500C3FF0E /* libaura.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libaura.dylib;
+			remoteRef = 9A413D75266EDEA500C3FF0E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A413D78266EDEA500C3FF0E /* libios_aura.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libios_aura.a;
+			remoteRef = 9A413D77266EDEA500C3FF0E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A413D7A266EDEA500C3FF0E /* aura_iosTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = aura_iosTests.xctest;
+			remoteRef = 9A413D79266EDEA500C3FF0E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9A5D72C526550BED00D5C39E /* libacme.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
@@ -612,7 +668,7 @@
 					"$(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/library/$(CONFIGURATION)",
 					"$(WorkspaceDir)/time/$(PLATFORM_MODIFIER)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -694,7 +750,7 @@
 					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)/storage-$(PLATFORM_MODIFIER)/third/library/$(CONFIGURATION)",
 					"$(WorkspaceDir)/time/$(PLATFORM_MODIFIER)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;

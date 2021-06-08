@@ -3,44 +3,41 @@
 
 namespace music
 {
-   
-   
+
    namespace midi
    {
       
-      
-      namespace core_midi
-      {
-         
-CLASS_DECL_MUSIC_MIDI_CORE_MIDI ::e_status     translate_os_status(OSStatus status)
+      namespace port
       {
 
-
-         switch(status)
+/*
+      ::multimedia::e_result TranslateSMFResult(::music::e_result               smfrc)
+      {
+         switch(smfrc)
          {
+         case ::music::midi::Success:
+            return MMSYSERR_NOERROR;
 
-         case noErr:
+         case ::music::midi::file::ENoMemory:
+            return MCIERR_OUT_OF_MEMORY;
 
-            return ::success;
+         case ::music::midi::file::EInvalidFile:
+         case ::music::midi::file::EOpenFailed:
+         case ::music::midi::file::EInvalidTrack:
+            return MCIERR_INVALID_FILE;
 
          default:
-
-            break;
-
+            return MCIERR_UNSUPPORTED_FUNCTION;
          }
-
-         return ::error_midi;
-
       }
-         
-         
-      } // namespace core_midi
       
+      */
 
-   } // namespace midi
-
-
-} // namespace music
-
+         
+      } // namespace port
 
 
+   } // namespace midi_core_midi
+
+
+} // namespace music      

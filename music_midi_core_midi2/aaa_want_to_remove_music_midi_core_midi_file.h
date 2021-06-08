@@ -86,11 +86,11 @@ namespace music
 
              ::e_status     SaveFile(const char * lpFilePath);
 
-             ::e_status     WorkWriteXFTracks(string_array & tokena, imedia_position_array & positiona, ::music::xf::info_header & xfinfoheader);
+             ::e_status     WorkWriteXFTracks(string_array & tokena, imedia_time_array & positiona, ::music::xf::info_header & xfinfoheader);
 
-             i32 CalcMelodyTrack(::music::midi::events ** ppEvents, imedia_position_array * pTicks);
+             i32 CalcMelodyTrack(::music::midi::events ** ppEvents, imedia_time_array * pTicks);
 
-             i32 WorkCalcMelodyTrack(::music::midi::events ** ppEvents, imedia_position_array & positiona, int_array & iaTokenLine);
+             i32 WorkCalcMelodyTrack(::music::midi::events ** ppEvents, imedia_time_array & positiona, int_array & iaTokenLine);
 
              i32 GetFormat();
 
@@ -134,13 +134,13 @@ namespace music
 
              iptr TicksToMillisecs(imedia_time tkOffset);
 
-             void TicksToMillisecs(imedia_time_array *pMillisArray, imedia_position_array *pTickArray, iptr tkOffset);
+             void TicksToMillisecs(imedia_time_array *pMillisArray, imedia_time_array *pTickArray, iptr tkOffset);
 
-             void TicksToMillisecs(imedia_time_2darray *p2DMillisArray, imedia_position_2darray * p2DTicksArray, iptr tkOffset);
+             void TicksToMillisecs(imedia_time_2darray *p2DMillisArray, imedia_time_2darray * p2DTicksArray, iptr tkOffset);
 
-             void PositionToTime(imedia_time_2darray  & timea, imedia_position_2darray  & positiona, iptr tkOffset);
+             void PositionToTime(imedia_time_2darray  & timea, imedia_time_2darray  & positiona, iptr tkOffset);
 
-             void PositionToTime(imedia_time_array  & timea, imedia_position_array  & positiona, iptr tkOffset);
+             void PositionToTime(imedia_time_array  & timea, imedia_time_array  & positiona, iptr tkOffset);
 
              imedia_time MillisecsToTicks(imedia_time msOffset);
 
@@ -148,9 +148,9 @@ namespace music
 
              imedia_time TimeToPosition(imedia_time msOffset);
 
-             void MillisecsToTicks(imedia_position_array * pTickArray, imedia_time_array *pMillisArray, imedia_time msOffset);
+             void MillisecsToTicks(imedia_time_array * pTickArray, imedia_time_array *pMillisArray, imedia_time msOffset);
 
-             void TimeToPosition(imedia_position_array & positiona, imedia_time_array & timea, imedia_time msOffset);
+             void TimeToPosition(imedia_time_array & positiona, imedia_time_array & timea, imedia_time msOffset);
 
              ::e_status     StreamRender(LPMIDIHDR lpmh, imedia_time tkMax, u32 cbPrerollNomimalMax);
 

@@ -1794,7 +1794,7 @@ namespace draw2d_quartz2d
 
          ::rectangle_f64 rectIntersect(m_pointAlphaBlend, m_pimageAlphaBlend->size());
 
-         auto rectText = ::rectangle_f64(::point_f64(x, y), ::size_f64(GetTextExtent(block)));
+         auto rectText = ::rectangle_f64(::point_f64(x, y), ::size_f64(get_text_extent(block)));
 
          if (rectIntersect.intersect(rectIntersect, rectText))
          {
@@ -1842,7 +1842,7 @@ namespace draw2d_quartz2d
 //
 //         ::rectangle_f64 rectIntersect(m_pointAlphaBlend, m_pimageAlphaBlend->size());
 //
-//         auto rectText = ::rectangle_f64(point_f64((i32) x, (i32) y), ::size_f64(GetTextExtent(block)));
+//         auto rectText = ::rectangle_f64(point_f64((i32) x, (i32) y), ::size_f64(get_text_extent(block)));
 //
 //         if(rectIntersect.intersect(rectIntersect, rectText))
 //         {
@@ -2027,7 +2027,7 @@ namespace draw2d_quartz2d
    }
 
    
-   bool graphics::get_text_metrics(::write_text::text_metric * pmetric)
+   ::e_status graphics::get_text_metrics(::write_text::text_metric * pmetric)
    {
 
       if(!m_pfont)
@@ -4521,12 +4521,12 @@ namespace draw2d_quartz2d
 //   }
 
 
-   size_f64 graphics::GetTextExtent(const char * lpszString, strsize nCount, i32 iIndex)
+   size_f64 graphics::get_text_extent(const char * lpszString, strsize nCount, i32 iIndex)
    {
 
       size_f64 sz;
 
-      if (!GetTextExtent(sz, lpszString, nCount, iIndex))
+      if (!get_text_extent(sz, lpszString, nCount, iIndex))
          return ::size_f64(0, 0);
 
       return size_f64((int) sz.cx, (int) sz.cy);
@@ -4534,12 +4534,12 @@ namespace draw2d_quartz2d
    }
 
 
-   size_f64 graphics::GetTextExtent(const char * lpszString, strsize nCount)
+   size_f64 graphics::get_text_extent(const char * lpszString, strsize nCount)
    {
 
       ::size_f64 size_f64;
 
-      if(!GetTextExtent(size_f64, lpszString, nCount, (int) nCount))
+      if(!get_text_extent(size_f64, lpszString, nCount, (int) nCount))
       {
          
          return ::size_f64(0, 0);
@@ -4551,12 +4551,12 @@ namespace draw2d_quartz2d
    }
 
 
-   size_f64 graphics::GetTextExtent(const string & str)
+   size_f64 graphics::get_text_extent(const block & block)
    {
 
       ::size_f64 size;
 
-      if(!GetTextExtent(size, str, (int)str.get_length()))
+      if(!get_text_extent(size, (const char *) block.get_data(), (int)block.get_size()))
       {
          
          return ::size_f64(0, 0);
@@ -4586,7 +4586,7 @@ namespace draw2d_quartz2d
    }
 
 
-   bool graphics::GetTextExtent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex)
+   bool graphics::get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex)
    {
 
       synchronous_lock synchronouslock(mutex());
@@ -4624,18 +4624,18 @@ namespace draw2d_quartz2d
    }
 
 
-   bool graphics::GetTextExtent(size_f64 & size, const char * lpszString, strsize nCount)
+   bool graphics::get_text_extent(size_f64 & size, const char * lpszString, strsize nCount)
    {
 
-      return GetTextExtent(size, lpszString, nCount, (i32) nCount);
+      return get_text_extent(size, lpszString, nCount, (i32) nCount);
 
    }
 
 
-   bool graphics::GetTextExtent(size_f64 & size, const string & str)
+   bool graphics::get_text_extent(size_f64 & size, const string & str)
    {
 
-      return ::draw2d::graphics::GetTextExtent(size, str);
+      return ::draw2d::graphics::get_text_extent(size, str);
 
    }
 
@@ -4664,7 +4664,7 @@ namespace draw2d_quartz2d
 //   }
 
 
-   bool graphics::TextOutRaw(double x, double y, const block & block)
+   ::e_status graphics::TextOutRaw(double x, double y, const block & block)
    {
 
       return internal_show_text(x, y, 0, string((const char *) block.get_data(), block.get_size()), kCGTextFill, e_align_top_left, e_draw_text_none, true);

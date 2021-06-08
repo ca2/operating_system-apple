@@ -357,7 +357,7 @@ namespace draw2d_quartz2d
       virtual bool text_out(double x, double y, const block & block) override;
 
 //      virtual bool text_out(double x, double y, const string & str) override;
-      virtual bool TextOutRaw(double x, double y, const block & block) override;
+      ::e_status TextOutRaw(double x, double y, const block & block) override;
 //      virtual bool text_out(double x, double y, const string & str) override;
       virtual bool ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle,
                               const char * lpszString, ::u32 nCount, int * lpDxWidths);
@@ -375,12 +375,12 @@ namespace draw2d_quartz2d
 //      virtual i32 draw_text_ex(char * lpszString, i32 nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams);
 //      virtual bool draw_text_ex(const string & str, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams) override;
 
-      size_f64 GetTextExtent(const char * lpszString, strsize nCount, i32 iIndex);
-      size_f64 GetTextExtent(const char * lpszString, strsize nCount) override;
-      size_f64 GetTextExtent(const string & str) override;
-      bool GetTextExtent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex) ;
-      bool GetTextExtent(size_f64 & size, const char * lpszString, strsize nCount) override;
-      bool GetTextExtent(size_f64 & size, const string & str) override;
+      size_f64 get_text_extent(const char * lpszString, strsize nCount, i32 iIndex);
+      size_f64 get_text_extent(const char * lpszString, strsize nCount) override;
+      size_f64 get_text_extent(const block & block) override;
+      bool get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex) ;
+      bool get_text_extent(size_f64 & size, const char * lpszString, strsize nCount) override;
+      bool get_text_extent(size_f64 & size, const string & str) override;
       size_f64 GetOutputTextExtent(const char * lpszString, strsize nCount) override;
       size_f64 GetOutputTextExtent(const string & str) override;
       size_f64 GetTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions);
@@ -394,7 +394,7 @@ namespace draw2d_quartz2d
       ::u32 SetTextAlign(::u32 nFlags) override;
       i32 GetTextFace(i32 nCount, char * lpszFacename);
       i32 GetTextFace(string & rString) override;
-      bool get_text_metrics(::write_text::text_metric * lpMetrics) override;
+      ::e_status get_text_metrics(::write_text::text_metric * lpMetrics) override;
       bool get_output_text_metrics(::write_text::text_metric * lpMetrics) override;
 //      i32 SetTextJustification(i32 nBreakExtra, i32 nBreakCount) override;
 //      i32 GetTextCharacterExtra() override;

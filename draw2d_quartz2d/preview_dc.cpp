@@ -542,7 +542,7 @@
  if (bSpace || (bTabbed && *lpszCurChar == '\t'))
  {
  // bSpace will be either true (==1) or false (==0).  For spaces
- // we want the space included in the GetTextExtent, for tabs we
+ // we want the space included in the get_text_extent, for tabs we
  // do not want the tab included
  i32 nRunLength = (i32)(lpszCurChar - lpszStartRun) + bSpace;
  

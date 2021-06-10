@@ -7,13 +7,16 @@ namespace music
 
 
    namespace midi
-      {
+   {
          
-         namespace port
-         {
+   
+      namespace port
+      {
 
+      
          class sequence;
 
+      
          class CLASS_DECL_VERIWELL_MULTIMEDIA_MUSIC_MIDI_CORE_MIDI thread :
             virtual public ::thread
          {
@@ -27,11 +30,11 @@ namespace music
             imedia_time         m_tkPosition;
 
 
-            thread(::aura::application * papp);
+            thread();
             virtual ~thread();
 
 
-            virtual void run() override;
+            virtual ::e_status run() override;
 
 
          };

@@ -58,7 +58,7 @@
 
 /* Begin PBXFileReference section */
 		9A4124B0266D924E00C3FF0E /* _write_text_quartz2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _write_text_quartz2d.h; sourceTree = "<group>"; };
-		9A64C1712660C62C0074030F /* libwrite_text_quartz2d.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libwrite_text_quartz2d.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A64C1712660C62C0074030F /* lib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = lib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A64C1992660C6730074030F /* font_enumeration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = font_enumeration.cpp; sourceTree = "<group>"; };
 		9A64C19A2660C6730074030F /* write_text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = write_text.h; sourceTree = "<group>"; };
 		9A64C19D2660C6730074030F /* font_enumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font_enumeration.h; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		9A64C1722660C62C0074030F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A64C1712660C62C0074030F /* libwrite_text_quartz2d.dylib */,
+				9A64C1712660C62C0074030F /* lib.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,7 +183,7 @@
 			);
 			name = write_text_quartz2d;
 			productName = write_text_quartz2d;
-			productReference = 9A64C1712660C62C0074030F /* libwrite_text_quartz2d.dylib */;
+			productReference = 9A64C1712660C62C0074030F /* lib.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -331,10 +331,11 @@
 					"$(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/library/$(CONFIGURATION)",
 					"$(WorkspaceDir)/time/$(PLATFORM_MODIFIER)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = (
 					.,
@@ -410,9 +411,10 @@
 					"$(WorkspaceDir)/archive/platform-$(PLATFORM_MODIFIER)/storage-$(PLATFORM_MODIFIER)/third/library/$(CONFIGURATION)",
 					"$(WorkspaceDir)/time/$(PLATFORM_MODIFIER)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = (
 					.,
@@ -437,30 +439,16 @@
 		9A64C17B2660C62D0074030F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L8N5V6TZE5;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = "$(WorkspaceDir)/platform/thirdparty/include";
 				PLATFORM_MODIFIER = macos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		9A64C17C2660C62D0074030F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L8N5V6TZE5;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = "$(WorkspaceDir)/platform/thirdparty/include";
 				PLATFORM_MODIFIER = macos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};

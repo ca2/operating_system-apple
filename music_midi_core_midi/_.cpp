@@ -372,8 +372,7 @@ namespace music
       * Returns the state size in bytes.
       *
       *****************************************************************************/
-      uint32_t GetStateMaxSize(
-         VOID)
+      uint32_t GetStateMaxSize()
       {
          return  3*sizeof(uint32_t) +           /* Tempo                */
             3*16*sizeof(uint32_t) +        /* Patch changes        */

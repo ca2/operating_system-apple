@@ -1,5 +1,5 @@
 #include "framework.h"
-#include "acme/node/posix/pipe.h"
+#include "acme_posix/pipe.h"
 #include "apex/platform/static_start.h"
 #include "process.h"
 
@@ -13,7 +13,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 #endif
-
 
 
 
@@ -58,6 +57,8 @@ namespace ansios
 
       posix_spawnattr_init(&attr);
 
+#ifndef __APPLE__
+
       if(epriority != ::priority_normal && epriority != ::priority_none)
       {
 
@@ -68,12 +69,14 @@ namespace ansios
          schedparam.sched_priority = 0;
 
          process_get_os_priority(&iPolicy,&schedparam,epriority);
-
+         
          posix_spawnattr_setschedpolicy(&attr,iPolicy);
 
          posix_spawnattr_setschedparam(&attr,&schedparam);
-
+         
       }
+
+#endif
 
       posix_spawn_file_actions_t actions;
 
@@ -96,7 +99,7 @@ namespace ansios
 
       address_array < char * > env;
 
-      char * const * e = environ;
+      auto envp = m_psystem->m_envp;
 
       string strFallback;
 
@@ -109,10 +112,15 @@ namespace ansios
 
          const char * psz;
 
-         while((psz = environ[i]) != nullptr)
+         while((psz = envp[i]) != nullptr)
          {
+            
             if(i <= iPrevious)
+            {
+               
                break;
+               
+            }
 
             env.add((char *) psz);
 
@@ -124,8 +132,6 @@ namespace ansios
 
          env.add(nullptr);
 
-         e = (char * const *)env.get_data();
-
       }
 
       int status = 0;
@@ -134,7 +140,7 @@ namespace ansios
 
          critical_section_lock synchronouslock(get_pid_cs());
 
-         status = posix_spawn(&m_iPid,argv[0],&actions,&attr,(char * const *)argv.get_data(),e);
+         status = posix_spawn(&m_iPid,argv[0],&actions,&attr,(char * const *)argv.get_data(),env.get_data());
 
          init_chldstatus(m_iPid);
 
@@ -276,12 +282,14 @@ namespace ansios
       posix_spawn_file_actions_init(&actions);
 
       int status= 0;
+      
+      auto envp = m_psystem->m_envp;
 
       {
 
          critical_section_lock synchronouslock(get_pid_cs());
 
-         status = posix_spawn(&m_iPid,argv[0],&actions,&attr,(char * const *)argv.get_data(),environ);
+         status = posix_spawn(&m_iPid,argv[0],&actions,&attr,(char * const *)argv.get_data(),envp);
 
          init_chldstatus(m_iPid);
 
@@ -300,7 +308,7 @@ namespace ansios
 
       }
 
-      ::u32 dwExitCode = 0;
+      //::u32 dwExitCode = 0;
 
       if(!has_exited())
       {

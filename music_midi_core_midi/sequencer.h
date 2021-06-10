@@ -28,6 +28,8 @@ namespace music
          public:
             
             
+            __pointer(::music::midi::core_midi::midi) m_pmidi;
+            
             
             sequencer(::music::midi::sequence * psequence, const string & strDevice);
             virtual ~sequencer();

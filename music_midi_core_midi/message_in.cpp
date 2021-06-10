@@ -21,16 +21,16 @@ namespace music
       {
 
          
-         message_in::message_in()
-         {
-            
-         }
+//         message_in::message_in()
+//         {
+//
+//         }
 
 
-         message_in::message_in(::object * pobject, string driver)
+      message_in::message_in(::music::midi::core_midi::midi * pmidi, const string & strDriver)
          {
             
-            auto estatus = initialize(pobject);
+            auto estatus = initialize(pmidi);
             
             if(!estatus)
             {
@@ -38,7 +38,8 @@ namespace music
                throw ::exception::exception(estatus);
                
             }
-            
+
+            m_pmidi = pmidi;
 
             m_packetlist = nullptr;
             
@@ -56,23 +57,23 @@ namespace music
                
                str.Format("MIDIOutputPortCreate failed with code %i\n", (int) result);
                
-               throw resource_exception(str);
+               __throw(error_resource, str);
                
             }
 
             bool bFound = false;
             
-            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
+//            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
             
-            if(pmidi)
+            //if(pmidi)
             {
             
-               auto sources  = pmidi->get_source_endpoints();
+               auto sources = m_pmidi->get_source_endpoints();
             
                for (unsigned int n = 0; n < sources.size(); n++)
                {
                   
-                  if (sources[n].m_strName == driver)
+                  if (sources[n].m_strName == strDriver)
                   {
                      
                      m_endpoint = sources[n].m_endpoint;
@@ -91,7 +92,7 @@ namespace music
                   for (unsigned int n = 0; n < sources.size(); n++)
                   {
                      
-                     if (sources[n].m_strName == driver)
+                     if (sources[n].m_strName == strDriver)
                      {
                      
                         m_endpoint = sources[n].m_endpoint;
@@ -120,10 +121,10 @@ namespace music
          }
 
      
-         message_in::message_in(::object * pobject, int iPort)
+         message_in::message_in(::music::midi::core_midi::midi * pmidi, int iPort)
          {
          
-            auto estatus = initialize(pobject);
+            auto estatus = initialize(pmidi);
          
             if(!estatus)
             {
@@ -131,6 +132,8 @@ namespace music
                throw ::exception::exception(estatus);
                
             }
+            
+            m_pmidi = pmidi;
             
             estatus = open(iPort);
 
@@ -169,12 +172,12 @@ namespace music
             
             bool bFound = false;
             
-            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
-            
-            if(pmidi)
+//            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
+//
+//            if(pmidi)
             {
             
-               auto sources  = pmidi->get_source_endpoints();
+               auto sources  = m_pmidi->get_source_endpoints();
             
                if(iPort >= 0 && iPort < sources.size())
                {
@@ -385,7 +388,7 @@ namespace music
          }
          
          
-         void message_in::step()
+         ::e_status message_in::step()
          {
             
 //            if(m_packetlist)

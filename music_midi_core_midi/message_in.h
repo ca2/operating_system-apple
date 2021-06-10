@@ -21,6 +21,7 @@
  with this program; if not, write to the Free Software Foundation, Inc.,
  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
+#pragma once
 
 
 namespace music
@@ -45,6 +46,8 @@ namespace music
          {
          public:
             
+            
+            __pointer(::music::midi::core_midi::midi) m_pmidi;
 
             u64                m_ui64Start;
 
@@ -61,9 +64,11 @@ namespace music
             MIDIPacket * m_packet;
 
 
-            message_in();
-            message_in(::object * pobject, string driver);
-            message_in(::object * pobject, int iPort);
+            message_in(::music::midi::core_midi::midi * pmidi, const string & strDriver);
+            message_in(::music::midi::core_midi::midi * pmidi, int iPort);
+            //message_in();
+            //message_in(::object * pobject, string driver);
+            //message_in(::object * pobject, int iPort);
             virtual ~message_in();
             
             virtual ::e_status open(int iPort) override;
@@ -80,7 +85,7 @@ namespace music
             virtual void pitch_bend(int iChannel, unsigned short ushBend) override;
             virtual void sysex(const ::block & block) override;
             
-            virtual void step() override;
+            virtual ::e_status step() override;
             
             virtual void reset_all_controllers() override;
             

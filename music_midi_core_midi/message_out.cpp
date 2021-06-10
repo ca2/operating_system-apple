@@ -21,16 +21,16 @@ namespace music
       {
 
 
-      message_out::message_out()
-         {
-            
-         }
+//      message_out::message_out()
+//         {
+//            
+//         }
          
 
-         message_out::message_out(::object * pobject, string driver)
+         message_out::message_out(::music::midi::core_midi::midi * pmidi, const string & strDriver)
          {
             
-            auto estatus = initialize(pobject);
+            auto estatus = initialize(pmidi);
             
             if(!estatus)
             {
@@ -38,6 +38,8 @@ namespace music
                throw ::exception::exception(estatus);
                
             }
+            
+            m_pmidi = pmidi;
             
             m_packetlist = nullptr;
             
@@ -52,23 +54,23 @@ namespace music
                
                str.Format("MIDIOutputPortCreate failed with code %i\n", (int) result);
                
-               throw resource_exception(str);
+               __throw(error_resource, str);
                
             }
 
             bool bFound = false;
             
-            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
-            
-            if(pmidi)
+//            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
+//
+//            if(pmidi)
             {
             
-               auto destinations  = pmidi->get_destination_endpoints();
+               auto destinations  = m_pmidi->get_destination_endpoints();
             
                for (unsigned int n = 0; n < destinations.size(); n++)
                {
                   
-                  if (destinations[n].m_strName == driver)
+                  if (destinations[n].m_strName == strDriver)
                   {
                      
                      m_endpoint = destinations[n].m_endpoint;
@@ -87,7 +89,7 @@ namespace music
                   for (unsigned int n = 0; n < destinations.size(); n++)
                   {
                      
-                     if (destinations[n].m_strName == driver)
+                     if (destinations[n].m_strName == strDriver)
                      {
                      
                         m_endpoint = destinations[n].m_endpoint;
@@ -116,17 +118,17 @@ namespace music
             if(!m_port || !m_endpoint)
             {
                
-               __throw(resource_exception("either no Output Port or no Destination Endpoint"));
+               __throw(error_resource, "either no Output Port or no Destination Endpoint");
                
             }
             
          }
 
      
-         message_out::message_out(::object * pobject, int iPort)
+         message_out::message_out(::music::midi::core_midi::midi * pmidi, int iPort)
          {
    
-            auto estatus = initialize(pobject);
+            auto estatus = initialize(pmidi);
             
             if(!estatus)
             {
@@ -134,6 +136,8 @@ namespace music
                throw ::exception::exception(estatus);
                
             }
+            
+            m_pmidi = pmidi;
             
             estatus = open(iPort);
             
@@ -167,12 +171,12 @@ namespace music
             
             bool bFound = false;
             
-            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
-            
-            if(pmidi)
+//            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
+//
+//            if(pmidi)
             {
             
-               auto destinations  = pmidi->get_destination_endpoints();
+               auto destinations  = m_pmidi->get_destination_endpoints();
             
                if(iPort >= 0 && iPort < destinations.size())
                {
@@ -342,7 +346,7 @@ namespace music
          }
          
          
-         void message_out::step()
+         ::e_status message_out::step()
          {
             
             if(m_packetlist)
@@ -364,7 +368,7 @@ namespace music
          }
 
 
-         void message_out::start()
+         ::e_status message_out::start()
          {
 
             

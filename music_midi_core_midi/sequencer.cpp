@@ -42,9 +42,11 @@ namespace music
          ::music::midi::sequencer(psequence, strDevice)
          {
            
-            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
-            
-//            __pointer(::music::midi::core_midi::midi) pmidiCoreMidi = pmidi->m_pmidiCoreMidi;
+            auto psystem = m_psystem->m_paquasystem;
+ 
+            auto pmultimedia = psystem->multimedia()->m_pveriwellmultimedia;
+ 
+            m_pmidi = pmultimedia->midi()->get_device_midi(strDevice);
             
             index iDevice = m_iDevice;
             
@@ -55,7 +57,7 @@ namespace music
                
             }
             
-            auto pmessageout = pmidi->get_message_out(strDevice);
+            auto pmessageout = m_pmidi->get_message_out(strDevice);
             
             m_pmessageout = pmessageout;
 
@@ -64,6 +66,7 @@ namespace music
       
          sequencer::~sequencer()
          {
+            
          }
       
          

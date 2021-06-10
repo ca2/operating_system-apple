@@ -61,6 +61,13 @@
 			remoteGlobalIDString = 9A15A597264B53DC0080670E;
 			remoteInfo = apex_apple;
 		};
+		9A637E5626723FC7005D0AC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A741586266BD07800552531 /* apex_apple.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A15A596264B53DC0080670E;
+			remoteInfo = apex_apple;
+		};
 		9A74157F266BCDCE00552531 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
@@ -290,6 +297,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A637E5726723FC7005D0AC3 /* PBXTargetDependency */,
 				9A741584266BCDE200552531 /* PBXTargetDependency */,
 			);
 			name = audio_core_audio;
@@ -393,6 +401,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9A637E5726723FC7005D0AC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = apex_apple;
+			targetProxy = 9A637E5626723FC7005D0AC3 /* PBXContainerItemProxy */;
+		};
 		9A741584266BCDE200552531 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = audio;

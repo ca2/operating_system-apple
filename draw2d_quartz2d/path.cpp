@@ -377,10 +377,10 @@ namespace draw2d_quartz2d
    bool path::_set(::draw2d::graphics * pgraphics, const ::line & line)
    {
       
-      if(line.m_p1 != m_pointBeg)
+      if(line.m_p1 != m_pointEnd)
       {
          
-         internal_add_line(line.m_p1.x, line.m_p1.y);
+         internal_add_move(line.m_p1.x, line.m_p1.y);
          
       }
       

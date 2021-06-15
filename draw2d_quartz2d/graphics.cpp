@@ -1789,7 +1789,7 @@ namespace draw2d_quartz2d
    bool graphics::text_out(double x, double y, const ::block & block)
    {
 
-      if (m_pimageAlphaBlend->is_set())
+      if (m_pimageAlphaBlend)
       {
 
          ::rectangle_f64 rectIntersect(m_pointAlphaBlend, m_pimageAlphaBlend->size());

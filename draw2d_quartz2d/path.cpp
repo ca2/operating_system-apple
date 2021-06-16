@@ -97,14 +97,13 @@ namespace draw2d_quartz2d
    }
    
    
-   bool path::internal_add_line(int x1, int y1, int x2, int y2)
+   bool path::internal_add_line(double x1, double y1, double x2, double y2)
    {
       
       x1+= m_pointOffset.x;
       y1+= m_pointOffset.y;
       x2+= m_pointOffset.x;
       y2+= m_pointOffset.y;
-
 
       if(CGPathIsEmpty(m_path))
       {
@@ -121,17 +120,24 @@ namespace draw2d_quartz2d
 
       CGPathAddLineToPoint(m_path, nullptr, x2, y2);
       
+      m_pointBegin.x = x1;
+      m_pointBegin.y = y1;
+      m_pointEnd.x = x2;
+      m_pointEnd.y = y2;
+      
+      
       return true;
       
    }
    
    
-   bool path::internal_add_line(int x, int y)
+   bool path::internal_add_line(double x, double y)
    {
       
       x+= m_pointOffset.x;
       y+= m_pointOffset.y;
-
+      
+      m_pointBegin = m_pointEnd;
       
       if(CGPathIsEmpty(m_path))
       {
@@ -146,16 +152,20 @@ namespace draw2d_quartz2d
          
       }
       
+      m_pointEnd.x = x;
+      m_pointEnd.y = y;
+      
+      
       return true;
       
    }
 
-   bool path::internal_add_text_out(int x, int y, const string & strText, ::write_text::font * pfont, ::draw2d_quartz2d::graphics * p)
+
+   bool path::internal_add_text_out(double x, double y, const string & strText, ::write_text::font * pfont, ::draw2d_quartz2d::graphics * p)
    {
       
       x+= m_pointOffset.x;
       y+= m_pointOffset.y;
-
       
       CGContextSaveGState(p->m_pdc);
       
@@ -171,20 +181,26 @@ namespace draw2d_quartz2d
       
    }
    
-   bool path::internal_add_move(int x, int y)
+
+   bool path::internal_add_move(double x, double y)
    {
       
       x+= m_pointOffset.x;
       y+= m_pointOffset.y;
       
+      m_pointBegin = m_pointEnd;
+      
+      
       CGPathMoveToPoint(m_path, nullptr, x, y);
+      
+      m_pointEnd.x = x;
+      m_pointEnd.y = y;
       
       m_bBegin = false;
       
       return true;
       
    }
-   
    
    
    void * path::detach()
@@ -200,16 +216,6 @@ namespace draw2d_quartz2d
    }
    
    
-//   void * path::get_os_data() const
-//   {
-//
-//      defer_update();
-//
-//      return m_path;
-//
-//
-//   }
-   
    void path::destroy()
    {
       
@@ -222,8 +228,6 @@ namespace draw2d_quartz2d
          
       }
       
-      //return true;
-      
    }
    
    
@@ -232,12 +236,7 @@ namespace draw2d_quartz2d
       
       m_path = CGPathCreateMutable();
       
-      //for(i32 i = 0; i < m_elementa.get_count(); i++)
-      //{
-         
-         _set_create(pgraphics);
-         
-      //}
+      _set_create(pgraphics);
       
       m_osdata[0] = m_path;
       
@@ -245,34 +244,6 @@ namespace draw2d_quartz2d
       
    }
 
-   
-//   bool path::set(const ::draw2d::path::matter & e)
-//   {
-//
-//      switch(e.m_etype)
-//      {
-//         case ::draw2d::path::matter::type_move:
-//            set(e.u.m_move);
-//            break;
-//         case ::draw2d::path::matter::type_arc:
-//            set(e.u.m_arc);
-//            break;
-//         case ::draw2d::path::matter::type_line:
-//            set(e.u.m_line);
-//            break;
-//         case ::draw2d::path::matter::e_type_string:
-////            set(e.m_stringpath);
-//            break;
-//         case ::draw2d::path::matter::type_end:
-//            internal_end_figure(e.u.m_end.m_bClose);
-//            break;
-//         default:
-//            __throw(::exception::exception("unexpected simple os graphics matter type"));
-//      }
-//
-//      return false;
-//
-//   }
    
    
    bool path::_set(::draw2d::graphics * pgraphics, const ::enum_shape & eshape)

@@ -2,7 +2,6 @@
 
 
 #include "app-core/audio/audio/_.h"
-#include <AudioToolbox/AudioToolbox.h>
 
 
 #if defined(_AUDIO_MMSYSTEM_LIBRARY)
@@ -12,20 +11,4 @@
 #endif
 
 
-#include "aligned_pointer.h"
-#include "aligned.h"
 
-
-#include "translation.h"
-
-
-#include "toolbox.h"
-
-
-#include "wave_out.h"
-#include "wave_in.h"
-
-
-
-
-#include "factory_exchange.h"

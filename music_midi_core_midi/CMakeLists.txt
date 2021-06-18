@@ -10,8 +10,8 @@ list(APPEND library_source
         #database.h
         factory_exchange.cpp
         factory_exchange.h
-        #framework.cpp
-        #framework.h
+        framework.cpp
+        framework.h
 )
 
 list(APPEND library_references

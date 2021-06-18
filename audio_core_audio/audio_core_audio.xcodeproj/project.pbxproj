@@ -121,6 +121,7 @@
 		9AC9451B1828E7CE00AA7325 /* aligned_pointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aligned_pointer.h; sourceTree = "<group>"; };
 		9AC9451E18290B7700AA7325 /* aligned.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aligned.cpp; sourceTree = "<group>"; };
 		9AC9451F18290B7700AA7325 /* aligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aligned.h; sourceTree = "<group>"; };
+		9AEA2378267B12A1006F4A68 /* _audio_core_audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _audio_core_audio.h; sourceTree = "<group>"; };
 		9AF4C48F1F83DD7500197385 /* libios_audio_core_audio.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_audio_core_audio.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1CFD778154F5EAA007447E2 /* libaudio_core_audio.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libaudio_core_audio.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -208,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				9A8EAF3217C563A300C458D1 /* _.h */,
+				9AEA2378267B12A1006F4A68 /* _audio_core_audio.h */,
 				9A8EAF2817C563A300C458D1 /* command.h */,
 				9A8EAF2917C563A300C458D1 /* factory_exchange.cpp */,
 				9A8EAF2A17C563A300C458D1 /* factory_exchange.h */,

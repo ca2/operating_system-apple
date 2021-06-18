@@ -1,31 +1,20 @@
 cmake_minimum_required(VERSION 3.17)
-project(aura_posix CXX)
+project(aura_apple CXX)
 
 
-list(APPEND aura_posix_source
+list(APPEND library_source
    _.cpp
    _.h
-   _aura_posix.h
-   appindicator.cpp
-   appindicator.h
-   display_lock.cpp
-   display_lock.h
+   _aura_apple.h
+        _mm.h
    factory_exchange.cpp
    factory_exchange.h
    framework.cpp
    framework.h
-   #application.cpp
-   #application.h
    node.cpp
    node.h
-   shell.cpp
-   shell.h
-   x_window.cpp
-   x_window.h
-   x_window_system.cpp
-   x_window_system.h
-   xim_keyboard.cpp
-   xim_keyboard.h
+        user.h
+
    )
 
 
@@ -39,31 +28,31 @@ list(APPEND library_references
    )
 
 
-add_library(aura_posix SHARED ${aura_posix_source})
+add_library(aura_apple SHARED ${library_source})
 
-target_precompile_headers(aura_posix PRIVATE framework.h)
+target_precompile_headers(aura_apple PRIVATE framework.h)
 
-set_target_properties(aura_posix PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(aura_apple PROPERTIES LINKER_LANGUAGE CXX)
 
 
 if (MSVC)
 
 
-   target_compile_options(aura_posix PRIVATE "/MD$<$<CONFIG:Debug>:d>")
-   target_link_options(aura_posix PRIVATE "/DEFAULTLIB:msvcrt$<$<CONFIG:Debug>:d>")
-   target_link_options(aura_posix PRIVATE "/SUBSYSTEM:WINDOWS")
-   target_link_libraries(aura_posix PRIVATE ${library_references})
+   target_compile_options(aura_apple PRIVATE "/MD$<$<CONFIG:Debug>:d>")
+   target_link_options(aura_apple PRIVATE "/DEFAULTLIB:msvcrt$<$<CONFIG:Debug>:d>")
+   target_link_options(aura_apple PRIVATE "/SUBSYSTEM:WINDOWS")
+   target_link_libraries(aura_apple PRIVATE ${library_references})
 
 
 elseif (LINUX)
 
 
    pkg_check_modules(PKGCONFIG x11 x11-xcb)
-   target_compile_options(aura_posix PRIVATE -fpermissive)
-   target_compile_options(aura_posix PRIVATE ${PKGCONFIG_CFLAGS})
-   target_link_options(aura_posix PRIVATE -Wl,-rpath=\$ORIGIN)
-   target_link_libraries(aura_posix PRIVATE ${library_references} ${PKGCONFIG_LIBRARIES})
-   target_link_options(aura_posix PRIVATE -Wl,-z,defs)
+   target_compile_options(aura_apple PRIVATE -fpermissive)
+   target_compile_options(aura_apple PRIVATE ${PKGCONFIG_CFLAGS})
+   target_link_options(aura_apple PRIVATE -Wl,-rpath=\$ORIGIN)
+   target_link_libraries(aura_apple PRIVATE ${library_references} ${PKGCONFIG_LIBRARIES})
+   target_link_options(aura_apple PRIVATE -Wl,-z,defs)
 
 
 endif ()
@@ -71,9 +60,9 @@ endif ()
 
 
 
-target_include_directories(aura_posix PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../..)
-target_include_directories(aura_posix PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
-target_include_directories(aura_posix PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(aura_apple PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../..)
+target_include_directories(aura_apple PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
+target_include_directories(aura_apple PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 
-target_compile_definitions(aura_posix PRIVATE _AURA_POSIX_LIBRARY)
+target_compile_definitions(aura_apple PRIVATE _aura_apple_LIBRARY)

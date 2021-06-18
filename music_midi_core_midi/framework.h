@@ -18,7 +18,7 @@
 #include "_.h"
 
 
-#include "_music_midi_core_audio.h"
+#include "_music_midi_core_midi.h"
 
 
 #include "aura/_defer.h"

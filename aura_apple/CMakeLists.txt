@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.17)
 project(aura_apple CXX)
 
 
+#include(../../../objc++.cmake)
+
+
 list(APPEND library_source
    _.cpp
    _.h

@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.17)
-project(apex_apple CXX)
+project(apex_apple CXX OBJCXX)
+
+
+#include(../../../objc++.cmake)
 
 
 list(APPEND library_source

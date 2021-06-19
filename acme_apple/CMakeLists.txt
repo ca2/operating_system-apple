@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.17)
-project(acme_apple CXX)
+project(acme_apple CXX OBJCXX)
+
+
+#include(../../../objc++.cmake)
 
 
 list(APPEND library_source

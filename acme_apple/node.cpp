@@ -624,6 +624,33 @@ namespace acme
          return "music_midi_core_midi";
 
       }
+   
+   
+      ::e_status node::node_branch(const ::routine & routine)
+      {
+         
+         routine.m_p->add_ref();
+         
+         ns_main_async(^{
+            
+            try
+            {
+               
+               routine();
+               
+            }
+            catch (...)
+            {
+            
+            }
+            
+            routine.m_p->release();
+            
+         });
+
+         return ::success;
+
+      }
 
 
    } // namespace apple

@@ -203,11 +203,14 @@ namespace music
 
          }
          
+      
          ::e_status dls_synth_message_out::step()
          {
             
+            return ::success;
             
          }
+      
 
       } // namespace core_midi
 

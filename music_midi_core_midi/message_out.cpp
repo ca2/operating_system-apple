@@ -364,6 +364,8 @@ namespace music
                m_packetlist = nullptr;
                
             }
+            
+            return ::success;
 
          }
 
@@ -371,12 +373,13 @@ namespace music
          ::e_status message_out::start()
          {
 
-            
 #ifdef MACOS2
 
-            m_ui64Start =AudioGetCurrentHostTime();
+            m_ui64Start = AudioGetCurrentHostTime();
          
 #endif
+            
+            return ::success;
             
          }
          

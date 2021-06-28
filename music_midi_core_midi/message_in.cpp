@@ -406,6 +406,8 @@ namespace music
 //               m_packetlist = nullptr;
 //
 //            }
+            
+            return ::success;
 
          }
 

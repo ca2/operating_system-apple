@@ -629,7 +629,7 @@ namespace acme
       ::e_status node::node_branch(const ::routine & routine)
       {
          
-         routine.m_p->add_ref();
+         routine.m_p->increment_reference_count();
          
          ns_main_async(^{
             

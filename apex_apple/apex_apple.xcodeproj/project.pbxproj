@@ -11,7 +11,6 @@
 		9A41245D266C41FA00C3FF0E /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A41245C266C41FA00C3FF0E /* libacme_posix.dylib */; };
 		9A412461266C420E00C3FF0E /* libapex_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412460266C420E00C3FF0E /* libapex_posix.dylib */; };
 		9A412557266DD80A00C3FF0E /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412556266DD80A00C3FF0E /* libapex.dylib */; };
-		9A5FDF61268985D5003682E6 /* libapex_macos.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5FDF60268985D5003682E6 /* libapex_macos.dylib */; };
 		9A5FE1FE2689E150003682E6 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787EC3264EE55E003DF8A0 /* _.h */; };
 		9A5FE1FF2689E155003682E6 /* _c_mm.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787EBE264EE55E003DF8A0 /* _c_mm.h */; };
 		9A5FE2002689E15A003682E6 /* _mm_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787EB2264EE55E003DF8A0 /* _mm_common.h */; };
@@ -95,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A5FDF61268985D5003682E6 /* libapex_macos.dylib in Frameworks */,
 				9A412557266DD80A00C3FF0E /* libapex.dylib in Frameworks */,
 				9A412461266C420E00C3FF0E /* libapex_posix.dylib in Frameworks */,
 				9A41245D266C41FA00C3FF0E /* libacme_posix.dylib in Frameworks */,

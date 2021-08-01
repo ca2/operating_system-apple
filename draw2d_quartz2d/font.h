@@ -40,10 +40,11 @@ namespace draw2d_quartz2d
       
       
       font();
-      virtual ~font();
+      ~font() override;
       
       
-      virtual void destroy() override;
+      ::e_status destroy() override;
+      ::e_status destroy_os_data() override;
       virtual bool create(::draw2d::graphics * pgraphics, i8 iCreate) override;
 
       //virtual void * get_os_data() const override;

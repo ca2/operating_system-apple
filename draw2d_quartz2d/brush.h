@@ -18,16 +18,17 @@ namespace draw2d_quartz2d
       
       
       brush();
-      virtual ~brush();
+      ~brush() override;
       
       
       //virtual void * get_os_data() const;
       
-      virtual bool create(::draw2d::graphics * pgraphics, i8 iCreate) override;
+      bool create(::draw2d::graphics * pgraphics, i8 iCreate) override;
 
-      virtual void destroy() override;
+      ::e_status destroy() override;
+      ::e_status destroy_os_data() override;
      
-      virtual void dump(dump_context & dumpcontext) const override;
+      void dump(dump_context & dumpcontext) const override;
 
    };
 

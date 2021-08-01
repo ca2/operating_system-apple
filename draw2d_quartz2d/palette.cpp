@@ -104,7 +104,7 @@ namespace draw2d_quartz2d
 //   }
 //
 
-   ::u32 palette::GetNearestPaletteIndex(color32_t crColor) const
+   ::u32 palette::GetNearestPaletteIndex(const ::color::color & color) const
    {
 
       //ASSERT(get_os_data() != nullptr);

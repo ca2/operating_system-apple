@@ -169,7 +169,7 @@ namespace draw2d_quartz2d
    }
 
 
-   bool image::destroy ()
+   ::e_status image::destroy()
    {
 
       m_pbitmap.release();

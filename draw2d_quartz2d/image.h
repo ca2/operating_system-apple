@@ -16,18 +16,18 @@ namespace draw2d_quartz2d
 
 
       image();
-      virtual ~image();
+      ~image() override;
 
-      virtual bool map(bool bApplyAlphaTransform = true) override;
-      virtual bool _unmap() override;
+      bool map(bool bApplyAlphaTransform = true) override;
+      bool _unmap() override;
 
       
       //virtual bool detach(::image * pimage) override;
       
 
-      virtual ::draw2d::graphics * _get_graphics() const override;
-      virtual ::draw2d::bitmap_pointer get_bitmap() const override;
-      virtual ::draw2d::bitmap_pointer detach_bitmap() override;
+      ::draw2d::graphics * _get_graphics() const override;
+      ::draw2d::bitmap_pointer get_bitmap() const override;
+      ::draw2d::bitmap_pointer detach_bitmap() override;
 
 
       //virtual const color32_t * get_data() const override;
@@ -40,7 +40,7 @@ namespace draw2d_quartz2d
       ::e_status create(const ::size_i32 & size, ::eobject eobjectCreate = DEFAULT_CREATE_IMAGE_OBJECT_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
       //::e_status create(i32 iWidth, i32 iHeight, ::eobject eobjectCreate = DEFAULT_CREATE_IMAGE_OBJECT_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
       ::e_status create(::draw2d::graphics * pgraphics) override;
-      virtual bool destroy() override;
+      ::e_status destroy() override;
 
 
 

@@ -83,7 +83,7 @@ namespace node_kde
 //   }
 //
 //
-//   inline i64 add_ref(OBJ_REF_DBG_PARAMS)
+//   inline i64 add_ref(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS)
 //   {
 //
 //#ifdef WINDOWS
@@ -103,7 +103,7 @@ namespace node_kde
 //   }
 //
 //
-//   inline i64 dec_ref(OBJ_REF_DBG_PARAMS)
+//   inline i64 dec_ref(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS)
 //   {
 //
 //#ifdef WINDOWS
@@ -123,10 +123,10 @@ namespace node_kde
 //   }
 //
 //
-//   inline i64 release(OBJ_REF_DBG_PARAMS)
+//   inline i64 release(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS)
 //   {
 //
-//      i64 i = dec_ref(OBJ_REF_DBG_ARGS);
+//      i64 i = dec_ref(OBJECT_REFERENCE_COUNT_DEBUG_ARGS);
 //
 //      if (i == 0)
 //      {

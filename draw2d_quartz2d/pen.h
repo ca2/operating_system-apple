@@ -21,7 +21,7 @@ namespace draw2d_quartz2d
       
       
       pen();
-      virtual ~pen();
+      ~pen() override;
       /*virtual void construct(i32 nPenStyle, double nWidth, color32_t crColor);
        virtual void construct(i32 nPenStyle, double nWidth, const LOGBRUSH* pLogBrush, i32 nStyleCount = 0, const ::u32* lpStyle = nullptr);
        bool CreatePen(i32 nPenStyle, double nWidth, color32_t crColor);
@@ -30,7 +30,7 @@ namespace draw2d_quartz2d
       
       //      virtual void * get_os_data() const;
       
-      virtual void dump(dump_context & dumpcontext) const;
+      void dump(dump_context & dumpcontext) const override;
       
    };
    

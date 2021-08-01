@@ -51,9 +51,9 @@ namespace windowing_x11
 
 
       virtual i64 get_ref_count();
-      virtual i64 add_ref(OBJ_REF_DBG_PARAMS);
-      virtual i64 dec_ref(OBJ_REF_DBG_PARAMS);
-      virtual i64 release(OBJ_REF_DBG_PARAMS);
+      virtual i64 add_ref(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS);
+      virtual i64 dec_ref(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS);
+      virtual i64 release(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS);
 
 
 #endif

@@ -20,7 +20,7 @@ namespace draw2d_quartz2d
       //operator HRGN() const;
 
       region();
-      virtual ~region();
+      ~region() override;
 
 
       //virtual void * get_os_data() const;
@@ -59,9 +59,10 @@ namespace draw2d_quartz2d
       //  bool get_poly_polygon(cairo_t * pdc);
       //bool get_combine(cairo_t * pdc);
 
-      virtual void destroy() override;
+      ::e_status destroy() override;
+      ::e_status destroy_os_data() override;
 
-      virtual bool create(::draw2d::graphics * pgraphics, i8 iCreate) override;
+      bool create(::draw2d::graphics * pgraphics, i8 iCreate) override;
 
       virtual void * detach();
       

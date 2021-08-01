@@ -30,7 +30,19 @@ namespace draw2d_quartz2d
    }
 
    
-   void brush::destroy()
+   ::e_status brush::destroy()
+   {
+      
+      auto estatusOsData = destroy_os_data();
+      
+      auto estatusDestroy = ::draw2d::brush::destroy();
+      
+      return estatusOsData && estatusDestroy;
+      
+   }
+
+
+   ::e_status brush::destroy_os_data()
    {
       
       if(m_gradientref != nullptr)
@@ -60,7 +72,7 @@ namespace draw2d_quartz2d
          
       }
       
-      ::draw2d::brush::destroy();
+      return ::success;
       
    }
 

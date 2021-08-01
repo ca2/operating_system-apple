@@ -12,7 +12,7 @@ namespace draw2d_quartz2d
       
       
       object();
-      virtual ~object();
+      ~object() override;
       
       
       //virtual void * get_os_data() const;
@@ -22,14 +22,14 @@ namespace draw2d_quartz2d
       
       
       i32 get_object(i32 nCount, void * lpObject) const;
-      ::u32 GetObjectType() const;
-      bool CreateStockObject(i32 nIndex);
-      bool UnrealizeObject();
-      bool operator==(const ::draw2d::object& obj) const;
-      bool operator!=(const ::draw2d::object& obj) const;
+      ::u32 GetObjectType() const override;
+      bool CreateStockObject(i32 nIndex) override;
+      bool UnrealizeObject() override;
+      bool operator==(const ::draw2d::object& obj) const override;
+      bool operator!=(const ::draw2d::object& obj) const override;
       
-      virtual void dump(dump_context & dumpcontext) const;
-      virtual void assert_valid() const;
+      void dump(dump_context & dumpcontext) const override;
+      void assert_valid() const override;
       
    };
    

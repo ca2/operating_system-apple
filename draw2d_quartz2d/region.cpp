@@ -17,9 +17,21 @@ namespace draw2d_quartz2d
    }
 
 
-   void region::destroy()
+   ::e_status region::destroy()
    {
 
+      auto estatusOsData = destroy_os_data();
+      
+      auto estatusDestroy = ::draw2d::region::destroy();
+      
+      return estatusOsData && estatusDestroy;
+
+   }
+
+
+   ::e_status region::destroy_os_data()
+   {
+      
       if(m_path != nullptr)
       {
 
@@ -28,7 +40,9 @@ namespace draw2d_quartz2d
          m_path = nullptr;
 
       }
-
+      
+      return ::success;
+      
    }
 
 

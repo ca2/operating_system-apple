@@ -70,9 +70,9 @@ public:
    ~simple_ui_display();
 
 
-   virtual i64 add_ref(OBJ_REF_DBG_PARAMS);
-   virtual i64 dec_ref(OBJ_REF_DBG_PARAMS);
-   virtual i64 release(OBJ_REF_DBG_PARAMS);
+   virtual i64 add_ref(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS);
+   virtual i64 dec_ref(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS);
+   virtual i64 release(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS);
 
 
    void common_construct();

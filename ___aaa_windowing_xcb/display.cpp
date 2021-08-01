@@ -68,26 +68,26 @@ namespace windowing_xcb
    }
 
 
-   i64 display::add_ref(OBJ_REF_DBG_PARAMS)
+   i64 display::add_ref(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS)
    {
 
-      return ::windowing::display::add_ref(OBJ_REF_DBG_ARGS);
+      return ::windowing::display::add_ref(OBJECT_REFERENCE_COUNT_DEBUG_ARGS);
 
    }
 
 
-   i64 display::dec_ref(OBJ_REF_DBG_PARAMS)
+   i64 display::dec_ref(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS)
    {
 
-      return ::windowing::display::add_ref(OBJ_REF_DBG_ARGS);
+      return ::windowing::display::add_ref(OBJECT_REFERENCE_COUNT_DEBUG_ARGS);
 
    }
 
 
-   i64 display::release(OBJ_REF_DBG_PARAMS)
+   i64 display::release(OBJECT_REFERENCE_COUNT_DEBUG_PARAMS)
    {
 
-      return ::windowing::display::release(OBJ_REF_DBG_ARGS);
+      return ::windowing::display::release(OBJECT_REFERENCE_COUNT_DEBUG_ARGS);
 
    }
 

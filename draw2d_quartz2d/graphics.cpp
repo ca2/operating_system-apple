@@ -55,6 +55,34 @@ namespace draw2d_quartz2d
    }
 
 
+   graphics::~graphics()
+   {
+
+      destroy();
+
+   }
+
+
+   ::e_status graphics::destroy()
+   {
+      
+      auto estatusDestroy = ::draw2d::graphics::destroy();
+      
+      return estatusDestroy;
+      
+   }
+
+   
+   ::e_status graphics::destroy_os_data()
+   {
+
+      DeleteDC();
+
+      return ::success;
+
+   }
+
+
    void graphics::assert_valid() const
    {
 
@@ -73,12 +101,6 @@ namespace draw2d_quartz2d
    }
 
 
-   graphics::~graphics()
-   {
-
-      DeleteDC();
-
-   }
 
 
    bool graphics::IsPrinting()
@@ -1810,7 +1832,7 @@ namespace draw2d_quartz2d
 
             pimage1->blend(::point_f64(), m_pimageAlphaBlend, point_f64((int)maximum(0, x - m_pointAlphaBlend.x), (int)maximum(0, y - m_pointAlphaBlend.y)), rectText.size());
 
-            set_alpha_mode(::draw2d::alpha_mode_blend);
+            set_alpha_mode(::draw2d::e_alpha_mode_blend);
 
             auto rectangleDst=rectangle_i32(::point_i32((int)x, (int)y),
                                  rectText.size());
@@ -4771,13 +4793,13 @@ namespace draw2d_quartz2d
 
          ::draw2d::graphics::set_alpha_mode(ealphamode);
 
-         if(m_ealphamode == ::draw2d::alpha_mode_blend)
+         if(m_ealphamode == ::draw2d::e_alpha_mode_blend)
          {
 
             CGContextSetBlendMode(m_pdc, kCGBlendModeNormal);
 
          }
-         else if(m_ealphamode == ::draw2d::alpha_mode_set)
+         else if(m_ealphamode == ::draw2d::e_alpha_mode_set)
          {
 
             CGContextSetBlendMode(m_pdc, kCGBlendModeCopy);

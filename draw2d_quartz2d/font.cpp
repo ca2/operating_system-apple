@@ -242,9 +242,21 @@ namespace draw2d_quartz2d
    }
    
    
-   void font::destroy()
+   ::e_status font::destroy()
    {
    
+      auto estatusOsData = destroy_os_data();
+      
+      auto estatusDestroy = ::write_text::font::destroy();
+      
+      return estatusOsData && estatusDestroy;
+      
+   }
+
+
+   ::e_status font::destroy_os_data()
+   {
+
       if(m_fontName != nullptr)
       {
          
@@ -272,8 +284,10 @@ namespace draw2d_quartz2d
          
       }
       
+      return ::success;
+      
    }
-   
+
    
    double font::get_ascent(::draw2d::graphics * pgraphics)
    {

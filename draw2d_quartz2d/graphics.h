@@ -43,7 +43,11 @@ namespace draw2d_quartz2d
 
 
       graphics();
-      virtual ~graphics();
+      ~graphics() override;
+      
+      
+      ::e_status destroy() override;
+      ::e_status destroy_os_data() override;
 
 
       bool IsPrinting() override;            // true if being used for printing
@@ -279,7 +283,7 @@ namespace draw2d_quartz2d
 //      virtual bool Chord(double x1, double y1, double x2, double y2, double x3, double y3,
 //                         double x4, double y4) override;
 //      virtual bool Chord(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd) override;
-      virtual void DrawFocusRect(const ::rectangle_f64& rectangle) override;
+      void DrawFocusRect(const ::rectangle_f64& rectangle) override;
 
 //      bool DrawEllipse(double x1, double y1, double x2, double y2) override;
 //      bool DrawEllipse(const ::rectangle_f64 & rectangle) override;

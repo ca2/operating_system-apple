@@ -13,7 +13,7 @@ namespace draw2d_quartz2d
 
 
       palette();
-      virtual ~palette();
+      ~palette() override;
 
 
       //      bool CreatePalette(LPLOGPALETTE lpLogPalette);
@@ -21,7 +21,7 @@ namespace draw2d_quartz2d
 
       // Attributes
 //      operator HPALETTE() const;
-      i32 GetEntryCount();
+      i32 GetEntryCount() override;
 //      ::u32 GetPaletteEntries(::u32 nStartIndex, ::u32 nNumEntries,
 //                             LPPALETTEENTRY lpPaletteColors) const;
 //      ::u32 SetPaletteEntries(::u32 nStartIndex, ::u32 nNumEntries,
@@ -30,7 +30,7 @@ namespace draw2d_quartz2d
       // Operations
 //      void AnimatePalette(::u32 nStartIndex, ::u32 nNumEntries,
 //                          LPPALETTEENTRY lpPaletteColors);
-      ::u32 GetNearestPaletteIndex(color32_t crColor) const;
+      ::u32 GetNearestPaletteIndex(const ::color::color & color) const override;
       //      bool ResizePalette(::u32 nNumEntries);
 
       // Implementation

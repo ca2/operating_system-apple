@@ -20,7 +20,7 @@ namespace draw2d_quartz2d
       
       
       bitmap();
-      virtual ~bitmap();
+      ~bitmap() override;
       
       
       //void * get_os_data() const override;
@@ -46,11 +46,12 @@ namespace draw2d_quartz2d
       ::size_i32 SetBitmapDimension(i32 nWidth, i32 nHeight);
       ::size_i32 GetBitmapDimension() const override;
       
-      virtual void dump(dump_context & dumpcontext) const override;
+      void dump(dump_context & dumpcontext) const override;
       
       virtual bool Attach(void * posdata);
       
-      virtual void destroy() override;
+      ::e_status destroy() override;
+      ::e_status destroy_os_data() override;
 
       
    };

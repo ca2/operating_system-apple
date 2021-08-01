@@ -216,7 +216,19 @@ namespace draw2d_quartz2d
    }
    
    
-   void path::destroy()
+   ::e_status path::destroy()
+   {
+      
+      auto estatusOsData = destroy_os_data();
+      
+      auto estatusDestroy = ::draw2d::path::destroy();
+      
+      return estatusOsData && estatusDestroy;
+      
+   }
+   
+   
+   ::e_status path::destroy_os_data()
    {
       
       if(m_path != nullptr)
@@ -228,9 +240,11 @@ namespace draw2d_quartz2d
          
       }
       
+      return ::success;
+      
    }
-   
-   
+
+
    bool path::create(::draw2d::graphics * pgraphics, i8 iCreate)
    {
       

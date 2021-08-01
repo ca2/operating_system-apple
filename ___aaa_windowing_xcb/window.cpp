@@ -223,7 +223,7 @@ namespace windowing_xcb
 
       pimpl->m_puserinteraction->m_pimpl = pimpl;
 
-      pimpl->m_puserinteraction->add_ref(OBJ_REF_DBG_P_NOTE(this, "native_create_window"));
+      pimpl->m_puserinteraction->add_ref(OBJECT_REFERENCE_COUNT_DEBUG_P_NOTE(this, "native_create_window"));
 
       auto papplication = pimpl->m_puserinteraction->get_application();
 

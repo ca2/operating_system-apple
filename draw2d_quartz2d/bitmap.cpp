@@ -284,7 +284,19 @@ namespace draw2d_quartz2d
    }
    
    
-   void bitmap::destroy()
+   ::e_status bitmap::destroy()
+   {
+      
+      auto estatusOsData = destroy_os_data();
+      
+      auto estatusDestroy = ::draw2d::bitmap::destroy();
+      
+      return estatusOsData && estatusDestroy;
+      
+   }
+
+
+   ::e_status bitmap::destroy_os_data()
    {
       
       if(m_pdc != nullptr)
@@ -304,8 +316,10 @@ namespace draw2d_quartz2d
       
       m_iScan = 0;
       
+      return ::success;
+      
    }
-   
+
    
 } // namespace draw2d_quartz2d
 

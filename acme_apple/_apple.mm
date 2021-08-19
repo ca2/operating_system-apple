@@ -9,30 +9,6 @@
 #import "acme/primitive/primitive/runnable.h"
 
 
-char * ns_string(NSString * str)
-{
-   
-   if(str == nil)
-   {
-      
-      return NULL;
-      
-   }
-   
-   const char * pszUtf8 = [str UTF8String];
-   
-   if(pszUtf8 == NULL)
-   {
-      
-      return NULL;
-      
-   }
-   
-   return strdup(pszUtf8);
-   
-   
-}
-
 
 
 char * mm_ca2_command_line()
@@ -130,24 +106,6 @@ void ns_main_async(dispatch_block_t block)
    
 }
 
-
-void ns_main_sync(dispatch_block_t block)
-{
-   
-   if ([NSThread isMainThread])
-   {
-      
-      block();
-      
-   }
-   else
-   {
-      
-      dispatch_sync(dispatch_get_main_queue(), block);
-      
-   }
-   
-}
 
 
 class matter;

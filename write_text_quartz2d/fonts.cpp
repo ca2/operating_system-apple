@@ -1,6 +1,6 @@
 // Created by camilo 2021-02-10 <3ThomasBorregaardSørensen__!!
 #include "framework.h"
-#include "acme/os/ansios/_pthread.h"
+#include "acme/node/operating_system/ansi/_pthread.h"
 
 
 namespace write_text_quartz2d

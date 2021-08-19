@@ -161,8 +161,14 @@ namespace draw2d_quartz2d
          return false;
 
       }
-
-      m_pgraphics->draw(pgraphics);
+      
+      image_source imagesource(pgraphics);
+      
+      image_drawing_options imagedrawingoptions(size);
+      
+      image_drawing imagedrawing(imagedrawingoptions, imagesource);
+      
+      m_pgraphics->draw(imagedrawing);
 
       return true;
 
@@ -203,8 +209,14 @@ namespace draw2d_quartz2d
 
 bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, const ::point_i32 & pointSrc)
    {
+   
+      image_source imagesource(pimageSrc, pointSrc);
       
-      return m_pgraphics->draw(rectDst, pimageSrc, pointSrc);
+      image_drawing_options imagedrawingoptions(rectDst);
+      
+      image_drawing imagedrawing(imagedrawingoptions, imagesource);
+      
+      return m_pgraphics->draw(imagedrawing);
       
       
    }
@@ -232,25 +244,61 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
       auto pimage1 = create_image({cx,  cy});
       
       pimage1->set_rgb(255, 255, 255);
+      
+      {
+      
+         image_source imagesource(picon);
+         
+         auto rectangle = ::rectangle_f64_dimension(0, 0, cx, cy);
+         
+         image_drawing_options imagedrawingoptions(rectangle);
+         
+         image_drawing imagedrawing(imagedrawingoptions, imagesource);
 
-      pimage1->g()->draw(
-      ::rectangle_i32_dimension(0, 0, cx, cy),
-      picon);
+         pimage1->g()->draw(imagedrawing);
+         
+      }
 
       // Black blend image
       auto pimage2 = create_image({cx,  cy});
       pimage2->fill(0, 0, 0, 0);
 
-      pimage2->get_graphics()->draw(
-      rectangle_i32_dimension(0, 0, cx, cy),
-      picon);
+  
+      {
+      
+         image_source imagesource(picon);
+         
+         auto rectangle = ::rectangle_f64_dimension(0, 0, cx, cy);
+         
+         image_drawing_options imagedrawingoptions(rectangle);
+         
+         image_drawing imagedrawing(imagedrawingoptions, imagesource);
+
+         pimage2->g()->draw(imagedrawing);
+         
+      }
 
       // Mask image
       auto pimageM= create_image({cx,  cy});
 
-      pimageM->g()->draw(
-      rectangle_i32_dimension(0, 0, cx, cy),
-      picon);
+      
+      
+      {
+      
+         image_source imagesource(picon);
+         
+         auto rectangle = ::rectangle_f64_dimension(0, 0, cx, cy);
+         
+         image_drawing_options imagedrawingoptions(rectangle);
+         
+         image_drawing imagedrawing(imagedrawingoptions, imagesource);
+
+         pimageM->g()->draw(imagedrawing);
+         
+      }
+      //pimageM->g()->draw(
+      //rectangle_i32_dimension(0, 0, cx, cy),
+      //picon);
 
       byte * r1=(byte*)pimage1->colorref();
       byte * r2=(byte*)pimage2->colorref();
@@ -302,10 +350,10 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
    }
 
 
-   bool image::stretch(::image * pimage)
+   bool image::stretch_image(::image * pimage)
    {
 
-      return ::image::stretch(pimage);
+      return ::image::stretch_image(pimage);
 
    }
 

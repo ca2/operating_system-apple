@@ -32,7 +32,7 @@ namespace draw2d_quartz2d
 
       //virtual const color32_t * get_data() const override;
 
-      bool stretch(::image * pimage) override;
+      bool stretch_image(::image * pimage) override;
 
       bool dc_select(bool bSelect = true) override;
 

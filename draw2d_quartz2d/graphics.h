@@ -67,8 +67,8 @@ namespace draw2d_quartz2d
       virtual double get_dpix() override;
 
       // Constructors
-      bool CreateDC(const char * lpszDriverName, const char * lpszDeviceName, const char * lpszOutput, const void * lpInitData) override;
-      bool CreateIC(const char * lpszDriverName, const char * lpszDeviceName, const char * lpszOutput, const void * lpInitData) override;
+      bool CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
+      bool CreateIC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
       bool CreateCompatibleDC(::draw2d::graphics * pgraphics) override;
 
       bool DeleteDC() override;
@@ -457,7 +457,7 @@ namespace draw2d_quartz2d
 //      i32 DrawEscape(i32 nEscape, i32 nInputSize, const char * lpszInputData) override;
 
       // Escape helpers
-      i32 StartDoc(const char * lpszDocName) override;  // old Win3.0 version
+      i32 StartDoc(const ::string & lpszDocName) override;  // old Win3.0 version
       //xxx      i32 StartDoc(LPDOCINFO lpDocInfo);
       i32 StartPage() override;
       i32 EndPage() override;

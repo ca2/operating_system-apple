@@ -111,13 +111,13 @@ namespace draw2d_quartz2d
    }
 
 
-   bool graphics::CreateDC(const char * lpszDriverName, const char * lpszDeviceName, const char * lpszOutput, const void * lpInitData)
+   bool graphics::CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData)
    {
       __throw(error_not_supported);
       //return Attach(::CreateDC(lpszDriverName, lpszDeviceName, lpszOutput, (const DEVMODE*)lpInitData));
    }
 
-   bool graphics::CreateIC(const char * lpszDriverName, const char * lpszDeviceName, const char * lpszOutput, const void * lpInitData)
+   bool graphics::CreateIC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData)
    {
       __throw(error_not_supported);
       //return Attach(::CreateIC(lpszDriverName, lpszDeviceName, lpszOutput, (const DEVMODE*) lpInitData));
@@ -1284,19 +1284,19 @@ namespace draw2d_quartz2d
    bool graphics::_draw_raw(const image_drawing & imagedrawing)
    {
 
-      double xDst = imagedrawing.m_rectDst.left;
-      double yDst = imagedrawing.m_rectDst.top;
-      double xSrc = imagedrawing.m_rectSrc.left;
-      double ySrc = imagedrawing.m_rectSrc.top;
+      double xDst = imagedrawing.m_rectangleTarget.left;
+      double yDst = imagedrawing.m_rectangleTarget.top;
+      double xSrc = imagedrawing.m_rectangleTarget.left;
+      double ySrc = imagedrawing.m_rectangleTarget.top;
 
       ::draw2d::graphics * pgraphicsSrc = imagedrawing.m_pimage->g();
       
       // BitBltRaw
-      if(imagedrawing.m_rectDst.size() == imagedrawing.m_rectSrc.size())
+      if(imagedrawing.m_rectangleTarget.size() == imagedrawing.m_rectangleTarget.size())
       {
       
-         i32 nWidth = imagedrawing.m_rectDst.width();
-         i32 nHeight = imagedrawing.m_rectDst.height();
+         i32 nWidth = imagedrawing.m_rectangleTarget.width();
+         i32 nHeight = imagedrawing.m_rectangleTarget.height();
       
          //double xSrc, double ySrc, ::u32 dwRop
 
@@ -1489,10 +1489,10 @@ namespace draw2d_quartz2d
          
          //bool graphics::StretchBltRaw(double xDst, double yDst, double //nDstWidth, double nDstHeight, ::draw2d::graphics * //pgraphicsSrc, double xSrc, double ySrc, i32 nSrcWidth, i32 //nSrcHeight, ::u32 dwRop)
          
-         i32 nDstWidth = imagedrawing.m_rectDst.width();
-         i32 nDstHeight = imagedrawing.m_rectDst.height();
-         i32 nSrcWidth = imagedrawing.m_rectSrc.width();
-         i32 nSrcHeight = imagedrawing.m_rectSrc.height();
+         i32 nDstWidth = imagedrawing.m_rectangleTarget.width();
+         i32 nDstHeight = imagedrawing.m_rectangleTarget.height();
+         i32 nSrcWidth = imagedrawing.m_rectangleTarget.width();
+         i32 nSrcHeight = imagedrawing.m_rectangleTarget.height();
 
          if(nDstWidth <= 0 || nDstHeight <= 0 || nSrcWidth <= 0 || nSrcHeight <= 0)
          {
@@ -1836,7 +1836,14 @@ namespace draw2d_quartz2d
 
             auto rectangleDst=rectangle_i32(::point_i32((int)x, (int)y),
                                  rectText.size());
-            draw(rectangleDst, pimage1->get_graphics(), ::point_i32());
+            
+            image_source imagesource(pimage1, point_i32());
+            
+            image_drawing_options imagedrawingoptions(rectangleDst);
+            
+            image_drawing imagedrawing(imagedrawingoptions, imagesource);
+            
+            draw(imagedrawing);
 
          }
          
@@ -3460,7 +3467,7 @@ namespace draw2d_quartz2d
    /////////////////////////////////////////////////////////////////////////////
    // Out-of-line routines
 
-   i32 graphics::StartDoc(const char * lpszDocName)
+   i32 graphics::StartDoc(const ::string & lpszDocName)
    {
 
       __throw(error_not_implemented);
@@ -5268,8 +5275,14 @@ namespace draw2d_quartz2d
          ::rectangle_i32 rectangle_i32;
          
          __copy(rectangle_i32, rectangle);
+         
+         image_source imagesource(pbrush->m_pimage);
+         
+         image_drawing_options imagedrawingoptions(rectangle_i32);
+         
+         image_drawing imagedrawing(imagedrawingoptions, imagesource);
 
-         draw(rectangle_i32, pbrush->m_pimage);
+         draw(imagedrawing);
 
          //CGContextRestoreGState(pgraphics);
 

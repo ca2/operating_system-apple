@@ -1286,13 +1286,13 @@ namespace draw2d_quartz2d
 
       double xDst = imagedrawing.m_rectangleTarget.left;
       double yDst = imagedrawing.m_rectangleTarget.top;
-      double xSrc = imagedrawing.m_rectangleTarget.left;
-      double ySrc = imagedrawing.m_rectangleTarget.top;
+      double xSrc = imagedrawing.m_rectangleSource.left;
+      double ySrc = imagedrawing.m_rectangleSource.top;
 
       ::draw2d::graphics * pgraphicsSrc = imagedrawing.m_pimage->g();
       
       // BitBltRaw
-      if(imagedrawing.m_rectangleTarget.size() == imagedrawing.m_rectangleTarget.size())
+      if(imagedrawing.m_rectangleSource.size() == imagedrawing.m_rectangleTarget.size())
       {
       
          i32 nWidth = imagedrawing.m_rectangleTarget.width();
@@ -1491,8 +1491,8 @@ namespace draw2d_quartz2d
          
          i32 nDstWidth = imagedrawing.m_rectangleTarget.width();
          i32 nDstHeight = imagedrawing.m_rectangleTarget.height();
-         i32 nSrcWidth = imagedrawing.m_rectangleTarget.width();
-         i32 nSrcHeight = imagedrawing.m_rectangleTarget.height();
+         i32 nSrcWidth = imagedrawing.m_rectangleSource.width();
+         i32 nSrcHeight = imagedrawing.m_rectangleSource.height();
 
          if(nDstWidth <= 0 || nDstHeight <= 0 || nSrcWidth <= 0 || nSrcHeight <= 0)
          {

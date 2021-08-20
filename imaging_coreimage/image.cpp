@@ -4,8 +4,9 @@
 //
 //  Created by Camilo Sasuke Tsumanuma on 21/10/17. Thomas Boregaard Soerensen <3
 //
-
 #include "framework.h"
+
+#include <Carbon/Carbon.h>
 
 
 CFDataRef CopyImagePixels(CGImageRef inImage);
@@ -99,7 +100,7 @@ namespace coreimage_imaging
       
       auto pcontextimage = pcontext->context_image();
       
-      auto estatus = pcontextimage->load_svg(pimage, &memory);
+      auto estatus = pcontextimage->load_svg(pimage, memory);
       
       if(::succeeded(estatus))
       {
@@ -113,7 +114,7 @@ namespace coreimage_imaging
       if (memory.get_size() > 3 && strnicmp(psz, "gif", 3) == 0)
       {
 
-         if (!_load_multi_frame_image(pimage, &memory))
+         if (!_load_multi_frame_image(pimage, memory))
          {
 
             pimage->set_nok();

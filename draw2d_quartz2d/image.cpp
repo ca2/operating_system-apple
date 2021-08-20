@@ -471,7 +471,7 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
 
       byte * psrc2;
 
-#ifdef APPLEOS
+#ifdef __APPLE__
       byte * pdst = &((byte *)pimplDst->colorref())[scanDst * (pimplDst->height() - pointDst.y - yEnd) + pointDst.x * sizeof(color32_t)];
 
       byte * psrc = &((byte *)pimplSrc->colorref())[scanSrc * (pimplSrc->height() - pointSrc.y - yEnd) + pointSrc.x * sizeof(color32_t)];

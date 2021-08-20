@@ -12,12 +12,12 @@ namespace coreimage_imaging
 
 
       context_image();
-      virtual ~context_image();
+      ~context_image() override;
 
-      virtual ::e_status _load_image(::image * pimageParam, const ::payload & varFile, bool bSync, bool bCreateHelperMaps) override;
+      ::e_status _load_image(::image * pimageParam, const ::payload & varFile, bool bSync, bool bCreateHelperMaps) override;
 
-      virtual ::e_status _load_image(::image * pimage, __pointer(image_frame_array) & pframea, ::memory_pointer pmemory) override;
-      virtual ::e_status save_image(memory & memory, const ::image * pimage, const ::save_image * psaveimage = nullptr) override;
+      ::e_status _load_image(::image * pimage, __pointer(image_frame_array) & pframea, memory & memory) override;
+      ::e_status save_image(memory & memory, const ::image * pimage, const ::save_image * psaveimage = nullptr) override;
 
 //      virtual void * create_os_cursor(oswindow oswindow, const image * pimage, int xHotSpot, int yHotSpot);
 //      //virtual HCURSOR load_default_cursor(e_cursor ecursor) override;

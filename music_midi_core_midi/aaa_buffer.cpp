@@ -1143,7 +1143,7 @@ namespace music
 //            else
 //            {
 //            pEventsV1 = m_eventsTracksForPositionCB.get_at(iTrackFound);
-//            #ifdef DEBUG
+//            #ifdef _DEBUG
 //            //         if(pEventsV1->m_iType == 1)
 //            //         {
 //            //            TRACE("ReadEvents pEventsV1->m_iCurrentToken = %d\n", pEventsV1->m_iCurrentToken);

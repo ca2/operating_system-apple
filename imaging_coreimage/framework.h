@@ -6,11 +6,11 @@
 
 #if defined(MACOS)
 
-#include "aura/os/macos/_mm.h"
+#include "aura/node/operating_system/macos/_mm.h"
 
 #elif defined(APPLE_IOS)
 
-#include "aura/os/ios/_mm.h"
+#include "aura/node/operating_system/ios/_mm.h"
 
 #else
 

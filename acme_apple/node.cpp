@@ -644,7 +644,9 @@ namespace acme
             
             }
             
-            routine.m_p->release();
+            auto p = routine.m_p;
+            
+            ::release(p);
             
          });
 

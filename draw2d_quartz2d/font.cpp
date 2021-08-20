@@ -51,18 +51,23 @@ namespace draw2d_quartz2d
 
          auto * pwritetext = pdraw2d->write_text();
 
-         auto * pfonts = pwritetext->fonts();
-         
-         auto * pfontenumeration = pfonts->enumeration();
-         
-         if(pfontenumeration->m_eventReady.lock(2_s))
+         if(::is_set(pwritetext))
          {
+            
+            auto * pfonts = pwritetext->fonts();
+            
+            auto * pfontenumeration = pfonts->enumeration();
+            
+            if(pfontenumeration->m_eventReady.lock(2_s))
+            {
 
-            pfonts->m_pfontenumeration->adapt_font_name(m_strFontFamilyName);
+               pfonts->m_pfontenumeration->adapt_font_name(m_strFontFamilyName);
+               
+            }
+            
+            m_fontName = CFStringCreateWithCString(kCFAllocatorDefault, m_strFontFamilyName, kCFStringEncodingUTF8);
             
          }
-         
-         m_fontName = CFStringCreateWithCString(kCFAllocatorDefault, m_strFontFamilyName, kCFStringEncodingUTF8);
          
       }
       

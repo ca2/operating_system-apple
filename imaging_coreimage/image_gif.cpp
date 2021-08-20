@@ -5,6 +5,7 @@
 //  Created by Camilo Sasuke Tsumanuma on 21/10/17.
 //
 #include "framework.h"
+#include "aura/operating_system.h"
 
 #include <ImageIO/ImageIO.h>
 
@@ -22,10 +23,10 @@ namespace coreimage_imaging
 {
 
 
-   ::e_status context_image::_load_image(::image * pimage, __pointer(image_frame_array) & pframea, ::memory_pointer pmemory)
+   ::e_status context_image::_load_image(::image * pimage, __pointer(image_frame_array) & pframea, memory & memory)
    {
 
-      if(!pmemory || pmemory->is_empty())
+      if(memory.is_empty())
       {
 
          return false;
@@ -40,7 +41,7 @@ namespace coreimage_imaging
 
       ::acme::malloc < color32_t * > pcolorref;
 
-      CFDataRef data = CFDataCreateWithBytesNoCopy(nullptr, pmemory->data(), pmemory->size(), kCFAllocatorNull);
+      CFDataRef data = get_os_cf_data(memory);
 
       //https://github.com/Flipboard/FLAnimatedImage/blob/master/FLAnimatedImage/FLAnimatedImage.m
 

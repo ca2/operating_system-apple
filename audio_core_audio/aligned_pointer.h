@@ -16,7 +16,7 @@ public:
 
    POINTER * m_pp;
 
-   aligned_pointer() { m_pp = (POINTER *) aligned_memory_alloc(sizeof(POINTER)); *m_pp = nullptr; }
+   aligned_pointer() { m_pp = (POINTER *) main_memory_allocate::aligned_memory_allocate(sizeof(POINTER)); *m_pp = nullptr; }
    ~aligned_pointer() { memory_free(m_pp);}
 
    POINTER operator ->()

@@ -17,7 +17,7 @@ public:
    
    TYPE * m_p;
    
-   aligned()   { m_p = (TYPE *) main_memory_allocate::aligned_memory_allocate(sizeof(TYPE)); new(m_p) TYPE(); }
+   aligned()   { m_p = (TYPE *) main_memory_allocate_heap::aligned_memory_allocate(sizeof(TYPE)); new(m_p) TYPE(); }
    ~aligned()  { ((TYPE *)m_p)->~TYPE(); memory_free(m_p); }
    
    TYPE * operator ->()

@@ -24,10 +24,10 @@ namespace aura
 
          
          node();
-         virtual ~node();
+         ~node() override;
 
 
-         virtual ::e_status initialize(::object * pobject) override;
+         ::e_status initialize(::object * pobject) override;
 
 
       };

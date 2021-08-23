@@ -1489,10 +1489,44 @@ namespace draw2d_quartz2d
          
          //bool graphics::StretchBltRaw(double xDst, double yDst, double //nDstWidth, double nDstHeight, ::draw2d::graphics * //pgraphicsSrc, double xSrc, double ySrc, i32 nSrcWidth, i32 //nSrcHeight, ::u32 dwRop)
          
-         i32 nDstWidth = imagedrawing.m_rectangleTarget.width();
-         i32 nDstHeight = imagedrawing.m_rectangleTarget.height();
-         i32 nSrcWidth = imagedrawing.m_rectangleSource.width();
-         i32 nSrcHeight = imagedrawing.m_rectangleSource.height();
+         double nDstWidth;
+         double nDstHeight;
+         double nSrcWidth;
+         double nSrcHeight;
+
+         ::rectangle_f64 rectFinal = imagedrawing.m_rectangleTarget;
+
+         nDstWidth = imagedrawing.m_rectangleTarget.width();
+         nDstHeight = imagedrawing.m_rectangleTarget.height();
+         nSrcWidth = imagedrawing.m_rectangleSource.width();
+         nSrcHeight = imagedrawing.m_rectangleSource.height();
+
+         if(imagedrawing.m_eplacement == e_placement_aspect_fit)
+         {
+            
+            double dW = nDstWidth / nSrcWidth;
+
+            double dH = nDstHeight / nSrcHeight;
+
+            double d = minimum(dW, dH);
+            
+            rectFinal.left = 0.0;
+
+            rectFinal.top = 0.0;
+
+            rectFinal.right = d * nSrcWidth;
+
+            rectFinal.bottom = d * nSrcHeight;
+
+            rectFinal.align_rate(
+               imagedrawing.m_pointAlign.x,
+               imagedrawing.m_pointAlign.y,
+               imagedrawing.m_rectangleTarget);
+            
+            nDstWidth = rectFinal.width();
+            nDstHeight = rectFinal.height();
+
+         }
 
          if(nDstWidth <= 0 || nDstHeight <= 0 || nSrcWidth <= 0 || nSrcHeight <= 0)
          {
@@ -1527,16 +1561,16 @@ namespace draw2d_quartz2d
 
             }
 
-            size_t SrcW = CGImageGetWidth(pimage);
+            auto SrcW = CGImageGetWidth(pimage);
 
-            size_t SrcH = CGImageGetHeight(pimage);
+            auto SrcH = CGImageGetHeight(pimage);
 
             CGRect rectangle;
 
-            rectangle.origin.x = xDst;
-            rectangle.origin.y = yDst;
-            rectangle.size.width = nDstWidth;
-            rectangle.size.height = nDstHeight;
+            rectangle.origin.x = rectFinal.left;
+            rectangle.origin.y = rectFinal.top;
+            rectangle.size.width = rectFinal.width();
+            rectangle.size.height = rectFinal.height();
             
             if(imagedrawing.is_opacity_filter())
             {
@@ -1583,8 +1617,6 @@ namespace draw2d_quartz2d
                
             }
             
-
-
             return true;
 
          }

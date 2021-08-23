@@ -64,15 +64,23 @@ namespace draw2d_quartz2d
          return false;
 
       }
+      
+      ::draw2d::bitmap_pointer pbitmap;
+      
+      pbitmap.create(this);
 
-      m_pbitmap.defer_create(this);
+      ::draw2d::graphics_pointer pgraphics;
+      
+      pgraphics.create(this);
 
-      m_pgraphics.defer_create(this);
+      //m_pbitmap.defer_create(this);
 
-      if(m_pbitmap.is_null() || m_pgraphics.is_null())
+      //m_pgraphics.defer_create(this);
+
+      if(pbitmap.is_null() || pgraphics.is_null())
       {
 
-         destroy();
+         //destroy();
 
          return false;
 
@@ -86,25 +94,42 @@ namespace draw2d_quartz2d
       
       i32 iScan = iGoodStride;
 
-      if(!m_pbitmap->create_bitmap(nullptr, size, (void **) &pcolorref, &iScan) || m_pbitmap->get_os_data() == nullptr)
+      if(!pbitmap->create_bitmap(nullptr, size, (void **) &pcolorref, &iScan) || pbitmap->get_os_data() == nullptr)
       {
 
-         destroy();
+         //destroy();
 
          return false;
 
       }
 
-      m_pgraphics->set(m_pbitmap);
+      pgraphics->set(pbitmap);
 
-      if(m_pgraphics->get_os_data() == nullptr)
+      if(pgraphics->get_os_data() == nullptr)
       {
 
-         destroy();
+         //destroy();
 
          return false;
 
       }
+      
+      if(bPreserve)
+      {
+         
+         map();
+         
+         int cxMin = minimum(m_size.cx, size.cx);
+         
+         int cyMin = minimum(m_size.cy, size.cy);
+         
+         copy_colorref(pcolorref, cxMin, cyMin, iScan, m_pcolorrefRaw, m_iScan);
+         
+      }
+      
+      m_pbitmap = pbitmap;
+      
+      m_pgraphics = pgraphics;
       
       m_bMapped = false;
       

@@ -235,7 +235,9 @@ namespace draw2d_quartz2d
 bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, const ::point_i32 & pointSrc)
    {
    
-      image_source imagesource(pimageSrc, pointSrc);
+      rectangle_f64 rectangleSource(pointSrc, rectDst.size());
+   
+      image_source imagesource(pimageSrc, rectangleSource);
       
       image_drawing_options imagedrawingoptions(rectDst);
       

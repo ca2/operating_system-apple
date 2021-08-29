@@ -1283,20 +1283,26 @@ namespace draw2d_quartz2d
 
    bool graphics::_draw_raw(const image_drawing & imagedrawing)
    {
+      
+      auto rectangleSource = imagedrawing.source_rectangle();
+      
+      auto rectangleTarget = imagedrawing.target_rectangle();
 
-      double xDst = imagedrawing.m_rectangleTarget.left;
-      double yDst = imagedrawing.m_rectangleTarget.top;
-      double xSrc = imagedrawing.m_rectangleSource.left;
-      double ySrc = imagedrawing.m_rectangleSource.top;
+      double xDst = rectangleTarget.left;
+      double yDst = rectangleTarget.top;
+      double xSrc = rectangleSource.left;
+      double ySrc = rectangleSource.top;
 
-      ::draw2d::graphics * pgraphicsSrc = imagedrawing.m_pimage->g();
+      auto pimage = imagedrawing.image();
+      
+      ::draw2d::graphics * pgraphicsSrc = pimage->g();
       
       // BitBltRaw
-      if(imagedrawing.m_rectangleSource.size() == imagedrawing.m_rectangleTarget.size())
+      if(rectangleSource.size() == rectangleTarget.size())
       {
       
-         i32 nWidth = imagedrawing.m_rectangleTarget.width();
-         i32 nHeight = imagedrawing.m_rectangleTarget.height();
+         i32 nWidth = rectangleTarget.width();
+         i32 nHeight = rectangleTarget.height();
       
          //double xSrc, double ySrc, ::u32 dwRop
 
@@ -1498,8 +1504,8 @@ namespace draw2d_quartz2d
 
          nDstWidth = imagedrawing.m_rectangleTarget.width();
          nDstHeight = imagedrawing.m_rectangleTarget.height();
-         nSrcWidth = imagedrawing.m_rectangleSource.width();
-         nSrcHeight = imagedrawing.m_rectangleSource.height();
+         nSrcWidth = rectangleSource.width();
+         nSrcHeight = rectangleSource.height();
 
          if(imagedrawing.m_eplacement == e_placement_aspect_fit)
          {
@@ -1869,7 +1875,9 @@ namespace draw2d_quartz2d
             auto rectangleDst=rectangle_i32(::point_i32((int)x, (int)y),
                                  rectText.size());
             
-            image_source imagesource(pimage1, point_i32());
+            rectangle_f64 rectangleSource(point_i32(), rectangleDst.size());
+            
+            image_source imagesource(pimage1, rectangleSource);
             
             image_drawing_options imagedrawingoptions(rectangleDst);
             

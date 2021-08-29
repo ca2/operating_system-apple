@@ -14,7 +14,6 @@
 		9A637E6E2672419E005D0AC3 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E6D2672419E005D0AC3 /* libacme_apple.dylib */; };
 		9A637E702672419E005D0AC3 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E6F2672419E005D0AC3 /* libacme_posix.dylib */; };
 		9A637E722672419E005D0AC3 /* libapex_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E712672419E005D0AC3 /* libapex_posix.dylib */; };
-		9A637E732672419E005D0AC3 /* libapex_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E682672406E005D0AC3 /* libapex_apple.dylib */; };
 		9A637E75267241B6005D0AC3 /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E74267241B6005D0AC3 /* libaura.dylib */; };
 		9A637E77267241F0005D0AC3 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E76267241F0005D0AC3 /* libapex.dylib */; };
 		9AC2CFE52653DAF000CC8096 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFC42653DAF000CC8096 /* framework.cpp */; };
@@ -112,7 +111,6 @@
 				9A637E75267241B6005D0AC3 /* libaura.dylib in Frameworks */,
 				9A637E6E2672419E005D0AC3 /* libacme_apple.dylib in Frameworks */,
 				9A637E702672419E005D0AC3 /* libacme_posix.dylib in Frameworks */,
-				9A637E732672419E005D0AC3 /* libapex_apple.dylib in Frameworks */,
 				9A637E722672419E005D0AC3 /* libapex_posix.dylib in Frameworks */,
 				9A637E6C26724173005D0AC3 /* libacme.dylib in Frameworks */,
 				9A5D73262655115000D5C39E /* libapex_apple.dylib in Frameworks */,
@@ -165,7 +163,7 @@
 		9A637E642672406E005D0AC3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A637E682672406E005D0AC3 /* libapex_apple.dylib */,
+				9A637E682672406E005D0AC3 /* lib.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,7 +276,7 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A637E682672406E005D0AC3 /* libapex_apple.dylib */ = {
+		9A637E682672406E005D0AC3 /* lib.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libapex_apple.dylib;
@@ -340,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
@@ -373,7 +372,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -403,7 +402,9 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = (
 					.,
 					"$(WorkspaceDir)/source",
@@ -430,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
@@ -464,7 +466,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -481,13 +483,15 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/archive",
-					"$(WorkspaceDir)/archive//storage-$(PLATFORM_MODIFIER)/library/x64/$(CONFIGURATION)",
-					"$(WorkspaceDir)/archive",
+					"$(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/library/$(ARCHS)/$(CONFIGURATION)",
+					"$(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/third/library/$(ARCHS)/$(CONFIGURATION)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = (
 					.,
 					"$(WorkspaceDir)/source",
@@ -513,26 +517,20 @@
 		9A15A5B6264B54430080670E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				PLATFORM_MODIFIER = macos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		9A15A5B7264B54430080670E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				PLATFORM_MODIFIER = macos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};

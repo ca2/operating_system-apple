@@ -31,7 +31,7 @@ namespace multimedia
          TRACE("in::init_instance %X\n", get_ithread());
          //SetMainWnd(nullptr);
          //ASSERT(GetMainWnd() == nullptr);
-         ::parallelization::set_priority(::priority_highest);
+         ::parallelization::set_priority(::e_priority_highest);
          //m_evInitialized.SetEvent();
 
 

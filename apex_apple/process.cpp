@@ -18,7 +18,7 @@
 
 
 
-CLASS_DECL_APEX void process_get_os_priority(i32 * piOsPolicy, sched_param * pparam, ::e_priority epriority);
+CLASS_DECL_APEX void process_get_os_priority(i32 * piOsPolicy, sched_param * pparam, ::enum_priority epriority);
 
 
 namespace ansios
@@ -37,7 +37,7 @@ namespace ansios
    }
 
 
-   bool process::create_child_process(const ::string & pszCmdLine,bool bPiped,const ::string & pszDir, ::e_priority epriority)
+   bool process::create_child_process(const ::string & pszCmdLine,bool bPiped,const ::string & pszDir, ::enum_priority epriority)
    {
 
       if(!::process::process::create_child_process(pszCmdLine, bPiped, pszDir, epriority))
@@ -263,7 +263,7 @@ namespace ansios
 
          m_exitstatus.m_iExitCode = -1;
 
-         message_box("gksu is not installed, please install gksu.","Please, install gksu.",e_message_box_icon_information);
+         output_error_message("gksu is not installed, please install gksu.","Please, install gksu.",e_message_box_icon_information);
 
          return false;
 

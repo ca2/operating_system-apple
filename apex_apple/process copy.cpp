@@ -154,7 +154,7 @@ namespace apple
    }
 
 
-   bool process::create_child_process(const char * pszCmdLine,bool bPiped,const char * pszDir, ::e_priority epriority)
+   bool process::create_child_process(const char * pszCmdLine,bool bPiped,const char * pszDir, ::enum_priority epriority)
    {
 
       if(!::process::process::create_child_process(pszCmdLine, bPiped, pszDir, epriority))

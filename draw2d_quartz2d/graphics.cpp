@@ -103,24 +103,31 @@ namespace draw2d_quartz2d
 
 
 
-   bool graphics::IsPrinting()
-   {
-
-      return m_bPrinting;
-
-   }
+//   bool graphics::IsPrinting()
+//   {
+//
+//      return m_bPrinting;
+//
+//   }
 
 
    bool graphics::CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData)
    {
-      __throw(error_not_supported);
+      
+      throw ::exception::exception(error_not_supported);
+      
       //return Attach(::CreateDC(lpszDriverName, lpszDeviceName, lpszOutput, (const DEVMODE*)lpInitData));
+      
    }
+
 
    bool graphics::CreateIC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData)
    {
-      __throw(error_not_supported);
+      
+      throw ::exception::exception(error_not_supported);
+      
       //return Attach(::CreateIC(lpszDriverName, lpszDeviceName, lpszOutput, (const DEVMODE*) lpInitData));
+      
    }
 
 
@@ -1861,7 +1868,7 @@ namespace draw2d_quartz2d
 
             rectText.bottom = rectText.top + rectText.height() * 2;
 
-            auto pimage1 = create_image(rectText.size());
+            auto pimage1 = m_pcontext->context_image()->create_image(rectText.size());
             
             pimage1->fill(0, 0, 0, 0);
             pimage1->get_graphics()->set(get_current_font());

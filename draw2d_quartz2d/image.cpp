@@ -268,7 +268,7 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
 
 
       // White blend image
-      auto pimage1 = create_image({cx,  cy});
+      auto pimage1 = m_pcontext->context_image()->create_image({cx,  cy});
       
       pimage1->set_rgb(255, 255, 255);
       
@@ -287,7 +287,7 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
       }
 
       // Black blend image
-      auto pimage2 = create_image({cx,  cy});
+      auto pimage2 = m_pcontext->context_image()->create_image({cx,  cy});
       pimage2->fill(0, 0, 0, 0);
 
   
@@ -306,7 +306,7 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
       }
 
       // Mask image
-      auto pimageM= create_image({cx,  cy});
+      auto pimageM= m_pcontext->context_image()->create_image({cx,  cy});
 
       
       

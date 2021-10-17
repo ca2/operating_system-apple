@@ -214,18 +214,18 @@ namespace coreimage_imaging
 
                }
 
-               p->m_tick = (::u32) (dDelay * 1000.0);
+               p->m_duration = (::u32) (dDelay * 1000.0);
 
-               if(p->m_tick < 90)
+               if(p->m_duration < 90)
                {
 
-                  p->m_tick = 90;
+                  p->m_duration = 90;
 
                }
 
                p->m_pimage->create_helper_map();
 
-               pframea->m_millisTotal += p->m_tick;
+               pframea->m_millisTotal += p->m_duration;
 
             }
 

@@ -40,7 +40,7 @@ namespace ansios
    bool process::create_child_process(const ::string & pszCmdLine,bool bPiped,const ::string & pszDir, ::enum_priority epriority)
    {
 
-      if(!::process::process::create_child_process(pszCmdLine, bPiped, pszDir, epriority))
+      if(!::operating_system::process::create_child_process(pszCmdLine, bPiped, pszDir, epriority))
       {
 
          return false;
@@ -299,7 +299,7 @@ namespace ansios
 
       debug_print("synch_elevated : posix_spawn return status %d", status);
 
-      auto tickStart = ::millis::now();
+      auto tickStart = ::duration::now();
 
       while(!has_exited() && tickStart.elapsed() < durationTimeOut)
       {

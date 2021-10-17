@@ -93,7 +93,7 @@ namespace draw2d_quartz2d
       else if(m_eregion == ::draw2d::e_region_combine)
       {
 
-         throw ::exception::exception(error_not_supported, "not supported");
+         throw ::exception(error_not_supported, "not supported");
 
       }
 

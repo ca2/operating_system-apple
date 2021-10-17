@@ -15,7 +15,7 @@ char * mm_error_description(OSStatus status);
 string apple_error_string(OSStatus status)
 {
    
-   return str::from_strdup(mm_error_string(status));
+   return string_from_strdup(mm_error_string(status));
    
 }
 
@@ -23,7 +23,7 @@ string apple_error_string(OSStatus status)
 string apple_error_description(OSStatus status)
 {
    
-   return str::from_strdup(mm_error_description(status));
+   return string_from_strdup(mm_error_description(status));
    
 }
 

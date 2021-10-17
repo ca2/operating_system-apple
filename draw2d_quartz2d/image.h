@@ -18,7 +18,7 @@ namespace draw2d_quartz2d
       image();
       ~image() override;
 
-      bool map(bool bApplyAlphaTransform = true) override;
+      bool map(bool bApplyAlphaTransform = true) const override;
       bool _unmap() override;
 
       

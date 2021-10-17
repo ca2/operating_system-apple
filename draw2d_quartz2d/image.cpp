@@ -395,10 +395,10 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
    }
 
 
-   bool image::map(bool bApplyTransform)
+   bool image::map(bool bApplyTransform) const
    {
 
-      m_bMapped = true;
+      ((image *)this)->m_bMapped = true;
       
       return true;
 

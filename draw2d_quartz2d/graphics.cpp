@@ -114,7 +114,7 @@ namespace draw2d_quartz2d
    bool graphics::CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData)
    {
       
-      throw ::exception::exception(error_not_supported);
+      throw ::exception(error_not_supported);
       
       //return Attach(::CreateDC(lpszDriverName, lpszDeviceName, lpszOutput, (const DEVMODE*)lpInitData));
       
@@ -124,7 +124,7 @@ namespace draw2d_quartz2d
    bool graphics::CreateIC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData)
    {
       
-      throw ::exception::exception(error_not_supported);
+      throw ::exception(error_not_supported);
       
       //return Attach(::CreateIC(lpszDriverName, lpszDeviceName, lpszOutput, (const DEVMODE*) lpInitData));
       

@@ -163,7 +163,7 @@
 		9A637E642672406E005D0AC3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A637E682672406E005D0AC3 /* lib.dylib */,
+				9A637E682672406E005D0AC3 /* libapex_apple.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 		9A15A5A4264B54430080670E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					9A15A5AB264B54430080670E = {
 						CreatedOnToolsVersion = 12.5;
@@ -276,7 +276,7 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A637E682672406E005D0AC3 /* lib.dylib */ = {
+		9A637E682672406E005D0AC3 /* libapex_apple.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libapex_apple.dylib;
@@ -338,7 +338,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = x86_64;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
@@ -431,7 +430,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = x86_64;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";

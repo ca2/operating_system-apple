@@ -17,7 +17,7 @@
 		9A0705F8266256D4004E8CB4 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0705F7266256D4004E8CB4 /* libacme.dylib */; };
 		9A0705FA266256D4004E8CB4 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0705F9266256D4004E8CB4 /* libapex.dylib */; };
 		9A0705FC266256EE004E8CB4 /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0705FB266256EE004E8CB4 /* libaura.dylib */; };
-		9A0706082662AF69004E8CB4 /* lib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0706072662AF56004E8CB4 /* lib.dylib */; };
+		9A0706082662AF69004E8CB4 /* libacme_macos.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0706072662AF56004E8CB4 /* libacme_macos.dylib */; };
 		9A07061B2662B273004E8CB4 /* libaura_macos.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0706142662B23B004E8CB4 /* libaura_macos.dylib */; };
 		9A204ACB2433CA8900D45614 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AA32433CA8800D45614 /* framework.cpp */; };
 		9A204ACC2433CA8900D45614 /* factory_exchange.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A204AA42433CA8800D45614 /* factory_exchange.h */; };
@@ -163,7 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A07061B2662B273004E8CB4 /* libaura_macos.dylib in Frameworks */,
-				9A0706082662AF69004E8CB4 /* lib.dylib in Frameworks */,
+				9A0706082662AF69004E8CB4 /* libacme_macos.dylib in Frameworks */,
 				9A0705FC266256EE004E8CB4 /* libaura.dylib in Frameworks */,
 				9A0705F8266256D4004E8CB4 /* libacme.dylib in Frameworks */,
 				9A0705FA266256D4004E8CB4 /* libapex.dylib in Frameworks */,
@@ -218,7 +218,7 @@
 		9A0706032662AF56004E8CB4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A0706072662AF56004E8CB4 /* lib.dylib */,
+				9A0706072662AF56004E8CB4 /* libacme_macos.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -350,7 +350,7 @@
 		9A574B8F16AAB906000CC4EF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Camilo Sasuke Tsumanuma";
 				TargetAttributes = {
 					07B65772190F3CA2002DAADE = {
@@ -389,10 +389,9 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A0706072662AF56004E8CB4 /* lib.dylib */ = {
+		9A0706072662AF56004E8CB4 /* libacme_macos.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = lib.dylib;
 			path = libacme_macos.dylib;
 			remoteRef = 9A0706062662AF56004E8CB4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -636,7 +635,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = x86_64;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
@@ -711,7 +709,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = x86_64;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";

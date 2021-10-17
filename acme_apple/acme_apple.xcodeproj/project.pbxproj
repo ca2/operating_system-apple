@@ -29,6 +29,20 @@
 			remoteGlobalIDString = 9A0C1638264A281D00B5CC33;
 			remoteInfo = acme_posix;
 		};
+		9A5DCE16271A37D000C2ED86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5DCE12271A37D000C2ED86 /* acid_apple.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A5DCE0B271A36FF00C2ED86;
+			remoteInfo = acid_apple;
+		};
+		9A5DCE18271A37EA00C2ED86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5DCE12271A37D000C2ED86 /* acid_apple.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A5DCE0A271A36FF00C2ED86;
+			remoteInfo = acid_apple;
+		};
 		9A788058264F6D96003DF8A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A15A5D0264B54B70080670E /* acme_posix.xcodeproj */;
@@ -44,6 +58,7 @@
 		9A15A5D0264B54B70080670E /* acme_posix.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_posix.xcodeproj; path = "../../platform-posix/acme_posix/acme_posix.xcodeproj"; sourceTree = "<group>"; };
 		9A15A60E264B56520080670E /* apple_timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = apple_timer.cpp; sourceTree = "<group>"; };
 		9A412438266C3ECE00C3FF0E /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5DCE12271A37D000C2ED86 /* acid_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acid_apple.xcodeproj; path = ../acid_apple/acid_apple.xcodeproj; sourceTree = "<group>"; };
 		9A74158F266BD25B00552531 /* debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = debug.cpp; sourceTree = "<group>"; };
 		9A787E47264DF1A1003DF8A0 /* resource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = resource.cpp; sourceTree = "<group>"; };
 		9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+DDExtensions.mm"; sourceTree = "<group>"; };
@@ -92,6 +107,7 @@
 		9A15A579264B536C0080670E = {
 			isa = PBXGroup;
 			children = (
+				9A5DCE12271A37D000C2ED86 /* acid_apple.xcodeproj */,
 				9A15A5D0264B54B70080670E /* acme_posix.xcodeproj */,
 				9A787E4F264E22CB003DF8A0 /* acme_apple */,
 				9A15A583264B536C0080670E /* Products */,
@@ -111,6 +127,14 @@
 			isa = PBXGroup;
 			children = (
 				9A15A5D5264B54B80080670E /* libacme_posix.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A5DCE13271A37D000C2ED86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A5DCE17271A37D000C2ED86 /* libacid_apple.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +210,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A5DCE19271A37EA00C2ED86 /* PBXTargetDependency */,
 				9A788059264F6D96003DF8A0 /* PBXTargetDependency */,
 			);
 			name = acme_apple;
@@ -199,7 +224,7 @@
 		9A15A57A264B536C0080670E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					9A15A581264B536C0080670E = {
 						CreatedOnToolsVersion = 12.5;
@@ -219,6 +244,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 9A5DCE13271A37D000C2ED86 /* Products */;
+					ProjectRef = 9A5DCE12271A37D000C2ED86 /* acid_apple.xcodeproj */;
+				},
+				{
 					ProductGroup = 9A15A5D1264B54B70080670E /* Products */;
 					ProjectRef = 9A15A5D0264B54B70080670E /* acme_posix.xcodeproj */;
 				},
@@ -236,6 +265,13 @@
 			fileType = "compiled.mach-o.dylib";
 			path = libacme_posix.dylib;
 			remoteRef = 9A15A5D4264B54B80080670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A5DCE17271A37D000C2ED86 /* libacid_apple.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libacid_apple.a;
+			remoteRef = 9A5DCE16271A37D000C2ED86 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -259,6 +295,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9A5DCE19271A37EA00C2ED86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = acid_apple;
+			targetProxy = 9A5DCE18271A37EA00C2ED86 /* PBXContainerItemProxy */;
+		};
 		9A788059264F6D96003DF8A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = acme_posix;
@@ -271,10 +312,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = x86_64;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -359,10 +399,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = x86_64;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;

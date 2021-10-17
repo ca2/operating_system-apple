@@ -25,8 +25,7 @@ void apex_apple_factory_exchange(::factory_map * pfactorymap)
 
    pfactorymap->create_factory < ::posix::file_context, ::file_context >();
    
-   pfactorymap->create_factory < ::ansios::process, ::process::process >();
-
+   pfactorymap->create_factory < ::ansios::process, ::operating_system::process >();
    
 }
 

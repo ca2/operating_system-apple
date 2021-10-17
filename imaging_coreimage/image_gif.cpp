@@ -214,18 +214,18 @@ namespace coreimage_imaging
 
                }
 
-               p->m_duration = (::u32) (dDelay * 1000.0);
+               p->m_duration = FLOATING_SECOND(dDelay);
 
-               if(p->m_duration < 90)
+               if(p->m_duration < 5_ms)
                {
 
-                  p->m_duration = 90;
+                  p->m_duration = 5_ms;
 
                }
 
                p->m_pimage->create_helper_map();
 
-               pframea->m_millisTotal += p->m_duration;
+               pframea->m_durationTotal += p->m_duration;
 
             }
 

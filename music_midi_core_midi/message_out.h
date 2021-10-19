@@ -64,27 +64,30 @@ namespace music
             MIDIPacket * m_packet;
 
 
-            message_out(::music::midi::core_midi::midi * pmidi, const string & strDriver);
-            message_out(::music::midi::core_midi::midi * pmidi, int iPort);
-            //message_out();
+            //message_out(::music::midi::core_midi::midi * pmidi, const string & strDriver);
+            //message_out(::music::midi::core_midi::midi * pmidi, int iPort);
+            message_out();
             //message_out(::object * pobject, string driver);
             //message_out(::object * pobject, int iPort);
-            virtual ~message_out();
+            ~message_out() override;
             
-            virtual ::e_status open(int iPort) override;
             
-            virtual ::e_status start() override;
+            ::e_status initialize_message_out(::music::midi::midi * pmidi, const ::string & strDeviceId) override;
             
-            virtual ::e_status note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
-            virtual ::e_status note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
-            virtual ::e_status program_change(int iChannel, unsigned char uchProgram) override;
-            virtual void control_change(int iChannel, unsigned char uchController, unsigned char uchValue) override;
-            virtual void pitch_bend(int iChannel, unsigned short ushBend) override;
-            virtual void sysex(const ::block & block) override;
+            ::e_status open() override;
             
-            virtual ::e_status step() override;
+            ::e_status start() override;
             
-            virtual void reset_all_controllers() override;
+            ::e_status note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
+            ::e_status note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
+            ::e_status program_change(int iChannel, unsigned char uchProgram) override;
+            void control_change(int iChannel, unsigned char uchController, unsigned char uchValue) override;
+            void pitch_bend(int iChannel, unsigned short ushBend) override;
+            void sysex(const ::block & block) override;
+            
+            ::e_status step() override;
+            
+            void reset_all_controllers() override;
             
             virtual void add_short_message(Byte * pmessage, int iSize);
             virtual void add_long_message(Byte * pmessage, int iSize);

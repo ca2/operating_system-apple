@@ -38,7 +38,9 @@ namespace music
             ~dls_synth_message_out() override;
             
             
-            ::e_status open(int iPort) override;
+//            ::e_status initialize_message_out(::music::midi::midi * pmidi, const ::string & strDeviceId) override;
+            
+            ::e_status open() override;
             
             ::e_status note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
             ::e_status note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
@@ -46,6 +48,12 @@ namespace music
             
             virtual ::e_status step() override;
 
+            
+            bool use_tick() const override;
+            
+            
+            bool sends_on_message() const override;
+            
             
          };
 

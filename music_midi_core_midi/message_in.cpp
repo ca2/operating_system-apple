@@ -35,7 +35,7 @@ namespace music
             if(!estatus)
             {
                
-               throw ::exception::exception(estatus);
+               throw ::exception(estatus);
                
             }
 
@@ -129,7 +129,7 @@ namespace music
             if(!estatus)
             {
                
-               throw ::exception::exception(estatus);
+               throw ::exception(estatus);
                
             }
             
@@ -140,7 +140,7 @@ namespace music
             if(!estatus)
             {
                 
-               throw ::exception::exception(estatus);
+               throw ::exception(estatus);
                 
             }
                    
@@ -164,7 +164,7 @@ namespace music
                
                string str;
                
-               output_debug_string("MIDIOutputPortCreate failed with code "+__str((int)result)+"%i\n");
+               WARNING("MIDIOutputPortCreate failed with code " << __string((int)result) );
                
                return error_failed;
                
@@ -214,7 +214,7 @@ namespace music
                
                string str;
                
-               output_debug_string("MIDIPortConnectSource failed with code "+__str((int)result)+"%i\n");
+               WARNING("MIDIPortConnectSource failed with code " << __string((int)result));
                
                return error_failed;
                
@@ -235,7 +235,7 @@ namespace music
               
                string str;
               
-               output_debug_string("MIDIPortDisconnectSource failed with code "+__str((int)result)+"%i\n");
+               WARNING("MIDIPortDisconnectSource failed with code "<< __string((int)result));
               
                return error_failed;
               
@@ -255,7 +255,7 @@ namespace music
               
                string str;
               
-               output_debug_string("MIDIPortDispose (for MIDI Input) failed with code "+__str((int)result)+"%i\n");
+               WARNING("MIDIPortDispose (for MIDI Input) failed with code " << __string((int)result));
               
                return error_failed;
               

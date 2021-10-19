@@ -23,7 +23,7 @@ namespace music
          dls_synth_message_out::dls_synth_message_out()
          {
             
-            open(0);
+            open();
             
          }
          
@@ -35,7 +35,7 @@ namespace music
          }
          
          
-         ::e_status dls_synth_message_out::open(int iPort)
+         ::e_status dls_synth_message_out::open()
          {
             
             OSStatus result = noErr;
@@ -211,6 +211,22 @@ namespace music
             
          }
       
+      
+         bool dls_synth_message_out::use_tick() const
+         {
+            
+            return false;
+            
+         }
+      
+         
+         bool dls_synth_message_out::sends_on_message() const
+         {
+      
+            return true;
+         
+         }
+
 
       } // namespace core_midi
 

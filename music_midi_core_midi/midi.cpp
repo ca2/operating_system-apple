@@ -1,5 +1,5 @@
 #include "framework.h"
-
+#include "app-veriwell/multimedia/music/midi/midi.h"
 
 
 namespace music
@@ -78,7 +78,7 @@ namespace music
 
                CFRelease(name);
 
-               output_debug_string("Source:" + __str(iEndpoint) + " - '" + string(szBuffer) + "'\n");
+               WARNING("Source:" << __string(iEndpoint) << " - '" << string(szBuffer) << "'");
 
                Endpoint source;
 
@@ -102,7 +102,7 @@ namespace music
             
             ItemCount iEndpointCount = MIDIGetNumberOfDestinations();
             
-            output_debug_string(__str(iEndpointCount) + " MIDI destinations\n");
+            INFORMATION(iEndpointCount << " MIDI destinations");
             
             for (int iEndpoint =0; iEndpoint < (int) iEndpointCount; iEndpoint++)
             {
@@ -117,7 +117,7 @@ namespace music
                
                CFRelease(name);
                
-               output_debug_string("Destination:" + __str(iEndpoint) + " - '" + string(szBuffer) + "'\n");
+               WARNING("Destination:" << __string(iEndpoint) << " - '" << __string(szBuffer) << "'");
                
                Endpoint destination;
                
@@ -139,7 +139,7 @@ namespace music
             
             ::output_debug_string("music::midi::core_midi::enumerate_midi_out_devices\n");
             
-            add_midi_out_device("DLS Synth", "core_midi");
+            add_midi_out_device("DLS Synth", "core_midi:DLS Synth");
             
             auto sources = get_destination_endpoints();
             
@@ -174,8 +174,17 @@ namespace music
          }
 
 
-         ::e_status     midi::enumerate_midi_devices()
+         ::e_status midi::enumerate_midi_devices()
          {
+            
+            auto estatus = ::music::midi::midi::enumerate_midi_devices();
+            
+            if(!estatus)
+            {
+               
+               return estatus;
+               
+            }
 
             return ::success;
 
@@ -228,7 +237,7 @@ namespace music
                
             }
             
-            auto iPort = get_midi_out_device_port(strDevice);
+            //auto iPort = get_midi_out_device_port(strDevice);
             
             //if (iPort >= 0 && iPort < m_cPortCount)
             {
@@ -238,7 +247,7 @@ namespace music
                if (!pmessageout)
                {
                   
-                  auto pmidiout = __new(message_out(this, maximum(0, (int) iPort)));
+                  auto pmidiout = __create_new < message_out >();
                   
                   pmessageout = pmidiout;
                   

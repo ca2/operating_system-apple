@@ -21,140 +21,149 @@ namespace music
       {
 
 
-//      message_out::message_out()
-//         {
-//            
-//         }
-         
-
-         message_out::message_out(::music::midi::core_midi::midi * pmidi, const string & strDriver)
+      message_out::message_out()
          {
             
-            auto estatus = initialize(pmidi);
+         }
+         
+
+         ::e_status message_out::initialize_message_out(::music::midi::midi * pmidi, const string & strDriver)
+         {
             
+            auto estatus = ::music::midi::message_out::initialize_message_out(pmidi, strDriver);
             if(!estatus)
             {
                
-               throw ::exception::exception(estatus);
+               return estatus;
                
             }
-            
-            m_pmidi = pmidi;
-            
-            m_packetlist = nullptr;
-            
-            m_port = 0;
-            
-            OSStatus result = MIDIOutputPortCreate(m_client, CFSTR("music_midi_core_midi"), &m_port);
-
-            if (result != 0)
-            {
-               
-               string str;
-               
-               str.Format("MIDIOutputPortCreate failed with code %i\n", (int) result);
-               
-               __throw(error_resource, str);
-               
-            }
-
-            bool bFound = false;
-            
-//            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
+//            if(!estatus)
+//            {
 //
-//            if(pmidi)
-            {
-            
-               auto destinations  = m_pmidi->get_destination_endpoints();
-            
-               for (unsigned int n = 0; n < destinations.size(); n++)
-               {
-                  
-                  if (destinations[n].m_strName == strDriver)
-                  {
-                     
-                     m_endpoint = destinations[n].m_endpoint;
-                     
-                     bFound = true;
-                     
-                     return;
-                     
-                  }
-                  
-               }
-               
-               if(!bFound)
-               {
-               
-                  for (unsigned int n = 0; n < destinations.size(); n++)
-                  {
-                     
-                     if (destinations[n].m_strName == strDriver)
-                     {
-                     
-                        m_endpoint = destinations[n].m_endpoint;
-                     
-                        bFound = true;
-                     
-                        return;
-                  
-                     }
-                     
-                  }
-                  
-               }
-
-            }
-            
-            if (!bFound)
-            {
-               
-               output_debug_string("Unknown MIDI Output port (1)");
-               
-               m_endpoint = MIDIGetDestination(0);
-               
-            }
-            
-            if(!m_port || !m_endpoint)
-            {
-               
-               __throw(error_resource, "either no Output Port or no Destination Endpoint");
-               
-            }
+//               throw ::exception(estatus);
+//
+//            }
+//
+//            m_pmidi = pmidi;
+//
+//            m_packetlist = nullptr;
+//
+//            m_port = 0;
+//
+//            OSStatus result = MIDIOutputPortCreate(m_client, CFSTR("music_midi_core_midi"), &m_port);
+//
+//            if (result != 0)
+//            {
+//
+//               string str;
+//
+//               str.Format("MIDIOutputPortCreate failed with code %i\n", (int) result);
+//
+//               __throw(error_resource, str);
+//
+//            }
+//
+//            bool bFound = false;
+//
+////            __pointer(::music::midi::core_midi::midi) pmidi = pmultimedia->midi();
+////
+////            if(pmidi)
+//            {
+//
+//               auto destinations  = m_pmidi->get_destination_endpoints();
+//
+//               for (unsigned int n = 0; n < destinations.size(); n++)
+//               {
+//
+//                  if (destinations[n].m_strName == strDriver)
+//                  {
+//
+//                     m_endpoint = destinations[n].m_endpoint;
+//
+//                     bFound = true;
+//
+//                     return ::success;
+//
+//                  }
+//
+//               }
+//
+//               if(!bFound)
+//               {
+//
+//                  for (unsigned int n = 0; n < destinations.size(); n++)
+//                  {
+//
+//                     if (destinations[n].m_strName == strDriver)
+//                     {
+//
+//                        m_endpoint = destinations[n].m_endpoint;
+//
+//                        bFound = true;
+//
+//                        return ::success;
+//
+//                     }
+//
+//                  }
+//
+//               }
+//
+//            }
+//
+//            if (!bFound)
+//            {
+//
+//               output_debug_string("Unknown MIDI Output port (1)");
+//
+//               m_endpoint = MIDIGetDestination(0);
+//
+//            }
+//
+//            if(!m_port || !m_endpoint)
+//            {
+//
+//               __throw(error_resource, "either no Output Port or no Destination Endpoint");
+//
+//            }
+//
+            return estatus;
             
          }
 
      
-         message_out::message_out(::music::midi::core_midi::midi * pmidi, int iPort)
-         {
-   
-            auto estatus = initialize(pmidi);
-            
-            if(!estatus)
-            {
-               
-               throw ::exception::exception(estatus);
-               
-            }
-            
-            m_pmidi = pmidi;
-            
-            estatus = open(iPort);
-            
-            if(!estatus)
-            {
-                      
-               throw ::exception::exception(estatus);
-                      
-            }
-                   
-         }
+//         message_out::message_out(::music::midi::core_midi::midi * pmidi, int iPort)
+//         {
+//
+//            auto estatus = initialize(pmidi);
+//
+//            if(!estatus)
+//            {
+//
+//               throw :::exception(estatus);
+//
+//            }
+//
+//            m_pmidi = pmidi;
+//
+//            estatus = open();
+//
+//            if(!estatus)
+//            {
+//
+//               throw ::exception::exception(estatus);
+//
+//            }
+//
+//         }
       
       
-         ::e_status message_out::open(int iPort)
+         ::e_status message_out::open()
          {
          
             m_packetlist = nullptr;
+            
+            auto iPort = m_pmidi->get_midi_out_device_port(m_strDeviceId);
             
             m_port = (MIDIPortRef) iPort;
             
@@ -163,7 +172,7 @@ namespace music
             if (result != 0)
             {
                
-               output_debug_string("MIDIOutputPortCreate failed with code "+__str((int)result)+"\n");
+               WARNING("MIDIOutputPortCreate failed with code " << __string((int)result));
                
                return ::error_failed;
                

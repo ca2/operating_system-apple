@@ -106,7 +106,6 @@
 		9A1B496616A4A10100875A94 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = veriwell_multimedia.xcodeproj; path = "../../../source/app-veriwell/multimedia/veriwell_multimedia.xcodeproj"; sourceTree = "<group>"; };
 		9A3D17C9266EF31C00AE9A5E /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
-		9A3D17CA266EF37F00AE9A5E /* _music_midi_core_audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _music_midi_core_audio.h; sourceTree = "<group>"; };
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		9A8EAF6C17C5640300C458D1 /* exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; path = exception.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		9A8EAF6D17C5640300C458D1 /* exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 2; path = exception.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -249,7 +248,6 @@
 			children = (
 				9A8EAF7817C5640300C458D1 /* _.cpp */,
 				9A3D17C9266EF31C00AE9A5E /* _.h */,
-				9A3D17CA266EF37F00AE9A5E /* _music_midi_core_audio.h */,
 				9AE644EE26709D1C005F3412 /* dls_synth_message_out.cpp */,
 				9AE644EF26709D1C005F3412 /* dls_synth_message_out.h */,
 				9A8EAF6C17C5640300C458D1 /* exception.cpp */,

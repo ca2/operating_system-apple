@@ -186,7 +186,7 @@ namespace multimedia
 
          }
 
-         m_estate = state_closing;
+         m_estate = e_state_closing;
 
          OSStatus status;
 
@@ -447,7 +447,7 @@ namespace multimedia
 //      }
 
 
-      imedia_time out::out_get_time()
+      ::duration out::out_get_position()
       {
 
          single_lock sLock(mutex(), true);
@@ -463,22 +463,22 @@ namespace multimedia
 
             status = AudioQueueCreateTimeline(m_Queue, &timeLine);
             if(status != noErr)
-               return 0;
+               return e_zero;
 
             status = AudioQueueGetCurrentTime(m_Queue, timeLine, &stamp, nullptr);
 
             if(status != 0)
-               return 0;
+               return e_zero;
 
 
             if(!(stamp.mFlags & kAudioTimeStampSampleTimeValid))
-               return 0;
+               return e_zero;
 
-            return (imedia_time) stamp.mSampleTime;
+            return FLOATING_SECOND((double)stamp.mSampleTime/(double)m_pwaveformat->m_waveformat.nSamplesPerSec);
 
          }
          else
-            return 0;
+            return e_zero;
 
 
       }
@@ -547,7 +547,7 @@ namespace multimedia
       }
 
 
-      ::e_status     out::out_start(const imedia_time & position)
+      ::e_status     out::out_start(const ::duration & position)
       {
 
          ::e_status     estatus = ::wave::out::out_start(position);

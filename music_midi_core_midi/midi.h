@@ -33,10 +33,10 @@ namespace music
 
 
             midi();
-            virtual ~midi();
+            ~midi() override;
 
             
-            virtual bool Initialize() override;
+            bool Initialize() override;
             
             
             array < Endpoint > get_source_endpoints();

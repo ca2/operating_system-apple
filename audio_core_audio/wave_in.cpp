@@ -472,11 +472,11 @@ namespace multimedia
 
          m_iBuffer--;
 
-         auto tickSampleTime = ::millis::now();
+         auto tickSampleTime = ::duration::now();
 
          int iBuffer = (int) m_Buffers.find_first(inBuffer);
 
-         m_listenerset.in_data_proc(this, (u32) (tickSampleTime.m_i % 0x100000000ULL), iBuffer);
+         m_listenerset.in_data_proc(this, (u32) (tickSampleTime.integral_millisecond().m_i % 0x100000000ULL), iBuffer);
 
          if(m_pencoder != nullptr)
          {

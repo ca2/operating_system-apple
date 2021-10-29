@@ -42,7 +42,7 @@ namespace draw2d_quartz2d
 
 
    // bPreserve is currently disregarded
-   ::e_status image::create(const ::size_i32 & size, ::eobject eobjectCreateImage, int iGoodStride, bool bPreserve)
+   ::e_status image::create(const ::size_i32 & size, ::enum_flag eobjectCreateImage, int iGoodStride, bool bPreserve)
    {
 
       if(m_pbitmap.is_set()

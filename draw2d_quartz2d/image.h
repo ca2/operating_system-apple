@@ -37,7 +37,7 @@ namespace draw2d_quartz2d
       bool dc_select(bool bSelect = true) override;
 
 
-      ::e_status create(const ::size_i32 & size, ::eobject eobjectCreate = DEFAULT_CREATE_IMAGE_OBJECT_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
+      ::e_status create(const ::size_i32 & size, ::enum_flag eflagCreate = DEFAULT_CREATE_IMAGE_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
       //::e_status create(i32 iWidth, i32 iHeight, ::eobject eobjectCreate = DEFAULT_CREATE_IMAGE_OBJECT_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
       ::e_status create(::draw2d::graphics * pgraphics) override;
       ::e_status destroy() override;

@@ -32,17 +32,22 @@ namespace draw2d_quartz2d
 
    ::draw2d::bitmap_pointer image::get_bitmap() const
    {
+      
       return m_pbitmap;
+      
    }
+
 
    ::draw2d::bitmap_pointer image::detach_bitmap()
    {
+      
       return m_pbitmap.detach();
+      
    }
 
 
    // bPreserve is currently disregarded
-   ::e_status image::create(const ::size_i32 & size, ::enum_flag eobjectCreateImage, int iGoodStride, bool bPreserve)
+   ::e_status image::create(const ::size_i32 & size, ::enum_flag eflagCreate, int iGoodStride, bool bPreserve)
    {
 
       if(m_pbitmap.is_set()
@@ -145,7 +150,7 @@ namespace draw2d_quartz2d
       
       //m_sizeAlloc = m_sizeRaw;
       
-      m_eobject = eobjectCreateImage;
+      set(eflagCreate);
 
       return true;
 

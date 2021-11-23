@@ -812,14 +812,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="audio_mmsystem.h" />
-    <ClInclude Include="audio_mmsystem_factory_exchange.h" />
+    <ClInclude Include="audio_mmsystem_factory.h" />
     <ClInclude Include="audio_mmsystem_translation.h" />
     <ClInclude Include="audio_mmsystem_wave_in.h" />
     <ClInclude Include="audio_mmsystem_wave_out.h" />
     <ClInclude Include="framework.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="audio_mmsystem_factory_exchange.cpp" />
+    <ClCompile Include="audio_mmsystem_factory.cpp" />
     <ClCompile Include="audio_mmsystem_translation.cpp" />
     <ClCompile Include="audio_mmsystem_wave_in.cpp" />
     <ClCompile Include="audio_mmsystem_wave_out.cpp" />

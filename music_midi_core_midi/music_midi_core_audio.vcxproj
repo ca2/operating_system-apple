@@ -803,7 +803,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="music_midi_mmsystem_factory_exchange.h" />
+    <ClInclude Include="music_midi_mmsystem_factory.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="music_midi_mmsystem.h" />
     <ClInclude Include="music_midi_mmsystem_exception.h" />
@@ -817,7 +817,7 @@
     <ClInclude Include="player\music_midi_mmsystem_player_interface.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="music_midi_mmsystem_factory_exchange.cpp" />
+    <ClCompile Include="music_midi_mmsystem_factory.cpp" />
     <ClCompile Include="framework.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='basis|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='codeanalysis|Win32'">Create</PrecompiledHeader>

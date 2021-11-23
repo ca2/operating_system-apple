@@ -1,8 +1,7 @@
 #include "framework.h"
 
 
-extern "C"
-void write_text_quartz2d_factory_exchange(::factory_map * pfactorymap)
+__FACTORY_EXPORT void write_text_quartz2d_factory(::factory_map * pfactorymap)
 {
 
    pfactorymap->create_factory < ::write_text_quartz2d::fonts, ::write_text::fonts >();

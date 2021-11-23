@@ -1,21 +1,18 @@
 #include "framework.h"
 
 
-extern "C"
-void apex_posix_factory_exchange(::factory_map * pfactorymap);
+__FACTORY_EXPORT void apex_posix_factory(::factory_map * pfactorymap);
 
 
-extern "C"
-void acme_apple_factory_exchange(::factory_map * pfactorymap);
+__FACTORY_EXPORT void acme_apple_factory(::factory_map * pfactorymap);
 
 
-extern "C"
-void apex_apple_factory_exchange(::factory_map * pfactorymap)
+__FACTORY_EXPORT void apex_apple_factory(::factory_map * pfactorymap)
 {
 
-   apex_posix_factory_exchange(pfactorymap);
+   apex_posix_factory(pfactorymap);
    
-   acme_apple_factory_exchange(pfactorymap);
+   acme_apple_factory(pfactorymap);
 
 
 //   pfactorymap->create_factory < ::file::os_watcher, ::file::watcher >();

@@ -29,8 +29,7 @@
 //} // namespace multimedia
 
 
-extern "C"
-void audio_core_audio_factory_exchange(::factory_map * pfactorymap)
+__FACTORY_EXPORT void audio_core_audio_factory(::factory_map * pfactorymap)
 {
 
    //::multimedia::audio_core_audio::factory_exchange factoryexchange();

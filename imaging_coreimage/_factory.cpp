@@ -25,8 +25,7 @@
 //} // namespace coreimage_imaging
 
 
-extern "C"
-void imaging_factory_exchange(::factory_map * pfactorymap)
+__FACTORY_EXPORT void imaging_factory(::factory_map * pfactorymap)
 {
 
    create_factory < ::coreimage_imaging::context_image, ::context_image >();

@@ -7,7 +7,7 @@
     <ClInclude Include="audio_mmsystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="audio_mmsystem_factory_exchange.h">
+    <ClInclude Include="audio_mmsystem_factory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="audio_mmsystem_wave_in.h">
@@ -29,7 +29,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="audio_mmsystem_factory_exchange.cpp">
+    <ClCompile Include="audio_mmsystem_factory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="audio_mmsystem_wave_in.cpp">

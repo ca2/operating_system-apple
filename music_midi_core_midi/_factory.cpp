@@ -38,8 +38,7 @@
 //} // namespace music
 
 
-extern "C"
-void music_midi_core_midi_factory_exchange(::factory_map * pfactorymap)
+__FACTORY_EXPORT void music_midi_core_midi_factory(::factory_map * pfactorymap)
 {
 
    //::music::midi::port::factory_exchange factoryexchange(papp);

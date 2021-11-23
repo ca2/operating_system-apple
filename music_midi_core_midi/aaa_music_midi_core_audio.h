@@ -30,4 +30,4 @@
 
 #include "music_midi_core_audio_midi.h"
 
-#include "music_midi_core_audio_factory_exchange.h"
+#include "music_midi_core_audio_factory.h"

@@ -1,8 +1,7 @@
 #include "framework.h"
 
 
-extern "C"
-void draw2d_quartz2d_factory_exchange(::factory_map * pfactorymap)
+__FACTORY_EXPORT void draw2d_quartz2d_factory(::factory_map * pfactorymap)
 {
 
    

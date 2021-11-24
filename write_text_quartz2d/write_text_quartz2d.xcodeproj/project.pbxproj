@@ -14,7 +14,7 @@
 		9A64C1C42660C6730074030F /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1A82660C6730074030F /* _.cpp */; };
 		9A64C1C52660C6730074030F /* write_text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1A92660C6730074030F /* write_text.cpp */; };
 		9A64C1C62660C6730074030F /* fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1AB2660C6730074030F /* fonts.cpp */; };
-		9A64C1C72660C6730074030F /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1AF2660C6730074030F /* factory_exchange.cpp */; };
+		9A64C1C72660C6730074030F /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1AF2660C6730074030F /* _factory.cpp */; };
 		9A64C1C82660C6730074030F /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C1B12660C6730074030F /* framework.h */; };
 		9A64C1C92660C6730074030F /* fonts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C1B52660C6730074030F /* fonts.h */; };
 		9A64C1CA2660C6730074030F /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C1B92660C6730074030F /* _.h */; };
@@ -66,7 +66,7 @@
 		9A64C1A82660C6730074030F /* _.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
 		9A64C1A92660C6730074030F /* write_text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = write_text.cpp; sourceTree = "<group>"; };
 		9A64C1AB2660C6730074030F /* fonts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fonts.cpp; sourceTree = "<group>"; };
-		9A64C1AF2660C6730074030F /* factory_exchange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = factory_exchange.cpp; sourceTree = "<group>"; };
+		9A64C1AF2660C6730074030F /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9A64C1B12660C6730074030F /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9A64C1B52660C6730074030F /* fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fonts.h; sourceTree = "<group>"; };
 		9A64C1B92660C6730074030F /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				9A64C1A82660C6730074030F /* _.cpp */,
 				9A64C1B92660C6730074030F /* _.h */,
 				9A4124B0266D924E00C3FF0E /* _write_text_quartz2d.h */,
-				9A64C1AF2660C6730074030F /* factory_exchange.cpp */,
+				9A64C1AF2660C6730074030F /* _factory.cpp */,
 				9A64C1AB2660C6730074030F /* fonts.cpp */,
 				9A64C1B52660C6730074030F /* fonts.h */,
 				9A64C1992660C6730074030F /* font_enumeration.cpp */,
@@ -253,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A64C1C42660C6730074030F /* _.cpp in Sources */,
-				9A64C1C72660C6730074030F /* factory_exchange.cpp in Sources */,
+				9A64C1C72660C6730074030F /* _factory.cpp in Sources */,
 				9A64C1C62660C6730074030F /* fonts.cpp in Sources */,
 				9A64C1C32660C6730074030F /* framework.cpp in Sources */,
 				9A64C1C52660C6730074030F /* write_text.cpp in Sources */,

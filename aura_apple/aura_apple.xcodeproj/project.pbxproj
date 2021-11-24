@@ -22,7 +22,7 @@
 		9AC2CFEA2653DAF000CC8096 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFC92653DAF000CC8096 /* node.h */; };
 		9AC2CFEB2653DAF000CC8096 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFCD2653DAF000CC8096 /* _.cpp */; };
 		9AC2CFED2653DAF000CC8096 /* user.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFCF2653DAF000CC8096 /* user.h */; };
-		9AC2CFEE2653DAF000CC8096 /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFD02653DAF000CC8096 /* factory_exchange.cpp */; };
+		9AC2CFEE2653DAF000CC8096 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFD02653DAF000CC8096 /* _factory.cpp */; };
 		9AC2CFF02653DAF000CC8096 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD32653DAF000CC8096 /* framework.h */; };
 		9AC2CFF42653DAF000CC8096 /* _aura_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD72653DAF000CC8096 /* _aura_apple.h */; };
 		9AC2CFF82653DAF000CC8096 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFDB2653DAF000CC8096 /* _.h */; };
@@ -94,7 +94,7 @@
 		9AC2CFC92653DAF000CC8096 /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
 		9AC2CFCD2653DAF000CC8096 /* _.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
 		9AC2CFCF2653DAF000CC8096 /* user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = user.h; sourceTree = "<group>"; };
-		9AC2CFD02653DAF000CC8096 /* factory_exchange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = factory_exchange.cpp; sourceTree = "<group>"; };
+		9AC2CFD02653DAF000CC8096 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9AC2CFD32653DAF000CC8096 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9AC2CFD72653DAF000CC8096 /* _aura_apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _aura_apple.h; sourceTree = "<group>"; };
 		9AC2CFDB2653DAF000CC8096 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 				9AC2CFDB2653DAF000CC8096 /* _.h */,
 				9AC2CFD72653DAF000CC8096 /* _aura_apple.h */,
 				9AC2D1F126543B3200CC8096 /* _mm.h */,
-				9AC2CFD02653DAF000CC8096 /* factory_exchange.cpp */,
+				9AC2CFD02653DAF000CC8096 /* _factory.cpp */,
 				9AC2CFC62653DAF000CC8096 /* factory_exchange.h */,
 				9AC2CFC42653DAF000CC8096 /* framework.cpp */,
 				9AC2CFD32653DAF000CC8096 /* framework.h */,
@@ -311,7 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AC2CFEE2653DAF000CC8096 /* factory_exchange.cpp in Sources */,
+				9AC2CFEE2653DAF000CC8096 /* _factory.cpp in Sources */,
 				9AC2CFE52653DAF000CC8096 /* framework.cpp in Sources */,
 				9AC2CFEB2653DAF000CC8096 /* _.cpp in Sources */,
 				9AC2CFE92653DAF000CC8096 /* node.cpp in Sources */,

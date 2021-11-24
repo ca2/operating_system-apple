@@ -29,12 +29,12 @@
 //} // namespace multimedia
 
 
-__FACTORY_EXPORT void audio_core_audio_factory(::factory_map * pfactorymap)
+__FACTORY_EXPORT void audio_core_audio_factory(::factory::factory * pfactory)
 {
 
    //::multimedia::audio_core_audio::factory_exchange factoryexchange();
-   pfactorymap->create_factory < ::multimedia::audio_core_audio::in, ::wave::in >();
-   pfactorymap->create_factory < ::multimedia::audio_core_audio::out, ::wave::out >();
+   pfactory->add_factory_item < ::multimedia::audio_core_audio::in, ::wave::in >();
+   pfactory->add_factory_item < ::multimedia::audio_core_audio::out, ::wave::out >();
    
 }
 

@@ -16,7 +16,7 @@
 		9A74158D266BD08500552531 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A74158C266BD08500552531 /* libacme_apple.dylib */; };
 		9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8997BC177D0E7D00C7761E /* Carbon.framework */; };
 		9A8EAF3317C563A300C458D1 /* command.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2817C563A300C458D1 /* command.h */; };
-		9A8EAF3417C563A300C458D1 /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2917C563A300C458D1 /* factory_exchange.cpp */; };
+		9A8EAF3417C563A300C458D1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2917C563A300C458D1 /* _factory.cpp */; };
 		9A8EAF3517C563A300C458D1 /* factory_exchange.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2A17C563A300C458D1 /* factory_exchange.h */; };
 		9A8EAF3617C563A300C458D1 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2B17C563A300C458D1 /* translation.cpp */; };
 		9A8EAF3717C563A300C458D1 /* translation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2C17C563A300C458D1 /* translation.h */; };
@@ -34,7 +34,7 @@
 		9AC9452018290B7700AA7325 /* aligned.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9451E18290B7700AA7325 /* aligned.cpp */; };
 		9AC9452118290B7800AA7325 /* aligned.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC9451F18290B7700AA7325 /* aligned.h */; };
 		9AF4C4721F83DD7500197385 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B496616A4A10100875A94 /* framework.cpp */; };
-		9AF4C4731F83DD7500197385 /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2917C563A300C458D1 /* factory_exchange.cpp */; };
+		9AF4C4731F83DD7500197385 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2917C563A300C458D1 /* _factory.cpp */; };
 		9AF4C4741F83DD7500197385 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2B17C563A300C458D1 /* translation.cpp */; };
 		9AF4C4751F83DD7500197385 /* aligned_pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9451A1828E7CE00AA7325 /* aligned_pointer.cpp */; };
 		9AF4C4761F83DD7500197385 /* aligned.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9451E18290B7700AA7325 /* aligned.cpp */; };
@@ -104,7 +104,7 @@
 		9A86864122CC3B0200186E72 /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		9A8EAF2817C563A300C458D1 /* command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = command.h; sourceTree = "<group>"; };
-		9A8EAF2917C563A300C458D1 /* factory_exchange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = factory_exchange.cpp; sourceTree = "<group>"; };
+		9A8EAF2917C563A300C458D1 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9A8EAF2A17C563A300C458D1 /* factory_exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = factory_exchange.h; sourceTree = "<group>"; };
 		9A8EAF2B17C563A300C458D1 /* translation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = translation.cpp; sourceTree = "<group>"; };
 		9A8EAF2C17C563A300C458D1 /* translation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = translation.h; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 				9A8EAF3217C563A300C458D1 /* _.h */,
 				9AEA2378267B12A1006F4A68 /* _audio_core_audio.h */,
 				9A8EAF2817C563A300C458D1 /* command.h */,
-				9A8EAF2917C563A300C458D1 /* factory_exchange.cpp */,
+				9A8EAF2917C563A300C458D1 /* _factory.cpp */,
 				9A8EAF2A17C563A300C458D1 /* factory_exchange.h */,
 				07A27B391808C1F3005F7B47 /* toolbox.cpp */,
 				07A27B3A1808C1F3005F7B47 /* toolbox.h */,
@@ -375,7 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AF4C4721F83DD7500197385 /* framework.cpp in Sources */,
-				9AF4C4731F83DD7500197385 /* factory_exchange.cpp in Sources */,
+				9AF4C4731F83DD7500197385 /* _factory.cpp in Sources */,
 				9AF4C4741F83DD7500197385 /* translation.cpp in Sources */,
 				9AF4C4751F83DD7500197385 /* aligned_pointer.cpp in Sources */,
 				9AF4C4761F83DD7500197385 /* aligned.cpp in Sources */,
@@ -390,7 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A1B496716A4A10100875A94 /* framework.cpp in Sources */,
-				9A8EAF3417C563A300C458D1 /* factory_exchange.cpp in Sources */,
+				9A8EAF3417C563A300C458D1 /* _factory.cpp in Sources */,
 				9A8EAF3617C563A300C458D1 /* translation.cpp in Sources */,
 				9AC9451C1828E7CE00AA7325 /* aligned_pointer.cpp in Sources */,
 				9AC9452018290B7700AA7325 /* aligned.cpp in Sources */,

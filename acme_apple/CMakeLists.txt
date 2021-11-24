@@ -17,7 +17,7 @@ list(APPEND library_source
         DDInvocationGrabber.h
         DDInvocationGrabber.mm
         debug.cpp
-   factory_exchange.cpp
+   _factory.cpp
    framework.cpp
    framework.h
         image.mm

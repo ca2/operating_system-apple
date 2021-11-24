@@ -10,7 +10,7 @@ list(APPEND library_source
    _.h
    _aura_apple.h
         _mm.h
-   factory_exchange.cpp
+   _factory.cpp
    factory_exchange.h
    framework.cpp
    framework.h

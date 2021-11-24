@@ -41,7 +41,7 @@
 
 #else
 
-#include "factory_exchange.h"
+//#include "factory_exchange.h"
 
 
 #include "context_image.h"

@@ -15,7 +15,7 @@ list(APPEND library_source
         _mm_common.h
    datetime.cpp
    datetime.h
-   factory_exchange.cpp
+   _factory.cpp
    file_context.cpp
    file_context.h
    framework.cpp

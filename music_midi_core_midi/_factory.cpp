@@ -38,13 +38,13 @@
 //} // namespace music
 
 
-__FACTORY_EXPORT void music_midi_core_midi_factory(::factory_map * pfactorymap)
+__FACTORY_EXPORT void music_midi_core_midi_factory(::factory::factory * pfactory)
 {
 
    //::music::midi::port::factory_exchange factoryexchange(papp);
    
-//   pfactorymap->create_factory< ::music::midi::core_midi::sequence              , ::music::midi::sequence                  > ();
-   pfactorymap->create_factory< ::music::midi::core_midi::midi              , ::music::midi::midi                  > ();
+//   pfactory->add_factory_item< ::music::midi::core_midi::sequence              , ::music::midi::sequence                  > ();
+   pfactory->add_factory_item< ::music::midi::core_midi::midi              , ::music::midi::midi                  > ();
 //   System.factory().cloneable_large < buffer              >  (System.type_info < ::music::midi::file::buffer                 > ());
 //   System.factory().cloneable_large < sequence_thread              >  (System.type_info < ::music::midi::sequence_thread                 > ());
 //   System.factory().cloneable_large < ::music::midi::port::player::player              >  (System.type_info < ::music::midi::player::player                 > ());

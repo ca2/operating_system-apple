@@ -25,10 +25,10 @@
 //} // namespace coreimage_imaging
 
 
-__FACTORY_EXPORT void imaging_factory(::factory_map * pfactorymap)
+__FACTORY_EXPORT void imaging_coreimage_factory(::factory::factory * pfactory)
 {
 
-   create_factory < ::coreimage_imaging::context_image, ::context_image >();
+   pfactory->add_factory_item < ::coreimage_imaging::context_image, ::context_image >();
    //coreimage_imaging::factory_exchange factoryexchange;
 
 }

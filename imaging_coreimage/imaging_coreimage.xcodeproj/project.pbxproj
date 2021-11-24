@@ -20,9 +20,8 @@
 		9A0706082662AF69004E8CB4 /* libacme_macos.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0706072662AF56004E8CB4 /* libacme_macos.dylib */; };
 		9A07061B2662B273004E8CB4 /* libaura_macos.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0706142662B23B004E8CB4 /* libaura_macos.dylib */; };
 		9A204ACB2433CA8900D45614 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AA32433CA8800D45614 /* framework.cpp */; };
-		9A204ACC2433CA8900D45614 /* factory_exchange.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A204AA42433CA8800D45614 /* factory_exchange.h */; };
 		9A204ACE2433CA8900D45614 /* context_image.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A204AAF2433CA8800D45614 /* context_image.h */; };
-		9A204AD12433CA8900D45614 /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB42433CA8800D45614 /* factory_exchange.cpp */; };
+		9A204AD12433CA8900D45614 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB42433CA8800D45614 /* _factory.cpp */; };
 		9A204AD22433CA8900D45614 /* save_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB82433CA8800D45614 /* save_image.cpp */; };
 		9A204AD32433CA8900D45614 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A204AB92433CA8800D45614 /* framework.h */; };
 		9A204AD72433CA8900D45614 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A204AC42433CA8800D45614 /* _.h */; };
@@ -35,7 +34,7 @@
 		9A415C602473940200EF2BCD /* image_gif.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AD82433CB0300D45614 /* image_gif.cpp */; };
 		9A415C612473940200EF2BCD /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AD92433CB0300D45614 /* image.cpp */; };
 		9A415C622473940200EF2BCD /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AA32433CA8800D45614 /* framework.cpp */; };
-		9A415C632473940200EF2BCD /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB42433CA8800D45614 /* factory_exchange.cpp */; };
+		9A415C632473940200EF2BCD /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB42433CA8800D45614 /* _factory.cpp */; };
 		9A415C642473940200EF2BCD /* save_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB82433CA8800D45614 /* save_image.cpp */; };
 		9AAC21662475B3BE0013AB72 /* mm_ios_image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AAC21642475B3BC0013AB72 /* mm_ios_image.mm */; };
 /* End PBXBuildFile section */
@@ -120,9 +119,8 @@
 		9A0706022662AF56004E8CB4 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../platform-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = "<group>"; };
 		9A07060D2662B23B004E8CB4 /* aura_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura_macos.xcodeproj; path = "../../platform-macos/aura_macos/aura_macos.xcodeproj"; sourceTree = "<group>"; };
 		9A204AA32433CA8800D45614 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
-		9A204AA42433CA8800D45614 /* factory_exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = factory_exchange.h; sourceTree = "<group>"; };
 		9A204AAF2433CA8800D45614 /* context_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context_image.h; sourceTree = "<group>"; };
-		9A204AB42433CA8800D45614 /* factory_exchange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = factory_exchange.cpp; sourceTree = "<group>"; };
+		9A204AB42433CA8800D45614 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9A204AB82433CA8800D45614 /* save_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = save_image.cpp; sourceTree = "<group>"; };
 		9A204AB92433CA8800D45614 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9A204AC42433CA8800D45614 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
@@ -241,9 +239,8 @@
 				9A204AD82433CB0300D45614 /* image_gif.cpp */,
 				9A204AD92433CB0300D45614 /* image.cpp */,
 				9A204AA32433CA8800D45614 /* framework.cpp */,
-				9A204AA42433CA8800D45614 /* factory_exchange.h */,
 				9A204AAF2433CA8800D45614 /* context_image.h */,
-				9A204AB42433CA8800D45614 /* factory_exchange.cpp */,
+				9A204AB42433CA8800D45614 /* _factory.cpp */,
 				9A204AB82433CA8800D45614 /* save_image.cpp */,
 				9A204AB92433CA8800D45614 /* framework.h */,
 				9A204AC42433CA8800D45614 /* _.h */,
@@ -280,7 +277,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A204ACC2433CA8900D45614 /* factory_exchange.h in Headers */,
 				9A204AD72433CA8900D45614 /* _.h in Headers */,
 				9A204AD32433CA8900D45614 /* framework.h in Headers */,
 				9A204ACE2433CA8900D45614 /* context_image.h in Headers */,
@@ -438,7 +434,7 @@
 				9A415C602473940200EF2BCD /* image_gif.cpp in Sources */,
 				9A415C612473940200EF2BCD /* image.cpp in Sources */,
 				9A415C622473940200EF2BCD /* framework.cpp in Sources */,
-				9A415C632473940200EF2BCD /* factory_exchange.cpp in Sources */,
+				9A415C632473940200EF2BCD /* _factory.cpp in Sources */,
 				9A415C642473940200EF2BCD /* save_image.cpp in Sources */,
 				9AAC21662475B3BE0013AB72 /* mm_ios_image.mm in Sources */,
 			);
@@ -459,7 +455,7 @@
 				9A204AD22433CA8900D45614 /* save_image.cpp in Sources */,
 				9A204ADB2433CB0300D45614 /* image_gif.cpp in Sources */,
 				9A204ADC2433CB0300D45614 /* image.cpp in Sources */,
-				9A204AD12433CA8900D45614 /* factory_exchange.cpp in Sources */,
+				9A204AD12433CA8900D45614 /* _factory.cpp in Sources */,
 				9A204ACB2433CA8900D45614 /* framework.cpp in Sources */,
 				9A204ADD2433CB0300D45614 /* mm_macos_image.mm in Sources */,
 			);

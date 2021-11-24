@@ -39,7 +39,7 @@
 //} // namespace music
 //
 
-__FACTORY_EXPORT void music_midi_core_midi_factory(::factory_map * pfactorymap)
+__FACTORY_EXPORT void music_midi_core_midi_factory(::factory::factory * pfactory)
 {
 
    //::music::midi::core_midi::factory_exchange factoryexchange();

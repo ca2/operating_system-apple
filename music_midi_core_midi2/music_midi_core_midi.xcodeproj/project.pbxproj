@@ -25,7 +25,7 @@
 		9A4E5D62251937CD00CC6817 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E5D61251937CD00CC6817 /* libapex.dylib */; };
 		9ABD6B6C2454F63E00380EB2 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52096122F1440C007056D2 /* framework.cpp */; };
 		9ABD6B6D2454F63E00380EB2 /* output_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52097022F1440C007056D2 /* output_base.cpp */; };
-		9ABD6B6E2454F63E00380EB2 /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52096C22F1440C007056D2 /* factory_exchange.cpp */; };
+		9ABD6B6E2454F63E00380EB2 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52096C22F1440C007056D2 /* _factory.cpp */; };
 		9ABD6B6F2454F63E00380EB2 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52097122F1440C007056D2 /* translation.cpp */; };
 		9ABD6B702454F63E00380EB2 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52095722F1440C007056D2 /* midi.cpp */; };
 		9ABD6B862455087C00380EB2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABD6B852455087C00380EB2 /* CoreFoundation.framework */; };
@@ -83,7 +83,7 @@
 		9A4E5D61251937CD00CC6817 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A52095722F1440C007056D2 /* midi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi.cpp; sourceTree = "<group>"; };
 		9A52096122F1440C007056D2 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
-		9A52096C22F1440C007056D2 /* factory_exchange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = factory_exchange.cpp; sourceTree = "<group>"; };
+		9A52096C22F1440C007056D2 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9A52096E22F1440C007056D2 /* translation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = translation.h; sourceTree = "<group>"; };
 		9A52096F22F1440C007056D2 /* factory_exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = factory_exchange.h; sourceTree = "<group>"; };
 		9A52097022F1440C007056D2 /* output_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = output_base.cpp; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				9A52097C22F1440C007056D2 /* _.h */,
-				9A52096C22F1440C007056D2 /* factory_exchange.cpp */,
+				9A52096C22F1440C007056D2 /* _factory.cpp */,
 				9A52096F22F1440C007056D2 /* factory_exchange.h */,
 				9A52096122F1440C007056D2 /* framework.cpp */,
 				9A52097822F1440C007056D2 /* framework.h */,
@@ -343,7 +343,7 @@
 				9ABD6B6D2454F63E00380EB2 /* output_base.cpp in Sources */,
 				9A1B921B24F8EFC80032BAEA /* time.cpp in Sources */,
 				9A1B921F24F8EFC80032BAEA /* message_out.cpp in Sources */,
-				9ABD6B6E2454F63E00380EB2 /* factory_exchange.cpp in Sources */,
+				9ABD6B6E2454F63E00380EB2 /* _factory.cpp in Sources */,
 				9A1B922424F8EFC80032BAEA /* input_base.cpp in Sources */,
 				9ABD6B6F2454F63E00380EB2 /* translation.cpp in Sources */,
 				9ABD6B702454F63E00380EB2 /* midi.cpp in Sources */,

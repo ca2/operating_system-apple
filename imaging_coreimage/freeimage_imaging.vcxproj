@@ -1172,7 +1172,7 @@
     <ClInclude Include="framework.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="factory_exchange.cpp" />
+    <ClCompile Include="_factory.cpp" />
     <ClCompile Include="file_procedure.cpp" />
     <ClCompile Include="file_procedure_ex1.cpp" />
     <ClCompile Include="framework.cpp">

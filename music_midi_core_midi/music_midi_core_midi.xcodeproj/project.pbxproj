@@ -16,13 +16,13 @@
 		9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8997BC177D0E7D00C7761E /* Carbon.framework */; };
 		9A8EAF7B17C5640300C458D1 /* exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6C17C5640300C458D1 /* exception.cpp */; };
 		9A8EAF7C17C5640300C458D1 /* exception.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF6D17C5640300C458D1 /* exception.h */; };
-		9A8EAF7D17C5640300C458D1 /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6E17C5640300C458D1 /* factory_exchange.cpp */; };
+		9A8EAF7D17C5640300C458D1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6E17C5640300C458D1 /* _factory.cpp */; };
 		9A8EAF7E17C5640300C458D1 /* factory_exchange.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF6F17C5640300C458D1 /* factory_exchange.h */; };
 		9A8EAF8717C5640300C458D1 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF7817C5640300C458D1 /* _.cpp */; };
 		9A941C501FF34F880028686E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A941C4F1FF34F880028686E /* CoreMIDI.framework */; };
 		9A941C521FF34F9E0028686E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A941C511FF34F9E0028686E /* CoreAudio.framework */; };
 		9A986D7D1D226CCB001F4C04 /* exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6C17C5640300C458D1 /* exception.cpp */; };
-		9A986D7E1D226CCB001F4C04 /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6E17C5640300C458D1 /* factory_exchange.cpp */; };
+		9A986D7E1D226CCB001F4C04 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6E17C5640300C458D1 /* _factory.cpp */; };
 		9A986D841D226CCB001F4C04 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF7817C5640300C458D1 /* _.cpp */; };
 		9A986D851D226CCB001F4C04 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B496616A4A10100875A94 /* framework.cpp */; };
 		9AA1B44A176361950019E812 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA1B449176361950019E812 /* Cocoa.framework */; };
@@ -109,7 +109,7 @@
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		9A8EAF6C17C5640300C458D1 /* exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; path = exception.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		9A8EAF6D17C5640300C458D1 /* exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 2; path = exception.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		9A8EAF6E17C5640300C458D1 /* factory_exchange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = factory_exchange.cpp; sourceTree = "<group>"; };
+		9A8EAF6E17C5640300C458D1 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9A8EAF6F17C5640300C458D1 /* factory_exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = factory_exchange.h; sourceTree = "<group>"; };
 		9A8EAF7817C5640300C458D1 /* _.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
 		9A941C4F1FF34F880028686E /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
@@ -252,7 +252,7 @@
 				9AE644EF26709D1C005F3412 /* dls_synth_message_out.h */,
 				9A8EAF6C17C5640300C458D1 /* exception.cpp */,
 				9A8EAF6D17C5640300C458D1 /* exception.h */,
-				9A8EAF6E17C5640300C458D1 /* factory_exchange.cpp */,
+				9A8EAF6E17C5640300C458D1 /* _factory.cpp */,
 				9A8EAF6F17C5640300C458D1 /* factory_exchange.h */,
 				9A1B496616A4A10100875A94 /* framework.cpp */,
 				9A1B496316A494A600875A94 /* framework.h */,
@@ -428,7 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A986D7D1D226CCB001F4C04 /* exception.cpp in Sources */,
-				9A986D7E1D226CCB001F4C04 /* factory_exchange.cpp in Sources */,
+				9A986D7E1D226CCB001F4C04 /* _factory.cpp in Sources */,
 				9A986D841D226CCB001F4C04 /* _.cpp in Sources */,
 				9A986D851D226CCB001F4C04 /* framework.cpp in Sources */,
 			);
@@ -452,7 +452,7 @@
 				9AE6416E2670760F005F3412 /* time.cpp in Sources */,
 				9AE6416C2670760F005F3412 /* output_base.cpp in Sources */,
 				9A8EAF7B17C5640300C458D1 /* exception.cpp in Sources */,
-				9A8EAF7D17C5640300C458D1 /* factory_exchange.cpp in Sources */,
+				9A8EAF7D17C5640300C458D1 /* _factory.cpp in Sources */,
 				9AE644F026709D1C005F3412 /* dls_synth_message_out.cpp in Sources */,
 				9AE6418126707667005F3412 /* midi.cpp in Sources */,
 				9AE6418226707667005F3412 /* translation.cpp in Sources */,

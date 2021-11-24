@@ -11,7 +11,7 @@ list(APPEND draw2d_quartz2d_source
         cgcontextcreate.h
         draw2d.cpp
         draw2d.h
-        factory_exchange.cpp
+        _factory.cpp
         font.cpp
         font.h
         framework.cpp

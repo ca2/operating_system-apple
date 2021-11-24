@@ -1,22 +1,22 @@
 #include "framework.h"
 
 
-__FACTORY_EXPORT void aura_posix_factory(::factory_map * pfactorymap);
+__FACTORY_EXPORT void aura_posix_factory(::factory::factory * pfactory);
 
 
-__FACTORY_EXPORT void apex_apple_factory(::factory_map * pfactorymap);
+__FACTORY_EXPORT void apex_apple_factory(::factory::factory * pfactory);
 
 
 
-__FACTORY_EXPORT void aura_apple_factory(::factory_map * pfactorymap)
+__FACTORY_EXPORT void aura_apple_factory(::factory::factory * pfactory)
 {
    
-   aura_posix_factory(pfactorymap);
+   aura_posix_factory(pfactory);
    
-   apex_apple_factory(pfactorymap);
+   apex_apple_factory(pfactory);
 
-   pfactorymap->create_factory < ::aura::posix::node, ::acme::node > ();
-   pfactorymap->create_factory < ::aura::posix::shell, ::user::shell > ();
+   pfactory->add_factory_item < ::aura::posix::node, ::acme::node > ();
+   pfactory->add_factory_item < ::aura::posix::shell, ::user::shell > ();
 
 }
 

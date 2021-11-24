@@ -11,7 +11,7 @@
 		07E25F2E1B4FFC2100752DE1 /* bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40CC17BBE291008391AD /* bitmap.cpp */; };
 		07E25F2F1B4FFC2100752DE1 /* brush.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40CE17BBE291008391AD /* brush.cpp */; };
 		07E25F301B4FFC2100752DE1 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D017BBE291008391AD /* image.cpp */; };
-		07E25F311B4FFC2100752DE1 /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D217BBE291008391AD /* factory_exchange.cpp */; };
+		07E25F311B4FFC2100752DE1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D217BBE291008391AD /* _factory.cpp */; };
 		07E25F321B4FFC2100752DE1 /* font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D417BBE291008391AD /* font.cpp */; };
 		07E25F331B4FFC2100752DE1 /* graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D617BBE291008391AD /* graphics.cpp */; };
 		07E25F341B4FFC2100752DE1 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D817BBE291008391AD /* object.cpp */; };
@@ -43,7 +43,7 @@
 		9A6B40E717BBE291008391AD /* brush.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40CF17BBE291008391AD /* brush.h */; };
 		9A6B40E817BBE291008391AD /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D017BBE291008391AD /* image.cpp */; };
 		9A6B40E917BBE291008391AD /* image.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40D117BBE291008391AD /* image.h */; };
-		9A6B40EA17BBE291008391AD /* factory_exchange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D217BBE291008391AD /* factory_exchange.cpp */; };
+		9A6B40EA17BBE291008391AD /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D217BBE291008391AD /* _factory.cpp */; };
 		9A6B40EC17BBE291008391AD /* font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D417BBE291008391AD /* font.cpp */; };
 		9A6B40ED17BBE291008391AD /* font.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40D517BBE291008391AD /* font.h */; };
 		9A6B40EE17BBE291008391AD /* graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40D617BBE291008391AD /* graphics.cpp */; };
@@ -118,7 +118,7 @@
 		9A6B40CF17BBE291008391AD /* brush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brush.h; sourceTree = "<group>"; };
 		9A6B40D017BBE291008391AD /* image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = image.cpp; sourceTree = "<group>"; };
 		9A6B40D117BBE291008391AD /* image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image.h; sourceTree = "<group>"; };
-		9A6B40D217BBE291008391AD /* factory_exchange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = factory_exchange.cpp; sourceTree = "<group>"; };
+		9A6B40D217BBE291008391AD /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9A6B40D417BBE291008391AD /* font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = font.cpp; sourceTree = "<group>"; };
 		9A6B40D517BBE291008391AD /* font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font.h; sourceTree = "<group>"; };
 		9A6B40D617BBE291008391AD /* graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = graphics.cpp; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 				9AA1007E19971AF5004F84BD /* cgcontextcreate.h */,
 				9A6E9B9326575EC1001F6FC8 /* draw2d.cpp */,
 				9A6E9B9426575EC1001F6FC8 /* draw2d.h */,
-				9A6B40D217BBE291008391AD /* factory_exchange.cpp */,
+				9A6B40D217BBE291008391AD /* _factory.cpp */,
 				9A6B40D417BBE291008391AD /* font.cpp */,
 				9A6B40D517BBE291008391AD /* font.h */,
 				9A1B496616A4A10100875A94 /* framework.cpp */,
@@ -473,7 +473,7 @@
 				07E25F2E1B4FFC2100752DE1 /* bitmap.cpp in Sources */,
 				07E25F2F1B4FFC2100752DE1 /* brush.cpp in Sources */,
 				07E25F301B4FFC2100752DE1 /* image.cpp in Sources */,
-				07E25F311B4FFC2100752DE1 /* factory_exchange.cpp in Sources */,
+				07E25F311B4FFC2100752DE1 /* _factory.cpp in Sources */,
 				07E25F321B4FFC2100752DE1 /* font.cpp in Sources */,
 				07E25F331B4FFC2100752DE1 /* graphics.cpp in Sources */,
 				07E25F341B4FFC2100752DE1 /* object.cpp in Sources */,
@@ -503,7 +503,7 @@
 				9A6B40E417BBE291008391AD /* bitmap.cpp in Sources */,
 				9A6B40E617BBE291008391AD /* brush.cpp in Sources */,
 				9A6B40E817BBE291008391AD /* image.cpp in Sources */,
-				9A6B40EA17BBE291008391AD /* factory_exchange.cpp in Sources */,
+				9A6B40EA17BBE291008391AD /* _factory.cpp in Sources */,
 				9A6B40EC17BBE291008391AD /* font.cpp in Sources */,
 				9A6B40EE17BBE291008391AD /* graphics.cpp in Sources */,
 				9A6B40F017BBE291008391AD /* object.cpp in Sources */,

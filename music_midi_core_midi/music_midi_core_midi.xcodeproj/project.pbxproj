@@ -17,7 +17,6 @@
 		9A8EAF7B17C5640300C458D1 /* exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6C17C5640300C458D1 /* exception.cpp */; };
 		9A8EAF7C17C5640300C458D1 /* exception.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF6D17C5640300C458D1 /* exception.h */; };
 		9A8EAF7D17C5640300C458D1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6E17C5640300C458D1 /* _factory.cpp */; };
-		9A8EAF7E17C5640300C458D1 /* factory_exchange.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF6F17C5640300C458D1 /* factory_exchange.h */; };
 		9A8EAF8717C5640300C458D1 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF7817C5640300C458D1 /* _.cpp */; };
 		9A941C501FF34F880028686E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A941C4F1FF34F880028686E /* CoreMIDI.framework */; };
 		9A941C521FF34F9E0028686E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A941C511FF34F9E0028686E /* CoreAudio.framework */; };
@@ -110,7 +109,6 @@
 		9A8EAF6C17C5640300C458D1 /* exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; path = exception.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		9A8EAF6D17C5640300C458D1 /* exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 2; path = exception.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9A8EAF6E17C5640300C458D1 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
-		9A8EAF6F17C5640300C458D1 /* factory_exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = factory_exchange.h; sourceTree = "<group>"; };
 		9A8EAF7817C5640300C458D1 /* _.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
 		9A941C4F1FF34F880028686E /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		9A941C511FF34F9E0028686E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -253,7 +251,6 @@
 				9A8EAF6C17C5640300C458D1 /* exception.cpp */,
 				9A8EAF6D17C5640300C458D1 /* exception.h */,
 				9A8EAF6E17C5640300C458D1 /* _factory.cpp */,
-				9A8EAF6F17C5640300C458D1 /* factory_exchange.h */,
 				9A1B496616A4A10100875A94 /* framework.cpp */,
 				9A1B496316A494A600875A94 /* framework.h */,
 				9AE6417226707666005F3412 /* input_base.cpp */,
@@ -289,7 +286,6 @@
 				9A8EAF7C17C5640300C458D1 /* exception.h in Headers */,
 				9AE6418326707667005F3412 /* input_base.h in Headers */,
 				9AE6417A26707667005F3412 /* message_out.h in Headers */,
-				9A8EAF7E17C5640300C458D1 /* factory_exchange.h in Headers */,
 				9AE6416F2670760F005F3412 /* time.h in Headers */,
 				9AE6416B2670760F005F3412 /* sequencer.h in Headers */,
 				9AE6416D2670760F005F3412 /* output_base.h in Headers */,

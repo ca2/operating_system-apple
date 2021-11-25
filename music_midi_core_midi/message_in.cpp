@@ -55,7 +55,7 @@ namespace music
                
                string str;
                
-               str.Format("MIDIOutputPortCreate failed with code %i\n", (int) result);
+               str.format("MIDIOutputPortCreate failed with code %i\n", (int) result);
                
                __throw(error_resource, str);
                

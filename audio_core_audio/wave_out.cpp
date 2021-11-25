@@ -111,7 +111,7 @@ namespace multimedia
 
             iBufferCount = 2;
 
-            iBufferSampleCount = uiSamplesPerSec / 40;
+            iBufferSampleCount = uiSamplesPerSec / 20;
 
          }
          else if(epurpose == ::wave::purpose_playback)

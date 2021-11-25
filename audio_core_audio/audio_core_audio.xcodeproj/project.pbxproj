@@ -17,7 +17,6 @@
 		9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8997BC177D0E7D00C7761E /* Carbon.framework */; };
 		9A8EAF3317C563A300C458D1 /* command.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2817C563A300C458D1 /* command.h */; };
 		9A8EAF3417C563A300C458D1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2917C563A300C458D1 /* _factory.cpp */; };
-		9A8EAF3517C563A300C458D1 /* factory_exchange.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2A17C563A300C458D1 /* factory_exchange.h */; };
 		9A8EAF3617C563A300C458D1 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2B17C563A300C458D1 /* translation.cpp */; };
 		9A8EAF3717C563A300C458D1 /* translation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2C17C563A300C458D1 /* translation.h */; };
 		9A8EAF3817C563A300C458D1 /* wave_in.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2D17C563A300C458D1 /* wave_in.cpp */; };
@@ -45,7 +44,6 @@
 		9AF4C4831F83DD7500197385 /* toolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A27B3A1808C1F3005F7B47 /* toolbox.h */; };
 		9AF4C4841F83DD7500197385 /* command.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2817C563A300C458D1 /* command.h */; };
 		9AF4C4851F83DD7500197385 /* aligned_pointer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC9451B1828E7CE00AA7325 /* aligned_pointer.h */; };
-		9AF4C4861F83DD7500197385 /* factory_exchange.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2A17C563A300C458D1 /* factory_exchange.h */; };
 		9AF4C4871F83DD7500197385 /* translation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2C17C563A300C458D1 /* translation.h */; };
 		9AF4C4881F83DD7500197385 /* wave_in.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2E17C563A300C458D1 /* wave_in.h */; };
 		9AF4C4891F83DD7500197385 /* wave_out.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF3017C563A300C458D1 /* wave_out.h */; };
@@ -105,7 +103,6 @@
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		9A8EAF2817C563A300C458D1 /* command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = command.h; sourceTree = "<group>"; };
 		9A8EAF2917C563A300C458D1 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
-		9A8EAF2A17C563A300C458D1 /* factory_exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = factory_exchange.h; sourceTree = "<group>"; };
 		9A8EAF2B17C563A300C458D1 /* translation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = translation.cpp; sourceTree = "<group>"; };
 		9A8EAF2C17C563A300C458D1 /* translation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = translation.h; sourceTree = "<group>"; };
 		9A8EAF2D17C563A300C458D1 /* wave_in.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; path = wave_in.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
@@ -212,7 +209,6 @@
 				9AEA2378267B12A1006F4A68 /* _audio_core_audio.h */,
 				9A8EAF2817C563A300C458D1 /* command.h */,
 				9A8EAF2917C563A300C458D1 /* _factory.cpp */,
-				9A8EAF2A17C563A300C458D1 /* factory_exchange.h */,
 				07A27B391808C1F3005F7B47 /* toolbox.cpp */,
 				07A27B3A1808C1F3005F7B47 /* toolbox.h */,
 				9A8EAF2B17C563A300C458D1 /* translation.cpp */,
@@ -242,7 +238,6 @@
 				9AF4C4831F83DD7500197385 /* toolbox.h in Headers */,
 				9AF4C4841F83DD7500197385 /* command.h in Headers */,
 				9AF4C4851F83DD7500197385 /* aligned_pointer.h in Headers */,
-				9AF4C4861F83DD7500197385 /* factory_exchange.h in Headers */,
 				9AF4C4871F83DD7500197385 /* translation.h in Headers */,
 				9AF4C4881F83DD7500197385 /* wave_in.h in Headers */,
 				9AF4C4891F83DD7500197385 /* wave_out.h in Headers */,
@@ -259,7 +254,6 @@
 				07A27B3C1808C1F3005F7B47 /* toolbox.h in Headers */,
 				9A8EAF3317C563A300C458D1 /* command.h in Headers */,
 				9AC9451D1828E7CE00AA7325 /* aligned_pointer.h in Headers */,
-				9A8EAF3517C563A300C458D1 /* factory_exchange.h in Headers */,
 				9A8EAF3717C563A300C458D1 /* translation.h in Headers */,
 				9A8EAF3917C563A300C458D1 /* wave_in.h in Headers */,
 				9A8EAF3B17C563A300C458D1 /* wave_out.h in Headers */,

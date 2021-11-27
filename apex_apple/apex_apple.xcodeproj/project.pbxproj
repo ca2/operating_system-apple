@@ -94,11 +94,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A41245B266C41E200C3FF0E /* libacme.dylib in Frameworks */,
+				9A41245D266C41FA00C3FF0E /* libacme_posix.dylib in Frameworks */,
 				9ABC54B626DAEC3A00718C0D /* libacme_apple.dylib in Frameworks */,
 				9A412557266DD80A00C3FF0E /* libapex.dylib in Frameworks */,
 				9A412461266C420E00C3FF0E /* libapex_posix.dylib in Frameworks */,
-				9A41245D266C41FA00C3FF0E /* libacme_posix.dylib in Frameworks */,
-				9A41245B266C41E200C3FF0E /* libacme.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

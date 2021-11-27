@@ -80,8 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */,
 				9A787E80264E89F4003DF8A0 /* CoreServices.framework in Frameworks */,
+				9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */,
 				9A787E7E264E8936003DF8A0 /* libacme_posix.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -110,7 +110,7 @@
 		9AEA1849276001EA006437A3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/$(ARCHS)/$(CONFIGURATION)";
+			dstPath = "$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/output";
 			dstSubfolderSpec = 0;
 			files = (
 				9AEA184E276001F9006437A3 /* libdraw2d_quartz2d.dylib in CopyFiles */,

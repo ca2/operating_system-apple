@@ -78,7 +78,7 @@
 		9AEA17BD275FF9B4006437A3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/$(ARCHS)/$(CONFIGURATION)";
+			dstPath = "$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/output";
 			dstSubfolderSpec = 0;
 			files = (
 				9AEA17C0275FF9C9006437A3 /* libaura_apple.dylib in CopyFiles */,

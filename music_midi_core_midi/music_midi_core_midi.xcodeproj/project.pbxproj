@@ -49,6 +49,7 @@
 		9AE641882670824A005F3412 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE64184267080C2005F3412 /* AudioUnit.framework */; };
 		9AE644F026709D1C005F3412 /* dls_synth_message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE644EE26709D1C005F3412 /* dls_synth_message_out.cpp */; };
 		9AE644F126709D1C005F3412 /* dls_synth_message_out.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE644EF26709D1C005F3412 /* dls_synth_message_out.h */; };
+		9AEA185527600236006437A3 /* libmusic_midi_core_midi.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1CFD778154F5EAA007447E2 /* libmusic_midi_core_midi.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,16 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AEA185327600221006437A3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 0;
+			files = (
+				9AEA185527600236006437A3 /* libmusic_midi_core_midi.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +350,7 @@
 				A1CFD774154F5EAA007447E2 /* Sources */,
 				A1CFD775154F5EAA007447E2 /* Frameworks */,
 				A1CFD776154F5EAA007447E2 /* Headers */,
+				9AEA185327600221006437A3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -642,7 +654,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/archive",
-					"$(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/library/$(ARCHS)/$(CONFIGURATION)",
+					"\"$(WorkspaceDir)/archive/storage-$(PLATFORM_MODIFIER)/library/$(ARCHS)/$(CONFIGURATION)\"",
+					"\"$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/$(ARCHS)/$(CONFIGURATION)\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;

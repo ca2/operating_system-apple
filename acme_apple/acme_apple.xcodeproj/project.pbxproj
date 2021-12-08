@@ -21,7 +21,6 @@
 		9A787E7E264E8936003DF8A0 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A15A5D5264B54B80080670E /* libacme_posix.dylib */; };
 		9A787E80264E89F4003DF8A0 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A787E7F264E89F4003DF8A0 /* CoreServices.framework */; };
 		9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
-		9AEA17CD275FFA6E006437A3 /* libacme_apple.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A15A582264B536C0080670E /* libacme_apple.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,19 +39,6 @@
 			remoteInfo = acme_posix;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		9AEA17CC275FFA50006437A3 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/output";
-			dstSubfolderSpec = 0;
-			files = (
-				9AEA17CD275FFA6E006437A3 /* libacme_apple.dylib in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9A0705FD26627549004E8CB4 /* image.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image.mm; sourceTree = "<group>"; };
@@ -212,7 +198,6 @@
 				9A15A57E264B536C0080670E /* Headers */,
 				9A15A57F264B536C0080670E /* Sources */,
 				9A15A580264B536C0080670E /* Frameworks */,
-				9AEA17CC275FFA50006437A3 /* CopyFiles */,
 			);
 			buildRules = (
 			);

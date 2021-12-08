@@ -70,7 +70,6 @@
 		9AA2192B1DC6B04B00C06987 /* mm_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA2192A1DC6B04B00C06987 /* mm_ios.mm */; };
 		9AB287E721320E8A002A0AFF /* mm_apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB287E621320E8A002A0AFF /* mm_apple.mm */; };
 		9AB287E921320F30002A0AFF /* mm_apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB287E621320E8A002A0AFF /* mm_apple.mm */; };
-		9AEA184E276001F9006437A3 /* libdraw2d_quartz2d.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1CFD778154F5EAA007447E2 /* libdraw2d_quartz2d.dylib */; };
 		9AEAFBD21DC1B4B00035AD42 /* mm_mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAFBD11DC1B4B00035AD42 /* mm_mac.mm */; };
 		9AF8E79B1F9FE721003CBDB4 /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF8E7991F9FE721003CBDB4 /* libaura.dylib */; };
 /* End PBXBuildFile section */
@@ -105,19 +104,6 @@
 			remoteInfo = ios_aura;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		9AEA1849276001EA006437A3 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/output";
-			dstSubfolderSpec = 0;
-			files = (
-				9AEA184E276001F9006437A3 /* libdraw2d_quartz2d.dylib in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		07E25F501B4FFC2100752DE1 /* libios_draw2d_quartz2d.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_draw2d_quartz2d.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,7 +351,6 @@
 				A1CFD774154F5EAA007447E2 /* Sources */,
 				A1CFD775154F5EAA007447E2 /* Frameworks */,
 				A1CFD776154F5EAA007447E2 /* Headers */,
-				9AEA1849276001EA006437A3 /* CopyFiles */,
 			);
 			buildRules = (
 			);

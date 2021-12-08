@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFCC276118A6001E14CC /* Carbon.framework */; };
+		9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFE1276122CB001E14CC /* Cocoa.framework */; };
 		9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412438266C3ECE00C3FF0E /* libacme.dylib */; };
 		9A741591266BD2B700552531 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A74158F266BD25B00552531 /* debug.cpp */; };
 		9A787E6E264E234B003DF8A0 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E65264E22CB003DF8A0 /* _factory.cpp */; };
@@ -57,6 +59,12 @@
 		9A15A582264B536C0080670E /* libacme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A15A5D0264B54B70080670E /* acme_posix.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_posix.xcodeproj; path = "../../platform-posix/acme_posix/acme_posix.xcodeproj"; sourceTree = "<group>"; };
 		9A15A60E264B56520080670E /* apple_timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = apple_timer.cpp; sourceTree = "<group>"; };
+		9A21AFCA276117F4001E14CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9A21AFCC276118A6001E14CC /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		9A21AFD727612016001E14CC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9A21AFD92761203B001E14CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9A21AFDB2761205C001E14CC /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		9A21AFE1276122CB001E14CC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9A412438266C3ECE00C3FF0E /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A74158F266BD25B00552531 /* debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = debug.cpp; sourceTree = "<group>"; };
 		9A787E47264DF1A1003DF8A0 /* resource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = resource.cpp; sourceTree = "<group>"; };
@@ -95,6 +103,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A787E80264E89F4003DF8A0 /* CoreServices.framework in Frameworks */,
+				9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */,
+				9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */,
 				9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */,
 				9A787E7E264E8936003DF8A0 /* libacme_posix.dylib in Frameworks */,
 			);
@@ -168,6 +178,12 @@
 		9A787E7C264E8935003DF8A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A21AFE1276122CB001E14CC /* Cocoa.framework */,
+				9A21AFDB2761205C001E14CC /* IOKit.framework */,
+				9A21AFD92761203B001E14CC /* Foundation.framework */,
+				9A21AFD727612016001E14CC /* AppKit.framework */,
+				9A21AFCC276118A6001E14CC /* Carbon.framework */,
+				9A21AFCA276117F4001E14CC /* CoreGraphics.framework */,
 				9A412438266C3ECE00C3FF0E /* libacme.dylib */,
 				9A787E81264E8C46003DF8A0 /* CoreFoundation.framework */,
 				9A787E7F264E89F4003DF8A0 /* CoreServices.framework */,

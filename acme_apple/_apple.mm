@@ -437,8 +437,88 @@ void ns_launch_app(const char * psz, const char ** argv, int iFlags)
 }
 
 
+char * ns_resolve_alias(const char * psz, bool bNoUI = false, bool bNoMount = false)
+{
+   
+   NSString * str = [[NSString alloc] initWithUTF8String: psz];
+   
+   NSURL * url = [NSURL fileURLWithPath: str];
+   
+   NSNumber * aliasFlag = nil;
+   
+   [url getResourceValue:&aliasFlag forKey: NSURLIsAliasFileKey error: nil];
+   
+   if(!aliasFlag.boolValue)
+   {
+   
+      return NULL;
+   
+   }
+   
+   NSURL * resolved = nil;
+   
+   NSError * perror = nil;
+   
+   if (@available(macOS 10.10, *))
+   {
+   
+      NSURLBookmarkResolutionOptions options = 0;
+      
+      options |= bNoUI ? NSURLBookmarkResolutionWithoutUI : 0;
+      
+      options |= bNoMount ? NSURLBookmarkResolutionWithoutMounting : 0;
+      
+      resolved = [NSURL URLByResolvingAliasFileAtURL: url options: options error: &perror];
+      
+   }
+   else
+   {
+      
+      NSError * perrorBookmarkData = nil;
+      
+      NSData * pdataBookmark = [ NSURL bookmarkDataWithContentsOfURL: url error: &perrorBookmarkData ];
+      
+      if(!pdataBookmark)
+      {
+         
+         return nullptr;
+         
+      }
+      
+      NSURLBookmarkResolutionOptions options = NSURLBookmarkResolutionWithoutUI | NSURLBookmarkResolutionWithoutMounting;
+      
+      resolved = [ NSURL URLByResolvingBookmarkData: pdataBookmark options: options relativeToURL:nil bookmarkDataIsStale: nil error: &perror ];
+      
+   }
+
+   if (resolved == nil)
+   {
+      
+      return nullptr;
+      
+   }
+   
+   NSString * resolvedPath = [resolved absoluteString];
+
+   return ns_string(resolvedPath);
+   
+}
 
 
+bool os_is_alias(const char * psz)
+{
+   
+   NSString * str = [[NSString alloc] initWithUTF8String: psz];
+   
+   NSURL * url = [NSURL fileURLWithPath: str];
+   
+   NSNumber * aliasFlag = nil;
+   
+   [url getResourceValue:&aliasFlag forKey:NSURLIsAliasFileKey error: nil];
+   
+   return aliasFlag.boolValue;
+   
+}
 
 
 

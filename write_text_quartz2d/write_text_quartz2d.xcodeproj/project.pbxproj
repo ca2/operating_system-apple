@@ -23,7 +23,6 @@
 		9A6A47382660CB83004ED97A /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A472C2660CB45004ED97A /* libaura.dylib */; };
 		9AE12D962661D4C0009F476A /* font_enumeration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AE12D952661D4C0009F476A /* font_enumeration.mm */; };
 		9AE12D9A2661D577009F476A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE12D992661D577009F476A /* AppKit.framework */; };
-		9AEA185B27600250006437A3 /* libwrite_text_quartz2d.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A64C1712660C62C0074030F /* libwrite_text_quartz2d.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,19 +55,6 @@
 			remoteInfo = ios_aura;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		9AEA185627600241006437A3 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 0;
-			files = (
-				9AEA185B27600250006437A3 /* libwrite_text_quartz2d.dylib in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9A4124B0266D924E00C3FF0E /* _write_text_quartz2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _write_text_quartz2d.h; sourceTree = "<group>"; };
@@ -189,7 +175,6 @@
 				9A64C16D2660C62C0074030F /* Headers */,
 				9A64C16E2660C62C0074030F /* Sources */,
 				9A64C16F2660C62C0074030F /* Frameworks */,
-				9AEA185627600241006437A3 /* CopyFiles */,
 			);
 			buildRules = (
 			);

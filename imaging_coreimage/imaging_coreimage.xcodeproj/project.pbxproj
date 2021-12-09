@@ -37,7 +37,6 @@
 		9A415C632473940200EF2BCD /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB42433CA8800D45614 /* _factory.cpp */; };
 		9A415C642473940200EF2BCD /* save_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB82433CA8800D45614 /* save_image.cpp */; };
 		9AAC21662475B3BE0013AB72 /* mm_ios_image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AAC21642475B3BC0013AB72 /* mm_ios_image.mm */; };
-		9AEA185227600214006437A3 /* libimaging_coreimage.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A574B9816AAB906000CC4EF /* libimaging_coreimage.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,16 +98,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9AEA184F27600204006437A3 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(WorkspaceDir)/time-$(PLATFORM_MODIFIER)/output";
-			dstSubfolderSpec = 0;
-			files = (
-				9AEA185227600214006437A3 /* libimaging_coreimage.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +328,6 @@
 				9A574B9416AAB906000CC4EF /* Sources */,
 				9A574B9516AAB906000CC4EF /* Frameworks */,
 				9A574B9616AAB906000CC4EF /* Headers */,
-				9AEA184F27600204006437A3 /* CopyFiles */,
 			);
 			buildRules = (
 			);

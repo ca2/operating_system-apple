@@ -1,6 +1,8 @@
 #pragma once
 
 
+#include "aura/graphics/draw2d/pen.h"
+
 
 namespace draw2d_quartz2d
 {

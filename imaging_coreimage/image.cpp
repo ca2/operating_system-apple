@@ -5,7 +5,7 @@
 //  Created by Camilo Sasuke Tsumanuma on 21/10/17. Thomas Boregaard Soerensen <3
 //
 #include "framework.h"
-
+#include "aura/graphics/draw2d/save_image.h"
 #include <Carbon/Carbon.h>
 
 

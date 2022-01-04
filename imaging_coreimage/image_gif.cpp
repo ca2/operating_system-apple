@@ -6,7 +6,8 @@
 //
 #include "framework.h"
 #include "aura/operating_system.h"
-
+#include "aura/graphics/draw2d/image_frame.h"
+#include "aura/graphics/draw2d/image_frame_array.h"
 #include <ImageIO/ImageIO.h>
 
 #ifdef APPLE_IOS

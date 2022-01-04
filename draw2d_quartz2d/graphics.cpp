@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "aura/graphics/draw2d/context_image.h"
 #include <math.h>
 #include <memory.h>
 #include <CoreFoundation/CFDictionary.h>
@@ -111,24 +112,24 @@ namespace draw2d_quartz2d
 //   }
 
 
-   bool graphics::CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData)
-   {
-      
-      throw ::exception(error_not_supported);
-      
-      //return Attach(::CreateDC(lpszDriverName, lpszDeviceName, lpszOutput, (const DEVMODE*)lpInitData));
-      
-   }
-
-
-   bool graphics::CreateIC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData)
-   {
-      
-      throw ::exception(error_not_supported);
-      
-      //return Attach(::CreateIC(lpszDriverName, lpszDeviceName, lpszOutput, (const DEVMODE*) lpInitData));
-      
-   }
+//   bool graphics::CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData)
+//   {
+//
+//      throw ::exception(error_not_supported);
+//
+//      //return Attach(::CreateDC(lpszDriverName, lpszDeviceName, lpszOutput, (const DEVMODE*)lpInitData));
+//
+//   }
+//
+//
+//   bool graphics::CreateIC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData)
+//   {
+//
+//      throw ::exception(error_not_supported);
+//
+//      //return Attach(::CreateIC(lpszDriverName, lpszDeviceName, lpszOutput, (const DEVMODE*) lpInitData));
+//
+//   }
 
 
    CGContextRef MyCreateBitmapContext(int cx, int cy)
@@ -1972,94 +1973,94 @@ namespace draw2d_quartz2d
 //   } // call virtual
 
 
-   bool graphics::ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle, const char * lpszString, ::u32 nCount, int * lpDxWidths)
-   {
-
-      __throw(error_not_implemented);
-      return false;
-
-      //      ASSERT(get_handle1() != nullptr);
-      //      return ::ExtTextOut(get_handle1(), x, y, nOptions, rectangle, lpszString, nCount, lpDxWidths) != false;
-
-   }
-
-   bool graphics::ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle, const string & str, int * lpDxWidths)
-   {
-
-      __throw(error_not_implemented);
-      return false;
-
-      //      ASSERT(get_handle1() != nullptr);
-      //      return ::ExtTextOut(get_handle1(), x, y, nOptions, rectangle, str, (::u32)str.get_length(), lpDxWidths) != false;
-
-   }
-
-   size_f64 graphics::TabbedTextOut(double x, double y, const char * lpszString, i32 nCount, i32 nTabPositions, int * lpnTabStopPositions, i32 nTabOrigin)
-   {
-
-      __throw(error_not_implemented);
-      return ::size_f64(0, 0);
-
-      //      ASSERT(get_handle1() != nullptr);
-      //      return ::TabbedTextOut(get_handle1(), x, y, lpszString, nCount, nTabPositions, lpnTabStopPositions, nTabOrigin);
-
-   }
-
-   size_f64 graphics::TabbedTextOut(double x, double y, const string & str, i32 nTabPositions, int * lpnTabStopPositions, i32 nTabOrigin)
-   {
-
-      __throw(error_not_implemented);
-      return ::size_f64(0, 0);
-
-      //      ASSERT(get_handle1() != nullptr);
-      //      return ::TabbedTextOut(get_handle1(), x, y, str, (i32)str.get_length(), nTabPositions, lpnTabStopPositions, nTabOrigin);
-
-   }
-
-
-   size_f64 graphics::GetTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions)
-   {
-
-      __throw(error_not_implemented);
-      return ::size_f64(0, 0);
-
-      //      ASSERT(get_handle2() != nullptr);
-      //      return ::GetTabbedTextExtent(get_handle2(), lpszString, (i32) nCount, nTabPositions, lpnTabStopPositions);
-
-   }
-
-   size_f64 graphics::GetTabbedTextExtent(const string & str, i32 nTabPositions, int * lpnTabStopPositions)
-   {
-
-      __throw(error_not_implemented);
-      return ::size_f64(0, 0);
-
-      //      ASSERT(get_handle2() != nullptr);
-      //      return ::GetTabbedTextExtent(get_handle2(), str, (i32) str.get_length(), nTabPositions, lpnTabStopPositions);
-
-   }
-
-   size_f64 graphics::GetOutputTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions)
-   {
-
-      __throw(error_not_implemented);
-      return ::size_f64(0, 0);
-
-      //      ASSERT(get_handle1() != nullptr);
-      //      return ::GetTabbedTextExtent(get_handle1(), lpszString, (i32) nCount, nTabPositions, lpnTabStopPositions);
-
-   }
-
-   size_f64 graphics::GetOutputTabbedTextExtent(const string & str, i32 nTabPositions, int * lpnTabStopPositions)
-   {
-
-      __throw(error_not_implemented);
-      return ::size_f64(0, 0);
-
-      //      ASSERT(get_handle1() != nullptr);
-      //      return ::GetTabbedTextExtent(get_handle1(), str, (i32) str.get_length(), nTabPositions, lpnTabStopPositions);
-
-   }
+//   bool graphics::ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle, const char * lpszString, ::u32 nCount, int * lpDxWidths)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return false;
+//
+//      //      ASSERT(get_handle1() != nullptr);
+//      //      return ::ExtTextOut(get_handle1(), x, y, nOptions, rectangle, lpszString, nCount, lpDxWidths) != false;
+//
+//   }
+//
+//   bool graphics::ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle, const string & str, int * lpDxWidths)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return false;
+//
+//      //      ASSERT(get_handle1() != nullptr);
+//      //      return ::ExtTextOut(get_handle1(), x, y, nOptions, rectangle, str, (::u32)str.get_length(), lpDxWidths) != false;
+//
+//   }
+//
+//   size_f64 graphics::TabbedTextOut(double x, double y, const char * lpszString, i32 nCount, i32 nTabPositions, int * lpnTabStopPositions, i32 nTabOrigin)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return ::size_f64(0, 0);
+//
+//      //      ASSERT(get_handle1() != nullptr);
+//      //      return ::TabbedTextOut(get_handle1(), x, y, lpszString, nCount, nTabPositions, lpnTabStopPositions, nTabOrigin);
+//
+//   }
+//
+//   size_f64 graphics::TabbedTextOut(double x, double y, const string & str, i32 nTabPositions, int * lpnTabStopPositions, i32 nTabOrigin)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return ::size_f64(0, 0);
+//
+//      //      ASSERT(get_handle1() != nullptr);
+//      //      return ::TabbedTextOut(get_handle1(), x, y, str, (i32)str.get_length(), nTabPositions, lpnTabStopPositions, nTabOrigin);
+//
+//   }
+//
+//
+//   size_f64 graphics::GetTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return ::size_f64(0, 0);
+//
+//      //      ASSERT(get_handle2() != nullptr);
+//      //      return ::GetTabbedTextExtent(get_handle2(), lpszString, (i32) nCount, nTabPositions, lpnTabStopPositions);
+//
+//   }
+//
+//   size_f64 graphics::GetTabbedTextExtent(const string & str, i32 nTabPositions, int * lpnTabStopPositions)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return ::size_f64(0, 0);
+//
+//      //      ASSERT(get_handle2() != nullptr);
+//      //      return ::GetTabbedTextExtent(get_handle2(), str, (i32) str.get_length(), nTabPositions, lpnTabStopPositions);
+//
+//   }
+//
+//   size_f64 graphics::GetOutputTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return ::size_f64(0, 0);
+//
+//      //      ASSERT(get_handle1() != nullptr);
+//      //      return ::GetTabbedTextExtent(get_handle1(), lpszString, (i32) nCount, nTabPositions, lpnTabStopPositions);
+//
+//   }
+//
+//   size_f64 graphics::GetOutputTabbedTextExtent(const string & str, i32 nTabPositions, int * lpnTabStopPositions)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return ::size_f64(0, 0);
+//
+//      //      ASSERT(get_handle1() != nullptr);
+//      //      return ::GetTabbedTextExtent(get_handle1(), str, (i32) str.get_length(), nTabPositions, lpnTabStopPositions);
+//
+//   }
 
 //   bool graphics::GrayString(::draw2d::brush* pBrush, bool (CALLBACK* lpfnOutput)(HDC, LPARAM, i32), LPARAM lpData, i32 nCount,double x, double y, i32 nWidth, i32 nHeight)
 //   {
@@ -2083,24 +2084,24 @@ namespace draw2d_quartz2d
 
    }
 
-   i32 graphics::GetTextFace(i32 nCount, char * lpszFacename)
-   {
-
-      __throw(error_not_implemented);
-      return 0;
-
-      //      ASSERT(get_handle2() != nullptr);
-      //      return ::GetTextFace(get_handle2(), nCount, lpszFacename);
-
-   }
-
-   i32 graphics::GetTextFace(string & rString)
-   {
-
-      __throw(error_not_implemented);
-      return 0;
-
-   }
+//   i32 graphics::GetTextFace(i32 nCount, char * lpszFacename)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return 0;
+//
+//      //      ASSERT(get_handle2() != nullptr);
+//      //      return ::GetTextFace(get_handle2(), nCount, lpszFacename);
+//
+//   }
+//
+//   i32 graphics::GetTextFace(string & rString)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return 0;
+//
+//   }
 
    
    ::e_status graphics::get_text_metrics(::write_text::text_metric * pmetric)
@@ -3514,21 +3515,21 @@ namespace draw2d_quartz2d
    /////////////////////////////////////////////////////////////////////////////
    // Out-of-line routines
 
-   i32 graphics::StartDoc(const ::string & lpszDocName)
-   {
-
-      __throw(error_not_implemented);
-      return 0;
-
-      /*
-       DOCINFO di;
-       __memset(&di, 0, sizeof(DOCINFO));
-       di.cbSize = sizeof(DOCINFO);
-       di.lpszDocName = lpszDocName;
-       return StartDoc(&di);
-       */
-
-   }
+//   i32 graphics::StartDoc(const ::string & lpszDocName)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return 0;
+//
+//      /*
+//       DOCINFO di;
+//       __memset(&di, 0, sizeof(DOCINFO));
+//       di.cbSize = sizeof(DOCINFO);
+//       di.lpszDocName = lpszDocName;
+//       return StartDoc(&di);
+//       */
+//
+//   }
 
    i32 graphics::SaveDC()
    {
@@ -4648,22 +4649,22 @@ namespace draw2d_quartz2d
    }
 
 
-   size_f64 graphics::GetOutputTextExtent(const char * lpszString, strsize nCount)
-   {
-
-      __throw(error_not_implemented);
-      return ::size_f64(0, 0);
-
-   }
-
-
-   size_f64 graphics::GetOutputTextExtent(const string & str)
-   {
-
-      __throw(error_not_implemented);
-      return ::size_f64(0, 0);
-
-   }
+//   size_f64 graphics::GetOutputTextExtent(const char * lpszString, strsize nCount)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return ::size_f64(0, 0);
+//
+//   }
+//
+//
+//   size_f64 graphics::GetOutputTextExtent(const string & str)
+//   {
+//
+//      __throw(error_not_implemented);
+//      return ::size_f64(0, 0);
+//
+//   }
 
 
    bool graphics::get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex)

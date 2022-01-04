@@ -1,6 +1,8 @@
 #pragma once
 
 
+#include "aura/graphics/draw2d/graphics.h"
+
 
 namespace draw2d_quartz2d
 {
@@ -67,8 +69,8 @@ namespace draw2d_quartz2d
       virtual double get_dpix() override;
 
       // Constructors
-      bool CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
-      bool CreateIC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
+//      bool CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
+//      bool CreateIC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
       bool CreateCompatibleDC(::draw2d::graphics * pgraphics) override;
 
       bool DeleteDC() override;
@@ -363,14 +365,14 @@ namespace draw2d_quartz2d
 //      virtual bool text_out(double x, double y, const string & str) override;
       ::e_status TextOutRaw(double x, double y, const block & block) override;
 //      virtual bool text_out(double x, double y, const string & str) override;
-      virtual bool ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle,
-                              const char * lpszString, ::u32 nCount, int * lpDxWidths);
-      bool ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle,
-                      const string & str, int * lpDxWidths) override;
-      virtual size_f64 TabbedTextOut(double x, double y, const char * lpszString, i32 nCount,
-                                 i32 nTabPositions, int * lpnTabStopPositions, i32 nTabOrigin);
-      size_f64 TabbedTextOut(double x, double y, const string & str,
-                         i32 nTabPositions, int * lpnTabStopPositions, i32 nTabOrigin);
+//      virtual bool ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle,
+//                              const char * lpszString, ::u32 nCount, int * lpDxWidths);
+//      bool ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle,
+//                      const string & str, int * lpDxWidths) override;
+//      virtual size_f64 TabbedTextOut(double x, double y, const char * lpszString, i32 nCount,
+//                                 i32 nTabPositions, int * lpnTabStopPositions, i32 nTabOrigin);
+//      size_f64 TabbedTextOut(double x, double y, const string & str,
+//                         i32 nTabPositions, int * lpnTabStopPositions, i32 nTabOrigin);
 
       virtual i32 draw_text(const char * lpszString, i32 nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none);
 //      virtual bool draw_text(const string & str, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
@@ -385,19 +387,19 @@ namespace draw2d_quartz2d
       bool get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex) ;
       bool get_text_extent(size_f64 & size, const char * lpszString, strsize nCount) override;
       bool get_text_extent(size_f64 & size, const string & str) override;
-      size_f64 GetOutputTextExtent(const char * lpszString, strsize nCount) override;
-      size_f64 GetOutputTextExtent(const string & str) override;
-      size_f64 GetTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions);
-      size_f64 GetTabbedTextExtent(const string & str, i32 nTabPositions, int * lpnTabStopPositions);
-      size_f64 GetOutputTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions);
-      size_f64 GetOutputTabbedTextExtent(const string & str, i32 nTabPositions, int * lpnTabStopPositions) ;
+//      size_f64 GetOutputTextExtent(const char * lpszString, strsize nCount) override;
+//      size_f64 GetOutputTextExtent(const string & str) override;
+//      size_f64 GetTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions);
+//      size_f64 GetTabbedTextExtent(const string & str, i32 nTabPositions, int * lpnTabStopPositions);
+//      size_f64 GetOutputTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions);
+//      size_f64 GetOutputTabbedTextExtent(const string & str, i32 nTabPositions, int * lpnTabStopPositions) ;
 //      virtual bool GrayString(::draw2d::brush* pBrush,
 //                              bool (CALLBACK* lpfnOutput)(HDC, LPARAM, i32), LPARAM lpData,
 //                              i32 nCount, double x, double y, double dWidth, double dHeight) override;
       ::u32 GetTextAlign() override;
       ::u32 SetTextAlign(::u32 nFlags) override;
-      i32 GetTextFace(i32 nCount, char * lpszFacename);
-      i32 GetTextFace(string & rString) override;
+//      i32 GetTextFace(i32 nCount, char * lpszFacename);
+//      i32 GetTextFace(string & rString) override;
       ::e_status get_text_metrics(::write_text::text_metric * lpMetrics) override;
       bool get_output_text_metrics(::write_text::text_metric * lpMetrics) override;
 //      i32 SetTextJustification(i32 nBreakExtra, i32 nBreakCount) override;
@@ -457,7 +459,7 @@ namespace draw2d_quartz2d
 //      i32 DrawEscape(i32 nEscape, i32 nInputSize, const char * lpszInputData) override;
 
       // Escape helpers
-      i32 StartDoc(const ::string & lpszDocName) override;  // old Win3.0 version
+      //i32 StartDoc(const ::string & lpszDocName) override;  // old Win3.0 version
       //xxx      i32 StartDoc(LPDOCINFO lpDocInfo);
       i32 StartPage() override;
       i32 EndPage() override;

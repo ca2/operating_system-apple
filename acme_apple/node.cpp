@@ -156,19 +156,21 @@ namespace acme
 //      }
 
 
-      ::e_status node::initialize(::object * pobject)
+      void node::initialize(::object * pobject)
       {
 
-         auto estatus = ::acme::node::initialize(pobject);
+         //auto estatus =
+         
+         ::acme::node::initialize(pobject);
 
-         if(!estatus)
-         {
-
-            return estatus;
-
-         }
-
-         return estatus;
+//         if(!estatus)
+//         {
+//
+//            return estatus;
+//
+//         }
+//
+//         return estatus;
 
       }
 
@@ -582,7 +584,7 @@ namespace acme
    //
 
 
-      ::e_status node::install_sigchld_handler()
+      void node::install_sigchld_handler()
       {
 
 //         struct sigaction sa;
@@ -597,7 +599,7 @@ namespace acme
 //
 //         sigaction(SIGCHLD, &sa, nullptr);
 
-         return ::success;
+         //return ::success;
 
       }
    
@@ -626,7 +628,7 @@ namespace acme
       }
    
    
-      ::e_status node::node_post(const ::routine & routine)
+      void node::node_post(const ::routine & routine)
       {
          
          routine.m_p->increment_reference_count();
@@ -650,7 +652,7 @@ namespace acme
             
          });
 
-         return ::success;
+         //return ::success;
 
       }
 

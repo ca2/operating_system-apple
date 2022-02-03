@@ -34,7 +34,7 @@ namespace acme
 
          //override;
 
-         virtual ::e_status initialize(::object * pobject) override;
+         void initialize(::object * pobject) override;
 
    //      virtual ::e_status get_system_time(system_time_t * psystemtime)
    //
@@ -81,7 +81,7 @@ namespace acme
    //      virtual filetime get_filetime_now();
 
 
-         virtual ::e_status install_sigchld_handler() override;
+         void install_sigchld_handler() override;
 
 
          string audio_get_default_library_name() override;
@@ -91,7 +91,7 @@ namespace acme
          string veriwell_multimedia_music_midi_get_default_library_name() override;
          
          
-         ::e_status node_post(const ::routine & routine) override;
+         void node_post(const ::routine & routine) override;
          
 
       };

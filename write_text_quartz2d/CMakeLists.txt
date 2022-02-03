@@ -59,8 +59,8 @@ endif()
 
 
 target_link_directories(write_text_quartz2d PRIVATE ${LIBRARY_OUTPUT_PATH})
-target_link_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/storage-${PLATFORM_NAME}/library/x64/basis)
-target_link_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/storage-${PLATFORM_NAME}/third/library/x64/basis)
+target_link_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating-system/storage-${OPERATING_SYSTEM_NAME}/library/x64/basis)
+target_link_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating-system/storage-${OPERATING_SYSTEM_NAME}/third/library/x64/basis)
 
 
 target_include_directories(write_text_quartz2d PRIVATE $ENV{HOME}/__config)
@@ -70,11 +70,11 @@ target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DI
 target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../source/app)
 target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../source/app/_include)
 target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../source/include)
-target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/platform-${PLATFORM_NAME})
-target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/platform-${PLATFORM_NAME}/_include)
-target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/third-${PLATFORM_NAME}/include)
-target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/third-${PLATFORM_NAME}/third/include)
-target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../archive/third-${PLATFORM_NAME}/third/include/include)
+target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating-system/operating-system-${OPERATING_SYSTEM_NAME})
+target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating-system/operating-system-${OPERATING_SYSTEM_NAME}/_include)
+target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating-system/third-${OPERATING_SYSTEM_NAME}/include)
+target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating-system/third-${OPERATING_SYSTEM_NAME}/third/include)
+target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating-system/third-${OPERATING_SYSTEM_NAME}/third/include/include)
 target_include_directories(write_text_quartz2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 

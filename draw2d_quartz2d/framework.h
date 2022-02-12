@@ -9,7 +9,7 @@
 
 #ifdef MACOS
 
-#include "aura/node/operating_system/macos/_mm.h"
+#include "aura/operating_system/macos/_mm.h"
 
 #else
 

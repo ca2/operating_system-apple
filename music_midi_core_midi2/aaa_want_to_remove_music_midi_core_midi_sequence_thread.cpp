@@ -279,11 +279,11 @@ namespace music
             }
             catch (::exception_pointer e)
             {
-               __throw(error_not_implemented);
+               throw ::exception(error_not_implemented);;
                /*string str;
                 str.load_string(IDS_PREROLLUSERERROR001);
                 pme->SetUserText(str);*/
-               //__throw(pme);
+               //throw ::exception(pme);;
             }
 
             //    if(!get_sequence()->IsInSpecialModeV001())

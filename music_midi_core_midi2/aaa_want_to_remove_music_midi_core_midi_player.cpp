@@ -157,7 +157,7 @@ namespace music
 //            if(::failed(estatus = get_sequence()->close_file()) &&
 //                  estatus != ::error_unsupported_function)
 //            {
-//               __throw(::exception::exception(multimedia::exception_music, error_midi_player_close));
+//               throw ::exception(::exception::exception(multimedia::exception_music, error_midi_player_close));;
 //            }
 //         }
 
@@ -264,7 +264,7 @@ namespace music
 //            ::e_status                estatus;
 //            if(::music::failed(estatus = get_sequence()->SaveFile(lpszPathName)) )
 //            {
-//               __throw(multimedia::exception(multimedia::exception_music, ::music::error_midi_player_save));
+//               throw ::exception(multimedia::exception(multimedia::exception_music, ::music::error_midi_player_save));;
 //            }
 //
 //         }

@@ -30,7 +30,7 @@ namespace draw2d_quartz2d
       if(nPlanes != 1 || nBitcount != 32)
       {
          
-         __throw(error_not_implemented);
+         throw ::exception(error_not_implemented);;
          
       }
       

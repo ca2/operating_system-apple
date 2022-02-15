@@ -1,20 +1,20 @@
 #include "framework.h"
 
-
-__FACTORY_EXPORT void acme_posix_factory(::factory::factory * pfactory);
-
-
-__FACTORY_EXPORT void acme_apple_factory(::factory::factory * pfactory)
-{
-   
-   acme_posix_factory(pfactory);
-
-   pfactory->add_factory_item < ::acme::apple::node, ::acme::node > ();
-   //create_factory < ::posix::file_memory_map, ::file::memory_map >();
-
-   //create_factory < ::posix::pipe , ::process::pipe          >();
-
-}
+//
+//__FACTORY_EXPORT void acme_posix_factory(::factory::factory * pfactory);
+//
+//
+//__FACTORY_EXPORT void acme_apple_factory(::factory::factory * pfactory)
+//{
+//   
+//   acme_posix_factory(pfactory);
+//
+//   pfactory->add_factory_item < ::acme::apple::node, ::acme::node > ();
+//   //create_factory < ::posix::file_memory_map, ::file::memory_map >();
+//
+//   //create_factory < ::posix::pipe , ::process::pipe          >();
+//
+//}
 
 
 

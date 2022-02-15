@@ -37,9 +37,9 @@ namespace music
                   Prepare (mFrames);
                }
                
-               // this version can __throw( if this is an allocted ABL and inNumFrames is > AllocatedFrames()
+               // this version can throw ::exception( if this is an allocted ABL and inNumFrames is > AllocatedFrames();
                // you can set the bool to true if you want a nullptr buffer list even if allocated
-               // inNumFrames must be a valid number (will __throw( if inNumFrames is 0)
+               // inNumFrames must be a valid number (will throw ::exception( if inNumFrames is 0);
                void 								Prepare (::u32 inNumFrames, bool inWantNullBufferIfAllocated = false);
                
                AudioBufferList*					ABL() { return mBufferList; }

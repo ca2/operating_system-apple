@@ -123,7 +123,7 @@ namespace file
                else
                {
 
-                  ::file::throw_errno(errno, strDirPath);
+                  throw ::file::exception(errno_to_status(errno), -1, errno,strDirPath);
 
                }
 

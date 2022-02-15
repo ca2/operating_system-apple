@@ -132,7 +132,7 @@ namespace coreimage_imaging
 
 #ifdef _UWP
 
-         __throw(todo);
+         throw ::exception(todo);;
 
 #else
          FreeImage_Unload(pfibitmap);

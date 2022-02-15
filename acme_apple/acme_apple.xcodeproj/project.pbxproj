@@ -53,7 +53,6 @@
 		9A21AFE1276122CB001E14CC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9A412438266C3ECE00C3FF0E /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A74158F266BD25B00552531 /* debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = debug.cpp; sourceTree = "<group>"; };
-		9A787E47264DF1A1003DF8A0 /* resource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = resource.cpp; sourceTree = "<group>"; };
 		9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+DDExtensions.mm"; sourceTree = "<group>"; };
 		9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SymlinksAndAliases.h"; sourceTree = "<group>"; };
 		9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+SymlinksAndAliases.mm"; sourceTree = "<group>"; };
@@ -133,13 +132,13 @@
 				9A787E69264E22CB003DF8A0 /* _acme_apple.h */,
 				9A787E59264E22CB003DF8A0 /* _apple.mm */,
 				9A787E68264E22CB003DF8A0 /* _c_mm.h */,
+				9A787E65264E22CB003DF8A0 /* _factory.cpp */,
 				9A787E63264E22CB003DF8A0 /* _mm_common.h */,
 				9A787E58264E22CB003DF8A0 /* _mm.h */,
 				9A15A60E264B56520080670E /* apple_timer.cpp */,
 				9A787E5A264E22CB003DF8A0 /* DDInvocationGrabber.h */,
 				9A787E6B264E22CB003DF8A0 /* DDInvocationGrabber.mm */,
 				9A74158F266BD25B00552531 /* debug.cpp */,
-				9A787E65264E22CB003DF8A0 /* _factory.cpp */,
 				9A787E5C264E22CB003DF8A0 /* framework.cpp */,
 				9A787E66264E22CB003DF8A0 /* framework.h */,
 				9A0705FD26627549004E8CB4 /* image.mm */,
@@ -149,14 +148,13 @@
 				9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */,
 				9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */,
 				9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */,
-				9A787E47264DF1A1003DF8A0 /* resource.cpp */,
 				9A787E53264E22CB003DF8A0 /* apple_timer.cpp */,
+				9A787E5B264E22CB003DF8A0 /* resource.cpp */,
 				9A787E6A264E22CB003DF8A0 /* timer.mm */,
 				9A787E62264E22CB003DF8A0 /* translator.cpp */,
 				9A787E67264E22CB003DF8A0 /* translator.h */,
 				9A787E5D264E22CB003DF8A0 /* UncaughtExceptionHandler.h */,
 				9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */,
-				9A787E5B264E22CB003DF8A0 /* resource.cpp */,
 			);
 			name = acme_apple;
 			sourceTree = "<group>";

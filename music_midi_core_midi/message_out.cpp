@@ -59,7 +59,7 @@ namespace music
 //
 //               str.Format("MIDIOutputPortCreate failed with code %i\n", (int) result);
 //
-//               __throw(error_resource, str);
+//               throw ::exception(error_resource, str);;
 //
 //            }
 //
@@ -123,7 +123,7 @@ namespace music
 //            if(!m_port || !m_endpoint)
 //            {
 //
-//               __throw(error_resource, "either no Output Port or no Destination Endpoint");
+//               throw ::exception(error_resource, "either no Output Port or no Destination Endpoint");;
 //
 //            }
 //

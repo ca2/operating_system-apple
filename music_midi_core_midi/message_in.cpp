@@ -57,7 +57,7 @@ namespace music
                
                str.format("MIDIOutputPortCreate failed with code %i\n", (int) result);
                
-               __throw(error_resource, str);
+               throw ::exception(error_resource, str);;
                
             }
 

@@ -22,7 +22,7 @@ namespace acme
       public:
 
          
-         __creatable_from_library(node, ::acme::node, "acme_apple");
+         //__creatable_from_library(node, ::acme::node, "acme_apple");
          
 
          node();

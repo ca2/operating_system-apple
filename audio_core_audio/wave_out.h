@@ -31,25 +31,25 @@ namespace multimedia
 
          //virtual imedia_time out_get_time() override;
          ::duration out_get_position() override;
-         virtual void out_filled(index iBuffer) override;
+         void out_filled(index iBuffer) override;
 
-         virtual ::e_status     out_open_ex(::thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::e_purpose epurpose) override;
-         virtual ::e_status     out_stop() override;
-         virtual ::e_status     out_close() override;
-         virtual ::e_status     out_pause() override;
-         virtual ::e_status     out_restart() override;
+         void out_open_ex(::thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::e_purpose epurpose) override;
+         void out_stop() override;
+         void out_close() override;
+         void out_pause() override;
+         void out_restart() override;
          virtual void * get_os_data();
          AudioQueueRef out_get_safe_AudioQueueRef();
 
-         virtual ::e_status     _out_start();
+         virtual void _out_start();
 
-         ::e_status out_start(const ::duration & duration) override;
+         void out_start(const ::duration & duration) override;
 
 
          virtual void out_on_playback_end() override;
 
-         virtual ::e_status init_thread() override;
-         virtual void term_thread() override;
+         void init_task() override;
+         void term_task() override;
 
 
          void AudioQueueBufferCallback(AudioQueueRef inAQ, AudioQueueBufferRef inCompleteAQBuffer);

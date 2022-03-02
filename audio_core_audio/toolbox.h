@@ -34,17 +34,17 @@ namespace multimedia
          
          
          toolbox();
-         virtual ~toolbox();
+         ~toolbox() override;
          
 
-         virtual void allocate_buffer_data(::wave::buffer::item * pbuffer, memsize uiBufferSize, memsize uiAlign) override;
+         void allocate_buffer_data(::wave::buffer::item * pbuffer, memsize uiBufferSize, memsize uiAlign) override;
          
-         virtual void free_buffer_data(::wave::buffer::item * pbuffer) override;
+         void free_buffer_data(::wave::buffer::item * pbuffer) override;
 
          
          
-         virtual ::e_status init_thread() override;
-         virtual void term_thread() override;
+         void init_task() override;
+         void term_task() override;
          
          
          virtual void free_buffers();

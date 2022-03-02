@@ -38,41 +38,46 @@ namespace multimedia
       }
 
 
-      ::e_status out::init_thread()
+      void out::init_task()
       {
 
-         if(!::wave::out::init_thread())
-         {
-            
-            return false;
-            
-         }
+         //if(!
+         ::wave::out::init_task();
+//
+//         {
+//
+//            return false;
+//
+//         }
 
-         if(!toolbox::init_thread())
-         {
+         //if(!
             
-            return false;
-            
-         }
-
-         return true;
+         toolbox::init_task();
+         
+//         {
+//            
+//            return false;
+//            
+//         }
+//
+//         return true;
 
       }
    
 
-      void out::term_thread()
+      void out::term_task()
       {
 
-         ::wave::out::term_thread();
+         ::wave::out::term_task();
 
-         toolbox::term_thread();
+         toolbox::term_task();
 
-         thread::term_thread();
+         thread::term_task();
 
       }
 
 
-      ::e_status out::out_open_ex(thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::e_purpose epurpose)
+      void out::out_open_ex(thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::e_purpose epurpose)
       {
 
          synchronous_lock synchronouslock(mutex());
@@ -80,7 +85,7 @@ namespace multimedia
          if(m_Queue != nullptr && m_estate != e_state_initial)
          {
 
-            return ::success;
+            return;
 
          }
 
@@ -137,20 +142,23 @@ namespace multimedia
 
          m_estatusWave = error_failed;
          
-         try
-         {
-
+//         try
+//         {
+//
             OSStatus osstatus = AudioQueueNewOutput(&m_dataformat, WaveOutAudioQueueBufferCallback, this, nullptr, nullptr, 0, &m_Queue);
             
             m_estatusWave = translate(osstatus);
 
-         }
-         catch(...)
-         {
+//         }
+//         catch(...)
+//         {
 
+         if(failed(m_estatusWave))
+         {
+            
             m_estatusWave = error_failed;
 
-            return m_estatusWave;
+            throw ::exception(m_estatusWave);
 
          }
 
@@ -164,12 +172,12 @@ namespace multimedia
 
          m_estate = e_state_opened;
 
-         return m_estatusWave;
+         //return m_estatusWave;
 
       }
 
 
-      ::e_status out::out_close()
+      void out::out_close()
       {
 
          if(m_estate == e_state_playing)
@@ -182,7 +190,7 @@ namespace multimedia
          if(m_estate != e_state_opened)
          {
 
-            return ::success;
+            return;
 
          }
 
@@ -245,7 +253,7 @@ namespace multimedia
 
          m_estate = e_state_initial;
 
-         return ::success;
+         //return ::success;
 
       }
 
@@ -282,7 +290,7 @@ namespace multimedia
       }
 
    
-      ::e_status out::out_stop()
+      void out::out_stop()
       {
 
          synchronous_lock synchronouslock(mutex());
@@ -290,7 +298,7 @@ namespace multimedia
          if(m_estate != e_state_playing && m_estate != e_state_paused)
          {
 
-            return error_failed;
+            throw ::exception(error_failed);
 
          }
 
@@ -306,13 +314,18 @@ namespace multimedia
             m_estate = e_state_opened;
 
          }
+         
+         if(failed(m_estatusWave))
+         {
 
-         return m_estatusWave;
+            throw ::exception(m_estatusWave);
+            
+         }
 
       }
 
 
-      ::e_status out::out_pause()
+      void out::out_pause()
       {
 
          synchronous_lock synchronouslock(mutex());
@@ -322,7 +335,7 @@ namespace multimedia
          if(m_estate != e_state_playing)
          {
 
-            return error_failed;
+            throw ::exception(error_failed);
 
          }
 
@@ -344,12 +357,17 @@ namespace multimedia
 
          }
 
-         return m_estatusWave;
+         if(failed(m_estatusWave))
+         {
+            
+            throw ::exception(m_estatusWave);
+            
+         }
 
       }
 
 
-      ::e_status out::out_restart()
+      void out::out_restart()
       {
 
          synchronous_lock synchronouslock(mutex());
@@ -361,18 +379,20 @@ namespace multimedia
 
             m_estatusWave = error_failed;
 
-            return m_estatusWave;
+            throw ::exception(m_estatusWave);
 
          }
 
-         m_estatusWave = _out_start();
+         //m_estatusWave =
+         
+         _out_start();
 
-         return m_estatusWave;
+         //return m_estatusWave;
 
       }
 
 
-      ::e_status out::_out_start()
+      void out::_out_start()
       {
 
          synchronous_lock synchronouslock(mutex());
@@ -381,7 +401,12 @@ namespace multimedia
 
          m_estatusWave = translate(statusPrime);
 
-         ASSERT(m_estatusWave == ::success);
+         if(failed(m_estatusWave))
+         {
+            
+            throw ::exception(m_estatusWave);
+            
+         }
 
          OSStatus statusStart = AudioQueueStart(m_Queue, nullptr);
 
@@ -391,7 +416,12 @@ namespace multimedia
 
          m_estatusWave = translate(statusStart);
 
-         ASSERT(m_estatusWave == ::success);
+         if(failed(m_estatusWave))
+         {
+            
+            throw ::exception(m_estatusWave);
+            
+         }
 
          if(m_estatusWave == ::success)
          {
@@ -400,7 +430,7 @@ namespace multimedia
 
          }
 
-         return m_estatusWave;
+         //return m_estatusWave;
 
       }
 
@@ -547,21 +577,23 @@ namespace multimedia
       }
 
 
-      ::e_status     out::out_start(const ::duration & position)
+      void out::out_start(const ::duration & position)
       {
 
-         ::e_status     estatus = ::wave::out::out_start(position);
+         ::wave::out::out_start(position);
 
-         if(failed(estatus))
-         {
+//         if(failed(estatus))
+//         {
+//
+//            return estatus;
+//
+//         }
 
-            return estatus;
+         //m_estatusWave =
+         
+         _out_start();
 
-         }
-
-         m_estatusWave = _out_start();
-
-         return m_estatusWave;
+         //if(return m_estatusWave;
 
       }
 

@@ -122,7 +122,7 @@ namespace multimedia
       }
 
 
-      ::e_status toolbox::init_thread()
+      void toolbox::init_task()
       {
 
          m_runloop = CFRunLoopGetCurrent();
@@ -143,12 +143,12 @@ namespace multimedia
 
          }
 
-         return true;
+         //return true;
 
       }
 
 
-      void toolbox::term_thread()
+      void toolbox::term_task()
       {
 
          if(m_runmode != nullptr)

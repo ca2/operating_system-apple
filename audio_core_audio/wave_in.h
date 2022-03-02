@@ -20,13 +20,13 @@ namespace multimedia
 
 
          in();
-         virtual ~in();
+         ~in() override;
 
 
-         virtual bool in_initialize_encoder() override;
+         void in_initialize_encoder() override;
 
 
-         virtual ::e_status     in_add_buffer(i32 iBuffer) override;
+         void in_add_buffer(i32 iBuffer) override;
 
 
          virtual void * get_os_data();
@@ -35,16 +35,16 @@ namespace multimedia
          AudioQueueRef in_get_safe_AudioQueueRef();
 
 
-         ::e_status     in_open(i32 iBufferCount, i32 iBufferSampleCount) override;
-         ::e_status     in_close() override;
-         ::e_status     in_stop() override;
-         ::e_status     in_start() override;
-         ::e_status     in_reset() override;
+         void in_open(i32 iBufferCount, i32 iBufferSampleCount) override;
+         void in_close() override;
+         void in_stop() override;
+         void in_start() override;
+         void in_reset() override;
 
 
-         virtual ::e_status init_thread() override;
-         virtual void term_thread() override;
-         virtual void pre_translate_message(::message::message * pmessage) override;
+         void init_task() override;
+         void term_task() override;
+         void pre_translate_message(::message::message * pmessage) override;
 
 
          static void HandleInputBuffer(void                                 *aqData,

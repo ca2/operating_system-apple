@@ -25,7 +25,7 @@ namespace multimedia
       }
 
 
-      ::e_status in::init_thread()
+      void in::init_task()
       {
 
          TRACE("in::init_instance %X\n", get_ithread());
@@ -34,29 +34,31 @@ namespace multimedia
          ::parallelization::set_priority(::e_priority_highest);
          //m_evInitialized.SetEvent();
 
+         ::wave::in::init_task();
 
-         if(!::wave::in::init_thread())
-            return false;
+//         if(!::wave::in::init_thread())
+//            return false;
 
+         toolbox::init_task();
 
-
-         if(!toolbox::init_thread())
-            return false;
-
-
-         return true;
+//         if(!toolbox::init_thread())
+//            return false;
+//
+//
+//         return true;
       }
 
 
-      void in::term_thread()
+      void in::term_task()
       {
 
          m_eventExitInstance.SetEvent();
 
-         thread::term_thread();
+         thread::term_task();
 
       }
 
+   
       void in::pre_translate_message(::message::message * pmessage)
       {
          //__pointer(::user::message) pusermessage(pmessage);
@@ -72,17 +74,20 @@ namespace multimedia
          return thread::pre_translate_message(pmessage);
       }
 
-      ::e_status     in::in_open(i32 iBufferCount, i32 iBufferSampleCount)
+   
+      void in::in_open(i32 iBufferCount, i32 iBufferSampleCount)
       {
 
          if(m_Queue != nullptr && m_estate != e_state_initial)
          {
+            
             in_initialize_encoder();
-            return ::success;
+            
+            return;
+            
          }
 
-
-         return error_failed;
+         throw ::exception(error_failed);
 
 //         single_lock sLock(mutex(), true);
 //         ASSERT(m_Queue == nullptr);
@@ -220,7 +225,7 @@ namespace multimedia
       }
 
 
-      ::e_status     in::in_close()
+      void in::in_close()
       {
 
          single_lock sLock(mutex(), true);
@@ -228,9 +233,13 @@ namespace multimedia
          ::e_status     mmr;
 
          if(m_estate != e_state_opened && m_estate != state_stopped)
-            return ::success;
+         {
+            
+            return;
+            
+         }
 
-         mmr = in_reset();
+         in_reset();
 
 
          free_buffers();
@@ -251,52 +260,70 @@ namespace multimedia
                      delete wave_hdr(i);
 
                   }*/
+         
+         OSStatus status = AudioQueueDispose(m_Queue, 1);
 
-         m_estatusWave = translate(AudioQueueDispose(m_Queue, 1));
+         m_estatusWave = translate(status);
 
          m_Queue = nullptr;
 
          m_estate = e_state_initial;
 
-         return mmr;
+         //return mmr;
 
       }
 
 
-      ::e_status     in::in_start()
+      void in::in_start()
       {
 
          single_lock sLock(mutex(), true);
 
          if(m_estate == state_recording)
-            return ::success;
+         {
+            
+            return;
+            
+         }
 
          if(m_estate != e_state_opened && m_estate != state_stopped)
-            return ::success;
+         {
+            
+            return;
+            
+         }
+         
+         int iStatus = AudioQueueStart(m_Queue, nullptr);
+         
+         m_estatusWave = translate(iStatus);
 
-         if(::success != (m_estatusWave = translate(AudioQueueStart(m_Queue, nullptr))))
+         if(m_estatusWave != ::success)
          {
 
             TRACE("ERROR starting INPUT DEVICE ");
 
-            return m_estatusWave;
+            throw ::exception(m_estatusWave);
 
          }
 
          m_estate = state_recording;
 
-         return ::success;
+         //return ::success;
 
       }
 
 
-      ::e_status     in::in_stop()
+      void in::in_stop()
       {
 
          single_lock sLock(mutex(), true);
 
          if(m_estate != state_recording)
-            return error_failed;
+         {
+          
+            throw ::exception(error_wrong_state);
+            
+         }
 
          OSStatus status;
 
@@ -317,7 +344,7 @@ namespace multimedia
 
          m_eventStopped.SetEvent();
 
-         return ::success;
+         //return ::success;
 
       }
 
@@ -351,73 +378,72 @@ namespace multimedia
       //         }
         //    }*/
 
-      ::e_status     in::in_reset()
+   
+      void in::in_reset()
       {
+         
          single_lock sLock(mutex(), true);
+         
          m_bResetting = true;
+         
          if(m_Queue == nullptr)
          {
-            return error_failed;
+            
+            throw ::exception(error_wrong_state);
+            
          }
 
-         ::e_status     mmr;
-//         OSStatus status;
          if(m_estate == state_recording)
          {
-            if(::success != (mmr = in_stop()))
-            {
-               TRACE("in::Reset error stopping input device");
-               return mmr;
-            }
-         }
-         try
-         {
-//            if(0 != (status = AudioQueueReset(m_Queue)))
-            if(0 != (AudioQueueReset(m_Queue)))
-            {
-               TRACE("in::Reset error resetting input device");
-               return error_failed;
-            }
-         }
-         catch(...)
-         {
-         }
 
+            in_stop();
+            
+         }
+         
+         OSStatus status = AudioQueueReset(m_Queue);
+         
+         auto estatus = translate(status);
+         
+         if(failed(estatus))
+         {
+         
+            ERROR("in::Reset error resetting input device");
+               
+            throw ::exception(estatus, "in::Reset error resetting input device");
+            
+         }
+         
          m_estate = e_state_opened;
 
          m_bResetting = false;
 
-         return mmr;
-
       }
 
 
-
-      ::e_status     in::in_add_buffer(i32 iBuffer)
+      void in::in_add_buffer(i32 iBuffer)
       {
 
          AudioQueueBufferRef buf = audio_buffer(iBuffer);
 
          AudioQueueEnqueueBuffer(m_Queue, buf, 0, nullptr);
 
-         return ::success;
-
       }
 
 
-
-
-
-      bool in::in_initialize_encoder()
+      void in::in_initialize_encoder()
       {
 
-         if(m_pencoder == nullptr)
-            return false;
+//         if(m_pencoder == nullptr)
+//         {
+//
+//            return false;
+//
+//         }
 
-         if(!::wave::in::in_initialize_encoder())
-            return false;
-
-         return true;
+         ::wave::in::in_initialize_encoder();
+//            return false;
+//
+//         return true;
 
       }
 

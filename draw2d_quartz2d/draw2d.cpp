@@ -26,28 +26,32 @@ namespace draw2d_quartz2d
    }
 
 
-   ::e_status draw2d::initialize(::object * pobject)
+   void draw2d::initialize(::object * pobject)
    {
 
-      auto estatus = ::draw2d::draw2d::initialize(pobject);
+      //auto estatus =
+      
+      ::draw2d::draw2d::initialize(pobject);
 
-      if (!estatus)
-      {
-
-         return estatus;
-
-      }
+//      if (!estatus)
+//      {
+//
+//         return estatus;
+//
+//      }
    
-      estatus = initialize_quartz2d();
+      //estatus =
+      
+      initialize_quartz2d();
 
-      if (!estatus)
-      {
-
-         return estatus;
-
-      }
-
-      return estatus;
+//      if (!estatus)
+//      {
+//
+//         return estatus;
+//
+//      }
+//
+//      return estatus;
    
    }
 

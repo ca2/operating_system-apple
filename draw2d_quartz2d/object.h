@@ -28,11 +28,6 @@ namespace draw2d_quartz2d
       ::u32 GetObjectType() const override;
       bool CreateStockObject(i32 nIndex) override;
       bool UnrealizeObject() override;
-      bool operator==(const ::draw2d::object& obj) const override;
-      bool operator!=(const ::draw2d::object& obj) const override;
-      
-      void dump(dump_context & dumpcontext) const override;
-      void assert_valid() const override;
       
    };
    

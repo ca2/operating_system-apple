@@ -18,9 +18,9 @@ namespace draw2d_quartz2d
       ~draw2d() override;
 
 
-      ::e_status initialize(::object * pobject) override;
+      void initialize(::object * pobject) override;
 
-      virtual string write_text_get_default_library_name() override;
+      string write_text_get_default_library_name() override;
 
       
    };

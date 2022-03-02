@@ -49,7 +49,7 @@ namespace draw2d_quartz2d
 
 
    // bPreserve is currently disregarded
-   ::e_status image::create(const ::size_i32 & size, ::enum_flag eflagCreate, int iGoodStride, bool bPreserve)
+   void image::create(const ::size_i32 & size, ::enum_flag eflagCreate, int iGoodStride, bool bPreserve)
    {
 
       if(m_pbitmap.is_set()
@@ -59,7 +59,9 @@ namespace draw2d_quartz2d
             && size == m_sizeRaw)
       {
 
-         return true;
+         //return true;
+         
+         return;
 
       }
 
@@ -68,7 +70,7 @@ namespace draw2d_quartz2d
       if(size.is_empty())
       {
 
-         return false;
+         throw exception(error_invalid_empty_argument);
 
       }
       
@@ -89,7 +91,7 @@ namespace draw2d_quartz2d
 
          //destroy();
 
-         return false;
+         throw exception(error_null_pointer);
 
       }
       
@@ -101,12 +103,14 @@ namespace draw2d_quartz2d
       
       i32 iScan = iGoodStride;
 
-      if(!pbitmap->create_bitmap(nullptr, size, (void **) &pcolorref, &iScan) || pbitmap->get_os_data() == nullptr)
+      pbitmap->create_bitmap(nullptr, size, (void **) &pcolorref, &iScan);
+      
+      if(pbitmap->get_os_data() == nullptr)
       {
 
          //destroy();
 
-         return false;
+         throw exception(error_null_pointer);
 
       }
 
@@ -117,7 +121,7 @@ namespace draw2d_quartz2d
 
          //destroy();
 
-         return false;
+         throw exception(error_null_pointer);
 
       }
       
@@ -154,12 +158,12 @@ namespace draw2d_quartz2d
       
       set(eflagCreate);
 
-      return true;
+      //return true;
 
    }
 
 
-   bool image::dc_select(bool bSelect)
+   void image::dc_select(bool bSelect)
    {
       /*      if(bSelect)
        {
@@ -169,11 +173,11 @@ namespace draw2d_quartz2d
        {
        return m_spgraphics->SelectObject(m_hbitmapOriginal) != nullptr;
        }*/
-      return true;
+    //  return true;
    }
 
 
-   ::e_status image::create(::draw2d::graphics * pgraphics)
+   void image::create(::draw2d::graphics * pgraphics)
    {
 
       ::draw2d::bitmap_pointer pbitmap = pgraphics->get_current_bitmap();
@@ -181,18 +185,18 @@ namespace draw2d_quartz2d
       if(pbitmap == nullptr)
       {
 
-         return false;
+         throw exception(error_null_pointer);
 
       }
 
       ::size_i32 size = pbitmap->get_size();
 
-      if(!create(size))
-      {
-
-         return false;
-
-      }
+      create(size);
+//      {
+//
+//         return false;
+//
+//      }
       
       image_source imagesource(pgraphics);
       
@@ -202,12 +206,12 @@ namespace draw2d_quartz2d
       
       m_pgraphics->draw(imagedrawing);
 
-      return true;
+      //return true;
 
    }
 
 
-   ::e_status image::destroy()
+   void image::destroy()
    {
 
       m_pbitmap.release();
@@ -226,7 +230,7 @@ namespace draw2d_quartz2d
 
       m_iScan              = 0;
 
-      return true;
+      //return true;
 
    }
 
@@ -239,7 +243,7 @@ namespace draw2d_quartz2d
 //   }
 //
 
-bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, const ::point_i32 & pointSrc)
+   void image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, const ::point_i32 & pointSrc)
    {
    
       rectangle_f64 rectangleSource(pointSrc, rectDst.size());
@@ -250,30 +254,23 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
       
       image_drawing imagedrawing(imagedrawingoptions, imagesource);
       
-      return m_pgraphics->draw(imagedrawing);
-      
-      
+      m_pgraphics->draw(imagedrawing);
+            
    }
 
 
-   ::e_status image::SetIconMask(::draw2d::icon * picon, i32 cx, i32 cy)
+   void image::SetIconMask(::draw2d::icon * picon, i32 cx, i32 cy)
    {
       
       if(cx <= 0 || cy <= 0)
       {
          
-         return false;
+         throw exception(error_invalid_parameter);
          
       }
       
-      if(!create({cx, cy}))
-      {
-         
-         return false;
-         
-      }
-
-
+      create({cx, cy});
+     
       // White blend image
       auto pimage1 = m_pcontext->context_image()->create_image({cx,  cy});
       
@@ -369,25 +366,25 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
          
       }
       
-      return true;
+      //return true;
 
    }
    
    
-   bool image::set_mapped()
+   void image::set_mapped()
    {
       
       m_bMapped = true;
       
-      return true;
+      //return true;
       
    }
 
 
-   bool image::stretch_image(::image * pimage)
+   void image::stretch_image(::image * pimage)
    {
 
-      return ::image::stretch_image(pimage);
+      ::image::stretch_image(pimage);
 
    }
 
@@ -402,12 +399,12 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
    }
 
 
-   bool image::map(bool bApplyTransform) const
+   void image::map(bool bApplyTransform) const
    {
 
       ((image *)this)->m_bMapped = true;
       
-      return true;
+      //return true;
 
    }
    
@@ -430,17 +427,17 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
 //   }
 
 
-   bool image::_unmap()
+   void image::_unmap()
    {
 
       m_bMapped = false;
       
-      return true;
+      //return true;
 
    }
 
 
-   bool image::blend(const ::point_i32 & pointDstParam, ::image * pimplSrc, const ::point_i32 & pointSrcParam, const ::size_i32 & sizeParam, byte bA)
+   void image::blend(const ::point_i32 & pointDstParam, ::image * pimplSrc, const ::point_i32 & pointSrcParam, const ::size_i32 & sizeParam, byte bA)
    {
       
       ::point_i32 pointDst(pointDstParam);
@@ -476,7 +473,11 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
       }
 
       if (size.cx < 0)
-         return true;
+      {
+
+         return;
+         
+      }
 
       if (pointDst.y < 0)
       {
@@ -485,17 +486,29 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
       }
 
       if (size.cy < 0)
-         return true;
+      {
+         
+         return;
+         
+      }
 
       int xEnd = minimum(size.cx, minimum(pimplSrc->width() - pointSrc.x, pimplDst->width() - pointDst.x));
 
       int yEnd = minimum(size.cy, minimum(pimplSrc->height() - pointSrc.y, pimplDst->height() - pointDst.y));
 
       if (xEnd < 0)
-         return false;
+      {
+
+         return;
+         
+      }
 
       if (yEnd < 0)
-         return false;
+      {
+         
+         return;
+         
+      }
 
       i32 scanDst = pimplDst->scan_size();
 
@@ -743,7 +756,7 @@ bool image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, cons
 
       }
 
-      return true;
+//      return true;
 
    }
 

@@ -31,10 +31,10 @@ namespace draw2d_quartz2d
       virtual bool internal_add_move(double x, double y);
       virtual bool internal_add_text_out(double x, double y, const string & strText, ::write_text::font * pfont, ::draw2d_quartz2d::graphics * p);
       
-      bool create(::draw2d::graphics * pgraphics, i8 iCreate) override;
+      void create(::draw2d::graphics * pgraphics, i8 iCreate) override;
 
-      ::e_status destroy() override;
-      ::e_status destroy_os_data() override;
+      void destroy() override;
+      void destroy_os_data() override;
 
       void * detach() override;
       

@@ -30,19 +30,21 @@ namespace draw2d_quartz2d
    }
 
    
-   ::e_status brush::destroy()
+   void brush::destroy()
    {
       
-      auto estatusOsData = destroy_os_data();
+//      auto estatusOsData =
+      destroy_os_data();
       
-      auto estatusDestroy = ::draw2d::brush::destroy();
+//      /auto estatusDestroy =
+      ::draw2d::brush::destroy();
       
-      return estatusOsData && estatusDestroy;
+//      return estatusOsData && estatusDestroy;
       
    }
 
 
-   ::e_status brush::destroy_os_data()
+   void brush::destroy_os_data()
    {
       
       if(m_gradientref != nullptr)
@@ -72,12 +74,12 @@ namespace draw2d_quartz2d
          
       }
       
-      return ::success;
+      //return ::success;
       
    }
 
    
-   bool brush::create(::draw2d::graphics * pgraphics, i8 iCreate)
+   void brush::create(::draw2d::graphics * pgraphics, i8 iCreate)
    {
       
       if(m_etype == type_linear_gradient_point_color || m_etype == type_radial_gradient_color)
@@ -137,7 +139,7 @@ namespace draw2d_quartz2d
          
       }
       
-      return true;
+      //return true;
       
    }
    

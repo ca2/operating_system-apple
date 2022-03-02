@@ -20,7 +20,7 @@ namespace write_text_quartz2d
       ~fonts() override;
 
 
-      ::e_status initialize(::object * pobject) override;
+      void initialize(::object * pobject) override;
 
       //virtual void enum_fonts(::write_text::font_enum_item_array & itema) override;
       //virtual void sorted_fonts(::write_text::font_enum_item_array & itema);

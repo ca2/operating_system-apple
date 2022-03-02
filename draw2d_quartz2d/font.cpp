@@ -37,7 +37,7 @@ namespace draw2d_quartz2d
    }
 
    
-   bool font::create(::draw2d::graphics * pgraphics, i8 iCreate)
+   void font::create(::draw2d::graphics * pgraphics, i8 iCreate)
    {
    
       array < CFTypeRef >  cfrel;
@@ -242,24 +242,36 @@ namespace draw2d_quartz2d
       
       m_osdata[1] = (void *) m_fontdescriptor;
       
-      return m_font != nullptr;
+      
+      if(m_font == nullptr)
+      {
+         
+         throw exception(error_failed);
+         
+      }
+      
+      //return m_font != nullptr;
       
    }
    
    
-   ::e_status font::destroy()
+   void font::destroy()
    {
    
-      auto estatusOsData = destroy_os_data();
+      //auto estatusOsData =
       
-      auto estatusDestroy = ::write_text::font::destroy();
+      destroy_os_data();
       
-      return estatusOsData && estatusDestroy;
+      //auto estatusDestroy =
+      
+      ::write_text::font::destroy();
+      
+      //return estatusOsData && estatusDestroy;
       
    }
 
 
-   ::e_status font::destroy_os_data()
+   void font::destroy_os_data()
    {
 
       if(m_fontName != nullptr)
@@ -289,7 +301,7 @@ namespace draw2d_quartz2d
          
       }
       
-      return ::success;
+      //return ::success;
       
    }
 

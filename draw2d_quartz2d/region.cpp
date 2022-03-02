@@ -17,19 +17,19 @@ namespace draw2d_quartz2d
    }
 
 
-   ::e_status region::destroy()
+   void region::destroy()
    {
 
-      auto estatusOsData = destroy_os_data();
+      destroy_os_data();
       
-      auto estatusDestroy = ::draw2d::region::destroy();
+      ::draw2d::region::destroy();
       
-      return estatusOsData && estatusDestroy;
+      //return estatusOsData && estatusDestroy;
 
    }
 
 
-   ::e_status region::destroy_os_data()
+   void region::destroy_os_data()
    {
       
       if(m_path != nullptr)
@@ -41,12 +41,12 @@ namespace draw2d_quartz2d
 
       }
       
-      return ::success;
+      //return ::success;
       
    }
 
 
-   bool region::create(::draw2d::graphics * pgraphics, i8 iCreate)
+   void region::create(::draw2d::graphics * pgraphics, i8 iCreate)
    {
 
       m_path = CGPathCreateMutable();
@@ -103,7 +103,7 @@ namespace draw2d_quartz2d
       
       m_path = CGPathCreateMutableCopyByTransformingPath(m_path, &transformTranslation);
 
-      return true;
+      //return true;
 
    }
 

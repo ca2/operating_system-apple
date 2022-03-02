@@ -1,6 +1,6 @@
 // Created by camilo 2021-02-10 <3ThomasBorregaardSørensen__!!
 #include "framework.h"
-#include "acme/node/operating_system/ansi/_pthread.h"
+#include "acme/operating_system/ansi/_pthread.h"
 
 
 namespace write_text_quartz2d
@@ -21,19 +21,21 @@ namespace write_text_quartz2d
    }
 
 
-   ::e_status fonts::initialize(::object * pobject)
+   void fonts::initialize(::object * pobject)
    {
 
-      auto estatus = ::write_text::fonts::initialize(pobject);
+      //auto estatus =
+      
+      ::write_text::fonts::initialize(pobject);
 
-      if (!estatus)
-      {
-
-         return estatus;
-
-      }
-
-      return estatus;
+//      if (!estatus)
+//      {
+//
+//         return estatus;
+//
+//      }
+//
+//      return estatus;
 
    }
 

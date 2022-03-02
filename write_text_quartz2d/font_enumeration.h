@@ -19,7 +19,7 @@ namespace write_text_quartz2d
       ~font_enumeration() override;
 
 
-      ::e_status on_enumerate_fonts() override;
+      void on_enumerate_fonts() override;
 
 
    };

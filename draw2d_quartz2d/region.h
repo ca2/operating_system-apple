@@ -59,10 +59,10 @@ namespace draw2d_quartz2d
       //  bool get_poly_polygon(cairo_t * pdc);
       //bool get_combine(cairo_t * pdc);
 
-      ::e_status destroy() override;
-      ::e_status destroy_os_data() override;
+      void destroy() override;
+      void destroy_os_data() override;
 
-      bool create(::draw2d::graphics * pgraphics, i8 iCreate) override;
+      void create(::draw2d::graphics * pgraphics, i8 iCreate) override;
 
       virtual void * detach();
       

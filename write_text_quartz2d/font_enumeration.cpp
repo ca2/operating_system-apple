@@ -2,6 +2,7 @@
 // Recreated by camilo 2021-02-10 <3TBS_!!
 // Recreated by camilo on 2021-06-06 02:03 <3ThomasBS_!!
 #include "framework.h"
+#include "aura/graphics/write_text/font_enumeration_item.h"
 
 
 unsigned long apple_get_fonts(char ***p);
@@ -23,7 +24,7 @@ namespace write_text_quartz2d
    }
 
 
-   ::e_status font_enumeration::on_enumerate_fonts()
+   void font_enumeration::on_enumerate_fonts()
    {
       
       __defer_construct_new(m_pfontenumerationitema);
@@ -64,7 +65,7 @@ namespace write_text_quartz2d
 
       }
 
-      return ::success;
+      //return ::success;
 
    }
 

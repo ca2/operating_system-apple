@@ -216,19 +216,21 @@ namespace draw2d_quartz2d
    }
    
    
-   ::e_status path::destroy()
+   void path::destroy()
    {
       
-      auto estatusOsData = destroy_os_data();
+      //auto estatusOsData =
+      destroy_os_data();
       
-      auto estatusDestroy = ::draw2d::path::destroy();
+      //auto estatusDestroy =
+      ::draw2d::path::destroy();
       
-      return estatusOsData && estatusDestroy;
+      //return estatusOsData && estatusDestroy;
       
    }
    
    
-   ::e_status path::destroy_os_data()
+   void path::destroy_os_data()
    {
       
       if(m_path != nullptr)
@@ -240,12 +242,12 @@ namespace draw2d_quartz2d
          
       }
       
-      return ::success;
+      //return ::success;
       
    }
 
 
-   bool path::create(::draw2d::graphics * pgraphics, i8 iCreate)
+   void path::create(::draw2d::graphics * pgraphics, i8 iCreate)
    {
       
       m_path = CGPathCreateMutable();
@@ -254,11 +256,10 @@ namespace draw2d_quartz2d
       
       m_osdata[0] = m_path;
       
-      return true;
+      //return true;
       
    }
 
-   
    
    bool path::_set(::draw2d::graphics * pgraphics, const ::enum_shape & eshape)
    {

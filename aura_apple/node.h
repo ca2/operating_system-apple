@@ -27,7 +27,7 @@ namespace aura
          ~node() override;
 
 
-         ::e_status initialize(::object * pobject) override;
+         void initialize(::object * pobject) override;
 
 
       };

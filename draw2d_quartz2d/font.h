@@ -43,13 +43,13 @@ namespace draw2d_quartz2d
       ~font() override;
       
       
-      ::e_status destroy() override;
-      ::e_status destroy_os_data() override;
-      virtual bool create(::draw2d::graphics * pgraphics, i8 iCreate) override;
+      void destroy() override;
+      void destroy_os_data() override;
+      void create(::draw2d::graphics * pgraphics, i8 iCreate) override;
 
       //virtual void * get_os_data() const override;
       
-      virtual void dump(dump_context & dumpcontext) const override;
+      void dump(dump_context & dumpcontext) const override;
       
       double get_ascent(::draw2d::graphics * pgraphics) override;
       

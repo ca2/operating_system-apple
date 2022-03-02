@@ -50,22 +50,22 @@ namespace draw2d_quartz2d
    }
    
    
-   bool object::operator==(const ::draw2d::object& obj) const
-   {
-      
-      return false;
-      
-   }
-   
-   
-   bool object::operator!=(const ::draw2d::object& obj) const
-   {
-      
-      return true;
-      
-   }
-   
-   
+//   bool object::operator==(const ::draw2d::object& obj) const
+//   {
+//
+//      return false;
+//
+//   }
+//
+//
+//   bool object::operator!=(const ::draw2d::object& obj) const
+//   {
+//
+//      return true;
+//
+//   }
+//
+//
 //   object * graphics_object_allocator(::base::application * papp, HANDLE h)
 //   {
 //
@@ -82,21 +82,21 @@ namespace draw2d_quartz2d
    }
    
 
-   void object::dump(dump_context & dumpcontext) const
-   {
-
-      ::draw2d::object::dump(dumpcontext);
-      
-   }
-   
-
-   void object::assert_valid() const
-   {
-
-      ::draw2d::object::assert_valid();
-
-   }
-   
+//   void object::dump(dump_context & dumpcontext) const
+//   {
+//
+//      ::draw2d::object::dump(dumpcontext);
+//      
+//   }
+//   
+//
+//   void object::assert_ok() const
+//   {
+//
+//      ::draw2d::object::assert_ok();
+//
+//   }
+//   
 
    
    

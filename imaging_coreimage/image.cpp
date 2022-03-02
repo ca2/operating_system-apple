@@ -31,13 +31,13 @@ namespace coreimage_imaging
 {
 
 
-   ::e_status context_image::save_image(memory & memory, const ::image * pimage, const ::save_image * psaveimage)
+   void context_image::save_image(memory & memory, const ::image * pimage, const ::save_image * psaveimage)
    {
 
       if(pimage->is_empty())
       {
 
-         return error_failed;
+         throw exception(error_invalid_parameter);
 
       }
 
@@ -69,69 +69,106 @@ namespace coreimage_imaging
 
       memory.assign(p, size);
 
-      return true;
+      //return true;
 
    }
 
 
-
-   ::e_status context_image::_load_image( ::image * pimage, const ::payload & varFile, const ::image::load_options & options)
+   void context_image::_load_image( ::image * pimage, const ::payload & varFile, const ::image::load_options & options)
    {
       
       if(::is_null(pimage))
       {
          
-         return ::error_failed;
+         throw exception(error_invalid_parameter);
          
       }
       
       memory memory;
       
-      auto pcontext = m_pcontext;
+      auto pcontext = m_pcontext->m_pauracontext;
       
       bool bOk = pcontext->m_papexcontext->file().as_memory(varFile, memory);
       
       if(!bOk)
       {
          
-         return ::error_failed;
+         throw exception(::error_failed);
          
       }
       
       auto pcontextimage = pcontext->context_image();
-      
-      auto estatus = pcontextimage->load_svg(pimage, memory);
-      
-      if(::succeeded(estatus))
+
+      auto pszData = memory.get_data();
+
+      auto size = memory.get_size();
+
+      char pszPngSignature []= {(char)137, 80, 78 ,71, 13 ,10, 26 ,10};
+
+      bool bPng = size > sizeof(pszPngSignature)
+      && strncmp((const char *) pszData, pszPngSignature, sizeof(pszPngSignature)) == 0;
+
+      bool bJpegBegins = memory.begins("\x0FF\x0D8", 2);
+
+      bool bJpegEnds = memory.ends("\x0FF\x0D9", 2);
+
+      bool bGif87a = memory.begins("GIF87a", 6);
+
+      bool bGif89a = memory.begins("GIF89a", 6);
+
+      bool bJpeg =  bJpegBegins && bJpegEnds;
+
+      bool bJfif = memory.begins("JFIF", 4);
+
+      bool bExif = memory.begins("Exif", 4);
+
+      bool bGif = bGif87a || bGif89a;
+
+      bool bBinary = *pszData == '\0';
+
+      if(!bPng
+      && !bBinary
+      && !bJpeg
+      && !bJfif
+      && !bExif
+      && !bGif
+      )
       {
 
-         return estatus;
+         //estatus =
          
-      }
-      
-      const char * psz = (const char *) memory.get_data();
-      
-      if (memory.get_size() > 3 && strnicmp(psz, "gif", 3) == 0)
-      {
+         pcontextimage->load_svg(pimage, memory);
 
-         if (!_load_multi_frame_image(pimage, memory))
+         if (::is_ok(pimage))
          {
 
-            pimage->set_nok();
-
-            return pimage->m_estatus;
+            return;
 
          }
+
+      }
+      else if (bGif)
+      {
+
+      //m_psystem->m_pacmefile->put_contents("/home/camilo/a.gif", memory);
+
+         _load_multi_frame_image(pimage, memory);
+
+         //if (!)
+ /*        {
+            pimage->set_nok();
+            return pimage->m_estatus;
+         }*/
 
          pimage->on_load_image();
 
          pimage->set_ok();
 
-         //pimage->notify(OK);
-
          pimage->m_estatus = ::success;
 
-         return pimage->m_estatus;
+         return;
+
+         // return pimage->m_estatus;
 
       }
       
@@ -148,16 +185,11 @@ namespace coreimage_imaging
       if(pcolorref == nullptr)
       {
          
-         return false;
+         throw exception(error_null_pointer);
          
       }
       
-      if(!pimage->create({w, h}))
-      {
-         
-         return false;
-         
-      }
+      pimage->create({w, h});
       
       pimage->map();
       
@@ -165,7 +197,7 @@ namespace coreimage_imaging
       
       pimage->set_ok();
       
-      return true;
+      //return true;
 
    }
 

@@ -6229,7 +6229,8 @@ namespace draw2d_quartz2d
       if(str.trimmed().is_empty())
       {
 
-         throw exception(error_invalid_empty_argument);
+         return;
+         //throw exception(error_invalid_empty_argument);
 
       }
       

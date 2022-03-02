@@ -24,13 +24,13 @@ namespace coreimage_imaging
 {
 
 
-   ::e_status context_image::_load_image(::image * pimage, __pointer(image_frame_array) & pframea, memory & memory)
+   void context_image::_load_image(::image * pimage, __pointer(image_frame_array) & pframea, memory & memory)
    {
 
       if(memory.is_empty())
       {
 
-         return false;
+         throw exception(error_invalid_parameter);
 
       }
 
@@ -49,7 +49,7 @@ namespace coreimage_imaging
       if(data == nullptr)
       {
 
-         return false;
+         throw exception(error_null_pointer);
 
       }
 
@@ -84,7 +84,7 @@ namespace coreimage_imaging
       if (imagesource == nullptr)
       {
 
-         return false;
+         throw exception(error_resource);
 
       }
 
@@ -98,7 +98,9 @@ namespace coreimage_imaging
 
          CFRelease(imagesource);
 
-         return ::error_failed;
+         //return ::error_failed;
+         
+         throw exception(error_failed);
 
       }
 
@@ -150,9 +152,11 @@ namespace coreimage_imaging
             auto p = __new(image_frame);
 
             p->m_pimage = create_image();
+            
+            p->m_pimage->create({ w, h });
 
-            if(p->m_pimage->create({ w, h }))
-            {
+            //if(p->m_pimage->create({ w, h }))
+            //{
 
                ::vertical_swap_copy_colorref(p->m_pimage->colorref(), w, h, p->m_pimage->scan_size(), pdata, iScan);
 
@@ -228,7 +232,7 @@ namespace coreimage_imaging
 
                pframea->m_durationTotal += p->m_duration;
 
-            }
+            //}
 
          }
 
@@ -240,7 +244,7 @@ namespace coreimage_imaging
 
       CFRelease(imagesourcetype);
 
-      return true;
+      //return true;
 
    }
 

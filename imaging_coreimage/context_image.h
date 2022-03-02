@@ -17,10 +17,10 @@ namespace coreimage_imaging
       context_image();
       ~context_image() override;
 
-      ::e_status _load_image(::image * pimageParam, const ::payload & varFile, const ::image::load_options & options = ::image::load_options()) override;
+      void _load_image(::image * pimageParam, const ::payload & varFile, const ::image::load_options & options = ::image::load_options()) override;
 
-      ::e_status _load_image(::image * pimage, __pointer(image_frame_array) & pframea, memory & memory) override;
-      ::e_status save_image(memory & memory, const ::image * pimage, const ::save_image * psaveimage = nullptr) override;
+      void _load_image(::image * pimage, __pointer(image_frame_array) & pframea, memory & memory) override;
+      void save_image(memory & memory, const ::image * pimage, const ::save_image * psaveimage = nullptr) override;
 
 //      virtual void * create_os_cursor(oswindow oswindow, const image * pimage, int xHotSpot, int yHotSpot);
 //      //virtual HCURSOR load_default_cursor(e_cursor ecursor) override;

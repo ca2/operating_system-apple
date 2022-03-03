@@ -124,7 +124,7 @@ namespace coreimage_imaging
 
       bool bGif = bGif87a || bGif89a;
 
-      bool bBinary = *pszData == '\0';
+      bool bBinary = pszData && *pszData == '\0';
 
       if(!bPng
       && !bBinary

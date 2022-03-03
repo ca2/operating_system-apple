@@ -1327,8 +1327,6 @@ namespace draw2d_quartz2d
 
       auto pimage = imagedrawing.image();
       
-      ::draw2d::graphics * pgraphicsSrc = pimage->g();
-      
       // BitBltRaw
       if(rectangleSource.size() == rectangleTarget.size())
       {
@@ -1339,7 +1337,13 @@ namespace draw2d_quartz2d
          //double xSrc, double ySrc, ::u32 dwRop
 
          synchronous_lock synchronouslock(mutex());
-//
+
+         pimage->defer_update_image();
+         
+         ::draw2d::graphics * pgraphicsSrc = pimage->g();
+         
+
+         //
 //         try
 //         {
 
@@ -1573,6 +1577,11 @@ namespace draw2d_quartz2d
             //return false;
 
          }
+
+         pimage->defer_update_image();
+         
+         ::draw2d::graphics * pgraphicsSrc = pimage->g();
+         
 
 
             if(pgraphicsSrc == nullptr)

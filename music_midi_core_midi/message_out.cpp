@@ -27,16 +27,18 @@ namespace music
          }
          
 
-         ::e_status message_out::initialize_message_out(::music::midi::midi * pmidi, const string & strDriver)
+         void message_out::initialize_message_out(::music::midi::midi * pmidi, const string & strDriver)
          {
             
-            auto estatus = ::music::midi::message_out::initialize_message_out(pmidi, strDriver);
-            if(!estatus)
-            {
-               
-               return estatus;
-               
-            }
+            //auto estatus =
+            
+            ::music::midi::message_out::initialize_message_out(pmidi, strDriver);
+//            if(!estatus)
+//            {
+//
+//               return estatus;
+//
+//            }
 //            if(!estatus)
 //            {
 //
@@ -127,7 +129,7 @@ namespace music
 //
 //            }
 //
-            return estatus;
+            //return estatus;
             
          }
 
@@ -158,7 +160,7 @@ namespace music
 //         }
       
       
-         ::e_status message_out::open()
+         void message_out::open()
          {
          
             m_packetlist = nullptr;
@@ -174,7 +176,7 @@ namespace music
                
                WARNING("MIDIOutputPortCreate failed with code " << __string((int)result));
                
-               return ::error_failed;
+               throw ::exception(::error_failed);
                
             }
             
@@ -207,7 +209,7 @@ namespace music
                
             }
             
-            return ::success;
+            //return ::success;
             
          }
          
@@ -241,7 +243,7 @@ namespace music
          }
 
 
-         ::e_status message_out::note_off(int channel, unsigned char note, unsigned char velocity)
+         void message_out::note_off(int channel, unsigned char note, unsigned char velocity)
          {
             
             Byte message[3];
@@ -254,12 +256,12 @@ namespace music
             
             add_short_message(message, 3);
             
-            return ::success;
+            //return ::success;
             
          }
          
          
-         ::e_status message_out::note_on(int channel, unsigned char note, unsigned char volume)
+         void message_out::note_on(int channel, unsigned char note, unsigned char volume)
          {
 
             Byte message[3];
@@ -272,7 +274,7 @@ namespace music
             
             add_short_message(message, 3);
             
-            return ::success;
+            //return ::success;
             
          }
 
@@ -293,7 +295,7 @@ namespace music
          }
          
          
-         ::e_status message_out::program_change(int channel, unsigned char instrument)
+         void message_out::program_change(int channel, unsigned char instrument)
          {
             
             Byte message[2];
@@ -304,7 +306,7 @@ namespace music
             
             add_short_message(message, 2);
             
-            return ::success;
+            //return ::success;
             
          }
          
@@ -355,7 +357,7 @@ namespace music
          }
          
          
-         ::e_status message_out::step()
+         bool message_out::step()
          {
             
             if(m_packetlist)
@@ -374,12 +376,14 @@ namespace music
                
             }
             
-            return ::success;
+            //return ::success;
+            
+            return true;
 
          }
 
 
-         ::e_status message_out::start()
+         void message_out::start()
          {
 
 #ifdef MACOS2
@@ -388,7 +392,7 @@ namespace music
          
 #endif
             
-            return ::success;
+            //return ::success;
             
          }
          

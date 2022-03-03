@@ -30,14 +30,16 @@ namespace music
       message_in::message_in(::music::midi::core_midi::midi * pmidi, const string & strDriver)
          {
             
-            auto estatus = initialize(pmidi);
-            
-            if(!estatus)
-            {
-               
-               throw ::exception(estatus);
-               
-            }
+            //auto estatus =
+         
+         initialize(pmidi);
+//
+//            if(!estatus)
+//            {
+//
+//               throw ::exception(estatus);
+//
+//            }
 
             m_pmidi = pmidi;
 
@@ -124,30 +126,34 @@ namespace music
          message_in::message_in(::music::midi::core_midi::midi * pmidi, int iPort)
          {
          
-            auto estatus = initialize(pmidi);
+            //auto estatus =
+            
+            initialize(pmidi);
          
-            if(!estatus)
-            {
-               
-               throw ::exception(estatus);
-               
-            }
+//            if(!estatus)
+//            {
+//
+//               throw ::exception(estatus);
+//
+//            }
             
             m_pmidi = pmidi;
             
-            estatus = open(iPort);
+            //estatus =
+            
+            open(iPort);
 
-            if(!estatus)
-            {
-                
-               throw ::exception(estatus);
-                
-            }
+//            if(!estatus)
+//            {
+//
+//               throw ::exception(estatus);
+//
+//            }
                    
          }
       
       
-         ::e_status message_in::open(int iPort)
+         void message_in::open(int iPort)
          {
          
             m_packetlist = nullptr;
@@ -166,7 +172,7 @@ namespace music
                
                WARNING("MIDIOutputPortCreate failed with code " << __string((int)result) );
                
-               return error_failed;
+               throw ::exception(::error_failed);
                
             }
             
@@ -199,12 +205,12 @@ namespace music
                
             }
             
-            return ::success;
+            //return ::success;
             
          }
          
          
-         ::e_status message_in::start()
+         void message_in::start()
          {
             
             OSStatus result = MIDIPortConnectSource(m_port, m_endpoint, this);
@@ -216,16 +222,18 @@ namespace music
                
                WARNING("MIDIPortConnectSource failed with code " << __string((int)result));
                
-               return error_failed;
+               throw ::exception(::error_failed);
                
             }
             
-            return ::success;
+            //return ::success;
+            
+            //return;
             
          }
 
       
-         ::e_status message_in::stop()
+         void message_in::stop()
          {
             
             OSStatus result = MIDIPortDisconnectSource(m_port, m_endpoint);
@@ -237,15 +245,16 @@ namespace music
               
                WARNING("MIDIPortDisconnectSource failed with code "<< __string((int)result));
               
-               return error_failed;
+               throw ::exception(::error_failed);
               
             }
                  
-            return ::success;
+            //return ::success;
             
          }
 
-         ::e_status message_in::close()
+      
+         void message_in::close()
          {
             
             OSStatus result = MIDIPortDispose(m_port);
@@ -257,11 +266,11 @@ namespace music
               
                WARNING("MIDIPortDispose (for MIDI Input) failed with code " << __string((int)result));
               
-               return error_failed;
+               throw ::exception(::error_failed);
               
             }
 
-            return ::success;
+            //return ::success;
             
          }
 
@@ -294,18 +303,21 @@ namespace music
          }
 
 
-         ::e_status message_in::note_off(int channel, unsigned char note, unsigned char velocity)
+         void message_in::note_off(int channel, unsigned char note, unsigned char velocity)
          {
             
-            return ::music::midi::message_in::note_off(channel, note, velocity);
+            //return
+            ::music::midi::message_in::note_off(channel, note, velocity);
             
          }
          
          
-         ::e_status message_in::note_on(int channel, unsigned char note, unsigned char volume)
+         void message_in::note_on(int channel, unsigned char note, unsigned char volume)
          {
 
-            return ::music::midi::message_in::note_on(channel, note, volume);
+            //return
+            
+            ::music::midi::message_in::note_on(channel, note, volume);
             
          }
 
@@ -326,7 +338,7 @@ namespace music
          }
          
          
-         ::e_status message_in::program_change(int channel, unsigned char instrument)
+         void message_in::program_change(int channel, unsigned char instrument)
          {
             
             Byte message[2];
@@ -337,7 +349,7 @@ namespace music
             
             add_short_message(message, 2);
             
-            return ::success;
+            //return ::success;
             
          }
          
@@ -388,7 +400,7 @@ namespace music
          }
          
          
-         ::e_status message_in::step()
+         bool message_in::step()
          {
             
 //            if(m_packetlist)

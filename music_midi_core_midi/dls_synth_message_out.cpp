@@ -35,7 +35,7 @@ namespace music
          }
          
          
-         ::e_status dls_synth_message_out::open()
+         void dls_synth_message_out::open()
          {
             
             OSStatus result = noErr;
@@ -45,7 +45,7 @@ namespace music
             if (noErr != result)
             {
                                
-               return ::error_failed;
+               throw ::exception(::error_failed);
                                
             }
 
@@ -61,7 +61,7 @@ namespace music
             if (noErr != result)
             {
                                
-               return ::error_failed;
+               throw ::exception(::error_failed);
                                
             }
             
@@ -77,7 +77,7 @@ namespace music
             if (noErr != result)
             {
                        
-               return ::error_failed;
+               throw ::exception(::error_failed);
                        
             }
             
@@ -86,7 +86,7 @@ namespace music
             if (noErr != result)
             {
                        
-               return ::error_failed;
+               throw ::exception(::error_failed);
                        
             }
             
@@ -94,7 +94,7 @@ namespace music
             if (noErr != result)
                    {
                               
-                      return ::error_failed;
+                      throw ::exception(::error_failed);
                               
                    }
 
@@ -103,7 +103,7 @@ namespace music
             if (noErr != result)
             {
                
-               return ::error_failed;
+               throw ::exception(::error_failed);
                
             }
 
@@ -113,7 +113,7 @@ namespace music
             if (noErr != result)
             {
                        
-               return ::error_failed;
+               throw ::exception(::error_failed);
                        
             }
             
@@ -122,7 +122,7 @@ namespace music
               if (noErr != result)
               {
                          
-                 return ::error_failed;
+                 throw ::exception(::error_failed);
                          
               }
               
@@ -132,7 +132,7 @@ namespace music
             if (noErr != result)
             {
                        
-               return ::error_failed;
+               throw ::exception(::error_failed);
                        
             }
 
@@ -148,14 +148,14 @@ namespace music
             if (noErr != result)
               {
                          
-                 return ::error_failed;
+                 throw ::exception(::error_failed);
                          
               }
-            return ::success;
+            //return ::success;
          }
          
          
-         ::e_status dls_synth_message_out::note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity)
+         void dls_synth_message_out::note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity)
          {
             
             int noteOnCommand = ::u32(0x90 | iChannel);
@@ -164,14 +164,14 @@ namespace music
             if (noErr != result)
                   {
                              
-                     return ::error_failed;
+                     throw ::exception(::error_failed);
                              
                   }
-            return ::success;
+            //return ::success;
          }
          
          
-         ::e_status dls_synth_message_out::note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity)
+         void dls_synth_message_out::note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity)
          {
             int noteOffCommand = ::u32(0x80 | iChannel);
                 OSStatus result=    MusicDeviceMIDIEvent (m_unitSynth, noteOffCommand, uchNote, uchVelocity, 0);
@@ -179,14 +179,14 @@ namespace music
                     if (noErr != result)
                           {
                                      
-                             return ::error_failed;
+                             throw ::exception(::error_failed);
                                      
                           }
-                    return ::success;
+            //return ::success;
          }
          
          
-         ::e_status dls_synth_message_out::program_change(int iChannel, unsigned char uchProgram)
+         void dls_synth_message_out::program_change(int iChannel, unsigned char uchProgram)
          {
             
             
@@ -196,18 +196,22 @@ namespace music
                     if (noErr != result)
                           {
                                      
-                             return ::error_failed;
+                             //return ::error_failed;
+                             
+                             throw ::exception(::error_failed);
                                      
                           }
-                    return ::success;
+                    //return ::success;
 
          }
          
       
-         ::e_status dls_synth_message_out::step()
+         bool dls_synth_message_out::step()
          {
             
-            return ::success;
+            //return ::success;
+            
+            return true;
             
          }
       

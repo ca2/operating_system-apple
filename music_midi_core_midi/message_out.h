@@ -72,20 +72,20 @@ namespace music
             ~message_out() override;
             
             
-            ::e_status initialize_message_out(::music::midi::midi * pmidi, const ::string & strDeviceId) override;
+            void initialize_message_out(::music::midi::midi * pmidi, const ::string & strDeviceId) override;
             
-            ::e_status open() override;
+            void open() override;
             
-            ::e_status start() override;
+            void start() override;
             
-            ::e_status note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
-            ::e_status note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
-            ::e_status program_change(int iChannel, unsigned char uchProgram) override;
+            void note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
+            void note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
+            void program_change(int iChannel, unsigned char uchProgram) override;
             void control_change(int iChannel, unsigned char uchController, unsigned char uchValue) override;
             void pitch_bend(int iChannel, unsigned short ushBend) override;
             void sysex(const ::block & block) override;
             
-            ::e_status step() override;
+            bool step() override;
             
             void reset_all_controllers() override;
             

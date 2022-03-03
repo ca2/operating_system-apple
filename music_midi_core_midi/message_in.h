@@ -69,25 +69,25 @@ namespace music
             //message_in();
             //message_in(::object * pobject, string driver);
             //message_in(::object * pobject, int iPort);
-            virtual ~message_in();
+            ~message_in() override;
             
-            virtual ::e_status open(int iPort) override;
+            void open(int iPort) override;
             
-            virtual ::e_status start() override;
-            virtual ::e_status stop() override;
-            virtual ::e_status close() override;
+            void start() override;
+            void stop() override;
+            void close() override;
             
             
-            virtual ::e_status note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
-            virtual ::e_status note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
-            virtual ::e_status program_change(int iChannel, unsigned char uchProgram) override;
-            virtual void control_change(int iChannel, unsigned char uchController, unsigned char uchValue) override;
-            virtual void pitch_bend(int iChannel, unsigned short ushBend) override;
-            virtual void sysex(const ::block & block) override;
+            void note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
+            void note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
+            void program_change(int iChannel, unsigned char uchProgram) override;
+            void control_change(int iChannel, unsigned char uchController, unsigned char uchValue) override;
+            void pitch_bend(int iChannel, unsigned short ushBend) override;
+            void sysex(const ::block & block) override;
             
-            virtual ::e_status step() override;
+            bool step() override;
             
-            virtual void reset_all_controllers() override;
+            void reset_all_controllers() override;
             
             virtual void add_short_message(Byte * pmessage, int iSize);
             virtual void add_long_message(Byte * pmessage, int iSize);

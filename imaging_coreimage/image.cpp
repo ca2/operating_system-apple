@@ -93,7 +93,11 @@ namespace coreimage_imaging
       if(!bOk)
       {
          
-         throw exception(::error_failed);
+         pimage->m_estatus = error_not_found;
+         
+         pimage->set_nok();
+         
+         return;
          
       }
       

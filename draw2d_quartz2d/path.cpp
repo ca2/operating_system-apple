@@ -312,7 +312,26 @@ namespace draw2d_quartz2d
       return true;
       
    }
+         
+
+   bool path::_set(::draw2d::graphics * pgraphics, const ::ellipse & ellipse)
+   {
+
+      CGRect r;
+      
+      r.origin.x = ellipse.left;
+      r.origin.y = ellipse.top;
+      r.size.width = ellipse.width();
+      r.size.height = ellipse.height();
+      
+      r.origin.x += m_pointOffset.x;
+      r.origin.y += m_pointOffset.y;
+      
+      CGPathAddEllipseInRect(m_path, nullptr, r);
                     
+      return true;
+      
+   }
 
    bool path::_set(::draw2d::graphics * pgraphics, const ::lines & lines)
    {
@@ -417,7 +436,6 @@ namespace draw2d_quartz2d
       return CGPathContainsPoint(ppath, nullptr,CGPointMake(point.x, point.y), false);
       
    }
-
 
    
 } // namespace metrowin

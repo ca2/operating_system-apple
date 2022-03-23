@@ -85,10 +85,10 @@ namespace acme
       }
    
    
-      void node::node_post(const ::routine & routine)
+      void node::node_post(const ::routine & routineParam)
       {
          
-         routine.m_p->increment_reference_count();
+         auto routine = routineParam;
          
          ns_main_async(^{
             
@@ -102,10 +102,6 @@ namespace acme
             {
             
             }
-            
-            auto p = routine.m_p;
-            
-            ::release(p);
             
          });
 

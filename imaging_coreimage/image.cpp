@@ -5,7 +5,7 @@
 //  Created by Camilo Sasuke Tsumanuma on 21/10/17. Thomas Boregaard Soerensen <3
 //
 #include "framework.h"
-#include "aura/graphics/draw2d/save_image.h"
+#include "aura/graphics/image/save_image.h"
 #include <Carbon/Carbon.h>
 
 
@@ -47,9 +47,9 @@ namespace coreimage_imaging
 
       ::acme::malloc < color32_t * > p;
 
-      switch (psaveimage == nullptr ? ::draw2d::format_png : psaveimage->m_eformat)
+      switch (psaveimage == nullptr ? ::draw2d::e_format_png : psaveimage->m_eformat)
       {
-      case ::draw2d::format_jpeg:
+      case ::draw2d::e_format_jpeg:
       {
 
          p = get_jpeg_image_data(size, cgimage);

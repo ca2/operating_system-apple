@@ -1,9 +1,9 @@
 #include "framework.h"
-#include "aura/graphics/draw2d/context_image.h"
+#include "aura/graphics/image/context_image.h"
 #include <math.h>
 #include <memory.h>
 #include <CoreFoundation/CFDictionary.h>
-
+//CGMutablePathRef ns_rounded_rect_path(CGRect r, double rx, double ry);
 
 unsigned long apple_get_fonts(char *** p);
 double nsfont_get_ctweight(int iWeight);
@@ -575,7 +575,7 @@ namespace draw2d_quartz2d
 //   }
 
 
-   void graphics::Arc(double x, double y, double w, double h, angle start, angle extends)
+   void graphics::arc(double x, double y, double w, double h, angle start, angle extends)
    {
 
       double end = start + extends;
@@ -2463,7 +2463,7 @@ namespace draw2d_quartz2d
 
    }
 
-   void graphics::AngleArc(double x, double y, double dRadius, angle fStartAngle, angle fSweepAngle)
+   void graphics::angle_arc(double x, double y, double dRadius, angle fStartAngle, angle fSweepAngle)
    {
 
       throw ::exception(error_not_implemented);;
@@ -2474,7 +2474,7 @@ namespace draw2d_quartz2d
 
    }
 
-   void graphics::ArcTo(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd)
+   void graphics::arc_to(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd)
    {
 
       throw ::exception(error_not_implemented);;
@@ -2771,7 +2771,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::draw_path(::draw2d::path * ppath)
+   void graphics::draw(::draw2d::path * ppath)
    {
 
  //     if(!_set(ppath))
@@ -2789,7 +2789,7 @@ namespace draw2d_quartz2d
 
    }
 
-   void graphics::fill_path(::draw2d::path * ppath)
+   void graphics::fill(::draw2d::path * ppath)
    {
 
       auto path = ppath->template get_os_data < CGMutablePathRef >(this);
@@ -2805,7 +2805,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::draw_path(::draw2d::path * ppath, ::draw2d::pen * ppen)
+   void graphics::draw(::draw2d::path * ppath, ::draw2d::pen * ppen)
    {
 
       auto path = ppath->template get_os_data < CGMutablePathRef >(this);
@@ -2821,7 +2821,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::fill_path(::draw2d::path * ppath, ::draw2d::brush * pbrush)
+   void graphics::fill(::draw2d::path * ppath, ::draw2d::brush * pbrush)
    {
 
       auto path = ppath->template get_os_data < CGMutablePathRef >(this);
@@ -5126,7 +5126,7 @@ namespace draw2d_quartz2d
 
 //      cairo_set_source_rgba(m_pdc, colorref_get_r_value(pbrush->m_color) / 255.0, colorref_get_g_value(pbrush->m_color) / 255.0, colorref_get_b_value(pbrush->m_color) / 255.0, colorref_get_a_value(pbrush->m_color) / 255.0);
 
-      if(pbrush == nullptr || pbrush->m_etype == ::draw2d::brush::type_linear_gradient_point_color)
+      if(pbrush == nullptr || pbrush->m_ebrush == ::draw2d::e_brush_linear_gradient_point_color)
          throw exception(error_null_pointer);
 
       CGContextSetRGBFillColor(m_pdc, pbrush->m_color.dr(), pbrush->m_color.dg(), pbrush->m_color.db(), pbrush->m_color.da());
@@ -5149,7 +5149,7 @@ namespace draw2d_quartz2d
       if(ppen->m_epen == ::draw2d::e_pen_brush && ppen->m_pbrush)
       {
 
-         if(ppen->m_pbrush->m_etype == ::draw2d::brush::type_solid)
+         if(ppen->m_pbrush->m_ebrush == ::draw2d::e_brush_solid)
          {
 
             CGContextSetRGBStrokeColor(m_pdc, ppen->m_pbrush->m_color.dr(), ppen->m_pbrush->m_color.dg(), ppen->m_pbrush->m_color.db(), ppen->m_pbrush->m_color.da());
@@ -5174,7 +5174,7 @@ namespace draw2d_quartz2d
    void graphics::_set_pen(::draw2d::brush * pbrush, double dWidth)
    {
 
-      if(pbrush == nullptr || pbrush->m_etype == ::draw2d::brush::e_type_null)
+      if(pbrush == nullptr || pbrush->m_ebrush == ::draw2d::e_brush_null)
       {
 
          throw exception(error_null_pointer);
@@ -5234,12 +5234,155 @@ namespace draw2d_quartz2d
    void graphics::_fill(::draw2d::brush * pbrush, bool bContextClip)
    {
 
-      if(pbrush == nullptr || pbrush->m_etype == ::draw2d::brush::e_type_null)
+      if(pbrush == nullptr || pbrush->m_ebrush == ::draw2d::e_brush_null)
          return;
 
       CGContextRef pgraphics = m_pdc;
+      
+      if(pbrush->m_ebrush == ::draw2d::e_brush_box_gradient)
+      {
+         pbrush->defer_update(this, 0);
 
-      if(pbrush->m_etype == ::draw2d::brush::type_radial_gradient_color)
+         if(bContextClip)
+         {
+
+            CGContextClip(pgraphics);
+
+         }
+
+         _clip(m_pregion);
+         
+         rectangle_f64 outer(pbrush->m_point, pbrush->m_size);
+         rectangle_f64 inner(outer);
+         
+         inner.deflate(pbrush->m_dRadius);
+
+         //CGPathRef pathRef = CGPathCreateWithRoundedRect(r, rx, ry, nullptr);
+         CGPoint s, e;
+         s.x = 0;
+         s.y = 0;
+         e.x = 0;
+         e.y = 0;
+         
+         CGGradientRef grad = (CGGradientRef) pbrush->m_osdata[0];
+
+         double radius = pbrush->m_dRadius;
+         double radius2 = radius *2.0;
+
+         CGRect r;
+         
+         //top-left
+         CGContextSaveGState(m_pdc);
+         r.origin.x = outer.left;
+         r.origin.y = outer.top;
+         r.size.width = radius;
+         r.size.height = radius;
+         CGContextClipToRect(m_pdc, r);
+         CGContextTranslateCTM(m_pdc, inner.left, inner.top);
+         CGContextScaleCTM(m_pdc, radius, radius);
+         CGContextDrawRadialGradient(m_pdc, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
+         CGContextRestoreGState(m_pdc);
+
+         //top-right
+         CGContextSaveGState(m_pdc);
+         r.origin.x = inner.right;
+         r.origin.y = outer.top;
+         r.size.width = radius;
+         r.size.height = radius;
+         CGContextClipToRect(m_pdc, r);
+         CGContextTranslateCTM(m_pdc, inner.right, inner.top);
+         CGContextScaleCTM(m_pdc, radius, radius);
+         CGContextDrawRadialGradient(m_pdc, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
+         CGContextRestoreGState(m_pdc);
+
+         
+         //bottom-right
+         CGContextSaveGState(m_pdc);
+         r.origin.x = inner.right;
+         r.origin.y = inner.bottom;
+         r.size.width = radius;
+         r.size.height = radius;
+         CGContextClipToRect(m_pdc, r);
+         CGContextTranslateCTM(m_pdc, inner.right, inner.bottom);
+         CGContextScaleCTM(m_pdc, radius, radius);
+         CGContextDrawRadialGradient(m_pdc, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
+         CGContextRestoreGState(m_pdc);
+
+         //bottom-left
+         CGContextSaveGState(m_pdc);
+         r.origin.x = outer.left;
+         r.origin.y = inner.bottom;
+         r.size.width = radius;
+         r.size.height = radius;
+         CGContextClipToRect(m_pdc, r);
+         CGContextTranslateCTM(m_pdc, inner.left, inner.bottom);
+         CGContextScaleCTM(m_pdc, radius, radius);
+         CGContextDrawRadialGradient(m_pdc, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
+         CGContextRestoreGState(m_pdc);
+
+         r.origin.x = inner.left;
+         r.origin.y = inner.top;
+         r.size.width = inner.width();
+         r.size.height = inner.height();
+
+         CGContextSetRGBFillColor(m_pdc, pbrush->m_color1.dr(), pbrush->m_color1.dg(), pbrush->m_color1.db(), pbrush->m_color1.da());
+         CGContextFillRect(m_pdc, r);
+         
+         r.origin.x = inner.left;
+         r.origin.y = inner.bottom;
+         r.size.width = inner.width();
+         r.size.height = radius;
+         CGContextSaveGState(m_pdc);
+         CGContextClipToRect(m_pdc, r);
+         s.x = inner.left;
+         e.x = inner.left;
+         s.y = inner.bottom;
+         e.y = outer.bottom;
+         CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
+         CGContextRestoreGState(m_pdc);
+
+         
+         r.origin.x = inner.left;
+         r.origin.y = outer.top;
+         r.size.width = inner.width();
+         r.size.height = radius;
+         CGContextSaveGState(m_pdc);
+         CGContextClipToRect(m_pdc, r);
+         s.x = inner.left;
+         e.x = inner.left;
+         e.y = outer.top;
+         s.y = inner.top;
+         CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
+         CGContextRestoreGState(m_pdc);
+
+         r.origin.x = inner.right;
+         r.origin.y = inner.top;
+         r.size.width = radius;
+         r.size.height = inner.height();
+         CGContextSaveGState(m_pdc);
+         CGContextClipToRect(m_pdc, r);
+         s.x = inner.right;
+         e.x = outer.right;
+         e.y = inner.top;
+         s.y = inner.top;
+         CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
+         CGContextRestoreGState(m_pdc);
+
+         r.origin.x = outer.left;
+         r.origin.y = inner.top;
+         r.size.width = radius;
+         r.size.height = inner.height();
+         CGContextSaveGState(m_pdc);
+         CGContextClipToRect(m_pdc, r);
+         s.x = inner.left;
+         e.x = outer.left;
+         e.y = inner.top;
+         s.y = inner.top;
+         CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
+         CGContextRestoreGState(m_pdc);
+
+      }
+      else if(pbrush->m_ebrush == ::draw2d::e_brush_radial_gradient_color)
       {
          
          pbrush->defer_update(this, 0);
@@ -5270,7 +5413,7 @@ namespace draw2d_quartz2d
          CGContextDrawRadialGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], myStartPoint, 0, myEndPoint, 1.0f, kCGGradientDrawsBeforeStartLocation);
 
       }
-      else if(pbrush->m_etype == ::draw2d::brush::type_linear_gradient_point_color)
+      else if(pbrush->m_ebrush == ::draw2d::e_brush_linear_gradient_point_color)
       {
          
          pbrush->defer_update(this, 0);
@@ -5309,7 +5452,7 @@ namespace draw2d_quartz2d
 
 
       }
-      else if(pbrush->m_etype == ::draw2d::brush::type_pattern)
+      else if(pbrush->m_ebrush == ::draw2d::e_brush_pattern)
       {
 
          if(bContextClip)
@@ -5430,9 +5573,9 @@ namespace draw2d_quartz2d
          _set(ppen);
 
          if(ppen->m_epen == ::draw2d::e_pen_brush && ppen->m_pbrush.is_set()
-               && (ppen->m_pbrush->m_etype == ::draw2d::brush::type_linear_gradient_point_color
-                   || ppen->m_pbrush->m_etype == ::draw2d::brush::type_radial_gradient_color
-                   || ppen->m_pbrush->m_etype == ::draw2d::brush::type_pattern)
+               && (ppen->m_pbrush->m_ebrush == ::draw2d::e_brush_linear_gradient_point_color
+                   || ppen->m_pbrush->m_ebrush == ::draw2d::e_brush_radial_gradient_color
+                   || ppen->m_pbrush->m_ebrush == ::draw2d::e_brush_pattern)
            )
          {
 
@@ -5463,7 +5606,7 @@ namespace draw2d_quartz2d
    void graphics::_draw(::draw2d::brush * pbrush)
    {
 
-      if(pbrush == nullptr || pbrush->m_etype == ::draw2d::brush::e_type_null)
+      if(pbrush == nullptr || pbrush->m_ebrush == ::draw2d::e_brush_null)
          return;
 
       //if(ppen->m_etype == ::draw2d::e_pen_solid)
@@ -5474,9 +5617,9 @@ namespace draw2d_quartz2d
 
          _set(pbrush);
 
-         if(pbrush->m_etype == ::draw2d::brush::type_linear_gradient_point_color
-               || pbrush->m_etype == ::draw2d::brush::type_radial_gradient_color
-               || pbrush->m_etype == ::draw2d::brush::type_pattern)
+         if(pbrush->m_ebrush == ::draw2d::e_brush_linear_gradient_point_color
+               || pbrush->m_ebrush == ::draw2d::e_brush_radial_gradient_color
+               || pbrush->m_ebrush == ::draw2d::e_brush_pattern)
 
          {
 
@@ -6271,9 +6414,9 @@ namespace draw2d_quartz2d
          {
 
             if(::is_set(pbrush) &&
-                  (pbrush->m_etype == ::draw2d::brush::type_linear_gradient_point_color
-                   || pbrush->m_etype == ::draw2d::brush::type_radial_gradient_color
-                   || pbrush->m_etype == ::draw2d::brush::type_pattern))
+                  (pbrush->m_ebrush == ::draw2d::e_brush_linear_gradient_point_color
+                   || pbrush->m_ebrush == ::draw2d::e_brush_radial_gradient_color
+                   || pbrush->m_ebrush == ::draw2d::e_brush_pattern))
             {
 
                pbrushDraw = pbrush;

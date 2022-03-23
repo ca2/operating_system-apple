@@ -82,7 +82,7 @@ namespace draw2d_quartz2d
    void brush::create(::draw2d::graphics * pgraphics, i8 iCreate)
    {
       
-      if(m_etype == type_linear_gradient_point_color || m_etype == type_radial_gradient_color)
+      if(m_ebrush == ::draw2d::e_brush_linear_gradient_point_color || m_ebrush == ::draw2d::e_brush_radial_gradient_color || m_ebrush == ::draw2d::e_brush_box_gradient)
       {
          
          CGFloat locations[2];
@@ -114,7 +114,7 @@ namespace draw2d_quartz2d
          m_osdata[0] = m_gradientref;
          
       }
-      else if(m_etype == type_solid)
+      else if(m_ebrush == ::draw2d::e_brush_solid)
       {
 
          CGFloat components[4];

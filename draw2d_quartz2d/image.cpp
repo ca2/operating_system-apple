@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "aura/graphics/_.h"
-#include "aura/graphics/draw2d/context_image.h"
-#include "aura/graphics/draw2d/icon.h"
+#include "aura/graphics/image/context_image.h"
+#include "aura/graphics/image/icon.h"
 #include <math.h>
 
 

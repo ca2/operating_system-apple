@@ -231,13 +231,13 @@ namespace draw2d_quartz2d
 //      void Arc(double x1, double y1, i32 w, i32 h, double start, double extends) override;
   //    void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
 //      void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
-      void Arc(double x, double y, double w, double h, angle start, angle end) override;
+      void arc(double x, double y, double w, double h, angle start, angle end) override;
 //      void Arc(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd) override;
       void polyline(const ::point_f64* lpPoints, count nCount) override;
 
-      void AngleArc(double x, double y, double dRadius, angle fStartAngle, angle fSweepAngle) override;
+      void angle_arc(double x, double y, double dRadius, angle fStartAngle, angle fSweepAngle) override;
 //      void ArcTo(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
-      void ArcTo(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd) override;
+      void arc_to(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd) override;
 //      virtual i32 GetArcDirection() override;
 //      virtual i32 SetArcDirection(i32 nArcDirection) override;
 
@@ -483,12 +483,12 @@ namespace draw2d_quartz2d
       void stroke_and_fill_path() override;
       void stroke_path() override;
       void widen_path() override;
+      using ::draw2d::graphics::draw;
+      void draw(::draw2d::path * ppath) override;
+      void fill(::draw2d::path * ppath) override;
 
-      void draw_path(::draw2d::path * ppath) override;
-      void fill_path(::draw2d::path * ppath) override;
-
-      void draw_path(::draw2d::path * ppath, ::draw2d::pen * ppen) override;
-      void fill_path(::draw2d::path * ppath, ::draw2d::brush * pbrush) override;
+      void draw(::draw2d::path * ppath, ::draw2d::pen * ppen) override;
+      void fill(::draw2d::path * ppath, ::draw2d::brush * pbrush) override;
 
       void draw_inline_path(::draw2d::path * ppath, ::draw2d::pen * ppen);
       void fill_inline_path(::draw2d::path * ppath, ::draw2d::brush * pbrush);

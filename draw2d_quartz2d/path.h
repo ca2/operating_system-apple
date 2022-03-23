@@ -41,6 +41,7 @@ namespace draw2d_quartz2d
       bool _set(::draw2d::graphics * pgraphics, const enum_shape & eshape) override;
       bool _set(::draw2d::graphics * pgraphics, const ::arc & arc) override;
       bool _set(::draw2d::graphics * pgraphics, const ::rectangle & rectangle) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::ellipse & ellipse) override;
       bool _set(::draw2d::graphics * pgraphics, const ::line & line) override;
       bool _set(::draw2d::graphics * pgraphics, const ::lines & lines) override;
       bool _set(::draw2d::graphics * pgraphics, const ::polygon & polygon) override;
@@ -54,8 +55,6 @@ namespace draw2d_quartz2d
    
    
 } // namespace draw2d_quartz2d
-
-
 
 
 

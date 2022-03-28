@@ -5163,10 +5163,23 @@ namespace draw2d_quartz2d
          CGContextSetRGBStrokeColor(m_pdc, ppen->m_color.dr(), ppen->m_color.dg(), ppen->m_color.db(), ppen->m_color.da());
 
       }
+      
+      if(ppen->m_elinecapBeg == ::draw2d::e_line_cap_round
+         && ppen->m_elinecapEnd == ::draw2d::e_line_cap_round)
+      {
+         
+         CGContextSetLineCap(m_pdc, kCGLineCapRound);
+         
+      }
+      else if(ppen->m_elinecapBeg == ::draw2d::e_line_cap_flat
+         && ppen->m_elinecapEnd == ::draw2d::e_line_cap_flat)
+      {
+         
+         CGContextSetLineCap(m_pdc, kCGLineCapButt);
+         
+      }
 
       CGContextSetLineWidth(m_pdc, ppen->m_dWidth);
-
-      //return true;
 
    }
 
@@ -5267,7 +5280,7 @@ namespace draw2d_quartz2d
          CGGradientRef grad = (CGGradientRef) pbrush->m_osdata[0];
 
          double radius = pbrush->m_dRadius;
-         double radius2 = radius *2.0;
+         //double radius2 = radius *2.0;
 
          CGRect r;
          

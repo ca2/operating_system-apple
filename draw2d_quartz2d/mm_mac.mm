@@ -12,7 +12,7 @@
 CGMutablePathRef cg_mutable_path_from_ns_bezier_path(NSBezierPath * path)
 {
    
-       int i, numElements;
+       long i, numElements;
     
        // Need to begin a path here.
        // Then draw the path elements.

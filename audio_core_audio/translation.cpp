@@ -47,7 +47,7 @@ namespace multimedia
             return ::success;
 
          case kAudioFormatUnsupportedDataFormatError:
-               return ::error_bad_format;
+               return ::error_bad_data_format;
 
          default:
             return error_failed;

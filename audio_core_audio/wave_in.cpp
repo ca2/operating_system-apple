@@ -28,7 +28,7 @@ namespace multimedia
       void in::init_task()
       {
 
-         TRACE("in::init_instance %X\n", get_ithread());
+         TRACE("in::init_instance %X\n", get_itask());
          //SetMainWnd(nullptr);
          //ASSERT(GetMainWnd() == nullptr);
          ::parallelization::set_priority(::e_priority_highest);

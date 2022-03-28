@@ -549,7 +549,7 @@ namespace multimedia
 
          }
 
-         m_psynththread->on_free(iBuffer);
+         m_psynthtask->on_free(iBuffer);
 
       }
 

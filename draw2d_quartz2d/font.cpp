@@ -185,7 +185,7 @@ namespace draw2d_quartz2d
          if(m_path.contains("FontAwesome"))
          {
             
-            output_debug_string("font awesome");
+            //output_debug_string("font awesome");
             
          }
          

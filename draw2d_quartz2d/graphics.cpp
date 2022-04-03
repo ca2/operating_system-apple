@@ -13,6 +13,7 @@ namespace draw2d_quartz2d
 {
 
 
+
    void __copy(CGAffineTransform & affine, const ::draw2d::matrix & m)
    {
 
@@ -2777,6 +2778,33 @@ namespace draw2d_quartz2d
  //     if(!_set(ppath))
    //      return false;
       
+      
+      if(!ppath->m_bPersistent)
+      {
+         
+         if(ppath->m_psimpleoptimization.is_null())
+         {
+            
+            ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
+            
+         }
+         else
+         {
+            
+            output_debug_string("opt4");
+            
+         }
+
+         
+         if(ppath->m_psimpleoptimization->draw(this, nullptr))
+         {
+            
+            return;
+            
+         }
+
+      }
+
       auto path = ppath->template get_os_data < CGMutablePathRef >(this);
       
       CGContextAddPath(m_pdc, path);
@@ -2791,6 +2819,31 @@ namespace draw2d_quartz2d
 
    void graphics::fill(::draw2d::path * ppath)
    {
+      
+      if(!ppath->m_bPersistent)
+      {
+         
+         if(ppath->m_psimpleoptimization.is_null())
+         {
+            
+            ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
+            
+         }
+         else
+         {
+            
+            output_debug_string("opt3");
+            
+         }
+
+         if(ppath->m_psimpleoptimization->fill(this, nullptr))
+         {
+            
+            return;
+            
+         }
+
+      }
 
       auto path = ppath->template get_os_data < CGMutablePathRef >(this);
       
@@ -2807,6 +2860,31 @@ namespace draw2d_quartz2d
 
    void graphics::draw(::draw2d::path * ppath, ::draw2d::pen * ppen)
    {
+      
+      if(!ppath->m_bPersistent)
+      {
+         
+         if(ppath->m_psimpleoptimization.is_null())
+         {
+            
+            ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
+            
+         }
+         else
+         {
+            
+            output_debug_string("opt2");
+            
+         }
+
+         if(ppath->m_psimpleoptimization->draw(this, ppen))
+         {
+            
+            return;
+            
+         }
+
+      }
 
       auto path = ppath->template get_os_data < CGMutablePathRef >(this);
       
@@ -2823,6 +2901,31 @@ namespace draw2d_quartz2d
 
    void graphics::fill(::draw2d::path * ppath, ::draw2d::brush * pbrush)
    {
+      
+      if(!ppath->m_bPersistent)
+      {
+         
+         if(ppath->m_psimpleoptimization.is_null())
+         {
+            
+            ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
+            
+         }
+         else
+         {
+            
+            output_debug_string("opt1");
+            
+         }
+         
+         if(ppath->m_psimpleoptimization->fill(this, pbrush))
+         {
+            
+            return;
+            
+         }
+
+      }
 
       auto path = ppath->template get_os_data < CGMutablePathRef >(this);
       

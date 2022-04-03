@@ -47,23 +47,9 @@ namespace draw2d_quartz2d
       if(m_path.has_char())
       {
          
-         auto pmemory = m_psystem->m_paurasystem->draw2d()->write_text()->get_file_memory(
-                                                                           pgraphics->m_pcontext, m_path);
+         __pointer(::draw2d_quartz2d::draw2d) pdraw2d = m_psystem->m_paurasystem->draw2d();
          
-         if(pmemory && pmemory->has_data())
-         {
-            
-            CFDataRef dataref = CFDataCreate(nullptr, pmemory->get_data(), pmemory->get_size());
-            
-            CGDataProviderRef dataproviderref = CGDataProviderCreateWithCFData(dataref);
-
-            CFRelease(dataref);
-
-            fontref = CGFontCreateWithDataProvider(dataproviderref);
-
-            CGDataProviderRelease(dataproviderref);
-            
-         }
+         fontref = pdraw2d->private_cgfontref(pgraphics->m_pcontext, m_path);
          
       }
       

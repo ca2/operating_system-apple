@@ -267,6 +267,13 @@ namespace draw2d_quartz2d
       if(eshape == e_shape_close_figure)
       {
          
+         if(CGPathIsEmpty(m_path))
+         {
+            
+            return true;
+            
+         }
+         
          CGPathCloseSubpath(m_path);
          
       }

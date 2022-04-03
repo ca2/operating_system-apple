@@ -13,6 +13,16 @@ namespace draw2d_quartz2d
    {
    public:
 
+      class private_font :
+         virtual public ::element
+      {
+      public:
+         
+         CGFontRef         m_cgfontref;
+         
+      };
+      
+      string_map < __pointer(private_font) >         m_mapPrivateFont;
 
       draw2d();
       ~draw2d() override;
@@ -22,6 +32,9 @@ namespace draw2d_quartz2d
 
       string write_text_get_default_library_name() override;
 
+      
+      CGFontRef private_cgfontref(::acme::context * pcontext, const ::file::path & path);
+      
       
    };
 

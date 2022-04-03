@@ -4090,7 +4090,7 @@ namespace draw2d_quartz2d
 //
 //         m_pregion->combine(pregionOld, pregion, ::draw2d::region::combine_intersect, this);
 //
-//         CGContextClip(m_pdc);
+//         _intersect_clip();;
 //
 //      }
 //      else
@@ -4104,7 +4104,7 @@ namespace draw2d_quartz2d
 //
 //      __add_path(m_pregionClip);
 //
-//      CGContextClip(m_pdc);
+//      _intersect_clip();;
 //
 //      return 0;
 //
@@ -4130,7 +4130,7 @@ namespace draw2d_quartz2d
 //
 //         _add_path(m_pregionClip);
 //
-//         CGContextClip(m_pdc);
+//         _intersect_clip();;
 //
 //      }
 //
@@ -4454,11 +4454,35 @@ namespace draw2d_quartz2d
    void graphics::_intersect_clip()
    {
       
+      if(CGContextIsPathEmpty(m_pdc))
+      {
+         
+         return;
+         
+      }
+      
       CGContextClip(m_pdc);
       
       //return ::success;
       
    }
+
+
+void graphics::_intersect_eo_clip()
+{
+   
+   if(CGContextIsPathEmpty(m_pdc))
+   {
+      
+      return;
+      
+   }
+   
+   CGContextEOClip(m_pdc);
+   
+   //return ::success;
+   
+}
 
 
    void graphics::_add_shape(const ::rectangle & rectangle)
@@ -4966,11 +4990,11 @@ namespace draw2d_quartz2d
 
             _clip(pregion->m_pregion1);
 
-            CGContextEOClip(m_pdc);
+            _intersect_eo_clip();
 
             _add_path(pregion->m_pregion2);
 
-            CGContextEOClip(m_pdc);
+            _intersect_eo_clip();
 
          }
          else if(pregion->m_ecombine == ::draw2d::e_combine_add)
@@ -4978,11 +5002,11 @@ namespace draw2d_quartz2d
 
             _clip(pregion->m_pregion1);
 
-            CGContextClip(m_pdc);
+            _intersect_clip();;
 
             _add_path(pregion->m_pregion2);
 
-            CGContextClip(m_pdc);
+            _intersect_clip();;
 
          }
          
@@ -5027,13 +5051,13 @@ namespace draw2d_quartz2d
       if(bEO)
       {
          
-         CGContextEOClip(m_pdc);
+         _intersect_eo_clip();
          
       }
       else
       {
          
-         CGContextClip(m_pdc);
+         _intersect_clip();;
          
       }
 
@@ -5094,11 +5118,11 @@ namespace draw2d_quartz2d
 
             _add_path(pregion->m_pregion1);
             
-            CGContextEOClip(m_pdc);
+            _intersect_eo_clip();
          
             _add_path(pregion->m_pregion2);
             
-            CGContextEOClip(m_pdc);
+            _intersect_eo_clip();
 
          }
          else if(pregion->m_ecombine == ::draw2d::e_combine_add)
@@ -5106,11 +5130,11 @@ namespace draw2d_quartz2d
 
             _add_path(pregion->m_pregion1);
             
-            CGContextClip(m_pdc);
+            _intersect_clip();;
          
             _add_path(pregion->m_pregion2);
             
-            CGContextClip(m_pdc);
+            _intersect_clip();;
 
          }
 
@@ -5258,9 +5282,9 @@ namespace draw2d_quartz2d
 
          if(bContextClip)
          {
-
-            CGContextClip(pgraphics);
-
+         
+            _intersect_clip();
+            
          }
 
          _clip(m_pregion);
@@ -5403,7 +5427,7 @@ namespace draw2d_quartz2d
          if(bContextClip)
          {
 
-            CGContextClip(pgraphics);
+            _intersect_clip();
 
          }
 
@@ -5434,7 +5458,7 @@ namespace draw2d_quartz2d
          if(bContextClip)
          {
 
-            CGContextClip(pgraphics);
+            _intersect_clip();
 
          }
 
@@ -5471,7 +5495,9 @@ namespace draw2d_quartz2d
          if(bContextClip)
          {
 
-            CGContextClip(pgraphics);
+//            CGContextClip(pgraphics);
+            //CGContext
+            _intersect_clip();
 
          }
 
@@ -5518,7 +5544,7 @@ namespace draw2d_quartz2d
                if(bContextClip)
                {
 
-                  CGContextClip(pgraphics);
+                  _intersect_clip();
 
                }
 
@@ -5550,7 +5576,7 @@ namespace draw2d_quartz2d
                if(bContextClip)
                {
 
-                  CGContextClip(pgraphics);
+                  _intersect_clip();
 
                }
 
@@ -5595,7 +5621,7 @@ namespace draw2d_quartz2d
             CGContextReplacePathWithStrokedPath(m_pdc);
 
             // Turn the fillable path in to a clipping region.
-//            CGContextClip(m_pdc);
+//            _intersect_clip();;
 
             _fill(ppen->m_pbrush);
 
@@ -5639,7 +5665,7 @@ namespace draw2d_quartz2d
             CGContextReplacePathWithStrokedPath(m_pdc);
 
             // Turn the fillable path in to a clipping region.
-            //CGContextClip(m_pdc);
+            //_intersect_clip();;
 
             _fill(pbrush);
 

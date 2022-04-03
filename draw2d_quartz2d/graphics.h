@@ -212,6 +212,7 @@ namespace draw2d_quartz2d
       
       void reset_clip() override;
       void _intersect_clip() override;
+      virtual void _intersect_eo_clip();
       //void _add_shape(const ::rectangle_f64 & rectangle) override;
       void _add_shape(const ::rectangle_f64 & rectangle) override;
       //void _add_shape(const ::ellipse & ellipse) override;

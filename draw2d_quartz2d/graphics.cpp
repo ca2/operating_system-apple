@@ -2788,12 +2788,12 @@ namespace draw2d_quartz2d
             ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
             
          }
-         else
-         {
+         // else
+         // {
             
-            output_debug_string("opt4");
+         //    output_debug_string("opt4");
             
-         }
+         // }
 
          
          if(ppath->m_psimpleoptimization->draw(this, nullptr))
@@ -2829,12 +2829,12 @@ namespace draw2d_quartz2d
             ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
             
          }
-         else
-         {
+         // else
+         // {
             
-            output_debug_string("opt3");
+         //    output_debug_string("opt3");
             
-         }
+         // }
 
          if(ppath->m_psimpleoptimization->fill(this, nullptr))
          {
@@ -2870,12 +2870,12 @@ namespace draw2d_quartz2d
             ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
             
          }
-         else
-         {
+         // else
+         // {
             
-            output_debug_string("opt2");
+         //    output_debug_string("opt2");
             
-         }
+         // }
 
          if(ppath->m_psimpleoptimization->draw(this, ppen))
          {
@@ -2911,12 +2911,12 @@ namespace draw2d_quartz2d
             ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
             
          }
-         else
-         {
+         // else
+         // {
             
-            output_debug_string("opt1");
+         //    output_debug_string("opt1");
             
-         }
+         // }
          
          if(ppath->m_psimpleoptimization->fill(this, pbrush))
          {

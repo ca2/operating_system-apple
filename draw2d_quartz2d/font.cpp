@@ -23,7 +23,6 @@ namespace draw2d_quartz2d
    font::~font()
    {
       
-      
       destroy();
 
    }
@@ -171,10 +170,6 @@ namespace draw2d_quartz2d
                                              &kCFTypeDictionaryKeyCallBacks,
                                              &kCFTypeDictionaryValueCallBacks);
             
-            pkeyAttrs.add(kCTFontTraitsAttribute);
-            
-            pvalAttrs.add(traits1);
-            
             cfrel.add(attributes1);
             
          }
@@ -226,12 +221,13 @@ namespace draw2d_quartz2d
                
             }
 
-            if(fontdescriptor != nullptr)
+            if(symbolicTraitsMsk != 0)
             {
 
-               if(symbolicTraitsMsk != 0)
+               if(fontdescriptor != nullptr)
                {
-               
+
+
                   CTFontDescriptorRef fontdescriptorSymbolicTraits = CTFontDescriptorCreateCopyWithSymbolicTraits(fontdescriptor, symbolicTraitsVal,
    symbolicTraitsMsk);
                
@@ -261,6 +257,13 @@ namespace draw2d_quartz2d
          {
             
             m_font = CTFontCreateWithGraphicsFont(fontref, m_dFontSize, nullptr, m_fontdescriptor);
+            
+            if(m_fontName)
+            {
+               
+               throw "";
+               
+            }
             
             m_fontName = CFStringCreateMutable(nullptr, 0);
             
@@ -301,19 +304,9 @@ namespace draw2d_quartz2d
          
       }
       
-      if(fontref != nullptr)
-      {
-         
-         CGFontRelease(fontref);
-         
-         fontref = nullptr;
-
-      }
-      
       m_osdata[0] = (void *) m_font;
       
       m_osdata[1] = (void *) m_fontdescriptor;
-      
       
       if(m_font == nullptr)
       {
@@ -322,23 +315,15 @@ namespace draw2d_quartz2d
          
       }
       
-      //return m_font != nullptr;
-      
    }
    
    
    void font::destroy()
    {
    
-      //auto estatusOsData =
-      
       destroy_os_data();
       
-      //auto estatusDestroy =
-      
       ::write_text::font::destroy();
-      
-      //return estatusOsData && estatusDestroy;
       
    }
 
@@ -372,8 +357,6 @@ namespace draw2d_quartz2d
          m_font = nullptr;
          
       }
-      
-      //return ::success;
       
    }
 

@@ -14,6 +14,8 @@ namespace draw2d_quartz2d
    pen::~pen()
    {
       
+      destroy();
+      
    }
    
    
@@ -26,7 +28,6 @@ namespace draw2d_quartz2d
    
    
 } // namespace draw2d_quartz2d
-
 
 
 

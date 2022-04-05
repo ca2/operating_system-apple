@@ -19,8 +19,6 @@
 #include "brush.h"
 #include "region.h"
 
-#include "cgcontextcreate.h"
-
 #include "draw2d.h"
 
 

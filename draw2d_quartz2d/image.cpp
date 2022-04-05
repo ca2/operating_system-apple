@@ -65,8 +65,6 @@ namespace draw2d_quartz2d
 
       }
 
-      //destroy();
-
       if(size.is_empty())
       {
 
@@ -138,6 +136,8 @@ namespace draw2d_quartz2d
          
       }
       
+      destroy();
+      
       m_pbitmap = pbitmap;
       
       m_pgraphics = pgraphics;
@@ -148,32 +148,14 @@ namespace draw2d_quartz2d
 
       m_pgraphics->m_pimage = this;
       
-//      m_sizeRaw = size;
-//
-//      m_pcolorrefRaw = pcolorref;
-//
-//      m_iScan = iScan;
-      
-      //m_sizeAlloc = m_sizeRaw;
-      
       set(eflagCreate);
-
-      //return true;
 
    }
 
 
    void image::dc_select(bool bSelect)
    {
-      /*      if(bSelect)
-       {
-       return m_spgraphics->SelectObject(m_pbitmap) != nullptr;
-       }
-       else
-       {
-       return m_spgraphics->SelectObject(m_hbitmapOriginal) != nullptr;
-       }*/
-    //  return true;
+
    }
 
 
@@ -192,11 +174,6 @@ namespace draw2d_quartz2d
       ::size_i32 size = pbitmap->get_size();
 
       create(size);
-//      {
-//
-//         return false;
-//
-//      }
       
       image_source imagesource(pgraphics);
       
@@ -206,14 +183,12 @@ namespace draw2d_quartz2d
       
       m_pgraphics->draw(imagedrawing);
 
-      //return true;
-
    }
 
 
    void image::destroy()
    {
-
+      
       m_pbitmap.release();
 
       m_pgraphics.release();
@@ -222,26 +197,12 @@ namespace draw2d_quartz2d
 
       m_sizeRaw.cy            = 0;
       
-      pixmap::clear();
-
-      //m_pcolorrefRaw          = nullptr;
-      
-      //m_pcolorrefMap         = nullptr;
-
       m_iScan              = 0;
 
-      //return true;
+      ::image::destroy();
 
    }
 
-
-//   bool image::to(::draw2d::graphics * pgraphics, const ::point_i32 & point, const ::size_i32 & size, const ::point_i32 & pointSrc)
-//   {
-//
-//      return pgraphics->BitBlt(point.x, point.y, size.cx, size.cy, get_graphics(), pointSrc.x, pointSrc.y);
-//
-//   }
-//
 
    void image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, const ::point_i32 & pointSrc)
    {
@@ -271,7 +232,6 @@ namespace draw2d_quartz2d
       
       create({cx, cy});
      
-      // White blend image
       auto pimage1 = m_pcontext->context_image()->create_image({cx,  cy});
       
       pimage1->set_rgb(255, 255, 255);
@@ -366,8 +326,6 @@ namespace draw2d_quartz2d
          
       }
       
-      //return true;
-
    }
    
    
@@ -375,8 +333,6 @@ namespace draw2d_quartz2d
    {
       
       m_bMapped = true;
-      
-      //return true;
       
    }
 
@@ -403,36 +359,14 @@ namespace draw2d_quartz2d
    {
 
       ((image *)this)->m_bMapped = true;
-      
-      //return true;
 
    }
    
-
-//   bool image::detach(::image * pimage)
-//   {
-//
-//      ::image_pointer pimage = pimpl;
-//
-//      m_spgraphics = pimpl->m_spgraphics;
-//      m_pbitmap = pimpl->m_pbitmap;
-//
-//      image::detach(pimpl);
-//
-//      pimpl->m_pbitmap.release();
-//      pimpl->m_spgraphics.release();
-//
-//      return true;
-//
-//   }
-
 
    void image::_unmap()
    {
 
       m_bMapped = false;
-      
-      //return true;
 
    }
 
@@ -456,20 +390,26 @@ namespace draw2d_quartz2d
 
       if (pointSrc.x < 0)
       {
+         
          pointDst.x -= pointSrc.x;
          pointSrc.x = 0;
+         
       }
 
       if (pointSrc.y < 0)
       {
+         
          pointDst.y -= pointSrc.y;
          pointSrc.y = 0;
+         
       }
 
       if (pointDst.x < 0)
       {
+         
          size.cx += pointDst.x;
          pointDst.x = 0;
+         
       }
 
       if (size.cx < 0)
@@ -481,8 +421,10 @@ namespace draw2d_quartz2d
 
       if (pointDst.y < 0)
       {
+         
          size.cy += pointDst.y;
          pointDst.y = 0;
+         
       }
 
       if (size.cy < 0)
@@ -519,6 +461,7 @@ namespace draw2d_quartz2d
       byte * psrc2;
 
 #ifdef __APPLE__
+      
       byte * pdst = &((byte *)pimplDst->colorref())[scanDst * (pimplDst->height() - pointDst.y - yEnd) + pointDst.x * sizeof(color32_t)];
 
       byte * psrc = &((byte *)pimplSrc->colorref())[scanSrc * (pimplSrc->height() - pointSrc.y - yEnd) + pointSrc.x * sizeof(color32_t)];
@@ -531,101 +474,6 @@ namespace draw2d_quartz2d
 
 #endif
 
-//      bool bFontListBlend = true;
-//
-//      if (bFontListBlend)
-//      {
-//
-//         if (bA == 0)
-//         {
-//
-//         }
-//         else if (bA == 255)
-//         {
-//
-//            for (int y = 0; y < yEnd; y++)
-//            {
-//
-//               pdst2 = &pdst[scanDst * y];
-//
-//               psrc2 = &psrc[scanSrc * y];
-//
-//               //::memcpy_dup(pdst2, psrc2, xEnd * 4);
-//               for (int x = 0; x < xEnd; x++)
-//               {
-//
-//                  //*pdst2 = *psrc2;
-//
-//                  //pdst2[0] = (psrc2[0] + (pdst2[0] * (255 - psrc2[3])) / 255);
-//                  //pdst2[1] = (psrc2[1] + (pdst2[1] * (255 - psrc2[3])) / 255);
-//                  //pdst2[2] = (psrc2[2] + (pdst2[2] * (255 - psrc2[3])) / 255);
-//                  //pdst2[3] = (psrc2[3] + (pdst2[3] * (255 - psrc2[3])) / 255);
-//                  byte acomplement = ~psrc2[3];
-//                  pdst2[0] = psrc2[0] + ((pdst2[0] * (acomplement)) >> 8);
-//                  pdst2[1] = psrc2[1] + ((pdst2[1] * (acomplement)) >> 8);
-//                  pdst2[2] = psrc2[2] + ((pdst2[2] * (acomplement)) >> 8);
-//                  pdst2[3] = psrc2[3] + ((pdst2[3] * (acomplement)) >> 8);
-//
-//
-//
-//                  pdst2 += 4;
-//
-//                  psrc2 += 4;
-//
-//               }
-//               //pdst2 += xEnd;
-//               //psrc2 += xEnd;
-//
-//            }
-//         }
-//         else
-//         {
-//            for (int y = 0; y < yEnd; y++)
-//            {
-//
-//               pdst2 = &pdst[scanDst * y];
-//
-//               psrc2 = &psrc[scanSrc * y];
-//
-//               //::memcpy_dup(pdst2, psrc2, xEnd * 4);
-//               for (int x = 0; x < xEnd; x++)
-//               {
-//
-//                  //*pdst2 = *psrc2;
-//
-//                  //pdst2[0] = (psrc2[0] + (pdst2[0] * (255 - psrc2[3])) / 255);
-//                  //pdst2[1] = (psrc2[1] + (pdst2[1] * (255 - psrc2[3])) / 255);
-//                  //pdst2[2] = (psrc2[2] + (pdst2[2] * (255 - psrc2[3])) / 255);
-//                  //pdst2[3] = (psrc2[3] + (pdst2[3] * (255 - psrc2[3])) / 255);
-//                  //byte acomplement = (~psrc2[3] * bA) >> 8;
-//                  //pdst2[0] = psrc2[0] + ((pdst2[0] * (acomplement)) >> 8);
-//                  //pdst2[1] = psrc2[1] + ((pdst2[1] * (acomplement)) >> 8);
-//                  //pdst2[2] = psrc2[2] + ((pdst2[2] * (acomplement)) >> 8);
-//                  //pdst2[3] = psrc2[3] + ((pdst2[3] * (acomplement)) >> 8);
-//                  byte acomplement = (~psrc2[3] * bA) >> 8;
-//                  pdst2[0] = clip_byte(((psrc2[0] * bA) + (pdst2[0] * acomplement)) >> 8);
-//                  pdst2[1] = clip_byte(((psrc2[1] * bA) + (pdst2[1] * acomplement)) >> 8);
-//                  pdst2[2] = clip_byte(((psrc2[2] * bA) + (pdst2[2] * acomplement)) >> 8);
-//                  pdst2[3] = clip_byte(((psrc2[3] * bA) + (pdst2[3] * acomplement)) >> 8);
-//
-//
-//
-//                  pdst2 += 4;
-//
-//                  psrc2 += 4;
-//
-//               }
-//               //pdst2 += xEnd;
-//               //psrc2 += xEnd;
-//
-//            }
-//
-//         }
-//
-//         // bFontListData
-//
-//      }
-//      else
       {
 
          // !bFontListData
@@ -756,15 +604,10 @@ namespace draw2d_quartz2d
 
       }
 
-//      return true;
-
    }
 
 
-
 } // namespace draw2d_quartz2d
-
-
 
 
 

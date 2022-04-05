@@ -36,8 +36,6 @@ namespace draw2d_quartz2d
       
       destroy();
       
-      CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
-      
       try
       {
       
@@ -57,6 +55,8 @@ namespace draw2d_quartz2d
          throw exception(error_no_memory);
          
       }
+      
+      CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
       
       m_pdc = CGBitmapContextCreate(m_pdata, size.cx, size.cy, 8, iStride, colorspace, kCGImageAlphaPremultipliedLast);
       
@@ -93,32 +93,14 @@ namespace draw2d_quartz2d
       
       m_osdata[0] = m_pdc;
       
-      //return true;
-      
    }
    
-//
-//   bool bitmap::CreateBitmapIndirect(::draw2d::graphics * pgraphics, LPBITMAP lpBitmap)
-//   {
-//
-//      return false;
-//
-//   }
-//
-   
+  
    void bitmap::create_bitmap(::draw2d::graphics * pgraphics, const ::size_i32 & size, void ** ppdata, int * piStride)
    {
-
       
       CreateBitmap(pgraphics, size, 1, 32, nullptr, size.cx * sizeof(color32_t));
 
-//      if(!CreateBitmap(pgraphics, size, 1, 32, nullptr, size.cx * sizeof(color32_t)))
-//      {
-//
-//         return false;
-//
-//      }
-      
       if(ppdata != nullptr)
       {
          
@@ -133,15 +115,11 @@ namespace draw2d_quartz2d
          
       }
       
-      //return true;
-      
    }
    
    
    void bitmap::CreateDIBitmap(::draw2d::graphics * pgraphics, int cx, int cy, ::u32 flInit, const void *pjBits, ::u32 iUsage)
    {
-      
-      //return false;
       
    }
    
@@ -164,8 +142,6 @@ namespace draw2d_quartz2d
    
    void bitmap::LoadBitmap(const char * lpszResourceName)
    {
-
-      //return false;
       
    }
    
@@ -196,15 +172,11 @@ namespace draw2d_quartz2d
    void bitmap::LoadBitmap(::u32 nIDResource)
    {
       
-      //return false;
-      
    }
    
    
    void bitmap::LoadOEMBitmap(::u32 nIDBitmap)
    {
-
-      //return false;
       
    }
    
@@ -212,18 +184,8 @@ namespace draw2d_quartz2d
    void bitmap::CreateCompatibleBitmap(::draw2d::graphics * pgraphics, i32 cx, i32 cy)
    {
       
-      
       CreateBitmap(pgraphics, ::size_i32(cx, cy), 1, 32, nullptr, cx * sizeof(color32_t));
       
-//      if(!CreateBitmap(pgraphics, ::size_i32(cx, cy), 1, 32, nullptr, cx * sizeof(color32_t)))
-//      {
-//
-//         return false;
-//
-//      }
-//
-//      return true;
-//
    }
    
    
@@ -234,14 +196,6 @@ namespace draw2d_quartz2d
       
    }
    
-   
-//   i32 bitmap::GetBitmap(BITMAP* pBitMap)
-//   {
-//      
-//      return 0;
-//      
-//   }
-//   
 
    void bitmap::dump(dump_context & dumpcontext) const
    {
@@ -249,7 +203,11 @@ namespace draw2d_quartz2d
       ::draw2d::object::dump(dumpcontext);
       
       if(m_osdata[0] == nullptr)
+      {
+         
          return;
+         
+      }
        
       //dumpcontext << "bm.bmType = " << bm.bmType;
       dumpcontext << "\nbm.bmHeight = " << m_size.cy;
@@ -262,16 +220,10 @@ namespace draw2d_quartz2d
    }
    
 
-//   void * bitmap::get_os_data() const
-//   {
-//      
-//      return m_pdc;
-//      
-//   }
-   
-   
    void bitmap::Attach(void * pbitmapcontext)
    {
+      
+      destroy();
       
       m_memory.set_size(0);
       
@@ -285,23 +237,15 @@ namespace draw2d_quartz2d
       
       m_pdata     = (color32_t *) CGBitmapContextGetData(m_pdc);
       
-      //return true;
-      
    }
    
-   
+
    void bitmap::destroy()
    {
       
-      //auto estatusOsData =
-      
       destroy_os_data();
       
-      //auto estatusDestroy =
-      
       ::draw2d::bitmap::destroy();
-      
-      //return estatusOsData && estatusDestroy;
       
    }
 
@@ -318,24 +262,16 @@ namespace draw2d_quartz2d
          
       }
       
-      //m_pdata = nullptr;
-      
       m_size.cx = 0;
       
       m_size.cy = 0;
       
       m_iScan = 0;
       
-      //return ::success;
-      
    }
 
    
 } // namespace draw2d_quartz2d
-
-
-
-
 
 
 

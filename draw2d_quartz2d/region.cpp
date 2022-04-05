@@ -13,7 +13,9 @@ namespace draw2d_quartz2d
 
    region::~region()
    {
-
+      
+      destroy();
+      
    }
 
 
@@ -24,8 +26,6 @@ namespace draw2d_quartz2d
       
       ::draw2d::region::destroy();
       
-      //return estatusOsData && estatusDestroy;
-
    }
 
 
@@ -41,15 +41,13 @@ namespace draw2d_quartz2d
 
       }
       
-      //return ::success;
-      
    }
 
 
    void region::create(::draw2d::graphics * pgraphics, i8 iCreate)
    {
 
-      m_path = CGPathCreateMutable();
+      auto ppath = CGPathCreateMutable();
 
       if(m_eregion == ::draw2d::e_region_rect)
       {
@@ -61,18 +59,18 @@ namespace draw2d_quartz2d
          rectangle.size.width = m_x2 - m_x1;
          rectangle.size.height = m_y2 - m_y1;
          
-         CGPathAddRect (m_path, nullptr, rectangle);
+         CGPathAddRect (ppath, nullptr, rectangle);
 
       }
       else if(m_eregion == ::draw2d::e_region_polygon)
       {
 
-         CGPathMoveToPoint(m_path, nullptr, m_lppoints[0].x, m_lppoints[0].y);
+         CGPathMoveToPoint(ppath, nullptr, m_lppoints[0].x, m_lppoints[0].y);
 
          for(i32 i = 1; i < m_nCount; i++)
          {
 
-            CGPathAddLineToPoint(m_path, nullptr, m_lppoints[i].x, m_lppoints[i].y);
+            CGPathAddLineToPoint(ppath, nullptr, m_lppoints[i].x, m_lppoints[i].y);
 
          }
 
@@ -87,7 +85,7 @@ namespace draw2d_quartz2d
          rectangle.size.width = m_x2 - m_x1;
          rectangle.size.height = m_y2 - m_y1;
 
-         CGPathAddEllipseInRect(m_path, nullptr, rectangle);
+         CGPathAddEllipseInRect(ppath, nullptr, rectangle);
 
       }
       else if(m_eregion == ::draw2d::e_region_combine)
@@ -97,13 +95,13 @@ namespace draw2d_quartz2d
 
       }
 
-      CGPathCloseSubpath(m_path);
+      CGPathCloseSubpath(ppath);
       
       CGAffineTransform transformTranslation = CGAffineTransformMakeTranslation(m_pointOffset.x, m_pointOffset.y);
       
-      m_path = CGPathCreateMutableCopyByTransformingPath(m_path, &transformTranslation);
-
-      //return true;
+      m_path = CGPathCreateMutableCopyByTransformingPath(ppath, &transformTranslation);
+      
+      CGPathRelease(ppath);
 
    }
 

@@ -18,6 +18,7 @@ namespace draw2d_quartz2d
    path::~path()
    {
       
+      destroy();
       
    }
    
@@ -125,7 +126,6 @@ namespace draw2d_quartz2d
       m_pointEnd.x = x2;
       m_pointEnd.y = y2;
       
-      
       return true;
       
    }
@@ -190,7 +190,6 @@ namespace draw2d_quartz2d
       
       m_pointBegin = m_pointEnd;
       
-      
       CGPathMoveToPoint(m_path, nullptr, x, y);
       
       m_pointEnd.x = x;
@@ -219,13 +218,9 @@ namespace draw2d_quartz2d
    void path::destroy()
    {
       
-      //auto estatusOsData =
       destroy_os_data();
       
-      //auto estatusDestroy =
       ::draw2d::path::destroy();
-      
-      //return estatusOsData && estatusDestroy;
       
    }
    
@@ -242,21 +237,24 @@ namespace draw2d_quartz2d
          
       }
       
-      //return ::success;
-      
    }
 
 
    void path::create(::draw2d::graphics * pgraphics, i8 iCreate)
    {
       
+      if(m_path)
+      {
+         
+         throw "";
+         
+      }
+      
       m_path = CGPathCreateMutable();
       
       _set_create(pgraphics);
       
       m_osdata[0] = m_path;
-      
-      //return true;
       
    }
 
@@ -417,17 +415,6 @@ namespace draw2d_quartz2d
    }
    
 
-//   bool path::_set(::draw2d::graphics * pgraphics, ::draw2d::path::close * pclose)
-//   {
-//
-//      CGPathCloseSubpath(m_path);
-//
-//      return true;
-//
-//   }
-
-
-
    bool path::contains(::draw2d::graphics_pointer & pgraphics, const ::point_f64 & point)
    {
     
@@ -445,8 +432,7 @@ namespace draw2d_quartz2d
    }
 
    
-} // namespace metrowin
-
+} // namespace draw2d_quartz2d
 
 
 

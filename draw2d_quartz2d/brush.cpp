@@ -19,6 +19,9 @@ namespace draw2d_quartz2d
    
    brush::~brush()
    {
+      
+      destroy();
+      
    }
    
 
@@ -33,13 +36,9 @@ namespace draw2d_quartz2d
    void brush::destroy()
    {
       
-//      auto estatusOsData =
       destroy_os_data();
       
-//      /auto estatusDestroy =
       ::draw2d::brush::destroy();
-      
-//      return estatusOsData && estatusDestroy;
       
    }
 
@@ -74,8 +73,6 @@ namespace draw2d_quartz2d
          
       }
       
-      //return ::success;
-      
    }
 
    
@@ -87,8 +84,6 @@ namespace draw2d_quartz2d
          
          CGFloat locations[2];
          CGFloat components[8];
-         
-         //      CGColorSpaceRef colorspace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
          
          if(m_colorspaceref == nullptr)
          {
@@ -109,6 +104,13 @@ namespace draw2d_quartz2d
          locations[0] = 0.0;
          locations[1] = 1.0;
          
+         if(m_gradientref)
+         {
+            
+            throw "";
+            
+         }
+         
          m_gradientref = CGGradientCreateWithColorComponents(m_colorspaceref, components, locations, 2);
          
          m_osdata[0] = m_gradientref;
@@ -118,8 +120,6 @@ namespace draw2d_quartz2d
       {
 
          CGFloat components[4];
-         
-         //      CGColorSpaceRef colorspace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
          
          if(m_colorspaceref == nullptr)
          {
@@ -133,13 +133,18 @@ namespace draw2d_quartz2d
          components[2] = m_color.blue / 255.f;
          components[3] = m_color.alpha / 255.f;
          
+         if(m_colorref)
+         {
+            
+            throw "";
+            
+         }
+         
          m_colorref = CGColorCreate(m_colorspaceref, components);
          
          m_osdata[0] = m_colorref;
          
       }
-      
-      //return true;
       
    }
    

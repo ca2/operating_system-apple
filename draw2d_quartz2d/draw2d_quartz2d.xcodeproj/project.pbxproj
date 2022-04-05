@@ -18,13 +18,11 @@
 		07E25F351B4FFC2100752DE1 /* palette.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40DA17BBE291008391AD /* palette.cpp */; };
 		07E25F361B4FFC2100752DE1 /* path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40DC17BBE291008391AD /* path.cpp */; };
 		07E25F371B4FFC2100752DE1 /* pen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40DE17BBE291008391AD /* pen.cpp */; };
-		07E25F381B4FFC2100752DE1 /* preview_dc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40E017BBE291008391AD /* preview_dc.cpp */; };
 		07E25F391B4FFC2100752DE1 /* region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40E117BBE291008391AD /* region.cpp */; };
 		07E25F3F1B4FFC2100752DE1 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A1B496316A494A600875A94 /* framework.h */; };
 		07E25F401B4FFC2100752DE1 /* bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40CD17BBE291008391AD /* bitmap.h */; };
 		07E25F411B4FFC2100752DE1 /* brush.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40CF17BBE291008391AD /* brush.h */; };
 		07E25F421B4FFC2100752DE1 /* image.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40D117BBE291008391AD /* image.h */; };
-		07E25F431B4FFC2100752DE1 /* cgcontextcreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA1007E19971AF5004F84BD /* cgcontextcreate.h */; };
 		07E25F451B4FFC2100752DE1 /* font.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40D517BBE291008391AD /* font.h */; };
 		07E25F461B4FFC2100752DE1 /* graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40D717BBE291008391AD /* graphics.h */; };
 		07E25F471B4FFC2100752DE1 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40D917BBE291008391AD /* object.h */; };
@@ -56,7 +54,6 @@
 		9A6B40F517BBE291008391AD /* path.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40DD17BBE291008391AD /* path.h */; };
 		9A6B40F617BBE291008391AD /* pen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40DE17BBE291008391AD /* pen.cpp */; };
 		9A6B40F717BBE291008391AD /* pen.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40DF17BBE291008391AD /* pen.h */; };
-		9A6B40F817BBE291008391AD /* preview_dc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40E017BBE291008391AD /* preview_dc.cpp */; };
 		9A6B40F917BBE291008391AD /* region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B40E117BBE291008391AD /* region.cpp */; };
 		9A6B40FA17BBE291008391AD /* region.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40E217BBE291008391AD /* region.h */; };
 		9A6B40FB17BBE291008391AD /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6B40E317BBE291008391AD /* _.h */; };
@@ -65,7 +62,6 @@
 		9A6E9B9726575EC1001F6FC8 /* draw2d.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6E9B9426575EC1001F6FC8 /* draw2d.h */; };
 		9A6E9B9826575EC1001F6FC8 /* draw2d.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6E9B9426575EC1001F6FC8 /* draw2d.h */; };
 		9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8997BC177D0E7D00C7761E /* Carbon.framework */; };
-		9AA1007F19971AF5004F84BD /* cgcontextcreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA1007E19971AF5004F84BD /* cgcontextcreate.h */; };
 		9AA1B44A176361950019E812 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA1B449176361950019E812 /* Cocoa.framework */; };
 		9AA2192B1DC6B04B00C06987 /* mm_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA2192A1DC6B04B00C06987 /* mm_ios.mm */; };
 		9AB287E721320E8A002A0AFF /* mm_apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB287E621320E8A002A0AFF /* mm_apple.mm */; };
@@ -130,14 +126,12 @@
 		9A6B40DD17BBE291008391AD /* path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = path.h; sourceTree = "<group>"; };
 		9A6B40DE17BBE291008391AD /* pen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pen.cpp; sourceTree = "<group>"; };
 		9A6B40DF17BBE291008391AD /* pen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pen.h; sourceTree = "<group>"; };
-		9A6B40E017BBE291008391AD /* preview_dc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = preview_dc.cpp; sourceTree = "<group>"; };
 		9A6B40E117BBE291008391AD /* region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = region.cpp; sourceTree = "<group>"; };
 		9A6B40E217BBE291008391AD /* region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = region.h; sourceTree = "<group>"; };
 		9A6B40E317BBE291008391AD /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9A6E9B9326575EC1001F6FC8 /* draw2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = draw2d.cpp; sourceTree = "<group>"; };
 		9A6E9B9426575EC1001F6FC8 /* draw2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = draw2d.h; sourceTree = "<group>"; };
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		9AA1007E19971AF5004F84BD /* cgcontextcreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cgcontextcreate.h; sourceTree = "<group>"; };
 		9AA1B449176361950019E812 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9AA2192A1DC6B04B00C06987 /* mm_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mm_ios.mm; sourceTree = "<group>"; };
 		9AA2192D1DC6B1A300C06987 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -245,14 +239,13 @@
 			isa = PBXGroup;
 			children = (
 				9A6B40E317BBE291008391AD /* _.h */,
+				9A6B40D217BBE291008391AD /* _factory.cpp */,
 				9A6B40CC17BBE291008391AD /* bitmap.cpp */,
 				9A6B40CD17BBE291008391AD /* bitmap.h */,
 				9A6B40CE17BBE291008391AD /* brush.cpp */,
 				9A6B40CF17BBE291008391AD /* brush.h */,
-				9AA1007E19971AF5004F84BD /* cgcontextcreate.h */,
 				9A6E9B9326575EC1001F6FC8 /* draw2d.cpp */,
 				9A6E9B9426575EC1001F6FC8 /* draw2d.h */,
-				9A6B40D217BBE291008391AD /* _factory.cpp */,
 				9A6B40D417BBE291008391AD /* font.cpp */,
 				9A6B40D517BBE291008391AD /* font.h */,
 				9A1B496616A4A10100875A94 /* framework.cpp */,
@@ -272,7 +265,6 @@
 				9A6B40DD17BBE291008391AD /* path.h */,
 				9A6B40DE17BBE291008391AD /* pen.cpp */,
 				9A6B40DF17BBE291008391AD /* pen.h */,
-				9A6B40E017BBE291008391AD /* preview_dc.cpp */,
 				9A6B40E117BBE291008391AD /* region.cpp */,
 				9A6B40E217BBE291008391AD /* region.h */,
 			);
@@ -290,7 +282,6 @@
 				07E25F401B4FFC2100752DE1 /* bitmap.h in Headers */,
 				07E25F411B4FFC2100752DE1 /* brush.h in Headers */,
 				07E25F421B4FFC2100752DE1 /* image.h in Headers */,
-				07E25F431B4FFC2100752DE1 /* cgcontextcreate.h in Headers */,
 				07E25F451B4FFC2100752DE1 /* font.h in Headers */,
 				07E25F461B4FFC2100752DE1 /* graphics.h in Headers */,
 				07E25F471B4FFC2100752DE1 /* object.h in Headers */,
@@ -311,7 +302,6 @@
 				9A6B40E517BBE291008391AD /* bitmap.h in Headers */,
 				9A6B40E717BBE291008391AD /* brush.h in Headers */,
 				9A6B40E917BBE291008391AD /* image.h in Headers */,
-				9AA1007F19971AF5004F84BD /* cgcontextcreate.h in Headers */,
 				9A6B40ED17BBE291008391AD /* font.h in Headers */,
 				9A6B40EF17BBE291008391AD /* graphics.h in Headers */,
 				9A6B40F117BBE291008391AD /* object.h in Headers */,
@@ -438,7 +428,6 @@
 				9AA2192B1DC6B04B00C06987 /* mm_ios.mm in Sources */,
 				07E25F361B4FFC2100752DE1 /* path.cpp in Sources */,
 				07E25F371B4FFC2100752DE1 /* pen.cpp in Sources */,
-				07E25F381B4FFC2100752DE1 /* preview_dc.cpp in Sources */,
 				07E25F391B4FFC2100752DE1 /* region.cpp in Sources */,
 				9A6E9B9626575EC1001F6FC8 /* draw2d.cpp in Sources */,
 			);
@@ -461,7 +450,6 @@
 				9AEAFBD21DC1B4B00035AD42 /* mm_mac.mm in Sources */,
 				9A6B40F417BBE291008391AD /* path.cpp in Sources */,
 				9A6B40F617BBE291008391AD /* pen.cpp in Sources */,
-				9A6B40F817BBE291008391AD /* preview_dc.cpp in Sources */,
 				9A6B40F917BBE291008391AD /* region.cpp in Sources */,
 				9A6E9B9526575EC1001F6FC8 /* draw2d.cpp in Sources */,
 			);
@@ -579,7 +567,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -652,7 +639,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = "-all_load";

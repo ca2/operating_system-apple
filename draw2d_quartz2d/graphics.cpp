@@ -1951,12 +1951,12 @@ namespace draw2d_quartz2d
    void graphics::get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex)
    {
       
-      //xxxtext
-      
-      size.cx = 48;
-      size.cy = 20;
-      
-      return;
+//      //xxxtext
+//
+//      size.cx = 48;
+//      size.cy = 20;
+//
+//      return;
 
       synchronous_lock synchronouslock(mutex());
 
@@ -2032,9 +2032,9 @@ namespace draw2d_quartz2d
    void graphics::internal_show_text(double x, double y, double wAlign, const string & str, CGTextDrawingMode emode, const ::e_align & ealign, const ::e_draw_text & edrawtext, bool bDraw, CGFloat * pascent, CGFloat * pdescent, CGFloat * pleading, CGFloat * pwidth, ::draw2d::pen * ppen, ::draw2d::brush * pbrush, ::write_text::font * pfont)
    {
       
-      // xxxtext
-      
-      return;
+//      // xxxtext
+//
+//      return;
       
       if(pfont == nullptr)
       {
@@ -3397,9 +3397,9 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
    void graphics::internal_show_text(::write_text::font * pfont,::draw2d::brush * pbrush,::draw2d::pen * ppen, double x, double y, double wAlign, const string & str,CGTextDrawingMode emode,const ::e_align & ealign, const ::e_draw_text & edrawtext,   bool bDraw, CGFloat * pascent, CGFloat * pdescent, CGFloat * pleading, CGFloat * pwidth)
    {
       
-      // xxxtext
-      
-      return;
+//      // xxxtext
+//
+//      return;
 
       synchronous_lock synchronouslock(mutex());
 

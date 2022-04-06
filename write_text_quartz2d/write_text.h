@@ -16,7 +16,7 @@ namespace write_text_quartz2d
 
 
       write_text();
-      virtual ~write_text();
+      ~write_text() override;
 
       //virtual void enum_fonts(font_enum_item_array & itema);
       //virtual void sorted_fonts(font_enum_item_array & itema);

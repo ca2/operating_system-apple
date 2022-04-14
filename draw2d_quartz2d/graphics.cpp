@@ -2486,10 +2486,12 @@ namespace draw2d_quartz2d
 
          _clip(m_pregion);
          
-         rectangle_f64 outer(pbrush->m_point, pbrush->m_size);
-         rectangle_f64 inner(outer);
+         rectangle_f32 outer(pbrush->m_point, pbrush->m_size);
+         rectangle_f32 inner(outer);
          
-         inner.deflate(pbrush->m_dRadius);
+         float fRadius = pbrush->m_dRadius;
+         
+         inner.deflate(fRadius);
 
          CGPoint s, e;
          
@@ -2498,121 +2500,134 @@ namespace draw2d_quartz2d
          e.x = 0;
          e.y = 0;
          
+         CGContextSetAllowsAntialiasing(m_pdc, TRUE);
+         CGContextSetShouldAntialias(m_pdc, TRUE);
+         
+         //set_alpha_mode(::draw2d::e_alpha_mode_set);
+         
          CGGradientRef grad = (CGGradientRef) pbrush->m_osdata[0];
-
-         double radius = pbrush->m_dRadius;
 
          CGRect r;
          
+         float f1 = 0.666f;
          //top-left
          CGContextSaveGState(m_pdc);
-         r.origin.x = outer.left;
-         r.origin.y = outer.top;
-         r.size.width = radius;
-         r.size.height = radius;
+         r.origin.x = outer.left + f1;
+         r.origin.y = outer.top + f1;
+         r.size.width = fRadius;
+         r.size.height = fRadius;
          CGContextClipToRect(m_pdc, r);
          CGContextTranslateCTM(m_pdc, inner.left, inner.top);
-         CGContextScaleCTM(m_pdc, radius, radius);
+         CGContextScaleCTM(m_pdc, fRadius, fRadius);
          CGContextDrawRadialGradient(m_pdc, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_pdc);
 
          //top-right
          CGContextSaveGState(m_pdc);
-         r.origin.x = inner.right;
-         r.origin.y = outer.top;
-         r.size.width = radius;
-         r.size.height = radius;
+         r.origin.x = inner.right - f1;
+         r.origin.y = outer.top + f1;
+         r.size.width = fRadius;
+         r.size.height = fRadius;
          CGContextClipToRect(m_pdc, r);
          CGContextTranslateCTM(m_pdc, inner.right, inner.top);
-         CGContextScaleCTM(m_pdc, radius, radius);
+         CGContextScaleCTM(m_pdc, fRadius, fRadius);
          CGContextDrawRadialGradient(m_pdc, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_pdc);
 
          
          //bottom-right
          CGContextSaveGState(m_pdc);
-         r.origin.x = inner.right;
-         r.origin.y = inner.bottom;
-         r.size.width = radius;
-         r.size.height = radius;
+         r.origin.x = inner.right - f1;
+         r.origin.y = inner.bottom - f1;
+         r.size.width = fRadius;
+         r.size.height = fRadius;
          CGContextClipToRect(m_pdc, r);
          CGContextTranslateCTM(m_pdc, inner.right, inner.bottom);
-         CGContextScaleCTM(m_pdc, radius, radius);
+         CGContextScaleCTM(m_pdc, fRadius, fRadius);
          CGContextDrawRadialGradient(m_pdc, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_pdc);
 
          //bottom-left
          CGContextSaveGState(m_pdc);
-         r.origin.x = outer.left;
-         r.origin.y = inner.bottom;
-         r.size.width = radius;
-         r.size.height = radius;
+         r.origin.x = outer.left + f1;
+         r.origin.y = inner.bottom - f1;
+         r.size.width = fRadius;
+         r.size.height = fRadius;
          CGContextClipToRect(m_pdc, r);
          CGContextTranslateCTM(m_pdc, inner.left, inner.bottom);
-         CGContextScaleCTM(m_pdc, radius, radius);
+         CGContextScaleCTM(m_pdc, fRadius, fRadius);
          CGContextDrawRadialGradient(m_pdc, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_pdc);
 
-         r.origin.x = inner.left;
-         r.origin.y = inner.top;
-         r.size.width = inner.width();
-         r.size.height = inner.height();
+         float f5 = 0.25f;
+         
+         r.origin.x = inner.left - f5;
+         r.origin.y = inner.top - f5;
+         r.size.width = inner.width() + f5 * 2.0f;
+         r.size.height = inner.height() + f5 * 2.0f;
 
          CGContextSetRGBFillColor(m_pdc, pbrush->m_color1.dr(), pbrush->m_color1.dg(), pbrush->m_color1.db(), pbrush->m_color1.da());
          CGContextFillRect(m_pdc, r);
          
-         r.origin.x = inner.left;
-         r.origin.y = inner.bottom;
-         r.size.width = inner.width();
-         r.size.height = radius;
+         float f2 = 0.444f;
+         //bottom
+         r.origin.x = inner.left + f2;
+         r.origin.y = inner.bottom - f2;
+         r.size.width = inner.width() - (f2 * 2.0f);
+         r.size.height = fRadius;
          CGContextSaveGState(m_pdc);
          CGContextClipToRect(m_pdc, r);
-         s.x = inner.left;
-         e.x = inner.left;
+         s.x = inner.center_x();
+         e.x = inner.center_x();
          s.y = inner.bottom;
          e.y = outer.bottom;
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
          CGContextRestoreGState(m_pdc);
 
-         
-         r.origin.x = inner.left;
-         r.origin.y = outer.top;
-         r.size.width = inner.width();
-         r.size.height = radius;
+         // top
+         r.origin.x = inner.left + f2;
+         r.origin.y = outer.top + f2;
+         r.size.width = inner.width() - (f2 * 2.0f);
+         r.size.height = fRadius;
          CGContextSaveGState(m_pdc);
          CGContextClipToRect(m_pdc, r);
-         s.x = inner.left;
-         e.x = inner.left;
+         s.x = inner.center_x();
+         e.x = inner.center_x();
          e.y = outer.top;
          s.y = inner.top;
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
          CGContextRestoreGState(m_pdc);
 
-         r.origin.x = inner.right;
-         r.origin.y = inner.top;
-         r.size.width = radius;
-         r.size.height = inner.height();
+         // right
+         r.origin.x = inner.right - f2;
+         r.origin.y = inner.top + f2;
+         r.size.width = fRadius;
+         r.size.height = inner.height() - (f2 * 2.0f);
          CGContextSaveGState(m_pdc);
          CGContextClipToRect(m_pdc, r);
          s.x = inner.right;
          e.x = outer.right;
-         e.y = inner.top;
-         s.y = inner.top;
+         e.y = inner.center_y();
+         s.y = inner.center_y();
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
          CGContextRestoreGState(m_pdc);
 
-         r.origin.x = outer.left;
-         r.origin.y = inner.top;
-         r.size.width = radius;
-         r.size.height = inner.height();
+         // left
+         r.origin.x = outer.left + f2;
+         r.origin.y = inner.top + f2;
+         r.size.width = fRadius;
+         r.size.height = inner.height() - (f2 * 2.0f);
          CGContextSaveGState(m_pdc);
          CGContextClipToRect(m_pdc, r);
          s.x = inner.left;
          e.x = outer.left;
-         e.y = inner.top;
-         s.y = inner.top;
+         e.y = inner.center_y();
+         s.y = inner.center_y();
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
          CGContextRestoreGState(m_pdc);
+
+         CGContextSetAllowsAntialiasing(m_pdc, TRUE);
+         CGContextSetShouldAntialias(m_pdc, TRUE);
 
       }
       else if(pbrush->m_ebrush == ::draw2d::e_brush_radial_gradient_color)

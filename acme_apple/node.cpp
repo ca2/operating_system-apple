@@ -110,10 +110,10 @@ namespace acme
       }
 
    
-      void node::shell_execute_async(const char * pszFile, const char * pszParams)
+      void node::shell_open(const ::file::path & path, const ::string & strParams, const ::file::path & pathFolder)
       {
          
-         ns_open_file(pszFile);
+         ns_open_file(path);
 
       }
 

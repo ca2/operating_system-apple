@@ -53,7 +53,7 @@ namespace acme
          
          void node_post(const ::routine & routine) override;
          
-         void shell_execute_async(const char * pszFile, const char * pszParams) override;
+         void shell_open(const ::file::path & path, const ::string & strParams = "", const ::file::path & pathFolder = "") override;
          
 
       };

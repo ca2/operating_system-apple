@@ -9,13 +9,9 @@ void os_post_quit();
 void apex_application_run(const char * pszAppName, const char * pszProgName);
 
 
-namespace apex
+namespace apex_apple
 {
 
-
-   namespace apple
-   {
-      //CLASS_DECL_ACME void _os_process_user_theme(string strTheme);
 
       node::node()
       {
@@ -39,19 +35,19 @@ namespace apex
 
       }
 
-//
-//      int node::node_init_check(int * pi, char *** ppz)
-//      {
-//
-//         //auto iResult = gtk_init_check(pi, ppz);
-//
-//         //return iResult;
-//
-//         return 0;
-//
-//      }
-//
-//
+
+      int node::node_init_check(int * pi, char *** ppz)
+      {
+
+         //auto iResult = gtk_init_check(pi, ppz);
+
+         //return iResult;
+
+         return 0;
+
+      }
+
+
 ////      ::e_status node::start_()
 ////      {
 ////
@@ -568,10 +564,8 @@ namespace apex
 ////
 ////}
 
-   } // namespace apple
 
-
-} // namespace apex
+} // namespace apex_apple
 
 
 

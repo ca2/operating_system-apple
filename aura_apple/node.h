@@ -17,8 +17,8 @@ namespace aura
 
 
       class CLASS_DECL_AURA_APPLE node :
-         virtual public ::aura::posix::node,
-         virtual public ::apex::apple::node
+         virtual public ::aura_posix::node,
+         virtual public ::apex_apple::node
       {
       public:
 

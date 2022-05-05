@@ -7,32 +7,28 @@
 #pragma once
 
 
-namespace apex
+namespace apex_apple
 {
 
 
-   namespace apple
+   class CLASS_DECL_APEX_APPLE node :
+      virtual public ::apex_posix::node,
+      virtual public ::acme_apple::node
    {
+   public:
 
 
-      class CLASS_DECL_APEX_APPLE node :
-         virtual public ::apex::posix::node,
-         virtual public ::acme::apple::node
-      {
-      public:
+      node();
+      ~node() override;
+
+      
+      int node_init_check(int * pi, char *** ppz) override;
 
 
-         node();
-         virtual ~node();
+   };
 
 
-      };
-
-
-   } // namespace apple
-
-
-} // namespace apex
+} // namespace apex_apple
 
 
 

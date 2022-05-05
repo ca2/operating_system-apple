@@ -4,12 +4,12 @@
 #pragma once
 
 
-namespace apple
+namespace apex_apple
 {
 
 
    class CLASS_DECL_ACME_POSIX file_context :
-      virtual public ::posix::file_context
+      virtual public ::apex_posix::file_context
    {
    public:
 
@@ -20,7 +20,7 @@ namespace apple
    };
 
 
-} // namespace posix
+} // namespace apex_apple
 
 
 

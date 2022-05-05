@@ -16,12 +16,8 @@ void apex_application_run(const char * pszAppName, const char * pszProgName);
 bool ns_open_file(const char * psz);
 
 
-namespace acme
+namespace acme_apple
 {
-
-
-   namespace apple
-   {
 
 
       node::node()
@@ -85,7 +81,7 @@ namespace acme
       }
    
    
-      void node::node_post(const ::routine & routineParam)
+      void node::node_post(const ::procedure & routineParam)
       {
          
          auto routine = routineParam;
@@ -118,10 +114,7 @@ namespace acme
       }
 
 
-   } // namespace apple
-
-
-} // namespace acme
+} // namespace acme_apple
 
 
 

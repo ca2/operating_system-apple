@@ -385,7 +385,7 @@ namespace apex
 ////   }
 //
 //
-////   void node::node_fork(const ::routine &routine)
+////   void node::node_fork(const ::procedure & procedure)
 ////   {
 ////
 ////      //gdk_branch(routine);

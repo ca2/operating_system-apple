@@ -85,7 +85,7 @@ namespace acme
       }
    
    
-      void node::node_post(const ::routine & routineParam)
+      void node::node_post(const ::procedure & routineParam)
       {
          
          auto routine = routineParam;

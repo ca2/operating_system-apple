@@ -5,12 +5,9 @@
 #include "acme/filesystem/filesystem/acme_directory.h"
 
 
-namespace aura
+namespace aura_apple
 {
 
-
-   namespace apple
-   {
 
 
       node::node()
@@ -168,7 +165,7 @@ namespace aura
 
          //auto estatus =
          
-         ::apex::posix::node::initialize(pobject);
+         ::apex_posix::node::initialize(pobject);
 
 //         if (!estatus)
 //         {
@@ -183,10 +180,7 @@ namespace aura
 
 
 
-   } // namespace apple
-
-
-} // namespace aura
+} // namespace aura_apple
 
 
 

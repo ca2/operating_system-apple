@@ -18,11 +18,11 @@ __FACTORY_EXPORT void apex_apple_factory(::factory::factory * pfactory)
 //   pfactory->add_factory_item < ::file::os_watcher, ::file::watcher >();
 //   pfactory->add_factory_item < ::file::os_watch, ::file::watch >();
 
-   pfactory->add_factory_item < ::apex::posix::node, ::acme::node > ();
+   pfactory->add_factory_item < ::apex_posix::node, ::acme::node > ();
 
-   pfactory->add_factory_item < ::posix::file_context, ::file_context >();
+   pfactory->add_factory_item < ::apex_apple::file_context, ::file_context >();
    
-   pfactory->add_factory_item < ::ansios::process, ::operating_system::process >();
+   pfactory->add_factory_item < ::apex_apple::process, ::operating_system::process >();
    
 }
 

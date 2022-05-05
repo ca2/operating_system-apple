@@ -16,12 +16,23 @@
 
 
 
+struct chldstatus
+{
+
+   bool m_bRet;
+   int  m_iExitCode;
+
+};
+
+critical_section * get_pid_cs();
+void init_chldstatus(int iPid);
+chldstatus get_chldstatus(int iPid);
 
 
 CLASS_DECL_APEX void process_get_os_priority(i32 * piOsPolicy, sched_param * pparam, ::enum_priority epriority);
 
 
-namespace ansios
+namespace apex_apple
 {
 
 
@@ -85,13 +96,13 @@ namespace ansios
       if(bPiped)
       {
 
-         ::posix::pipe * ppipeOut = m_pipe.m_ppipeOut.cast < ::posix::pipe >();
+         ::acme_posix::pipe * ppipeOut = m_pipe.m_ppipeOut.cast < ::acme_posix::pipe >();
 
          posix_spawn_file_actions_adddup2(&actions, ppipeOut->m_fd[1],STDOUT_FILENO);
 
          posix_spawn_file_actions_adddup2(&actions, ppipeOut->m_fd[1],STDERR_FILENO);
 
-         ::posix::pipe * ppipeIn = m_pipe.m_ppipeIn.cast < ::posix::pipe >();
+         ::acme_posix::pipe * ppipeIn = m_pipe.m_ppipeIn.cast < ::acme_posix::pipe >();
 
          posix_spawn_file_actions_adddup2(&actions, ppipeIn->m_fd[0],STDIN_FILENO);
 
@@ -327,7 +338,7 @@ namespace ansios
    }
 
 
-} // namespace ansios
+} // namespace apex_apple
 
 
 

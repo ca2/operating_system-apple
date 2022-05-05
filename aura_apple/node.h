@@ -8,13 +8,13 @@
 #pragma once
 
 
-namespace aura
+namespace aura_apple
 {
 
 
-	namespace apple
-	{
-
+//	namespace apple
+//	{
+//
 
       class CLASS_DECL_AURA_APPLE node :
          virtual public ::aura_posix::node,
@@ -32,11 +32,11 @@ namespace aura
 
       };
 
+//
+//   } // namespace apple
 
-   } // namespace apple
 
-
-} // namespace aura
+} // namespace aura_apple
 
 
 

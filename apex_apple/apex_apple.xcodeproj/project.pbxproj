@@ -64,9 +64,7 @@
 		9A787EA5264EE55E003DF8A0 /* process.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = process.cpp; sourceTree = "<group>"; };
 		9A787EA7264EE55E003DF8A0 /* _mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm.h; sourceTree = "<group>"; };
 		9A787EA8264EE55E003DF8A0 /* _apple.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = _apple.mm; sourceTree = "<group>"; };
-		9A787EA9264EE55E003DF8A0 /* process copy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "process copy.cpp"; sourceTree = "<group>"; };
 		9A787EAA264EE55E003DF8A0 /* framework.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
-		9A787EAB264EE55E003DF8A0 /* process copy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "process copy.h"; sourceTree = "<group>"; };
 		9A787EAC264EE55E003DF8A0 /* node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = node.cpp; sourceTree = "<group>"; };
 		9A787EAD264EE55E003DF8A0 /* datetime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = datetime.h; sourceTree = "<group>"; };
 		9A787EAE264EE55E003DF8A0 /* node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
@@ -75,15 +73,11 @@
 		9A787EB1264EE55E003DF8A0 /* file_context.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = file_context.h; sourceTree = "<group>"; };
 		9A787EB2264EE55E003DF8A0 /* _mm_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm_common.h; sourceTree = "<group>"; };
 		9A787EB3264EE55E003DF8A0 /* _.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
-		9A787EB5264EE55E003DF8A0 /* user.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = user.h; sourceTree = "<group>"; };
 		9A787EB6264EE55E003DF8A0 /* _factory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9A787EB7264EE55E003DF8A0 /* process.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = process.h; sourceTree = "<group>"; };
-		9A787EB8264EE55E003DF8A0 /* user.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = user.cpp; sourceTree = "<group>"; };
 		9A787EBC264EE55E003DF8A0 /* framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9A787EBD264EE55E003DF8A0 /* datetime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = datetime.cpp; sourceTree = "<group>"; };
 		9A787EBE264EE55E003DF8A0 /* _c_mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _c_mm.h; sourceTree = "<group>"; };
-		9A787EBF264EE55E003DF8A0 /* system_time.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = system_time.cpp; sourceTree = "<group>"; };
-		9A787EC0264EE55E003DF8A0 /* system_color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = system_color.cpp; sourceTree = "<group>"; };
 		9A787EC1264EE55E003DF8A0 /* timer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = timer.mm; sourceTree = "<group>"; };
 		9A787EC3264EE55E003DF8A0 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9A788039264F6A28003DF8A0 /* apex_posix.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_posix.xcodeproj; path = "../../operating-system-posix/apex_posix/apex_posix.xcodeproj"; sourceTree = "<group>"; };
@@ -159,15 +153,9 @@
 				9A787EBC264EE55E003DF8A0 /* framework.h */,
 				9A787EAC264EE55E003DF8A0 /* node.cpp */,
 				9A787EAE264EE55E003DF8A0 /* node.h */,
-				9A787EA9264EE55E003DF8A0 /* process copy.cpp */,
-				9A787EAB264EE55E003DF8A0 /* process copy.h */,
 				9A787EA5264EE55E003DF8A0 /* process.cpp */,
 				9A787EB7264EE55E003DF8A0 /* process.h */,
-				9A787EC0264EE55E003DF8A0 /* system_color.cpp */,
-				9A787EBF264EE55E003DF8A0 /* system_time.cpp */,
 				9A787EC1264EE55E003DF8A0 /* timer.mm */,
-				9A787EB8264EE55E003DF8A0 /* user.cpp */,
-				9A787EB5264EE55E003DF8A0 /* user.h */,
 			);
 			name = apex_apple;
 			sourceTree = "<group>";
@@ -365,7 +353,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -450,7 +437,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;

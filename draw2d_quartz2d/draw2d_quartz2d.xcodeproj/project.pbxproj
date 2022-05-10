@@ -71,6 +71,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A8E9EE7282A348F005FF778 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AC2D14B26542B1400CC8096 /* aura.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A20198924772E9000A31CBF;
+			remoteInfo = ios_aura;
+		};
 		9AC2D15126542B1400CC8096 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9AC2D14B26542B1400CC8096 /* aura.xcodeproj */;
@@ -328,6 +335,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A8E9EE8282A348F005FF778 /* PBXTargetDependency */,
 			);
 			name = ios_draw2d_quartz2d;
 			productName = os;
@@ -458,6 +466,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9A8E9EE8282A348F005FF778 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ios_aura;
+			targetProxy = 9A8E9EE7282A348F005FF778 /* PBXContainerItemProxy */;
+		};
 		9AC2D15826542B2B00CC8096 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = aura;
@@ -480,8 +493,8 @@
 		07E25F4E1B4FFC2100752DE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EXECUTABLE_EXTENSION = a;
-				HEADER_SEARCH_PATHS = "$(WorkspaceDir)/platform/thirdparty/include";
+				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
+				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
 				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
@@ -491,12 +504,8 @@
 		07E25F4F1B4FFC2100752DE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EXECUTABLE_EXTENSION = a;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					APPLE_IOS,
-				);
-				HEADER_SEARCH_PATHS = "$(WorkspaceDir)/platform/thirdparty/include";
+				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
+				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
 				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;

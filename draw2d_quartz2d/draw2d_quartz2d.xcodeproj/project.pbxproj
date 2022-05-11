@@ -575,6 +575,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -647,6 +648,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -669,7 +671,6 @@
 					"$(inherited)",
 					MACOS,
 				);
-				HEADER_SEARCH_PATHS = "$(WorkspaceDir)/platform/thirdparty/include";
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Debug;
@@ -682,7 +683,6 @@
 					"$(inherited)",
 					MACOS,
 				);
-				HEADER_SEARCH_PATHS = "$(WorkspaceDir)/platform/thirdparty/include";
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Release;

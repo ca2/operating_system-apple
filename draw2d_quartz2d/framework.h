@@ -13,7 +13,7 @@
 
 #else
 
-#include "aura/os/ios/_mm.h"
+#include "aura/operating_system/ios/_mm.h"
 
 #endif
 

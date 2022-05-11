@@ -134,7 +134,7 @@ namespace acme_apple
          }
          
          //throw_
-         //::file::exception * pe = get_Fileexception(::error_file, errno, m_strFileName);
+         //::file::exception * pe = get_Fileexception(::error_file, errno, m_path);
          // an error somewhere along the way...
          //if (pException != nullptr)
 //         {
@@ -148,7 +148,7 @@ namespace acme_apple
 
       }
 
-      m_strFileName = lpszFileName;
+      m_path = lpszFileName;
 
 //      return ::success;
 //
@@ -168,11 +168,11 @@ namespace acme_apple
       size_t nRead = 0;
 
       if ((nRead = fread(lpBuf, sizeof(byte), nCount, m_pStream)) == 0 && !feof(m_pStream))
-         throw ::file::exception(error_file, -1, errno, m_strFileName);
+         throw ::file::exception(error_file, -1, errno, m_path);
       if (ferror(m_pStream))
       {
          clearerr(m_pStream);
-         throw ::file::exception(error_file, -1, errno, m_strFileName);
+         throw ::file::exception(error_file, -1, errno, m_path);
       }
       return nRead;
    }
@@ -184,7 +184,7 @@ namespace acme_apple
       //   ASSERT(fx_is_valid_address(lpBuf, nCount, false));
 
       if (fwrite(lpBuf, sizeof(byte), nCount, m_pStream) != nCount)
-         throw ::file::exception(error_file, -1, errno, m_strFileName);
+         throw ::file::exception(error_file, -1, errno, m_path);
    }
 
    void stdio_file::write_string(const char * lpsz)
@@ -193,7 +193,7 @@ namespace acme_apple
       ASSERT(m_pStream != nullptr);
 
       if (fputs(lpsz, m_pStream) == EOF)
-         throw ::file::exception(error_disk_full, -1, errno, m_strFileName);
+         throw ::file::exception(error_disk_full, -1, errno, m_path);
    }
 
 
@@ -207,7 +207,7 @@ namespace acme_apple
       if (lpszResult == nullptr && !feof(m_pStream))
       {
          clearerr(m_pStream);
-         throw ::file::exception(error_file, -1, errno, m_strFileName);
+         throw ::file::exception(error_file, -1, errno, m_path);
       }
 
       return lpszResult;
@@ -238,7 +238,7 @@ namespace acme_apple
             
             clearerr(m_pStream);
             
-            throw ::file::exception(error_file, -1, errno, m_strFileName);
+            throw ::file::exception(error_file, -1, errno, m_path);
          }
 
          // if string is read completely or EOF
@@ -289,12 +289,12 @@ namespace acme_apple
          nFrom = SEEK_CUR;
          break;
       default:
-         throw ::file::exception(error_bad_seek, -1, errno, m_strFileName);
+         throw ::file::exception(error_bad_seek, -1, errno, m_path);
       }
 
       if (fseek(m_pStream, lOff, nFrom) != 0)
          throw ::file::exception(error_bad_seek, -1, errno, 
-                              m_strFileName);
+                              m_path);
 
       long pos = ftell(m_pStream);
       
@@ -311,7 +311,7 @@ namespace acme_apple
       long pos = ftell(m_pStream);
       if (pos == -1)
          throw ::file::exception(error_invalid_file, -1, errno, 
-                              m_strFileName);
+                              m_path);
       return pos;
    }
 
@@ -321,7 +321,7 @@ namespace acme_apple
 
       if (m_pStream != nullptr && fflush(m_pStream) != 0)
          throw ::file::exception(error_disk_full, -1, errno, 
-                              m_strFileName);
+                              m_path);
    }
 
    void stdio_file::close()
@@ -340,7 +340,7 @@ namespace acme_apple
 
       if (nErr != 0)
          throw ::file::exception(error_disk_full, -1, errno, 
-                              m_strFileName);
+                              m_path);
    }
 
    void stdio_file::Abort()
@@ -387,10 +387,13 @@ namespace acme_apple
 
    void stdio_file::dump(dump_context & dumpcontext) const
    {
-      ::acme_macos::file::dump(dumpcontext);
+      
+      ::file::text_file::dump(dumpcontext);
 
       dumpcontext << "m_pStream = " << (void *)m_pStream;
+      
       dumpcontext << "\n";
+      
    }
 
 
@@ -406,21 +409,21 @@ namespace acme_apple
       nCurrent = ftell(m_pStream);
       if (nCurrent == -1)
          throw ::file::exception(error_invalid_file, -1, errno, 
-                              m_strFileName);
+                              m_path);
 
       nResult = fseek(m_pStream, 0, SEEK_END);
       if (nResult != 0)
          throw ::file::exception(error_bad_seek, -1, errno, 
-                              m_strFileName);
+                              m_path);
 
       nLength = ftell(m_pStream);
       if (nLength == -1)
          throw ::file::exception(error_invalid_file, -1, errno, 
-                              m_strFileName);
+                              m_path);
       nResult = fseek(m_pStream, nCurrent, SEEK_SET);
       if (nResult != 0)
          throw ::file::exception(error_bad_seek, -1, errno, 
-                              m_strFileName);
+                              m_path);
 
       return nLength;
    }

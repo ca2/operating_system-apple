@@ -13,6 +13,8 @@ __FACTORY_EXPORT void acme_apple_factory(::factory::factory * pfactory)
    //create_factory < ::posix::file_memory_map, ::file::memory_map >();
 
    //create_factory < ::posix::pipe , ::process::pipe          >();
+   
+   pfactory->add_factory_item < ::acme_apple::stdio_file , ::file::text_file          >();
 
 }
 

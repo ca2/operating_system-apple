@@ -1,5 +1,29 @@
-/////<3ThomasBorregaardSørensen!!Created by camilo
-// on 2021-08-09**/
-// 05:04 BRT 
+// Create on 2021-03-22 09:12 <3ThomasBS_ // at Linux(Question.)
+// Recreated on 2021-05-16 15:07 <3ThomasBS_ // for macOS
+// From windowing_ios by camilo on 2022-05-11 06:19 PM <3ThomasBorregaardSorensen!!
+#pragma once
+
+
+namespace acme_apple
+{
+
+
+   class CLASS_DECL_ACME acme_path :
+      virtual public ::acme_posix::acme_path
+   {
+   public:
+
+
+      acme_path();
+      ~acme_path() override;
+
+
+      
+
+   };
+
+
+} // namespace acme_ios
+
 
 

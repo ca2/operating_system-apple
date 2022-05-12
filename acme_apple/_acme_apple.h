@@ -7,6 +7,15 @@
 #include "acme_posix/_acme_posix.h"
 
 
+#include "acme_directory.h"
+
+
+#include "acme_file.h"
+
+
+#include "acme_path.h"
+
+
 //#include "file_memory_map.h"
 //
 //

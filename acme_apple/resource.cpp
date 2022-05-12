@@ -5,7 +5,7 @@
 //  Created by Camilo Sasuke on 2021-05-13 20:45 BRT <3ThomasBS_!!
 //
 
-#include <stdio.h>
+#include "framework.h"
 
 
 string apple_get_bundle_identifier();
@@ -27,7 +27,7 @@ char * ns_get_bundle_identifier();
 string apple_get_bundle_identifier()
 {
 
-   return ::str::from_strdup(ns_get_bundle_identifier());
+   return ::string_from_strdup(ns_get_bundle_identifier());
 
 }
 

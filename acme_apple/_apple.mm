@@ -26,13 +26,13 @@ char * ns_get_bundle_identifier()
    
 }
 
-
-char * ns_get_executable_path()
-{
-   
-   return ns_string([[NSBundle mainBundle] executablePath]);
-   
-}
+//
+//char * ns_get_executable_path()
+//{
+//   
+//   return ns_string([[NSBundle mainBundle] executablePath]);
+//   
+//}
 
 
 char * mm_error_string(OSStatus status)
@@ -211,28 +211,28 @@ NSString * __ns_get_text(const char * psz)
 
 
 
-char * ns_get_default_browser_path()
-{
-   
-    /*
-   CFURLRef appURL = LSCopyDefaultApplicationURLForURL((__bridge CFURLRef)[NSURL URLWithString: @"http:"], kLSRolesAll, NULL);
-   
-   CFStringRef str = CFURLGetString(appURL);
-   r
-   char * psz = strdup([(__bridge NSString *)str UTF8String]);
-   
-   CFRelease(appURL);r
-   
-   //CFRelease(str);
-   
-     */
-    
-    char * psz = strdup("");
-     
-   return psz;
-   
-}
-
+//char * ns_get_default_browser_path()
+//{
+//   
+//    /*
+//   CFURLRef appURL = LSCopyDefaultApplicationURLForURL((__bridge CFURLRef)[NSURL URLWithString: @"http:"], kLSRolesAll, NULL);
+//   
+//   CFStringRef str = CFURLGetString(appURL);
+//   r
+//   char * psz = strdup([(__bridge NSString *)str UTF8String]);
+//   
+//   CFRelease(appURL);r
+//   
+//   //CFRelease(str);
+//   
+//     */
+//    
+//    char * psz = strdup("");
+//     
+//   return psz;
+//   
+//}
+//
 
 //bool ns_open_url(const char * psz)
 //{

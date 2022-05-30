@@ -21,6 +21,18 @@
 		9A6A47352660CB61004ED97A /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A47342660CB61004ED97A /* libacme.dylib */; };
 		9A6A47372660CB61004ED97A /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A47362660CB61004ED97A /* libapex.dylib */; };
 		9A6A47382660CB83004ED97A /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A472C2660CB45004ED97A /* libaura.dylib */; };
+		9A882ECC2844AA66004113D1 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C1B92660C6730074030F /* _.h */; };
+		9A882ECD2844AA66004113D1 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C1B12660C6730074030F /* framework.h */; };
+		9A882ECE2844AA66004113D1 /* fonts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C1B52660C6730074030F /* fonts.h */; };
+		9A882ECF2844AA66004113D1 /* font_enumeration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C19D2660C6730074030F /* font_enumeration.h */; };
+		9A882ED02844AA66004113D1 /* write_text.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C19A2660C6730074030F /* write_text.h */; };
+		9A882ED22844AA66004113D1 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1A82660C6730074030F /* _.cpp */; };
+		9A882ED32844AA66004113D1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1AF2660C6730074030F /* _factory.cpp */; };
+		9A882ED42844AA66004113D1 /* fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1AB2660C6730074030F /* fonts.cpp */; };
+		9A882ED52844AA66004113D1 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C19E2660C6730074030F /* framework.cpp */; };
+		9A882ED62844AA66004113D1 /* write_text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1A92660C6730074030F /* write_text.cpp */; };
+		9A882ED72844AA66004113D1 /* font_enumeration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AE12D952661D4C0009F476A /* font_enumeration.mm */; };
+		9A882ED82844AA66004113D1 /* font_enumeration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1992660C6730074030F /* font_enumeration.cpp */; };
 		9AE12D962661D4C0009F476A /* font_enumeration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AE12D952661D4C0009F476A /* font_enumeration.mm */; };
 		9AE12D9A2661D577009F476A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE12D992661D577009F476A /* AppKit.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +58,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9A98A6031771D67E000AE16E;
 			remoteInfo = aura;
+		};
+		9A882EE92844AAF0004113D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A6A47252660CB45004ED97A /* aura.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A20198924772E9000A31CBF;
+			remoteInfo = ios_aura;
 		};
 		9AEA185927600241006437A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -73,6 +92,7 @@
 		9A6A47252660CB45004ED97A /* aura.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura.xcodeproj; path = ../../../source/app/aura/aura.xcodeproj; sourceTree = "<group>"; };
 		9A6A47342660CB61004ED97A /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6A47362660CB61004ED97A /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A882EE12844AA66004113D1 /* libios_write_text_quartz2d.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_write_text_quartz2d.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE12D952661D4C0009F476A /* font_enumeration.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = font_enumeration.mm; sourceTree = "<group>"; };
 		9AE12D992661D577009F476A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -86,6 +106,13 @@
 				9A6A47382660CB83004ED97A /* libaura.dylib in Frameworks */,
 				9A6A47352660CB61004ED97A /* libacme.dylib in Frameworks */,
 				9A6A47372660CB61004ED97A /* libapex.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A882ED92844AA66004113D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				9A64C1712660C62C0074030F /* libwrite_text_quartz2d.dylib */,
+				9A882EE12844AA66004113D1 /* libios_write_text_quartz2d.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +193,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A882ECB2844AA66004113D1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A882ECC2844AA66004113D1 /* _.h in Headers */,
+				9A882ECD2844AA66004113D1 /* framework.h in Headers */,
+				9A882ECE2844AA66004113D1 /* fonts.h in Headers */,
+				9A882ECF2844AA66004113D1 /* font_enumeration.h in Headers */,
+				9A882ED02844AA66004113D1 /* write_text.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -184,6 +224,24 @@
 			name = write_text_quartz2d;
 			productName = write_text_quartz2d;
 			productReference = 9A64C1712660C62C0074030F /* libwrite_text_quartz2d.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		9A882EC82844AA66004113D1 /* ios_write_text_quartz2d */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A882EDE2844AA66004113D1 /* Build configuration list for PBXNativeTarget "ios_write_text_quartz2d" */;
+			buildPhases = (
+				9A882ECB2844AA66004113D1 /* Headers */,
+				9A882ED12844AA66004113D1 /* Sources */,
+				9A882ED92844AA66004113D1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A882EEA2844AAF0004113D1 /* PBXTargetDependency */,
+			);
+			name = ios_write_text_quartz2d;
+			productName = write_text_quartz2d;
+			productReference = 9A882EE12844AA66004113D1 /* libios_write_text_quartz2d.a */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -219,6 +277,7 @@
 			projectRoot = "";
 			targets = (
 				9A64C1702660C62C0074030F /* write_text_quartz2d */,
+				9A882EC82844AA66004113D1 /* ios_write_text_quartz2d */,
 			);
 		};
 /* End PBXProject section */
@@ -262,6 +321,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A882ED12844AA66004113D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A882ED22844AA66004113D1 /* _.cpp in Sources */,
+				9A882ED32844AA66004113D1 /* _factory.cpp in Sources */,
+				9A882ED42844AA66004113D1 /* fonts.cpp in Sources */,
+				9A882ED52844AA66004113D1 /* framework.cpp in Sources */,
+				9A882ED62844AA66004113D1 /* write_text.cpp in Sources */,
+				9A882ED72844AA66004113D1 /* font_enumeration.mm in Sources */,
+				9A882ED82844AA66004113D1 /* font_enumeration.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -269,6 +342,11 @@
 			isa = PBXTargetDependency;
 			name = aura;
 			targetProxy = 9A6A47312660CB55004ED97A /* PBXContainerItemProxy */;
+		};
+		9A882EEA2844AAF0004113D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ios_aura;
+			targetProxy = 9A882EE92844AAF0004113D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -328,11 +406,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = "@executable_path";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -411,11 +489,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = "@executable_path";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -460,6 +538,30 @@
 			};
 			name = Release;
 		};
+		9A882EDF2844AA66004113D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				PLATFORM_MODIFIER = ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9A882EE02844AA66004113D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				PLATFORM_MODIFIER = ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -477,6 +579,15 @@
 			buildConfigurations = (
 				9A64C17B2660C62D0074030F /* Debug */,
 				9A64C17C2660C62D0074030F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A882EDE2844AA66004113D1 /* Build configuration list for PBXNativeTarget "ios_write_text_quartz2d" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A882EDF2844AA66004113D1 /* Debug */,
+				9A882EE02844AA66004113D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

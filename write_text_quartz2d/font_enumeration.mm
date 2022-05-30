@@ -5,13 +5,23 @@
 //  Created by Camilo Sasuke on 28/05/21.
 //
 #import <Foundation/Foundation.h>
+
+#ifdef APPLE_IOS
+#import <UIKit/UIKit.h>
+#else
 #import <AppKit/AppKit.h>
+#endif
 
 
 unsigned long apple_get_fonts(char ***p)
 {
+    
+#ifdef APPLE_IOS
+    NSArray *fonts = [UIFont familyNames];
+#else
 
    NSArray *fonts = [[NSFontManager sharedFontManager] availableFontFamilies];
+#endif
    
    unsigned long c = [fonts count];
    

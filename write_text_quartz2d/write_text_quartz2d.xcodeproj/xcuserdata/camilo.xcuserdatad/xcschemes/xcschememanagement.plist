@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ios_write_text_quartz2d.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
-		</dict>
 		<key>write_text_quartz2d copy.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +13,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>9A64C1702660C62C0074030F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A882EC82844AA66004113D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

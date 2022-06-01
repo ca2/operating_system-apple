@@ -24,6 +24,11 @@
 		9A8E9E1F282A2FEB005FF778 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFC42653DAF000CC8096 /* framework.cpp */; };
 		9A8E9E20282A2FEB005FF778 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFCD2653DAF000CC8096 /* _.cpp */; };
 		9A8E9E21282A2FEB005FF778 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFC82653DAF000CC8096 /* node.cpp */; };
+		9AA74F4F284821AE009BB762 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA74F4D284821AE009BB762 /* image.cpp */; };
+		9AA74F50284821AE009BB762 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA74F4D284821AE009BB762 /* image.cpp */; };
+		9AA74F53284821F4009BB762 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA74F52284821F4009BB762 /* CoreGraphics.framework */; };
+		9AA74F5528482249009BB762 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA74F5428482249009BB762 /* image.mm */; };
+		9AA74F5628482249009BB762 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA74F5428482249009BB762 /* image.mm */; };
 		9AC2CFE52653DAF000CC8096 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFC42653DAF000CC8096 /* framework.cpp */; };
 		9AC2CFE92653DAF000CC8096 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFC82653DAF000CC8096 /* node.cpp */; };
 		9AC2CFEA2653DAF000CC8096 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFC92653DAF000CC8096 /* node.h */; };
@@ -116,6 +121,9 @@
 		9A637E74267241B6005D0AC3 /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A637E76267241F0005D0AC3 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8E9E2F282A2FEB005FF778 /* libios_aura_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_aura_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA74F4D284821AE009BB762 /* image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = image.cpp; sourceTree = "<group>"; };
+		9AA74F52284821F4009BB762 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9AA74F5428482249009BB762 /* image.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image.mm; sourceTree = "<group>"; };
 		9AC2CFC42653DAF000CC8096 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9AC2CFC82653DAF000CC8096 /* node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node.cpp; sourceTree = "<group>"; };
 		9AC2CFC92653DAF000CC8096 /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
@@ -133,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA74F53284821F4009BB762 /* CoreGraphics.framework in Frameworks */,
 				9A637E77267241F0005D0AC3 /* libapex.dylib in Frameworks */,
 				9A637E75267241B6005D0AC3 /* libaura.dylib in Frameworks */,
 				9A637E6E2672419E005D0AC3 /* libacme_apple.dylib in Frameworks */,
@@ -178,6 +187,7 @@
 		9A5D72D226550C3900D5C39E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AA74F52284821F4009BB762 /* CoreGraphics.framework */,
 				9A637E76267241F0005D0AC3 /* libapex.dylib */,
 				9A637E74267241B6005D0AC3 /* libaura.dylib */,
 				9A637E6D2672419E005D0AC3 /* libacme_apple.dylib */,
@@ -209,12 +219,14 @@
 				9AC2CFCD2653DAF000CC8096 /* _.cpp */,
 				9AC2CFDB2653DAF000CC8096 /* _.h */,
 				9AC2CFD72653DAF000CC8096 /* _aura_apple.h */,
-				9AC2D1F126543B3200CC8096 /* _mm.h */,
 				9AC2CFD02653DAF000CC8096 /* _factory.cpp */,
+				9AC2D1F126543B3200CC8096 /* _mm.h */,
 				9AC2CFC42653DAF000CC8096 /* framework.cpp */,
 				9AC2CFD32653DAF000CC8096 /* framework.h */,
+				9AA74F4D284821AE009BB762 /* image.cpp */,
 				9AC2CFC82653DAF000CC8096 /* node.cpp */,
 				9AC2CFC92653DAF000CC8096 /* node.h */,
+				9AA74F5428482249009BB762 /* image.mm */,
 			);
 			name = aura_apple;
 			sourceTree = "<group>";
@@ -382,6 +394,8 @@
 			files = (
 				9AC2CFEE2653DAF000CC8096 /* _factory.cpp in Sources */,
 				9AC2CFE52653DAF000CC8096 /* framework.cpp in Sources */,
+				9AA74F4F284821AE009BB762 /* image.cpp in Sources */,
+				9AA74F5528482249009BB762 /* image.mm in Sources */,
 				9AC2CFEB2653DAF000CC8096 /* _.cpp in Sources */,
 				9AC2CFE92653DAF000CC8096 /* node.cpp in Sources */,
 			);
@@ -393,6 +407,8 @@
 			files = (
 				9A8E9E1E282A2FEB005FF778 /* _factory.cpp in Sources */,
 				9A8E9E1F282A2FEB005FF778 /* framework.cpp in Sources */,
+				9AA74F50284821AE009BB762 /* image.cpp in Sources */,
+				9AA74F5628482249009BB762 /* image.mm in Sources */,
 				9A8E9E20282A2FEB005FF778 /* _.cpp in Sources */,
 				9A8E9E21282A2FEB005FF778 /* node.cpp in Sources */,
 			);

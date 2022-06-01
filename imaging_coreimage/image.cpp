@@ -6,9 +6,7 @@
 //
 #include "framework.h"
 #include "aura/graphics/image/save_image.h"
-#ifdef APPLE_MACOS
-#include <Carbon/Carbon.h>
-#endif
+#include <CoreGraphics/CoreGraphics.h>
 
 
 CFDataRef CopyImagePixels(CGImageRef inImage);

@@ -7,7 +7,9 @@
 #include "framework.h"
 #import <CoreGraphics/CoreGraphics.h>
 
-#ifdef APPLE_MACOS
+void * cg_image_get_image_data(int & width, int & height, int & iScan, CGImageRef image);
+
+#ifdef MACOS
 
 void * ns_image_get_image_data(int & width, int & height, int & iScan, NSImage * image)
 {
@@ -17,6 +19,7 @@ void * ns_image_get_image_data(int & width, int & height, int & iScan, NSImage *
    return cg_image_get_image_data(width, height, iScan, inputCGImage);
    
 }
+
 
 #else
 

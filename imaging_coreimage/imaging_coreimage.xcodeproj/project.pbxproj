@@ -12,8 +12,6 @@
 		07B65776190F3CA2002DAADE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B65766190F3CA2002DAADE /* Foundation.framework */; };
 		07B65778190F3CA2002DAADE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B65777190F3CA2002DAADE /* UIKit.framework */; };
 		07B6577B190F3CA2002DAADE /* libios_imaging_coreimage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B65764190F3CA2002DAADE /* libios_imaging_coreimage.a */; };
-		07B65781190F3CA2002DAADE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07B6577F190F3CA2002DAADE /* InfoPlist.strings */; };
-		07B65783190F3CA2002DAADE /* math_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B65782190F3CA2002DAADE /* math_iosTests.m */; };
 		9A0705F8266256D4004E8CB4 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0705F7266256D4004E8CB4 /* libacme.dylib */; };
 		9A0705FA266256D4004E8CB4 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0705F9266256D4004E8CB4 /* libapex.dylib */; };
 		9A0705FC266256EE004E8CB4 /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0705FB266256EE004E8CB4 /* libaura.dylib */; };
@@ -34,6 +32,8 @@
 		9A415C622473940200EF2BCD /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AA32433CA8800D45614 /* framework.cpp */; };
 		9A415C632473940200EF2BCD /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB42433CA8800D45614 /* _factory.cpp */; };
 		9A415C642473940200EF2BCD /* save_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB82433CA8800D45614 /* save_image.cpp */; };
+		9AA74F4B284820C6009BB762 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA74F4A284820C6009BB762 /* libacme_apple.dylib */; };
+		9AA74F4C284820EF009BB762 /* libaura_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A93B96428471F85005ACD11 /* libaura_apple.dylib */; };
 		9AAC21662475B3BE0013AB72 /* mm_ios_image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AAC21642475B3BC0013AB72 /* mm_ios_image.mm */; };
 /* End PBXBuildFile section */
 
@@ -82,9 +82,6 @@
 		07B65773190F3CA2002DAADE /* math_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = math_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B65774190F3CA2002DAADE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		07B65777190F3CA2002DAADE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		07B6577E190F3CA2002DAADE /* math_iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "math_iosTests-Info.plist"; sourceTree = "<group>"; };
-		07B65780190F3CA2002DAADE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		07B65782190F3CA2002DAADE /* math_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = math_iosTests.m; sourceTree = "<group>"; };
 		9A0705F7266256D4004E8CB4 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0705F9266256D4004E8CB4 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0705FB266256EE004E8CB4 /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +102,7 @@
 		9A204AF72433DEB400D45614 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9A574B9816AAB906000CC4EF /* libimaging_coreimage.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libimaging_coreimage.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A93B95E28471F85005ACD11 /* aura_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura_apple.xcodeproj; path = ../aura_apple/aura_apple.xcodeproj; sourceTree = "<group>"; };
+		9AA74F4A284820C6009BB762 /* libacme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAC21642475B3BC0013AB72 /* mm_ios_image.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = mm_ios_image.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA74F4C284820EF009BB762 /* libaura_apple.dylib in Frameworks */,
+				9AA74F4B284820C6009BB762 /* libacme_apple.dylib in Frameworks */,
 				9A0705FC266256EE004E8CB4 /* libaura.dylib in Frameworks */,
 				9A0705F8266256D4004E8CB4 /* libacme.dylib in Frameworks */,
 				9A0705FA266256D4004E8CB4 /* libapex.dylib in Frameworks */,
@@ -140,6 +140,7 @@
 		07B65765190F3CA2002DAADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AA74F4A284820C6009BB762 /* libacme_apple.dylib */,
 				9A0705FB266256EE004E8CB4 /* libaura.dylib */,
 				9A0705F7266256D4004E8CB4 /* libacme.dylib */,
 				9A0705F9266256D4004E8CB4 /* libapex.dylib */,
@@ -155,24 +156,6 @@
 				07B65777190F3CA2002DAADE /* UIKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		07B6577C190F3CA2002DAADE /* math_iosTests */ = {
-			isa = PBXGroup;
-			children = (
-				07B65782190F3CA2002DAADE /* math_iosTests.m */,
-				07B6577D190F3CA2002DAADE /* Supporting Files */,
-			);
-			path = math_iosTests;
-			sourceTree = "<group>";
-		};
-		07B6577D190F3CA2002DAADE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				07B6577E190F3CA2002DAADE /* math_iosTests-Info.plist */,
-				07B6577F190F3CA2002DAADE /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		9A204A9B2433CA8800D45614 /* coreimage_imaging */ = {
@@ -197,7 +180,6 @@
 			children = (
 				9A93B95E28471F85005ACD11 /* aura_apple.xcodeproj */,
 				9A204A9B2433CA8800D45614 /* coreimage_imaging */,
-				07B6577C190F3CA2002DAADE /* math_iosTests */,
 				07B65765190F3CA2002DAADE /* Frameworks */,
 				9A574B9916AAB906000CC4EF /* Products */,
 			);
@@ -352,7 +334,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B65781190F3CA2002DAADE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +357,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B65783190F3CA2002DAADE /* math_iosTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,17 +392,6 @@
 			targetProxy = 9A93B96928471FEF005ACD11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		07B6577F190F3CA2002DAADE /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07B65780190F3CA2002DAADE /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		07B65784190F3CA2002DAADE /* Debug */ = {

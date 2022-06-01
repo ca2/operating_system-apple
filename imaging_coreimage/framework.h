@@ -10,7 +10,7 @@
 
 #elif defined(APPLE_IOS)
 
-#include "aura/node/operating_system/ios/_mm.h"
+#include "aura/operating_system/ios/_mm.h"
 
 #else
 

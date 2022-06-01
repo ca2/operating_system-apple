@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				9A15A60D264B551C0080670E /* libacme_apple.dylib */,
-				9A8E9DF3282A2FB6005FF778 /* libios_acme_apple.dylib */,
+				9A8E9DF3282A2FB6005FF778 /* libios_acme_apple.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				9A413CDF266EC33F00C3FF0E /* libapex_posix.dylib */,
-				9A8E9ECF282A331F005FF778 /* libios_apex_posix.dylib */,
+				9A8E9ECF282A331F005FF778 /* libios_apex_posix.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -342,17 +342,17 @@
 			remoteRef = 9A413CDE266EC33F00C3FF0E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A8E9DF3282A2FB6005FF778 /* libios_acme_apple.dylib */ = {
+		9A8E9DF3282A2FB6005FF778 /* libios_acme_apple.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = libios_acme_apple.dylib;
+			path = libios_acme_apple.a;
 			remoteRef = 9A8E9DF2282A2FB6005FF778 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A8E9ECF282A331F005FF778 /* libios_apex_posix.dylib */ = {
+		9A8E9ECF282A331F005FF778 /* libios_apex_posix.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = libios_apex_posix.dylib;
+			path = libios_apex_posix.a;
 			remoteRef = 9A8E9ECE282A331F005FF778 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -460,6 +460,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = "@executable_path";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,6 +546,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = "@executable_path";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -602,6 +604,7 @@
 		9A8E9DEE282A2FB6005FF778 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
@@ -615,6 +618,7 @@
 		9A8E9DEF282A2FB6005FF778 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";

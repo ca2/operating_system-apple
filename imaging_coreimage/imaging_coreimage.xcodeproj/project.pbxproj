@@ -17,8 +17,6 @@
 		9A0705F8266256D4004E8CB4 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0705F7266256D4004E8CB4 /* libacme.dylib */; };
 		9A0705FA266256D4004E8CB4 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0705F9266256D4004E8CB4 /* libapex.dylib */; };
 		9A0705FC266256EE004E8CB4 /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0705FB266256EE004E8CB4 /* libaura.dylib */; };
-		9A0706082662AF69004E8CB4 /* libacme_macos.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0706072662AF56004E8CB4 /* libacme_macos.dylib */; };
-		9A07061B2662B273004E8CB4 /* libaura_macos.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0706142662B23B004E8CB4 /* libaura_macos.dylib */; };
 		9A204ACB2433CA8900D45614 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AA32433CA8800D45614 /* framework.cpp */; };
 		9A204ACE2433CA8900D45614 /* context_image.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A204AAF2433CA8800D45614 /* context_image.h */; };
 		9A204AD12433CA8900D45614 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A204AB42433CA8800D45614 /* _factory.cpp */; };
@@ -47,61 +45,35 @@
 			remoteGlobalIDString = 07B65763190F3CA2002DAADE;
 			remoteInfo = math_ios;
 		};
-		9A0706062662AF56004E8CB4 /* PBXContainerItemProxy */ = {
+		9A93B96328471F85005ACD11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A0706022662AF56004E8CB4 /* acme_macos.xcodeproj */;
+			containerPortal = 9A93B95E28471F85005ACD11 /* aura_apple.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9A0C165F264A290E00B5CC33;
-			remoteInfo = acme_macos;
+			remoteGlobalIDString = 9A15A5AC264B54430080670E;
+			remoteInfo = aura_apple;
 		};
-		9A0706092662B096004E8CB4 /* PBXContainerItemProxy */ = {
+		9A93B96528471F85005ACD11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A0706022662AF56004E8CB4 /* acme_macos.xcodeproj */;
+			containerPortal = 9A93B95E28471F85005ACD11 /* aura_apple.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A8E9E2F282A2FEB005FF778;
+			remoteInfo = ios_aura_apple;
+		};
+		9A93B96728471FE4005ACD11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A93B95E28471F85005ACD11 /* aura_apple.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9A0C165E264A290E00B5CC33;
-			remoteInfo = acme_macos;
+			remoteGlobalIDString = 9A15A5AB264B54430080670E;
+			remoteInfo = aura_apple;
 		};
-		9A0706132662B23B004E8CB4 /* PBXContainerItemProxy */ = {
+		9A93B96928471FEF005ACD11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A07060D2662B23B004E8CB4 /* aura_macos.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A1CFD778154F5EAA007447E2;
-			remoteInfo = aura_macos;
-		};
-		9A0706152662B23B004E8CB4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A07060D2662B23B004E8CB4 /* aura_macos.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 07B657B8190F3CBF002DAADE;
-			remoteInfo = ios_aura_macos;
-		};
-		9A0706172662B23B004E8CB4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A07060D2662B23B004E8CB4 /* aura_macos.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 07B657C7190F3CBF002DAADE;
-			remoteInfo = music_midi_core_audio_iosTests;
-		};
-		9A0706192662B25E004E8CB4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A07060D2662B23B004E8CB4 /* aura_macos.xcodeproj */;
+			containerPortal = 9A93B95E28471F85005ACD11 /* aura_apple.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = A1CFD777154F5EAA007447E2;
-			remoteInfo = aura_macos;
+			remoteGlobalIDString = 9A8E9E13282A2FEB005FF778;
+			remoteInfo = ios_aura_apple;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		07B65762190F3CA2002DAADE /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0793EA301CA4092E001374D8 /* libaura.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libaura.dylib; path = ../aura/build/Debug/libaura.dylib; sourceTree = "<group>"; };
@@ -116,8 +88,6 @@
 		9A0705F7266256D4004E8CB4 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0705F9266256D4004E8CB4 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0705FB266256EE004E8CB4 /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A0706022662AF56004E8CB4 /* acme_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_macos.xcodeproj; path = "../../operating-system-macos/acme_macos/acme_macos.xcodeproj"; sourceTree = "<group>"; };
-		9A07060D2662B23B004E8CB4 /* aura_macos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura_macos.xcodeproj; path = "../../operating-system-macos/aura_macos/aura_macos.xcodeproj"; sourceTree = "<group>"; };
 		9A204AA32433CA8800D45614 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9A204AAF2433CA8800D45614 /* context_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context_image.h; sourceTree = "<group>"; };
 		9A204AB42433CA8800D45614 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
@@ -134,17 +104,11 @@
 		9A204AF32433DE4D00D45614 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		9A204AF72433DEB400D45614 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9A574B9816AAB906000CC4EF /* libimaging_coreimage.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libimaging_coreimage.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A93B95E28471F85005ACD11 /* aura_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura_apple.xcodeproj; path = ../aura_apple/aura_apple.xcodeproj; sourceTree = "<group>"; };
 		9AAC21642475B3BC0013AB72 /* mm_ios_image.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = mm_ios_image.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		07B65761190F3CA2002DAADE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		07B65770190F3CA2002DAADE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,8 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A07061B2662B273004E8CB4 /* libaura_macos.dylib in Frameworks */,
-				9A0706082662AF69004E8CB4 /* libacme_macos.dylib in Frameworks */,
 				9A0705FC266256EE004E8CB4 /* libaura.dylib in Frameworks */,
 				9A0705F8266256D4004E8CB4 /* libacme.dylib in Frameworks */,
 				9A0705FA266256D4004E8CB4 /* libapex.dylib in Frameworks */,
@@ -213,24 +175,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9A0706032662AF56004E8CB4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9A0706072662AF56004E8CB4 /* libacme_macos.dylib */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9A07060E2662B23B004E8CB4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9A0706142662B23B004E8CB4 /* libaura_macos.dylib */,
-				9A0706162662B23B004E8CB4 /* libios_aura_macos.a */,
-				9A0706182662B23B004E8CB4 /* music_midi_core_audio_iosTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		9A204A9B2433CA8800D45614 /* coreimage_imaging */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,8 +195,7 @@
 		9A574B8D16AAB906000CC4EF = {
 			isa = PBXGroup;
 			children = (
-				9A0706022662AF56004E8CB4 /* acme_macos.xcodeproj */,
-				9A07060D2662B23B004E8CB4 /* aura_macos.xcodeproj */,
+				9A93B95E28471F85005ACD11 /* aura_apple.xcodeproj */,
 				9A204A9B2433CA8800D45614 /* coreimage_imaging */,
 				07B6577C190F3CA2002DAADE /* math_iosTests */,
 				07B65765190F3CA2002DAADE /* Frameworks */,
@@ -266,6 +209,15 @@
 				9A574B9816AAB906000CC4EF /* libimaging_coreimage.dylib */,
 				07B65764190F3CA2002DAADE /* libios_imaging_coreimage.a */,
 				07B65773190F3CA2002DAADE /* math_iosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A93B95F28471F85005ACD11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A93B96428471F85005ACD11 /* libaura_apple.dylib */,
+				9A93B96628471F85005ACD11 /* libios_aura_apple.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,12 +243,11 @@
 			buildConfigurationList = 07B65788190F3CA2002DAADE /* Build configuration list for PBXNativeTarget "ios_imaging_coreimage" */;
 			buildPhases = (
 				07B65760190F3CA2002DAADE /* Sources */,
-				07B65761190F3CA2002DAADE /* Frameworks */,
-				07B65762190F3CA2002DAADE /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9A93B96A28471FEF005ACD11 /* PBXTargetDependency */,
 			);
 			name = ios_imaging_coreimage;
 			productName = math_ios;
@@ -332,8 +283,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9A07061A2662B25E004E8CB4 /* PBXTargetDependency */,
-				9A07060A2662B096004E8CB4 /* PBXTargetDependency */,
+				9A93B96828471FE4005ACD11 /* PBXTargetDependency */,
 			);
 			name = imaging_coreimage;
 			productName = ca2;
@@ -367,12 +317,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9A0706032662AF56004E8CB4 /* Products */;
-					ProjectRef = 9A0706022662AF56004E8CB4 /* acme_macos.xcodeproj */;
-				},
-				{
-					ProductGroup = 9A07060E2662B23B004E8CB4 /* Products */;
-					ProjectRef = 9A07060D2662B23B004E8CB4 /* aura_macos.xcodeproj */;
+					ProductGroup = 9A93B95F28471F85005ACD11 /* Products */;
+					ProjectRef = 9A93B95E28471F85005ACD11 /* aura_apple.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -385,32 +331,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A0706072662AF56004E8CB4 /* libacme_macos.dylib */ = {
+		9A93B96428471F85005ACD11 /* libaura_apple.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = libacme_macos.dylib;
-			remoteRef = 9A0706062662AF56004E8CB4 /* PBXContainerItemProxy */;
+			path = libaura_apple.dylib;
+			remoteRef = 9A93B96328471F85005ACD11 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A0706142662B23B004E8CB4 /* libaura_macos.dylib */ = {
+		9A93B96628471F85005ACD11 /* libios_aura_apple.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = libaura_macos.dylib;
-			remoteRef = 9A0706132662B23B004E8CB4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A0706162662B23B004E8CB4 /* libios_aura_macos.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libios_aura_macos.a;
-			remoteRef = 9A0706152662B23B004E8CB4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A0706182662B23B004E8CB4 /* music_midi_core_audio_iosTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = music_midi_core_audio_iosTests.xctest;
-			remoteRef = 9A0706172662B23B004E8CB4 /* PBXContainerItemProxy */;
+			path = libios_aura_apple.a;
+			remoteRef = 9A93B96528471F85005ACD11 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -469,15 +401,15 @@
 			target = 07B65763190F3CA2002DAADE /* ios_imaging_coreimage */;
 			targetProxy = 07B65779190F3CA2002DAADE /* PBXContainerItemProxy */;
 		};
-		9A07060A2662B096004E8CB4 /* PBXTargetDependency */ = {
+		9A93B96828471FE4005ACD11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = acme_macos;
-			targetProxy = 9A0706092662B096004E8CB4 /* PBXContainerItemProxy */;
+			name = aura_apple;
+			targetProxy = 9A93B96728471FE4005ACD11 /* PBXContainerItemProxy */;
 		};
-		9A07061A2662B25E004E8CB4 /* PBXTargetDependency */ = {
+		9A93B96A28471FEF005ACD11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = aura_macos;
-			targetProxy = 9A0706192662B25E004E8CB4 /* PBXContainerItemProxy */;
+			name = ios_aura_apple;
+			targetProxy = 9A93B96928471FEF005ACD11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -685,7 +617,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -751,7 +682,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = "-all_load";

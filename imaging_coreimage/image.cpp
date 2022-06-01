@@ -6,7 +6,9 @@
 //
 #include "framework.h"
 #include "aura/graphics/image/save_image.h"
+#ifdef APPLE_MACOS
 #include <Carbon/Carbon.h>
+#endif
 
 
 CFDataRef CopyImagePixels(CGImageRef inImage);
@@ -209,47 +211,47 @@ namespace coreimage_imaging
 } // namespace coreimage_imaging
 
 
-void * cg_image_get_image_data(int & width, int & height, int & iScan, CGImageRef image)
-{
-
-   if(image == nullptr)
-   {
-
-      return nullptr;
-
-   }
-
-   //https://www.raywenderlich.com/69855/image-processing-in-ios-part-1-raw-bitmap-modification
-   // 1.
-   width = (int) CGImageGetWidth(image);
-   height = (int) CGImageGetHeight(image);
-
-   // 2.
-   long bytesPerPixel = 4;
-   long bytesPerRow = bytesPerPixel * width;
-   long bitsPerComponent = 8;
-
-   ::u32 * pixels;
-   pixels = (::u32 *) calloc(height * width, sizeof(::u32));
-   
-   iScan = width * sizeof(::u32);
-
-   // 3.
-   CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-   CGContextRef context = CGBitmapContextCreate(pixels, width, height, bitsPerComponent, bytesPerRow, colorSpace,
-                                                kCGImageAlphaPremultipliedLast);///kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
-
-   // 4.
-   CGContextDrawImage(context, CGRectMake(0, 0, width, height), image);
-
-   // 5. Cleanup
-   CGColorSpaceRelease(colorSpace);
-
-   CGContextRelease(context);
-
-   return pixels;
-
-}
+//void * cg_image_get_image_data(int & width, int & height, int & iScan, CGImageRef image)
+//{
+//
+//   if(image == nullptr)
+//   {
+//
+//      return nullptr;
+//
+//   }
+//
+//   //https://www.raywenderlich.com/69855/image-processing-in-ios-part-1-raw-bitmap-modification
+//   // 1.
+//   width = (int) CGImageGetWidth(image);
+//   height = (int) CGImageGetHeight(image);
+//
+//   // 2.
+//   long bytesPerPixel = 4;
+//   long bytesPerRow = bytesPerPixel * width;
+//   long bitsPerComponent = 8;
+//
+//   ::u32 * pixels;
+//   pixels = (::u32 *) calloc(height * width, sizeof(::u32));
+//   
+//   iScan = width * sizeof(::u32);
+//
+//   // 3.
+//   CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//   CGContextRef context = CGBitmapContextCreate(pixels, width, height, bitsPerComponent, bytesPerRow, colorSpace,
+//                                                kCGImageAlphaPremultipliedLast);///kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+//
+//   // 4.
+//   CGContextDrawImage(context, CGRectMake(0, 0, width, height), image);
+//
+//   // 5. Cleanup
+//   CGColorSpaceRelease(colorSpace);
+//
+//   CGContextRelease(context);
+//
+//   return pixels;
+//
+//}
 
 
 

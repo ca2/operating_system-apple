@@ -368,6 +368,11 @@
 			attributes = {
 				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "ca2 Desenvolvimento de Sofware Ltda.";
+				TargetAttributes = {
+					07E25F291B4FFC2100752DE1 = {
+						DevelopmentTeam = L8N5V6TZE5;
+					};
+				};
 			};
 			buildConfigurationList = A1CFD772154F5EA7007447E2 /* Build configuration list for PBXProject "draw2d_quartz2d" */;
 			compatibilityVersion = "Xcode 6.3";
@@ -493,6 +498,7 @@
 		07E25F4E1B4FFC2100752DE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
 				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
@@ -504,6 +510,7 @@
 		07E25F4F1B4FFC2100752DE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
 				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;

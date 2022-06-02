@@ -50,6 +50,8 @@
 		9A94DEFA282C606300F5C1CA /* acme_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */; };
 		9A94DEFB282C606600F5C1CA /* acme_path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* acme_path.cpp */; };
 		9A94DEFC282C606900F5C1CA /* acme_directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* acme_directory.cpp */; };
+		9AA74F6128484887009BB762 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
+		9AA74F6228484888009BB762 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -381,6 +383,7 @@
 				9A750E21282B531D00C4861B /* stdio_file.cpp in Sources */,
 				9A787E74264E31B7003DF8A0 /* NSObject+DDExtensions.mm in Sources */,
 				9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */,
+				9AA74F6128484887009BB762 /* image.mm in Sources */,
 				9A787E70264E2355003DF8A0 /* node.cpp in Sources */,
 				9A94DEF6282C5F6600F5C1CA /* acme_directory.cpp in Sources */,
 				9A94DEF9282C5F6600F5C1CA /* acme_file.cpp in Sources */,
@@ -395,6 +398,7 @@
 				9A94DEDA282C4B1C00F5C1CA /* stdio_file.cpp in Sources */,
 				9A94DEDD282C4B1C00F5C1CA /* resource.cpp in Sources */,
 				9A94DEFC282C606900F5C1CA /* acme_directory.cpp in Sources */,
+				9AA74F6228484888009BB762 /* image.mm in Sources */,
 				9A94DEFA282C606300F5C1CA /* acme_file.cpp in Sources */,
 				9A8E9DA9282A2F61005FF778 /* NSString+SymlinksAndAliases.mm in Sources */,
 				9A8E9DAA282A2F61005FF778 /* debug.cpp in Sources */,

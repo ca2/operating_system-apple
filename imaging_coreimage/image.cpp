@@ -100,7 +100,18 @@ namespace coreimage_imaging
          return;
          
       }
-      
+
+      if(memory.is_empty())
+      {
+         
+         pimage->m_estatus = error_invalid_empty_argument;
+         
+         pimage->set_nok();
+         
+         return;
+         
+      }
+
       auto pcontextimage = pcontext->context_image();
 
       auto pszData = memory.get_data();

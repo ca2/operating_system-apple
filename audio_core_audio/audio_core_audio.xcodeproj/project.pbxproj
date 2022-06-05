@@ -52,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A1EAA5B284B046F000F05A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A741586266BD07800552531 /* apex_apple.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A8E9DF0282A2FB6005FF778;
+			remoteInfo = ios_apex_apple;
+		};
 		9A3D15FD266EEC8A00AE9A5E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A741586266BD07800552531 /* apex_apple.xcodeproj */;
@@ -86,6 +93,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9ACA44792453EAEE007277DD;
 			remoteInfo = audio;
+		};
+		9A903F5F284B2A49006B9FD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9ACA47722453EEAE007277DD;
+			remoteInfo = ios_audio;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -124,13 +138,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9AF4C47A1F83DD7500197385 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A1CFD775154F5EAA007447E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				9A3D15FE266EEC8A00AE9A5E /* libapex_apple.dylib */,
+				9A1EAA5C284B046F000F05A8 /* libios_apex_apple.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,13 +277,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9AF4C48C1F83DD7500197385 /* Build configuration list for PBXNativeTarget "ios_audio_core_audio" */;
 			buildPhases = (
-				9AF4C4711F83DD7500197385 /* Sources */,
-				9AF4C47A1F83DD7500197385 /* Frameworks */,
 				9AF4C4811F83DD7500197385 /* Headers */,
+				9AF4C4711F83DD7500197385 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9A903F60284B2A49006B9FD2 /* PBXTargetDependency */,
 			);
 			name = ios_audio_core_audio;
 			productName = os;
@@ -340,6 +348,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		9A1EAA5C284B046F000F05A8 /* libios_apex_apple.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = ios_apex_apple.a;
+			remoteRef = 9A1EAA5B284B046F000F05A8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9A3D15FE266EEC8A00AE9A5E /* libapex_apple.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
@@ -407,15 +422,21 @@
 			name = audio;
 			targetProxy = 9A741583266BCDE200552531 /* PBXContainerItemProxy */;
 		};
+		9A903F60284B2A49006B9FD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ios_audio;
+			targetProxy = 9A903F5F284B2A49006B9FD2 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9AF4C48D1F83DD7500197385 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_HARDENED_RUNTIME = YES;
 				EXECUTABLE_EXTENSION = a;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACH_O_TYPE = staticlib;
+				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -423,9 +444,10 @@
 		9AF4C48E1F83DD7500197385 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_HARDENED_RUNTIME = YES;
 				EXECUTABLE_EXTENSION = a;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACH_O_TYPE = staticlib;
+				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -491,7 +513,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -559,7 +580,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -10,6 +10,8 @@
 		9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFCC276118A6001E14CC /* Carbon.framework */; };
 		9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFE1276122CB001E14CC /* Cocoa.framework */; };
 		9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412438266C3ECE00C3FF0E /* libacme.dylib */; };
+		9A734A52284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
+		9A734A53284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
 		9A741591266BD2B700552531 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A74158F266BD25B00552531 /* debug.cpp */; };
 		9A750E20282B531D00C4861B /* stdio_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A750E1E282B531C00C4861B /* stdio_file.h */; };
 		9A750E21282B531D00C4861B /* stdio_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A750E1F282B531C00C4861B /* stdio_file.cpp */; };
@@ -87,7 +89,7 @@
 
 /* Begin PBXFileReference section */
 		9A0705FD26627549004E8CB4 /* image.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image.mm; sourceTree = "<group>"; };
-		9A15A582264B536C0080670E /* acme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = acme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A15A582264B536C0080670E /* acme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = acme_apple.dylib; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A15A5D0264B54B70080670E /* acme_posix.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_posix.xcodeproj; path = "../../operating-system-posix/acme_posix/acme_posix.xcodeproj"; sourceTree = "<group>"; };
 		9A15A60E264B56520080670E /* apple_timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = apple_timer.cpp; sourceTree = "<group>"; };
 		9A21AFCA276117F4001E14CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,8 @@
 		9A21AFDB2761205C001E14CC /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		9A21AFE1276122CB001E14CC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9A412438266C3ECE00C3FF0E /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A734A50284F5E37003986C7 /* CAHostTimeBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAHostTimeBase.h; sourceTree = "<group>"; };
+		9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAHostTimeBase.cpp; sourceTree = "<group>"; };
 		9A74158F266BD25B00552531 /* debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = debug.cpp; sourceTree = "<group>"; };
 		9A750E1E282B531C00C4861B /* stdio_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdio_file.h; sourceTree = "<group>"; };
 		9A750E1F282B531C00C4861B /* stdio_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdio_file.cpp; sourceTree = "<group>"; };
@@ -127,7 +131,7 @@
 		9A787E6D264E22CB003DF8A0 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9A787E7F264E89F4003DF8A0 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		9A787E81264E8C46003DF8A0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		9A8E9DBA282A2F61005FF778 /* ios_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ios_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A8E9DBA282A2F61005FF778 /* ios_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = ios_acme_apple.a; path = libios_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A93B95828471D39005ACD11 /* image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image.cpp; sourceTree = "<group>"; };
 		9A93B95928471D39005ACD11 /* image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image.h; sourceTree = "<group>"; };
 		9A94DEEE282C5F6500F5C1CA /* acme_directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acme_directory.h; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 		9A787E4F264E22CB003DF8A0 /* acme_apple */ = {
 			isa = PBXGroup;
 			children = (
+				9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */,
+				9A734A50284F5E37003986C7 /* CAHostTimeBase.h */,
 				9A787E64264E22CB003DF8A0 /* _.cpp */,
 				9A787E6D264E22CB003DF8A0 /* _.h */,
 				9A787E69264E22CB003DF8A0 /* _acme_apple.h */,
@@ -381,6 +387,7 @@
 				9A787E70264E2355003DF8A0 /* node.cpp in Sources */,
 				9A94DEF6282C5F6600F5C1CA /* acme_directory.cpp in Sources */,
 				9A94DEF9282C5F6600F5C1CA /* acme_file.cpp in Sources */,
+				9A734A52284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +410,7 @@
 				9A94DED9282C4B1C00F5C1CA /* apple_timer.cpp in Sources */,
 				9A8E9DAD282A2F61005FF778 /* DDInvocationGrabber.mm in Sources */,
 				9A8E9DAE282A2F61005FF778 /* NSObject+DDExtensions.mm in Sources */,
+				9A734A53284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */,
 				9A8E9DAF282A2F61005FF778 /* _apple.mm in Sources */,
 				9A8E9DB0282A2F61005FF778 /* node.cpp in Sources */,
 				9A94DED8282C4B1C00F5C1CA /* framework.cpp in Sources */,

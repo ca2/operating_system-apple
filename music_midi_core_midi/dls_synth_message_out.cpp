@@ -49,12 +49,25 @@ namespace music
                                
             }
 
+#ifdef MACOS
+            
             AudioComponentDescription descriptionSynth ={};
             descriptionSynth.componentType           = kAudioUnitType_MusicDevice;
             descriptionSynth.componentSubType        = kAudioUnitSubType_DLSSynth;
             descriptionSynth.componentManufacturer   = kAudioUnitManufacturer_Apple;
             descriptionSynth.componentFlags          = 0;
             descriptionSynth.componentFlagsMask      = 0;
+            
+#else
+            
+            AudioComponentDescription descriptionSynth ={};
+            descriptionSynth.componentType           = kAudioUnitType_MusicDevice;
+            descriptionSynth.componentSubType        = kAudioUnitSubType_MIDISynth;
+            descriptionSynth.componentManufacturer   = kAudioUnitManufacturer_Apple;
+            descriptionSynth.componentFlags          = 0;
+            descriptionSynth.componentFlagsMask      = 0;
+
+#endif
             
             result = AUGraphAddNode (m_audiograph, &descriptionSynth, &m_nodeSynth);
 
@@ -65,12 +78,25 @@ namespace music
                                
             }
             
+#ifdef MACOS
+            
             AudioComponentDescription descriptionOutput={};
             descriptionOutput.componentType           = kAudioUnitType_Output;
             descriptionOutput.componentSubType        = kAudioUnitSubType_DefaultOutput;
             descriptionOutput.componentManufacturer   = kAudioUnitManufacturer_Apple;
             descriptionOutput.componentFlags          = 0;
             descriptionOutput.componentFlagsMask      = 0;
+            
+#else
+            
+            AudioComponentDescription descriptionOutput={};
+            descriptionOutput.componentType           = kAudioUnitType_Output;
+            descriptionOutput.componentSubType        = kAudioUnitSubType_GenericOutput;
+            descriptionOutput.componentManufacturer   = kAudioUnitManufacturer_Apple;
+            descriptionOutput.componentFlags          = 0;
+            descriptionOutput.componentFlagsMask      = 0;
+            
+#endif
 
             result = AUGraphAddNode(m_audiograph, &descriptionOutput, &m_nodeOutput);
             

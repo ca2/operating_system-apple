@@ -83,28 +83,28 @@ char * mm_error_description(OSStatus status)
 //}
 
 
-void ns_main_async(dispatch_block_t block)
-{
-   
-   //   dispatch_block_t block = ^{
-   //      // Code for the method goes here
-   //   };
-   //
-   
-   if ([NSThread isMainThread])
-   {
-      
-      block();
-      
-   }
-   else
-   {
-      
-      dispatch_async(dispatch_get_main_queue(), block);
-      
-   }
-   
-}
+//void ns_main_async(dispatch_block_t block)
+//{
+//   
+//   //   dispatch_block_t block = ^{
+//   //      // Code for the method goes here
+//   //   };
+//   //
+//   
+//   if ([NSThread isMainThread])
+//   {
+//      
+//      block();
+//      
+//   }
+//   else
+//   {
+//      
+//      dispatch_async(dispatch_get_main_queue(), block);
+//      
+//   }
+//   
+//}
 
 
 

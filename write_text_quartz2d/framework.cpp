@@ -5,4 +5,7 @@
 #include "framework.h"
 
 
+IMPLEMENT_THIS_TYPE(write_text_quartz2d_framework);
+
+
 

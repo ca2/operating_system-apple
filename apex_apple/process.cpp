@@ -114,7 +114,7 @@ namespace apex_apple
 
       string strFallback;
 
-      if(::str::begins_ci(strFallback, "/Users/"))
+      if(strFallback.begins_ci("/Users/"))
       {
 
          index i = 0;

@@ -7,3 +7,9 @@
 //
 
 #include "framework.h"
+
+
+IMPLEMENT_THIS_TYPE(draw2d_quartz2d_framework);
+
+
+

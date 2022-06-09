@@ -2,4 +2,5 @@ time-*/
 workspace.xml
 cmake-build-*/
 cmake-time-*/
+.DS_Store
 *.xcuserdata

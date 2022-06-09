@@ -63,7 +63,6 @@
 		9A6E9B9826575EC1001F6FC8 /* draw2d.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6E9B9426575EC1001F6FC8 /* draw2d.h */; };
 		9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8997BC177D0E7D00C7761E /* Carbon.framework */; };
 		9AA1B44A176361950019E812 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA1B449176361950019E812 /* Cocoa.framework */; };
-		9AA2192B1DC6B04B00C06987 /* mm_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA2192A1DC6B04B00C06987 /* mm_ios.mm */; };
 		9AB287E721320E8A002A0AFF /* mm_apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB287E621320E8A002A0AFF /* mm_apple.mm */; };
 		9AB287E921320F30002A0AFF /* mm_apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB287E621320E8A002A0AFF /* mm_apple.mm */; };
 		9AEAFBD21DC1B4B00035AD42 /* mm_mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAFBD11DC1B4B00035AD42 /* mm_mac.mm */; };
@@ -140,7 +139,6 @@
 		9A6E9B9426575EC1001F6FC8 /* draw2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = draw2d.h; sourceTree = "<group>"; };
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		9AA1B449176361950019E812 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		9AA2192A1DC6B04B00C06987 /* mm_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mm_ios.mm; sourceTree = "<group>"; };
 		9AA2192D1DC6B1A300C06987 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		9AB287E621320E8A002A0AFF /* mm_apple.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = mm_apple.mm; sourceTree = "<group>"; };
 		9AC2D14B26542B1400CC8096 /* aura.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura.xcodeproj; path = ../../../source/app/aura/aura.xcodeproj; sourceTree = "<group>"; };
@@ -156,13 +154,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		07E25F3A1B4FFC2100752DE1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A1CFD775154F5EAA007447E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,7 +253,6 @@
 				9A6B40D017BBE291008391AD /* image.cpp */,
 				9A6B40D117BBE291008391AD /* image.h */,
 				9AB287E621320E8A002A0AFF /* mm_apple.mm */,
-				9AA2192A1DC6B04B00C06987 /* mm_ios.mm */,
 				9AEAFBD11DC1B4B00035AD42 /* mm_mac.mm */,
 				9A6B40D817BBE291008391AD /* object.cpp */,
 				9A6B40D917BBE291008391AD /* object.h */,
@@ -328,9 +318,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07E25F4D1B4FFC2100752DE1 /* Build configuration list for PBXNativeTarget "ios_draw2d_quartz2d" */;
 			buildPhases = (
-				07E25F2C1B4FFC2100752DE1 /* Sources */,
-				07E25F3A1B4FFC2100752DE1 /* Frameworks */,
 				07E25F3E1B4FFC2100752DE1 /* Headers */,
+				07E25F2C1B4FFC2100752DE1 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -368,6 +357,11 @@
 			attributes = {
 				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "ca2 Desenvolvimento de Sofware Ltda.";
+				TargetAttributes = {
+					07E25F291B4FFC2100752DE1 = {
+						DevelopmentTeam = L8N5V6TZE5;
+					};
+				};
 			};
 			buildConfigurationList = A1CFD772154F5EA7007447E2 /* Build configuration list for PBXProject "draw2d_quartz2d" */;
 			compatibilityVersion = "Xcode 6.3";
@@ -433,7 +427,6 @@
 				07E25F341B4FFC2100752DE1 /* object.cpp in Sources */,
 				07E25F351B4FFC2100752DE1 /* palette.cpp in Sources */,
 				9AB287E921320F30002A0AFF /* mm_apple.mm in Sources */,
-				9AA2192B1DC6B04B00C06987 /* mm_ios.mm in Sources */,
 				07E25F361B4FFC2100752DE1 /* path.cpp in Sources */,
 				07E25F371B4FFC2100752DE1 /* pen.cpp in Sources */,
 				07E25F391B4FFC2100752DE1 /* region.cpp in Sources */,
@@ -494,7 +487,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
-				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
 				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
@@ -505,7 +497,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
-				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
 				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
@@ -666,11 +657,6 @@
 		A1CFD77D154F5EAA007447E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					MACOS,
-				);
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Debug;
@@ -678,11 +664,6 @@
 		A1CFD77E154F5EAA007447E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					MACOS,
-				);
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Release;

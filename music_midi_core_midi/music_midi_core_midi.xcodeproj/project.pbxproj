@@ -11,44 +11,51 @@
 		07B657CF190F3CBF002DAADE /* libios_music_midi_core_midi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B657B8190F3CBF002DAADE /* libios_music_midi_core_midi.a */; };
 		07B657D5190F3CBF002DAADE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07B657D3190F3CBF002DAADE /* InfoPlist.strings */; };
 		07B657D7190F3CBF002DAADE /* music_midi_core_audio_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B657D6190F3CBF002DAADE /* music_midi_core_audio_iosTests.m */; };
-		9A1B496416A494A600875A94 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A1B496316A494A600875A94 /* framework.h */; };
-		9A1B496716A4A10100875A94 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B496616A4A10100875A94 /* framework.cpp */; };
+		9A24D0A228515F5A000C9873 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAAF285126EE008FF906 /* _factory.cpp */; };
+		9A24D0A328515F5A000C9873 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAA7285126EE008FF906 /* translation.cpp */; };
+		9A24D0A428515F5A000C9873 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA8A285126EE008FF906 /* framework.cpp */; };
+		9A24D0A528515F5A000C9873 /* output_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA9B285126EE008FF906 /* output_base.cpp */; };
+		9A24D0A728515F5A000C9873 /* sequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA83285126EE008FF906 /* sequencer.cpp */; };
+		9A24D0A828515F5A000C9873 /* input_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA8D285126EE008FF906 /* input_base.cpp */; };
+		9A24D0A928515F5A000C9873 /* dls_synth_message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA81285126EE008FF906 /* dls_synth_message_out.cpp */; };
+		9A24D0AA28515F5A000C9873 /* message_in.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA82285126EE008FF906 /* message_in.cpp */; };
+		9A24D0AB28515F5A000C9873 /* message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA98285126EE008FF906 /* message_out.cpp */; };
+		9A24D0AC28515F5A000C9873 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA86285126EE008FF906 /* midi.cpp */; };
+		9A24D0AD28515F5A000C9873 /* time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAB3285126EE008FF906 /* time.cpp */; };
 		9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8997BC177D0E7D00C7761E /* Carbon.framework */; };
-		9A8EAF7B17C5640300C458D1 /* exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6C17C5640300C458D1 /* exception.cpp */; };
-		9A8EAF7C17C5640300C458D1 /* exception.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF6D17C5640300C458D1 /* exception.h */; };
-		9A8EAF7D17C5640300C458D1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6E17C5640300C458D1 /* _factory.cpp */; };
-		9A8EAF8717C5640300C458D1 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF7817C5640300C458D1 /* _.cpp */; };
 		9A941C501FF34F880028686E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A941C4F1FF34F880028686E /* CoreMIDI.framework */; };
 		9A941C521FF34F9E0028686E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A941C511FF34F9E0028686E /* CoreAudio.framework */; };
-		9A986D7D1D226CCB001F4C04 /* exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6C17C5640300C458D1 /* exception.cpp */; };
-		9A986D7E1D226CCB001F4C04 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF6E17C5640300C458D1 /* _factory.cpp */; };
-		9A986D841D226CCB001F4C04 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF7817C5640300C458D1 /* _.cpp */; };
-		9A986D851D226CCB001F4C04 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B496616A4A10100875A94 /* framework.cpp */; };
 		9AA1B44A176361950019E812 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA1B449176361950019E812 /* Cocoa.framework */; };
+		9ABFEABA285126EE008FF906 /* time.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEA7E285126EE008FF906 /* time.h */; };
+		9ABFEABD285126EE008FF906 /* dls_synth_message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA81285126EE008FF906 /* dls_synth_message_out.cpp */; };
+		9ABFEABE285126EE008FF906 /* message_in.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA82285126EE008FF906 /* message_in.cpp */; };
+		9ABFEABF285126EE008FF906 /* sequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA83285126EE008FF906 /* sequencer.cpp */; };
+		9ABFEAC1285126EE008FF906 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA86285126EE008FF906 /* midi.cpp */; };
+		9ABFEAC2285126EE008FF906 /* midi.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEA87285126EE008FF906 /* midi.h */; };
+		9ABFEAC5285126EE008FF906 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA8A285126EE008FF906 /* framework.cpp */; };
+		9ABFEAC8285126EE008FF906 /* input_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA8D285126EE008FF906 /* input_base.cpp */; };
+		9ABFEACB285126EE008FF906 /* translation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEA90285126EE008FF906 /* translation.h */; };
+		9ABFEACC285126EE008FF906 /* dls_synth_message_out.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEA91285126EE008FF906 /* dls_synth_message_out.h */; };
+		9ABFEACE285126EE008FF906 /* message_in.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEA93285126EE008FF906 /* message_in.h */; };
+		9ABFEAD0285126EE008FF906 /* output_base.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEA95285126EE008FF906 /* output_base.h */; };
+		9ABFEAD1285126EE008FF906 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA96285126EE008FF906 /* _.cpp */; };
+		9ABFEAD2285126EE008FF906 /* message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA98285126EE008FF906 /* message_out.cpp */; };
+		9ABFEAD5285126EE008FF906 /* output_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA9B285126EE008FF906 /* output_base.cpp */; };
+		9ABFEAD7285126EE008FF906 /* sequencer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEA9D285126EE008FF906 /* sequencer.h */; };
+		9ABFEADB285126EF008FF906 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAA5285126EE008FF906 /* framework.h */; };
+		9ABFEADD285126EF008FF906 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAA7285126EE008FF906 /* translation.cpp */; };
+		9ABFEADF285126EF008FF906 /* _music_midi_core_midi.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAAC285126EE008FF906 /* _music_midi_core_midi.h */; };
+		9ABFEAE0285126EF008FF906 /* input_base.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAAD285126EE008FF906 /* input_base.h */; };
+		9ABFEAE2285126EF008FF906 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAAF285126EE008FF906 /* _factory.cpp */; };
+		9ABFEAE3285126EF008FF906 /* message_out.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAB0285126EE008FF906 /* message_out.h */; };
+		9ABFEAE5285126EF008FF906 /* time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAB3285126EE008FF906 /* time.cpp */; };
+		9ABFEAEA285126EF008FF906 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAB9285126EE008FF906 /* _.h */; };
 		9AE6415B26706E96005F3412 /* libveriwell_multimedia.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3D17C6266EF29700AE9A5E /* libveriwell_multimedia.dylib */; };
 		9AE6415D26706EA3005F3412 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE6415C26706EA3005F3412 /* libacme.dylib */; };
 		9AE6415F26706EA3005F3412 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE6415E26706EA3005F3412 /* libapex.dylib */; };
 		9AE6416126706EA3005F3412 /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE6416026706EA3005F3412 /* libaqua.dylib */; };
-		9AE6416A2670760F005F3412 /* sequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE641642670760D005F3412 /* sequencer.cpp */; };
-		9AE6416B2670760F005F3412 /* sequencer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE641652670760E005F3412 /* sequencer.h */; };
-		9AE6416C2670760F005F3412 /* output_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE641662670760E005F3412 /* output_base.cpp */; };
-		9AE6416D2670760F005F3412 /* output_base.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE641672670760E005F3412 /* output_base.h */; };
-		9AE6416E2670760F005F3412 /* time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE641682670760E005F3412 /* time.cpp */; };
-		9AE6416F2670760F005F3412 /* time.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE641692670760F005F3412 /* time.h */; };
-		9AE6417A26707667005F3412 /* message_out.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6417026707666005F3412 /* message_out.h */; };
-		9AE6417B26707667005F3412 /* translation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6417126707666005F3412 /* translation.h */; };
-		9AE6417C26707667005F3412 /* input_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6417226707666005F3412 /* input_base.cpp */; };
-		9AE6417D26707667005F3412 /* message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6417326707667005F3412 /* message_out.cpp */; };
-		9AE6417E26707667005F3412 /* message_in.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6417426707667005F3412 /* message_in.h */; };
-		9AE6417F26707667005F3412 /* midi.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6417526707667005F3412 /* midi.h */; };
-		9AE6418026707667005F3412 /* message_in.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6417626707667005F3412 /* message_in.cpp */; };
-		9AE6418126707667005F3412 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6417726707667005F3412 /* midi.cpp */; };
-		9AE6418226707667005F3412 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6417826707667005F3412 /* translation.cpp */; };
-		9AE6418326707667005F3412 /* input_base.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6417926707667005F3412 /* input_base.h */; };
 		9AE641872670813F005F3412 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE641862670813F005F3412 /* AudioToolbox.framework */; };
 		9AE641882670824A005F3412 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE64184267080C2005F3412 /* AudioUnit.framework */; };
-		9AE644F026709D1C005F3412 /* dls_synth_message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE644EE26709D1C005F3412 /* dls_synth_message_out.cpp */; };
-		9AE644F126709D1C005F3412 /* dls_synth_message_out.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE644EF26709D1C005F3412 /* dls_synth_message_out.h */; };
 		9AEA185527600236006437A3 /* libmusic_midi_core_midi.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1CFD778154F5EAA007447E2 /* libmusic_midi_core_midi.dylib */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +81,20 @@
 			remoteGlobalIDString = 07B6584B190F3CE7002DAADE;
 			remoteInfo = veriwell_multimedia_iosTests;
 		};
+		9A73510B284F94A4003986C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A7350E2284F795B003986C7;
+			remoteInfo = ios_veriwell_multimedia;
+		};
+		9A73511A284F9613003986C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A735060284F795B003986C7;
+			remoteInfo = ios_veriwell_multimedia;
+		};
 		9AE6415926706E78005F3412 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */;
@@ -84,15 +105,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		07B657B6190F3CBF002DAADE /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9AEA185327600221006437A3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -112,52 +124,44 @@
 		07B657D2190F3CBF002DAADE /* music_midi_core_audio_iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "music_midi_core_audio_iosTests-Info.plist"; sourceTree = "<group>"; };
 		07B657D4190F3CBF002DAADE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07B657D6190F3CBF002DAADE /* music_midi_core_audio_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = music_midi_core_audio_iosTests.m; sourceTree = "<group>"; };
-		9A1B496316A494A600875A94 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
-		9A1B496616A4A10100875A94 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = veriwell_multimedia.xcodeproj; path = "../../../source/app-veriwell/multimedia/veriwell_multimedia.xcodeproj"; sourceTree = "<group>"; };
-		9A3D17C9266EF31C00AE9A5E /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		9A8EAF6C17C5640300C458D1 /* exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; path = exception.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		9A8EAF6D17C5640300C458D1 /* exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 2; path = exception.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		9A8EAF6E17C5640300C458D1 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
-		9A8EAF7817C5640300C458D1 /* _.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
 		9A941C4F1FF34F880028686E /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		9A941C511FF34F9E0028686E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		9AA1B449176361950019E812 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9ABFEA7E285126EE008FF906 /* time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
+		9ABFEA81285126EE008FF906 /* dls_synth_message_out.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dls_synth_message_out.cpp; sourceTree = "<group>"; };
+		9ABFEA82285126EE008FF906 /* message_in.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = message_in.cpp; sourceTree = "<group>"; };
+		9ABFEA83285126EE008FF906 /* sequencer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sequencer.cpp; sourceTree = "<group>"; };
+		9ABFEA86285126EE008FF906 /* midi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi.cpp; sourceTree = "<group>"; };
+		9ABFEA87285126EE008FF906 /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
+		9ABFEA8A285126EE008FF906 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
+		9ABFEA8D285126EE008FF906 /* input_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input_base.cpp; sourceTree = "<group>"; };
+		9ABFEA90285126EE008FF906 /* translation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = translation.h; sourceTree = "<group>"; };
+		9ABFEA91285126EE008FF906 /* dls_synth_message_out.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dls_synth_message_out.h; sourceTree = "<group>"; };
+		9ABFEA93285126EE008FF906 /* message_in.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message_in.h; sourceTree = "<group>"; };
+		9ABFEA95285126EE008FF906 /* output_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output_base.h; sourceTree = "<group>"; };
+		9ABFEA96285126EE008FF906 /* _.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
+		9ABFEA98285126EE008FF906 /* message_out.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = message_out.cpp; sourceTree = "<group>"; };
+		9ABFEA9B285126EE008FF906 /* output_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = output_base.cpp; sourceTree = "<group>"; };
+		9ABFEA9D285126EE008FF906 /* sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sequencer.h; sourceTree = "<group>"; };
+		9ABFEAA5285126EE008FF906 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
+		9ABFEAA7285126EE008FF906 /* translation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = translation.cpp; sourceTree = "<group>"; };
+		9ABFEAAC285126EE008FF906 /* _music_midi_core_midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _music_midi_core_midi.h; sourceTree = "<group>"; };
+		9ABFEAAD285126EE008FF906 /* input_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input_base.h; sourceTree = "<group>"; };
+		9ABFEAAF285126EE008FF906 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
+		9ABFEAB0285126EE008FF906 /* message_out.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message_out.h; sourceTree = "<group>"; };
+		9ABFEAB3285126EE008FF906 /* time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = time.cpp; sourceTree = "<group>"; };
+		9ABFEAB9285126EE008FF906 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9AE6415C26706EA3005F3412 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE6415E26706EA3005F3412 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE6416026706EA3005F3412 /* libaqua.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaqua.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AE641642670760D005F3412 /* sequencer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sequencer.cpp; sourceTree = "<group>"; };
-		9AE641652670760E005F3412 /* sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sequencer.h; sourceTree = "<group>"; };
-		9AE641662670760E005F3412 /* output_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = output_base.cpp; sourceTree = "<group>"; };
-		9AE641672670760E005F3412 /* output_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output_base.h; sourceTree = "<group>"; };
-		9AE641682670760E005F3412 /* time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = time.cpp; sourceTree = "<group>"; };
-		9AE641692670760F005F3412 /* time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
-		9AE6417026707666005F3412 /* message_out.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message_out.h; sourceTree = "<group>"; };
-		9AE6417126707666005F3412 /* translation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = translation.h; sourceTree = "<group>"; };
-		9AE6417226707666005F3412 /* input_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input_base.cpp; sourceTree = "<group>"; };
-		9AE6417326707667005F3412 /* message_out.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = message_out.cpp; sourceTree = "<group>"; };
-		9AE6417426707667005F3412 /* message_in.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message_in.h; sourceTree = "<group>"; };
-		9AE6417526707667005F3412 /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
-		9AE6417626707667005F3412 /* message_in.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = message_in.cpp; sourceTree = "<group>"; };
-		9AE6417726707667005F3412 /* midi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi.cpp; sourceTree = "<group>"; };
-		9AE6417826707667005F3412 /* translation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = translation.cpp; sourceTree = "<group>"; };
-		9AE6417926707667005F3412 /* input_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input_base.h; sourceTree = "<group>"; };
 		9AE64184267080C2005F3412 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		9AE641862670813F005F3412 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		9AE644EE26709D1C005F3412 /* dls_synth_message_out.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dls_synth_message_out.cpp; sourceTree = "<group>"; };
-		9AE644EF26709D1C005F3412 /* dls_synth_message_out.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dls_synth_message_out.h; sourceTree = "<group>"; };
 		A1CFD778154F5EAA007447E2 /* libmusic_midi_core_midi.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libmusic_midi_core_midi.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		07B657B5190F3CBF002DAADE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		07B657C4190F3CBF002DAADE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,9 +228,41 @@
 			isa = PBXGroup;
 			children = (
 				9A3D17C6266EF29700AE9A5E /* libveriwell_multimedia.dylib */,
+				9A73510C284F94A4003986C7 /* libios_veriwell_multimedia.a */,
 				9A3D17C8266EF29700AE9A5E /* veriwell_multimedia_iosTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9ABFEA7D285126EE008FF906 /* music_midi_core_midi */ = {
+			isa = PBXGroup;
+			children = (
+				9ABFEA96285126EE008FF906 /* _.cpp */,
+				9ABFEAB9285126EE008FF906 /* _.h */,
+				9ABFEAAF285126EE008FF906 /* _factory.cpp */,
+				9ABFEAAC285126EE008FF906 /* _music_midi_core_midi.h */,
+				9ABFEA81285126EE008FF906 /* dls_synth_message_out.cpp */,
+				9ABFEA91285126EE008FF906 /* dls_synth_message_out.h */,
+				9ABFEA8A285126EE008FF906 /* framework.cpp */,
+				9ABFEAA5285126EE008FF906 /* framework.h */,
+				9ABFEA8D285126EE008FF906 /* input_base.cpp */,
+				9ABFEAAD285126EE008FF906 /* input_base.h */,
+				9ABFEA82285126EE008FF906 /* message_in.cpp */,
+				9ABFEA93285126EE008FF906 /* message_in.h */,
+				9ABFEA98285126EE008FF906 /* message_out.cpp */,
+				9ABFEAB0285126EE008FF906 /* message_out.h */,
+				9ABFEA86285126EE008FF906 /* midi.cpp */,
+				9ABFEA87285126EE008FF906 /* midi.h */,
+				9ABFEA9B285126EE008FF906 /* output_base.cpp */,
+				9ABFEA95285126EE008FF906 /* output_base.h */,
+				9ABFEA83285126EE008FF906 /* sequencer.cpp */,
+				9ABFEA9D285126EE008FF906 /* sequencer.h */,
+				9ABFEAB3285126EE008FF906 /* time.cpp */,
+				9ABFEA7E285126EE008FF906 /* time.h */,
+				9ABFEAA7285126EE008FF906 /* translation.cpp */,
+				9ABFEA90285126EE008FF906 /* translation.h */,
+			);
+			name = music_midi_core_midi;
 			sourceTree = "<group>";
 		};
 		A1CFD76D154F5EA7007447E2 = {
@@ -235,7 +271,7 @@
 				9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */,
 				9A8997BC177D0E7D00C7761E /* Carbon.framework */,
 				9AA1B449176361950019E812 /* Cocoa.framework */,
-				A1CFD896154FB715007447E2 /* music_midi_core_audio */,
+				9ABFEA7D285126EE008FF906 /* music_midi_core_midi */,
 				07B657D0190F3CBF002DAADE /* music_midi_core_audio_iosTests */,
 				07B657B9190F3CBF002DAADE /* Frameworks */,
 				A1CFD779154F5EAA007447E2 /* Products */,
@@ -252,38 +288,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A1CFD896154FB715007447E2 /* music_midi_core_audio */ = {
-			isa = PBXGroup;
-			children = (
-				9A8EAF7817C5640300C458D1 /* _.cpp */,
-				9A3D17C9266EF31C00AE9A5E /* _.h */,
-				9AE644EE26709D1C005F3412 /* dls_synth_message_out.cpp */,
-				9AE644EF26709D1C005F3412 /* dls_synth_message_out.h */,
-				9A8EAF6C17C5640300C458D1 /* exception.cpp */,
-				9A8EAF6D17C5640300C458D1 /* exception.h */,
-				9A8EAF6E17C5640300C458D1 /* _factory.cpp */,
-				9A1B496616A4A10100875A94 /* framework.cpp */,
-				9A1B496316A494A600875A94 /* framework.h */,
-				9AE6417226707666005F3412 /* input_base.cpp */,
-				9AE6417926707667005F3412 /* input_base.h */,
-				9AE6417626707667005F3412 /* message_in.cpp */,
-				9AE6417426707667005F3412 /* message_in.h */,
-				9AE6417326707667005F3412 /* message_out.cpp */,
-				9AE6417026707666005F3412 /* message_out.h */,
-				9AE6417726707667005F3412 /* midi.cpp */,
-				9AE6417526707667005F3412 /* midi.h */,
-				9AE641662670760E005F3412 /* output_base.cpp */,
-				9AE641672670760E005F3412 /* output_base.h */,
-				9AE641642670760D005F3412 /* sequencer.cpp */,
-				9AE641652670760E005F3412 /* sequencer.h */,
-				9AE641682670760E005F3412 /* time.cpp */,
-				9AE641692670760F005F3412 /* time.h */,
-				9AE6417826707667005F3412 /* translation.cpp */,
-				9AE6417126707666005F3412 /* translation.h */,
-			);
-			name = music_midi_core_audio;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -291,17 +295,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AE6417B26707667005F3412 /* translation.h in Headers */,
-				9A1B496416A494A600875A94 /* framework.h in Headers */,
-				9AE644F126709D1C005F3412 /* dls_synth_message_out.h in Headers */,
-				9A8EAF7C17C5640300C458D1 /* exception.h in Headers */,
-				9AE6418326707667005F3412 /* input_base.h in Headers */,
-				9AE6417A26707667005F3412 /* message_out.h in Headers */,
-				9AE6416F2670760F005F3412 /* time.h in Headers */,
-				9AE6416B2670760F005F3412 /* sequencer.h in Headers */,
-				9AE6416D2670760F005F3412 /* output_base.h in Headers */,
-				9AE6417E26707667005F3412 /* message_in.h in Headers */,
-				9AE6417F26707667005F3412 /* midi.h in Headers */,
+				9ABFEAE0285126EF008FF906 /* input_base.h in Headers */,
+				9ABFEACE285126EE008FF906 /* message_in.h in Headers */,
+				9ABFEAD0285126EE008FF906 /* output_base.h in Headers */,
+				9ABFEACB285126EE008FF906 /* translation.h in Headers */,
+				9ABFEAE3285126EF008FF906 /* message_out.h in Headers */,
+				9ABFEABA285126EE008FF906 /* time.h in Headers */,
+				9ABFEACC285126EE008FF906 /* dls_synth_message_out.h in Headers */,
+				9ABFEAC2285126EE008FF906 /* midi.h in Headers */,
+				9ABFEAEA285126EF008FF906 /* _.h in Headers */,
+				9ABFEADF285126EF008FF906 /* _music_midi_core_midi.h in Headers */,
+				9ABFEADB285126EF008FF906 /* framework.h in Headers */,
+				9ABFEAD7285126EE008FF906 /* sequencer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,12 +318,11 @@
 			buildConfigurationList = 07B657DC190F3CBF002DAADE /* Build configuration list for PBXNativeTarget "ios_music_midi_core_midi" */;
 			buildPhases = (
 				07B657B4190F3CBF002DAADE /* Sources */,
-				07B657B5190F3CBF002DAADE /* Frameworks */,
-				07B657B6190F3CBF002DAADE /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9A73511B284F9613003986C7 /* PBXTargetDependency */,
 			);
 			name = ios_music_midi_core_midi;
 			productName = music_midi_core_audio_ios;
@@ -417,6 +421,13 @@
 			remoteRef = 9A3D17C7266EF29700AE9A5E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9A73510C284F94A4003986C7 /* libios_veriwell_multimedia.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_veriwell_multimedia.a;
+			remoteRef = 9A73510B284F94A4003986C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -435,10 +446,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A986D7D1D226CCB001F4C04 /* exception.cpp in Sources */,
-				9A986D7E1D226CCB001F4C04 /* _factory.cpp in Sources */,
-				9A986D841D226CCB001F4C04 /* _.cpp in Sources */,
-				9A986D851D226CCB001F4C04 /* framework.cpp in Sources */,
+				9A24D0A928515F5A000C9873 /* dls_synth_message_out.cpp in Sources */,
+				9A24D0A728515F5A000C9873 /* sequencer.cpp in Sources */,
+				9A24D0AB28515F5A000C9873 /* message_out.cpp in Sources */,
+				9A24D0AA28515F5A000C9873 /* message_in.cpp in Sources */,
+				9A24D0A528515F5A000C9873 /* output_base.cpp in Sources */,
+				9A24D0A228515F5A000C9873 /* _factory.cpp in Sources */,
+				9A24D0A428515F5A000C9873 /* framework.cpp in Sources */,
+				9A24D0AD28515F5A000C9873 /* time.cpp in Sources */,
+				9A24D0A328515F5A000C9873 /* translation.cpp in Sources */,
+				9A24D0A828515F5A000C9873 /* input_base.cpp in Sources */,
+				9A24D0AC28515F5A000C9873 /* midi.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,19 +472,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A1B496716A4A10100875A94 /* framework.cpp in Sources */,
-				9AE6416A2670760F005F3412 /* sequencer.cpp in Sources */,
-				9AE6418026707667005F3412 /* message_in.cpp in Sources */,
-				9AE6416E2670760F005F3412 /* time.cpp in Sources */,
-				9AE6416C2670760F005F3412 /* output_base.cpp in Sources */,
-				9A8EAF7B17C5640300C458D1 /* exception.cpp in Sources */,
-				9A8EAF7D17C5640300C458D1 /* _factory.cpp in Sources */,
-				9AE644F026709D1C005F3412 /* dls_synth_message_out.cpp in Sources */,
-				9AE6418126707667005F3412 /* midi.cpp in Sources */,
-				9AE6418226707667005F3412 /* translation.cpp in Sources */,
-				9AE6417C26707667005F3412 /* input_base.cpp in Sources */,
-				9A8EAF8717C5640300C458D1 /* _.cpp in Sources */,
-				9AE6417D26707667005F3412 /* message_out.cpp in Sources */,
+				9ABFEAD2285126EE008FF906 /* message_out.cpp in Sources */,
+				9ABFEAE5285126EF008FF906 /* time.cpp in Sources */,
+				9ABFEAC1285126EE008FF906 /* midi.cpp in Sources */,
+				9ABFEADD285126EF008FF906 /* translation.cpp in Sources */,
+				9ABFEAD1285126EE008FF906 /* _.cpp in Sources */,
+				9ABFEABF285126EE008FF906 /* sequencer.cpp in Sources */,
+				9ABFEABD285126EE008FF906 /* dls_synth_message_out.cpp in Sources */,
+				9ABFEAD5285126EE008FF906 /* output_base.cpp in Sources */,
+				9ABFEABE285126EE008FF906 /* message_in.cpp in Sources */,
+				9ABFEAC8285126EE008FF906 /* input_base.cpp in Sources */,
+				9ABFEAE2285126EF008FF906 /* _factory.cpp in Sources */,
+				9ABFEAC5285126EE008FF906 /* framework.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +494,11 @@
 			isa = PBXTargetDependency;
 			target = 07B657B7190F3CBF002DAADE /* ios_music_midi_core_midi */;
 			targetProxy = 07B657CD190F3CBF002DAADE /* PBXContainerItemProxy */;
+		};
+		9A73511B284F9613003986C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ios_veriwell_multimedia;
+			targetProxy = 9A73511A284F9613003986C7 /* PBXContainerItemProxy */;
 		};
 		9AE6415A26706E78005F3412 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -500,17 +522,9 @@
 		07B657D8190F3CBF002DAADE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				EXECUTABLE_EXTENSION = a;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACH_O_TYPE = staticlib;
+				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -518,16 +532,10 @@
 		07B657D9190F3CBF002DAADE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				ENABLE_NS_ASSERTIONS = NO;
 				EXECUTABLE_EXTENSION = a;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACH_O_TYPE = staticlib;
+				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -654,7 +662,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
-				
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;

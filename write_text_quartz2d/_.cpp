@@ -66,3 +66,6 @@
 //
 //}
 //
+
+
+IMPLEMENT_THIS_TYPE(write_text_quartz2d);

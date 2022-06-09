@@ -28,27 +28,19 @@
 		9AAEB4DC25291CFF00B39BA1 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DB25291CFF00B39BA1 /* libacme.dylib */; };
 		9AAEB4DE25291CFF00B39BA1 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DD25291CFF00B39BA1 /* libapex.dylib */; };
 		9AAEB4E025291CFF00B39BA1 /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DF25291CFF00B39BA1 /* libaqua.dylib */; };
-		9AC9451C1828E7CE00AA7325 /* aligned_pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9451A1828E7CE00AA7325 /* aligned_pointer.cpp */; };
-		9AC9451D1828E7CE00AA7325 /* aligned_pointer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC9451B1828E7CE00AA7325 /* aligned_pointer.h */; };
-		9AC9452018290B7700AA7325 /* aligned.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9451E18290B7700AA7325 /* aligned.cpp */; };
-		9AC9452118290B7800AA7325 /* aligned.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC9451F18290B7700AA7325 /* aligned.h */; };
 		9AF4C4721F83DD7500197385 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B496616A4A10100875A94 /* framework.cpp */; };
 		9AF4C4731F83DD7500197385 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2917C563A300C458D1 /* _factory.cpp */; };
 		9AF4C4741F83DD7500197385 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2B17C563A300C458D1 /* translation.cpp */; };
-		9AF4C4751F83DD7500197385 /* aligned_pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9451A1828E7CE00AA7325 /* aligned_pointer.cpp */; };
-		9AF4C4761F83DD7500197385 /* aligned.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9451E18290B7700AA7325 /* aligned.cpp */; };
 		9AF4C4771F83DD7500197385 /* wave_in.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2D17C563A300C458D1 /* wave_in.cpp */; };
 		9AF4C4781F83DD7500197385 /* toolbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07A27B391808C1F3005F7B47 /* toolbox.cpp */; };
 		9AF4C4791F83DD7500197385 /* wave_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2F17C563A300C458D1 /* wave_out.cpp */; };
 		9AF4C4821F83DD7500197385 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A1B496316A494A600875A94 /* framework.h */; };
 		9AF4C4831F83DD7500197385 /* toolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A27B3A1808C1F3005F7B47 /* toolbox.h */; };
 		9AF4C4841F83DD7500197385 /* command.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2817C563A300C458D1 /* command.h */; };
-		9AF4C4851F83DD7500197385 /* aligned_pointer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC9451B1828E7CE00AA7325 /* aligned_pointer.h */; };
 		9AF4C4871F83DD7500197385 /* translation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2C17C563A300C458D1 /* translation.h */; };
 		9AF4C4881F83DD7500197385 /* wave_in.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2E17C563A300C458D1 /* wave_in.h */; };
 		9AF4C4891F83DD7500197385 /* wave_out.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF3017C563A300C458D1 /* wave_out.h */; };
 		9AF4C48A1F83DD7500197385 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF3217C563A300C458D1 /* _.h */; };
-		9AF4C48B1F83DD7500197385 /* aligned.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC9451F18290B7700AA7325 /* aligned.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,10 +120,6 @@
 		9AAEB4DB25291CFF00B39BA1 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAEB4DD25291CFF00B39BA1 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAEB4DF25291CFF00B39BA1 /* libaqua.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaqua.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AC9451A1828E7CE00AA7325 /* aligned_pointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aligned_pointer.cpp; sourceTree = "<group>"; };
-		9AC9451B1828E7CE00AA7325 /* aligned_pointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aligned_pointer.h; sourceTree = "<group>"; };
-		9AC9451E18290B7700AA7325 /* aligned.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aligned.cpp; sourceTree = "<group>"; };
-		9AC9451F18290B7700AA7325 /* aligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aligned.h; sourceTree = "<group>"; };
 		9AEA2378267B12A1006F4A68 /* _audio_core_audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _audio_core_audio.h; sourceTree = "<group>"; };
 		9AF4C48F1F83DD7500197385 /* libios_audio_core_audio.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_audio_core_audio.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1CFD778154F5EAA007447E2 /* libaudio_core_audio.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libaudio_core_audio.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +147,7 @@
 		9A3D15FA266EEC8A00AE9A5E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A3D15FE266EEC8A00AE9A5E /* libapex_apple.dylib */,
+				9A3D15FE266EEC8A00AE9A5E /* apex_apple.dylib */,
 				9A1EAA5C284B046F000F05A8 /* libios_apex_apple.a */,
 			);
 			name = Products;
@@ -169,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				9A741580266BCDCE00552531 /* libaudio.dylib */,
-				9A741582266BCDCE00552531 /* aios_audio.dylib */,
+				9A741582266BCDCE00552531 /* libios_audio.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,10 +215,6 @@
 				9A8EAF3017C563A300C458D1 /* wave_out.h */,
 				9A1B496316A494A600875A94 /* framework.h */,
 				9A1B496616A4A10100875A94 /* framework.cpp */,
-				9AC9451A1828E7CE00AA7325 /* aligned_pointer.cpp */,
-				9AC9451B1828E7CE00AA7325 /* aligned_pointer.h */,
-				9AC9451E18290B7700AA7325 /* aligned.cpp */,
-				9AC9451F18290B7700AA7325 /* aligned.h */,
 			);
 			name = audio_core_audio;
 			sourceTree = "<group>";
@@ -245,12 +229,10 @@
 				9AF4C4821F83DD7500197385 /* framework.h in Headers */,
 				9AF4C4831F83DD7500197385 /* toolbox.h in Headers */,
 				9AF4C4841F83DD7500197385 /* command.h in Headers */,
-				9AF4C4851F83DD7500197385 /* aligned_pointer.h in Headers */,
 				9AF4C4871F83DD7500197385 /* translation.h in Headers */,
 				9AF4C4881F83DD7500197385 /* wave_in.h in Headers */,
 				9AF4C4891F83DD7500197385 /* wave_out.h in Headers */,
 				9AF4C48A1F83DD7500197385 /* _.h in Headers */,
-				9AF4C48B1F83DD7500197385 /* aligned.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,12 +243,10 @@
 				9A1B496416A494A600875A94 /* framework.h in Headers */,
 				07A27B3C1808C1F3005F7B47 /* toolbox.h in Headers */,
 				9A8EAF3317C563A300C458D1 /* command.h in Headers */,
-				9AC9451D1828E7CE00AA7325 /* aligned_pointer.h in Headers */,
 				9A8EAF3717C563A300C458D1 /* translation.h in Headers */,
 				9A8EAF3917C563A300C458D1 /* wave_in.h in Headers */,
 				9A8EAF3B17C563A300C458D1 /* wave_out.h in Headers */,
 				9A8EAF3C17C563A300C458D1 /* _.h in Headers */,
-				9AC9452118290B7800AA7325 /* aligned.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,13 +331,14 @@
 		9A1EAA5C284B046F000F05A8 /* libios_apex_apple.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = ios_apex_apple.a;
+			path = libios_apex_apple.a;
 			remoteRef = 9A1EAA5B284B046F000F05A8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A3D15FE266EEC8A00AE9A5E /* libapex_apple.dylib */ = {
+		9A3D15FE266EEC8A00AE9A5E /* apex_apple.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
+			name = apex_apple.dylib;
 			path = libapex_apple.dylib;
 			remoteRef = 9A3D15FD266EEC8A00AE9A5E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -369,10 +350,10 @@
 			remoteRef = 9A74157F266BCDCE00552531 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A741582266BCDCE00552531 /* aios_audio.dylib */ = {
+		9A741582266BCDCE00552531 /* libios_audio.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = aios_audio.dylib;
+			path = libios_audio.a;
 			remoteRef = 9A741581266BCDCE00552531 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -386,8 +367,6 @@
 				9AF4C4721F83DD7500197385 /* framework.cpp in Sources */,
 				9AF4C4731F83DD7500197385 /* _factory.cpp in Sources */,
 				9AF4C4741F83DD7500197385 /* translation.cpp in Sources */,
-				9AF4C4751F83DD7500197385 /* aligned_pointer.cpp in Sources */,
-				9AF4C4761F83DD7500197385 /* aligned.cpp in Sources */,
 				9AF4C4771F83DD7500197385 /* wave_in.cpp in Sources */,
 				9AF4C4781F83DD7500197385 /* toolbox.cpp in Sources */,
 				9AF4C4791F83DD7500197385 /* wave_out.cpp in Sources */,
@@ -401,8 +380,6 @@
 				9A1B496716A4A10100875A94 /* framework.cpp in Sources */,
 				9A8EAF3417C563A300C458D1 /* _factory.cpp in Sources */,
 				9A8EAF3617C563A300C458D1 /* translation.cpp in Sources */,
-				9AC9451C1828E7CE00AA7325 /* aligned_pointer.cpp in Sources */,
-				9AC9452018290B7700AA7325 /* aligned.cpp in Sources */,
 				9A8EAF3817C563A300C458D1 /* wave_in.cpp in Sources */,
 				07A27B3B1808C1F3005F7B47 /* toolbox.cpp in Sources */,
 				9A8EAF3A17C563A300C458D1 /* wave_out.cpp in Sources */,

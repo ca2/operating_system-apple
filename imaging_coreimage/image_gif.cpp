@@ -151,7 +151,7 @@ namespace coreimage_imaging
 
             auto p = __new(image_frame);
 
-            p->m_pimage = create_image();
+            p->m_pimage = m_pcontext->m_pauracontext->create_image();
             
             p->m_pimage->create({ w, h });
 

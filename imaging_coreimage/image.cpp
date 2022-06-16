@@ -200,8 +200,12 @@ namespace coreimage_imaging
       if(pcolorref == nullptr)
       {
          
-         throw exception(error_null_pointer);
-         
+         pimage->set_nok();
+
+         pimage->m_estatus = ::error_failed;
+
+         return;
+
       }
       
       pimage->create({w, h});

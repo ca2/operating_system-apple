@@ -65,6 +65,13 @@
 			remoteGlobalIDString = 9A15A596264B53DC0080670E;
 			remoteInfo = apex_apple;
 		};
+		9A7319BB285BFA3400542140 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A741586266BD07800552531 /* apex_apple.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A8E9DD9282A2FB6005FF778;
+			remoteInfo = ios_apex_apple;
+		};
 		9A74157F266BCDCE00552531 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
@@ -263,6 +270,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A7319BC285BFA3400542140 /* PBXTargetDependency */,
 				9A903F60284B2A49006B9FD2 /* PBXTargetDependency */,
 			);
 			name = ios_audio_core_audio;
@@ -393,6 +401,11 @@
 			isa = PBXTargetDependency;
 			name = apex_apple;
 			targetProxy = 9A637E5626723FC7005D0AC3 /* PBXContainerItemProxy */;
+		};
+		9A7319BC285BFA3400542140 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ios_apex_apple;
+			targetProxy = 9A7319BB285BFA3400542140 /* PBXContainerItemProxy */;
 		};
 		9A741584266BCDE200552531 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

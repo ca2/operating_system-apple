@@ -53,11 +53,14 @@ namespace draw2d_quartz2d
       {
 
          CGRect rectangle;
+         
+         __pointer(rectangle_item) pitem = m_pitem;
 
-         rectangle.origin.x = m_x1;
-         rectangle.origin.y = m_y1;
-         rectangle.size.width = m_x2 - m_x1;
-         rectangle.size.height = m_y2 - m_y1;
+         __copy(rectangle, pitem->m_rectangle);
+//         rectangle.origin.x = m_x1;
+//         rectangle.origin.y = m_y1;
+//         rectangle.size.width = m_x2 - m_x1;
+//         rectangle.size.height = m_y2 - m_y1;
          
          CGPathAddRect (ppath, nullptr, rectangle);
 
@@ -65,25 +68,35 @@ namespace draw2d_quartz2d
       else if(m_eregion == ::draw2d::e_region_polygon)
       {
 
-         CGPathMoveToPoint(ppath, nullptr, m_lppoints[0].x, m_lppoints[0].y);
+         __pointer(polygon_item) pitem = m_pitem;
 
-         for(i32 i = 1; i < m_nCount; i++)
+         if(pitem->m_polygon.has_element())
          {
+            
+            CGPathMoveToPoint(ppath, nullptr, pitem->m_polygon[0].x, pitem->m_polygon[0].y);
 
-            CGPathAddLineToPoint(ppath, nullptr, m_lppoints[i].x, m_lppoints[i].y);
+            for(i32 i = 1; i < pitem->m_polygon.size(); i++)
+            {
+
+               CGPathAddLineToPoint(ppath, nullptr, pitem->m_polygon[i].x, pitem->m_polygon[i].y);
+
+            }
 
          }
-
+         
       }
       else if(m_eregion == ::draw2d::e_region_ellipse)
       {
 
          CGRect rectangle;
+         
+         __pointer(ellipse_item) pitem = m_pitem;
 
-         rectangle.origin.x = m_x1;
-         rectangle.origin.y = m_y1;
-         rectangle.size.width = m_x2 - m_x1;
-         rectangle.size.height = m_y2 - m_y1;
+         __copy(rectangle, pitem->m_rectangle);
+//         rectangle.origin.x = m_x1;
+//         rectangle.origin.y = m_y1;
+//         rectangle.size.width = m_x2 - m_x1;
+//         rectangle.size.height = m_y2 - m_y1;
 
          CGPathAddEllipseInRect(ppath, nullptr, rectangle);
 

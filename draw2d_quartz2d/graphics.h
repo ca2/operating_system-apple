@@ -213,12 +213,19 @@ namespace draw2d_quartz2d
       void reset_clip() override;
       void _intersect_clip() override;
       virtual void _intersect_eo_clip();
-      //void _add_shape(const ::rectangle_f64 & rectangle) override;
-      void _add_shape(const ::rectangle_f64 & rectangle) override;
-      //void _add_shape(const ::ellipse & ellipse) override;
-      void _add_shape(const ::ellipse & ellipse) override;
-      //void _add_shape(const ::polygon_i32 & polygon_i32) override;
-      void _add_shape(const ::polygon_f64 & polygon) override;
+      
+      
+      void intersect_clip(const ::rectangle & rectangle) override;
+      void intersect_clip(const ::ellipse & ellipse) override;
+      void intersect_clip(const ::polygon & polygon) override;
+      
+      
+      void _add_clipping_shape(const ::rectangle & rectangle, ___shape < ::draw2d::region > * pshape) override;
+      void _add_shape(const ::rectangle & rectangle);
+      void _add_clipping_shape(const ::ellipse & ellipse, ___shape < ::draw2d::region > * pshape) override;
+      void _add_shape(const ::ellipse & ellipse);
+      void _add_clipping_shape(const ::polygon & polygon, ___shape < ::draw2d::region > * pshape) override;
+      void _add_shape(const ::polygon & polygon);
 
       
       //virtual void on_apply_clip_region() override;
@@ -304,6 +311,8 @@ namespace draw2d_quartz2d
   //    void Pie(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd) override;
       void set_polygon(const POINT_F64 * lpPoints, count nCount);
       void set_polygon(const ::point_f64 * lpPoints, count nCount);
+      void set_polygon(const POINT_F64 * lpPoints, count nCount, const ::POINT_F64 & pointOffset);
+      void set_polygon(const ::point_f64 * lpPoints, count nCount, const ::point_f64 & pointOffset);
       void fill_polygon(const POINT_F64 * lpPoints, count nCount) override;
 //      void fill_polygon(const ::point_f64* lpPoints, count nCount) override;
       void draw_polygon(const POINT_F64 * lpPoints, count nCount) override;
@@ -543,8 +552,8 @@ namespace draw2d_quartz2d
 //      void _set(::draw2d::path::line * pline);
       void _fill_inline(::draw2d::path * ppath, ::draw2d::brush * pbrush);
       void _draw_inline(::draw2d::path * ppath, ::draw2d::pen * ppen);
-      void _fill_inline(___shape * pshape, ::draw2d::brush * pbrush);
-      void _draw_inline(___shape * pshape, ::draw2d::pen * ppen);
+      void _fill_inline(___shape < ::draw2d::path > * pshape, ::draw2d::brush * pbrush);
+      void _draw_inline(___shape < ::draw2d::path > * pshape, ::draw2d::pen * ppen);
       void _set(::write_text::text_out & textout);
       void _fill_inline(::write_text::text_out & textout, ::draw2d::brush * pbrush);
       void _draw_inline(::write_text::text_out & textout, ::draw2d::pen * ppen);

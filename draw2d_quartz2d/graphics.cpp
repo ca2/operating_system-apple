@@ -3,6 +3,7 @@
 #include <math.h>
 #include <memory.h>
 #include <CoreFoundation/CFDictionary.h>
+#include "aura/graphics/draw2d/path_simple_optimization.h"
 
 
 //unsigned long apple_get_fonts(char *** p);
@@ -496,16 +497,32 @@ namespace draw2d_quartz2d
    void graphics::set_polygon(const point_f64 * p, count c)
    {
 
-      CGContextMoveToPoint(m_pdc, p[0].x, p[0].y);
+      set_polygon((const POINT_F64 *) p, c);
+
+   }
+
+
+   void graphics::set_polygon(const POINT_F64 * p, count c, const POINT_F64 & pointOffset)
+   {
+
+      CGContextMoveToPoint(m_pdc, p[0].x + pointOffset.x, p[0].y + pointOffset.y);
 
       for(i32 i = 1; i < c; i++)
       {
 
-         CGContextAddLineToPoint(m_pdc, p[i].x, p[i].y);
+         CGContextAddLineToPoint(m_pdc, p[i].x + pointOffset.x, p[i].y + pointOffset.y);
 
       }
-
+      
       CGContextClosePath(m_pdc);
+
+   }
+
+
+   void graphics::set_polygon(const point_f64 * p, count c, const point_f64 & pointOffset)
+   {
+
+      set_polygon((const POINT_F64 *) p, c, (const POINT_F64 &) pointOffset);
 
    }
 
@@ -1374,14 +1391,14 @@ namespace draw2d_quartz2d
       if(!ppath->m_bPersistent)
       {
          
-         if(ppath->m_psimpleoptimization.is_null())
+         if(ppath->m_poptimization.is_null())
          {
             
-            ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
+            ppath->m_poptimization = __new(::draw2d::path_simple_optimization(ppath));
             
          }
          
-         if(ppath->m_psimpleoptimization->draw(this, nullptr))
+         if(ppath->m_poptimization->draw(this, nullptr))
          {
             
             return;
@@ -1407,14 +1424,14 @@ namespace draw2d_quartz2d
       if(!ppath->m_bPersistent)
       {
          
-         if(ppath->m_psimpleoptimization.is_null())
+         if(ppath->m_poptimization.is_null())
          {
             
-            ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
+            ppath->m_poptimization = __new(::draw2d::path_simple_optimization(ppath));
             
          }
 
-         if(ppath->m_psimpleoptimization->fill(this, nullptr))
+         if(ppath->m_poptimization->fill(this, nullptr))
          {
             
             return;
@@ -1440,14 +1457,14 @@ namespace draw2d_quartz2d
       if(!ppath->m_bPersistent)
       {
          
-         if(ppath->m_psimpleoptimization.is_null())
+         if(ppath->m_poptimization.is_null())
          {
             
-            ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
+            ppath->m_poptimization = __new(::draw2d::path_simple_optimization(ppath));
             
          }
 
-         if(ppath->m_psimpleoptimization->draw(this, ppen))
+         if(ppath->m_poptimization->draw(this, ppen))
          {
             
             return;
@@ -1473,14 +1490,14 @@ namespace draw2d_quartz2d
       if(!ppath->m_bPersistent)
       {
          
-         if(ppath->m_psimpleoptimization.is_null())
+         if(ppath->m_poptimization.is_null())
          {
             
-            ppath->m_psimpleoptimization = __new(::draw2d::path::simple_optimization(ppath));
+            ppath->m_poptimization = __new(::draw2d::path_simple_optimization(ppath));
             
          }
          
-         if(ppath->m_psimpleoptimization->fill(this, pbrush))
+         if(ppath->m_poptimization->fill(this, pbrush))
          {
             
             return;
@@ -1826,6 +1843,86 @@ namespace draw2d_quartz2d
       
    }
 
+   
+   void graphics::intersect_clip(const ::rectangle & rectangle)
+   {
+      
+      CGRect r;
+      
+      auto rectangleOffset = rectangle;
+      
+      rectangleOffset += m_pointAddShapeTranslate;
+      
+      __copy(r, rectangleOffset);
+   
+      CGContextAddRect(m_pdc, r);
+      
+      CGContextClip(m_pdc);
+
+   }
+
+
+   void graphics::intersect_clip(const ::ellipse & ellipse)
+   {
+      
+      CGRect r;
+      
+      auto rectangleOffset = ellipse;
+      
+      rectangleOffset += m_pointAddShapeTranslate;
+      
+      __copy(r, rectangleOffset);
+
+      CGContextBeginPath(m_pdc);
+   
+      CGContextAddEllipseInRect(m_pdc, r);
+      
+      CGContextClip(m_pdc);
+
+   }
+
+
+   void graphics::intersect_clip(const ::polygon & polygon)
+   {
+      
+      CGContextBeginPath(m_pdc);
+   
+      set_polygon(polygon.get_data(), polygon.get_count(), m_pointAddShapeTranslate);
+
+      CGContextClip(m_pdc);
+
+   }
+
+
+   void graphics::_add_clipping_shape(const ::rectangle & rectangle, ___shape < ::draw2d::region > * pshape)
+   {
+   
+      _add_shape(rectangle);
+      
+      _intersect_clip();
+      
+   }
+
+
+   void graphics::_add_clipping_shape(const ::ellipse & ellipse, ___shape < ::draw2d::region > * pshape)
+   {
+      
+      _add_shape(ellipse);
+      
+      _intersect_clip();
+      
+   }
+
+
+   void graphics::_add_clipping_shape(const ::polygon & polygon, ___shape < ::draw2d::region > * pshape)
+   {
+      
+      _add_shape(polygon);
+      
+      _intersect_clip();
+      
+   }
+
 
    void graphics::_intersect_eo_clip()
    {
@@ -1951,13 +2048,6 @@ namespace draw2d_quartz2d
    void graphics::get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex)
    {
       
-//      //xxxtext
-//
-//      size.cx = 48;
-//      size.cy = 20;
-//
-//      return;
-
       synchronous_lock synchronouslock(mutex());
 
       CGFloat ascent, descent, leading, width;
@@ -2201,27 +2291,29 @@ namespace draw2d_quartz2d
 
       if(pregion->m_eregion == ::draw2d::e_region_combine)
       {
+         
+         __pointer(::draw2d::region::combine_item) pitem = pregion->m_pitem;
 
-         if(pregion->m_ecombine == ::draw2d::e_combine_intersect)
+         if(pitem->m_ecombine == ::draw2d::e_combine_intersect)
          {
 
-            _clip(pregion->m_pregion1);
+            _clip(pitem->m_pregion1);
 
             _intersect_eo_clip();
 
-            _add_path(pregion->m_pregion2);
+            _add_path(pitem->m_pregion2);
 
             _intersect_eo_clip();
 
          }
-         else if(pregion->m_ecombine == ::draw2d::e_combine_add)
+         else if(pitem->m_ecombine == ::draw2d::e_combine_add)
          {
 
-            _clip(pregion->m_pregion1);
+            _clip(pitem->m_pregion1);
 
             _intersect_clip();;
 
-            _add_path(pregion->m_pregion2);
+            _add_path(pitem->m_pregion2);
 
             _intersect_clip();;
 
@@ -2230,34 +2322,44 @@ namespace draw2d_quartz2d
       }
       else if(pregion->m_eregion == ::draw2d::e_region_rect)
       {
+         
+         __pointer(::draw2d::region::rectangle_item) pitem = pregion->m_pitem;
 
          CGRect rectangle;
+         
+         __copy(rectangle, pitem->m_rectangle);
 
-         rectangle.origin.x = pregion->m_x1;
-         rectangle.origin.y = pregion->m_y1;
-         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
-         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
+//         rectangle.origin.x = pregion->m_x1;
+//         rectangle.origin.y = pregion->m_y1;
+//         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
+//         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
          
          CGContextAddRect (m_pdc, rectangle);
 
       }
       else if(pregion->m_eregion == ::draw2d::e_region_polygon)
       {
+         
+         __pointer(::draw2d::region::polygon_item) pitem = pregion->m_pitem;
 
          CGContextBeginPath (m_pdc);
 
-         set_polygon(pregion->m_lppoints, pregion->m_nCount);
+         set_polygon(pitem->m_polygon.get_data(), pitem->m_polygon.get_size());
 
       }
       else if(pregion->m_eregion == ::draw2d::e_region_ellipse)
       {
 
+         __pointer(::draw2d::region::ellipse_item) pitem = pregion->m_pitem;
+         
          CGRect rectangle;
 
-         rectangle.origin.x = pregion->m_x1;
-         rectangle.origin.y = pregion->m_y1;
-         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
-         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
+         __copy(rectangle, pitem->m_rectangle);
+
+//         rectangle.origin.x = pregion->m_x1;
+//         rectangle.origin.y = pregion->m_y1;
+//         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
+//         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
 
          CGContextAddEllipseInRect(m_pdc, rectangle);
 
@@ -2272,7 +2374,7 @@ namespace draw2d_quartz2d
       else
       {
          
-         _intersect_clip();;
+         _intersect_clip();
          
       }
 
@@ -2292,12 +2394,16 @@ namespace draw2d_quartz2d
       if(pregion->m_eregion == ::draw2d::e_region_rect)
       {
 
-         CGRect rectangle;
+         __pointer(::draw2d::region::rectangle_item) pitem = pregion->m_pitem;
 
-         rectangle.origin.x = pregion->m_x1;
-         rectangle.origin.y = pregion->m_y1;
-         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
-         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
+         CGRect rectangle;
+         
+         __copy(rectangle, pitem->m_rectangle);
+
+//         rectangle.origin.x = pregion->m_x1;
+//         rectangle.origin.y = pregion->m_y1;
+//         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
+//         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
 
          CGContextAddRect (m_pdc, rectangle);
 
@@ -2305,20 +2411,26 @@ namespace draw2d_quartz2d
       else if(pregion->m_eregion == ::draw2d::e_region_polygon)
       {
 
+         __pointer(::draw2d::region::polygon_item) pitem = pregion->m_pitem;
+
          CGContextBeginPath (m_pdc);
 
-         set_polygon(pregion->m_lppoints, pregion->m_nCount);
+         set_polygon(pitem->m_polygon.get_data(), pitem->m_polygon.get_size());
 
       }
       else if(pregion->m_eregion == ::draw2d::e_region_ellipse)
       {
 
-         CGRect rectangle;
+         __pointer(::draw2d::region::ellipse_item) pitem = pregion->m_pitem;
 
-         rectangle.origin.x = pregion->m_x1;
-         rectangle.origin.y = pregion->m_y1;
-         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
-         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
+         CGRect rectangle;
+         
+         __copy(rectangle, pitem->m_rectangle);
+
+//         rectangle.origin.x = pregion->m_x1;
+//         rectangle.origin.y = pregion->m_y1;
+//         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
+//         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
 
          CGContextAddEllipseInRect(m_pdc, rectangle);
 
@@ -2326,28 +2438,30 @@ namespace draw2d_quartz2d
       else if(pregion->m_eregion == ::draw2d::e_region_combine)
       {
          
-         if(pregion->m_ecombine == ::draw2d::e_combine_intersect)
+         __pointer(::draw2d::region::combine_item) pitem = pregion->m_pitem;
+         
+         if(pitem->m_ecombine == ::draw2d::e_combine_intersect)
          {
 
-            _add_path(pregion->m_pregion1);
+            _add_path(pitem->m_pregion1);
             
             _intersect_eo_clip();
          
-            _add_path(pregion->m_pregion2);
+            _add_path(pitem->m_pregion2);
             
             _intersect_eo_clip();
 
          }
-         else if(pregion->m_ecombine == ::draw2d::e_combine_add)
+         else if(pitem->m_ecombine == ::draw2d::e_combine_add)
          {
 
-            _add_path(pregion->m_pregion1);
+            _add_path(pitem->m_pregion1);
             
-            _intersect_clip();;
+            _intersect_clip();
          
-            _add_path(pregion->m_pregion2);
+            _add_path(pitem->m_pregion2);
             
-            _intersect_clip();;
+            _intersect_clip();
 
          }
 
@@ -2723,16 +2837,20 @@ namespace draw2d_quartz2d
          draw(imagedrawing);
 
       }
-      else
+      else if(pbrush->m_ebrush == ::draw2d::e_brush_solid)
       {
+         
+         pbrush->defer_update(this, 0);
+         
+         CGColorRef cgcolorref = (CGColorRef) pbrush->m_osdata[0];
 
-         if(pbrush->m_osdata[0])
+         if(cgcolorref)
          {
             
             if(m_pregion.is_null())
             {
 
-               CGContextSetFillColorWithColor(pgraphics, (CGColorRef) pbrush->m_osdata[0]);
+               CGContextSetFillColorWithColor(pgraphics, cgcolorref);
 
                CGContextFillPath(pgraphics);
 
@@ -2740,7 +2858,7 @@ namespace draw2d_quartz2d
             else
             {
 
-               CGContextSetFillColorWithColor(pgraphics, (CGColorRef) pbrush->m_osdata[0]);
+               CGContextSetFillColorWithColor(pgraphics, cgcolorref);
 
                if(bContextClip)
                {
@@ -2764,7 +2882,7 @@ namespace draw2d_quartz2d
             if(m_pregion.is_null())
             {
 
-               internal_set_fill_color(pbrush->m_color);
+               CGContextSetFillColorWithColor(m_pdc, cgcolorref);
 
                CGContextFillPath(pgraphics);
 
@@ -2772,7 +2890,7 @@ namespace draw2d_quartz2d
             else
             {
 
-               internal_set_fill_color(pbrush->m_color);
+               CGContextSetFillColorWithColor(m_pdc, cgcolorref);
 
                if(bContextClip)
                {
@@ -2876,7 +2994,7 @@ namespace draw2d_quartz2d
    void graphics::_draw_inline(::draw2d::path * ppath, ::draw2d::pen * ppen)
    {
 
-      for(auto & pshape : ppath->m_shapea)
+      for(auto & pshape : *ppath->m_pshapea)
       {
          
          switch(pshape->eshape())
@@ -2907,7 +3025,7 @@ namespace draw2d_quartz2d
    void graphics::_fill_inline(::draw2d::path * ppath, ::draw2d::brush * pbrush)
    {
 
-      for(auto & pshape : ppath->m_shapea)
+      for(auto & pshape : *ppath->m_pshapea)
       {
          
          if(pshape->eshape() == e_shape_text_out)
@@ -2928,7 +3046,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_draw_inline(___shape * pshape, ::draw2d::pen * ppen)
+   void graphics::_draw_inline(___shape <::draw2d::path> * pshape, ::draw2d::pen * ppen)
    {
 
       switch(pshape->eshape())
@@ -2946,7 +3064,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_fill_inline(___shape * pshape, ::draw2d::brush * pbrush)
+   void graphics::_fill_inline(___shape < ::draw2d::path > * pshape, ::draw2d::brush * pbrush)
    {
 
       switch(pshape->eshape())
@@ -3211,7 +3329,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          str.find_replace("\t", "");
 
       }
-
+      
       double y;
 
       if(ealign & e_align_bottom)
@@ -3248,7 +3366,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          ::width(rectangle),
          str,
          kCGTextFill,
-         e_align_top_left,
+         ealign,
          edrawtext,
          true,
          nullptr,
@@ -3701,14 +3819,16 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          if(ealign & (e_align_bottom | e_align_vertical_center))
          {
    
-            double cy = -(ascent + descent + leading);
+            //double cy = -(ascent + descent + leading);
+            
+            double cy = (ascent + descent);
    
-            if(leading <= 0)
-            {
-   
-               cy -= descent;
-   
-            }
+//            if(leading <= 0)
+//            {
+//
+//               cy -= descent;
+//
+//            }
    
             if(ealign & e_align_vertical_center)
             {
@@ -3717,7 +3837,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
    
             }
    
-            y += cy;
+            y -= cy;
    
          }
 //         if(pbrush)

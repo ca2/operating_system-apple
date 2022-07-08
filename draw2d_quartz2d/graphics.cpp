@@ -1854,6 +1854,8 @@ namespace draw2d_quartz2d
       rectangleOffset += m_pointAddShapeTranslate;
       
       __copy(r, rectangleOffset);
+      
+      CGContextBeginPath(m_pdc);
    
       CGContextAddRect(m_pdc, r);
       

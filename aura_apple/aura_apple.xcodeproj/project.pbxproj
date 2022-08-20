@@ -21,7 +21,7 @@
 		9A8E9E19282A2FEB005FF778 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFDB2653DAF000CC8096 /* _.h */; };
 		9A8E9E1A282A2FEB005FF778 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD32653DAF000CC8096 /* framework.h */; };
 		9A8E9E1B282A2FEB005FF778 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFC92653DAF000CC8096 /* node.h */; };
-		9A8E9E1C282A2FEB005FF778 /* _aura_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD72653DAF000CC8096 /* _aura_apple.h */; };
+		9A8E9E1C282A2FEB005FF778 /* _library.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD72653DAF000CC8096 /* _library.h */; };
 		9A8E9E1E282A2FEB005FF778 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFD02653DAF000CC8096 /* _factory.cpp */; };
 		9A8E9E1F282A2FEB005FF778 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFC42653DAF000CC8096 /* framework.cpp */; };
 		9A8E9E21282A2FEB005FF778 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFC82653DAF000CC8096 /* node.cpp */; };
@@ -33,7 +33,7 @@
 		9AC2CFEA2653DAF000CC8096 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFC92653DAF000CC8096 /* node.h */; };
 		9AC2CFEE2653DAF000CC8096 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFD02653DAF000CC8096 /* _factory.cpp */; };
 		9AC2CFF02653DAF000CC8096 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD32653DAF000CC8096 /* framework.h */; };
-		9AC2CFF42653DAF000CC8096 /* _aura_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD72653DAF000CC8096 /* _aura_apple.h */; };
+		9AC2CFF42653DAF000CC8096 /* _library.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD72653DAF000CC8096 /* _library.h */; };
 		9AC2CFF82653DAF000CC8096 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFDB2653DAF000CC8096 /* _.h */; };
 /* End PBXBuildFile section */
 
@@ -127,7 +127,7 @@
 		9AC2CFC92653DAF000CC8096 /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
 		9AC2CFD02653DAF000CC8096 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9AC2CFD32653DAF000CC8096 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
-		9AC2CFD72653DAF000CC8096 /* _aura_apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _aura_apple.h; sourceTree = "<group>"; };
+		9AC2CFD72653DAF000CC8096 /* _library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
 		9AC2CFDB2653DAF000CC8096 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9AC2D04A2653DBA900CC8096 /* aura_posix.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura_posix.xcodeproj; path = "../../operating-system-posix/aura_posix/aura_posix.xcodeproj"; sourceTree = "<group>"; };
 		9AC2D1F126543B3200CC8096 /* _mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm.h; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 			children = (
 				9A24D03528513F22000C9873 /* _.cpp */,
 				9AC2CFDB2653DAF000CC8096 /* _.h */,
-				9AC2CFD72653DAF000CC8096 /* _aura_apple.h */,
+				9AC2CFD72653DAF000CC8096 /* _library.h */,
 				9AC2CFD02653DAF000CC8096 /* _factory.cpp */,
 				9AC2D1F126543B3200CC8096 /* _mm.h */,
 				9AC2CFC42653DAF000CC8096 /* framework.cpp */,
@@ -247,7 +247,7 @@
 				9AC2CFF82653DAF000CC8096 /* _.h in Headers */,
 				9AC2CFF02653DAF000CC8096 /* framework.h in Headers */,
 				9AC2CFEA2653DAF000CC8096 /* node.h in Headers */,
-				9AC2CFF42653DAF000CC8096 /* _aura_apple.h in Headers */,
+				9AC2CFF42653DAF000CC8096 /* _library.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +258,7 @@
 				9A8E9E19282A2FEB005FF778 /* _.h in Headers */,
 				9A8E9E1A282A2FEB005FF778 /* framework.h in Headers */,
 				9A8E9E1B282A2FEB005FF778 /* node.h in Headers */,
-				9A8E9E1C282A2FEB005FF778 /* _aura_apple.h in Headers */,
+				9A8E9E1C282A2FEB005FF778 /* _library.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,7 +510,7 @@
 					"$(WorkspaceDir)/source",
 					"$(WorkspaceDir)/source/include",
 					"$(WorkspaceDir)/source/app",
-					"$(WorkspaceDir)/source/app/_include",
+					"$(WorkspaceDir)/source/app/include",
 					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include",
@@ -597,7 +597,7 @@
 					"$(WorkspaceDir)/source",
 					"$(WorkspaceDir)/source/include",
 					"$(WorkspaceDir)/source/app",
-					"$(WorkspaceDir)/source/app/_include",
+					"$(WorkspaceDir)/source/app/include",
 					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include",

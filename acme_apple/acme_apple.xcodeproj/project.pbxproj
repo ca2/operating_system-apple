@@ -117,7 +117,7 @@
 		9A787E65264E22CB003DF8A0 /* _factory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9A787E66264E22CB003DF8A0 /* framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9A787E68264E22CB003DF8A0 /* _c_mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _c_mm.h; sourceTree = "<group>"; };
-		9A787E69264E22CB003DF8A0 /* _acme_apple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _acme_apple.h; sourceTree = "<group>"; };
+		9A787E69264E22CB003DF8A0 /* _library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
 		9A787E6A264E22CB003DF8A0 /* timer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = timer.mm; sourceTree = "<group>"; };
 		9A787E6B264E22CB003DF8A0 /* DDInvocationGrabber.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DDInvocationGrabber.mm; sourceTree = "<group>"; };
 		9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UncaughtExceptionHandler.mm; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 				9A734A50284F5E37003986C7 /* CAHostTimeBase.h */,
 				9A787E64264E22CB003DF8A0 /* _.cpp */,
 				9A787E6D264E22CB003DF8A0 /* _.h */,
-				9A787E69264E22CB003DF8A0 /* _acme_apple.h */,
+				9A787E69264E22CB003DF8A0 /* _library.h */,
 				9A787E59264E22CB003DF8A0 /* _apple.mm */,
 				9A787E68264E22CB003DF8A0 /* _c_mm.h */,
 				9A787E65264E22CB003DF8A0 /* _factory.cpp */,
@@ -491,7 +491,7 @@
 					"$(WorkspaceDir)/source",
 					"$(WorkspaceDir)/source/include",
 					"$(WorkspaceDir)/source/app",
-					"$(WorkspaceDir)/source/app/_include",
+					"$(WorkspaceDir)/source/app/include",
 					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include",
@@ -574,7 +574,7 @@
 					"$(WorkspaceDir)/source",
 					"$(WorkspaceDir)/source/include",
 					"$(WorkspaceDir)/source/app",
-					"$(WorkspaceDir)/source/app/_include",
+					"$(WorkspaceDir)/source/app/include",
 					"$(WorkspaceDir)/operating-system",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include",

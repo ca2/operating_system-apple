@@ -8,7 +8,8 @@
 #pragma once
 
 
-#include "app-veriwell/multimedia/multimedia/_multimedia.h"
+#include "app-veriwell/multimedia/ikaraoke/_.h"
+#include "app-veriwell/multimedia/music/midi/_.h"
 #include <CoreMIDI/MIDIServices.h>
 #define __MACOSX_CORE__
 //#include "RtMidi.h"

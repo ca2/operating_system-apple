@@ -9,7 +9,13 @@
 #include "audio_core_audio/_.h"
 
 
-#include "audio_core_audio/_audio_core_audio.h"
+#if BROAD_PRECOMPILED_HEADER
+
+
+#include "audio_core_audio/_library.h"
+
+
+#endif
 
 
 #include "aqua/_defer.h"

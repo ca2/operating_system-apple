@@ -8,8 +8,9 @@
 #pragma once
 
 
-#include "app-veriwell/multimedia/ikaraoke/_.h"
-#include "app-veriwell/multimedia/music/midi/_.h"
+#include "app-core/audio/imedia/_.h"
+#include "app-veriwell/multimedia/ikaraoke/_component.h"
+#include "app-veriwell/multimedia/music/midi/_component.h"
 #include <CoreMIDI/MIDIServices.h>
 #define __MACOSX_CORE__
 //#include "RtMidi.h"
@@ -30,28 +31,28 @@
 //#include "player/music_midi_core_audio_player.h"
 
 
-#include "input_base.h"
-
-
-#include "output_base.h"
-          
-
-#include "message_in.h"
-
-
-#include "message_out.h"
-
-
-#include "dls_synth_message_out.h"
-
-
-#include "sequencer.h"
-
-
-//#include "factory_exchange.h"
-
-
-#include "midi.h"
+//#include "input_base.h"
+//
+//
+//#include "output_base.h"
+//          
+//
+//#include "message_in.h"
+//
+//
+//#include "message_out.h"
+//
+//
+//#include "dls_synth_message_out.h"
+//
+//
+//#include "sequencer.h"
+//
+//
+////#include "factory_exchange.h"
+//
+//
+//#include "midi.h"
 
 
 

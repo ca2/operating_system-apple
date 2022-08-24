@@ -5,7 +5,13 @@
 //  Created by Camilo Sasuke on 2021-06-09 03:56 BRT <3ThomasBorregaardSørensen__!!
 //  Copyright © 2021 ca2 Desenvolvimento de Sofware Ltda. All rights reserved.
 //
+
 #include "framework.h"
+#include "app-veriwell/multimedia/music/midi/sequence.h"
+#include "app-veriwell/multimedia/music/midi/sequencer.h"
+#include "app-veriwell/multimedia/music/midi/message_out.h"
+#include "dls_synth_message_out.h"
+#include <AudioToolbox/AudioToolbox.h>
 
 
 namespace music

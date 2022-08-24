@@ -4,8 +4,13 @@
 //
 //  Created by Camilo Sasuke on 2021-06-09 03:55 BRT <3ThomasBorregaardSørensen__!!
 //  Copyright © 2021 ca2 Desenvolvimento de Sofware Ltda. All rights reserved.
+// Accelerating Build 2022-08-22 21:03 <3ThomasBorregaardSorensen!!
 //
 #pragma once
+
+
+#include <AudioToolbox/AUGraph.h>
+#include <AudioUnit/AudioUnit.h>
 
 
 namespace music

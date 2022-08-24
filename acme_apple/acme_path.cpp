@@ -2,6 +2,9 @@
 // Recreated on 2021-05-16 15:07 <3ThomasBS_ // for macOS
 // From windowing_ios by camilo on 2022-05-11 06:19 PM <3ThomasBorregaardSorensen!!
 #include "framework.h"
+#if !BROAD_PRECOMPILED_HEADER
+#include "_library.h"
+#endif
 #include "acme/filesystem/filesystem/acme_path.h"
 #include "acme_path.h"
 

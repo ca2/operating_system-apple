@@ -44,13 +44,12 @@
 		9ABFEAD7285126EE008FF906 /* sequencer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEA9D285126EE008FF906 /* sequencer.h */; };
 		9ABFEADB285126EF008FF906 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAA5285126EE008FF906 /* framework.h */; };
 		9ABFEADD285126EF008FF906 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAA7285126EE008FF906 /* translation.cpp */; };
-		9ABFEADF285126EF008FF906 /* _music_midi_core_midi.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAAC285126EE008FF906 /* _music_midi_core_midi.h */; };
+		9ABFEADF285126EF008FF906 /* _library.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAAC285126EE008FF906 /* _library.h */; };
 		9ABFEAE0285126EF008FF906 /* input_base.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAAD285126EE008FF906 /* input_base.h */; };
 		9ABFEAE2285126EF008FF906 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAAF285126EE008FF906 /* _factory.cpp */; };
 		9ABFEAE3285126EF008FF906 /* message_out.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAB0285126EE008FF906 /* message_out.h */; };
 		9ABFEAE5285126EF008FF906 /* time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAB3285126EE008FF906 /* time.cpp */; };
 		9ABFEAEA285126EF008FF906 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEAB9285126EE008FF906 /* _.h */; };
-		9AE6415B26706E96005F3412 /* libveriwell_multimedia.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3D17C6266EF29700AE9A5E /* libveriwell_multimedia.dylib */; };
 		9AE6415D26706EA3005F3412 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE6415C26706EA3005F3412 /* libacme.dylib */; };
 		9AE6415F26706EA3005F3412 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE6415E26706EA3005F3412 /* libapex.dylib */; };
 		9AE6416126706EA3005F3412 /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE6416026706EA3005F3412 /* libaqua.dylib */; };
@@ -67,26 +66,26 @@
 			remoteGlobalIDString = 07B657B7190F3CBF002DAADE;
 			remoteInfo = music_midi_core_audio_ios;
 		};
-		9A3D17C5266EF29700AE9A5E /* PBXContainerItemProxy */ = {
+		9A1FB76C28B43A7C009B4146 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9A4406D424DDCF5C00175A63;
+			remoteGlobalIDString = 9A1FB4E128B3FD88009B4146;
 			remoteInfo = veriwell_multimedia;
 		};
-		9A3D17C7266EF29700AE9A5E /* PBXContainerItemProxy */ = {
+		9A1FB76E28B43A7C009B4146 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 07B6584B190F3CE7002DAADE;
-			remoteInfo = veriwell_multimedia_iosTests;
-		};
-		9A73510B284F94A4003986C7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9A7350E2284F795B003986C7;
+			remoteGlobalIDString = 9A1FB4E228B3FD88009B4146;
 			remoteInfo = ios_veriwell_multimedia;
+		};
+		9A1FB77028B43A7C009B4146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A1FB4E328B3FD88009B4146;
+			remoteInfo = veriwell_multimedia_iosTests;
 		};
 		9A73511A284F9613003986C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -147,7 +146,7 @@
 		9ABFEA9D285126EE008FF906 /* sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sequencer.h; sourceTree = "<group>"; };
 		9ABFEAA5285126EE008FF906 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9ABFEAA7285126EE008FF906 /* translation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = translation.cpp; sourceTree = "<group>"; };
-		9ABFEAAC285126EE008FF906 /* _music_midi_core_midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _music_midi_core_midi.h; sourceTree = "<group>"; };
+		9ABFEAAC285126EE008FF906 /* _library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
 		9ABFEAAD285126EE008FF906 /* input_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input_base.h; sourceTree = "<group>"; };
 		9ABFEAAF285126EE008FF906 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9ABFEAB0285126EE008FF906 /* message_out.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message_out.h; sourceTree = "<group>"; };
@@ -181,7 +180,6 @@
 				9AE6415D26706EA3005F3412 /* libacme.dylib in Frameworks */,
 				9AE6415F26706EA3005F3412 /* libapex.dylib in Frameworks */,
 				9AE6416126706EA3005F3412 /* libaqua.dylib in Frameworks */,
-				9AE6415B26706E96005F3412 /* libveriwell_multimedia.dylib in Frameworks */,
 				9A941C521FF34F9E0028686E /* CoreAudio.framework in Frameworks */,
 				9AA1B44A176361950019E812 /* Cocoa.framework in Frameworks */,
 				9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */,
@@ -227,9 +225,9 @@
 		9A3D17C1266EF29700AE9A5E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A3D17C6266EF29700AE9A5E /* libveriwell_multimedia.dylib */,
-				9A73510C284F94A4003986C7 /* libios_veriwell_multimedia.a */,
-				9A3D17C8266EF29700AE9A5E /* veriwell_multimedia_iosTests.xctest */,
+				9A1FB76D28B43A7C009B4146 /* libveriwell_multimedia.dylib */,
+				9A1FB76F28B43A7C009B4146 /* libios_veriwell_multimedia.a */,
+				9A1FB77128B43A7C009B4146 /* veriwell_multimedia_iosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,7 +238,7 @@
 				9ABFEA96285126EE008FF906 /* _.cpp */,
 				9ABFEAB9285126EE008FF906 /* _.h */,
 				9ABFEAAF285126EE008FF906 /* _factory.cpp */,
-				9ABFEAAC285126EE008FF906 /* _music_midi_core_midi.h */,
+				9ABFEAAC285126EE008FF906 /* _library.h */,
 				9ABFEA81285126EE008FF906 /* dls_synth_message_out.cpp */,
 				9ABFEA91285126EE008FF906 /* dls_synth_message_out.h */,
 				9ABFEA8A285126EE008FF906 /* framework.cpp */,
@@ -304,7 +302,7 @@
 				9ABFEACC285126EE008FF906 /* dls_synth_message_out.h in Headers */,
 				9ABFEAC2285126EE008FF906 /* midi.h in Headers */,
 				9ABFEAEA285126EF008FF906 /* _.h in Headers */,
-				9ABFEADF285126EF008FF906 /* _music_midi_core_midi.h in Headers */,
+				9ABFEADF285126EF008FF906 /* _library.h in Headers */,
 				9ABFEADB285126EF008FF906 /* framework.h in Headers */,
 				9ABFEAD7285126EE008FF906 /* sequencer.h in Headers */,
 			);
@@ -407,25 +405,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A3D17C6266EF29700AE9A5E /* libveriwell_multimedia.dylib */ = {
+		9A1FB76D28B43A7C009B4146 /* libveriwell_multimedia.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libveriwell_multimedia.dylib;
-			remoteRef = 9A3D17C5266EF29700AE9A5E /* PBXContainerItemProxy */;
+			remoteRef = 9A1FB76C28B43A7C009B4146 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A3D17C8266EF29700AE9A5E /* veriwell_multimedia_iosTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = veriwell_multimedia_iosTests.xctest;
-			remoteRef = 9A3D17C7266EF29700AE9A5E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A73510C284F94A4003986C7 /* libios_veriwell_multimedia.a */ = {
+		9A1FB76F28B43A7C009B4146 /* libios_veriwell_multimedia.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libios_veriwell_multimedia.a;
-			remoteRef = 9A73510B284F94A4003986C7 /* PBXContainerItemProxy */;
+			remoteRef = 9A1FB76E28B43A7C009B4146 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A1FB77128B43A7C009B4146 /* veriwell_multimedia_iosTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = veriwell_multimedia_iosTests.xctest;
+			remoteRef = 9A1FB77028B43A7C009B4146 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -730,7 +728,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system",
-					"$(WorkspaceDir)/operating-system//storage-$(PLATFORM_MODIFIER)/library/x64/$(CONFIGURATION)",
+					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
 					"$(WorkspaceDir)/operating-system",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;

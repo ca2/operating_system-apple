@@ -6,6 +6,16 @@
 //  Copyright © 2019 ca2 Desenvolvimento de Sofware Ltda. All rights reserved.
 //
 #include "framework.h"
+#include "app-veriwell/multimedia/music/midi/attribute_message.h"
+#include "app-veriwell/multimedia/music/midi/midi_listener.h"
+#include "app-veriwell/multimedia/music/midi/midi_listener.h"
+#include "app-veriwell/multimedia/music/midi/midi_listener_set.h"
+#include "app-veriwell/multimedia/music/midi/sequence.h"
+#include "app-veriwell/multimedia/music/midi/sequencer.h"
+#include "sequencer.h"
+#include "app-veriwell/multimedia/music/midi/midi.h"
+#include "midi.h"
+#include <AudioToolbox/MusicPlayer.h>
 
 
 namespace music
@@ -42,11 +52,7 @@ namespace music
          ::music::midi::sequencer(psequence, strDevice)
          {
            
-            auto psystem = m_psystem->m_paquasystem;
- 
-            auto pmultimedia = psystem->multimedia()->m_pveriwellmultimediaThis;
- 
-            m_pmidi = pmultimedia->midi()->get_device_midi(strDevice);
+            m_pmidi = psequence->get_midi(strDevice);
             
             index iDevice = m_iDevice;
             

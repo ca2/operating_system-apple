@@ -5,8 +5,17 @@
 //  Created by Camilo Sasuke Tsumanuma on 9/8/16.
 //  Copyright © 2016 ca2 Desenvolvimento de Sofware Ltda. All rights reserved.
 //
-
 #include "framework.h"
+#include "app-veriwell/multimedia/music/midi/attribute_message.h"
+#include "app-veriwell/multimedia/music/midi/midi_listener.h"
+#include "app-veriwell/multimedia/music/midi/midi_listener_set.h"
+#include "app-veriwell/multimedia/music/midi/sequence.h"
+#include "app-veriwell/multimedia/music/midi/sequencer.h"
+#include "app-veriwell/multimedia/music/midi/message_in.h"
+#include "input_base.h"
+#include "message_in.h"
+#include "app-veriwell/multimedia/music/midi/midi.h"
+#include "midi.h"
 
 
 namespace music

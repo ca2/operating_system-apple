@@ -7,6 +7,17 @@
 //
 
 #include "framework.h"
+#include "app-veriwell/multimedia/music/midi/_.h"
+#include "app-veriwell/multimedia/music/midi/attribute_message.h"
+#include "app-veriwell/multimedia/music/midi/midi_listener.h"
+#include "app-veriwell/multimedia/music/midi/midi_listener_set.h"
+#include "app-veriwell/multimedia/music/midi/sequence.h"
+#include "app-veriwell/multimedia/music/midi/sequencer.h"
+#include "app-veriwell/multimedia/music/midi/message_out.h"
+#include "output_base.h"
+#include "message_out.h"
+#include "app-veriwell/multimedia/music/midi/midi.h"
+#include "midi.h"
 
 
 namespace music

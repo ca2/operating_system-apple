@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 ca2 Desenvolvimento de Sofware Ltda. All rights reserved.
 //
 #include "framework.h"
+#if !BROAD_PRECOMPILED_HEADER
+#include "_library.h"
+#endif
 
 
 namespace multimedia

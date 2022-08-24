@@ -5,6 +5,9 @@
 //  Created by Camilo Sasuke on 2021-06-05 12:40 BRT <3ThomasBS_!!
 //
 #include "framework.h"
+#if !BROAD_PRECOMPILED_HEADER
+#include "_library.h"
+#endif
 
 
 char * mm_error_string(OSStatus status);

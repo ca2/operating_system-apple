@@ -127,7 +127,7 @@
 		9AAEB4DB25291CFF00B39BA1 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAEB4DD25291CFF00B39BA1 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAEB4DF25291CFF00B39BA1 /* libaqua.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaqua.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AEA2378267B12A1006F4A68 /* _audio_core_audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _audio_core_audio.h; sourceTree = "<group>"; };
+		9AEA2378267B12A1006F4A68 /* _library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
 		9AF4C48F1F83DD7500197385 /* libios_audio_core_audio.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_audio_core_audio.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1CFD778154F5EAA007447E2 /* libaudio_core_audio.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libaudio_core_audio.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -209,9 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				9A8EAF3217C563A300C458D1 /* _.h */,
-				9AEA2378267B12A1006F4A68 /* _audio_core_audio.h */,
-				9A8EAF2817C563A300C458D1 /* command.h */,
 				9A8EAF2917C563A300C458D1 /* _factory.cpp */,
+				9AEA2378267B12A1006F4A68 /* _library.h */,
+				9A8EAF2817C563A300C458D1 /* command.h */,
 				07A27B391808C1F3005F7B47 /* toolbox.cpp */,
 				07A27B3A1808C1F3005F7B47 /* toolbox.h */,
 				9A8EAF2B17C563A300C458D1 /* translation.cpp */,

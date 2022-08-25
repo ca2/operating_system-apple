@@ -6,9 +6,9 @@
 //  Copyright © 2016 ca2 Desenvolvimento de Sofware Ltda. All rights reserved.
 //
 #include "framework.h"
-#include "app-veriwell/multimedia/music/midi/attribute_message.h"
-#include "app-veriwell/multimedia/music/midi/midi_listener.h"
-#include "app-veriwell/multimedia/music/midi/midi_listener_set.h"
+//#include "app-veriwell/multimedia/music/midi/attribute_message.h"
+//#include "app-veriwell/multimedia/music/midi/midi_listener.h"
+//#include "app-veriwell/multimedia/music/midi/midi_listener_set.h"
 #include "app-veriwell/multimedia/music/midi/sequence.h"
 #include "app-veriwell/multimedia/music/midi/sequencer.h"
 #include "app-veriwell/multimedia/music/midi/message_in.h"

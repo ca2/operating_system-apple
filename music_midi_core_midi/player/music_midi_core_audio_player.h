@@ -54,7 +54,7 @@ namespace music
             virtual void OnMidiOutDeviceChange() override;
 
             uint32_t GetMidiOutDevice() override;
-            void PostNotifyEvent(::music::midi::player::e_notify_event eevent) override;
+            void PostNotifyEvent(::music::midi::player::enum_notify_event eevent) override;
 
             imedia_time RateToTicks(double dRate) override;
 

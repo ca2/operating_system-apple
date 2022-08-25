@@ -403,7 +403,7 @@ namespace music
          }
          
          
-         void player::PostNotifyEvent(::music::midi::player::e_notify_event eevent)
+         void player::PostNotifyEvent(::music::midi::player::enum_notify_event eevent)
          {
             if(m_puie != NULL)
             {

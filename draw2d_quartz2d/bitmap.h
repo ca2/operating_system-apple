@@ -1,6 +1,10 @@
 #pragma once
 
 
+#include "object.h"
+#include "aura/graphics/draw2d/bitmap.h"
+
+
 namespace draw2d_quartz2d
 {
 

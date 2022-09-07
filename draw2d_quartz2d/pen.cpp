@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "pen.h"
 
 
 namespace draw2d_quartz2d

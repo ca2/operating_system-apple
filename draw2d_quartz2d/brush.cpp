@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "brush.h"
 
 
 namespace draw2d_quartz2d

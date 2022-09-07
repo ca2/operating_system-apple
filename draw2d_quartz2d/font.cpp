@@ -1,4 +1,9 @@
 #include "framework.h"
+#include "font.h"
+#include "draw2d.h"
+#include "aura/graphics/write_text/fonts.h"
+#include "aura/graphics/draw2d/draw2d.h"
+#include "aura/platform/system.h"
 
 
 double nsfont_get_ctweight(int iWeight);

@@ -1,4 +1,6 @@
 #include "framework.h"
+#include "path.h"
+#include "graphics.h"
 
 
 namespace draw2d_quartz2d

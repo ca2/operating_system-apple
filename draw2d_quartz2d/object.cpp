@@ -1,9 +1,9 @@
 #include "framework.h"
+#include "object.h"
 
 
 namespace draw2d_quartz2d
 {
-   
    
    
    object::object()

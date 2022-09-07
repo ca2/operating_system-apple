@@ -8,6 +8,9 @@
 #pragma once
 
 
+#include "app-core/audio/wave/base.h"
+
+
 namespace multimedia
 {
    

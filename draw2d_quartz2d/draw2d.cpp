@@ -1,4 +1,6 @@
 #include "framework.h"
+#include "draw2d.h"
+#include "aura/platform/system.h"
 
 
 namespace draw2d_quartz2d

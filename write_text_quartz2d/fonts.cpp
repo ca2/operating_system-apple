@@ -1,5 +1,6 @@
 // Created by camilo 2021-02-10 <3ThomasBorregaardSørensen__!!
 #include "framework.h"
+#include "fonts.h"
 #include "acme/operating_system/ansi/_pthread.h"
 
 

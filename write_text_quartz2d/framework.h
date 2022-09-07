@@ -9,25 +9,25 @@
 //#ifdef __cplusplus
 
 
-#ifdef __OBJC__
-
-
-#include "aura/include/objcpp.h"
-
-
-#else
+//#ifdef __OBJC__
+//
+//
+//#include "aura/include/objcpp.h"
+//
+//
+//#else
 
 
 #include "_.h"
 
 
-#include "_write_text_quartz2d.h"
+//#include "_write_text_quartz2d.h"
 
-
+#if !defined(__OBJC__)
 #include "aura/_defer.h"
-
-
 #endif
+
+//#endif
 
 
 

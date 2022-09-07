@@ -1,9 +1,22 @@
 #include "framework.h"
+#include "graphics.h"
+#include "bitmap.h"
+#include "image.h"
+#include "path.h"
+#include "brush.h"
+#include "pen.h"
 #include "aura/graphics/image/context_image.h"
+#include "aura/graphics/image/drawing.h"
+#include "aura/graphics/write_text/text_out.h"
+#include "aura/graphics/write_text/draw_text.h"
+#include "aura/platform/context.h"
 #include <math.h>
 #include <memory.h>
 #include <CoreFoundation/CFDictionary.h>
 #include "aura/graphics/draw2d/path_simple_optimization.h"
+#include "acme/primitive/geometry2d/_geometry2d.h"
+#include "acme/primitive/geometry2d/_collection.h"
+#include "acme/primitive/geometry2d/_defer.h"
 
 
 //unsigned long apple_get_fonts(char *** p);
@@ -1391,14 +1404,14 @@ namespace draw2d_quartz2d
       if(!ppath->m_bPersistent)
       {
          
-         if(ppath->m_poptimization.is_null())
+         if(ppath->m_ppathoptimization.is_null())
          {
             
-            ppath->m_poptimization = __new(::draw2d::path_simple_optimization(ppath));
+            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
             
          }
          
-         if(ppath->m_poptimization->draw(this, nullptr))
+         if(ppath->m_ppathoptimization->draw(this, nullptr))
          {
             
             return;
@@ -1424,14 +1437,14 @@ namespace draw2d_quartz2d
       if(!ppath->m_bPersistent)
       {
          
-         if(ppath->m_poptimization.is_null())
+         if(ppath->m_ppathoptimization.is_null())
          {
             
-            ppath->m_poptimization = __new(::draw2d::path_simple_optimization(ppath));
+            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
             
          }
 
-         if(ppath->m_poptimization->fill(this, nullptr))
+         if(ppath->m_ppathoptimization->fill(this, nullptr))
          {
             
             return;
@@ -1457,14 +1470,14 @@ namespace draw2d_quartz2d
       if(!ppath->m_bPersistent)
       {
          
-         if(ppath->m_poptimization.is_null())
+         if(ppath->m_ppathoptimization.is_null())
          {
             
-            ppath->m_poptimization = __new(::draw2d::path_simple_optimization(ppath));
+            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
             
          }
 
-         if(ppath->m_poptimization->draw(this, ppen))
+         if(ppath->m_ppathoptimization->draw(this, ppen))
          {
             
             return;
@@ -1490,14 +1503,14 @@ namespace draw2d_quartz2d
       if(!ppath->m_bPersistent)
       {
          
-         if(ppath->m_poptimization.is_null())
+         if(ppath->m_ppathoptimization.is_null())
          {
             
-            ppath->m_poptimization = __new(::draw2d::path_simple_optimization(ppath));
+            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
             
          }
          
-         if(ppath->m_poptimization->fill(this, pbrush))
+         if(ppath->m_ppathoptimization->fill(this, pbrush))
          {
             
             return;

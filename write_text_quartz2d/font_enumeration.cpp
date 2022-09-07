@@ -2,6 +2,7 @@
 // Recreated by camilo 2021-02-10 <3TBS_!!
 // Recreated by camilo on 2021-06-06 02:03 <3ThomasBS_!!
 #include "framework.h"
+#include "font_enumeration.h"
 #include "aura/graphics/write_text/font_enumeration_item.h"
 
 

@@ -1,6 +1,9 @@
 #pragma once
 
 
+#include "app-core/audio/wave/out.h"
+
+
 namespace multimedia
 {
 
@@ -33,7 +36,7 @@ namespace multimedia
          ::duration out_get_position() override;
          void out_filled(index iBuffer) override;
 
-         void out_open_ex(::thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::e_purpose epurpose) override;
+         void out_open_ex(::thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::enum_purpose epurpose) override;
          void out_stop() override;
          void out_close() override;
          void out_pause() override;

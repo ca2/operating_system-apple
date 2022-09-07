@@ -3,6 +3,7 @@
 #include "_library.h"
 #endif
 #include "aura/message.h"
+#include "acme/operating_system/apple/_apple.h"
 
 
 void WaveOutAudioQueueBufferCallback(void * inUserData, AudioQueueRef inAQ, AudioQueueBufferRef inCompleteAQBuffer);
@@ -19,7 +20,7 @@ namespace multimedia
       out::out()
       {
 
-         m_estate             = e_state_initial;
+         m_eoutstate          = ::wave::e_out_state_initial;
          m_pthreadCallback    = nullptr;
          m_estatusWave        = ::success;
          m_bDone              = false;
@@ -80,12 +81,12 @@ namespace multimedia
       }
 
 
-      void out::out_open_ex(thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::e_purpose epurpose)
+      void out::out_open_ex(thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::enum_purpose epurpose)
       {
 
          synchronous_lock synchronouslock(mutex());
 
-         if(m_Queue != nullptr && m_estate != e_state_initial)
+         if(m_Queue != nullptr && m_eoutstate != ::wave::e_out_state_initial)
          {
 
             return;
@@ -96,7 +97,7 @@ namespace multimedia
 
          ASSERT(m_Queue == nullptr);
 
-         ASSERT(m_estate == e_state_initial);
+         ASSERT(m_eoutstate == ::wave::e_out_state_initial);
 
          m_pwaveformat->m_waveformat.wFormatTag        = 0;
          m_pwaveformat->m_waveformat.nChannels         = (::u16) uiChannelCount;
@@ -114,7 +115,7 @@ namespace multimedia
 
          int iBufferSampleCount = 8192;
 
-         if(epurpose == ::wave::purpose_playground)
+         if(epurpose == ::wave::e_purpose_playground)
          {
 
             iBufferCount = 2;
@@ -122,7 +123,7 @@ namespace multimedia
             iBufferSampleCount = uiSamplesPerSec / 20;
 
          }
-         else if(epurpose == ::wave::purpose_playback)
+         else if(epurpose == ::wave::e_purpose_playback)
          {
 
             iBufferCount = 8;
@@ -130,7 +131,7 @@ namespace multimedia
             iBufferSampleCount = uiSamplesPerSec / 20;
 
          }
-         else if(epurpose == ::wave::purpose_live)
+         else if(epurpose == ::wave::e_purpose_live)
          {
 
             iBufferCount = 4;
@@ -173,7 +174,7 @@ namespace multimedia
 
          m_pprebuffer->open( m_pwaveformat->m_waveformat.nChannels, iBufferCount, iBufferSampleCount);
 
-         m_estate = e_state_opened;
+         m_eoutstate = ::wave::e_out_state_opened;
 
          //return m_estatusWave;
 
@@ -183,21 +184,21 @@ namespace multimedia
       void out::out_close()
       {
 
-         if(m_estate == e_state_playing)
+         if(m_eoutstate == ::wave::e_out_state_playing)
          {
 
             out_stop();
 
          }
 
-         if(m_estate != e_state_opened)
+         if(m_eoutstate != ::wave::e_out_state_opened)
          {
 
             return;
 
          }
 
-         m_estate = e_state_closing;
+         m_eoutstate = ::wave::e_out_state_closing;
 
          OSStatus status;
 
@@ -254,7 +255,7 @@ namespace multimedia
 
          m_Queue = nullptr;
 
-         m_estate = e_state_initial;
+         m_eoutstate = ::wave::e_out_state_initial;
 
          //return ::success;
 
@@ -264,10 +265,10 @@ namespace multimedia
       void out::out_filled(index iBuffer)
       {
 
-         if(out_get_state() != e_state_playing)
+         if(out_get_state() != ::wave::e_out_state_playing)
          {
 
-            TRACE("ERROR out::BufferReady while out_get_state() != e_state_playing");
+            TRACE("ERROR out::BufferReady while out_get_state() != ::wave::e_out_state_playing");
 
             return;
 
@@ -298,14 +299,14 @@ namespace multimedia
 
          synchronous_lock synchronouslock(mutex());
 
-         if(m_estate != e_state_playing && m_estate != e_state_paused)
+         if(m_eoutstate != ::wave::e_out_state_playing && m_eoutstate != ::wave::e_out_state_paused)
          {
 
             throw ::exception(error_failed);
 
          }
 
-         m_estate = e_state_stopping;
+         m_eoutstate = ::wave::e_out_state_stopping;
          
          OSStatus status = AudioQueueStop(m_Queue, false);
 
@@ -314,7 +315,7 @@ namespace multimedia
          if(m_estatusWave == ::success)
          {
 
-            m_estate = e_state_opened;
+            m_eoutstate = ::wave::e_out_state_opened;
 
          }
          
@@ -333,9 +334,9 @@ namespace multimedia
 
          synchronous_lock synchronouslock(mutex());
 
-         ASSERT(m_estate == e_state_playing);
+         ASSERT(m_eoutstate == ::wave::e_out_state_playing);
 
-         if(m_estate != e_state_playing)
+         if(m_eoutstate != ::wave::e_out_state_playing)
          {
 
             throw ::exception(error_failed);
@@ -356,7 +357,7 @@ namespace multimedia
          if(m_estatusWave == ::success)
          {
 
-            m_estate = e_state_paused;
+            m_eoutstate = ::wave::e_out_state_paused;
 
          }
 
@@ -375,9 +376,9 @@ namespace multimedia
 
          synchronous_lock synchronouslock(mutex());
 
-         ASSERT(m_estate == e_state_paused);
+         ASSERT(m_eoutstate == ::wave::e_out_state_paused);
 
-         if(m_estate != e_state_paused)
+         if(m_eoutstate != ::wave::e_out_state_paused)
          {
 
             m_estatusWave = error_failed;
@@ -429,7 +430,7 @@ namespace multimedia
          if(m_estatusWave == ::success)
          {
 
-            m_estate = e_state_playing;
+            m_eoutstate = ::wave::e_out_state_playing;
 
          }
 
@@ -568,7 +569,7 @@ namespace multimedia
       bool out::on_run_step()
       {
 
-         if(m_estate == e_state_playing)
+         if(m_eoutstate == ::wave::e_out_state_playing)
          {
 
             CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.25, false);

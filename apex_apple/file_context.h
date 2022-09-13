@@ -4,6 +4,9 @@
 #pragma once
 
 
+#include "apex_posix/file_context.h"
+
+
 namespace apex_apple
 {
 

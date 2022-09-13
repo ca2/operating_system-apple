@@ -1,7 +1,6 @@
 #include "framework.h"
-#if !BROAD_PRECOMPILED_HEADER
-#include "_library.h"
-#endif
+#include "wave_out.h"
+#include "translation.h"
 #include "aura/message.h"
 #include "acme/operating_system/apple/_apple.h"
 

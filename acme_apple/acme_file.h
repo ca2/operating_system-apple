@@ -7,6 +7,9 @@
 #pragma once
 
 
+#include "acme_posix/acme_file.h"
+
+
 namespace acme_apple
 {
 

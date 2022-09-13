@@ -4,19 +4,7 @@
 
 #ifdef __OBJC__
 
-#if defined(MACOS)
-
-#include "aura/operating_system/macos/_mm.h"
-
-#elif defined(APPLE_IOS)
-
-#include "aura/operating_system/ios/_mm.h"
-
-#else
-
-#error "Not AppleIos, not AppleMacos... what it is? (to be implemented)"
-
-#endif
+#include "aura/_.h"
 
 #else
 

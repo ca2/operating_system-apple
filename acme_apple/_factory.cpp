@@ -1,7 +1,6 @@
 #include "framework.h"
-#if !BROAD_PRECOMPILED_HEADER
-#include "_library.h"
-#endif
+#include "node.h"
+#include "stdio_file.h"
 
 
 __FACTORY_EXPORT void acme_posix_factory(::factory::factory * pfactory);

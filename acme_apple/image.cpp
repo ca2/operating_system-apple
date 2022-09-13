@@ -17,9 +17,6 @@
 //  Created by Camilo Sasuke on 2021-06-01 19:57 BRT <3ThomasBS_!!
 //
 #include "framework.h"
-#if !BROAD_PRECOMPILED_HEADER
-#include "_library.h"
-#endif
 #include "image.h"
 
 

@@ -6,6 +6,7 @@
 //
 #include "framework.h"
 #include "aura/graphics/image/save_image.h"
+#include "aura/platform/context.h"
 #include <CoreGraphics/CoreGraphics.h>
 
 

@@ -1,7 +1,5 @@
 #include "framework.h"
-#if !BROAD_PRECOMPILED_HEADER
-#include "_library.h"
-#endif
+#include "node.h"
 
 
 __FACTORY_EXPORT void aura_posix_factory(::factory::factory * pfactory);
@@ -18,8 +16,8 @@ __FACTORY_EXPORT void aura_apple_factory(::factory::factory * pfactory)
    
    apex_apple_factory(pfactory);
 
-   pfactory->add_factory_item < ::aura_posix::node, ::acme::node > ();
-   pfactory->add_factory_item < ::aura_posix::shell, ::user::shell > ();
+   pfactory->add_factory_item < ::aura_apple::node, ::acme::node > ();
+   //pfactory->add_factory_item < ::aura_posix::shell, ::user::shell > ();
 
 }
 

@@ -4,6 +4,9 @@
 #pragma once
 
 
+#include "acme_posix/acme_path.h"
+
+
 namespace acme_apple
 {
 

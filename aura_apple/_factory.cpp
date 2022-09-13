@@ -1,8 +1,5 @@
 #include "framework.h"
 #include "node.h"
-#if !BROAD_PRECOMPILED_HEADER
-#include "_library.h"
-#endif
 
 
 __FACTORY_EXPORT void aura_posix_factory(::factory::factory * pfactory);

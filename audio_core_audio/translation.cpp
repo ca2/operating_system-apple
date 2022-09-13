@@ -1,7 +1,6 @@
 #include "framework.h"
-#if !BROAD_PRECOMPILED_HEADER
-#include "_library.h"
-#endif
+#include "app-core/audio/wave/format.h"
+#include "aqua/multimedia/audio/_operating_system.h"
 
 
 namespace multimedia

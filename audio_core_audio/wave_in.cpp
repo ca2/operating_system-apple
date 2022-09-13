@@ -1,7 +1,6 @@
 #include "framework.h"
-#if !BROAD_PRECOMPILED_HEADER
-#include "_library.h"
-#endif
+#include "wave_in.h"
+#include "translation.h"
 #include "app-core/audio/decode/encoder.h"
 
 

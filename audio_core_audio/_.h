@@ -2,6 +2,7 @@
 
 
 #include "app-core/audio/_.h"
+#include <AudioToolbox/AudioToolbox.h>
 
 
 #if defined(_AUDIO_MMSYSTEM_LIBRARY)

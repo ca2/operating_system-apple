@@ -22,6 +22,7 @@
 		9A24D0AB28515F5A000C9873 /* message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA98285126EE008FF906 /* message_out.cpp */; };
 		9A24D0AC28515F5A000C9873 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA86285126EE008FF906 /* midi.cpp */; };
 		9A24D0AD28515F5A000C9873 /* time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAB3285126EE008FF906 /* time.cpp */; };
+		9A5ECD6F28CCC8500084D354 /* libveriwell_multimedia.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1FB76D28B43A7C009B4146 /* libveriwell_multimedia.dylib */; };
 		9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8997BC177D0E7D00C7761E /* Carbon.framework */; };
 		9A941C501FF34F880028686E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A941C4F1FF34F880028686E /* CoreMIDI.framework */; };
 		9A941C521FF34F9E0028686E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A941C511FF34F9E0028686E /* CoreAudio.framework */; };
@@ -174,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A5ECD6F28CCC8500084D354 /* libveriwell_multimedia.dylib in Frameworks */,
 				9AE641882670824A005F3412 /* AudioUnit.framework in Frameworks */,
 				9A941C501FF34F880028686E /* CoreMIDI.framework in Frameworks */,
 				9AE641872670813F005F3412 /* AudioToolbox.framework in Frameworks */,
@@ -349,9 +351,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1CFD77C154F5EAA007447E2 /* Build configuration list for PBXNativeTarget "music_midi_core_midi" */;
 			buildPhases = (
+				A1CFD776154F5EAA007447E2 /* Headers */,
 				A1CFD774154F5EAA007447E2 /* Sources */,
 				A1CFD775154F5EAA007447E2 /* Frameworks */,
-				A1CFD776154F5EAA007447E2 /* Headers */,
 				9AEA185327600221006437A3 /* CopyFiles */,
 			);
 			buildRules = (

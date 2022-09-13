@@ -6,11 +6,6 @@
 //  Copyright © 2021 ca2 Desenvolvimento de Sofware Ltda. All rights reserved.
 //
 #include "framework.h"
-//#if !BROAD_PRECOMPILED_HEADER
-//#include "_library.h"
-//#endif
-//#include "aura/graphics/draw2d/_component.h"
-#include "aura/graphics/image/_image.h"
 #include "aura/graphics/image/image.h"
 
 

@@ -9,6 +9,8 @@
 
 
 #include "app-veriwell/multimedia/_.h"
+#include <CoreMIDI/MIDIServices.h>
+#define __MACOSX_CORE__
 
 
 #if defined(_MUSIC_MIDI_CORE_MIDI_LIBRARY)

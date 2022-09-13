@@ -2,9 +2,6 @@
 #include "file_context.h"
 #include "process.h"
 #include "node.h"
-//#if !BROAD_PRECOMPILED_HEADER
-//#include "_library.h"
-//#endif
 
 
 __FACTORY_EXPORT void apex_posix_factory(::factory::factory * pfactory);

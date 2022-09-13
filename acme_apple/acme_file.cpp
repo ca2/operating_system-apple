@@ -5,9 +5,6 @@
 //  Created by Camilo Sasuke Thomas Borregaard Sørensen on 18/08/21.
 // From windowing_ios by camilo on 2022-05-11 06:20 PM <3ThomasBorregaardSorensen!!
 #include "framework.h"
-#if !BROAD_PRECOMPILED_HEADER
-#include "_library.h"
-#endif
 #include "acme/filesystem/filesystem/acme_file.h"
 #include "acme_file.h"
 

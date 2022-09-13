@@ -8,6 +8,10 @@
 #pragma once
 
 
+#include "aura_posix/node.h"
+#include "apex_apple/node.h"
+
+
 namespace aura_apple
 {
 

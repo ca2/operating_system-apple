@@ -1,9 +1,9 @@
 #include "framework.h"
-#if !BROAD_PRECOMPILED_HEADER
-#include "_library.h"
-#endif
-#include "_.h"
-
+//#if !BROAD_PRECOMPILED_HEADER
+//#include "_library.h"
+//#endif
+//#include "_.h"
+#include "stdio_file.h"
 
 #include <fcntl.h>
 

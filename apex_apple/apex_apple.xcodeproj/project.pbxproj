@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				9A413CDF266EC33F00C3FF0E /* apex_posix.dylib */,
-				9A8E9ECF282A331F005FF778 /* ios_apex_posix.a */,
+				9A8E9ECF282A331F005FF778 /* libios_apex_posix.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 				};
 			};
 			buildConfigurationList = 9A15A592264B53DC0080670E /* Build configuration list for PBXProject "apex_apple" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -344,7 +344,7 @@
 			remoteRef = 9A8E9DF2282A2FB6005FF778 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A8E9ECF282A331F005FF778 /* ios_apex_posix.a */ = {
+		9A8E9ECF282A331F005FF778 /* libios_apex_posix.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libios_apex_posix.a;

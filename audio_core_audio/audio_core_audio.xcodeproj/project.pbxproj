@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		07A27B461808E111005F7B47 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A27B451808E111005F7B47 /* AudioToolbox.framework */; };
 		9A1B496416A494A600875A94 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A1B496316A494A600875A94 /* framework.h */; };
 		9A1B496716A4A10100875A94 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B496616A4A10100875A94 /* framework.cpp */; };
-		9A741585266BD04C00552531 /* libaudio.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A741580266BCDCE00552531 /* libaudio.dylib */; };
 		9A74158D266BD08500552531 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A74158C266BD08500552531 /* libacme_apple.dylib */; };
 		9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8997BC177D0E7D00C7761E /* Carbon.framework */; };
 		9A8EAF3317C563A300C458D1 /* command.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8EAF2817C563A300C458D1 /* command.h */; };
@@ -28,6 +27,7 @@
 		9AAEB4DC25291CFF00B39BA1 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DB25291CFF00B39BA1 /* libacme.dylib */; };
 		9AAEB4DE25291CFF00B39BA1 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DD25291CFF00B39BA1 /* libapex.dylib */; };
 		9AAEB4E025291CFF00B39BA1 /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DF25291CFF00B39BA1 /* libaqua.dylib */; };
+		9AE30FC128E54B2500F37DE6 /* libaudio.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A741580266BCDCE00552531 /* libaudio.dylib */; };
 		9AF4C4721F83DD7500197385 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B496616A4A10100875A94 /* framework.cpp */; };
 		9AF4C4731F83DD7500197385 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2917C563A300C458D1 /* _factory.cpp */; };
 		9AF4C4741F83DD7500197385 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2B17C563A300C458D1 /* translation.cpp */; };
@@ -86,19 +86,19 @@
 			remoteGlobalIDString = 9ACA482A2453EEAE007277DD;
 			remoteInfo = ios_audio;
 		};
-		9A741583266BCDE200552531 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9ACA44792453EAEE007277DD;
-			remoteInfo = audio;
-		};
 		9A903F5F284B2A49006B9FD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 9ACA47722453EEAE007277DD;
 			remoteInfo = ios_audio;
+		};
+		9AE30FBF28E54B1400F37DE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9ACA44792453EAEE007277DD;
+			remoteInfo = audio;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -137,8 +137,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE30FC128E54B2500F37DE6 /* libaudio.dylib in Frameworks */,
 				9A74158D266BD08500552531 /* libacme_apple.dylib in Frameworks */,
-				9A741585266BD04C00552531 /* libaudio.dylib in Frameworks */,
 				9AAEB4DC25291CFF00B39BA1 /* libacme.dylib in Frameworks */,
 				9AAEB4DE25291CFF00B39BA1 /* libapex.dylib in Frameworks */,
 				9AAEB4E025291CFF00B39BA1 /* libaqua.dylib in Frameworks */,
@@ -289,8 +289,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				9AE30FC028E54B1400F37DE6 /* PBXTargetDependency */,
 				9A637E5726723FC7005D0AC3 /* PBXTargetDependency */,
-				9A741584266BCDE200552531 /* PBXTargetDependency */,
 			);
 			name = audio_core_audio;
 			productName = os;
@@ -303,11 +303,11 @@
 		A1CFD76F154F5EA7007447E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "ca2 Desenvolvimento de Sofware Ltda.";
 			};
 			buildConfigurationList = A1CFD772154F5EA7007447E2 /* Build configuration list for PBXProject "audio_core_audio" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -407,15 +407,15 @@
 			name = ios_apex_apple;
 			targetProxy = 9A7319BB285BFA3400542140 /* PBXContainerItemProxy */;
 		};
-		9A741584266BCDE200552531 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = audio;
-			targetProxy = 9A741583266BCDE200552531 /* PBXContainerItemProxy */;
-		};
 		9A903F60284B2A49006B9FD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ios_audio;
 			targetProxy = 9A903F5F284B2A49006B9FD2 /* PBXContainerItemProxy */;
+		};
+		9AE30FC028E54B1400F37DE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = audio;
+			targetProxy = 9AE30FBF28E54B1400F37DE6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -472,6 +472,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				EXECUTABLE_EXTENSION = dylib;
@@ -509,8 +510,35 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SYSTEM_HEADER_SEARCH_PATHS = "$(WorkspaceDir)/operating-system $(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/include $(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include/include $(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include $(WorkspaceDir)/source/port/include $(WorkspaceDir)/source/port $(WorkspaceDir)/source/app";
-				USER_HEADER_SEARCH_PATHS = ". $(WorkspaceDir)/source $(WorkspaceDir)/source/include $(WorkspaceDir)/source/app $(WorkspaceDir)/source/app/include $(WorkspaceDir)/operating-system $(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER) $(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include $(WorkspaceDir)/operating-system/operating-system-apple $(WorkspaceDir)/operating-system/operating-system-posix $(WorkspaceDir)/source/port/include $(WorkspaceDir)/source/port $(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include/include $(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include $(PROJECT_DIR) $(PROJECT_DIR)/.. $(PROJECT_DIR)/../.. $(HOME)/sensitive/sensitive/include";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"$(WorkspaceDir)/operating-system",
+					"$(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/include",
+					"$(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include/include",
+					"$(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include",
+					"$(WorkspaceDir)/source/port/include",
+					"$(WorkspaceDir)/source/port",
+					"$(WorkspaceDir)/source/app",
+				);
+				USER_HEADER_SEARCH_PATHS = (
+					.,
+					"$(WorkspaceDir)/source",
+					"$(WorkspaceDir)/source/include",
+					"$(WorkspaceDir)/source/app",
+					"$(WorkspaceDir)/source/app/include",
+					"$(WorkspaceDir)/operating-system",
+					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)",
+					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include",
+					"$(WorkspaceDir)/operating-system/operating-system-apple",
+					"$(WorkspaceDir)/operating-system/operating-system-posix",
+					"$(WorkspaceDir)/source/port/include",
+					"$(WorkspaceDir)/source/port",
+					"$(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include/include",
+					"$(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/..",
+					"$(PROJECT_DIR)/../..",
+					"$(HOME)/sensitive/sensitive/include",
+				);
 				USE_HEADERMAP = NO;
 				WorkspaceDir = "$(SRCROOT)/../../..";
 			};
@@ -546,6 +574,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_EXTENSION = dylib;
@@ -575,8 +604,35 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SYSTEM_HEADER_SEARCH_PATHS = "$(WorkspaceDir)/operating-system $(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/include $(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include/include $(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include $(WorkspaceDir)/source/port/include $(WorkspaceDir)/source/port $(WorkspaceDir)/source/app";
-				USER_HEADER_SEARCH_PATHS = ". $(WorkspaceDir)/source $(WorkspaceDir)/source/include $(WorkspaceDir)/source/app $(WorkspaceDir)/source/app/include $(WorkspaceDir)/operating-system $(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER) $(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include $(WorkspaceDir)/operating-system/operating-system-apple $(WorkspaceDir)/operating-system/operating-system-posix $(WorkspaceDir)/source/port/include $(WorkspaceDir)/source/port $(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include/include $(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include $(PROJECT_DIR) $(PROJECT_DIR)/.. $(PROJECT_DIR)/../.. $(HOME)/sensitive/sensitive/include";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"$(WorkspaceDir)/operating-system",
+					"$(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/include",
+					"$(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include/include",
+					"$(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include",
+					"$(WorkspaceDir)/source/port/include",
+					"$(WorkspaceDir)/source/port",
+					"$(WorkspaceDir)/source/app",
+				);
+				USER_HEADER_SEARCH_PATHS = (
+					.,
+					"$(WorkspaceDir)/source",
+					"$(WorkspaceDir)/source/include",
+					"$(WorkspaceDir)/source/app",
+					"$(WorkspaceDir)/source/app/include",
+					"$(WorkspaceDir)/operating-system",
+					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)",
+					"$(WorkspaceDir)/operating-system/operating-system-$(PLATFORM_MODIFIER)/_include",
+					"$(WorkspaceDir)/operating-system/operating-system-apple",
+					"$(WorkspaceDir)/operating-system/operating-system-posix",
+					"$(WorkspaceDir)/source/port/include",
+					"$(WorkspaceDir)/source/port",
+					"$(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include/include",
+					"$(WorkspaceDir)/operating-system/third-$(PLATFORM_MODIFIER)/third/include",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/..",
+					"$(PROJECT_DIR)/../..",
+					"$(HOME)/sensitive/sensitive/include",
+				);
 				USE_HEADERMAP = NO;
 				WorkspaceDir = "$(SRCROOT)/../../..";
 			};
@@ -586,6 +642,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INSTALL_PATH = "@executable_path";
 				PLATFORM_MODIFIER = macos;
 			};
@@ -595,6 +652,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INSTALL_PATH = "@executable_path";
 				PLATFORM_MODIFIER = macos;
 			};

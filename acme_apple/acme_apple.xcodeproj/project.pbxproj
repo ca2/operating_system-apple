@@ -23,7 +23,7 @@
 		9A787E75264E31BC003DF8A0 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */; };
 		9A787E76264E31C2003DF8A0 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */; };
 		9A787E77264E31C7003DF8A0 /* DDInvocationGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6B264E22CB003DF8A0 /* DDInvocationGrabber.mm */; };
-		9A787E7E264E8936003DF8A0 /* acme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A15A5D5264B54B80080670E /* acme_posix.dylib */; };
+		9A787E7E264E8936003DF8A0 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A15A5D5264B54B80080670E /* libacme_posix.dylib */; };
 		9A787E80264E89F4003DF8A0 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A787E7F264E89F4003DF8A0 /* CoreServices.framework */; };
 		9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
 		9A8E9DA7282A2F61005FF778 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
@@ -144,7 +144,7 @@
 				9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */,
 				9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */,
 				9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */,
-				9A787E7E264E8936003DF8A0 /* acme_posix.dylib in Frameworks */,
+				9A787E7E264E8936003DF8A0 /* libacme_posix.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 		9A15A5D1264B54B70080670E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A15A5D5264B54B80080670E /* acme_posix.dylib */,
+				9A15A5D5264B54B80080670E /* libacme_posix.dylib */,
 				9A8E9ECC282A32F3005FF778 /* ios_acme_posix.a */,
 			);
 			name = Products;
@@ -339,10 +339,9 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A15A5D5264B54B80080670E /* acme_posix.dylib */ = {
+		9A15A5D5264B54B80080670E /* libacme_posix.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = acme_posix.dylib;
 			path = libacme_posix.dylib;
 			remoteRef = 9A15A5D4264B54B80080670E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -452,8 +451,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				EXECUTABLE_PREFIX = lib;
@@ -542,8 +543,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

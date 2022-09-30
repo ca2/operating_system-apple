@@ -89,18 +89,30 @@ namespace coreimage_imaging
       
       auto pcontext = m_pcontext->m_pauracontext;
       
-      bool bOk = pcontext->m_papexcontext->file().as_memory(varFile, memory);
-      
-      if(!bOk)
+      if(options.toy)
       {
          
-         pimage->m_estatus = error_not_found;
-         
-         pimage->set_nok();
-         
-         return;
+         pcontext->m_papexcontext->file().safe_get_memory(varFile, memory);
          
       }
+      else
+      {
+         
+         pcontext->m_papexcontext->file().as_memory(varFile, memory);
+
+   
+      }
+      
+//      if(!bOk)
+//      {
+//
+//         pimage->m_estatus = error_not_found;
+//
+//         pimage->set_nok();
+//
+//         return;
+//
+//      }
 
       if(memory.is_empty())
       {

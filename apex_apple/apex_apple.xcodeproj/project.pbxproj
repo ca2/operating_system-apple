@@ -25,7 +25,7 @@
 		9A8E9DE4282A2FB6005FF778 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787EAC264EE55E003DF8A0 /* node.cpp */; };
 		9A8E9DE5282A2FB6005FF778 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787EB6264EE55E003DF8A0 /* _factory.cpp */; };
 		9A8E9DE6282A2FB6005FF778 /* process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787EA5264EE55E003DF8A0 /* process.cpp */; };
-		9ABC54B626DAEC3A00718C0D /* acme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A15A60D264B551C0080670E /* acme_apple.dylib */; };
+		9ABC54B626DAEC3A00718C0D /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A15A60D264B551C0080670E /* libacme_apple.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +126,7 @@
 			files = (
 				9A41245B266C41E200C3FF0E /* libacme.dylib in Frameworks */,
 				9A41245D266C41FA00C3FF0E /* libacme_posix.dylib in Frameworks */,
-				9ABC54B626DAEC3A00718C0D /* acme_apple.dylib in Frameworks */,
+				9ABC54B626DAEC3A00718C0D /* libacme_apple.dylib in Frameworks */,
 				9A412557266DD80A00C3FF0E /* libapex.dylib in Frameworks */,
 				9A412461266C420E00C3FF0E /* libapex_posix.dylib in Frameworks */,
 			);
@@ -158,7 +158,7 @@
 		9A15A609264B551B0080670E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A15A60D264B551C0080670E /* acme_apple.dylib */,
+				9A15A60D264B551C0080670E /* libacme_apple.dylib */,
 				9A8E9DF3282A2FB6005FF778 /* ios_acme_apple.a */,
 			);
 			name = Products;
@@ -320,10 +320,9 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A15A60D264B551C0080670E /* acme_apple.dylib */ = {
+		9A15A60D264B551C0080670E /* libacme_apple.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = acme_apple.dylib;
 			path = libacme_apple.dylib;
 			remoteRef = 9A15A60C264B551C0080670E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -331,7 +330,6 @@
 		9A413CDF266EC33F00C3FF0E /* apex_posix.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = apex_posix.dylib;
 			path = libapex_posix.dylib;
 			remoteRef = 9A413CDE266EC33F00C3FF0E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -432,8 +430,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				EXECUTABLE_PREFIX = lib;
@@ -526,8 +526,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

@@ -160,22 +160,48 @@ namespace acme_apple
       ASSERT_VALID(this);
       ASSERT(m_pStream != nullptr);
 
-      if (nCount == 0)
+      if (nCount <= 0)
+      {
+         
          return 0;   // avoid Win32 "null-read"
+         
+      }
 
       //   ASSERT(fx_is_valid_address(lpBuf, nCount));
 
       size_t nRead = 0;
 
-      if ((nRead = fread(lpBuf, sizeof(byte), nCount, m_pStream)) == 0 && !feof(m_pStream))
-         throw ::file::exception(error_file, -1, errno, m_path);
-      if (ferror(m_pStream))
+      nRead = fread(lpBuf, sizeof(byte), nCount, m_pStream);
+      
+      if(nRead != nCount)
       {
-         clearerr(m_pStream);
-         throw ::file::exception(error_file, -1, errno, m_path);
+         
+         if(!feof(m_pStream))
+         {
+            
+            if (ferror(m_pStream))
+            {
+               
+               clearerr(m_pStream);
+               
+               i32 iErrNo = errno;
+               
+               auto errorcode = __errno(iErrNo);
+               
+               auto estatus = errno_to_status(iErrNo);
+               
+               throw ::file::exception(estatus, errorcode, m_path, "fread(nCount) != nCount and ferror");
+               
+            }
+            
+         }
+         
       }
+            
       return nRead;
+      
    }
+
 
    void stdio_file::write(const void * lpBuf, memsize nCount)
    {
@@ -184,8 +210,20 @@ namespace acme_apple
       //   ASSERT(fx_is_valid_address(lpBuf, nCount, false));
 
       if (fwrite(lpBuf, sizeof(byte), nCount, m_pStream) != nCount)
-         throw ::file::exception(error_file, -1, errno, m_path);
+      {
+         
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "fwrite != nCount");
+         
+      }
+      
    }
+
 
    void stdio_file::write_string(const char * lpsz)
    {
@@ -193,7 +231,18 @@ namespace acme_apple
       ASSERT(m_pStream != nullptr);
 
       if (fputs(lpsz, m_pStream) == EOF)
-         throw ::file::exception(error_disk_full, -1, errno, m_path);
+      {
+
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "fputs == EOF");
+
+      }
+      
    }
 
 
@@ -206,11 +255,21 @@ namespace acme_apple
       char * lpszResult = fgets(lpsz, nMax, m_pStream);
       if (lpszResult == nullptr && !feof(m_pStream))
       {
+         
          clearerr(m_pStream);
-         throw ::file::exception(error_file, -1, errno, m_path);
+         
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "!fgets and !feof");
+         
       }
 
       return lpszResult;
+      
    }
 
 
@@ -238,7 +297,14 @@ namespace acme_apple
             
             clearerr(m_pStream);
             
-            throw ::file::exception(error_file, -1, errno, m_path);
+            i32 iErrNo = errno;
+            
+            auto errorcode = __errno(iErrNo);
+            
+            auto estatus = errno_to_status(iErrNo);
+            
+            throw ::file::exception(estatus, errorcode, m_path, "!fgets and !feof");
+            
          }
 
          // if string is read completely or EOF
@@ -289,12 +355,21 @@ namespace acme_apple
          nFrom = SEEK_CUR;
          break;
       default:
-         throw ::file::exception(error_bad_seek, -1, errno, m_path);
+            throw ::file::exception(error_bad_seek, {}, m_path, "eseek unknown");
       }
 
       if (fseek(m_pStream, lOff, nFrom) != 0)
-         throw ::file::exception(error_bad_seek, -1, errno, 
-                              m_path);
+      {
+         
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "fseek != 0");
+         
+      }
 
       long pos = ftell(m_pStream);
       
@@ -309,9 +384,18 @@ namespace acme_apple
       ASSERT(m_pStream != nullptr);
 
       long pos = ftell(m_pStream);
-      if (pos == -1)
-         throw ::file::exception(error_invalid_file, -1, errno, 
-                              m_path);
+      if (pos < 0)
+      {
+         
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "ftell < 0");
+
+      }
       return pos;
    }
 
@@ -320,8 +404,18 @@ namespace acme_apple
       ASSERT_VALID(this);
 
       if (m_pStream != nullptr && fflush(m_pStream) != 0)
-         throw ::file::exception(error_disk_full, -1, errno, 
-                              m_path);
+      {
+         
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "fflush != 0");
+         
+      }
+      
    }
 
    void stdio_file::close()
@@ -339,9 +433,20 @@ namespace acme_apple
       m_pStream = nullptr;
 
       if (nErr != 0)
-         throw ::file::exception(error_disk_full, -1, errno, 
-                              m_path);
+      {
+         
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "close != 0");
+
+      }
+      
    }
+
 
    void stdio_file::Abort()
    {
@@ -407,26 +512,71 @@ namespace acme_apple
       long nResult;
 
       nCurrent = ftell(m_pStream);
-      if (nCurrent == -1)
-         throw ::file::exception(error_invalid_file, -1, errno, 
-                              m_path);
+      
+      if (nCurrent < 0)
+      {
+         
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "ftell < 0");
+         
+      }
 
       nResult = fseek(m_pStream, 0, SEEK_END);
+      
       if (nResult != 0)
-         throw ::file::exception(error_bad_seek, -1, errno, 
-                              m_path);
+      {
+         
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "fseek != 0");
+         
+      }
 
       nLength = ftell(m_pStream);
-      if (nLength == -1)
-         throw ::file::exception(error_invalid_file, -1, errno, 
-                              m_path);
+      
+      if (nLength < 0)
+      {
+         
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "ftell < 0");
+
+      }
+      
       nResult = fseek(m_pStream, nCurrent, SEEK_SET);
+      
       if (nResult != 0)
-         throw ::file::exception(error_bad_seek, -1, errno, 
-                              m_path);
+      {
+         
+         i32 iErrNo = errno;
+         
+         auto errorcode = __errno(iErrNo);
+         
+         auto estatus = errno_to_status(iErrNo);
+         
+         throw ::file::exception(estatus, errorcode, m_path, "fseek != 0");
+         
+      }
 
       return nLength;
+      
    }
 
 
 } // namespace acme_apple
+
+
+

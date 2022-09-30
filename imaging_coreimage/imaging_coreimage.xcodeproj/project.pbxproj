@@ -31,7 +31,7 @@
 		9A24D0BD285160D9000C9873 /* save_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A24D05228514045000C9873 /* save_image.cpp */; };
 		9A24D0BE285160DB000C9873 /* save_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A24D05228514045000C9873 /* save_image.cpp */; };
 		9AA74F4B284820C6009BB762 /* libacme_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA74F4A284820C6009BB762 /* libacme_apple.dylib */; };
-		9AA74F4C284820EF009BB762 /* aura_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A93B96428471F85005ACD11 /* aura_apple.dylib */; };
+		9AA74F4C284820EF009BB762 /* libaura_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A93B96428471F85005ACD11 /* libaura_apple.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AA74F4C284820EF009BB762 /* aura_apple.dylib in Frameworks */,
+				9AA74F4C284820EF009BB762 /* libaura_apple.dylib in Frameworks */,
 				9AA74F4B284820C6009BB762 /* libacme_apple.dylib in Frameworks */,
 				9A0705FC266256EE004E8CB4 /* libaura.dylib in Frameworks */,
 				9A0705F8266256D4004E8CB4 /* libacme.dylib in Frameworks */,
@@ -195,7 +195,7 @@
 		9A93B95F28471F85005ACD11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A93B96428471F85005ACD11 /* aura_apple.dylib */,
+				9A93B96428471F85005ACD11 /* libaura_apple.dylib */,
 				9A93B96628471F85005ACD11 /* ios_aura_apple.a */,
 			);
 			name = Products;
@@ -307,10 +307,9 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A93B96428471F85005ACD11 /* aura_apple.dylib */ = {
+		9A93B96428471F85005ACD11 /* libaura_apple.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = aura_apple.dylib;
 			path = libaura_apple.dylib;
 			remoteRef = 9A93B96328471F85005ACD11 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -510,7 +509,9 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				EXECUTABLE_EXTENSION = dylib;
@@ -599,8 +600,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;

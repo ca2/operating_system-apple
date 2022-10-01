@@ -1,6 +1,7 @@
 #include "framework.h"
 #include "node.h"
 #include "stdio_file.h"
+#include "exception_translator.h"
 
 
 __FACTORY_EXPORT void acme_posix_factory(::factory::factory * pfactory);
@@ -17,6 +18,7 @@ __FACTORY_EXPORT void acme_apple_factory(::factory::factory * pfactory)
    //create_factory < ::posix::pipe , ::process::pipe          >();
    
    pfactory->add_factory_item < ::acme_apple::stdio_file , ::file::text_file          >();
+   pfactory->add_factory_item < ::acme_apple::exception_translator , ::exception_translator          >();
 
 }
 

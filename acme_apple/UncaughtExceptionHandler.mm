@@ -47,10 +47,9 @@ volatile i32 UncaughtExceptionCount = 0;
 //const NSInteger UncaughtExceptionHandlerSkipAddressCount = 4;
 //const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
+NSUncaughtExceptionHandler * g_pnsuncaughtexceptionhandler = nullptr;
 
-
-
-void HandleException(NSException *exception)
+void __NSUncaughtExceptionHandler(NSException *exception)
 {
 
    throw_ns_exception();
@@ -67,8 +66,10 @@ void NullHandleException(NSException *exception)
 
 void InstallUncaughtExceptionHandler()
 {
+   
+   g_pnsuncaughtexceptionhandler = NSGetUncaughtExceptionHandler();
     
-	NSSetUncaughtExceptionHandler(&HandleException);
+	NSSetUncaughtExceptionHandler(&__NSUncaughtExceptionHandler);
 //   signal(SIGABRT, SignalHandler);
 //   signal(SIGILL, SignalHandler);
 //   signal(SIGSEGV, SignalHandler);
@@ -77,6 +78,25 @@ void InstallUncaughtExceptionHandler()
 //   signal(SIGPIPE, SignalHandler);
 }
 
+
+void UninstallUncaughtExceptionHandler()
+{
+   
+   if(!g_pnsuncaughtexceptionhandler)
+   {
+      
+      return;
+      
+   }
+   
+   NSSetUncaughtExceptionHandler(g_pnsuncaughtexceptionhandler);
+//   signal(SIGABRT, SignalHandler);
+//   signal(SIGILL, SignalHandler);
+//   signal(SIGSEGV, SignalHandler);
+//   signal(SIGFPE, SignalHandler);
+//   signal(SIGBUS, SignalHandler);
+//   signal(SIGPIPE, SignalHandler);
+}
 
 
 void InstallNullExceptionHandler()

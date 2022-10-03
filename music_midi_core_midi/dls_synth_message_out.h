@@ -38,7 +38,9 @@ namespace music
             AudioUnit               m_unitOutput;
             MusicDeviceComponent    m_unitSynth;
             
-            
+            AudioUnit               m_unitMixer;
+
+
             dls_synth_message_out();
             ~dls_synth_message_out() override;
             

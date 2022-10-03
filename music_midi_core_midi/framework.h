@@ -9,9 +9,6 @@
 #ifdef __OBJC__
 
 
-#include "aura/os/macos/_mm.h"
-
-
 #else
 
 

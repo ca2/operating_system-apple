@@ -14,9 +14,9 @@ CFURLRef xg_url(void);
 CFURLRef xg_url()
 {
    
-   NSBundle bundleMain = [ NSBundle mainBundle ];
+   NSBundle * bundleMain = [ NSBundle mainBundle ];
    
-   NSURL nsurlSoundBank =  [ bundleMain URLForResource : @"Yamaha_XG_Sound_Set" withExtension: @"SF2"];
+   NSURL * nsurlSoundBank =  [ bundleMain URLForResource : @"Yamaha_XG_Sound_Set" withExtension: @"sf2"];
    
    CFURLRef bankURL = (__bridge_retained CFURLRef) nsurlSoundBank;
    

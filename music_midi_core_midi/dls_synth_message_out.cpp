@@ -13,7 +13,7 @@
 #include "dls_synth_message_out.h"
 #include <AudioToolbox/AudioToolbox.h>
 
-
+CFURLRef xg_url();
 namespace music
 {
    
@@ -97,7 +97,8 @@ namespace music
             
             AudioComponentDescription descriptionOutput={};
             descriptionOutput.componentType           = kAudioUnitType_Output;
-            descriptionOutput.componentSubType        = kAudioUnitSubType_GenericOutput;
+//            descriptionOutput.componentSubType        = kAudioUnitSubType_GenericOutput;
+            descriptionOutput.componentSubType        = kAudioUnitSubType_RemoteIO;
             descriptionOutput.componentManufacturer   = kAudioUnitManufacturer_Apple;
             descriptionOutput.componentFlags          = 0;
             descriptionOutput.componentFlagsMask      = 0;
@@ -113,6 +114,22 @@ namespace music
                        
             }
             
+            // AUNode mixerNode;
+
+            // AudioComponentDescription mixerDescription = {0};
+            // mixerDescription.componentType = kAudioUnitType_Mixer;
+            // mixerDescription.componentSubType = kAudioUnitSubType_MultiChannelMixer;
+            // mixerDescription.componentManufacturer = kAudioUnitManufacturer_Apple;
+
+            // result = AUGraphAddNode(m_audiograph, &mixerDescription, &mixerNode);
+            
+            // if (noErr != result)
+            // {
+                       
+            //    throw ::exception(::error_failed, "Error adding Mixer mode to graph");
+                       
+            // }
+            
             // 6.connect input->eq->output node
             result = AUGraphConnectNodeInput(m_audiograph, m_nodeSynth, 0,m_nodeOutput, 0);
             if (noErr != result)
@@ -121,6 +138,16 @@ namespace music
                throw ::exception(::error_failed);
                        
             }
+
+            
+            // result = AUGraphConnectNodeInput(m_audiograph, m_nodeMixer, 0, m_nodeOutput, 0),"AUGraphConnectModeInput");
+
+            // if (noErr != result)
+            // {
+                       
+            //    throw ::exception(::error_failed);
+                       
+            // }
             
             result = AUGraphUpdate (m_audiograph, NULL);
             if (noErr != result)
@@ -167,9 +194,69 @@ namespace music
                throw ::exception(::error_failed);
                        
             }
+            
+            
+            CFURLRef soundBankURL = xg_url();
+            
+                     result = AudioUnitSetProperty(
+                         m_unitSynth,
+                         kMusicDeviceProperty_SoundBankURL,
+                         kAudioUnitScope_Global,
+                         0,
+                         (void *)&soundBankURL,
+                                                   sizeof(soundBankURL));
+            
+            CFRelease(soundBankURL);
+            if (noErr != result)
+            {
+                               
+               throw ::exception(::error_failed);
+                               
+            }
+            
+            ::u32 enabled = FALSE;
+            result = AudioUnitSetProperty(
+                m_unitSynth,
+                                          kAUMIDISynthProperty_EnablePreload,
+                                          kAudioUnitScope_Global,
+                0,
+                &enabled,
+                                          sizeof(enabled));
+            if (noErr != result)
+            {
+                               
+               throw ::exception(::error_failed);
+                               
+            }
+            
+//
+//            AUNode mixerNode;
+//
+//            AudioComponentDescription mixerDescription = {0};
+//            mixerDescription.componentType = kAudioUnitType_Mixer;
+//            mixerDescription.componentSubType = kAudioUnitSubType_MultiChannelMixer;
+//            mixerDescription.componentManufacturer = kAudioUnitManufacturer_Apple;
+//
+//            result = AUGraphAddNode(m_audiograph, &mixerDescription, &mixerNode);
+//
+//            if (noErr != result)
+//            {
+//
+//               throw ::exception(::error_failed, "Error adding Mixer mode to graph");
+//
+//            }
+//
+            // CheckError(AUGraphOpen(mGraph), "AUGraphOpen failed");
 
+            // CheckError(AUGraphNodeInfo(mGraph, mixerNode, NULL, &mMixer), "Error loading mixer node info");
 
-
+            result = AudioUnitSetParameter(m_unitOutput, kHALOutputParam_Volume, kAudioUnitScope_Global, 0, 1.0f, 0);
+           if (noErr != result)
+            {
+                       
+               throw ::exception(::error_failed, "Error adding Mixer mode to graph");
+                       
+            }
 
              CAShow(m_audiograph);
             
@@ -183,6 +270,9 @@ namespace music
                  throw ::exception(::error_failed);
                          
               }
+            
+            INFORMATION("AUGraphStart");
+            
             //return ::success;
          }
          
@@ -191,30 +281,80 @@ namespace music
          {
             
             int noteOnCommand = ::u32(0x90 | iChannel);
-            OSStatus result=MusicDeviceMIDIEvent (m_unitSynth, noteOnCommand, uchNote, uchVelocity, 0);
             
+            int iNote = uchNote;
+            
+            int iVelocity = uchVelocity;
+            
+//            if(iVelocity == 0)
+//            {
+//
+//               INFORMATION("iVelocity == 0");
+//
+//               // try to note off;
+//
+//               //return
+//
+//            }
+            
+            OSStatus result = MusicDeviceMIDIEvent(
+                                                   m_unitSynth,
+                                                   noteOnCommand,
+                                                   iNote,
+                                                   iVelocity, 0);
+            
+//            if(iVelocity == 0)
+//            {
+//
+//               INFORMATION("(note_on command doesn't accept 0 velocity???)");
+//
+//               // try to note off;
+//
+//               //return
+//
+//            }
             if (noErr != result)
-                  {
-                             
-                     throw ::exception(::error_failed);
-                             
-                  }
-            //return ::success;
+            {
+                       
+               throw ::exception(::error_failed);
+                       
+            }
+            
          }
          
          
          void dls_synth_message_out::note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity)
          {
+            
             int noteOffCommand = ::u32(0x80 | iChannel);
-                OSStatus result=    MusicDeviceMIDIEvent (m_unitSynth, noteOffCommand, uchNote, uchVelocity, 0);
+            
+            int iNote = uchNote;
+            
+//            if(iNote >= 127)
+//            {
+//
+//               INFORMATION("uchNote >= 127 (doesn't accept 127 note off???)");
+//
+//               return;
+//
+//            }
+            
+            int iVelocity = uchVelocity;
+         
+            OSStatus result = MusicDeviceMIDIEvent (
+                                                    m_unitSynth,
+                                                    noteOffCommand,
+                                                    iNote,
+                                                    iVelocity,
+                                                    0);
                     
-                    if (noErr != result)
-                          {
+            if (result != noErr)
+            {
                                      
-                             throw ::exception(::error_failed);
-                                     
-                          }
-            //return ::success;
+               throw ::exception(::error_failed);
+                            
+            }
+            
          }
          
          

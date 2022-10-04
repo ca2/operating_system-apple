@@ -2,7 +2,7 @@
 //  AUOutputBL.hpp
 //  music_midi_core_audio
 //
-//  Created by Camilo Sasuke Tsumanuma on 9/8/16.
+//  Created by Camilo Sasuke Thomas Borregaard Sørensen on 9/8/16.
 //  Copyright © 2016 ca2 Desenvolvimento de Sofware Ltda. All rights reserved.
 //
 #pragma once

@@ -2,7 +2,7 @@
 //  real_time_midi.hpp
 //  music_midi_core_midi
 //
-//  Created by Camilo Sasuke Tsumanuma on 20/05/19.
+//  Created by Camilo Sasuke Thomas Borregaard Sørensen on 20/05/19.
 //  Copyright © 2019 ca2 Desenvolvimento de Sofware Ltda. All rights reserved.
 //
 

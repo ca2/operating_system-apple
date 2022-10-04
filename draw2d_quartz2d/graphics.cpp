@@ -3106,13 +3106,13 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       synchronous_lock ml(mutex());
 
-      double dx;
+      double Δx;
 
-      double dy;
+      double Δy;
 
-      dx = 0.;
+      Δx = 0.;
 
-      dy = 0.;
+      Δy = 0.;
 
       str.find_replace("\t", "        ");
 
@@ -3128,8 +3128,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            textout.m_point.x + dx,
-                            textout.m_point.y + dy + offsety,
+                            textout.m_point.x + Δx,
+                            textout.m_point.y + Δy + offsety,
                             0, str,
                              kCGTextStroke,
                             e_align_top_left,
@@ -3156,13 +3156,13 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       synchronous_lock ml(mutex());
 
-      double dx;
+      double Δx;
 
-      double dy;
+      double Δy;
 
-      dx = 0.;
+      Δx = 0.;
 
-      dy = 0.;
+      Δy = 0.;
 
       str.find_replace("\t", "        ");
 
@@ -3178,8 +3178,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            textout.m_point.x + dx,
-                            textout.m_point.y + dy + offsety,
+                            textout.m_point.x + Δx,
+                            textout.m_point.y + Δy + offsety,
                             0, str,
                              kCGTextFill,
                             e_align_top_left,
@@ -3206,13 +3206,13 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       synchronous_lock ml(mutex());
 
-      double dx;
+      double Δx;
 
-      double dy;
+      double Δy;
 
-      dx = 0.;
+      Δx = 0.;
 
-      dy = 0.;
+      Δy = 0.;
 
       str.find_replace("\t", "        ");
 
@@ -3228,8 +3228,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            drawtext.m_rectangle.left + dx,
-                            drawtext.m_rectangle.top + dy + offsety,
+                            drawtext.m_rectangle.left + Δx,
+                            drawtext.m_rectangle.top + Δy + offsety,
                             0,
                             str, kCGTextStroke,
                             e_align_top_left,
@@ -3257,13 +3257,13 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       synchronous_lock ml(mutex());
 
-      double dx;
+      double Δx;
 
-      double dy;
+      double Δy;
 
-      dx = 0.;
+      Δx = 0.;
 
-      dy = 0.;
+      Δy = 0.;
 
       str.find_replace("\t", "        ");
 
@@ -3279,8 +3279,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            drawtext.m_rectangle.left + dx,
-                            drawtext.m_rectangle.top + dy + offsety,
+                            drawtext.m_rectangle.left + Δx,
+                            drawtext.m_rectangle.top + Δy + offsety,
                             0,
                             str, kCGTextFill,
                             e_align_top_left,
@@ -3505,18 +3505,18 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
                m_pbrush,
                m_pfont);
 
-               double dy = ascent + descent + leading;
+               double Δy = ascent + descent + leading;
 
 //                  if(leading <= 0)
 //                  {
 //
-//                     dy += descent;
+//                     Δy += descent;
 //
 //                  }
 
-               rectUpper.bottom -= dy/2.0;
+               rectUpper.bottom -= Δy/2.0;
 
-               rectLower.top += dy/2.0;
+               rectLower.top += Δy/2.0;
 
             }
 

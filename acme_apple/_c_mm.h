@@ -20,15 +20,15 @@
 ////void copy(RECTANGLE_I32 * prectTarget, const CGRect * prectSource);
 ////void copy(CGRect * prectTarget, const RECTANGLE_F64 * prectSource);
 ////void copy(RECTANGLE_F64 * prectTarget, const CGRect * prectSource);
-////void window_copy(CGRect * prectTarget, const RECTANGLE_I32 * prectSource);
-////void window_copy(RECTANGLE_I32 * prectTarget, const CGRect * prectSource);
+////void screen_coordinates_aware_copy(CGRect * prectTarget, const RECTANGLE_I32 * prectSource);
+////void screen_coordinates_aware_copy(RECTANGLE_I32 * prectTarget, const CGRect * prectSource);
 ////
 ////#ifdef MM
 ////
 ////void copy(NSRect & rectangle, const RECTANGLE_I32 * lpcrect);
 ////void copy(RECTANGLE_I32 * lprect, const NSRect & rectSrc);
-////void window_copy(NSRect & rectangle, const RECTANGLE_I32 * lpcrect);
-////void window_copy(RECTANGLE_I32 * lprect, const NSRect & rectSrc);
+////void screen_coordinates_aware_copy(NSRect & rectangle, const RECTANGLE_I32 * lpcrect);
+////void screen_coordinates_aware_copy(RECTANGLE_I32 * lprect, const NSRect & rectSrc);
 ////
 ////#endif
 //

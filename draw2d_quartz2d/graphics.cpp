@@ -2835,7 +2835,7 @@ namespace draw2d_quartz2d
 
          _clip(m_pregion);
 
-         __keep(m_bPat);
+         KEEP(m_bPat);
 
          CGRect rectangle = CGContextGetClipBoundingBox(pgraphics);
          

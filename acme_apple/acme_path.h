@@ -4,7 +4,7 @@
 #pragma once
 
 
-#include "acme_posix/acme_path.h"
+#include "acme_darwin/acme_path.h"
 
 
 namespace acme_apple
@@ -12,7 +12,7 @@ namespace acme_apple
 
 
    class CLASS_DECL_ACME acme_path :
-      virtual public ::acme_posix::acme_path
+      virtual public ::acme_darwin::acme_path
    {
    public:
 

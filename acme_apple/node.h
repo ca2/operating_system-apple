@@ -8,14 +8,14 @@
 #pragma once
 
 
-#include "acme_posix/node.h"
+#include "acme_darwin/node.h"
 
 
 namespace acme_apple
 {
 
    class CLASS_DECL_ACME node :
-      virtual public ::acme_posix::node
+      virtual public ::acme_darwin::node
    {
    public:
 
@@ -31,12 +31,8 @@ namespace acme_apple
 
       virtual int node_init_check(int * pi, char *** ppz) override;
 
-      //virtual ::e_status start_node();
 
-      //override;
-
-      void initialize(::object * pobject) override;
-
+      void initialize(::particle * pparticle) override;
 
 
       void install_sigchld_handler() override;
@@ -50,6 +46,7 @@ namespace acme_apple
       
       
       void node_post(const ::procedure & procedure) override;
+      
       
       void shell_open(const ::file::path & path, const ::string & strParams = "", const ::file::path & pathFolder = "") override;
       

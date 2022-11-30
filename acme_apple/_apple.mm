@@ -6,7 +6,7 @@
 //
 #include "framework.h"
 #import "NSString+SymlinksAndAliases.h"
-#import "acme/primitive/primitive/runnable.h"
+//#import "acme/primitive/primitive/runnable.h"
 
 
 
@@ -111,18 +111,18 @@ char * mm_error_description(OSStatus status)
 class matter;
 
 
-CLASS_DECL_ACME ::e_status __call(::matter * prunnable);
+///CLASS_DECL_ACME ::e_status call(::matter * prunnable);
 
 
 void main_async_runnable(::matter * prunnable)
 {
    
    ns_main_async(^
-                 {
+   {
 
-                    __call(prunnable);
+      prunnable->run();
                     
-                 });
+   });
    
    //[[mmos get] runRunnableOnMainThread: prunnable];
    
@@ -160,17 +160,19 @@ NSString * __ns_get_text(NSString * str)
 NSString * __ns_get_text(const char * psz)
 {
    
-   int iLen = __c_get_text_length(psz);
+   //::string str(psz);
    
-   char * p = (char *) malloc(iLen+1);
+//   int iLen = __c_get_text_length(psz);
+//
+//   char * p = (char *) malloc(iLen+1);
+//
+//   memset(p, 0, iLen+1);
+//
+//   __c_get_text(p, iLen + 1, psz);
    
-   memset(p, 0, iLen+1);
+   NSString * strText = [[NSString alloc] initWithUTF8String: psz];
    
-   __c_get_text(p, iLen + 1, psz);
-   
-   NSString * strText = [[NSString alloc] initWithUTF8String: p];
-   
-   free(p);
+//   free(p);
    
    return strText;
    

@@ -1,6 +1,9 @@
 #pragma once
 
 
+#include "acme/filesystem/file/text_file.h"
+
+
 namespace acme_apple
 {
 
@@ -25,7 +28,7 @@ namespace acme_apple
       virtual char * read_string(char * lpsz, ::u32 nMax);
       bool read_string(string & rString) override;
 
-      void dump(dump_context & dumpcontext) const override;
+//      void dump(dump_context & dumpcontext) const override;
 
       filesize get_position() const override;
       void open(const ::file::path & lpszFileName, const ::file::e_open & eopen) override;
@@ -38,7 +41,7 @@ namespace acme_apple
       virtual filesize get_length() const;
 
       // Unsupported APIs
-      virtual __pointer(::file::file) Duplicate() const;
+      virtual ::pointer <  ::file::file > Duplicate() const;
       virtual void LockRange(filesize dwPos, filesize dwCount);
       virtual void UnlockRange(filesize dwPos, filesize dwCount);
 

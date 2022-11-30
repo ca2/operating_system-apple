@@ -13,13 +13,18 @@
 //
 
 #import "framework.h"
+
+
+#include "acme/_operating_system.h"
+
+
 //#import "UncaughtExceptionHandler.h"
 //#include "ns_exception.h"
 #include <libkern/OSAtomic.h>
 #include <execinfo.h>
+#include "acme/primitive/primitive/payload.h"
 
 
-void throw_ns_exception();
 
 
 volatile i32 UncaughtExceptionCount = 0;
@@ -49,10 +54,24 @@ volatile i32 UncaughtExceptionCount = 0;
 
 NSUncaughtExceptionHandler * g_pnsuncaughtexceptionhandler = nullptr;
 
+void copy(::property_set & set, NSDictionary * dictionary)
+{
+   
+   
+}
+
+
 void __NSUncaughtExceptionHandler(NSException *exception)
 {
-
-   throw_ns_exception();
+   
+   ::property_set setUserInfo;
+   
+   copy(setUserInfo, [exception userInfo]);
+   
+   throw_ns_exception(error_failed,
+                      [[exception name] UTF8String],
+                      [[exception description] UTF8String],
+                      setUserInfo);
 
 }
 

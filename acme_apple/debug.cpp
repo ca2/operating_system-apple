@@ -7,6 +7,9 @@
 #include "framework.h"
 
 
+#include <CoreFoundation/CoreFoundation.h>
+
+
 char * mm_error_string(OSStatus status);
 
 char * mm_error_description(OSStatus status);

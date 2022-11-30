@@ -4,6 +4,14 @@
 #include "framework.h"
 #include "node.h"
 
+
+#include "acme/_operating_system.h"
+
+
+#include <dispatch/dispatch.h>
+#include <CoreImage/CoreImage.h>
+
+
 void ns_main_async(dispatch_block_t block);
 
 
@@ -45,10 +53,10 @@ namespace acme_apple
       }
 
 
-      void node::initialize(::object * pobject)
+      void node::initialize(::particle * pparticle)
       {
 
-         ::acme::node::initialize(pobject);
+         ::acme_darwin::node::initialize(pparticle);
 
       }
 

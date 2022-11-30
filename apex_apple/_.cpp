@@ -214,32 +214,8 @@ string ca2_command_line()
 }
 
 
-void window_copy(CGRect * prectTarget, const ::rectangle_i32 * prectSource)
-{
 
-   CGRect rectWorkspace = mm_get_workspace_rect();
-
-   prectTarget->origin.x       = prectSource->left;
-   prectTarget->origin.y       = rectWorkspace.size.height - prectSource->bottom;
-   prectTarget->size.width     = prectSource->right - prectSource->left;
-   prectTarget->size.height    = prectSource->bottom - prectSource->top;
-
-}
-
-
-void window_copy(RECTANGLE_I32 * prectTarget, const CGRect * prectSource)
-{
-
-   CGRect rectWorkspace = mm_get_workspace_rect();
-
-   prectTarget->left        = prectSource->origin.x;
-   prectTarget->bottom      = rectWorkspace.size.height - prectSource->origin.y;
-   prectTarget->right       = prectTarget->left + prectSource->size.width;
-   prectTarget->top         = prectTarget->bottom - prectSource->size.height;
-
-}
-
-void copy(CGPoint * ppointTarget, const POINT_I32 * ppointSource)
+void copy(CGPoint & pointTarget, const POINT_I32 & pointSource)
 {
 
    ppointTarget->x      = ppointSource->x;
@@ -248,7 +224,7 @@ void copy(CGPoint * ppointTarget, const POINT_I32 * ppointSource)
 }
 
 
-void copy(POINT_I32 * ppointTarget, const CGPoint * ppointSource)
+void copy(POINT_I32 & pointTarget, const CGPoint & pointSource)
 {
 
    ppointTarget->x      = ppointSource->x;
@@ -256,7 +232,7 @@ void copy(POINT_I32 * ppointTarget, const CGPoint * ppointSource)
 
 }
 
-void copy(CGPoint * ppointTarget, const POINT_F64 * ppointSource)
+void copy(CGPoint & pointTarget, const POINT_F64 & pointSource)
 {
 
    ppointTarget->x      = ppointSource->x;
@@ -265,7 +241,7 @@ void copy(CGPoint * ppointTarget, const POINT_F64 * ppointSource)
 }
 
 
-void copy(POINT_F64 * ppointTarget, const CGPoint * ppointSource)
+void copy(POINT_F64 & pointTarget, const CGPoint & pointSource)
 {
 
    ppointTarget->x      = ppointSource->x;
@@ -273,46 +249,46 @@ void copy(POINT_F64 * ppointTarget, const CGPoint * ppointSource)
 
 }
 
-void copy(CGRect * prectTarget, const RECTANGLE_I32 * prectSource)
+void copy(CGRect & rectTarget, const RECTANGLE_I32 & rectSource)
 {
 
-   prectTarget->origin.x      = prectSource->left;
-   prectTarget->origin.y      = prectSource->top;
-   prectTarget->size.width    = width(prectSource);
-   prectTarget->size.height   = height(prectSource);
+   rectTarget.origin.x      = rectSource.left;
+   rectTarget.origin.y      = rectSource.top;
+   rectTarget.size.width    = width(prectSource);
+   rectTarget.size.height   = height(prectSource);
 
 }
 
 
-void copy(RECTANGLE_I32 * prectTarget, const CGRect * prectSource)
+void copy(RECTANGLE_I32 & rectTarget, const CGRect & rectSource)
 {
    
-   prectTarget->left          = prectSource->origin.x;
-   prectTarget->top           = prectSource->origin.y;
-   prectTarget->right         = prectSource->origin.x + prectSource->size.width;
-   prectTarget->bottom        = prectSource->origin.y + prectSource->size.height;
+   rectTarget.left          = rectSource.origin.x;
+   rectTarget.top           = rectSource.origin.y;
+   rectTarget.right         = rectSource.origin.x + rectSource.size.width;
+   rectTarget.bottom        = rectSource.origin.y + rectSource.size.height;
    
 }
 
 
-void copy(CGRect * prectTarget, const RECTANGLE_F64 * prectSource)
+void copy(CGRect & rectTarget, const RECTANGLE_F64 & rectSource)
 {
    
-   prectTarget->origin.x      = prectSource->left;
-   prectTarget->origin.y      = prectSource->top;
-   prectTarget->size.width    = width(prectSource);
-   prectTarget->size.height   = height(prectSource);
+   rectTarget.origin.x      = rectSource.left;
+   rectTarget.origin.y      = rectSource.top;
+   rectTarget.size.width    = width(prectSource);
+   rectTarget.size.height   = height(prectSource);
    
 }
 
 
-void copy(RECTANGLE_F64 * prectTarget, const CGRect * prectSource)
+void copy(RECTANGLE_F64 & rectTarget, const CGRect & rectSource)
 {
    
-   prectTarget->left          = prectSource->origin.x;
-   prectTarget->top           = prectSource->origin.y;
-   prectTarget->right         = prectSource->origin.x + prectSource->size.width;
-   prectTarget->bottom        = prectSource->origin.y + prectSource->size.height;
+   rectTarget.left          = rectSource.origin.x;
+   rectTarget.top           = rectSource.origin.y;
+   rectTarget.right         = rectSource.origin.x + rectSource.size.width;
+   rectTarget.bottom        = rectSource.origin.y + rectSource.size.height;
    
 }
 

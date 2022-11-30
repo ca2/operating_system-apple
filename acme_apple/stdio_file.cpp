@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "stdio_file.h"
+#include "acme/filesystem/file/exception.h"
 #include "acme/filesystem/filesystem/acme_file.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include <fcntl.h>
@@ -30,13 +31,13 @@ namespace acme_apple
    }
 
 
-   void stdio_file::open(const ::file::path & lpszFileName, const ::file::e_open & eopen)
+   void stdio_file::open(const ::file::path & path, const ::file::e_open & eopen)
    {
 
       if ((eopen & ::file::e_open_defer_create_directory) && (eopen & ::file::e_open_write))
       {
          
-         m_psystem->m_pacmedirectory->create(::file_path_folder(lpszFileName));
+         acmedirectory()->create(path.folder());
          
       }
 
@@ -114,7 +115,7 @@ namespace acme_apple
 
       // open a C-runtime stream from that handle
       //if (nHandle != -1)
-      m_pStream = fopen(lpszFileName, szMode);
+      m_pStream = fopen(path, szMode);
 
 
       if (m_pStream == nullptr)
@@ -122,7 +123,7 @@ namespace acme_apple
          
          int iErrNo = errno;
          
-         m_estatus = failed_errno_to_status(iErrNo);
+         m_estatus = failed_errno_status(iErrNo);
          
          set_nok();
          
@@ -148,7 +149,7 @@ namespace acme_apple
 
       }
 
-      m_path = lpszFileName;
+      m_path = path;
 
 //      return ::success;
 //
@@ -186,9 +187,9 @@ namespace acme_apple
                
                i32 iErrNo = errno;
                
-               auto errorcode = __errno(iErrNo);
+               auto errorcode = errno_error_code(iErrNo);
                
-               auto estatus = errno_to_status(iErrNo);
+               auto estatus = errno_status(iErrNo);
                
                throw ::file::exception(estatus, errorcode, m_path, "fread(nCount) != nCount and ferror");
                
@@ -214,9 +215,9 @@ namespace acme_apple
          
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "fwrite != nCount");
          
@@ -235,9 +236,9 @@ namespace acme_apple
 
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "fputs == EOF");
 
@@ -260,9 +261,9 @@ namespace acme_apple
          
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "!fgets and !feof");
          
@@ -299,9 +300,9 @@ namespace acme_apple
             
             i32 iErrNo = errno;
             
-            auto errorcode = __errno(iErrNo);
+            auto errorcode = errno_error_code(iErrNo);
             
-            auto estatus = errno_to_status(iErrNo);
+            auto estatus = errno_status(iErrNo);
             
             throw ::file::exception(estatus, errorcode, m_path, "!fgets and !feof");
             
@@ -363,9 +364,9 @@ namespace acme_apple
          
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "fseek != 0");
          
@@ -389,9 +390,9 @@ namespace acme_apple
          
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "ftell < 0");
 
@@ -408,9 +409,9 @@ namespace acme_apple
          
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "fflush != 0");
          
@@ -437,9 +438,9 @@ namespace acme_apple
          
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "close != 0");
 
@@ -461,7 +462,7 @@ namespace acme_apple
    }
 
 
-   __pointer(::file::file) stdio_file::Duplicate() const
+   ::pointer < ::file::file > stdio_file::Duplicate() const
    {
 
       ASSERT_VALID(this);
@@ -490,16 +491,16 @@ namespace acme_apple
       throw ::exception(error_not_supported);;
    }
 
-   void stdio_file::dump(dump_context & dumpcontext) const
-   {
-      
-      ::file::text_file::dump(dumpcontext);
-
-      dumpcontext << "m_pStream = " << (void *)m_pStream;
-      
-      dumpcontext << "\n";
-      
-   }
+//   void stdio_file::dump(dump_context & dumpcontext) const
+//   {
+//      
+//      ::file::text_file::dump(dumpcontext);
+//
+//      dumpcontext << "m_pStream = " << (void *)m_pStream;
+//      
+//      dumpcontext << "\n";
+//      
+//   }
 
 
 
@@ -518,9 +519,9 @@ namespace acme_apple
          
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "ftell < 0");
          
@@ -533,9 +534,9 @@ namespace acme_apple
          
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "fseek != 0");
          
@@ -548,9 +549,9 @@ namespace acme_apple
          
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "ftell < 0");
 
@@ -563,9 +564,9 @@ namespace acme_apple
          
          i32 iErrNo = errno;
          
-         auto errorcode = __errno(iErrNo);
+         auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_to_status(iErrNo);
+         auto estatus = errno_status(iErrNo);
          
          throw ::file::exception(estatus, errorcode, m_path, "fseek != 0");
          

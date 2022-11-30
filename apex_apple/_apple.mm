@@ -142,7 +142,10 @@ void ns_main_sync(dispatch_block_t block, unsigned int)
 
 class matter;
 
-CLASS_DECL_APEX ::e_status __call(::matter * prunnable);
+
+///CLASS_DECL_APEX ::e_status  * prunnable);
+///call(::matter
+
 
 void main_async_runnable(::matter * prunnable)
 {

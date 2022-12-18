@@ -150,7 +150,7 @@ namespace acme_apple
 //
 //      path.find_replace(":", "");
 //
-//      ::str::ends_eat_ci(path, ".exe");
+//      ::str::case_insensitive_ends_eat(path, ".exe");
 //
 //      return path;
 //

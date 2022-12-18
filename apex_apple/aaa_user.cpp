@@ -135,7 +135,7 @@ namespace os
 
       }
 
-      ::str::begins_eat_ci(strWallpaper, "file://");
+      ::str::case_insensitive_begins_eat(strWallpaper, "file://");
 
       return strWallpaper;
 

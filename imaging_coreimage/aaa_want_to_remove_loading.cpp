@@ -243,7 +243,7 @@ namespace coreimage_imaging
 
          auto tmp = varFile.get_file_path();
 
-         if (tmp.ends_ci(".gif"))
+         if (tmp.case_insensitive_ends(".gif"))
          {
 
             output_debug_string("GIF!!");

@@ -207,7 +207,7 @@ namespace apple
 
 #endif
 
-      if(::str::begins_ci(strFallback, "/Users/"))
+      if(::str::case_insensitive_begins(strFallback, "/Users/"))
       {
 
          index i = 0;
@@ -430,7 +430,7 @@ namespace apple
 
          string strFolder = path.folder();
 
-         if(::str::ends_eat_ci(strFolder, path.folder()/"Contents"/ "MacOS"))
+         if(::str::case_insensitive_ends_eat(strFolder, path.folder()/"Contents"/ "MacOS"))
          {
 
             strFallback = strFolder;
@@ -671,7 +671,7 @@ auto tickStart = ::millis::now();
 //               if(bNewLine)
 //               {
 //                  string strLine = szBuffer;
-//                  if(::str::begins_eat_ci(strLine, "application_pid="))
+//                  if(::str::case_insensitive_begins_eat(strLine, "application_pid="))
 //                  {
 //                     m_iPid = atoi(strLine);
 //                     break;

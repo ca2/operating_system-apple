@@ -24,7 +24,7 @@ namespace acme_apple
       ~stdio_file() override;
       
 
-      void write_string(const char * lpsz) override;
+      void write_string(const ::scoped_string & scopedstr) override;
       virtual char * read_string(char * lpsz, ::u32 nMax);
       bool read_string(string & rString) override;
 

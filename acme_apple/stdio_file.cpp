@@ -226,12 +226,12 @@ namespace acme_apple
    }
 
 
-   void stdio_file::write_string(const char * lpsz)
+   void stdio_file::write_string(const ::scoped_string & scopedstr)
    {
-      ASSERT(lpsz != nullptr);
+      
       ASSERT(m_pStream != nullptr);
 
-      if (fputs(lpsz, m_pStream) == EOF)
+      if (fwrite(scopedstr.begin(), 1, scopedstr.size(), m_pStream) == EOF)
       {
 
          i32 iErrNo = errno;
@@ -240,7 +240,7 @@ namespace acme_apple
          
          auto estatus = errno_status(iErrNo);
          
-         throw ::file::exception(estatus, errorcode, m_path, "fputs == EOF");
+         throw ::file::exception(estatus, errorcode, m_path, "fwrite == EOF");
 
       }
       
@@ -280,7 +280,7 @@ namespace acme_apple
       ASSERT_VALID(this);
 
       //rString = &afxWchNil;    // is_empty string without deallocating
-      rString.Empty();
+      rString.empty();
       const i32 nMaxSize = 128;
       char * lpsz = rString.get_string_buffer(nMaxSize);
       char * lpszResult;
@@ -314,7 +314,7 @@ namespace acme_apple
                lpsz[nLen-1] == '\n')
             break;
 
-         nLen = rString.get_length();
+         nLen = rString.length();
          
          lpsz = rString.get_string_buffer(nMaxSize + nLen) + nLen;
          
@@ -323,7 +323,7 @@ namespace acme_apple
       // remov '\n' from end of string if present
       lpsz = rString.get_string_buffer(0);
       
-      nLen = rString.get_length();
+      nLen = rString.length();
       
       if (nLen != 0 && lpsz[nLen-1] == '\n')
       {

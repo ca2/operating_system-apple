@@ -27,7 +27,7 @@
 //         public:
 //            
 //            
-//            index_map < __pointer(message_out) >          m_mapMessageOut;
+//            index_map < ::pointer < message_out > >          m_mapMessageOut;
 //            
 //            
 //            midi(::object * pobject);
@@ -37,11 +37,11 @@
 //            virtual bool Initialize() override;
 //            
 //            
-//            __pointer(message_out) get_message_out(index iPort);
+//            ::pointer < message_out > get_message_out(index iPort);
 //            
 //            virtual void enumerate_midi_out_devices() override;
 //            
-//            virtual __pointer(::music::midi::sequencer) create_midi_sequencer(::music::midi::sequence * psequence, const string& strDevice) override;
+//            virtual ::pointer < ::music::midi::sequencer > create_midi_sequencer(::music::midi::sequence * psequence, const string& strDevice) override;
 //
 //            
 //         };

@@ -39,7 +39,7 @@ namespace multimedia
       void toolbox::allocate_buffer_data(::wave::buffer::item * pbuffer, memsize len, memsize uiAlign)
       {
          
-         synchronous_lock synchronouslock(mutex());
+         synchronous_lock synchronouslock(synchronization());
 
          AudioQueueBufferRef buffer = nullptr;
          
@@ -69,7 +69,7 @@ namespace multimedia
       void toolbox::free_buffer_data(::wave::buffer::item * pbuffer)
       {
          
-//         synchronous_lock synchronouslock(mutex());
+//         synchronous_lock synchronouslock(synchronization());
 //
 //         for(int i = 0; i < m_Buffers.get_count(); i++)
 //         {
@@ -93,7 +93,7 @@ namespace multimedia
       void toolbox::free_buffers()
       {
 
-         synchronous_lock synchronouslock(mutex());
+         synchronous_lock synchronouslock(synchronization());
          
          for(int i = 0; i < m_Buffers.get_count(); i++)
          {

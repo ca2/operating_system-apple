@@ -33,7 +33,7 @@ namespace draw2d_quartz2d
       
       //      virtual void * get_os_data() const;
       
-      void dump(dump_context & dumpcontext) const override;
+      //void dump(dump_context & dumpcontext) const override;
       
    };
    

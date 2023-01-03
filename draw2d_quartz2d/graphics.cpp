@@ -5,11 +5,17 @@
 #include "path.h"
 #include "brush.h"
 #include "pen.h"
+#include "acme/parallelization/synchronous_lock.h"
+#include "acme/platform/scoped_restore.h"
+#include "acme/primitive/geometry2d/shape_array.h"
+#include "acme/primitive/geometry2d/shape.h"
 #include "aura/graphics/image/context_image.h"
 #include "aura/graphics/image/drawing.h"
 #include "aura/graphics/write_text/text_out.h"
 #include "aura/graphics/write_text/draw_text.h"
 #include "aura/platform/context.h"
+#include "acme/platform/node.h"
+#include "acme/platform/system.h"
 #include <math.h>
 #include <memory.h>
 #include <CoreFoundation/CFDictionary.h>
@@ -29,7 +35,7 @@ CGContextRef cg_create_bitmap_context(CGSize size);
 namespace draw2d_quartz2d
 {
 
-   void __copy(CGAffineTransform & affine, const ::draw2d::matrix & m)
+   void copy(CGAffineTransform & affine, const ::draw2d::matrix & m)
    {
 
       affine.a = m.a1;
@@ -42,7 +48,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void __copy(::draw2d::matrix & m, const CGAffineTransform & affine)
+   void copy(::draw2d::matrix & m, const CGAffineTransform & affine)
    {
 
       m.a1 = affine.a;
@@ -59,7 +65,7 @@ namespace draw2d_quartz2d
    {
       
       m_iType = -1;
-      defer_create_mutex();
+      defer_create_synchronization();
 
       m_iSaveDC         = 0;
       m_bPrinting       = false;
@@ -98,14 +104,14 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::dump(dump_context & dumpcontext) const
-   {
-
-      ::draw2d::graphics::dump(dumpcontext);
-
-      dumpcontext << "\n";
-
-   }
+//   void graphics::dump(dump_context & dumpcontext) const
+//   {
+//
+//      ::draw2d::graphics::dump(dumpcontext);
+//
+//      dumpcontext << "\n";
+//
+//   }
 
 
    void graphics::CreateCompatibleDC(::draw2d::graphics * pgraphics)
@@ -216,7 +222,7 @@ namespace draw2d_quartz2d
    void graphics::set(::draw2d::bitmap * pbitmap)
    {
 
-      __pointer(::draw2d_quartz2d::bitmap) pbitmapQuartz = pbitmap;
+      ::pointer < ::draw2d_quartz2d::bitmap > pbitmapQuartz = pbitmap;
 
       if(pbitmapQuartz.is_set())
       {
@@ -384,7 +390,7 @@ namespace draw2d_quartz2d
 
       CGRect rectangle;
       
-      __copy(rectangle, rectParam);
+      copy(rectangle, rectParam);
       
       CGContextBeginPath(m_pdc);
       
@@ -408,7 +414,7 @@ namespace draw2d_quartz2d
 
       CGRect rectangle;
 
-      __copy(rectangle, rectParam);
+      copy(rectangle, rectParam);
 
       CGContextBeginPath(m_pdc);
 
@@ -424,7 +430,7 @@ namespace draw2d_quartz2d
 
       CGRect rectangle;
       
-      __copy(rectangle, rectParam);
+      copy(rectangle, rectParam);
       
       CGContextBeginPath(m_pdc);
       
@@ -464,7 +470,7 @@ namespace draw2d_quartz2d
       
       CGRect rectangle;
 
-      __copy(rectangle, rectParam);
+      copy(rectangle, rectParam);
 
       _set(m_ppen);
 
@@ -479,7 +485,7 @@ namespace draw2d_quartz2d
        
       CGRect rectangle;
 
-      __copy(rectangle, rectParam);
+      copy(rectangle, rectParam);
       
       CGContextBeginPath(m_pdc);
 
@@ -602,7 +608,7 @@ namespace draw2d_quartz2d
 
       CGRect rectangle;
       
-      __copy(rectangle, rectParam);
+      copy(rectangle, rectParam);
       
       CGContextBeginPath(m_pdc);
       
@@ -641,7 +647,7 @@ namespace draw2d_quartz2d
          i32 nWidth = rectangleTarget.width();
          i32 nHeight = rectangleTarget.height();
       
-         synchronous_lock synchronouslock(mutex());
+         synchronous_lock synchronouslock(synchronization());
 
          pimage->defer_update_image();
          
@@ -654,7 +660,7 @@ namespace draw2d_quartz2d
 
          }
 
-         synchronous_lock slSrc(pgraphicsSrc->mutex());
+         synchronous_lock slSrc(pgraphicsSrc->synchronization());
 
          if(pgraphicsSrc->get_os_data() == nullptr)
          {
@@ -663,9 +669,9 @@ namespace draw2d_quartz2d
 
          }
 
-         __pointer(::draw2d_quartz2d::image) imageSrc = pgraphicsSrc->m_pimage;
+         ::pointer < ::draw2d_quartz2d::image > imageSrc = pgraphicsSrc->m_pimage;
 
-         __pointer(::draw2d::graphics) imageGraphics;
+         ::pointer < ::draw2d::graphics > imageGraphics;
 
          if(imageSrc.is_set())
          {
@@ -704,7 +710,7 @@ namespace draw2d_quartz2d
 
          CGRect rectSub;
 
-         if(::comparison::gt(xSrc, SrcW))
+         if(::comparison::order(xSrc, SrcW) > 0)
          {
 
             CGImageRelease(pimage);
@@ -713,7 +719,7 @@ namespace draw2d_quartz2d
 
          }
 
-         if(::comparison::gt(ySrc, SrcH))
+         if(::comparison::order(ySrc, SrcH) > 0)
          {
 
             CGImageRelease(pimage);
@@ -1103,9 +1109,9 @@ namespace draw2d_quartz2d
       
       CFDictionaryRef attributes = CFDictionaryCreate(
                                                       kCFAllocatorDefault,
-                                                      pkeys.get_data(),
-                                                      pvals.get_data(),
-                                                      pkeys.get_size(),
+                                                      pkeys.data(),
+                                                      pvals.data(),
+                                                      pkeys.size(),
                                                       &kCFTypeDictionaryKeyCallBacks,
                                                       &kCFTypeDictionaryValueCallBacks);
       
@@ -1672,11 +1678,11 @@ namespace draw2d_quartz2d
    void graphics::_get(::draw2d::matrix & matrix)
    {
 
-      synchronous_lock synchronouslock(mutex());
+      synchronous_lock synchronouslock(synchronization());
 
       CGAffineTransform affine = CGContextGetCTM(m_pdc);
 
-      __copy(matrix, affine);
+      copy(matrix, affine);
 
    }
 
@@ -1684,7 +1690,7 @@ namespace draw2d_quartz2d
    void graphics::_set(const ::draw2d::matrix & matrix)
    {
 
-      synchronous_lock synchronouslock(mutex());
+      synchronous_lock synchronouslock(synchronization());
 
       CGAffineTransform affine = CGContextGetCTM(m_pdc);
 
@@ -1696,7 +1702,7 @@ namespace draw2d_quartz2d
 
       CGAffineTransform affineSet;
 
-      __copy(affineSet, matrix);
+      copy(affineSet, matrix);
 
       CGContextConcatCTM(m_pdc, affineSet);
 
@@ -1789,15 +1795,17 @@ namespace draw2d_quartz2d
    }
 
 
-   i32 graphics::get_clip_box(::rectangle_f64 * prectangle)
+   i32 graphics::get_clip_box(::rectangle_f64 & rectangle)
    {
 
-      CGRect rectangle = CGContextGetClipBoundingBox (m_pdc);
+      CGRect cgrect = CGContextGetClipBoundingBox (m_pdc);
       
-      prectangle->left = rectangle.origin.x;
-      prectangle->top = rectangle.origin.y;
-      prectangle->right = prectangle->left + rectangle.size.width;
-      prectangle->bottom = prectangle->top + rectangle.size.height;
+      ::copy(rectangle, cgrect);
+      
+//      prectangle->left = rectangle.origin.x;
+//      prectangle->top = rectangle.origin.y;
+//      prectangle->right = prectangle->left + rectangle.size.width;
+//      prectangle->bottom = prectangle->top + rectangle.size.height;
 
       return 0;
 
@@ -1866,7 +1874,7 @@ namespace draw2d_quartz2d
       
       rectangleOffset += m_pointAddShapeTranslate;
       
-      __copy(r, rectangleOffset);
+      copy(r, rectangleOffset);
       
       CGContextBeginPath(m_pdc);
    
@@ -1886,7 +1894,7 @@ namespace draw2d_quartz2d
       
       rectangleOffset += m_pointAddShapeTranslate;
       
-      __copy(r, rectangleOffset);
+      copy(r, rectangleOffset);
 
       CGContextBeginPath(m_pdc);
    
@@ -1902,14 +1910,14 @@ namespace draw2d_quartz2d
       
       CGContextBeginPath(m_pdc);
    
-      set_polygon(polygon.get_data(), polygon.get_count(), m_pointAddShapeTranslate);
+      set_polygon(polygon.data(), polygon.count(), m_pointAddShapeTranslate);
 
       CGContextClip(m_pdc);
 
    }
 
 
-   void graphics::_add_clipping_shape(const ::rectangle & rectangle, ___shape < ::draw2d::region > * pshape)
+   void graphics::_add_clipping_shape(const ::rectangle & rectangle, ___shape < ::draw2d::region > & shape)
    {
    
       _add_shape(rectangle);
@@ -1919,7 +1927,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_clipping_shape(const ::ellipse & ellipse, ___shape < ::draw2d::region > * pshape)
+   void graphics::_add_clipping_shape(const ::ellipse & ellipse, ___shape < ::draw2d::region > & shape)
    {
       
       _add_shape(ellipse);
@@ -1929,7 +1937,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_clipping_shape(const ::polygon & polygon, ___shape < ::draw2d::region > * pshape)
+   void graphics::_add_clipping_shape(const ::polygon & polygon, ___shape < ::draw2d::region > & shape)
    {
       
       _add_shape(polygon);
@@ -1963,7 +1971,7 @@ namespace draw2d_quartz2d
       
       rectangleOffset += m_pointAddShapeTranslate;
       
-      __copy(r, rectangleOffset);
+      copy(r, rectangleOffset);
    
       CGContextAddRect(m_pdc, r);
       
@@ -1975,7 +1983,7 @@ namespace draw2d_quartz2d
    
       CGRect r;
       
-      __copy(r, ellipse);
+      copy(r, ellipse);
    
       CGContextBeginPath(m_pdc);
    
@@ -1989,7 +1997,7 @@ namespace draw2d_quartz2d
    
       CGContextBeginPath(m_pdc);
    
-      set_polygon(polygon.get_data(), polygon.get_count());
+      set_polygon(polygon.data(), polygon.count());
       
    }
 
@@ -2024,52 +2032,54 @@ namespace draw2d_quartz2d
    }
 
 
-   size_f64 graphics::get_text_extent(const char * lpszString, strsize nCount, i32 iIndex)
+//   size_f64 graphics::get_text_extent(const ::scoped_string * lpszString, strsize nCount, i32 iIndex)
+//   {
+//
+//      size_f64 sz;
+//
+//      get_text_extent(sz, lpszString, nCount, iIndex);
+//
+//      return size_f64((int) sz.cx, (int) sz.cy);
+//
+//   }
+//
+//
+//   size_f64 graphics::get_text_extent(const char * lpszString, strsize nCount)
+//   {
+//
+//      ::size_f64 size_f64;
+//
+//      get_text_extent(size_f64, lpszString, nCount, (int) nCount);
+//
+//      return ::size_f64(size_f64.cx, size_f64.cy);
+//
+//   }
+
+
+//   size_f64 graphics::get_text_extent(const block & block)
+//   {
+//
+//      ::size_f64 size;
+//
+//      get_text_extent(size, (const char *) block.get_data(), (int)block.get_size());
+//
+//      return size;
+//
+//   }
+
+
+   ::size_f64 graphics::get_text_extent(const ::scoped_string & scopedstr, i32 iIndex)
    {
-
-      size_f64 sz;
-
-      get_text_extent(sz, lpszString, nCount, iIndex);
-
-      return size_f64((int) sz.cx, (int) sz.cy);
-
-   }
-
-
-   size_f64 graphics::get_text_extent(const char * lpszString, strsize nCount)
-   {
-
-      ::size_f64 size_f64;
-
-      get_text_extent(size_f64, lpszString, nCount, (int) nCount);
       
-      return ::size_f64(size_f64.cx, size_f64.cy);
-
-   }
-
-
-   size_f64 graphics::get_text_extent(const block & block)
-   {
-
-      ::size_f64 size;
-
-      get_text_extent(size, (const char *) block.get_data(), (int)block.get_size());
-
-      return size;
-
-   }
-
-
-   void graphics::get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex)
-   {
-      
-      synchronous_lock synchronouslock(mutex());
+      synchronous_lock synchronouslock(synchronization());
 
       CGFloat ascent, descent, leading, width;
 
       string_array stra;
 
-      stra.add_lines(string(lpszString, minimum(iIndex, nCount), 0));
+      stra.add_lines(scopedstr(0, minimum(iIndex, scopedstr.size())));
+      
+      ::size_f64 size;
 
       size.cy = 0;
 
@@ -2096,20 +2106,20 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::get_text_extent(size_f64 & size, const char * lpszString, strsize nCount)
+   ::size_f64 graphics::get_text_extent(const ::scoped_string & scopedstr)
    {
 
-      return get_text_extent(size, lpszString, nCount, (i32) nCount);
+      return get_text_extent(scopedstr, (i32) scopedstr.size());
 
    }
 
 
-   void graphics::get_text_extent(size_f64 & size, const string & str)
-   {
-
-      return ::draw2d::graphics::get_text_extent(size, str);
-
-   }
+//   void graphics::get_text_extent(size_f64 & size, const string & str)
+//   {
+//
+//      return ::draw2d::graphics::get_text_extent(size, str);
+//
+//   }
 
 
    void graphics::fill_rectangle(const ::rectangle_f64 & rectParam, const ::color::color & color)
@@ -2117,7 +2127,7 @@ namespace draw2d_quartz2d
 
       CGRect rectangle;
 
-      __copy(rectangle, rectParam);
+      copy(rectangle, rectParam);
 
       internal_set_fill_color(color);
 
@@ -2129,7 +2139,7 @@ namespace draw2d_quartz2d
    void graphics::TextOutRaw(double x, double y, const block & block)
    {
 
-      internal_show_text(x, y, 0, string((const char *) block.get_data(), block.get_size()), kCGTextFill, e_align_top_left, e_draw_text_none, true);
+      internal_show_text(x, y, 0, string((const char *) block.data(), block.size()), kCGTextFill, e_align_top_left, e_draw_text_none, true);
 
    }
 
@@ -2149,7 +2159,7 @@ namespace draw2d_quartz2d
 
             m_pfont.create(this);
             
-            auto psystem = m_psystem;
+            auto psystem = acmesystem();
             
             auto pnode = psystem->node();
 
@@ -2307,7 +2317,7 @@ namespace draw2d_quartz2d
       if(pregion->m_eregion == ::draw2d::e_region_combine)
       {
          
-         __pointer(::draw2d::region::combine_item) pitem = pregion->m_pitem;
+         ::pointer < ::draw2d::region::combine_item > pitem = pregion->m_pitem;
 
          if(pitem->m_ecombine == ::draw2d::e_combine_intersect)
          {
@@ -2338,11 +2348,11 @@ namespace draw2d_quartz2d
       else if(pregion->m_eregion == ::draw2d::e_region_rect)
       {
          
-         __pointer(::draw2d::region::rectangle_item) pitem = pregion->m_pitem;
+         ::pointer < ::draw2d::region::rectangle_item > pitem = pregion->m_pitem;
 
          CGRect rectangle;
          
-         __copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pitem->m_rectangle);
 
 //         rectangle.origin.x = pregion->m_x1;
 //         rectangle.origin.y = pregion->m_y1;
@@ -2355,21 +2365,21 @@ namespace draw2d_quartz2d
       else if(pregion->m_eregion == ::draw2d::e_region_polygon)
       {
          
-         __pointer(::draw2d::region::polygon_item) pitem = pregion->m_pitem;
+         ::pointer < ::draw2d::region::polygon_item > pitem = pregion->m_pitem;
 
          CGContextBeginPath (m_pdc);
 
-         set_polygon(pitem->m_polygon.get_data(), pitem->m_polygon.get_size());
+         set_polygon(pitem->m_polygon.data(), pitem->m_polygon.size());
 
       }
       else if(pregion->m_eregion == ::draw2d::e_region_ellipse)
       {
 
-         __pointer(::draw2d::region::ellipse_item) pitem = pregion->m_pitem;
+         ::pointer < ::draw2d::region::ellipse_item > pitem = pregion->m_pitem;
          
          CGRect rectangle;
 
-         __copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pitem->m_rectangle);
 
 //         rectangle.origin.x = pregion->m_x1;
 //         rectangle.origin.y = pregion->m_y1;
@@ -2409,11 +2419,11 @@ namespace draw2d_quartz2d
       if(pregion->m_eregion == ::draw2d::e_region_rect)
       {
 
-         __pointer(::draw2d::region::rectangle_item) pitem = pregion->m_pitem;
+         ::pointer < ::draw2d::region::rectangle_item > pitem = pregion->m_pitem;
 
          CGRect rectangle;
          
-         __copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pitem->m_rectangle);
 
 //         rectangle.origin.x = pregion->m_x1;
 //         rectangle.origin.y = pregion->m_y1;
@@ -2426,21 +2436,21 @@ namespace draw2d_quartz2d
       else if(pregion->m_eregion == ::draw2d::e_region_polygon)
       {
 
-         __pointer(::draw2d::region::polygon_item) pitem = pregion->m_pitem;
+         ::pointer < ::draw2d::region::polygon_item > pitem = pregion->m_pitem;
 
          CGContextBeginPath (m_pdc);
 
-         set_polygon(pitem->m_polygon.get_data(), pitem->m_polygon.get_size());
+         set_polygon(pitem->m_polygon.data(), pitem->m_polygon.size());
 
       }
       else if(pregion->m_eregion == ::draw2d::e_region_ellipse)
       {
 
-         __pointer(::draw2d::region::ellipse_item) pitem = pregion->m_pitem;
+         ::pointer < ::draw2d::region::ellipse_item > pitem = pregion->m_pitem;
 
          CGRect rectangle;
          
-         __copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pitem->m_rectangle);
 
 //         rectangle.origin.x = pregion->m_x1;
 //         rectangle.origin.y = pregion->m_y1;
@@ -2453,7 +2463,7 @@ namespace draw2d_quartz2d
       else if(pregion->m_eregion == ::draw2d::e_region_combine)
       {
          
-         __pointer(::draw2d::region::combine_item) pitem = pregion->m_pitem;
+         ::pointer < ::draw2d::region::combine_item > pitem = pregion->m_pitem;
          
          if(pitem->m_ecombine == ::draw2d::e_combine_intersect)
          {
@@ -2835,13 +2845,13 @@ namespace draw2d_quartz2d
 
          _clip(m_pregion);
 
-         KEEP(m_bPat);
+         ::scoped_restore restore(&m_bPat);
 
          CGRect rectangle = CGContextGetClipBoundingBox(pgraphics);
          
          ::rectangle_i32 rectangle_i32;
          
-         __copy(rectangle_i32, rectangle);
+         copy(rectangle_i32, rectangle);
          
          image_source imagesource(pbrush->m_pimage);
          
@@ -3104,7 +3114,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       string str(textout.m_strText);
 
-      synchronous_lock ml(mutex());
+      synchronous_lock ml(synchronization());
 
       double Δx;
 
@@ -3154,7 +3164,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       string str(textout.m_strText);
 
-      synchronous_lock ml(mutex());
+      synchronous_lock ml(synchronization());
 
       double Δx;
 
@@ -3204,7 +3214,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       string str(drawtext.m_strText);
 
-      synchronous_lock ml(mutex());
+      synchronous_lock ml(synchronization());
 
       double Δx;
 
@@ -3255,7 +3265,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       string str(drawtext.m_strText);
 
-      synchronous_lock ml(mutex());
+      synchronous_lock ml(synchronization());
 
       double Δx;
 
@@ -3330,7 +3340,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       string str(strParam);
 
-      synchronous_lock ml(mutex());
+      synchronous_lock ml(synchronization());
 
       if(edrawtext & e_draw_text_expand_tabs)
       {
@@ -3549,7 +3559,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 //
 //      return;
 
-      synchronous_lock synchronouslock(mutex());
+      synchronous_lock synchronouslock(synchronization());
 
       //CGContextRef pgraphics = m_pdc;
 
@@ -3560,7 +3570,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          
       }
 
-      //__pointer(::draw2d_quartz2d::font) f = spfont;
+      //::pointer < ::draw2d_quartz2d::font > f = spfont;
       
       if(!pfont)
       {
@@ -3777,9 +3787,9 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       CFDictionaryRef attributes = CFDictionaryCreate(
                                    kCFAllocatorDefault,
-                                   pkeys.get_data(),
-                                   pvals.get_data(),
-                                   pkeys.get_size(),
+                                   pkeys.data(),
+                                   pvals.data(),
+                                   pkeys.size(),
                                    &kCFTypeDictionaryKeyCallBacks,
                                    &kCFTypeDictionaryValueCallBacks);
 
@@ -3915,7 +3925,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
    void graphics::internal_draw_text(CGTextDrawingMode emode, double x, double y, CTLineRef line, ::draw2d::brush * pbrush)
    {
 
-      synchronous_lock synchronouslock(mutex());
+      synchronous_lock synchronouslock(synchronization());
       
       CGContextRef pgraphics = m_pdc;
 

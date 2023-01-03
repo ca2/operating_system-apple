@@ -195,7 +195,7 @@ namespace draw2d_quartz2d
       void paint_region(::draw2d::region * pregion) override;
 
       // Clipping Functions
-      virtual i32 get_clip_box(::rectangle_f64 * prectangle) override;
+      i32 get_clip_box(::rectangle_f64 & rectangle) override;
       //void PtVisible(double x, double y) override;
       //void PtVisible(const ::point_f64 & point) override;
       //void RectVisible(const ::rectangle_f64 & rectangle) override;
@@ -220,11 +220,11 @@ namespace draw2d_quartz2d
       void intersect_clip(const ::polygon & polygon) override;
       
       
-      void _add_clipping_shape(const ::rectangle & rectangle, ___shape < ::draw2d::region > * pshape) override;
+      void _add_clipping_shape(const ::rectangle & rectangle, ___shape < ::draw2d::region > & shape) override;
       void _add_shape(const ::rectangle & rectangle);
-      void _add_clipping_shape(const ::ellipse & ellipse, ___shape < ::draw2d::region > * pshape) override;
+      void _add_clipping_shape(const ::ellipse & ellipse, ___shape < ::draw2d::region > & shape) override;
       void _add_shape(const ::ellipse & ellipse);
-      void _add_clipping_shape(const ::polygon & polygon, ___shape < ::draw2d::region > * pshape) override;
+      void _add_clipping_shape(const ::polygon & polygon, ___shape < ::draw2d::region > & shape) override;
       void _add_shape(const ::polygon & polygon);
 
       
@@ -391,12 +391,12 @@ namespace draw2d_quartz2d
 //      virtual i32 draw_text_ex(char * lpszString, i32 nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams);
 //      void draw_text_ex(const string & str, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams) override;
 
-      size_f64 get_text_extent(const char * lpszString, strsize nCount, i32 iIndex);
-      size_f64 get_text_extent(const char * lpszString, strsize nCount) override;
-      size_f64 get_text_extent(const block & block) override;
-      void get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex) ;
-      void get_text_extent(size_f64 & size, const char * lpszString, strsize nCount) override;
-      void get_text_extent(size_f64 & size, const string & str) override;
+      size_f64 get_text_extent(const ::scoped_string & scopedstr, i32 iIndex);
+      size_f64 get_text_extent(const ::scoped_string & scopedstr) override;
+      //size_f64 get_text_extent(const block & block) override;
+//      void get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex) ;
+//      void get_text_extent(size_f64 & size, const char * lpszString, strsize nCount) override;
+//      void get_text_extent(size_f64 & size, const string & str) override;
 //      size_f64 GetOutputTextExtent(const char * lpszString, strsize nCount) override;
 //      size_f64 GetOutputTextExtent(const string & str) override;
 //      size_f64 GetTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions);
@@ -518,7 +518,7 @@ namespace draw2d_quartz2d
 //      void draw_3drect(const ::rectangle_f64 & rectangle, const ::color::color & colorTopLeft, const ::color::color & colorBottomRight, const ::e_border & eborder = e_border_all) override;
 
       //virtual void assert_ok() const override;
-      virtual void dump(dump_context & dumpcontext) const override;
+//      virtual void dump(dump_context & dumpcontext) const override;
 
       void set_alpha_mode(::draw2d::enum_alpha_mode ealphamode) override;
 

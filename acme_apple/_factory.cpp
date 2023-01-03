@@ -4,13 +4,13 @@
 #include "exception_translator.h"
 
 
-__FACTORY_EXPORT void acme_posix_factory(::factory::factory * pfactory);
+DECLARE_FACTORY(acme_darwin);
 
 
-__FACTORY_EXPORT void acme_apple_factory(::factory::factory * pfactory)
+IMPLEMENT_FACTORY(acme_apple)
 {
    
-   acme_posix_factory(pfactory);
+   acme_darwin_factory(pfactory);
 
    pfactory->add_factory_item < ::acme_apple::node, ::acme::node > ();
    //create_factory < ::posix::file_memory_map, ::file::memory_map >();

@@ -2109,7 +2109,7 @@ namespace music
 //      *
 //      ****/
 //      u32 mysmfGetTrackEventData(
-//         __pointer(::music::midi::file::buffer) pSmf,
+//         ::pointer < ::music::midi::file::buffer > pSmf,
 //         ::music::midi::event_v1 *      pEvent,
 //         byte *            pData[])
 //      {

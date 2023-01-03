@@ -33,12 +33,12 @@ namespace draw2d_quartz2d
    }
    
    
-   void font::dump(dump_context & dumpcontext) const
-   {
-      
-      ::write_text::font::dump(dumpcontext);
-      
-   }
+//   void font::dump(dump_context & dumpcontext) const
+//   {
+//
+//      ::write_text::font::dump(dumpcontext);
+//
+//   }
 
    
    void font::create(::draw2d::graphics * pgraphics, i8 iCreate)
@@ -51,7 +51,7 @@ namespace draw2d_quartz2d
       if(m_path.has_char())
       {
          
-         __pointer(::draw2d_quartz2d::draw2d) pdraw2d = m_psystem->m_paurasystem->draw2d();
+         ::pointer < ::draw2d_quartz2d::draw2d > pdraw2d = acmesystem()->m_paurasystem->draw2d();
          
          fontref = pdraw2d->private_cgfontref(pgraphics->m_pcontext, m_path);
          
@@ -63,7 +63,7 @@ namespace draw2d_quartz2d
          if(m_fontName == nullptr)
          {
             
-            auto psystem = m_psystem->m_paurasystem;
+            auto psystem = acmesystem()->m_paurasystem;
             
             auto * pdraw2d = psystem->draw2d();
 
@@ -148,9 +148,9 @@ namespace draw2d_quartz2d
             
             traits1 = CFDictionaryCreate(
                                          kCFAllocatorDefault,
-                                         pkeyTraits.get_data(),
-                                         pvalTraits.get_data(),
-                                         pkeyTraits.get_size(),
+                                         pkeyTraits.data(),
+                                         pvalTraits.data(),
+                                         pkeyTraits.size(),
                                          &kCFTypeDictionaryKeyCallBacks,
                                          &kCFTypeDictionaryValueCallBacks);
             
@@ -169,9 +169,9 @@ namespace draw2d_quartz2d
             
             attributes1 = CFDictionaryCreate(
                                              kCFAllocatorDefault,
-                                             pkeyAttrs.get_data(),
-                                             pvalAttrs.get_data(),
-                                             pkeyAttrs.get_size(),
+                                             pkeyAttrs.data(),
+                                             pvalAttrs.data(),
+                                             pkeyAttrs.size(),
                                              &kCFTypeDictionaryKeyCallBacks,
                                              &kCFTypeDictionaryValueCallBacks);
             

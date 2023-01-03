@@ -47,7 +47,7 @@ namespace music
          public:
             
             
-            __pointer(::music::midi::core_midi::midi) m_pmidi;
+            ::pointer < ::music::midi::core_midi::midi > m_pmidi;
 
             u64                m_ui64Start;
 

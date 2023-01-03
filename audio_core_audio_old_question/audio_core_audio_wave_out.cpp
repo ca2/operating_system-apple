@@ -182,7 +182,7 @@ namespace multimedia
          m_pwaveformat->nAvgBytesPerSec = m_pwaveformat->nSamplesPerSec * m_pwaveformat->nBlockAlign;
          m_pwaveformat->cbSize = 0;
 
-         __pointer(::audio::wave) audiowave = papplication->audiowave();
+         ::pointer < ::audio::wave > audiowave = papplication->audiowave();
 
          translate(*&m_dataformat, m_pwaveformat);
          if(::success == (m_estatusWave = translate(AudioQueueNewOutput(                              // 1
@@ -478,7 +478,7 @@ Opened:
        void out::OnMultimediaDone(::message::message * pmessage)
        {
 
-       __pointer(::user::message) pusermessage(pmessage);
+       ::pointer < ::user::message > pusermessage(pmessage);
 
        LPWAVEHDR lpwavehdr = (LPWAVEHDR) pusermessage->m_lparam.m_lparam;
 

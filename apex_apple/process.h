@@ -1,6 +1,8 @@
 #pragma once
 
 
+#include "acme/operating_system/process.h"
+
 namespace apex_apple
 {
 
@@ -19,7 +21,7 @@ namespace apex_apple
 
       bool has_exited() override;
 
-      bool synch_elevated(const ::string & pszCmdLine,int iShow,const ::duration & durationTimeOut,bool * pbTimeOut) override;
+      bool synch_elevated(const ::string & strCmdLine, int iShow, const class ::time & timeTimeOut, bool * pbTimeOut) override;
 
    };
 

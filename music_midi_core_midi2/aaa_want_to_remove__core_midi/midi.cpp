@@ -38,7 +38,7 @@
 //         }
 //
 //
-//         __pointer(message_out) midi::get_message_out(index iPort)
+//         ::pointer < message_out > midi::get_message_out(index iPort)
 //         {
 //
 //            auto & pmessageout = m_mapMessageOut[iPort];
@@ -100,7 +100,7 @@
 //         }
 //
 //
-//         __pointer(::music::midi::sequencer) midi::create_midi_sequencer(::music::midi::sequence * psequence, const string& strDevice)
+//         ::pointer < ::music::midi::sequencer > midi::create_midi_sequencer(::music::midi::sequence * psequence, const string& strDevice)
 //         {
 //
 //

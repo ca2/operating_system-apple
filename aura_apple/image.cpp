@@ -7,6 +7,7 @@
 //
 #include "framework.h"
 #include "aura/graphics/image/image.h"
+#include <CoreGraphics/CoreGraphics.h>
 
 
 CGImageRef cgimageref_from_image(const ::image * pimage)
@@ -19,7 +20,7 @@ CGImageRef cgimageref_from_image(const ::image * pimage)
    if(pdst == nullptr)
    {
 
-      return nullptr;
+      return 0;
 
    }
    

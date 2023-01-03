@@ -103,7 +103,7 @@ namespace music
          }
 
 
-         __pointer(::music::midi::message_out) sequence::get_message_out()
+         ::pointer < ::music::midi::message_out > sequence::get_message_out()
          {
             
             return ::music::midi::sequence::get_message_out();
@@ -111,14 +111,14 @@ namespace music
          }
 
 
-         __pointer(play_thread) sequence::on_midi_sequence_start()
+         ::pointer < play_thread > sequence::on_midi_sequence_start()
          {
             
             auto iDevice = m_pthread->m_pplayer->get_midi_out_device().i64();
             
-            __pointer(department) pdepartment = papplication->midi();
+            ::pointer < department > pdepartment = papplication->midi();
             
-            __pointer(play_thread) pthread;
+            ::pointer < play_thread > pthread;
             
             if(iDevice >= 0 && iDevice < pdepartment->m_messageouta.get_count())
             {
@@ -469,7 +469,7 @@ namespace music
          ::e_status     sequence::get_ticks(imedia_time &  pTicks)
          {
 
-            synchronous_lock synchronouslock(mutex());
+            synchronous_lock synchronouslock(synchronization());
 
             //::e_status                    mmr;
 
@@ -1276,7 +1276,7 @@ namespace music
          }
 
 
-            __pointer(::music::midi::sequence::event) sequence::create_new_event(e_event eevent, LPMIDIHDR lpmidihdr)
+            ::pointer < ::music::midi::sequence::event > sequence::create_new_event(e_event eevent, LPMIDIHDR lpmidihdr)
          {
 
             ASSERT(::is_set(this));

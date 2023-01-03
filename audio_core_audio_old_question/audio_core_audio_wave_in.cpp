@@ -57,7 +57,7 @@ namespace multimedia
 
       void in::pre_translate_message(::message::message * pmessage)
       {
-         __pointer(::user::message) pusermessage(pmessage);
+         ::pointer < ::user::message > pusermessage(pmessage);
          //ASSERT(GetMainWnd() == nullptr);
          /*         if(pusermessage->m_id == MM_WIM_OPEN ||
                      pusermessage->m_id == MM_WIM_CLOSE ||
@@ -93,7 +93,7 @@ namespace multimedia
 //         m_pwaveformat->nBlockAlign = m_pwaveformat->wBitsPerSample * m_pwaveformat->nChannels / 8;
 //         m_pwaveformat->nAvgBytesPerSec = m_pwaveformat->nSamplesPerSec * m_pwaveformat->nBlockAlign;
 //         m_pwaveformat->cbSize = 0;
-//         __pointer(::audio::wave) audiowave = papplication->audiowave();
+//         ::pointer < ::audio::wave > audiowave = papplication->audiowave();
 //         m_iBuffer = 0;
 //
 //         if(::success == (m_estatusWave  = translate(AudioQueueNewInput(                              // 1

@@ -111,7 +111,7 @@ namespace music
 
             void OnPositionCB(LPMIDIHDR lpmidihdr);
 
-            virtual __pointer(::music::midi::message_out) get_message_out() override;
+            virtual ::pointer < ::music::midi::message_out > get_message_out() override;
 
             using ::ikaraoke::karaoke::TimeToPosition;
             using ::ikaraoke::karaoke::PositionToTime;
@@ -149,7 +149,7 @@ namespace music
             imedia_time GetQuarterNote() override;
 
 
-            inline __pointer(::music::midi::core_midi::file) file()
+            inline ::pointer < ::music::midi::core_midi::file > file()
             {
                
                return get_file();
@@ -157,7 +157,7 @@ namespace music
             }
             
 
-            inline __pointer(::music::midi::core_midi::sequence_thread) thread()
+            inline ::pointer < ::music::midi::core_midi::sequence_thread > thread()
             {
                return m_pthread;
             }
@@ -165,9 +165,9 @@ namespace music
             virtual void OnEvent(::music::midi::sequence::event * pevent) override;
             
             using ::music::midi::sequence::create_new_event;
-            virtual __pointer(::music::midi::sequence::event) create_new_event(sequence::e_event eevent, LPMIDIHDR lpmidihdr);
+            virtual ::pointer < ::music::midi::sequence::event > create_new_event(sequence::e_event eevent, LPMIDIHDR lpmidihdr);
 
-            virtual __pointer(::music::midi::play_thread) on_midi_sequence_start() override;
+            virtual ::pointer < ::music::midi::play_thread > on_midi_sequence_start() override;
 
             ::music::midi::event * midi_sequence_get_next_event();
 

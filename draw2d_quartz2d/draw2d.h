@@ -14,7 +14,7 @@ namespace draw2d_quartz2d
    public:
 
       class private_font :
-         virtual public ::element
+         virtual public ::particle
       {
       public:
          
@@ -22,13 +22,13 @@ namespace draw2d_quartz2d
          
       };
       
-      string_map < __pointer(private_font) >         m_mapPrivateFont;
+      string_map < ::pointer < private_font > >         m_mapPrivateFont;
 
       draw2d();
       ~draw2d() override;
 
 
-      void initialize(::object * pobject) override;
+      void initialize(::particle * pparticle) override;
 
       string write_text_get_default_library_name() override;
 

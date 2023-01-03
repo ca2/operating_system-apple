@@ -470,13 +470,13 @@ namespace apex_apple
 ////
 ////                                 gdk_monitor_get_workarea(pmonitor, &rect);
 ////
-////                                 __copy(rectWorkspace, rect);
+////                                 copy(rectWorkspace, rect);
 ////
 ////                                 __zero(rect);
 ////
 ////                                 gdk_monitor_get_geometry(pmonitor, &rect);
 ////
-////                                 __copy(rectMonitor, rect);
+////                                 copy(rectMonitor, rect);
 ////
 ////                              }
 ////

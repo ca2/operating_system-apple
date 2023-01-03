@@ -77,7 +77,7 @@ namespace music
          bool sequence_thread::PostMidiSequenceEvent(::music::midi::sequence * psequenceParam, sequence::e_event eevent, LPMIDIHDR lpmh)
          {
             
-            __pointer(sequence) psequence = psequenceParam;
+            ::pointer < sequence > psequence = psequenceParam;
 
             return post_object(message_event,  (WPARAM) psequenceParam, psequence->create_new_event(eevent, lpmh));
 
@@ -87,9 +87,9 @@ namespace music
          void sequence_thread::OnMidiSequenceEvent(::message::message * pmessage)
          {
 
-            __pointer(::user::message) pusermessage(pmessage);
+            ::pointer < ::user::message > pusermessage(pmessage);
 
-            __pointer(sequence::event) pevent(pusermessage->m_lparam);
+            ::pointer < sequence::event > pevent(pusermessage->m_lparam);
 
             auto pseq = pevent->m_psequence;
 

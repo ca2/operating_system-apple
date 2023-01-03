@@ -70,9 +70,9 @@ namespace file
 
       }
 
-      __pointer(listener) plistener(plistenerParam);
+      ::pointer < listener > plistener(plistenerParam);
 
-      synchronous_lock synchronouslock(mutex());
+      synchronous_lock synchronouslock(synchronization());
 
       i32 wd = inotify_add_watch (mFD, pathFolder, IN_MODIFY | IN_CLOSE_WRITE | IN_MOVED_TO | IN_CREATE | IN_MOVED_FROM | IN_DELETE);
 

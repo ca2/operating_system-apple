@@ -1,5 +1,10 @@
 #include "framework.h"
 #include "acme_posix/pipe.h"
+#include "acme/platform/system.h"
+#include "acme/primitive/collection/str_array.h"
+//#include "acme/primitive/time/time.h"
+//#include "acme/primitive/time/time/time.h"
+//#include <unistd.h>
 //#include "apex/platform/static_start.h"
 #include "process.h"
 
@@ -62,7 +67,7 @@ namespace apex_apple
 
       address_array < char * > argv;
 
-      straParam.explode_command_line(pszCmdLine, &argv);
+      ::explode_command_line(straParam, pszCmdLine, &argv);
 
       posix_spawnattr_t attr;
 
@@ -110,7 +115,7 @@ namespace apex_apple
 
       address_array < char * > env;
 
-      auto envp = m_psystem->m_envp;
+      auto envp = acmesystem()->m_psubsystem->m_envp;
 
       string strFallback;
 
@@ -262,7 +267,7 @@ namespace apex_apple
    }
 
 
-   bool process::synch_elevated(const ::string & pszCmdLineParam,int iShow,const ::duration & durationTimeOut,bool * pbTimeOut)
+   bool process::synch_elevated(const ::string & strCmdLineParam, int iShow, const class ::time & timeTimeOut,bool * pbTimeOut)
    {
 
       string_array straParam;
@@ -280,9 +285,9 @@ namespace apex_apple
 
       }
 
-      string pszCmdLine = "/usr/bin/gksu " + string(pszCmdLineParam);
+      string pszCmdLine = "/usr/bin/gksu " + strCmdLineParam;
 
-      straParam.explode_command_line(pszCmdLine, &argv);
+      ::explode_command_line(straParam, pszCmdLine, &argv);
 
       posix_spawnattr_t attr;
 
@@ -294,7 +299,7 @@ namespace apex_apple
 
       int status= 0;
       
-      auto envp = m_psystem->m_envp;
+      auto envp = acmesystem()->m_psubsystem->m_envp;
 
       {
 
@@ -310,9 +315,9 @@ namespace apex_apple
 
       debug_print("synch_elevated : posix_spawn return status %d", status);
 
-      auto tickStart = ::duration::now();
+      auto tickStart = ::time::now();
 
-      while(!has_exited() && tickStart.elapsed() < durationTimeOut)
+      while(!has_exited() && tickStart.elapsed() < timeTimeOut)
       {
 
          sleep(100_ms);

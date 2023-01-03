@@ -222,7 +222,7 @@ namespace music
          }
       
          
-         __pointer(::music::midi::sequencer) midi::create_midi_sequencer(::music::midi::sequence * psequence, const string& strDevice)
+         ::pointer < ::music::midi::sequencer > midi::create_midi_sequencer(::music::midi::sequence * psequence, const string& strDevice)
          {
             
             string strEngine = device_engine(strDevice);
@@ -241,7 +241,7 @@ namespace music
          }
 
          
-         __pointer(::music::midi::message_out) midi::get_message_out(const string & strDevice)
+         ::pointer < ::music::midi::message_out > midi::get_message_out(const string & strDevice)
          {
             
             if(strDevice == "core_midi:DLS Synth")
@@ -276,7 +276,7 @@ namespace music
          }
 
       
-      __pointer(::music::midi::message_in) midi::get_message_in(const string & strDevice)
+      ::pointer < ::music::midi::message_in > midi::get_message_in(const string & strDevice)
       {
          
 //         if(strDevice == "core_midi:DLS Synth")
@@ -311,7 +311,7 @@ namespace music
       }
 
          
-         __pointer(::music::midi::midi) midi::get_device_midi(const string & strDevice)
+         ::pointer < ::music::midi::midi > midi::get_device_midi(const string & strDevice)
          {
 
             string strEngine = device_engine(strDevice);

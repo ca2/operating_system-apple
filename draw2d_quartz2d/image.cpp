@@ -150,7 +150,7 @@ namespace draw2d_quartz2d
 
       m_pgraphics->m_pimage = this;
       
-      set(eflagCreate);
+      set_flag(eflagCreate);
 
    }
 

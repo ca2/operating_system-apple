@@ -26,14 +26,14 @@ namespace draw2d_quartz2d
    }
    
 
-   void brush::dump(dump_context & dumpcontext) const
-   {
-      
-      ::draw2d::object::dump(dumpcontext);
-      
-   }
-
-   
+//   void brush::dump(dump_context & dumpcontext) const
+//   {
+//      
+//      ::draw2d::object::dump(dumpcontext);
+//      
+//   }
+//
+//   
    void brush::destroy()
    {
       

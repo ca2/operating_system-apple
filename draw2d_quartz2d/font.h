@@ -52,7 +52,7 @@ namespace draw2d_quartz2d
 
       //virtual void * get_os_data() const override;
       
-      void dump(dump_context & dumpcontext) const override;
+//      void dump(dump_context & dumpcontext) const override;
       
       double get_ascent(::draw2d::graphics * pgraphics) override;
       

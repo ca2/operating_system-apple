@@ -161,12 +161,12 @@ namespace aura_apple
 //      }
 
 
-      void node::initialize(::object * pobject)
+      void node::initialize(::particle * pparticle)
       {
 
          //auto estatus =
          
-         ::apex_posix::node::initialize(pobject);
+         ::apex_posix::node::initialize(pparticle);
 
 //         if (!estatus)
 //         {

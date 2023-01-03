@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "draw2d.h"
+#include "acme/primitive/primitive/memory.h"
 #include "aura/platform/system.h"
 
 
@@ -19,10 +20,10 @@ namespace draw2d_quartz2d
    }
 
 
-   void draw2d::initialize(::object * pobject)
+   void draw2d::initialize(::particle * pparticle)
    {
 
-      ::draw2d::draw2d::initialize(pobject);
+      ::draw2d::draw2d::initialize(pparticle);
 
    }
 
@@ -51,7 +52,7 @@ namespace draw2d_quartz2d
       
       pprivatefont->m_cgfontref = nullptr;
 
-      auto pmemory = m_psystem->m_paurasystem->draw2d()->write_text()->get_file_memory(pcontext, path);
+      auto pmemory = acmesystem()->m_paurasystem->draw2d()->write_text()->get_file_memory(pcontext, path);
 
       if(!pmemory || pmemory->is_empty())
       {
@@ -60,7 +61,7 @@ namespace draw2d_quartz2d
          
       }
    
-      CFDataRef dataref = CFDataCreate(nullptr, pmemory->get_data(), pmemory->get_size());
+      CFDataRef dataref = CFDataCreate(nullptr, pmemory->data(), pmemory->size());
    
       CGDataProviderRef dataproviderref = CGDataProviderCreateWithCFData(dataref);
 

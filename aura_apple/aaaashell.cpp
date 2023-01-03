@@ -132,7 +132,7 @@ namespace aura
 //
 //         {
 //
-//            synchronous_lock synchronouslock(mutex());
+//            synchronous_lock synchronouslock(synchronization());
 //
 //            if (m_imagemap.lookup(imagekey, iImage))
 //            {
@@ -207,7 +207,7 @@ namespace aura
 ////         if (!b48 && shfi48.hIcon != nullptr)
 ////         {
 ////            ::DestroyIcon(shfi48.hIcon);
-////         }         synchronous_lock synchronouslock(mutex());
+////         }         synchronous_lock synchronouslock(synchronization());
 ////
 ////         m_imagemap.set_at(imagekey, iImage);
 ////
@@ -568,7 +568,7 @@ namespace aura
       void shell::on_update_sizes_interest()
       {
 
-         synchronous_lock synchronouslock(mutex());
+         synchronous_lock synchronouslock(synchronization());
 
          m_iaSize.erase_all();
 
@@ -994,7 +994,7 @@ namespace aura
 //
 //            {
 //
-//               synchronous_lock synchronouslock(mutex());
+//               synchronous_lock synchronouslock(synchronization());
 //
 //               if (m_imagemap.lookup(imagekey, iImage))
 //               {
@@ -1019,7 +1019,7 @@ namespace aura
 //
 //            iImage = get_foo_image(nullptr, oswindow, imagekey, imagekey.m_cr);
 //
-//            synchronous_lock synchronouslock(mutex());
+//            synchronous_lock synchronouslock(synchronization());
 //
 //            m_imagemap.set_at(imagekey, iImage);
 //
@@ -1065,7 +1065,7 @@ namespace aura
 
             {
 
-               synchronous_lock synchronouslock(mutex());
+               synchronous_lock synchronouslock(synchronization());
 
                if (m_imagemap.lookup(imagekey, iImage))
                {
@@ -1078,7 +1078,7 @@ namespace aura
 
             iImage = get_file_image(imagekey);
 
-            synchronous_lock synchronouslock(mutex());
+            synchronous_lock synchronouslock(synchronization());
 
             m_imagemap.set_at(imagekey, iImage);
 

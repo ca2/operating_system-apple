@@ -14,7 +14,7 @@ namespace windowing_posix
    public:
 
 
-      __pointer(::xim::keyboard) m_pximkeyboard;
+      ::pointer < ::xim::keyboard > m_pximkeyboard;
 
 
       window();

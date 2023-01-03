@@ -20,12 +20,12 @@ namespace draw2d_quartz2d
    }
    
    
-   void pen::dump(dump_context & dumpcontext) const
-   {
-      
-      ::draw2d::object::dump(dumpcontext);
-      
-   }
+//   void pen::dump(dump_context & dumpcontext) const
+//   {
+//      
+//      ::draw2d::object::dump(dumpcontext);
+//      
+//   }
    
    
 } // namespace draw2d_quartz2d

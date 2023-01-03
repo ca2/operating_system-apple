@@ -32,7 +32,7 @@ namespace draw2d_quartz2d
       void destroy() override;
       void destroy_os_data() override;
      
-      void dump(dump_context & dumpcontext) const override;
+      //void dump(dump_context & dumpcontext) const override;
 
    };
 

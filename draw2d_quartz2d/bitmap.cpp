@@ -48,7 +48,7 @@ namespace draw2d_quartz2d
          
       }
       
-      m_pdata = (color32_t *) m_memory.get_data();
+      m_pdata = (color32_t *) m_memory.data();
       
       if(m_pdata == nullptr)
       {
@@ -198,27 +198,27 @@ namespace draw2d_quartz2d
    }
    
 
-   void bitmap::dump(dump_context & dumpcontext) const
-   {
-
-      ::draw2d::object::dump(dumpcontext);
-      
-      if(m_osdata[0] == nullptr)
-      {
-         
-         return;
-         
-      }
-       
-      //dumpcontext << "bm.bmType = " << bm.bmType;
-      dumpcontext << "\nbm.bmHeight = " << m_size.cy;
-      dumpcontext << "\nbm.bmWidth = " << m_size.cx;
-      dumpcontext << "\nbm.bmWidthBytes = " << m_iScan;
-      dumpcontext << "\nbm.bmPlanes = " << 1;
-      dumpcontext << "\nbm.bmBitsPixel = " << 32;
-      dumpcontext << "\n";
-      
-   }
+//   void bitmap::dump(dump_context & dumpcontext) const
+//   {
+//
+//      ::draw2d::object::dump(dumpcontext);
+//      
+//      if(m_osdata[0] == nullptr)
+//      {
+//         
+//         return;
+//         
+//      }
+//       
+//      //dumpcontext << "bm.bmType = " << bm.bmType;
+//      dumpcontext << "\nbm.bmHeight = " << m_size.cy;
+//      dumpcontext << "\nbm.bmWidth = " << m_size.cx;
+//      dumpcontext << "\nbm.bmWidthBytes = " << m_iScan;
+//      dumpcontext << "\nbm.bmPlanes = " << 1;
+//      dumpcontext << "\nbm.bmBitsPixel = " << 32;
+//      dumpcontext << "\n";
+//      
+//   }
    
 
    void bitmap::Attach(void * pbitmapcontext)

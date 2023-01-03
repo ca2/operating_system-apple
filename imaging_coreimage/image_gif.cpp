@@ -25,7 +25,7 @@ namespace coreimage_imaging
 {
 
 
-   void context_image::_load_image(::image * pimage, __pointer(image_frame_array) & pframea, memory & memory)
+   void context_image::_load_image(::image * pimage, ::pointer < image_frame_array > & pframea, memory & memory)
    {
 
       if(memory.is_empty())

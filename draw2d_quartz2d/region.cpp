@@ -55,9 +55,9 @@ namespace draw2d_quartz2d
 
          CGRect rectangle;
          
-         __pointer(rectangle_item) pitem = m_pitem;
+         ::pointer < rectangle_item > pitem = m_pitem;
 
-         __copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pitem->m_rectangle);
 //         rectangle.origin.x = m_x1;
 //         rectangle.origin.y = m_y1;
 //         rectangle.size.width = m_x2 - m_x1;
@@ -69,7 +69,7 @@ namespace draw2d_quartz2d
       else if(m_eregion == ::draw2d::e_region_polygon)
       {
 
-         __pointer(polygon_item) pitem = m_pitem;
+         ::pointer < polygon_item > pitem = m_pitem;
 
          if(pitem->m_polygon.has_element())
          {
@@ -91,9 +91,9 @@ namespace draw2d_quartz2d
 
          CGRect rectangle;
          
-         __pointer(ellipse_item) pitem = m_pitem;
+         ::pointer < ellipse_item > pitem = m_pitem;
 
-         __copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pitem->m_rectangle);
 //         rectangle.origin.x = m_x1;
 //         rectangle.origin.y = m_y1;
 //         rectangle.size.width = m_x2 - m_x1;

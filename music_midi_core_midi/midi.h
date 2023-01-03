@@ -54,16 +54,16 @@ namespace music
             using ::music::midi::midi::translate_os_result;
             virtual ::e_status translate_os_result(string & strMessage, string & strOsMessage, ::music::midi::object * pobject, i64 iOsResult, const string & strContext, const string & strText) override;
 
-            virtual __pointer(::music::midi::sequencer) create_midi_sequencer(::music::midi::sequence * psequence, const string& strDevice) override;
+            virtual ::pointer < ::music::midi::sequencer > create_midi_sequencer(::music::midi::sequence * psequence, const string& strDevice) override;
             
-            __pointer(::music::midi::message_out)
+            ::pointer < ::music::midi::message_out >
             get_message_out(const string & strDevice) override;
             
-            __pointer(::music::midi::message_in)
+            ::pointer < ::music::midi::message_in >
             get_message_in(const string & strDevice) override;
 
             
-            virtual __pointer(::music::midi::midi) get_device_midi(const string & strDevice);
+            virtual ::pointer < ::music::midi::midi > get_device_midi(const string & strDevice);
             
             
             

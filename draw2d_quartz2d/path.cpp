@@ -1,7 +1,20 @@
 #include "framework.h"
 #include "path.h"
 #include "graphics.h"
-
+//void copy(::draw2d::graphics * pgraphics, const ::lines & lines)
+//{
+//
+//   ::array < CGPoint > points;
+//
+//   ::copy(points, lines);
+//
+//   for(auto & point : points)
+//   {
+//
+//      point.x += m_pointOffset.x;
+//      point.y += m_pointOffset.y;
+//
+//   }
 
 namespace draw2d_quartz2d
 {
@@ -345,7 +358,7 @@ namespace draw2d_quartz2d
    
       ::array < CGPoint > points;
       
-      ::papaya::array::__copy(points, lines);
+      ::generic::array::copy(points, lines);
       
       for(auto & point : points)
       {
@@ -355,7 +368,7 @@ namespace draw2d_quartz2d
          
       }
       
-      CGPathAddLines(m_path, nullptr, points.get_data(), points.get_count());
+      CGPathAddLines(m_path, nullptr, points.data(), points.count());
                     
       return true;
       
@@ -367,7 +380,7 @@ namespace draw2d_quartz2d
 
       ::array < CGPoint > points;
       
-      ::papaya::array::__copy(points, polygon);
+      ::generic::array::copy(points, polygon);
       
       for(auto & point : points)
       {
@@ -377,7 +390,7 @@ namespace draw2d_quartz2d
          
       }
       
-      CGPathAddLines(m_path, nullptr, points.get_data(), points.get_count());
+      CGPathAddLines(m_path, nullptr, points.data(), points.count());
 
       CGPathCloseSubpath(m_path);
       

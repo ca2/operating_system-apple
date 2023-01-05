@@ -1,5 +1,5 @@
 #include "framework.h"
-#include "aura/library.h"
+#include "acme/_library.h"
 //
 //
 //Gdiplus::GdiplusStartupInput *   g_pgdiplusStartupInput = nullptr;
@@ -66,6 +66,6 @@
 //
 //}
 //
-
-
-IMPLEMENT_THIS_TYPE(write_text_quartz2d);
+//
+//
+//IMPLEMENT_THIS_TYPE(write_text_quartz2d);

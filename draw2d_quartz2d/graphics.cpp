@@ -2102,6 +2102,8 @@ namespace draw2d_quartz2d
          size.cx = maximum(size.cx, width);
 
       }
+      
+      return size;
 
    }
 

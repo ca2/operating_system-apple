@@ -18,6 +18,8 @@
 		9A637E722672419E005D0AC3 /* libapex_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E712672419E005D0AC3 /* libapex_posix.dylib */; };
 		9A637E75267241B6005D0AC3 /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E74267241B6005D0AC3 /* libaura.dylib */; };
 		9A637E77267241F0005D0AC3 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E76267241F0005D0AC3 /* libapex.dylib */; };
+		9A865FC5296629C4000C82F0 /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865FC4296629C4000C82F0 /* libacme_darwin.dylib */; };
+		9A865FC6296629C4000C82F0 /* libacme_darwin.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A865FC4296629C4000C82F0 /* libacme_darwin.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A8E9E19282A2FEB005FF778 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFDB2653DAF000CC8096 /* _.h */; };
 		9A8E9E1A282A2FEB005FF778 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD32653DAF000CC8096 /* framework.h */; };
 		9A8E9E1B282A2FEB005FF778 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFC92653DAF000CC8096 /* node.h */; };
@@ -124,6 +126,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9A865FC7296629C4000C82F0 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A865FC6296629C4000C82F0 /* libacme_darwin.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9A15A5AC264B54430080670E /* libaura_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libaura_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A24D03528513F22000C9873 /* _.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
@@ -140,6 +156,7 @@
 		9A637E712672419E005D0AC3 /* libapex_posix.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex_posix.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A637E74267241B6005D0AC3 /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A637E76267241F0005D0AC3 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A865FC4296629C4000C82F0 /* libacme_darwin.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_darwin.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8E9E2F282A2FEB005FF778 /* libios_aura_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_aura_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA74F4D284821AE009BB762 /* image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = image.cpp; sourceTree = "<group>"; };
 		9AA74F52284821F4009BB762 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -169,6 +186,7 @@
 				9A637E702672419E005D0AC3 /* libacme_posix.dylib in Frameworks */,
 				9A637E722672419E005D0AC3 /* libapex_posix.dylib in Frameworks */,
 				9A637E6C26724173005D0AC3 /* libacme.dylib in Frameworks */,
+				9A865FC5296629C4000C82F0 /* libacme_darwin.dylib in Frameworks */,
 				9A5D73262655115000D5C39E /* libapex_apple.dylib in Frameworks */,
 				9A5D7340265512CF00D5C39E /* libaqua.dylib in Frameworks */,
 				9A5D73382655121900D5C39E /* libaura_posix.dylib in Frameworks */,
@@ -209,6 +227,7 @@
 		9A5D72D226550C3900D5C39E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A865FC4296629C4000C82F0 /* libacme_darwin.dylib */,
 				9AE6DF2F2962BED4008A1335 /* Foundation.framework */,
 				9AE6DF2C2962BE11008A1335 /* CoreImage.framework */,
 				9AA74F52284821F4009BB762 /* CoreGraphics.framework */,
@@ -309,6 +328,7 @@
 				9A15A5A8264B54430080670E /* Headers */,
 				9A15A5A9264B54430080670E /* Sources */,
 				9A15A5AA264B54430080670E /* Frameworks */,
+				9A865FC7296629C4000C82F0 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -425,14 +445,14 @@
 		9AE6DF69296452B9008A1335 /* libaura_posix.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = libaura_posix.dylib;
+			path = libaura_darwin.dylib;
 			remoteRef = 9AE6DF68296452B9008A1335 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		9AE6DF6B296452B9008A1335 /* libios_aura_posix.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libios_aura_posix.a;
+			path = libios_aura_darwin.a;
 			remoteRef = 9AE6DF6A296452B9008A1335 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

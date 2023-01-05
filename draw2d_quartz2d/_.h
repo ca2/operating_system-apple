@@ -42,4 +42,3 @@ namespace draw2d_quartz2d
 //#include "draw2d.h"
 
 
-

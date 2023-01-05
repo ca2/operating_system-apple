@@ -3,9 +3,9 @@
 //   framework.obj will contain the pre-compiled type information
 
 #include "framework.h"
-
-
-IMPLEMENT_THIS_TYPE(write_text_quartz2d_framework);
-
-
-
+//
+//
+//IMPLEMENT_THIS_TYPE(write_text_quartz2d_framework);
+//
+//
+//

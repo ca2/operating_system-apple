@@ -92,7 +92,7 @@
 		9A6A47252660CB45004ED97A /* aura.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura.xcodeproj; path = ../../../source/app/aura/aura.xcodeproj; sourceTree = "<group>"; };
 		9A6A47342660CB61004ED97A /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6A47362660CB61004ED97A /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A882EE12844AA66004113D1 /* ios_write_text_quartz2d.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = ios_write_text_quartz2d.a; path = libios_write_text_quartz2d.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A882EE12844AA66004113D1 /* libios_write_text_quartz2d.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_write_text_quartz2d.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE12D952661D4C0009F476A /* font_enumeration.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = font_enumeration.mm; sourceTree = "<group>"; };
 		9AE12D992661D577009F476A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				9A64C1712660C62C0074030F /* libwrite_text_quartz2d.dylib */,
-				9A882EE12844AA66004113D1 /* ios_write_text_quartz2d.a */,
+				9A882EE12844AA66004113D1 /* libios_write_text_quartz2d.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 			);
 			name = ios_write_text_quartz2d;
 			productName = write_text_quartz2d;
-			productReference = 9A882EE12844AA66004113D1 /* ios_write_text_quartz2d.a */;
+			productReference = 9A882EE12844AA66004113D1 /* libios_write_text_quartz2d.a */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -250,7 +250,7 @@
 		9A64C1692660C62C0074030F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					9A64C1702660C62C0074030F = {
 						CreatedOnToolsVersion = 12.5;
@@ -385,6 +385,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -479,6 +480,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -536,6 +538,8 @@
 		9A64C17B2660C62D0074030F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Debug;
@@ -543,6 +547,8 @@
 		9A64C17C2660C62D0074030F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Release;
@@ -552,6 +558,7 @@
 			buildSettings = {
 				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
 				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
 			};
@@ -562,6 +569,7 @@
 			buildSettings = {
 				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
 				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
 			};

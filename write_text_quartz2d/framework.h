@@ -20,14 +20,14 @@
 
 #include "_.h"
 
-
-//#include "_write_text_quartz2d.h"
-
-#if !defined(__OBJC__)
-#include "aura/_defer.h"
-#endif
-
+//
+////#include "_write_text_quartz2d.h"
+//
+//#if !defined(__OBJC__)
+//#include "aura/_defer.h"
 //#endif
-
+//
+////#endif
+//
 
 

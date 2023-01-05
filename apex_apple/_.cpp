@@ -249,50 +249,6 @@ void copy(POINT_F64 & pointTarget, const CGPoint & pointSource)
 
 }
 
-void copy(CGRect & rectTarget, const RECTANGLE_I32 & rectSource)
-{
-
-   rectTarget.origin.x      = rectSource.left;
-   rectTarget.origin.y      = rectSource.top;
-   rectTarget.size.width    = width(prectSource);
-   rectTarget.size.height   = height(prectSource);
-
-}
-
-
-void copy(RECTANGLE_I32 & rectTarget, const CGRect & rectSource)
-{
-   
-   rectTarget.left          = rectSource.origin.x;
-   rectTarget.top           = rectSource.origin.y;
-   rectTarget.right         = rectSource.origin.x + rectSource.size.width;
-   rectTarget.bottom        = rectSource.origin.y + rectSource.size.height;
-   
-}
-
-
-void copy(CGRect & rectTarget, const RECTANGLE_F64 & rectSource)
-{
-   
-   rectTarget.origin.x      = rectSource.left;
-   rectTarget.origin.y      = rectSource.top;
-   rectTarget.size.width    = width(prectSource);
-   rectTarget.size.height   = height(prectSource);
-   
-}
-
-
-void copy(RECTANGLE_F64 & rectTarget, const CGRect & rectSource)
-{
-   
-   rectTarget.left          = rectSource.origin.x;
-   rectTarget.top           = rectSource.origin.y;
-   rectTarget.right         = rectSource.origin.x + rectSource.size.width;
-   rectTarget.bottom        = rectSource.origin.y + rectSource.size.height;
-   
-}
-
-
 
 bool __node_further_file_is_equal(file::path const & path1, file::path const & path2)
 {

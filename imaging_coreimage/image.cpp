@@ -5,6 +5,7 @@
 //  Created by Camilo Sasuke Thomas Borregaard Sørensen on 21/10/17. Thomas Boregaard Soerensen <3
 //
 #include "framework.h"
+#include "apex/filesystem/filesystem/file_context.h"
 #include "aura/graphics/image/save_image.h"
 #include "aura/platform/context.h"
 #include <CoreGraphics/CoreGraphics.h>
@@ -32,7 +33,7 @@ namespace coreimage_imaging
 {
 
 
-   void context_image::save_image(memory & memory, const ::image * pimage, const ::save_image * psaveimage)
+   void context_image::save_image(memory & memory, ::image * pimage, const ::save_image * psaveimage)
    {
 
       if(pimage->is_empty())
@@ -92,13 +93,13 @@ namespace coreimage_imaging
       if(options.toy)
       {
          
-         pcontext->m_papexcontext->file().safe_get_memory(varFile, memory);
+         pcontext->m_papexcontext->file()->safe_get_memory(varFile, memory);
          
       }
       else
       {
          
-         pcontext->m_papexcontext->file().as_memory(varFile, memory);
+         pcontext->m_papexcontext->file()->as_memory(varFile, memory);
 
    
       }
@@ -127,28 +128,28 @@ namespace coreimage_imaging
 
       auto pcontextimage = pcontext->context_image();
 
-      auto pszData = memory.get_data();
+      auto pszData = memory.data();
 
-      auto size = memory.get_size();
+      auto size = memory.size();
 
       char pszPngSignature []= {(char)137, 80, 78 ,71, 13 ,10, 26 ,10};
 
       bool bPng = size > sizeof(pszPngSignature)
       && strncmp((const char *) pszData, pszPngSignature, sizeof(pszPngSignature)) == 0;
 
-      bool bJpegBegins = memory.begins("\x0FF\x0D8", 2);
+      bool bJpegBegins = memory.begins("\x0FF\x0D8");
 
-      bool bJpegEnds = memory.ends("\x0FF\x0D9", 2);
+      bool bJpegEnds = memory.ends("\x0FF\x0D9");
 
-      bool bGif87a = memory.begins("GIF87a", 6);
+      bool bGif87a = memory.begins("GIF87a");
 
-      bool bGif89a = memory.begins("GIF89a", 6);
+      bool bGif89a = memory.begins("GIF89a");
 
       bool bJpeg =  bJpegBegins && bJpegEnds;
 
-      bool bJfif = memory.begins("JFIF", 4);
+      bool bJfif = memory.begins("JFIF");
 
-      bool bExif = memory.begins("Exif", 4);
+      bool bExif = memory.begins("Exif");
 
       bool bGif = bGif87a || bGif89a;
 
@@ -167,7 +168,7 @@ namespace coreimage_imaging
          
          pcontextimage->load_svg(pimage, memory);
 
-         if (::is_ok(pimage))
+         if (::is_set(pimage) && pimage->is_ok())
          {
 
             return;
@@ -190,7 +191,7 @@ namespace coreimage_imaging
 
          pimage->on_load_image();
 
-         pimage->set_ok();
+         pimage->set_ok_flag();
 
          pimage->m_estatus = ::success;
 
@@ -208,7 +209,7 @@ namespace coreimage_imaging
 
       ::acme::malloc < color32_t * > pcolorref;
 
-      pcolorref = file_memory_to_image_data(w, h, iScan, memory.get_data(), memory.get_size());
+      pcolorref = file_memory_to_image_data(w, h, iScan, memory.data(), memory.size());
       
       if(pcolorref == nullptr)
       {
@@ -227,7 +228,7 @@ namespace coreimage_imaging
       
       vertical_swap_copy_colorref(pimage->colorref(), w, h, pimage->scan_size(), pcolorref, iScan);
       
-      pimage->set_ok();
+      pimage->set_ok_flag();
       
       //return true;
 

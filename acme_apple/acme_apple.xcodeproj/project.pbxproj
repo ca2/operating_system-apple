@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A08443F29367CC1009F7FF4 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A08443E29367CC1009F7FF4 /* libacme_posix.dylib */; };
-		9A08444029367CD4009F7FF4 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0841372935A37A009F7FF4 /* libacme_posix.dylib */; };
+		9A08444029367CD4009F7FF4 /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0841372935A37A009F7FF4 /* libacme_darwin.dylib */; };
 		9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFCC276118A6001E14CC /* Carbon.framework */; };
 		9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFE1276122CB001E14CC /* Cocoa.framework */; };
 		9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412438266C3ECE00C3FF0E /* libacme.dylib */; };
@@ -29,6 +29,7 @@
 		9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
 		9A78F40928E7A953007F62C0 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A78F40728E7A945007F62C0 /* exception_translator.cpp */; };
 		9A78F40A28E7A953007F62C0 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A78F40728E7A945007F62C0 /* exception_translator.cpp */; };
+		9A86610D296732AA000C82F0 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A86610B296732A9000C82F0 /* UniformTypeIdentifiers.framework */; };
 		9A8E9DA7282A2F61005FF778 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
 		9A8E9DA9282A2F61005FF778 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */; };
 		9A8E9DAA282A2F61005FF778 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A74158F266BD25B00552531 /* debug.cpp */; };
@@ -122,6 +123,7 @@
 		9A787E81264E8C46003DF8A0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		9A78F40728E7A945007F62C0 /* exception_translator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = exception_translator.cpp; sourceTree = "<group>"; };
 		9A78F40828E7A945007F62C0 /* exception_translator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exception_translator.h; sourceTree = "<group>"; };
+		9A86610B296732A9000C82F0 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 		9A8E9DBA282A2F61005FF778 /* libios_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A93B95828471D39005ACD11 /* image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image.cpp; sourceTree = "<group>"; };
 		9A93B95928471D39005ACD11 /* image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image.h; sourceTree = "<group>"; };
@@ -138,10 +140,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A08444029367CD4009F7FF4 /* libacme_posix.dylib in Frameworks */,
+				9A08444029367CD4009F7FF4 /* libacme_darwin.dylib in Frameworks */,
 				9A08443F29367CC1009F7FF4 /* libacme_posix.dylib in Frameworks */,
 				9A787E80264E89F4003DF8A0 /* CoreServices.framework in Frameworks */,
 				9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */,
+				9A86610D296732AA000C82F0 /* UniformTypeIdentifiers.framework in Frameworks */,
 				9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */,
 				9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */,
 			);
@@ -153,8 +156,8 @@
 		9A0841312935A379009F7FF4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A0841372935A37A009F7FF4 /* libacme_posix.dylib */,
-				9A0841392935A37A009F7FF4 /* libios_acme_posix.a */,
+				9A0841372935A37A009F7FF4 /* libacme_darwin.dylib */,
+				9A0841392935A37A009F7FF4 /* libios_acme_darwin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 		9A787E7C264E8935003DF8A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A86610B296732A9000C82F0 /* UniformTypeIdentifiers.framework */,
 				9A08443E29367CC1009F7FF4 /* libacme_posix.dylib */,
 				9A21AFE1276122CB001E14CC /* Cocoa.framework */,
 				9A21AFDB2761205C001E14CC /* IOKit.framework */,
@@ -339,17 +343,17 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A0841372935A37A009F7FF4 /* libacme_posix.dylib */ = {
+		9A0841372935A37A009F7FF4 /* libacme_darwin.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = libacme_posix.dylib;
+			path = libacme_darwin.dylib;
 			remoteRef = 9A0841362935A37A009F7FF4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A0841392935A37A009F7FF4 /* libios_acme_posix.a */ = {
+		9A0841392935A37A009F7FF4 /* libios_acme_darwin.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = libios_acme_posix.a;
+			path = libios_acme_darwin.a;
 			remoteRef = 9A0841382935A37A009F7FF4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

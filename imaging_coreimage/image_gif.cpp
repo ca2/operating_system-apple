@@ -5,10 +5,11 @@
 //  Created by Camilo Sasuke Thomas Borregaard Sørensen on 21/10/17.
 //
 #include "framework.h"
-#include "aura/operating_system.h"
 #include "aura/graphics/image/frame.h"
 #include "aura/graphics/image/frame_array.h"
 #include "aura/platform/context.h"
+#include "acme/_operating_system.h"
+#include "acme/constant/data_type.h"
 #include <ImageIO/ImageIO.h>
 
 #ifdef APPLE_IOS
@@ -19,6 +20,8 @@
 
 
 void * cg_image_get_image_data(int & width, int & height, int & iScan, CGImageRef image);
+
+bool uniform_type_conforms_to_data_type(CFStringRef cfstr, enum_data_type edatatype);
 
 
 namespace coreimage_imaging
@@ -92,7 +95,7 @@ namespace coreimage_imaging
       // Early return if not GIF!
       CFStringRef imagesourcetype = CGImageSourceGetType(imagesource);
 
-      bool bGif = UTTypeConformsTo(imagesourcetype, kUTTypeGIF);
+      bool bGif = uniform_type_conforms_to_data_type(imagesourcetype, e_data_type_gif);
 
       if (!bGif)
       {
@@ -220,18 +223,18 @@ namespace coreimage_imaging
 
                }
 
-               p->m_duration = FLOATING_SECOND(dDelay);
+               p->m_time = FLOATING_SECOND(dDelay);
 
-               if(p->m_duration < 5_ms)
+               if(p->m_time < 5_ms)
                {
 
-                  p->m_duration = 5_ms;
+                  p->m_time = 5_ms;
 
                }
 
                p->m_pimage->create_helper_map();
 
-               pframea->m_durationTotal += p->m_duration;
+               pframea->m_timeTotal += p->m_time;
 
             //}
 

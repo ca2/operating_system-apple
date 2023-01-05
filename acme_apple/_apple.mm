@@ -7,8 +7,8 @@
 #include "framework.h"
 #import "NSString+SymlinksAndAliases.h"
 //#import "acme/primitive/primitive/runnable.h"
-
-
+#include "acme/constant/data_type.h"
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
 
 char * mm_ca2_command_line()
@@ -424,6 +424,42 @@ bool os_is_alias(const char * psz)
    [url getResourceValue:&aliasFlag forKey:NSURLIsAliasFileKey error: nil];
    
    return aliasFlag.boolValue;
+   
+}
+
+
+bool uniform_type_conforms_to_data_type(CFStringRef cfstr, enum_data_type edatatype)
+{
+   
+   if (@available(macOS 11.0, *))
+   {
+   
+      NSString * nsstr = (__bridge NSString *) cfstr;
+   
+      UTType * uttype = [ UTType typeWithIdentifier: nsstr ];
+      
+      switch(edatatype)
+      {
+         case e_data_type_gif:
+            return [ uttype conformsToType: UTTypeGIF ];
+         default:
+            return false;
+      }
+      
+   }
+   else
+   {
+      
+      switch(edatatype)
+      {
+         case e_data_type_gif:
+            return UTTypeConformsTo(cfstr, kUTTypeGIF);
+         default:
+            return false;
+            
+      }
+      
+   }
    
 }
 

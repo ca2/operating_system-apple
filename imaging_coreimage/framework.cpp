@@ -5,7 +5,7 @@
 #include "framework.h"
 
 
-IMPLEMENT_THIS_TYPE(imaging_coreimage_framework);
+//IMPLEMENT_THIS_TYPE(imaging_coreimage_framework);
 
 
 

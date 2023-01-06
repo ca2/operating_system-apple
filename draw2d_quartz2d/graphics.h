@@ -370,10 +370,10 @@ namespace draw2d_quartz2d
 //      void BitBltAlphaBlend(double x, double y, double dWidth, double dHeight, ::draw2d::graphics * pgraphicsSrc, double xSrc, double ySrc) override;
 
       void draw_line(double x1, double y1, double x2, double y2, ::draw2d::pen * ppen) override;
-      void text_out(double x, double y, const block & block) override;
+      void text_out(double x, double y, const ::scoped_string & scopedstr) override;
 
 //      void text_out(double x, double y, const string & str) override;
-      void TextOutRaw(double x, double y, const block & block) override;
+      void TextOutRaw(double x, double y, const ::scoped_string & scopedstr) override;
 //      void text_out(double x, double y, const string & str) override;
 //      void ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle,
 //                              const char * lpszString, ::u32 nCount, int * lpDxWidths);
@@ -391,7 +391,7 @@ namespace draw2d_quartz2d
 //      virtual i32 draw_text_ex(char * lpszString, i32 nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams);
 //      void draw_text_ex(const string & str, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams) override;
 
-      size_f64 get_text_extent(const ::scoped_string & scopedstr, i32 iIndex);
+      size_f64 get_text_extent(const ::scoped_string & scopedstr, ::index iIndex) override;
       size_f64 get_text_extent(const ::scoped_string & scopedstr) override;
       //size_f64 get_text_extent(const block & block) override;
 //      void get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex) ;

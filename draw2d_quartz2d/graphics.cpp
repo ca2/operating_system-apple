@@ -1001,7 +1001,7 @@ namespace draw2d_quartz2d
    // double blend
    //// COLOR_DEST = SRC_ALPHA * BLEND_ALPHA * COLOR_SRC  + (1 - SRC_ALPHA * BLEND_ALPHA) * COLOR_DST
 
-   void graphics::text_out(double x, double y, const ::block & block)
+   void graphics::text_out(double x, double y, const ::scoped_string & scopedstr)
    {
 
       if (m_pimageAlphaBlend)
@@ -1009,7 +1009,7 @@ namespace draw2d_quartz2d
 
          ::rectangle_f64 rectIntersect(m_pointAlphaBlend, m_pimageAlphaBlend->size());
 
-         auto rectText = ::rectangle_f64(::point_f64(x, y), ::size_f64(get_text_extent(block)));
+         auto rectText = ::rectangle_f64(::point_f64(x, y), ::size_f64(get_text_extent(scopedstr)));
 
          if (rectIntersect.intersect(rectIntersect, rectText))
          {
@@ -1021,7 +1021,7 @@ namespace draw2d_quartz2d
             pimage1->fill(0, 0, 0, 0);
             pimage1->get_graphics()->set(get_current_font());
             pimage1->get_graphics()->set(get_current_brush());
-            pimage1->get_graphics()->text_out(0, 0, block);
+            pimage1->get_graphics()->text_out(0, 0, scopedstr);
 
             pimage1->blend(::point_f64(), m_pimageAlphaBlend, point_f64((int)maximum(0, x - m_pointAlphaBlend.x), (int)maximum(0, y - m_pointAlphaBlend.y)), rectText.size());
 
@@ -1046,7 +1046,7 @@ namespace draw2d_quartz2d
 
       }
       
-      TextOutRaw(x, y, block);
+      TextOutRaw(x, y, scopedstr);
 
    }
 
@@ -2068,7 +2068,7 @@ namespace draw2d_quartz2d
 //   }
 
 
-   ::size_f64 graphics::get_text_extent(const ::scoped_string & scopedstr, i32 iIndex)
+   ::size_f64 graphics::get_text_extent(const ::scoped_string & scopedstr, ::index iIndex)
    {
       
       synchronous_lock synchronouslock(synchronization());
@@ -2138,10 +2138,10 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::TextOutRaw(double x, double y, const block & block)
+   void graphics::TextOutRaw(double x, double y, const ::scoped_string & scopedstr)
    {
 
-      internal_show_text(x, y, 0, string((const char *) block.data(), block.size()), kCGTextFill, e_align_top_left, e_draw_text_none, true);
+      internal_show_text(x, y, 0, string((const char *) scopedstr.data(), scopedstr.size()), kCGTextFill, e_align_top_left, e_draw_text_none, true);
 
    }
 

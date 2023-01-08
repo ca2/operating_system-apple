@@ -50,6 +50,7 @@ namespace acme_apple
       
       void shell_open(const ::file::path & path, const ::string & strParams = "", const ::file::path & pathFolder = "") override;
       
+      ::file::path library_file_name(const ::scoped_string & scopedstr) override;
 
    };
 

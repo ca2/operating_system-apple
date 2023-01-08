@@ -124,6 +124,10 @@ namespace acme_apple
 
       }
 
+::file::path node::librry_file_name(const ::scoped_string & scopedstr)
+{
+   return "lib" + str + ".dylib";
+}
 
 } // namespace acme_apple
 

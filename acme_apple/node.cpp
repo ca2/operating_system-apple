@@ -124,15 +124,16 @@ namespace acme_apple
 
       }
 
-::file::path node::librry_file_name(const ::scoped_string & scopedstr)
-{
-   return "lib" + str + ".dylib";
-}
+
+   ::file::path node::library_file_name(const ::scoped_string & scopedstr)
+   {
+      
+      return "lib" + scopedstr + ".dylib";
+      
+   }
+
 
 } // namespace acme_apple
-
-
-
 
 
 CGContextRef CreateARGBBitmapContext (CGImageRef inImage, int cx, int cy)

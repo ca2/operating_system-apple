@@ -75,12 +75,6 @@
 		9AC14D15297B3410006D9BD3 /* acme_directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* acme_directory.cpp */; };
 		9AC14D16297B3410006D9BD3 /* acme_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */; };
 		9AC14D17297B3410006D9BD3 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
-		9AC14D1A297B3410006D9BD3 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A08443E29367CC1009F7FF4 /* libacme_posix.dylib */; };
-		9AC14D1B297B3410006D9BD3 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A787E7F264E89F4003DF8A0 /* CoreServices.framework */; };
-		9AC14D1C297B3410006D9BD3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFE1276122CB001E14CC /* Cocoa.framework */; };
-		9AC14D1D297B3410006D9BD3 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A86610B296732A9000C82F0 /* UniformTypeIdentifiers.framework */; };
-		9AC14D1E297B3410006D9BD3 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFCC276118A6001E14CC /* Carbon.framework */; };
-		9AC14D1F297B3410006D9BD3 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412438266C3ECE00C3FF0E /* libacme.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +103,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A0841302935A379009F7FF4 /* acme_darwin.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9AC14CDF297B33B7006D9BD3;
+			remoteGlobalIDString = 9AFD80B3297B584000BAD9DD;
 			remoteInfo = _acme_darwin;
 		};
 		9AFD812E297B589E00BAD9DD /* PBXContainerItemProxy */ = {
@@ -321,19 +315,6 @@
 				9A86610D296732AA000C82F0 /* UniformTypeIdentifiers.framework in Frameworks */,
 				9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */,
 				9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9AC14D18297B3410006D9BD3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9AC14D1A297B3410006D9BD3 /* libacme_posix.dylib in Frameworks */,
-				9AC14D1B297B3410006D9BD3 /* CoreServices.framework in Frameworks */,
-				9AC14D1C297B3410006D9BD3 /* Cocoa.framework in Frameworks */,
-				9AC14D1D297B3410006D9BD3 /* UniformTypeIdentifiers.framework in Frameworks */,
-				9AC14D1E297B3410006D9BD3 /* Carbon.framework in Frameworks */,
-				9AC14D1F297B3410006D9BD3 /* libacme.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,7 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				9AFD8133297B589E00BAD9DD /* libacme_darwin.dylib */,
-				9AFD8135297B589E00BAD9DD /* lib_acme_darwin.dylib */,
+				9AFD8135297B589E00BAD9DD /* lib_acme_darwin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -571,7 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				9AFD8158297B58A500BAD9DD /* libacme_darwin.dylib */,
-				9AFD815A297B58A500BAD9DD /* lib_acme_darwin.dylib */,
+				9AFD815A297B58A500BAD9DD /* lib_acme_darwin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -675,7 +656,6 @@
 			buildPhases = (
 				9AC14D00297B3410006D9BD3 /* Headers */,
 				9AC14D06297B3410006D9BD3 /* Sources */,
-				9AC14D18297B3410006D9BD3 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -756,10 +736,10 @@
 			remoteRef = 9AFD8132297B589E00BAD9DD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9AFD8135297B589E00BAD9DD /* lib_acme_darwin.dylib */ = {
+		9AFD8135297B589E00BAD9DD /* lib_acme_darwin.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = lib_acme_darwin.dylib;
+			path = lib_acme_darwin.a;
 			remoteRef = 9AFD8134297B589E00BAD9DD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -770,10 +750,10 @@
 			remoteRef = 9AFD8157297B58A500BAD9DD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9AFD815A297B58A500BAD9DD /* lib_acme_darwin.dylib */ = {
+		9AFD815A297B58A500BAD9DD /* lib_acme_darwin.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = lib_acme_darwin.dylib;
+			path = lib_acme_darwin.a;
 			remoteRef = 9AFD8159297B58A500BAD9DD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1101,6 +1081,11 @@
 			buildSettings = {
 				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					CUBE,
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = macos;
@@ -1113,6 +1098,7 @@
 			buildSettings = {
 				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
+				GCC_PREPROCESSOR_DEFINITIONS = CUBE;
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = macos;

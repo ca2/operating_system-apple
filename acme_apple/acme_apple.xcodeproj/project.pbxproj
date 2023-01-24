@@ -38,6 +38,7 @@
 		9A8E9DAE282A2F61005FF778 /* NSObject+DDExtensions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */; };
 		9A8E9DAF282A2F61005FF778 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
 		9A8E9DB0282A2F61005FF778 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5E264E22CB003DF8A0 /* node.cpp */; };
+		9A8EA53B298079DF00B26CB9 /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFD812F297B589E00BAD9DD /* libacme_darwin.dylib */; };
 		9A93B95A28471D7D005ACD11 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B95828471D39005ACD11 /* image.cpp */; };
 		9A93B95B28471D7F005ACD11 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B95828471D39005ACD11 /* image.cpp */; };
 		9A94DEDA282C4B1C00F5C1CA /* stdio_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A750E1F282B531C00C4861B /* stdio_file.cpp */; };
@@ -309,6 +310,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8EA53B298079DF00B26CB9 /* libacme_darwin.dylib in Frameworks */,
 				9A08443F29367CC1009F7FF4 /* libacme_posix.dylib in Frameworks */,
 				9A787E80264E89F4003DF8A0 /* CoreServices.framework in Frameworks */,
 				9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */,

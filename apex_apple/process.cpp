@@ -14,10 +14,8 @@
 
 #include <spawn.h>
 
-#ifdef RASPBIAN
 #include <sys/types.h>
 #include <unistd.h>
-#endif
 
 
 

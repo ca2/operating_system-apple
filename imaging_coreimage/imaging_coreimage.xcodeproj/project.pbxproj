@@ -252,9 +252,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A574B9C16AAB906000CC4EF /* Build configuration list for PBXNativeTarget "imaging_coreimage" */;
 			buildPhases = (
+				9A574B9616AAB906000CC4EF /* Headers */,
 				9A574B9416AAB906000CC4EF /* Sources */,
 				9A574B9516AAB906000CC4EF /* Frameworks */,
-				9A574B9616AAB906000CC4EF /* Headers */,
 			);
 			buildRules = (
 			);

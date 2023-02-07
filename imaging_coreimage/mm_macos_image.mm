@@ -83,7 +83,7 @@ void * get_png_image_data(unsigned long & size, CGImageRef image)
 
    NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:1.0] forKey:NSImageCompressionFactor];
 
-   NSData *data = [imgRep representationUsingType: NSPNGFileType properties: imageProps];
+   NSData *data = [imgRep representationUsingType: NSBitmapImageFileTypePNG properties: imageProps];
    
    return return_data(size, data);
 
@@ -101,7 +101,7 @@ void * get_jpeg_image_data(unsigned long & size, CGImageRef cgimage)
    
    NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:1.0] forKey:NSImageCompressionFactor];
    
-   imageData = [imageRep representationUsingType:NSJPEGFileType properties:imageProps];;
+   imageData = [imageRep representationUsingType:NSBitmapImageFileTypeJPEG properties:imageProps];;
    
    return return_data(size, imageData);
    

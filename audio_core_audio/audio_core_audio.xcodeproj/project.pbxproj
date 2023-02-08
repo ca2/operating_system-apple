@@ -154,7 +154,7 @@
 		9A3D15FA266EEC8A00AE9A5E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A3D15FE266EEC8A00AE9A5E /* apex_apple.dylib */,
+				9A3D15FE266EEC8A00AE9A5E /* libapex_apple.dylib */,
 				9A1EAA5C284B046F000F05A8 /* libios_apex_apple.a */,
 			);
 			name = Products;
@@ -303,7 +303,7 @@
 		A1CFD76F154F5EA7007447E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = "ca2 Desenvolvimento de Sofware Ltda.";
 			};
 			buildConfigurationList = A1CFD772154F5EA7007447E2 /* Build configuration list for PBXProject "audio_core_audio" */;
@@ -343,10 +343,9 @@
 			remoteRef = 9A1EAA5B284B046F000F05A8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A3D15FE266EEC8A00AE9A5E /* apex_apple.dylib */ = {
+		9A3D15FE266EEC8A00AE9A5E /* libapex_apple.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = apex_apple.dylib;
 			path = libapex_apple.dylib;
 			remoteRef = 9A3D15FD266EEC8A00AE9A5E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -426,6 +425,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				EXECUTABLE_EXTENSION = a;
 				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
 			};
@@ -437,6 +437,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				EXECUTABLE_EXTENSION = a;
 				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
 			};
@@ -472,6 +473,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -505,7 +507,7 @@
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -575,6 +577,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -602,7 +605,7 @@
 					"$(inherited)",
 					"$(WorkspaceDir)/operating-system/storage-$(PLATFORM_MODIFIER)/library",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -644,6 +647,8 @@
 		A1CFD77D154F5EAA007447E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Debug;
@@ -651,6 +656,8 @@
 		A1CFD77E154F5EAA007447E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Release;

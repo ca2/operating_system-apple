@@ -24,6 +24,9 @@
 #pragma once
 
 
+#include "acme/primitive/primitive/memory.h"
+
+
 namespace music
 {
    
@@ -55,7 +58,7 @@ namespace music
             
             MIDIPortRef m_port;
             
-            memory m_buffer[65535];
+            memory m_buffer;
             
             memory            m_memoryLongMessage;
             
@@ -71,6 +74,8 @@ namespace music
             //message_out(::object * pobject, int iPort);
             ~message_out() override;
             
+            
+            void common_construct();
             
             void initialize_message_out(::music::midi::midi * pmidi, const ::string & strDeviceId) override;
             

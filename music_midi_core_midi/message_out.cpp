@@ -7,6 +7,7 @@
 //
 
 #include "framework.h"
+#include "acme/primitive/string/hex.h"
 #include "app-veriwell/multimedia/music/midi/_.h"
 //#include "app-veriwell/multimedia/music/midi/attribute_message.h"
 //#include "app-veriwell/multimedia/music/midi/midi_listener.h"
@@ -37,13 +38,22 @@ namespace music
             
          }
          
+      
+      void message_out::common_construct()
+      {
+         
+         m_buffer.set_size(65535);
+         
+      }
 
          void message_out::initialize_message_out(::music::midi::midi * pmidi, const string & strDriver)
          {
             
             //auto estatus =
             
-            ::music::midi::message_out::initialize_message_out(pmidi, strDriver);
+            output_base::initialize_message_out(pmidi, strDriver);
+            
+            
 //            if(!estatus)
 //            {
 //
@@ -185,7 +195,7 @@ namespace music
             if (result != 0)
             {
                
-               WARNING("MIDIOutputPortCreate failed with code " << __string((int)result));
+               WARNING("MIDIOutputPortCreate failed with code " << ::as_string((int)result));
                
                throw ::exception(::error_failed);
                
@@ -349,21 +359,21 @@ namespace music
             
             string strHex;
             
-            strHex = ::hex::lower_from(block.get_data(), block.get_size());
+            strHex = ::hex::lower_case_from(block.data(), block.size());
             
             output_debug_string(strHex);
             
 #endif
             
-            m_memoryLongMessage.set_size(block.get_size() + 2);
+            m_memoryLongMessage.set_size(block.size() + 2);
             
-            memcpy(&m_memoryLongMessage.get_data()[1], block.get_data(), block.get_size());
+            memcpy(&m_memoryLongMessage.data()[1], block.data(), block.size());
             
             m_memoryLongMessage[0] = 0xf0;
             
-            m_memoryLongMessage[block.get_size() + 1] = 0xf7;
+            m_memoryLongMessage[block.size() + 1] = 0xf7;
             
-            add_long_message(m_memoryLongMessage.get_data(), (int) m_memoryLongMessage.get_size());
+            add_long_message(m_memoryLongMessage.data(), (int) m_memoryLongMessage.size());
             
          }
          
@@ -427,7 +437,7 @@ namespace music
             if(m_packetlist == nullptr)
             {
             
-               m_packetlist = (MIDIPacketList *) m_buffer;
+               m_packetlist = (MIDIPacketList *) m_buffer.data();
             
                m_packet = MIDIPacketListInit(m_packetlist);
                

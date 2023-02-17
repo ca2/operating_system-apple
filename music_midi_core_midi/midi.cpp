@@ -27,7 +27,7 @@ namespace music
       namespace core_midi
       {
 
-      
+      void mach_init_timebase();
 
          CFStringRef ConnectedEndpointName(MIDIEndpointRef endpoint);
 
@@ -92,7 +92,7 @@ namespace music
 
                CFRelease(name);
 
-               WARNING("Source:" << __string(iEndpoint) << " - '" << string(szBuffer) << "'");
+               WARNING("Source:" << ::as_string(iEndpoint) << " - '" << ::string(szBuffer) << "'");
 
                Endpoint source;
 
@@ -131,7 +131,7 @@ namespace music
                
                CFRelease(name);
                
-               WARNING("Destination:" << __string(iEndpoint) << " - '" << __string(szBuffer) << "'");
+               WARNING("Destination:" << ::as_string(iEndpoint) << " - '" << ::as_string(szBuffer) << "'");
                
                Endpoint destination;
                
@@ -227,7 +227,7 @@ namespace music
             
             string strEngine = device_engine(strDevice);
             
-            if (strEngine.is_empty() || strEngine.compare_ci(m_strName) == 0)
+            if (strEngine.is_empty() || strEngine.case_insensitive_equals(m_strName))
             {
                
                auto pmessageout = get_message_out(strDevice);
@@ -316,7 +316,7 @@ namespace music
 
             string strEngine = device_engine(strDevice);
 
-            if (m_strName.compare_ci(strEngine) == 0)
+            if (m_strName.case_insensitive_equals(strEngine))
             {
 
                return this;

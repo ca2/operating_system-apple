@@ -28,8 +28,8 @@ namespace music
          public:
             
             
-            __pointer_array(::music::midi::message_out)              m_messageouta;
-            __pointer_array(::music::midi::message_in)               m_messageina;
+            ::pointer_array < ::music::midi::message_out >              m_messageouta;
+            ::pointer_array < ::music::midi::message_in >               m_messageina;
 
 
             midi();

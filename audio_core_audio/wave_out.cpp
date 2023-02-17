@@ -1,8 +1,12 @@
 #include "framework.h"
 #include "wave_out.h"
 #include "translation.h"
-#include "aura/message.h"
+#include "acme/constant/message.h"
 #include "acme/operating_system/apple/_apple.h"
+#include "acme/parallelization/synchronous_lock.h"
+
+
+#include "acme/_operating_system.h"
 
 
 void WaveOutAudioQueueBufferCallback(void * inUserData, AudioQueueRef inAQ, AudioQueueBufferRef inCompleteAQBuffer);
@@ -106,7 +110,7 @@ namespace multimedia
          m_pwaveformat->m_waveformat.nAvgBytesPerSec   = m_pwaveformat->m_waveformat.nSamplesPerSec * m_pwaveformat->m_waveformat.nBlockAlign;
          //m_pwaveformat->m_waveformat.cbSize            = 0;
 
-         __zero(&m_dataformat);
+         ::zero(m_dataformat);
 
          translate(m_dataformat, m_pwaveformat);
 
@@ -480,10 +484,10 @@ namespace multimedia
 //      }
 
 
-      ::duration out::out_get_position()
+      class ::time out::out_get_position()
       {
 
-         single_lock sLock(mutex(), true);
+         single_lock sLock(this->synchronization(), true);
 
          OSStatus                status;
 
@@ -507,7 +511,7 @@ namespace multimedia
             if(!(stamp.mFlags & kAudioTimeStampSampleTimeValid))
                return e_zero;
 
-            return FLOATING_SECOND((double)stamp.mSampleTime/(double)m_pwaveformat->m_waveformat.nSamplesPerSec);
+            return (double)stamp.mSampleTime/(double)m_pwaveformat->m_waveformat.nSamplesPerSec;
 
          }
          else
@@ -580,7 +584,7 @@ namespace multimedia
       }
 
 
-      void out::out_start(const ::duration & position)
+      void out::out_start(const class ::time & position)
       {
 
          ::wave::out::out_start(position);

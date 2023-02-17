@@ -1,6 +1,6 @@
 #include "framework.h"
 #include "app-core/audio/wave/format.h"
-#include "aqua/multimedia/audio/_operating_system.h"
+//#include "aqua/multimedia/audio/_operating_system.h"
 
 
 namespace multimedia
@@ -14,7 +14,7 @@ namespace multimedia
       void translate(AudioStreamBasicDescription & waveformatex, ::wave::format * pwaveformat)
       {
 
-         __zero(waveformatex);
+         ::zero(waveformatex);
          waveformatex.mReserved         = 0;
          FillOutASBDForLPCM (
          waveformatex,

@@ -7,6 +7,7 @@
 //
 #include "framework.h"
 #include "toolbox.h"
+#include "acme/parallelization/synchronous_lock.h"
 
 
 namespace multimedia
@@ -20,7 +21,7 @@ namespace multimedia
       toolbox::toolbox()
       {
 
-         __zero(m_dataformat);
+         ::zero(m_dataformat);
 
          m_Queue           = nullptr;
          m_runloop         = nullptr;

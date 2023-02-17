@@ -1,6 +1,8 @@
 #include "framework.h"
 #include "wave_in.h"
 #include "translation.h"
+#include "acme/parallelization/mutex.h"
+#include "acme/parallelization/single_lock.h"
 #include "app-core/audio/decode/encoder.h"
 
 
@@ -231,9 +233,9 @@ namespace multimedia
       void in::in_close()
       {
 
-         single_lock sLock(mutex(), true);
+         single_lock sLock(this->synchronization(), true);
 
-         ::e_status     mmr;
+         //::e_status     mmr;
 
          if(m_einstate != ::wave::e_in_state_opened && m_einstate != ::wave::e_in_state_stopped)
          {
@@ -280,7 +282,7 @@ namespace multimedia
       void in::in_start()
       {
 
-         single_lock sLock(mutex(), true);
+         single_lock sLock(this->synchronization(), true);
 
          if(m_einstate == ::wave::e_in_state_recording)
          {
@@ -319,7 +321,7 @@ namespace multimedia
       void in::in_stop()
       {
 
-         single_lock sLock(mutex(), true);
+         single_lock sLock(this->synchronization(), true);
 
          if(m_einstate != ::wave::e_in_state_recording)
          {
@@ -385,7 +387,7 @@ namespace multimedia
       void in::in_reset()
       {
          
-         single_lock sLock(mutex(), true);
+         single_lock sLock(this->synchronization(), true);
          
          m_bResetting = true;
          
@@ -454,7 +456,7 @@ namespace multimedia
       AudioQueueRef in::in_get_safe_AudioQueueRef()
       {
 
-         if(is_null(this))
+         if(::is_null(this))
          {
 
             return nullptr;
@@ -501,11 +503,11 @@ namespace multimedia
 
          m_iBuffer--;
 
-         auto tickSampleTime = ::duration::now();
+         auto tickSampleTime = ::time::now();
 
          int iBuffer = (int) m_Buffers.find_first(inBuffer);
 
-         m_listenerset.in_data_proc(this, (u32) (tickSampleTime.integral_millisecond().m_i % 0x100000000ULL), iBuffer);
+         m_listenerset.in_data_proc(this, (u32) (tickSampleTime.integral_millisecond() % 0x100000000ULL), iBuffer);
 
          if(m_pencoder != nullptr)
          {

@@ -34,7 +34,7 @@ namespace multimedia
          void install_message_routing(::channel * pchannel) override;
 
          //virtual imedia_time out_get_time() override;
-         ::duration out_get_position() override;
+         class ::time out_get_position() override;
          void out_filled(index iBuffer) override;
 
          void out_open_ex(::thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::enum_purpose epurpose) override;
@@ -47,7 +47,7 @@ namespace multimedia
 
          virtual void _out_start();
 
-         void out_start(const ::duration & duration) override;
+         void out_start(const class ::time & time) override;
 
 
          virtual void out_on_playback_end() override;

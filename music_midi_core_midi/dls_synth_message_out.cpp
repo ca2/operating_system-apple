@@ -214,21 +214,21 @@ namespace music
                                
             }
             
-            ::u32 enabled = FALSE;
-            result = AudioUnitSetProperty(
-                m_unitSynth,
-                                          kAUMIDISynthProperty_EnablePreload,
-                                          kAudioUnitScope_Global,
-                0,
-                &enabled,
-                                          sizeof(enabled));
-            if (noErr != result)
-            {
-                               
-               throw ::exception(::error_failed);
-                               
-            }
-            
+//            ::u32 enabled = FALSE;
+//            result = AudioUnitSetProperty(
+//                m_unitSynth,
+//                                          kAUMIDISynthProperty_EnablePreload,
+//                                          kAudioUnitScope_Global,
+//                0,
+//                &enabled,
+//                                          sizeof(enabled));
+//            if (noErr != result)
+//            {
+//                               
+//               throw ::exception(::error_failed);
+//                               
+//            }
+//            
 //
 //            AUNode mixerNode;
 //

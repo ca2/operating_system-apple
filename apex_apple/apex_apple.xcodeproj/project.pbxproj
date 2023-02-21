@@ -20,7 +20,6 @@
 		9A7EDDAB2671820D00BC7094 /* process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787EA5264EE55E003DF8A0 /* process.cpp */; };
 		9A865ED9299295270042465F /* libapex_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865ED7299294D40042465F /* libapex_darwin.dylib */; };
 		9A865FB829661769000C82F0 /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865FB729661769000C82F0 /* libacme_darwin.dylib */; };
-		9A865FB929661769000C82F0 /* libacme_darwin.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9A865FB729661769000C82F0 /* libacme_darwin.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A8E9DDF282A2FB6005FF778 /* _mm.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787EA7264EE55E003DF8A0 /* _mm.h */; };
 		9A8E9DE0282A2FB6005FF778 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787EC3264EE55E003DF8A0 /* _.h */; };
 		9A8E9DE1282A2FB6005FF778 /* _c_mm.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787EBE264EE55E003DF8A0 /* _c_mm.h */; };
@@ -82,20 +81,6 @@
 			remoteInfo = ios_acme_apple;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		9A865FBA29661769000C82F0 /* Embed Libraries */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				9A865FB929661769000C82F0 /* libacme_darwin.dylib in Embed Libraries */,
-			);
-			name = "Embed Libraries";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9A0841432935A3DB009F7FF4 /* apex_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_darwin.xcodeproj; path = "../../operating-system-darwin/apex_darwin/apex_darwin.xcodeproj"; sourceTree = "<group>"; };
@@ -261,7 +246,6 @@
 				9A15A593264B53DC0080670E /* Headers */,
 				9A15A594264B53DC0080670E /* Sources */,
 				9A15A595264B53DC0080670E /* Frameworks */,
-				9A865FBA29661769000C82F0 /* Embed Libraries */,
 			);
 			buildRules = (
 			);

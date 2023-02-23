@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9A24D03628513F23000C9873 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A24D03528513F22000C9873 /* _.cpp */; };
 		9A24D03728513F23000C9873 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A24D03528513F22000C9873 /* _.cpp */; };
+		9A40316829A764D0008E5990 /* libaura_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A40316729A764D0008E5990 /* libaura_posix.dylib */; };
+		9A40316929A764D0008E5990 /* lib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865EDC299295CE0042465F /* lib.dylib */; };
 		9A5D73262655115000D5C39E /* libapex_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5D73252655115000D5C39E /* libapex_apple.dylib */; };
 		9A5D7340265512CF00D5C39E /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5D733F265512CF00D5C39E /* libaqua.dylib */; };
 		9A637E6C26724173005D0AC3 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E6B26724173005D0AC3 /* libacme.dylib */; };
@@ -17,7 +19,6 @@
 		9A637E722672419E005D0AC3 /* libapex_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E712672419E005D0AC3 /* libapex_posix.dylib */; };
 		9A637E75267241B6005D0AC3 /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E74267241B6005D0AC3 /* libaura.dylib */; };
 		9A637E77267241F0005D0AC3 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E76267241F0005D0AC3 /* libapex.dylib */; };
-		9A865EDD299295CE0042465F /* lib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865EDC299295CE0042465F /* lib.dylib */; };
 		9A865FC5296629C4000C82F0 /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865FC4296629C4000C82F0 /* libacme_darwin.dylib */; };
 		9A8E9E19282A2FEB005FF778 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFDB2653DAF000CC8096 /* _.h */; };
 		9A8E9E1A282A2FEB005FF778 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD32653DAF000CC8096 /* framework.h */; };
@@ -39,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A40316A29A769A9008E5990 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AE6DF60296452B9008A1335 /* aura_darwin.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AFD809E297B57D500BAD9DD;
+			remoteInfo = aura_darwin;
+		};
 		9A637E672672406E005D0AC3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A637E632672406E005D0AC3 /* apex_apple.xcodeproj */;
@@ -60,13 +68,6 @@
 			remoteGlobalIDString = 9AFD809F297B57D500BAD9DD;
 			remoteInfo = aura_darwin;
 		};
-		9A865EDF2992960B0042465F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9AE6DF60296452B9008A1335 /* aura_darwin.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9AFD809E297B57D500BAD9DD;
-			remoteInfo = aura_darwin;
-		};
 		9A8E9E31282A2FEB005FF778 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A637E632672406E005D0AC3 /* apex_apple.xcodeproj */;
@@ -86,6 +87,7 @@
 /* Begin PBXFileReference section */
 		9A15A5AC264B54430080670E /* libaura_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libaura_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A24D03528513F22000C9873 /* _.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
+		9A40316729A764D0008E5990 /* libaura_posix.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura_posix.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5D73252655115000D5C39E /* libapex_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5D73352655119A00D5C39E /* libaura_macos.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura_macos.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5D73392655124600D5C39E /* libacme_macos.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_macos.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,7 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A865EDD299295CE0042465F /* lib.dylib in Frameworks */,
+				9A40316929A764D0008E5990 /* lib.dylib in Frameworks */,
+				9A40316829A764D0008E5990 /* libaura_posix.dylib in Frameworks */,
 				9AA74F53284821F4009BB762 /* CoreGraphics.framework in Frameworks */,
 				9A637E77267241F0005D0AC3 /* libapex.dylib in Frameworks */,
 				9A637E75267241B6005D0AC3 /* libaura.dylib in Frameworks */,
@@ -168,6 +171,7 @@
 		9A5D72D226550C3900D5C39E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A40316729A764D0008E5990 /* libaura_posix.dylib */,
 				9A865FC4296629C4000C82F0 /* libacme_darwin.dylib */,
 				9AE6DF2F2962BED4008A1335 /* Foundation.framework */,
 				9AE6DF2C2962BE11008A1335 /* CoreImage.framework */,
@@ -261,7 +265,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9A865EE02992960B0042465F /* PBXTargetDependency */,
+				9A40316B29A769A9008E5990 /* PBXTargetDependency */,
 				9A637E6A26724149005D0AC3 /* PBXTargetDependency */,
 			);
 			name = aura_apple;
@@ -301,7 +305,7 @@
 				};
 			};
 			buildConfigurationList = 9A15A5A7264B54430080670E /* Build configuration list for PBXProject "aura_apple" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -382,15 +386,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9A40316B29A769A9008E5990 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = aura_darwin;
+			targetProxy = 9A40316A29A769A9008E5990 /* PBXContainerItemProxy */;
+		};
 		9A637E6A26724149005D0AC3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = apex_apple;
 			targetProxy = 9A637E6926724149005D0AC3 /* PBXContainerItemProxy */;
-		};
-		9A865EE02992960B0042465F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = aura_darwin;
-			targetProxy = 9A865EDF2992960B0042465F /* PBXContainerItemProxy */;
 		};
 		9A8E9F02282A357D005FF778 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -471,6 +475,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = (
 					.,
 					"$(WorkspaceDir)/source",
@@ -562,6 +567,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = (
 					.,
 					"$(WorkspaceDir)/source",

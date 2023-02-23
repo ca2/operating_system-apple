@@ -17,7 +17,7 @@
 		9A637E722672419E005D0AC3 /* libapex_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E712672419E005D0AC3 /* libapex_posix.dylib */; };
 		9A637E75267241B6005D0AC3 /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E74267241B6005D0AC3 /* libaura.dylib */; };
 		9A637E77267241F0005D0AC3 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E76267241F0005D0AC3 /* libapex.dylib */; };
-		9A865EDD299295CE0042465F /* libaura_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865EDC299295CE0042465F /* libaura_darwin.dylib */; };
+		9A865EDD299295CE0042465F /* lib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865EDC299295CE0042465F /* lib.dylib */; };
 		9A865FC5296629C4000C82F0 /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865FC4296629C4000C82F0 /* libacme_darwin.dylib */; };
 		9A8E9E19282A2FEB005FF778 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFDB2653DAF000CC8096 /* _.h */; };
 		9A8E9E1A282A2FEB005FF778 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFD32653DAF000CC8096 /* framework.h */; };
@@ -121,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A865EDD299295CE0042465F /* libaura_darwin.dylib in Frameworks */,
+				9A865EDD299295CE0042465F /* lib.dylib in Frameworks */,
 				9AA74F53284821F4009BB762 /* CoreGraphics.framework in Frameworks */,
 				9A637E77267241F0005D0AC3 /* libapex.dylib in Frameworks */,
 				9A637E75267241B6005D0AC3 /* libaura.dylib in Frameworks */,
@@ -217,7 +217,7 @@
 		9AE6DF61296452B9008A1335 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A865EDC299295CE0042465F /* libaura_darwin.dylib */,
+				9A865EDC299295CE0042465F /* lib.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -337,9 +337,10 @@
 			remoteRef = 9A637E672672406E005D0AC3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A865EDC299295CE0042465F /* libaura_darwin.dylib */ = {
+		9A865EDC299295CE0042465F /* lib.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
+			name = lib.dylib;
 			path = libaura_darwin.dylib;
 			remoteRef = 9A865EDB299295CE0042465F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;

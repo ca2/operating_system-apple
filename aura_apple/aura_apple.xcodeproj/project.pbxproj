@@ -10,7 +10,7 @@
 		9A24D03628513F23000C9873 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A24D03528513F22000C9873 /* _.cpp */; };
 		9A24D03728513F23000C9873 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A24D03528513F22000C9873 /* _.cpp */; };
 		9A40316829A764D0008E5990 /* libaura_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A40316729A764D0008E5990 /* libaura_posix.dylib */; };
-		9A40316929A764D0008E5990 /* lib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865EDC299295CE0042465F /* lib.dylib */; };
+		9A40316929A764D0008E5990 /* libaura_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A865EDC299295CE0042465F /* libaura_darwin.dylib */; };
 		9A5D73262655115000D5C39E /* libapex_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5D73252655115000D5C39E /* libapex_apple.dylib */; };
 		9A5D7340265512CF00D5C39E /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5D733F265512CF00D5C39E /* libaqua.dylib */; };
 		9A637E6C26724173005D0AC3 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A637E6B26724173005D0AC3 /* libacme.dylib */; };
@@ -30,6 +30,7 @@
 		9AA74F4F284821AE009BB762 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA74F4D284821AE009BB762 /* image.cpp */; };
 		9AA74F50284821AE009BB762 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA74F4D284821AE009BB762 /* image.cpp */; };
 		9AA74F53284821F4009BB762 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA74F52284821F4009BB762 /* CoreGraphics.framework */; };
+		9AB1607929A89F8800DFDF90 /* libapex_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB1607829A89F8800DFDF90 /* libapex_darwin.dylib */; };
 		9AC2CFE52653DAF000CC8096 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFC42653DAF000CC8096 /* framework.cpp */; };
 		9AC2CFE92653DAF000CC8096 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2CFC82653DAF000CC8096 /* node.cpp */; };
 		9AC2CFEA2653DAF000CC8096 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC2CFC92653DAF000CC8096 /* node.h */; };
@@ -82,6 +83,13 @@
 			remoteGlobalIDString = 9AB15B2F29A8715900DFDF90;
 			remoteInfo = aura_darwin;
 		};
+		9AB1607B29A89F8900DFDF90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AE6DF60296452B9008A1335 /* aura_darwin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AB15C8129A87CAC00DFDF90;
+			remoteInfo = ios_aura_darwin;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +113,7 @@
 		9A8E9E2F282A2FEB005FF778 /* libios_aura_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_aura_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA74F4D284821AE009BB762 /* image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = image.cpp; sourceTree = "<group>"; };
 		9AA74F52284821F4009BB762 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9AB1607829A89F8800DFDF90 /* libapex_darwin.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex_darwin.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC2CFC42653DAF000CC8096 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9AC2CFC82653DAF000CC8096 /* node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node.cpp; sourceTree = "<group>"; };
 		9AC2CFC92653DAF000CC8096 /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
@@ -123,7 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A40316929A764D0008E5990 /* lib.dylib in Frameworks */,
+				9A40316929A764D0008E5990 /* libaura_darwin.dylib in Frameworks */,
+				9AB1607929A89F8800DFDF90 /* libapex_darwin.dylib in Frameworks */,
 				9A40316829A764D0008E5990 /* libaura_posix.dylib in Frameworks */,
 				9AA74F53284821F4009BB762 /* CoreGraphics.framework in Frameworks */,
 				9A637E77267241F0005D0AC3 /* libapex.dylib in Frameworks */,
@@ -171,6 +181,7 @@
 		9A5D72D226550C3900D5C39E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AB1607829A89F8800DFDF90 /* libapex_darwin.dylib */,
 				9A40316729A764D0008E5990 /* libaura_posix.dylib */,
 				9A865FC4296629C4000C82F0 /* libacme_darwin.dylib */,
 				9AE6DF2F2962BED4008A1335 /* Foundation.framework */,
@@ -221,7 +232,8 @@
 		9AE6DF61296452B9008A1335 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A865EDC299295CE0042465F /* lib.dylib */,
+				9A865EDC299295CE0042465F /* libaura_darwin.dylib */,
+				9AB1607C29A89F8900DFDF90 /* libios_aura_darwin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -341,10 +353,9 @@
 			remoteRef = 9A637E672672406E005D0AC3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A865EDC299295CE0042465F /* lib.dylib */ = {
+		9A865EDC299295CE0042465F /* libaura_darwin.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = lib.dylib;
 			path = libaura_darwin.dylib;
 			remoteRef = 9A865EDB299295CE0042465F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -354,6 +365,13 @@
 			fileType = "compiled.mach-o.dylib";
 			path = libios_apex_apple.a;
 			remoteRef = 9A8E9E31282A2FEB005FF778 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AB1607C29A89F8900DFDF90 /* libios_aura_darwin.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_aura_darwin.a;
+			remoteRef = 9AB1607B29A89F8900DFDF90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

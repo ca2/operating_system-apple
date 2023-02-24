@@ -86,12 +86,33 @@
 			remoteGlobalIDString = 9AFD807E297B578700BAD9DD;
 			remoteInfo = acme_darwin;
 		};
-		9AC14D26297B3411006D9BD3 /* PBXContainerItemProxy */ = {
+		9AB1606029A89CA600DFDF90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A0841302935A379009F7FF4 /* acme_darwin.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9AC14CF8297B33B7006D9BD3;
-			remoteInfo = _acme_darwin;
+			remoteGlobalIDString = 9AB15D3929A8811400DFDF90;
+			remoteInfo = ios_acme_darwin;
+		};
+		9AB1606229A89CA600DFDF90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A0841302935A379009F7FF4 /* acme_darwin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AFD80BA297B584000BAD9DD;
+			remoteInfo = static_acme_darwin;
+		};
+		9AB1606729A89CA600DFDF90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AFD8118297B589E00BAD9DD /* acme_darwin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AB15D3929A8811400DFDF90;
+			remoteInfo = ios_acme_darwin;
+		};
+		9AB1606C29A89CA600DFDF90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AFD8152297B58A500BAD9DD /* acme_darwin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AB15D3929A8811400DFDF90;
+			remoteInfo = ios_acme_darwin;
 		};
 		9AC14D9E297B364B006D9BD3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -197,7 +218,7 @@
 		9A94DEF1282C5F6600F5C1CA /* acme_path.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = acme_path.cpp; sourceTree = "<group>"; };
 		9A94DEF2282C5F6600F5C1CA /* acme_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acme_file.h; sourceTree = "<group>"; };
 		9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = acme_file.cpp; sourceTree = "<group>"; };
-		9AC14D23297B3410006D9BD3 /* lib_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = lib_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AC14D23297B3410006D9BD3 /* libstatic_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libstatic_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AFD80F7297B589E00BAD9DD /* aaa__library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aaa__library.h; sourceTree = "<group>"; };
 		9AFD80F8297B589E00BAD9DD /* nord_acme_posix.vcxproj.user */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = nord_acme_posix.vcxproj.user; sourceTree = "<group>"; };
 		9AFD80F9297B589E00BAD9DD /* aa_process.2cpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = aa_process.2cpp; sourceTree = "<group>"; };
@@ -327,7 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				9AFD812F297B589E00BAD9DD /* libacme_darwin.dylib */,
-				9AC14D27297B3411006D9BD3 /* lib_acme_darwin.a */,
+				9AB1606129A89CA600DFDF90 /* libios_acme_darwin.a */,
+				9AB1606329A89CA600DFDF90 /* libstatic_acme_darwin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,7 +370,7 @@
 			children = (
 				9A15A582264B536C0080670E /* libacme_apple.dylib */,
 				9A8E9DBA282A2F61005FF778 /* libios_acme_apple.a */,
-				9AC14D23297B3410006D9BD3 /* lib_acme_apple.a */,
+				9AC14D23297B3410006D9BD3 /* libstatic_acme_apple.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -536,7 +558,8 @@
 			isa = PBXGroup;
 			children = (
 				9AFD8133297B589E00BAD9DD /* libacme_darwin.dylib */,
-				9AFD8135297B589E00BAD9DD /* lib_acme_darwin.a */,
+				9AB1606829A89CA600DFDF90 /* libios_acme_darwin.a */,
+				9AFD8135297B589E00BAD9DD /* libstatic_acme_darwin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -554,7 +577,8 @@
 			isa = PBXGroup;
 			children = (
 				9AFD8158297B58A500BAD9DD /* libacme_darwin.dylib */,
-				9AFD815A297B58A500BAD9DD /* lib_acme_darwin.a */,
+				9AB1606D29A89CA600DFDF90 /* libios_acme_darwin.a */,
+				9AFD815A297B58A500BAD9DD /* libstatic_acme_darwin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -652,9 +676,9 @@
 			productReference = 9A8E9DBA282A2F61005FF778 /* libios_acme_apple.a */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		9AC14CFD297B3410006D9BD3 /* _acme_apple */ = {
+		9AC14CFD297B3410006D9BD3 /* static_acme_apple */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9AC14D20297B3410006D9BD3 /* Build configuration list for PBXNativeTarget "_acme_apple" */;
+			buildConfigurationList = 9AC14D20297B3410006D9BD3 /* Build configuration list for PBXNativeTarget "static_acme_apple" */;
 			buildPhases = (
 				9AC14D00297B3410006D9BD3 /* Headers */,
 				9AC14D06297B3410006D9BD3 /* Sources */,
@@ -664,9 +688,9 @@
 			dependencies = (
 				9AFD8070297B560700BAD9DD /* PBXTargetDependency */,
 			);
-			name = _acme_apple;
+			name = static_acme_apple;
 			productName = acme_apple;
-			productReference = 9AC14D23297B3410006D9BD3 /* lib_acme_apple.a */;
+			productReference = 9AC14D23297B3410006D9BD3 /* libstatic_acme_apple.a */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -710,18 +734,39 @@
 			projectRoot = "";
 			targets = (
 				9A15A581264B536C0080670E /* acme_apple */,
-				9AC14CFD297B3410006D9BD3 /* _acme_apple */,
 				9A8E9DA3282A2F61005FF778 /* ios_acme_apple */,
+				9AC14CFD297B3410006D9BD3 /* static_acme_apple */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9AC14D27297B3411006D9BD3 /* lib_acme_darwin.a */ = {
+		9AB1606129A89CA600DFDF90 /* libios_acme_darwin.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = lib_acme_darwin.a;
-			remoteRef = 9AC14D26297B3411006D9BD3 /* PBXContainerItemProxy */;
+			path = libios_acme_darwin.a;
+			remoteRef = 9AB1606029A89CA600DFDF90 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AB1606329A89CA600DFDF90 /* libstatic_acme_darwin.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libstatic_acme_darwin.a;
+			remoteRef = 9AB1606229A89CA600DFDF90 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AB1606829A89CA600DFDF90 /* libios_acme_darwin.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_acme_darwin.a;
+			remoteRef = 9AB1606729A89CA600DFDF90 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AB1606D29A89CA600DFDF90 /* libios_acme_darwin.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_acme_darwin.a;
+			remoteRef = 9AB1606C29A89CA600DFDF90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		9AFD812F297B589E00BAD9DD /* libacme_darwin.dylib */ = {
@@ -738,10 +783,10 @@
 			remoteRef = 9AFD8132297B589E00BAD9DD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9AFD8135297B589E00BAD9DD /* lib_acme_darwin.a */ = {
+		9AFD8135297B589E00BAD9DD /* libstatic_acme_darwin.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = lib_acme_darwin.a;
+			path = libstatic_acme_darwin.a;
 			remoteRef = 9AFD8134297B589E00BAD9DD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -752,10 +797,10 @@
 			remoteRef = 9AFD8157297B58A500BAD9DD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9AFD815A297B58A500BAD9DD /* lib_acme_darwin.a */ = {
+		9AFD815A297B58A500BAD9DD /* libstatic_acme_darwin.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = lib_acme_darwin.a;
+			path = libstatic_acme_darwin.a;
 			remoteRef = 9AFD8159297B58A500BAD9DD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1140,7 +1185,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9AC14D20297B3410006D9BD3 /* Build configuration list for PBXNativeTarget "_acme_apple" */ = {
+		9AC14D20297B3410006D9BD3 /* Build configuration list for PBXNativeTarget "static_acme_apple" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9AC14D21297B3410006D9BD3 /* Debug */,

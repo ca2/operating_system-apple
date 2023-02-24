@@ -8,7 +8,7 @@
 #pragma once
 
 
-#include "aura_posix/node.h"
+#include "aura_darwin/node.h"
 #include "apex_apple/node.h"
 
 
@@ -21,7 +21,7 @@ namespace aura_apple
 //
 
       class CLASS_DECL_AURA_APPLE node :
-         virtual public ::aura_posix::node,
+         virtual public ::aura_darwin::node,
          virtual public ::apex_apple::node
       {
       public:

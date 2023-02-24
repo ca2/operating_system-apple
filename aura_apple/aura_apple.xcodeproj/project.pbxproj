@@ -40,13 +40,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9A40316A29A769A9008E5990 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9AE6DF60296452B9008A1335 /* aura_darwin.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9AFD809E297B57D500BAD9DD;
-			remoteInfo = aura_darwin;
-		};
 		9A637E672672406E005D0AC3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A637E632672406E005D0AC3 /* apex_apple.xcodeproj */;
@@ -81,6 +74,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9A8E9DD9282A2FB6005FF778;
 			remoteInfo = ios_apex_apple;
+		};
+		9AB15BD229A8744700DFDF90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AE6DF60296452B9008A1335 /* aura_darwin.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AB15B2F29A8715900DFDF90;
+			remoteInfo = aura_darwin;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -265,7 +265,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9A40316B29A769A9008E5990 /* PBXTargetDependency */,
+				9AB15BD329A8744700DFDF90 /* PBXTargetDependency */,
 				9A637E6A26724149005D0AC3 /* PBXTargetDependency */,
 			);
 			name = aura_apple;
@@ -386,11 +386,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9A40316B29A769A9008E5990 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = aura_darwin;
-			targetProxy = 9A40316A29A769A9008E5990 /* PBXContainerItemProxy */;
-		};
 		9A637E6A26724149005D0AC3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = apex_apple;
@@ -400,6 +395,11 @@
 			isa = PBXTargetDependency;
 			name = ios_apex_apple;
 			targetProxy = 9A8E9F01282A357D005FF778 /* PBXContainerItemProxy */;
+		};
+		9AB15BD329A8744700DFDF90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = aura_darwin;
+			targetProxy = 9AB15BD229A8744700DFDF90 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

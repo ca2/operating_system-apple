@@ -7,7 +7,7 @@
 #pragma once
 
 
-#include "apex_posix/node.h"
+#include "apex_darwin/node.h"
 #include "acme_apple/node.h"
 
 
@@ -16,7 +16,7 @@ namespace apex_apple
 
 
    class CLASS_DECL_APEX_APPLE node :
-      virtual public ::apex_posix::node,
+      virtual public ::apex_darwin::node,
       virtual public ::acme_apple::node
    {
    public:

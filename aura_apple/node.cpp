@@ -16,7 +16,7 @@ namespace aura_apple
 
          //m_pGtkSettingsDefault = nullptr;
 
-         m_pAuraPosix = this;
+         //m_pAuraPosix = this;
 
       }
 
@@ -166,7 +166,9 @@ namespace aura_apple
 
          //auto estatus =
          
-         ::apex_posix::node::initialize(pparticle);
+         ::aura_darwin::node::initialize(pparticle);
+         
+         ::apex_apple::node::initialize(pparticle);
 
 //         if (!estatus)
 //         {

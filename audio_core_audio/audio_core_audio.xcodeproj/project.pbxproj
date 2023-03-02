@@ -27,7 +27,7 @@
 		9AAEB4DC25291CFF00B39BA1 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DB25291CFF00B39BA1 /* libacme.dylib */; };
 		9AAEB4DE25291CFF00B39BA1 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DD25291CFF00B39BA1 /* libapex.dylib */; };
 		9AAEB4E025291CFF00B39BA1 /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DF25291CFF00B39BA1 /* libaqua.dylib */; };
-		9AE30FC128E54B2500F37DE6 /* libaudio.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A741580266BCDCE00552531 /* libaudio.dylib */; };
+		9AD862A529B147C00054C9B3 /* libaudio.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD860D329B0C08C0054C9B3 /* libaudio.dylib */; };
 		9AF4C4721F83DD7500197385 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B496616A4A10100875A94 /* framework.cpp */; };
 		9AF4C4731F83DD7500197385 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2917C563A300C458D1 /* _factory.cpp */; };
 		9AF4C4741F83DD7500197385 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2B17C563A300C458D1 /* translation.cpp */; };
@@ -72,30 +72,23 @@
 			remoteGlobalIDString = 9A8E9DD9282A2FB6005FF778;
 			remoteInfo = ios_apex_apple;
 		};
-		9A74157F266BCDCE00552531 /* PBXContainerItemProxy */ = {
+		9AD860D229B0C08C0054C9B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
+			containerPortal = 9AD860CD29B0C08C0054C9B3 /* audio.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9ACA447A2453EAEE007277DD;
 			remoteInfo = audio;
 		};
-		9A741581266BCDCE00552531 /* PBXContainerItemProxy */ = {
+		9AD860D429B0C08C0054C9B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
+			containerPortal = 9AD860CD29B0C08C0054C9B3 /* audio.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9ACA482A2453EEAE007277DD;
 			remoteInfo = ios_audio;
 		};
-		9A903F5F284B2A49006B9FD2 /* PBXContainerItemProxy */ = {
+		9AD860D629B0C0A30054C9B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9ACA47722453EEAE007277DD;
-			remoteInfo = ios_audio;
-		};
-		9AE30FBF28E54B1400F37DE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
+			containerPortal = 9AD860CD29B0C08C0054C9B3 /* audio.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 9ACA44792453EAEE007277DD;
 			remoteInfo = audio;
@@ -109,7 +102,6 @@
 		07D4206D1B71F5590065510D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		9A1B496316A494A600875A94 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9A1B496616A4A10100875A94 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
-		9A74157A266BCDCE00552531 /* audio.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = audio.xcodeproj; path = "../../../source/app-core/audio/audio.xcodeproj"; sourceTree = "<group>"; };
 		9A741586266BD07800552531 /* apex_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_apple.xcodeproj; path = ../apex_apple/apex_apple.xcodeproj; sourceTree = "<group>"; };
 		9A74158C266BD08500552531 /* libacme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A86864122CC3B0200186E72 /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +119,7 @@
 		9AAEB4DB25291CFF00B39BA1 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAEB4DD25291CFF00B39BA1 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAEB4DF25291CFF00B39BA1 /* libaqua.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaqua.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AD860CD29B0C08C0054C9B3 /* audio.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = audio.xcodeproj; path = ../../../source/audio/audio/audio.xcodeproj; sourceTree = "<group>"; };
 		9AEA2378267B12A1006F4A68 /* _library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
 		9AF4C48F1F83DD7500197385 /* libios_audio_core_audio.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_audio_core_audio.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1CFD778154F5EAA007447E2 /* libaudio_core_audio.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libaudio_core_audio.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AE30FC128E54B2500F37DE6 /* libaudio.dylib in Frameworks */,
+				9AD862A529B147C00054C9B3 /* libaudio.dylib in Frameworks */,
 				9A74158D266BD08500552531 /* libacme_apple.dylib in Frameworks */,
 				9AAEB4DC25291CFF00B39BA1 /* libacme.dylib in Frameworks */,
 				9AAEB4DE25291CFF00B39BA1 /* libapex.dylib in Frameworks */,
@@ -160,15 +153,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A74157B266BCDCE00552531 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9A741580266BCDCE00552531 /* libaudio.dylib */,
-				9A741582266BCDCE00552531 /* libios_audio.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		9A8C493F1F606995004A5BA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,11 +165,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9AD860CE29B0C08C0054C9B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AD860D329B0C08C0054C9B3 /* libaudio.dylib */,
+				9AD860D529B0C08C0054C9B3 /* libios_audio.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A1CFD76D154F5EA7007447E2 = {
 			isa = PBXGroup;
 			children = (
 				9A741586266BD07800552531 /* apex_apple.xcodeproj */,
-				9A74157A266BCDCE00552531 /* audio.xcodeproj */,
+				9AD860CD29B0C08C0054C9B3 /* audio.xcodeproj */,
 				07D4206D1B71F5590065510D /* CoreAudio.framework */,
 				07A27B451808E111005F7B47 /* AudioToolbox.framework */,
 				9A8997BC177D0E7D00C7761E /* Carbon.framework */,
@@ -271,7 +264,6 @@
 			);
 			dependencies = (
 				9A7319BC285BFA3400542140 /* PBXTargetDependency */,
-				9A903F60284B2A49006B9FD2 /* PBXTargetDependency */,
 			);
 			name = ios_audio_core_audio;
 			productName = os;
@@ -289,7 +281,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9AE30FC028E54B1400F37DE6 /* PBXTargetDependency */,
+				9AD860D729B0C0A30054C9B3 /* PBXTargetDependency */,
 				9A637E5726723FC7005D0AC3 /* PBXTargetDependency */,
 			);
 			name = audio_core_audio;
@@ -323,8 +315,8 @@
 					ProjectRef = 9A741586266BD07800552531 /* apex_apple.xcodeproj */;
 				},
 				{
-					ProductGroup = 9A74157B266BCDCE00552531 /* Products */;
-					ProjectRef = 9A74157A266BCDCE00552531 /* audio.xcodeproj */;
+					ProductGroup = 9AD860CE29B0C08C0054C9B3 /* Products */;
+					ProjectRef = 9AD860CD29B0C08C0054C9B3 /* audio.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -350,18 +342,18 @@
 			remoteRef = 9A3D15FD266EEC8A00AE9A5E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A741580266BCDCE00552531 /* libaudio.dylib */ = {
+		9AD860D329B0C08C0054C9B3 /* libaudio.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libaudio.dylib;
-			remoteRef = 9A74157F266BCDCE00552531 /* PBXContainerItemProxy */;
+			remoteRef = 9AD860D229B0C08C0054C9B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A741582266BCDCE00552531 /* libios_audio.a */ = {
+		9AD860D529B0C08C0054C9B3 /* libios_audio.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libios_audio.a;
-			remoteRef = 9A741581266BCDCE00552531 /* PBXContainerItemProxy */;
+			remoteRef = 9AD860D429B0C08C0054C9B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -406,15 +398,10 @@
 			name = ios_apex_apple;
 			targetProxy = 9A7319BB285BFA3400542140 /* PBXContainerItemProxy */;
 		};
-		9A903F60284B2A49006B9FD2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ios_audio;
-			targetProxy = 9A903F5F284B2A49006B9FD2 /* PBXContainerItemProxy */;
-		};
-		9AE30FC028E54B1400F37DE6 /* PBXTargetDependency */ = {
+		9AD860D729B0C0A30054C9B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = audio;
-			targetProxy = 9AE30FBF28E54B1400F37DE6 /* PBXContainerItemProxy */;
+			targetProxy = 9AD860D629B0C0A30054C9B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

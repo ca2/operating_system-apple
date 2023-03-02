@@ -2,7 +2,7 @@
 
 
 #include "toolbox.h"
-#include "app-core/audio/wave/out.h"
+#include "audio/audio/wave/out.h"
 
 
 namespace multimedia

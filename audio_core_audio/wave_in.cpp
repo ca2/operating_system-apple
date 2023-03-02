@@ -3,7 +3,7 @@
 #include "translation.h"
 #include "acme/parallelization/mutex.h"
 #include "acme/parallelization/single_lock.h"
-#include "app-core/audio/decode/encoder.h"
+#include "audio/audio/decode/encoder.h"
 
 
 namespace multimedia

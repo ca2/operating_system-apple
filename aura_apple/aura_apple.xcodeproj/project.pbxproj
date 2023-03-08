@@ -124,7 +124,7 @@
 		9AC2D1F126543B3200CC8096 /* _mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm.h; sourceTree = "<group>"; };
 		9AE6DF2C2962BE11008A1335 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		9AE6DF2F2962BED4008A1335 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9AE6DF60296452B9008A1335 /* aura_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura_darwin.xcodeproj; path = "../../operating-system-darwin/aura_darwin/aura_darwin.xcodeproj"; sourceTree = "<group>"; };
+		9AE6DF60296452B9008A1335 /* aura_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura_darwin.xcodeproj; path = "../../operating_system-darwin/aura_darwin/aura_darwin.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

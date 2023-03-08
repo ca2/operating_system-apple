@@ -83,7 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9A0841432935A3DB009F7FF4 /* apex_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_darwin.xcodeproj; path = "../../operating-system-darwin/apex_darwin/apex_darwin.xcodeproj"; sourceTree = "<group>"; };
+		9A0841432935A3DB009F7FF4 /* apex_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_darwin.xcodeproj; path = "../../operating_system-darwin/apex_darwin/apex_darwin.xcodeproj"; sourceTree = "<group>"; };
 		9A15A597264B53DC0080670E /* libapex_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libapex_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A15A608264B551B0080670E /* acme_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_apple.xcodeproj; path = ../acme_apple/acme_apple.xcodeproj; sourceTree = "<group>"; };
 		9A41245A266C41E200C3FF0E /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };

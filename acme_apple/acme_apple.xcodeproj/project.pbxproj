@@ -52,6 +52,7 @@
 		9A94DEFA282C606300F5C1CA /* acme_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */; };
 		9A94DEFB282C606600F5C1CA /* acme_path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* acme_path.cpp */; };
 		9A94DEFC282C606900F5C1CA /* acme_directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* acme_directory.cpp */; };
+		9A9DCBDD29B8482F00D1255B /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9DCB6729B823BB00D1255B /* libacme_darwin.dylib */; };
 		9AA74F6128484887009BB762 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
 		9AC14D01297B3410006D9BD3 /* acme_directory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* acme_directory.h */; };
 		9AC14D02297B3410006D9BD3 /* acme_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEF2282C5F6600F5C1CA /* acme_file.h */; };
@@ -168,6 +169,7 @@
 		9A94DEF2282C5F6600F5C1CA /* acme_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acme_file.h; sourceTree = "<group>"; };
 		9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = acme_file.cpp; sourceTree = "<group>"; };
 		9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_darwin.xcodeproj; path = "../../operating_system-darwin/acme_darwin/acme_darwin.xcodeproj"; sourceTree = "<group>"; };
+		9A9DCBDE29B8490900D1255B /* libios_acme_posix.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libios_acme_posix.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC14D23297B3410006D9BD3 /* libstatic_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libstatic_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -177,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A08443F29367CC1009F7FF4 /* libacme_posix.dylib in Frameworks */,
+				9A9DCBDD29B8482F00D1255B /* libacme_darwin.dylib in Frameworks */,
 				9A787E80264E89F4003DF8A0 /* CoreServices.framework in Frameworks */,
 				9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */,
 				9A86610D296732AA000C82F0 /* UniformTypeIdentifiers.framework in Frameworks */,
@@ -256,6 +259,7 @@
 		9A787E7C264E8935003DF8A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A9DCBDE29B8490900D1255B /* libios_acme_posix.a */,
 				9A86610B296732A9000C82F0 /* UniformTypeIdentifiers.framework */,
 				9A08443E29367CC1009F7FF4 /* libacme_posix.dylib */,
 				9A21AFE1276122CB001E14CC /* Cocoa.framework */,

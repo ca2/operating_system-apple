@@ -31,7 +31,7 @@ namespace acme_apple
 //      void dump(dump_context & dumpcontext) const override;
 
       filesize get_position() const override;
-      void open(const ::file::path & lpszFileName, const ::file::e_open & eopen) override;
+      void open(const ::file::path & lpszFileName, ::file::e_open eopen) override;
       memsize read(void * lpBuf, memsize nCount) override;
       void write(const void * lpBuf, memsize nCount) override;
       virtual filesize seek(filesize lOff, ::enum_seek nFrom);

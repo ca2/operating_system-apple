@@ -31,7 +31,7 @@ namespace acme_apple
    }
 
 
-   void stdio_file::open(const ::file::path & path, const ::file::e_open & eopen)
+   void stdio_file::open(const ::file::path & path, ::file::e_open eopen)
    {
 
       if ((eopen & ::file::e_open_defer_create_directory) && (eopen & ::file::e_open_write))

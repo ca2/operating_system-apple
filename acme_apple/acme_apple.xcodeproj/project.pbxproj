@@ -14,8 +14,6 @@
 		9A734A52284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
 		9A734A53284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
 		9A741591266BD2B700552531 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A74158F266BD25B00552531 /* debug.cpp */; };
-		9A750E20282B531D00C4861B /* stdio_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A750E1E282B531C00C4861B /* stdio_file.h */; };
-		9A750E21282B531D00C4861B /* stdio_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A750E1F282B531C00C4861B /* stdio_file.cpp */; };
 		9A756981283D4477000D9C84 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E64264E22CB003DF8A0 /* _.cpp */; };
 		9A787E6E264E234B003DF8A0 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E65264E22CB003DF8A0 /* _factory.cpp */; };
 		9A787E6F264E2351003DF8A0 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
@@ -40,7 +38,6 @@
 		9A8E9DB0282A2F61005FF778 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5E264E22CB003DF8A0 /* node.cpp */; };
 		9A93B95A28471D7D005ACD11 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B95828471D39005ACD11 /* image.cpp */; };
 		9A93B95B28471D7F005ACD11 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B95828471D39005ACD11 /* image.cpp */; };
-		9A94DEDA282C4B1C00F5C1CA /* stdio_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A750E1F282B531C00C4861B /* stdio_file.cpp */; };
 		9A94DEDC282C4B1C00F5C1CA /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E64264E22CB003DF8A0 /* _.cpp */; };
 		9A94DEDD282C4B1C00F5C1CA /* resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5B264E22CB003DF8A0 /* resource.cpp */; };
 		9A94DEF4282C5F6600F5C1CA /* acme_directory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* acme_directory.h */; };
@@ -56,7 +53,6 @@
 		9AA74F6128484887009BB762 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
 		9AC14D01297B3410006D9BD3 /* acme_directory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* acme_directory.h */; };
 		9AC14D02297B3410006D9BD3 /* acme_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEF2282C5F6600F5C1CA /* acme_file.h */; };
-		9AC14D03297B3410006D9BD3 /* stdio_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A750E1E282B531C00C4861B /* stdio_file.h */; };
 		9AC14D04297B3410006D9BD3 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
 		9AC14D05297B3410006D9BD3 /* acme_path.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEF282C5F6600F5C1CA /* acme_path.h */; };
 		9AC14D07297B3410006D9BD3 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */; };
@@ -68,7 +64,6 @@
 		9AC14D0D297B3410006D9BD3 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E64264E22CB003DF8A0 /* _.cpp */; };
 		9AC14D0E297B3410006D9BD3 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */; };
 		9AC14D0F297B3410006D9BD3 /* DDInvocationGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6B264E22CB003DF8A0 /* DDInvocationGrabber.mm */; };
-		9AC14D10297B3410006D9BD3 /* stdio_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A750E1F282B531C00C4861B /* stdio_file.cpp */; };
 		9AC14D11297B3410006D9BD3 /* NSObject+DDExtensions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */; };
 		9AC14D12297B3410006D9BD3 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
 		9AC14D13297B3410006D9BD3 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
@@ -130,8 +125,6 @@
 		9A734A50284F5E37003986C7 /* CAHostTimeBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAHostTimeBase.h; sourceTree = "<group>"; };
 		9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAHostTimeBase.cpp; sourceTree = "<group>"; };
 		9A74158F266BD25B00552531 /* debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = debug.cpp; sourceTree = "<group>"; };
-		9A750E1E282B531C00C4861B /* stdio_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdio_file.h; sourceTree = "<group>"; };
-		9A750E1F282B531C00C4861B /* stdio_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdio_file.cpp; sourceTree = "<group>"; };
 		9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+DDExtensions.mm"; sourceTree = "<group>"; };
 		9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SymlinksAndAliases.h"; sourceTree = "<group>"; };
 		9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+SymlinksAndAliases.mm"; sourceTree = "<group>"; };
@@ -247,8 +240,6 @@
 				9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */,
 				9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */,
 				9A787E5B264E22CB003DF8A0 /* resource.cpp */,
-				9A750E1F282B531C00C4861B /* stdio_file.cpp */,
-				9A750E1E282B531C00C4861B /* stdio_file.h */,
 				9A787E6A264E22CB003DF8A0 /* timer.mm */,
 				9A787E5D264E22CB003DF8A0 /* UncaughtExceptionHandler.h */,
 				9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */,
@@ -294,7 +285,6 @@
 			files = (
 				9A94DEF4282C5F6600F5C1CA /* acme_directory.h in Headers */,
 				9A94DEF8282C5F6600F5C1CA /* acme_file.h in Headers */,
-				9A750E20282B531D00C4861B /* stdio_file.h in Headers */,
 				9A787E6F264E2351003DF8A0 /* node.h in Headers */,
 				9A94DEF5282C5F6600F5C1CA /* acme_path.h in Headers */,
 			);
@@ -314,7 +304,6 @@
 			files = (
 				9AC14D01297B3410006D9BD3 /* acme_directory.h in Headers */,
 				9AC14D02297B3410006D9BD3 /* acme_file.h in Headers */,
-				9AC14D03297B3410006D9BD3 /* stdio_file.h in Headers */,
 				9AC14D04297B3410006D9BD3 /* node.h in Headers */,
 				9AC14D05297B3410006D9BD3 /* acme_path.h in Headers */,
 			);
@@ -451,7 +440,6 @@
 				9A756981283D4477000D9C84 /* _.cpp in Sources */,
 				9A787E76264E31C2003DF8A0 /* UncaughtExceptionHandler.mm in Sources */,
 				9A787E77264E31C7003DF8A0 /* DDInvocationGrabber.mm in Sources */,
-				9A750E21282B531D00C4861B /* stdio_file.cpp in Sources */,
 				9A787E74264E31B7003DF8A0 /* NSObject+DDExtensions.mm in Sources */,
 				9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */,
 				9AA74F6128484887009BB762 /* image.mm in Sources */,
@@ -467,7 +455,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A94DEFB282C606600F5C1CA /* acme_path.cpp in Sources */,
-				9A94DEDA282C4B1C00F5C1CA /* stdio_file.cpp in Sources */,
 				9A94DEDD282C4B1C00F5C1CA /* resource.cpp in Sources */,
 				9A94DEFC282C606900F5C1CA /* acme_directory.cpp in Sources */,
 				9A78F40A28E7A953007F62C0 /* exception_translator.cpp in Sources */,
@@ -499,7 +486,6 @@
 				9AC14D0D297B3410006D9BD3 /* _.cpp in Sources */,
 				9AC14D0E297B3410006D9BD3 /* UncaughtExceptionHandler.mm in Sources */,
 				9AC14D0F297B3410006D9BD3 /* DDInvocationGrabber.mm in Sources */,
-				9AC14D10297B3410006D9BD3 /* stdio_file.cpp in Sources */,
 				9AC14D11297B3410006D9BD3 /* NSObject+DDExtensions.mm in Sources */,
 				9AC14D12297B3410006D9BD3 /* _apple.mm in Sources */,
 				9AC14D13297B3410006D9BD3 /* image.mm in Sources */,

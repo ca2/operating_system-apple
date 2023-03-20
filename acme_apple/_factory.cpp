@@ -1,6 +1,6 @@
 #include "framework.h"
 #include "node.h"
-#include "stdio_file.h"
+//#include "stdio_file.h"
 #include "exception_translator.h"
 
 
@@ -17,7 +17,7 @@ IMPLEMENT_FACTORY(acme_apple)
 
    //create_factory < ::posix::pipe , ::process::pipe          >();
    
-   pfactory->add_factory_item < ::acme_apple::stdio_file , ::file::text_file          >();
+   //pfactory->add_factory_item < ::acme_apple::stdio_file , ::file::text_file          >();
    pfactory->add_factory_item < ::acme_apple::exception_translator , ::exception_translator          >();
 
 }

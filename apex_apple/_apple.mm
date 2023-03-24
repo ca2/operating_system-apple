@@ -8,7 +8,7 @@
 //#import "NSString+SymlinksAndAliases.h"
 #import "acme/primitive/primitive/runnable.h"
 
-char * ns_string(NSString * str)
+char * __strdup(NSString * str)
 {
    
    if(str == nil)
@@ -37,7 +37,7 @@ char * ns_string(NSString * str)
 //char * mm_ca2_command_line()
 //{
 //   
-//   return ns_string([[NSBundle mainBundle] objectForInfoDictionaryKey:@"ca2_command_line"]);
+//   return __strdup([[NSBundle mainBundle] objectForInfoDictionaryKey:@"ca2_command_line"]);
 //   
 //}
 //
@@ -52,7 +52,7 @@ char * mm_error_string(OSStatus status)
    
    NSString * strError = [error localizedDescription];
    
-   return ns_string(strError);
+   return __strdup(strError);
    
 }
 
@@ -64,7 +64,7 @@ char * mm_error_description(OSStatus status)
    
    NSString * strError = [error description];
    
-   return ns_string(strError);
+   return __strdup(strError);
    
 }
 
@@ -88,7 +88,7 @@ char * mm_error_description(OSStatus status)
 //      
 //   }
 //   
-//   return ns_string(strFullPath);
+//   return __strdup(strFullPath);
 //   
 //}
 
@@ -177,20 +177,20 @@ void _main_sync_runnable(::matter * prunnable, DWORD dwMillis)
 }
 
 
-NSString * __ns_get_text(const char * psz);
+NSString * __nsstring(const char * psz);
 
 
-NSString * __ns_get_text(NSString * str)
+NSString * __nsstring(NSString * str)
 {
 
    const char * psz = [str UTF8String];
    
-   return __ns_get_text(psz);
+   return __nsstring(psz);
 
 }
 
 
-NSString * __ns_get_text(const char * psz)
+NSString * __nsstring(const char * psz)
 {
    
    int iLen = __c_get_text_length(psz);

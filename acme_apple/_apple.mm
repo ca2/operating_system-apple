@@ -14,7 +14,7 @@
 char * mm_ca2_command_line()
 {
    
-   return ns_string([[NSBundle mainBundle] objectForInfoDictionaryKey:@"ca2_command_line"]);
+   return __strdup([[NSBundle mainBundle] objectForInfoDictionaryKey:@"ca2_command_line"]);
    
 }
 
@@ -22,7 +22,7 @@ char * mm_ca2_command_line()
 char * ns_get_bundle_identifier()
 {
    
-   return ns_string([[NSBundle mainBundle] bundleIdentifier]);
+   return __strdup([[NSBundle mainBundle] bundleIdentifier]);
    
 }
 
@@ -30,7 +30,7 @@ char * ns_get_bundle_identifier()
 //char * ns_get_executable_path()
 //{
 //   
-//   return ns_string([[NSBundle mainBundle] executablePath]);
+//   return __strdup([[NSBundle mainBundle] executablePath]);
 //   
 //}
 
@@ -42,7 +42,7 @@ char * mm_error_string(OSStatus status)
    
    NSString * strError = [error localizedDescription];
    
-   return ns_string(strError);
+   return __strdup(strError);
    
 }
 
@@ -54,7 +54,7 @@ char * mm_error_description(OSStatus status)
    
    NSString * strError = [error description];
    
-   return ns_string(strError);
+   return __strdup(strError);
    
 }
 
@@ -78,7 +78,7 @@ char * mm_error_description(OSStatus status)
 //      
 //   }
 //   
-//   return ns_string(strFullPath);
+//   return __strdup(strFullPath);
 //   
 //}
 
@@ -144,20 +144,20 @@ void _main_sync_runnable(::matter * prunnable, DWORD dwMillis)
 }
 
 
-NSString * __ns_get_text(const char * psz);
+NSString * __nsstring(const char * psz);
 
 
-NSString * __ns_get_text(NSString * str)
+NSString * __nsstring(NSString * str)
 {
 
    const char * psz = [str UTF8String];
    
-   return __ns_get_text(psz);
+   return __nsstring(psz);
 
 }
 
 
-NSString * __ns_get_text(const char * psz)
+NSString * __nsstring(const char * psz)
 {
    
    //::string str(psz);
@@ -206,7 +206,7 @@ NSString * __ns_get_text(const char * psz)
 //char * ns_get_task_name()
 //{
 //
-//   return ns_string([[NSThread currentThread] name]);
+//   return __strdup([[NSThread currentThread] name]);
 //
 //}
 
@@ -407,7 +407,7 @@ char * ns_resolve_alias(const char * psz, bool bNoUI = false, bool bNoMount = fa
    
    NSString * resolvedPath = [resolved absoluteString];
 
-   return ns_string(resolvedPath);
+   return __strdup(resolvedPath);
    
 }
 

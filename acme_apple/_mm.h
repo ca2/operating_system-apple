@@ -23,7 +23,7 @@ void set_apex_system_as_thread();
 #include "DDInvocationGrabber.h"
 
 
-char * ns_string(NSString * str);
+char * __strdup(NSString * str);
 
 void ns_main_sync(dispatch_block_t block);
 void ns_main_async(dispatch_block_t block);

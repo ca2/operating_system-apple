@@ -86,7 +86,7 @@ namespace draw2d_quartz2d
       if(pdata != nullptr)
       {
       
-         ::memcpy_dup(m_pdata, pdata, size.cy * iStride);
+         ::memory_copy(m_pdata, pdata, size.cy * iStride);
          
       }
       

@@ -131,7 +131,7 @@ namespace music
                
                CFRelease(name);
                
-               WARNING("Destination:" << ::as_string(iEndpoint) << " - '" << ::as_string(szBuffer) << "'");
+               WARNING("Destination:" << ::as_string(iEndpoint) << " - '" << ::string(szBuffer) << "'");
                
                Endpoint destination;
                

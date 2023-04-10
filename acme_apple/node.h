@@ -54,6 +54,8 @@ namespace acme_apple
 
       ::string operating_system_store_release() override;
       
+      ::pointer <::operating_system::summary > operating_system_summary() override;
+      
    };
 
 

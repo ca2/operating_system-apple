@@ -52,6 +52,8 @@ namespace acme_apple
       
       ::file::path library_file_name(const ::scoped_string & scopedstr) override;
 
+      ::string operating_system_store_release() override;
+      
    };
 
 

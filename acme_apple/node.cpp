@@ -12,6 +12,9 @@
 #include <CoreImage/CoreImage.h>
 
 
+::string apple_operating_system_store_release();
+
+
 void ns_main_async(dispatch_block_t block);
 
 
@@ -129,6 +132,14 @@ namespace acme_apple
    {
       
       return "lib" + scopedstr + ".dylib";
+      
+   }
+
+
+   ::string node::operating_system_store_release()
+   {
+      
+      return ::apple_operating_system_store_release();
       
    }
 

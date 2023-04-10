@@ -464,4 +464,18 @@ bool uniform_type_conforms_to_data_type(CFStringRef cfstr, enum_data_type edatat
 }
 
 
+::string apple_operating_system_store_release()
+{
+   
+   NSOperatingSystemVersion version = [ [ NSProcessInfo processInfo] operatingSystemVersion ];
+   
+   ::string strRelease;
+   
+   strRelease.format("%d.%d", version.majorVersion, version.minorVersion);
+
+   return strRelease;
+   
+}
+
+
 

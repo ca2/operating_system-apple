@@ -482,8 +482,8 @@ void apple_operating_system_release(::i32 & iMajor, ::i32 & iMinor, ::i32 & iPat
    
    NSOperatingSystemVersion version = [ [ NSProcessInfo processInfo] operatingSystemVersion ];
 
-   iMajor = version.majorVersion;
-   iMinor = version.minorVersion;
-   iPatch = version.patchVersion;
+   iMajor = (::i32) version.majorVersion;
+   iMinor = (::i32) version.minorVersion;
+   iPatch = (::i32) version.patchVersion;
 
 }

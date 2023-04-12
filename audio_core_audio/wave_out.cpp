@@ -2,6 +2,7 @@
 #include "wave_out.h"
 #include "translation.h"
 #include "acme/constant/message.h"
+#include "acme/memory/_heap.h"
 #include "acme/operating_system/apple/_apple.h"
 #include "acme/parallelization/synchronous_lock.h"
 
@@ -109,10 +110,15 @@ namespace multimedia
          m_pwaveformat->m_waveformat.nBlockAlign       = m_pwaveformat->m_waveformat.wBitsPerSample * m_pwaveformat->m_waveformat.nChannels / 8;
          m_pwaveformat->m_waveformat.nAvgBytesPerSec   = m_pwaveformat->m_waveformat.nSamplesPerSec * m_pwaveformat->m_waveformat.nBlockAlign;
          //m_pwaveformat->m_waveformat.cbSize            = 0;
+         
+         int iSize = sizeof(AudioStreamBasicDescription);
+         
+         m_pdataformat = (AudioStreamBasicDescription *) main_memory_allocate_heap::aligned_memory_allocate(iSize, 64);
 
-         ::zero(m_dataformat);
-
-         translate(m_dataformat, m_pwaveformat);
+         translate(*m_pdataformat, m_pwaveformat);
+         
+         FORMATTED_INFORMATION("m_pdataformat %016" PRIXPTR "\n", m_pdataformat);
+         FORMATTED_INFORMATION("m_Queue %016" PRIXPTR "\n", m_Queue);
 
          int iBufferCount = 8;
 
@@ -152,15 +158,19 @@ namespace multimedia
 //         try
 //         {
 //
-            OSStatus osstatus = AudioQueueNewOutput(&m_dataformat, WaveOutAudioQueueBufferCallback, this, nullptr, nullptr, 0, &m_Queue);
-            
-            m_estatusWave = translate(osstatus);
+         AudioQueueRef queue = nullptr;
+            auto osstatusNewOutput = AudioQueueNewOutput(m_pdataformat, WaveOutAudioQueueBufferCallback, this, nullptr, nullptr, 0, &queue);
+         
+         m_Queue = queue;
+         FORMATTED_INFORMATION("m_Queue %016" PRIXPTR "\n", m_Queue);
+
+            m_estatusWave = os_status_status(osstatusNewOutput);
 
 //         }
 //         catch(...)
 //         {
 
-         if(failed(m_estatusWave))
+         if(m_estatusWave.failed())
          {
             
             m_estatusWave = error_failed;
@@ -311,9 +321,9 @@ namespace multimedia
 
          m_eoutstate = ::wave::e_out_state_stopping;
          
-         OSStatus status = AudioQueueStop(m_Queue, false);
+         auto osstatusStop = AudioQueueStop(m_Queue, false);
 
-         m_estatusWave = translate(status);
+         m_estatusWave = os_status_status(osstatusStop);
 
          if(m_estatusWave == ::success)
          {
@@ -322,7 +332,7 @@ namespace multimedia
 
          }
          
-         if(failed(m_estatusWave))
+         if(m_estatusWave.failed())
          {
 
             throw ::exception(m_estatusWave);
@@ -351,9 +361,9 @@ namespace multimedia
          // waveform-audio_core_audio output device and resets the current position
          // to zero. All pending playback buffers are marked as done and
          // returned to the application.
-         OSStatus status = AudioQueuePause(m_Queue);
+         auto osstatusPause = AudioQueuePause(m_Queue);
          
-         m_estatusWave = translate(status);
+         m_estatusWave = os_status_status(osstatusPause);
 
          ASSERT(m_estatusWave == ::success);
 
@@ -364,7 +374,7 @@ namespace multimedia
 
          }
 
-         if(failed(m_estatusWave))
+         if(m_estatusWave.failed())
          {
             
             throw ::exception(m_estatusWave);
@@ -404,24 +414,24 @@ namespace multimedia
 
          synchronous_lock synchronouslock(synchronization());
 
-         OSStatus statusPrime = AudioQueuePrime(m_Queue, 0, nullptr);
+         OSStatus osstatusPrime = AudioQueuePrime(m_Queue, 0, nullptr);
 
-         m_estatusWave = translate(statusPrime);
+         m_estatusWave = os_status_status(osstatusPrime);
 
-         if(failed(m_estatusWave))
+         if(m_estatusWave.failed())
          {
             
             throw ::exception(m_estatusWave);
             
          }
 
-         OSStatus statusStart = AudioQueueStart(m_Queue, nullptr);
+         OSStatus osstatusStart = AudioQueueStart(m_Queue, nullptr);
 
-         string strErrorString = apple_error_string(statusStart);
+         string strErrorString = apple_error_string(osstatusStart);
 
-         string strErrorDescription = apple_error_description(statusStart);
+         string strErrorDescription = apple_error_description(osstatusStart);
 
-         m_estatusWave = translate(statusStart);
+         m_estatusWave = os_status_status(osstatusStart);
 
          if(failed(m_estatusWave))
          {

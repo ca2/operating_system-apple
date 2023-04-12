@@ -11,7 +11,7 @@ namespace multimedia
 
 
       void translate(AudioStreamBasicDescription & formatex, ::wave::format * pwaveformat);
-      ::e_status     translate(OSStatus status);
+      ::e_status os_status_status(OSStatus status);
 
       /*
 

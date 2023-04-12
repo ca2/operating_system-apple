@@ -16,12 +16,15 @@ namespace multimedia
 
          ::zero(waveformatex);
          waveformatex.mReserved         = 0;
+         
+         int iBitCount = 8 * sizeof(::wave::WAVEBUFFERDATA);
+         
          FillOutASBDForLPCM (
          waveformatex,
          (Float64) pwaveformat->m_waveformat.nSamplesPerSec,
          pwaveformat->m_waveformat.nChannels,
-         8 * sizeof(::wave::WAVEBUFFERDATA),
-         8 * sizeof(::wave::WAVEBUFFERDATA),
+                             iBitCount,
+                             iBitCount,
          false,
          false);
 
@@ -40,7 +43,7 @@ namespace multimedia
       }
 
 
-      ::e_status     translate(OSStatus status)
+      ::e_status os_status_status(OSStatus status)
       {
 
          switch(status)

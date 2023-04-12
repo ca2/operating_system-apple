@@ -266,9 +266,9 @@ namespace multimedia
 
                   }*/
          
-         OSStatus status = AudioQueueDispose(m_Queue, 1);
+         OSStatus osstatus = AudioQueueDispose(m_Queue, 1);
 
-         m_estatusWave = translate(status);
+         m_estatusWave = os_status_status(osstatus);
 
          m_Queue = nullptr;
 
@@ -298,11 +298,11 @@ namespace multimedia
             
          }
          
-         int iStatus = AudioQueueStart(m_Queue, nullptr);
+         auto ostatusStart = AudioQueueStart(m_Queue, nullptr);
          
-         m_estatusWave = translate(iStatus);
+         m_estatusWave = os_status_status(ostatusStart);
 
-         if(m_estatusWave != ::success)
+         if(::failed(m_estatusWave))
          {
 
             TRACE("ERROR starting INPUT DEVICE ");
@@ -405,16 +405,16 @@ namespace multimedia
             
          }
          
-         OSStatus status = AudioQueueReset(m_Queue);
+         auto osstatusReset = AudioQueueReset(m_Queue);
          
-         auto estatus = translate(status);
+         auto estatusReset = os_status_status(osstatusReset);
          
-         if(failed(estatus))
+         if(estatusReset.failed())
          {
          
             ERROR("in::Reset error resetting input device");
                
-            throw ::exception(estatus, "in::Reset error resetting input device");
+            throw ::exception(estatusReset, "in::Reset error resetting input device");
             
          }
          
@@ -498,8 +498,8 @@ namespace multimedia
                                        const AudioStreamPacketDescription   *inPacketDesc)
       {
 
-         if(inNumPackets == 0 && m_dataformat.mBytesPerPacket != 0)
-            inNumPackets = inBuffer->mAudioDataByteSize / m_dataformat.mBytesPerPacket;
+         if(inNumPackets == 0 && m_pdataformat->mBytesPerPacket != 0)
+            inNumPackets = inBuffer->mAudioDataByteSize / m_pdataformat->mBytesPerPacket;
 
          m_iBuffer--;
 

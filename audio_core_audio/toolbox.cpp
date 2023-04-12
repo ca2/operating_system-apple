@@ -21,7 +21,7 @@ namespace multimedia
       toolbox::toolbox()
       {
 
-         ::zero(m_dataformat);
+         //::zero(m_dataformat);
 
          m_Queue           = nullptr;
          m_runloop         = nullptr;
@@ -111,7 +111,7 @@ namespace multimedia
       AudioStreamBasicDescription * toolbox::wave_format()
       {
 
-         return &m_dataformat;
+         return m_pdataformat;
 
       }
 

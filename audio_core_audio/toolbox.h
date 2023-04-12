@@ -27,7 +27,7 @@ namespace multimedia
          
 //         aligned < AudioStreamBasicDescription >             m_pdataformat;
 //         aligned_pointer < AudioQueueRef >                   m_Queue;
-         AudioStreamBasicDescription                           m_dataformat;
+         AudioStreamBasicDescription *                         m_pdataformat;
          AudioQueueRef                                         m_Queue;
          comparable_raw_array < AudioQueueBufferRef >          m_Buffers;
          SInt64                                                m_CurrentPacket;

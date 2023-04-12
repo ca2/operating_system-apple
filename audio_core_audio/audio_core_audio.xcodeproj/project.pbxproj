@@ -119,6 +119,7 @@
 		9AAEB4DB25291CFF00B39BA1 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAEB4DD25291CFF00B39BA1 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAEB4DF25291CFF00B39BA1 /* libaqua.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaqua.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AAEF6E829E72DEE00A5DA60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9AD860CD29B0C08C0054C9B3 /* audio.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = audio.xcodeproj; path = ../../../source/audio/audio/audio.xcodeproj; sourceTree = "<group>"; };
 		9AEA2378267B12A1006F4A68 /* _library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
 		9AF4C48F1F83DD7500197385 /* libios_audio_core_audio.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_audio_core_audio.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +157,7 @@
 		9A8C493F1F606995004A5BA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AAEF6E829E72DEE00A5DA60 /* AVFoundation.framework */,
 				9A74158C266BD08500552531 /* libacme_apple.dylib */,
 				9AAEB4DB25291CFF00B39BA1 /* libacme.dylib */,
 				9AAEB4DD25291CFF00B39BA1 /* libapex.dylib */,

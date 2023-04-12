@@ -155,24 +155,39 @@ void node::shell_open(const ::file::path & path, const ::string & strParams, con
    psummary->m_strDistroFamily = "macos";
    psummary->m_strDistroBranch = "macos";
    psummary->m_strDistroRelease = operating_system_store_release();
-   psummary->m_strSlashedOperatingSystem = "macos/" + psummary->m_strDistroRelease;
    
    apple_operating_system_release(psummary->m_iMajor, psummary->m_iMinor, psummary->m_iPatch);
    
    if(psummary->m_iMajor > 10 || (psummary->m_iMajor == 10 && psummary->m_iMinor >= 13))
    {
 
-      psummary->m_strMacosRelease = "13";
+      psummary->m_strStoreRelease = "13";
       
    }
    else
    {
       
-      psummary->m_strMacosRelease = "12";
+      psummary->m_strStoreRelease = "12";
       
    }
 
+   if(psummary->m_iMajor == 13)
+   {
+
+      psummary->m_strIntegrationRelease= "13";
+      
+   }
+   else
+   {
+      
+      psummary->m_strIntegrationRelease = "12";
+      
+   }
+
+   psummary->m_strSlashedStore = "macos/" + psummary->m_strStoreRelease;
    
+   psummary->m_strSlashedIntegration = "macos/" + psummary->m_strIntegrationRelease;
+
    return psummary;
    
 }

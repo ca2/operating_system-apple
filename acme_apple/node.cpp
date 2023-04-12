@@ -10,10 +10,11 @@
 
 
 #include <dispatch/dispatch.h>
-#include <CoreImage/CoreImage.h>
+
 
 
 ::string apple_operating_system_store_release();
+void apple_operating_system_release(::i32 & iMajor, ::i32 & iMinor, ::i32 & iPatch);
 
 
 void ns_main_async(dispatch_block_t block);
@@ -156,6 +157,22 @@ void node::shell_open(const ::file::path & path, const ::string & strParams, con
    psummary->m_strDistroRelease = operating_system_store_release();
    psummary->m_strSlashedOperatingSystem = "macos/" + psummary->m_strDistroRelease;
    
+   apple_operating_system_release(psummary->m_iMajor, psummary->m_iMinor, psummary->m_iPatch);
+   
+   if(psummary->m_iMajor > 10 || (psummary->m_iMajor == 10 && psummary->m_iMinor >= 13))
+   {
+
+      psummary->m_strMacosRelease = "13";
+      
+   }
+   else
+   {
+      
+      psummary->m_strMacosRelease = "12";
+      
+   }
+
+   
    return psummary;
    
 }
@@ -163,120 +180,4 @@ void node::shell_open(const ::file::path & path, const ::string & strParams, con
 
 } // namespace acme_apple
 
-
-CGContextRef CreateARGBBitmapContext (CGImageRef inImage, int cx, int cy)
-{
-
-   CGContextRef    context = nullptr;
-
-   CGColorSpaceRef colorSpace;
-
-   //void *          bitmapData;
-
-   int             bitmapByteCount;
-
-   int             bitmapBytesPerRow;
-
-   bitmapBytesPerRow   = (cx * 4);
-
-   bitmapByteCount     = (bitmapBytesPerRow * cy);
-
-   colorSpace = CGColorSpaceCreateDeviceRGB();
-
-   if (colorSpace == nullptr)
-   {
-
-      output_debug_string("CreateARGBBitmapContext: Error allocating color space\n");
-
-      return nullptr;
-
-   }
-
-   //   bitmapData = malloc( bitmapByteCount );
-   //
-   //   if (bitmapData == nullptr)
-   //   {
-   //
-   //      output_debug_string("CreateARGBBitmapContext: Memory not allocated!");
-   //
-   //      CGColorSpaceRelease( colorSpace );
-   //
-   //      return nullptr;
-   //
-   //   }
-   //
-   //   __memset(bitmapData, 0, bitmapByteCount);
-
-   // Create the bitmap context. We want pre-multiplied argb, 8-bits
-   // per component. Regardless of what the source image format is
-   // (CMYK, Grayscale, and so on) it will be converted over to the format
-   // specified here by CGBitmapContextCreate.
-   context =
-   CGBitmapContextCreate (
-   nullptr,
-   cx,
-   cy,
-   8,
-   bitmapBytesPerRow,
-   colorSpace,
-   kCGImageAlphaPremultipliedLast);
-
-   //   if (context == nullptr)
-   //   {
-   //
-   //      free (bitmapData);
-   //
-   //      output_debug_string("CreateARGBBitmapContext: Context not created!");
-   //
-   //   }
-
-   CGColorSpaceRelease( colorSpace );
-
-   return context;
-}
-
-
-
-
-bool GetImagePixelData(unsigned int * pcr, int cx, int cy, int iScan, CGImageRef inImage)
-{
-
-   CGContextRef cgctx = CreateARGBBitmapContext(inImage, cx, cy);
-
-   if (cgctx == nullptr)
-   {
-
-      return false;
-
-   }
-
-   CGRect rectangle = {{0,0},{(CGFloat)cx,(CGFloat)cy}};
-
-   CGContextDrawImage(cgctx, rectangle, inImage);
-
-   void *data = CGBitmapContextGetData (cgctx);
-
-   u8 * pdest = (u8 * ) pcr;
-
-   if (data != nullptr)
-   {
-
-      for(int y = cy - 1; y >= 0; y--)
-      {
-
-         u8 * pline = (u8 *) &((unsigned int*)data)[y * cx];
-
-         ::memory_copy(pdest, pline, cx* 4);
-
-         pdest += iScan;
-
-      }
-
-   }
-
-   CGContextRelease(cgctx);
-
-   return data != nullptr;
-
-}
 

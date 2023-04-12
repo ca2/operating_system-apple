@@ -477,5 +477,13 @@ bool uniform_type_conforms_to_data_type(CFStringRef cfstr, enum_data_type edatat
    
 }
 
+void apple_operating_system_release(::i32 & iMajor, ::i32 & iMinor, ::i32 & iPatch)
+{
+   
+   NSOperatingSystemVersion version = [ [ NSProcessInfo processInfo] operatingSystemVersion ];
 
+   iMajor = version.majorVersion;
+   iMinor = version.minorVersion;
+   iPatch = version.patchVersion;
 
+}

@@ -35,23 +35,23 @@ CGMutablePathRef cg_mutable_path_from_ns_bezier_path(NSBezierPath * path)
       
       switch ([path elementAtIndex:i associatedPoints:points])
       {
-      case NSMoveToBezierPathElement:
+         case NSBezierPathElementMoveTo:
          CGPathMoveToPoint(mutablepath, NULL, points[0].x, points[0].y);
          break;
 
-      case NSLineToBezierPathElement:
+         case NSBezierPathElementLineTo:
          CGPathAddLineToPoint(mutablepath, NULL, points[0].x, points[0].y);
          didClosePath = NO;
          break;
 
-      case NSCurveToBezierPathElement:
+         case NSBezierPathElementCurveTo:
          CGPathAddCurveToPoint(mutablepath, NULL, points[0].x, points[0].y,
                          points[1].x, points[1].y,
                          points[2].x, points[2].y);
          didClosePath = NO;
          break;
 
-      case NSClosePathBezierPathElement:
+         case NSBezierPathElementClosePath:
          CGPathCloseSubpath(mutablepath);
          didClosePath = YES;
          break;

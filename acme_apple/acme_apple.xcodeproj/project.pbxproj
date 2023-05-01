@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A08443F29367CC1009F7FF4 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A08443E29367CC1009F7FF4 /* libacme_posix.dylib */; };
+		9A1BD67E2A0073EA00152CD1 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94028D29E62F5E00C8C249 /* _cg_context.cpp */; };
 		9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFCC276118A6001E14CC /* Carbon.framework */; };
 		9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFE1276122CB001E14CC /* Cocoa.framework */; };
 		9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412438266C3ECE00C3FF0E /* libacme.dylib */; };
@@ -481,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1BD67E2A0073EA00152CD1 /* _cg_context.cpp in Sources */,
 				9AC14D07297B3410006D9BD3 /* NSString+SymlinksAndAliases.mm in Sources */,
 				9AC14D08297B3410006D9BD3 /* image.cpp in Sources */,
 				9AC14D09297B3410006D9BD3 /* acme_path.cpp in Sources */,

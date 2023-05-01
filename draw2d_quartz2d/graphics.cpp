@@ -546,7 +546,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::fill_polygon(const POINT_F64 * pa, count nCount)
+   void graphics::fill_polygon(const ::point_f64 * pa, count nCount)
    {
 
       if(nCount <= 0)
@@ -565,7 +565,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::draw_polygon(const POINT_F64 * pa, count nCount)
+   void graphics::draw_polygon(const ::point_f64 * pa, count nCount)
    {
 
       if(nCount <= 0)
@@ -584,7 +584,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::polygon(const POINT_F64 * pa, count nCount)
+   void graphics::polygon(const ::point_f64 * pa, count nCount)
    {
 
       if(nCount <= 0)

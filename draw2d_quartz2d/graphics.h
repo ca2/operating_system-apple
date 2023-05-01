@@ -313,11 +313,11 @@ namespace draw2d_quartz2d
       void set_polygon(const ::point_f64 * lpPoints, count nCount);
       void set_polygon(const POINT_F64 * lpPoints, count nCount, const ::POINT_F64 & pointOffset);
       void set_polygon(const ::point_f64 * lpPoints, count nCount, const ::point_f64 & pointOffset);
-      void fill_polygon(const POINT_F64 * lpPoints, count nCount) override;
+      void fill_polygon(const ::point_f64 * lpPoints, count nCount) override;
 //      void fill_polygon(const ::point_f64* lpPoints, count nCount) override;
-      void draw_polygon(const POINT_F64 * lpPoints, count nCount) override;
+      void draw_polygon(const ::point_f64 * lpPoints, count nCount) override;
 //      void draw_polygon(const ::point_f64 * lpPoints, count nCount) override;
-      void polygon(const POINT_F64 * ppoint,count nCount) override;
+      void polygon(const ::point_f64 * ppoint,count nCount) override;
       void round_rectangle(const ::rectangle_f64 & rectangle, double dRadius) override;
       
       

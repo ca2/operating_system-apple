@@ -4,6 +4,7 @@
 #include "framework.h"
 #include "node.h"
 #include "acme/operating_system/summary.h"
+#include "acme/platform/system.h"
 
 
 #include "acme/_operating_system.h"
@@ -73,26 +74,26 @@ void node::install_sigchld_handler()
 }
 
 
-string node::audio_get_default_library_name()
+string node::audio_get_default_implementation_name()
 {
    
-   return "audio_core_audio";
+   return acmesystem()->implementation_name("audio", "core_audio");
    
 }
 
 
-string node::multimedia_audio_mixer_get_default_library_name()
+string node::multimedia_audio_mixer_get_default_implementation_name()
 {
    
-   return "audio_mixer_core_audio";
+   return acmesystem()->implementation_name("audio_mixer", "core_audio");
    
 }
 
 
-string node::veriwell_multimedia_music_midi_get_default_library_name()
+string node::veriwell_multimedia_music_midi_get_default_implementation_name()
 {
    
-   return "music_midi_core_midi";
+   return acmesystem()->implementation_name("music_midi", "core_midi");
    
 }
 

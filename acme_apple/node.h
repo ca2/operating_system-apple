@@ -38,11 +38,11 @@ namespace acme_apple
       void install_sigchld_handler() override;
 
 
-      string audio_get_default_library_name() override;
+      string audio_get_default_implementation_name() override;
    
-      string multimedia_audio_mixer_get_default_library_name() override;
+      string multimedia_audio_mixer_get_default_implementation_name() override;
    
-      string veriwell_multimedia_music_midi_get_default_library_name() override;
+      string veriwell_multimedia_music_midi_get_default_implementation_name() override;
       
       
       void node_post(const ::procedure & procedure) override;

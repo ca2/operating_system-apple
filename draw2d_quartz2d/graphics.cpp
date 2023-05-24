@@ -11,11 +11,11 @@
 #include "acme/primitive/geometry2d/shape.h"
 #include "aura/graphics/image/context_image.h"
 #include "aura/graphics/image/drawing.h"
-#include "aura/graphics/write_text/text_out.h"
-#include "aura/graphics/write_text/draw_text.h"
-#include "aura/platform/context.h"
-#include "acme/platform/node.h"
-#include "acme/platform/system.h"
+//#include "aura/graphics/write_text/text_out.h"
+//#include "aura/graphics/write_text/draw_text.h"
+//#include "aura/platform/context.h"
+//#include "acme/platform/node.h"
+//#include "acme/platform/system.h"
 #include <math.h>
 #include <memory.h>
 #include <CoreFoundation/CFDictionary.h>

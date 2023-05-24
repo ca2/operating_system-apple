@@ -1,6 +1,7 @@
 #include "framework.h"
 #include "path.h"
 #include "graphics.h"
+#include "acme/primitive/collection/_generic_array.h"
 //void copy(::draw2d::graphics * pgraphics, const ::lines & lines)
 //{
 //

@@ -76,8 +76,8 @@ namespace draw2d_quartz2d
       void DeleteDC() override;
 
       // Device-Context Functions
-      virtual i32 SaveDC() override;
-      virtual void RestoreDC(i32 nSavedDC) override;
+      virtual i32 save_graphics_context() override;
+      virtual void restore_graphics_context(i32 nSavedDC) override;
       i32 GetDeviceCaps(i32 nIndex) override;
       ::u32 SetBoundsRect(const ::rectangle_f64 & rectBounds, ::u32 flags) override;
       ::u32 GetBoundsRect(::rectangle_f64 * rectBounds, ::u32 flags) override;

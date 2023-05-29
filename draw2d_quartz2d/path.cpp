@@ -117,10 +117,10 @@ namespace draw2d_quartz2d
    bool path::internal_add_line(double x1, double y1, double x2, double y2)
    {
       
-      x1+= m_pointOffset.x;
-      y1+= m_pointOffset.y;
-      x2+= m_pointOffset.x;
-      y2+= m_pointOffset.y;
+      x1+= m_pointOffset.x();
+      y1+= m_pointOffset.y();
+      x2+= m_pointOffset.x();
+      y2+= m_pointOffset.y();
 
       if(CGPathIsEmpty(m_path))
       {
@@ -137,10 +137,10 @@ namespace draw2d_quartz2d
 
       CGPathAddLineToPoint(m_path, nullptr, x2, y2);
       
-      m_pointBegin.x = x1;
-      m_pointBegin.y = y1;
-      m_pointEnd.x = x2;
-      m_pointEnd.y = y2;
+      m_pointBegin.x() = x1;
+      m_pointBegin.y() = y1;
+      m_pointEnd.x() = x2;
+      m_pointEnd.y() = y2;
       
       return true;
       
@@ -150,8 +150,8 @@ namespace draw2d_quartz2d
    bool path::internal_add_line(double x, double y)
    {
       
-      x+= m_pointOffset.x;
-      y+= m_pointOffset.y;
+      x+= m_pointOffset.x();
+      y+= m_pointOffset.y();
       
       m_pointBegin = m_pointEnd;
       
@@ -168,8 +168,8 @@ namespace draw2d_quartz2d
          
       }
       
-      m_pointEnd.x = x;
-      m_pointEnd.y = y;
+      m_pointEnd.x() = x;
+      m_pointEnd.y() = y;
       
       
       return true;
@@ -180,8 +180,8 @@ namespace draw2d_quartz2d
    bool path::internal_add_text_out(double x, double y, const string & strText, ::write_text::font * pfont, ::draw2d_quartz2d::graphics * p)
    {
       
-      x+= m_pointOffset.x;
-      y+= m_pointOffset.y;
+      x+= m_pointOffset.x();
+      y+= m_pointOffset.y();
       
       CGContextSaveGState(p->m_pdc);
       
@@ -201,15 +201,15 @@ namespace draw2d_quartz2d
    bool path::internal_add_move(double x, double y)
    {
       
-      x+= m_pointOffset.x;
-      y+= m_pointOffset.y;
+      x+= m_pointOffset.x();
+      y+= m_pointOffset.y();
       
       m_pointBegin = m_pointEnd;
       
       CGPathMoveToPoint(m_path, nullptr, x, y);
       
-      m_pointEnd.x = x;
-      m_pointEnd.y = y;
+      m_pointEnd.x() = x;
+      m_pointEnd.y() = y;
       
       m_bBegin = false;
       
@@ -302,10 +302,10 @@ namespace draw2d_quartz2d
    
       ::rectangle_f64 rectangle;
       
-      rectangle.left = arc.m_pointCenter.x - arc.m_sizeRadius.cx;
-      rectangle.right = arc.m_pointCenter.x + arc.m_sizeRadius.cx;
-      rectangle.top = arc.m_pointCenter.y - arc.m_sizeRadius.cy;
-      rectangle.bottom = arc.m_pointCenter.y + arc.m_sizeRadius.cy;
+      rectangle.left = arc.m_pointCenter.x() - arc.m_sizeRadius.cx;
+      rectangle.right = arc.m_pointCenter.x() + arc.m_sizeRadius.cx;
+      rectangle.top = arc.m_pointCenter.y() - arc.m_sizeRadius.cy;
+      rectangle.bottom = arc.m_pointCenter.y() + arc.m_sizeRadius.cy;
       
       rectangle.offset(m_pointOffset);
       
@@ -325,8 +325,8 @@ namespace draw2d_quartz2d
       r.size.width = rectangle.width();
       r.size.height = rectangle.height();
       
-      r.origin.x += m_pointOffset.x;
-      r.origin.y += m_pointOffset.y;
+      r.origin.x += m_pointOffset.x();
+      r.origin.y += m_pointOffset.y();
       
       CGPathAddRect(m_path, nullptr, r);
                     

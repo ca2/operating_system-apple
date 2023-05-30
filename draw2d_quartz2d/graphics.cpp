@@ -2325,13 +2325,13 @@ namespace draw2d_quartz2d
          if(pitem->m_ecombine == ::draw2d::e_combine_intersect)
          {
             
-            auto pregion1 = update_os_data(pitem->m_pregion1);
+            auto pregion1 = defer_get_os_data(pitem->m_pregion1);
 
             _clip(pregion1);
 
             _intersect_eo_clip();
 
-            auto pregion2 = update_os_data(pitem->m_pregion2);
+            auto pregion2 = defer_get_os_data(pitem->m_pregion2);
 
             _add_path(pregion2);
 
@@ -2341,13 +2341,15 @@ namespace draw2d_quartz2d
          else if(pitem->m_ecombine == ::draw2d::e_combine_add)
          {
 
-            auto pregion1 = update_os_data(pitem->m_pregion1);
+            auto pregion1 = defer_get_os_data(pitem->m_pregion1);
 
-            _clip(pitem->m_pregion1);
+            _clip(pregion1);
 
             _intersect_clip();;
 
-            _add_path(pitem->m_pregion2);
+            auto pregion2 = defer_get_os_data(pitem->m_pregion2);
+
+            _add_path(pregion2);
 
             _intersect_clip();;
 
@@ -2477,11 +2479,15 @@ namespace draw2d_quartz2d
          if(pitem->m_ecombine == ::draw2d::e_combine_intersect)
          {
 
-            _add_path(pitem->m_pregion1);
+            auto pregion1 = defer_get_os_data(pitem->m_pregion1);
+
+            _add_path(pregion1);
             
             _intersect_eo_clip();
          
-            _add_path(pitem->m_pregion2);
+            auto pregion2 = defer_get_os_data(pitem->m_pregion2);
+
+            _add_path(pregion2);
             
             _intersect_eo_clip();
 
@@ -2489,11 +2495,15 @@ namespace draw2d_quartz2d
          else if(pitem->m_ecombine == ::draw2d::e_combine_add)
          {
 
-            _add_path(pitem->m_pregion1);
+            auto pregion1 = defer_get_os_data(pitem->m_pregion1);
+
+            _add_path(pregion1);
             
             _intersect_clip();
          
-            _add_path(pitem->m_pregion2);
+            auto pregion2 = defer_get_os_data(pitem->m_pregion2);
+
+            _add_path(pregion2);
             
             _intersect_clip();
 
@@ -2794,7 +2804,7 @@ namespace draw2d_quartz2d
 
          CGPoint myStartPoint, myEndPoint;
 
-         CGContextTranslateCTM(pgraphics, pbrush->m_point.x, pbrush->m_point.y);
+         CGContextTranslateCTM(pgraphics, pbrush->m_point.x(), pbrush->m_point.y());
 
          CGContextScaleCTM(pgraphics, pbrush->m_size.cx(), pbrush->m_size.cy());
 
@@ -2825,13 +2835,13 @@ namespace draw2d_quartz2d
 
          CGPoint point1, point2;
 
-         point1.x = pbrush->m_point1.x;
+         point1.x = pbrush->m_point1.x();
 
-         point1.y = pbrush->m_point1.y;
+         point1.y = pbrush->m_point1.y();
 
-         point2.x = pbrush->m_point2.x;
+         point2.x = pbrush->m_point2.x();
 
-         point2.y = pbrush->m_point2.y;
+         point2.y = pbrush->m_point2.y();
          
          CGRect r;
          
@@ -3147,8 +3157,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            textout.m_point.x + greekdeltax,
-                            textout.m_point.y + greekdeltay + offsety,
+                            textout.m_point.x() + greekdeltax,
+                            textout.m_point.y() + greekdeltay + offsety,
                             0, str,
                              kCGTextStroke,
                             e_align_top_left,
@@ -3197,8 +3207,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            textout.m_point.x + greekdeltax,
-                            textout.m_point.y + greekdeltay + offsety,
+                            textout.m_point.x() + greekdeltax,
+                            textout.m_point.y() + greekdeltay + offsety,
                             0, str,
                              kCGTextFill,
                             e_align_top_left,

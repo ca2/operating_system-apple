@@ -468,7 +468,6 @@
 					"$(TARGET_BUILD_DIR)",
 				);
 				MACH_O_TYPE = mh_dylib;
-				MACOSX_DEPLOYMENT_TARGET = "$(BUILD_MACHINE_MACOS_DEPLOYMENT_TARGET)";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = audio_core_audio;
 				SDKROOT = macosx;
@@ -526,7 +525,6 @@
 					"$(TARGET_BUILD_DIR)",
 				);
 				MACH_O_TYPE = mh_dylib;
-				MACOSX_DEPLOYMENT_TARGET = "$(BUILD_MACHINE_MACOS_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = audio_core_audio;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;

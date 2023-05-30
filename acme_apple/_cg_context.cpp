@@ -9,6 +9,7 @@
 #include "framework.h"
 
 
+#include <CoreGraphics/CoreGraphics.h>
 #include <CoreImage/CoreImage.h>
 
 

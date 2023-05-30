@@ -433,7 +433,7 @@ namespace draw2d_quartz2d
 //      void DrawFrameControl(rectangle_f64 * prectangle, ::u32 nType, ::u32 nState);
 
 //      // Scrolling Functions
-//      void ScrollDC(i32 Δx, i32 Δy, const ::rectangle_f64 & rectScroll, const ::rectangle_f64 & rectClip,
+//      void ScrollDC(i32 greekdeltax, i32 greekdeltay, const ::rectangle_f64 & rectScroll, const ::rectangle_f64 & rectClip,
 //                    ::draw2d::region* pRgnUpdate, rectangle_f64 * lpRectUpdate) override;
 //
 //      // font Functions

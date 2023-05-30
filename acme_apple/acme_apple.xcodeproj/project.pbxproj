@@ -127,6 +127,7 @@
 		9A734A50284F5E37003986C7 /* CAHostTimeBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAHostTimeBase.h; sourceTree = "<group>"; };
 		9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAHostTimeBase.cpp; sourceTree = "<group>"; };
 		9A74158F266BD25B00552531 /* debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = debug.cpp; sourceTree = "<group>"; };
+		9A77244A2A25687100B9A835 /* machine.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = machine.xcconfig; path = ../../../../operating_system/machine.xcconfig; sourceTree = "<group>"; };
 		9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+DDExtensions.mm"; sourceTree = "<group>"; };
 		9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SymlinksAndAliases.h"; sourceTree = "<group>"; };
 		9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+SymlinksAndAliases.mm"; sourceTree = "<group>"; };
@@ -190,6 +191,7 @@
 		9A15A579264B536C0080670E = {
 			isa = PBXGroup;
 			children = (
+				9A77244A2A25687100B9A835 /* machine.xcconfig */,
 				9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */,
 				9A787E4F264E22CB003DF8A0 /* acme_apple */,
 				9A15A583264B536C0080670E /* Products */,
@@ -520,6 +522,7 @@
 /* Begin XCBuildConfiguration section */
 		9A15A589264B536C0080670E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A77244A2A25687100B9A835 /* machine.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -602,6 +605,7 @@
 					"$(WorkspaceDir)/operating_system/operating_system-posix",
 					"$(WorkspaceDir)/port/_",
 					"$(WorkspaceDir)/port/include",
+					"$(WorkspaceDir)/../operating_system/include",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/..",
 					"$(PROJECT_DIR)/../..",
@@ -614,6 +618,7 @@
 		};
 		9A15A58A264B536C0080670E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A77244A2A25687100B9A835 /* machine.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -691,6 +696,7 @@
 					"$(WorkspaceDir)/operating_system/operating_system-posix",
 					"$(WorkspaceDir)/port/_",
 					"$(WorkspaceDir)/port/include",
+					"$(WorkspaceDir)/../operating_system/include",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/..",
 					"$(PROJECT_DIR)/../..",

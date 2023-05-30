@@ -3118,13 +3118,13 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       synchronous_lock ml(synchronization());
 
-      double Δx;
+      double greekdeltax;
 
-      double Δy;
+      double greekdeltay;
 
-      Δx = 0.;
+      greekdeltax = 0.;
 
-      Δy = 0.;
+      greekdeltay = 0.;
 
       str.find_replace("\t", "        ");
 
@@ -3140,8 +3140,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            textout.m_point.x + Δx,
-                            textout.m_point.y + Δy + offsety,
+                            textout.m_point.x + greekdeltax,
+                            textout.m_point.y + greekdeltay + offsety,
                             0, str,
                              kCGTextStroke,
                             e_align_top_left,
@@ -3168,13 +3168,13 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       synchronous_lock ml(synchronization());
 
-      double Δx;
+      double greekdeltax;
 
-      double Δy;
+      double greekdeltay;
 
-      Δx = 0.;
+      greekdeltax = 0.;
 
-      Δy = 0.;
+      greekdeltay = 0.;
 
       str.find_replace("\t", "        ");
 
@@ -3190,8 +3190,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            textout.m_point.x + Δx,
-                            textout.m_point.y + Δy + offsety,
+                            textout.m_point.x + greekdeltax,
+                            textout.m_point.y + greekdeltay + offsety,
                             0, str,
                              kCGTextFill,
                             e_align_top_left,
@@ -3218,13 +3218,13 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       synchronous_lock ml(synchronization());
 
-      double Δx;
+      double greekdeltax;
 
-      double Δy;
+      double greekdeltay;
 
-      Δx = 0.;
+      greekdeltax = 0.;
 
-      Δy = 0.;
+      greekdeltay = 0.;
 
       str.find_replace("\t", "        ");
 
@@ -3240,8 +3240,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            drawtext.m_rectangle.left + Δx,
-                            drawtext.m_rectangle.top + Δy + offsety,
+                            drawtext.m_rectangle.left + greekdeltax,
+                            drawtext.m_rectangle.top + greekdeltay + offsety,
                             0,
                             str, kCGTextStroke,
                             e_align_top_left,
@@ -3269,13 +3269,13 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       synchronous_lock ml(synchronization());
 
-      double Δx;
+      double greekdeltax;
 
-      double Δy;
+      double greekdeltay;
 
-      Δx = 0.;
+      greekdeltax = 0.;
 
-      Δy = 0.;
+      greekdeltay = 0.;
 
       str.find_replace("\t", "        ");
 
@@ -3291,8 +3291,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            drawtext.m_rectangle.left + Δx,
-                            drawtext.m_rectangle.top + Δy + offsety,
+                            drawtext.m_rectangle.left + greekdeltax,
+                            drawtext.m_rectangle.top + greekdeltay + offsety,
                             0,
                             str, kCGTextFill,
                             e_align_top_left,
@@ -3517,18 +3517,18 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
                m_pbrush,
                m_pfont);
 
-               double Δy = ascent + descent + leading;
+               double greekdeltay = ascent + descent + leading;
 
 //                  if(leading <= 0)
 //                  {
 //
-//                     Δy += descent;
+//                     greekdeltay += descent;
 //
 //                  }
 
-               rectUpper.bottom -= Δy/2.0;
+               rectUpper.bottom -= greekdeltay/2.0;
 
-               rectLower.top += Δy/2.0;
+               rectLower.top += greekdeltay/2.0;
 
             }
 

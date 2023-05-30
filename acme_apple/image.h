@@ -7,6 +7,7 @@
 #pragma once
 
 
+#include <CoreGraphics/CoreGraphics.h>
 #include <CoreImage/CoreImage.h>
 
 

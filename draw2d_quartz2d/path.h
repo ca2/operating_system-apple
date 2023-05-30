@@ -40,12 +40,12 @@ namespace draw2d_quartz2d
       void * detach() override;
       
       bool _set(::draw2d::graphics * pgraphics, const enum_shape & eshape) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::arc & arc) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::rectangle & rectangle) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::ellipse & ellipse) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::line & line) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::lines & lines) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::polygon & polygon) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::arc_f64 & arc) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::rectangle_f64 & rectangle) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::ellipse_f64 & ellipse) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::line_f64 & line_f64) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::lines_f64 & lines) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::polygon_f64 & polygon) override;
       bool _set(::draw2d::graphics * pgraphics, const ::write_text::text_out & textout) override;
       bool _set(::draw2d::graphics * pgraphics, const ::write_text::draw_text & drawtext) override;
    

@@ -297,12 +297,12 @@ namespace draw2d_quartz2d
    }
 
 
-   bool path::_set(::draw2d::graphics * pgraphics, const ::arc & arc)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::arc_f64 & arc)
    {
    
       ::rectangle_f64 rectangle;
       
-      rectangle.left = arc.m_pointCenter.x() - arc.m_sizeRadius.cx;
+      rectangle.left = arc_f64.m_pointCenter.x() - arc.m_sizeRadius.cx;
       rectangle.right = arc.m_pointCenter.x() + arc.m_sizeRadius.cx;
       rectangle.top = arc.m_pointCenter.y() - arc.m_sizeRadius.cy;
       rectangle.bottom = arc.m_pointCenter.y() + arc.m_sizeRadius.cy;

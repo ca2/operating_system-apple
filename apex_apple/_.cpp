@@ -215,39 +215,39 @@ string ca2_command_line()
 
 
 
-void copy(CGPoint & pointTarget, const POINT_I32 & pointSource)
-{
-
-   ppointTarget->x      = ppointSource->x;
-   ppointTarget->y      = ppointSource->y;
-
-}
-
-
-void copy(POINT_I32 & pointTarget, const CGPoint & pointSource)
-{
-
-   ppointTarget->x      = ppointSource->x;
-   ppointTarget->y      = ppointSource->y;
-
-}
-
-void copy(CGPoint & pointTarget, const POINT_F64 & pointSource)
-{
-
-   ppointTarget->x      = ppointSource->x;
-   ppointTarget->y      = ppointSource->y;
-
-}
-
-
-void copy(POINT_F64 & pointTarget, const CGPoint & pointSource)
-{
-
-   ppointTarget->x      = ppointSource->x;
-   ppointTarget->y      = ppointSource->y;
-
-}
+//void copy(CGPoint & pointTarget, const POINT_I32 & pointSource)
+//{
+//
+//   ppointTarget->x      = ppointSource->x;
+//   ppointTarget->y      = ppointSource->y;
+//
+//}
+//
+//
+//void copy(POINT_I32 & pointTarget, const CGPoint & pointSource)
+//{
+//
+//   ppointTarget->x      = ppointSource->x;
+//   ppointTarget->y      = ppointSource->y;
+//
+//}
+//
+//void copy(CGPoint & pointTarget, const POINT_F64 & pointSource)
+//{
+//
+//   ppointTarget->x      = ppointSource->x;
+//   ppointTarget->y      = ppointSource->y;
+//
+//}
+//
+//
+//void copy(POINT_F64 & pointTarget, const CGPoint & pointSource)
+//{
+//
+//   ppointTarget->x      = ppointSource->x;
+//   ppointTarget->y      = ppointSource->y;
+//
+//}
 
 
 bool __node_further_file_is_equal(file::path const & path1, file::path const & path2)

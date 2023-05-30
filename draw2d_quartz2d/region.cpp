@@ -111,7 +111,7 @@ namespace draw2d_quartz2d
 
       CGPathCloseSubpath(ppath);
       
-      CGAffineTransform transformTranslation = CGAffineTransformMakeTranslation(m_pointOffset.x, m_pointOffset.y);
+      CGAffineTransform transformTranslation = CGAffineTransformMakeTranslation(m_pointOffset.x(), m_pointOffset.y());
       
       m_path = CGPathCreateMutableCopyByTransformingPath(ppath, &transformTranslation);
       

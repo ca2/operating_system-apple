@@ -22,10 +22,10 @@ namespace draw2d_quartz2d
    public:
 
       
-      int                           m_iSaveDC;
-      bool                          m_bOwnDC;
-      CGContextRef                  m_pdc;
-      CGLayerRef                    m_layer;
+      int                           m_iSaveGraphicsContext;
+      bool                          m_bOwnGraphicsContext;
+      CGContextRef                  m_cgcontext;
+      CGLayerRef                    m_cglayer;
 
       i32                           m_iType;
 #ifdef __MM
@@ -41,9 +41,8 @@ namespace draw2d_quartz2d
       u64                           m_uiForeColor;
       u64                           m_uiBackColor;
       bool                          m_bPrinting;
+
       
-
-
       graphics();
       ~graphics() override;
       
@@ -77,7 +76,7 @@ namespace draw2d_quartz2d
 
       // Device-Context Functions
       virtual i32 save_graphics_context() override;
-      virtual void restore_graphics_context(i32 nSavedDC) override;
+      virtual void restore_graphics_context(i32 iSavedGraphicsContext) override;
       i32 GetDeviceCaps(i32 nIndex) override;
       ::u32 SetBoundsRect(const ::rectangle_f64 & rectBounds, ::u32 flags) override;
       ::u32 GetBoundsRect(::rectangle_f64 * rectBounds, ::u32 flags) override;
@@ -239,11 +238,11 @@ namespace draw2d_quartz2d
 //      void Arc(double x1, double y1, i32 w, i32 h, double start, double extends) override;
   //    void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
 //      void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
-      void arc(double x, double y, double w, double h, angle start, angle end) override;
+      void arc(double x, double y, double w, double h, ::angle_f64 start, ::angle_f64 end) override;
 //      void Arc(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd) override;
       void polyline(const ::point_f64* lpPoints, count nCount) override;
 
-      void angle_arc(double x, double y, double dRadius, angle fStartAngle, angle fSweepAngle) override;
+      void angle_arc(double x, double y, double dRadius, ::angle_f64 fStartAngle, ::angle_f64 fSweepAngle) override;
 //      void ArcTo(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
       void arc_to(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd) override;
 //      virtual i32 GetArcDirection() override;

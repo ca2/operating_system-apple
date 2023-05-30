@@ -183,15 +183,15 @@ namespace draw2d_quartz2d
       x+= m_pointOffset.x();
       y+= m_pointOffset.y();
       
-      CGContextSaveGState(p->m_pdc);
+      CGContextSaveGState(p->m_cgcontext);
       
       p->internal_show_text(x, y, 0, strText, kCGTextInvisible, e_align_top_left, e_draw_text_none, true,
          nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
          pfont);
       
-      CGPathAddPath(m_path, nullptr, CGContextCopyPath(p->m_pdc));
+      CGPathAddPath(m_path, nullptr, CGContextCopyPath(p->m_cgcontext));
 
-      CGContextSaveGState(p->m_pdc);
+      CGContextSaveGState(p->m_cgcontext);
 
       return true;
       
@@ -302,10 +302,10 @@ namespace draw2d_quartz2d
    
       ::rectangle_f64 rectangle;
       
-      rectangle.left = arc_f64.m_pointCenter.x() - arc.m_sizeRadius.cx;
-      rectangle.right = arc.m_pointCenter.x() + arc.m_sizeRadius.cx;
-      rectangle.top = arc.m_pointCenter.y() - arc.m_sizeRadius.cy;
-      rectangle.bottom = arc.m_pointCenter.y() + arc.m_sizeRadius.cy;
+      rectangle.left = arc.m_pointCenter.x() - arc.m_sizeRadius.cx();
+      rectangle.right = arc.m_pointCenter.x() + arc.m_sizeRadius.cx();
+      rectangle.top = arc.m_pointCenter.y() - arc.m_sizeRadius.cy();
+      rectangle.bottom = arc.m_pointCenter.y() + arc.m_sizeRadius.cy();
       
       rectangle.offset(m_pointOffset);
       
@@ -315,7 +315,7 @@ namespace draw2d_quartz2d
    
 
    
-   bool path::_set(::draw2d::graphics * pgraphics, const ::rectangle & rectangle)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::rectangle_f64 & rectangle)
    {
    
       CGRect r;
@@ -335,7 +335,7 @@ namespace draw2d_quartz2d
    }
          
 
-   bool path::_set(::draw2d::graphics * pgraphics, const ::ellipse & ellipse)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::ellipse_f64 & ellipse)
    {
 
       CGRect r;
@@ -345,8 +345,8 @@ namespace draw2d_quartz2d
       r.size.width = ellipse.width();
       r.size.height = ellipse.height();
       
-      r.origin.x += m_pointOffset.x;
-      r.origin.y += m_pointOffset.y;
+      r.origin.x += m_pointOffset.x();
+      r.origin.y += m_pointOffset.y();
       
       CGPathAddEllipseInRect(m_path, nullptr, r);
                     
@@ -354,7 +354,7 @@ namespace draw2d_quartz2d
       
    }
 
-   bool path::_set(::draw2d::graphics * pgraphics, const ::lines & lines)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::lines_f64 & lines)
    {
    
       ::array < CGPoint > points;
@@ -364,8 +364,8 @@ namespace draw2d_quartz2d
       for(auto & point : points)
       {
          
-         point.x += m_pointOffset.x;
-         point.y += m_pointOffset.y;
+         point.x += m_pointOffset.x();
+         point.y += m_pointOffset.y();
          
       }
       
@@ -376,7 +376,7 @@ namespace draw2d_quartz2d
    }
                     
 
-   bool path::_set(::draw2d::graphics * pgraphics, const ::polygon & polygon)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::polygon_f64 & polygon)
    {
 
       ::array < CGPoint > points;
@@ -386,8 +386,8 @@ namespace draw2d_quartz2d
       for(auto & point : points)
       {
          
-         point.x += m_pointOffset.x;
-         point.y += m_pointOffset.y;
+         point.x += m_pointOffset.x();
+         point.y += m_pointOffset.y();
          
       }
       
@@ -400,17 +400,17 @@ namespace draw2d_quartz2d
    }
 
 
-   bool path::_set(::draw2d::graphics * pgraphics, const ::line & line)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::line_f64 & line)
    {
       
       if(line.m_p1 != m_pointEnd)
       {
          
-         internal_add_move(line.m_p1.x, line.m_p1.y);
+         internal_add_move(line.m_p1.x(), line.m_p1.y());
          
       }
       
-      return internal_add_line(line.m_p2.x, line.m_p2.y);
+      return internal_add_line(line.m_p2.x(), line.m_p2.y());
       
    }
 
@@ -443,7 +443,7 @@ namespace draw2d_quartz2d
          
       }
       
-      return CGPathContainsPoint(ppath, nullptr,CGPointMake(point.x, point.y), false);
+      return CGPathContainsPoint(ppath, nullptr,CGPointMake(point.x(), point.y()), false);
       
    }
 

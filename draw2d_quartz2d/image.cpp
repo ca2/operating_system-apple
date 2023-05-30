@@ -130,9 +130,9 @@ namespace draw2d_quartz2d
          
          map();
          
-         int cxMin = minimum(m_size.cx, size.cx);
+         int cxMin = minimum(m_size.cx(), size.cx());
          
-         int cyMin = minimum(m_size.cy, size.cy);
+         int cyMin = minimum(m_size.cy(), size.cy());
          
          copy_colorref(pcolorref, cxMin, cyMin, iScan, m_pcolorrefRaw, m_iScan);
          
@@ -195,9 +195,9 @@ namespace draw2d_quartz2d
 
       m_pgraphics.release();
 
-      m_sizeRaw.cx            = 0;
+      m_sizeRaw.cx()            = 0;
 
-      m_sizeRaw.cy            = 0;
+      m_sizeRaw.cy()            = 0;
       
       m_iScan              = 0;
 
@@ -388,55 +388,55 @@ namespace draw2d_quartz2d
 
       pointDst += m_point;
 
-      if (pointSrc.x < 0)
+      if (pointSrc.x() < 0)
       {
          
-         pointDst.x -= pointSrc.x;
-         pointSrc.x = 0;
+         pointDst.x() -= pointSrc.x();
+         pointSrc.x() = 0;
          
       }
 
-      if (pointSrc.y < 0)
+      if (pointSrc.y() < 0)
       {
          
-         pointDst.y -= pointSrc.y;
-         pointSrc.y = 0;
+         pointDst.y() -= pointSrc.y();
+         pointSrc.y() = 0;
          
       }
 
-      if (pointDst.x < 0)
+      if (pointDst.x() < 0)
       {
          
-         size.cx += pointDst.x;
-         pointDst.x = 0;
+         size.cx() += pointDst.x();
+         pointDst.x() = 0;
          
       }
 
-      if (size.cx < 0)
+      if (size.cx() < 0)
       {
 
          return;
          
       }
 
-      if (pointDst.y < 0)
+      if (pointDst.y() < 0)
       {
          
-         size.cy += pointDst.y;
-         pointDst.y = 0;
+         size.cy() += pointDst.y();
+         pointDst.y() = 0;
          
       }
 
-      if (size.cy < 0)
+      if (size.cy() < 0)
       {
          
          return;
          
       }
 
-      int xEnd = minimum(size.cx, minimum(pimplSrc->width() - pointSrc.x, pimplDst->width() - pointDst.x));
+      int xEnd = minimum(size.cx(), minimum(pimplSrc->width() - pointSrc.x(), pimplDst->width() - pointDst.x()));
 
-      int yEnd = minimum(size.cy, minimum(pimplSrc->height() - pointSrc.y, pimplDst->height() - pointDst.y));
+      int yEnd = minimum(size.cy(), minimum(pimplSrc->height() - pointSrc.y(), pimplDst->height() - pointDst.y()));
 
       if (xEnd < 0)
       {
@@ -462,9 +462,9 @@ namespace draw2d_quartz2d
 
 #ifdef __APPLE__
       
-      byte * pdst = &((byte *)pimplDst->colorref())[scanDst * (pimplDst->height() - pointDst.y - yEnd) + pointDst.x * sizeof(color32_t)];
+      byte * pdst = &((byte *)pimplDst->colorref())[scanDst * (pimplDst->height() - pointDst.y() - yEnd) + pointDst.x() * sizeof(color32_t)];
 
-      byte * psrc = &((byte *)pimplSrc->colorref())[scanSrc * (pimplSrc->height() - pointSrc.y - yEnd) + pointSrc.x * sizeof(color32_t)];
+      byte * psrc = &((byte *)pimplSrc->colorref())[scanSrc * (pimplSrc->height() - pointSrc.y() - yEnd) + pointSrc.x() * sizeof(color32_t)];
 
 #else
 

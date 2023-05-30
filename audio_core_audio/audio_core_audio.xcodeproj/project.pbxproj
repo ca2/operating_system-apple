@@ -100,6 +100,8 @@
 		07A27B3A1808C1F3005F7B47 /* toolbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = toolbox.h; sourceTree = "<group>"; };
 		07A27B451808E111005F7B47 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		07D4206D1B71F5590065510D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		9A03B8CC2A25C2DE00A0E33E /* release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		9A03B8CE2A25C2DE00A0E33E /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		9A1B496316A494A600875A94 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9A1B496616A4A10100875A94 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9A741586266BD07800552531 /* apex_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_apple.xcodeproj; path = ../apex_apple/apex_apple.xcodeproj; sourceTree = "<group>"; };
@@ -203,6 +205,8 @@
 		A1CFD896154FB715007447E2 /* audio_core_audio */ = {
 			isa = PBXGroup;
 			children = (
+				9A03B8CE2A25C2DE00A0E33E /* debug.xcconfig */,
+				9A03B8CC2A25C2DE00A0E33E /* release.xcconfig */,
 				9A8EAF3217C563A300C458D1 /* _.h */,
 				9A8EAF2917C563A300C458D1 /* _factory.cpp */,
 				9AEA2378267B12A1006F4A68 /* _library.h */,
@@ -434,6 +438,7 @@
 		};
 		A1CFD77A154F5EAA007447E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A03B8CE2A25C2DE00A0E33E /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_DEADCODE_DEADSTORES = NO;
@@ -539,6 +544,7 @@
 		};
 		A1CFD77B154F5EAA007447E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A03B8CC2A25C2DE00A0E33E /* release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_DEADCODE_DEADSTORES = NO;

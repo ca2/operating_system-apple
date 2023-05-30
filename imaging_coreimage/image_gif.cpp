@@ -180,9 +180,9 @@ namespace coreimage_imaging
 
                p->m_bLocalPalette = false;
 
-               pframea->m_size.cx = maximum(w, pframea->m_size.cx);
+               pframea->m_size.cx() = maximum(w, pframea->m_size.cx());
 
-               pframea->m_size.cy = maximum(h, pframea->m_size.cy);
+               pframea->m_size.cy() = maximum(h, pframea->m_size.cy());
 
                pframea->add(p);
 

@@ -219,6 +219,8 @@ namespace draw2d_quartz2d
       void intersect_clip(const ::polygon_f64 & polygon) override;
       
       
+      
+      
       void _add_clipping_shape(const ::rectangle_f64 & rectangle, ___shape < ::draw2d::region > & shape) override;
       void _add_shape(const ::rectangle_f64 & rectangle_);
       void _add_clipping_shape(const ::ellipse_f64 & ellipse, ___shape < ::draw2d::region > & shape) override;

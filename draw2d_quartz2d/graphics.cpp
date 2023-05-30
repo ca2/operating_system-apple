@@ -1865,7 +1865,7 @@ namespace draw2d_quartz2d
    }
 
    
-   void graphics::intersect_clip(const ::rectangle & rectangle)
+   void graphics::intersect_clip(const ::rectangle_f64 & rectangle)
    {
       
       CGRect r;
@@ -1885,7 +1885,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::intersect_clip(const ::ellipse & ellipse)
+   void graphics::intersect_clip(const ::ellipse_f64 & ellipse)
    {
       
       CGRect r;
@@ -1905,7 +1905,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::intersect_clip(const ::polygon & polygon)
+   void graphics::intersect_clip(const ::polygon_f64 & polygon)
    {
       
       CGContextBeginPath(m_cgcontext);
@@ -1916,8 +1916,9 @@ namespace draw2d_quartz2d
 
    }
 
+   
 
-   void graphics::_add_clipping_shape(const ::rectangle & rectangle, ___shape < ::draw2d::region > & shape)
+   void graphics::_add_clipping_shape(const ::rectangle_f64 & rectangle, ___shape < ::draw2d::region > & shape)
    {
    
       _add_shape(rectangle);
@@ -1927,7 +1928,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_clipping_shape(const ::ellipse & ellipse, ___shape < ::draw2d::region > & shape)
+   void graphics::_add_clipping_shape(const ::ellipse_f64 & ellipse, ___shape < ::draw2d::region > & shape)
    {
       
       _add_shape(ellipse);
@@ -1937,7 +1938,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_clipping_shape(const ::polygon & polygon, ___shape < ::draw2d::region > & shape)
+   void graphics::_add_clipping_shape(const ::polygon_f64 & polygon, ___shape < ::draw2d::region > & shape)
    {
       
       _add_shape(polygon);
@@ -1962,7 +1963,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_shape(const ::rectangle & rectangle)
+   void graphics::_add_shape(const ::rectangle_f64 & rectangle)
    {
    
       CGRect r;
@@ -1978,7 +1979,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_shape(const ::ellipse & ellipse)
+   void graphics::_add_shape(const ::ellipse_f64 & ellipse)
    {
    
       CGRect r;
@@ -1992,7 +1993,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_shape(const ::polygon & polygon)
+   void graphics::_add_shape(const ::polygon_f64 & polygon)
    {
    
       CGContextBeginPath(m_cgcontext);
@@ -2215,9 +2216,9 @@ namespace draw2d_quartz2d
 
       CGContextBeginPath(m_cgcontext);
 
-      CGContextMoveToPoint(m_cgcontext, m_point.x, m_point.y);
+      CGContextMoveToPoint(m_cgcontext, m_point.x(), m_point.y());
 
-      CGContextAddLineToPoint(m_cgcontext, point.x, point.y);
+      CGContextAddLineToPoint(m_cgcontext, point.x(), point.y());
 
       _draw();
 
@@ -2323,18 +2324,24 @@ namespace draw2d_quartz2d
 
          if(pitem->m_ecombine == ::draw2d::e_combine_intersect)
          {
+            
+            auto pregion1 = update_os_data(pitem->m_pregion1);
 
-            _clip(pitem->m_pregion1);
+            _clip(pregion1);
 
             _intersect_eo_clip();
 
-            _add_path(pitem->m_pregion2);
+            auto pregion2 = update_os_data(pitem->m_pregion2);
+
+            _add_path(pregion2);
 
             _intersect_eo_clip();
 
          }
          else if(pitem->m_ecombine == ::draw2d::e_combine_add)
          {
+
+            auto pregion1 = update_os_data(pitem->m_pregion1);
 
             _clip(pitem->m_pregion1);
 

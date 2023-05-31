@@ -90,8 +90,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9A03B8192A25BEB700A0E33E /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
-		9A03B81E2A25BEB700A0E33E /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		9A03B8192A25BEB700A0E33E /* _____debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = _____debug.xcconfig; sourceTree = "<group>"; };
+		9A03B81E2A25BEB700A0E33E /* _____release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = _____release.xcconfig; sourceTree = "<group>"; };
 		9A0841432935A3DB009F7FF4 /* apex_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_darwin.xcodeproj; path = "../../operating_system-darwin/apex_darwin/apex_darwin.xcodeproj"; sourceTree = "<group>"; };
 		9A15A597264B53DC0080670E /* libapex_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libapex_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A15A608264B551B0080670E /* acme_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_apple.xcodeproj; path = ../acme_apple/acme_apple.xcodeproj; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 				9A787EA7264EE55E003DF8A0 /* _mm.h */,
 				9A787EBD264EE55E003DF8A0 /* datetime.cpp */,
 				9A787EAD264EE55E003DF8A0 /* datetime.h */,
-				9A03B8192A25BEB700A0E33E /* debug.xcconfig */,
+				9A03B8192A25BEB700A0E33E /* _____debug.xcconfig */,
 				9A787EB0264EE55E003DF8A0 /* file_context.cpp */,
 				9A787EB1264EE55E003DF8A0 /* file_context.h */,
 				9A787EAA264EE55E003DF8A0 /* framework.cpp */,
@@ -203,7 +203,7 @@
 				9A787EAE264EE55E003DF8A0 /* node.h */,
 				9A787EA5264EE55E003DF8A0 /* process.cpp */,
 				9A787EB7264EE55E003DF8A0 /* process.h */,
-				9A03B81E2A25BEB700A0E33E /* release.xcconfig */,
+				9A03B81E2A25BEB700A0E33E /* _____release.xcconfig */,
 				9A787EC1264EE55E003DF8A0 /* timer.mm */,
 			);
 			name = apex_apple;
@@ -411,7 +411,7 @@
 /* Begin XCBuildConfiguration section */
 		9A15A59E264B53DC0080670E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A03B8192A25BEB700A0E33E /* debug.xcconfig */;
+			baseConfigurationReference = 9A03B8192A25BEB700A0E33E /* _____debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -510,7 +510,7 @@
 		};
 		9A15A59F264B53DC0080670E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A03B81E2A25BEB700A0E33E /* release.xcconfig */;
+			baseConfigurationReference = 9A03B81E2A25BEB700A0E33E /* _____release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

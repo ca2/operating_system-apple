@@ -79,8 +79,8 @@
 		07B65773190F3CA2002DAADE /* math_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = math_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B65774190F3CA2002DAADE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		07B65777190F3CA2002DAADE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		9A03B7C62A25BAC600A0E33E /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
-		9A03B7C72A25BAC600A0E33E /* release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		9A03B7C62A25BAC600A0E33E /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = _____debug.xcconfig; sourceTree = "<group>"; };
+		9A03B7C72A25BAC600A0E33E /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = _____release.xcconfig; sourceTree = "<group>"; };
 		9A0705F7266256D4004E8CB4 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0705F9266256D4004E8CB4 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0705FB266256EE004E8CB4 /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,14 +163,14 @@
 				9A24D06228514045000C9873 /* _.h */,
 				9A24D05E28514045000C9873 /* _factory.cpp */,
 				9A24D03E28514045000C9873 /* context_image.h */,
-				9A03B7C62A25BAC600A0E33E /* debug.xcconfig */,
+				9A03B7C62A25BAC600A0E33E /* _____debug.xcconfig */,
 				9A24D04128514045000C9873 /* framework.cpp */,
 				9A24D05628514045000C9873 /* framework.h */,
 				9A24D03D28514045000C9873 /* image_gif.cpp */,
 				9A24D04028514045000C9873 /* image.cpp */,
 				9A24D04F28514045000C9873 /* mm_ios_image.mm */,
 				9A24D04D28514045000C9873 /* mm_macos_image.mm */,
-				9A03B7C72A25BAC600A0E33E /* release.xcconfig */,
+				9A03B7C72A25BAC600A0E33E /* _____release.xcconfig */,
 				9A24D05228514045000C9873 /* save_image.cpp */,
 			);
 			name = imaging_coreimage;
@@ -486,7 +486,7 @@
 		};
 		9A574B9A16AAB906000CC4EF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A03B7C62A25BAC600A0E33E /* debug.xcconfig */;
+			baseConfigurationReference = 9A03B7C62A25BAC600A0E33E /* _____debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -578,7 +578,7 @@
 		};
 		9A574B9B16AAB906000CC4EF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A03B7C72A25BAC600A0E33E /* release.xcconfig */;
+			baseConfigurationReference = 9A03B7C72A25BAC600A0E33E /* _____release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;

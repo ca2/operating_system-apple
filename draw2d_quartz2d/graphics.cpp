@@ -1870,9 +1870,9 @@ namespace draw2d_quartz2d
       
       CGRect r;
       
-      auto rectangleOffset = rectangle;
+      //auto rectangleOffset = rectangle;
       
-      rectangleOffset += m_pointAddShapeTranslate;
+      //rectangleOffset += m_pointAddShapeTranslate;
       
       copy(r, rectangleOffset);
       
@@ -1890,9 +1890,9 @@ namespace draw2d_quartz2d
       
       CGRect r;
       
-      auto rectangleOffset = ellipse;
+      //auto rectangleOffset = ellipse;
       
-      rectangleOffset += m_pointAddShapeTranslate;
+      //rectangleOffset += m_pointAddShapeTranslate;
       
       copy(r, rectangleOffset);
 
@@ -1910,7 +1910,7 @@ namespace draw2d_quartz2d
       
       CGContextBeginPath(m_cgcontext);
    
-      set_polygon(polygon.data(), polygon.count(), m_pointAddShapeTranslate);
+      set_polygon(polygon.data(), polygon.count());
 
       CGContextClip(m_cgcontext);
 

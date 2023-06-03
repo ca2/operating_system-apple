@@ -275,10 +275,10 @@ namespace draw2d_quartz2d
    }
 
    
-   bool path::_set(::draw2d::graphics * pgraphics, const ::enum_shape & eshape)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::draw2d::enum_item & eitem)
    {
       
-      if(eshape == e_shape_close_figure)
+      if(eitem == ::draw2d::e_item_close_figure)
       {
          
          if(CGPathIsEmpty(m_path))
@@ -302,10 +302,7 @@ namespace draw2d_quartz2d
    
       ::rectangle_f64 rectangle;
       
-      rectangle.left = arc.m_pointCenter.x() - arc.m_sizeRadius.cx();
-      rectangle.right = arc.m_pointCenter.x() + arc.m_sizeRadius.cx();
-      rectangle.top = arc.m_pointCenter.y() - arc.m_sizeRadius.cy();
-      rectangle.bottom = arc.m_pointCenter.y() + arc.m_sizeRadius.cy();
+      rectangle = arc;
       
       rectangle.offset(m_pointOffset);
       

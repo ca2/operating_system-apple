@@ -39,7 +39,7 @@ namespace draw2d_quartz2d
 
       void * detach() override;
       
-      bool _set(::draw2d::graphics * pgraphics, const enum_shape & eshape) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::draw2d::enum_item & eitem) override;
       bool _set(::draw2d::graphics * pgraphics, const ::arc_f64 & arc) override;
       bool _set(::draw2d::graphics * pgraphics, const ::rectangle_f64 & rectangle) override;
       bool _set(::draw2d::graphics * pgraphics, const ::ellipse_f64 & ellipse) override;

@@ -221,11 +221,11 @@ namespace draw2d_quartz2d
       
       
       
-      void _add_clipping_shape(const ::rectangle_f64 & rectangle, ___shape < ::draw2d::region > & shape) override;
+      void _add_clipping_shape(const ::rectangle_f64 & rectangle, ::draw2d::region * pregion) override;
       void _add_shape(const ::rectangle_f64 & rectangle_);
-      void _add_clipping_shape(const ::ellipse_f64 & ellipse, ___shape < ::draw2d::region > & shape) override;
+      void _add_clipping_shape(const ::ellipse_f64 & ellipse, ::draw2d::region * pregion) override;
       void _add_shape(const ::ellipse_f64 & ellipse);
-      void _add_clipping_shape(const ::polygon_f64 & polygon, ___shape < ::draw2d::region > & shape) override;
+      void _add_clipping_shape(const ::polygon_f64 & polygon, ::draw2d::region * pregion) override;
       void _add_shape(const ::polygon_f64 & polygon);
 
       

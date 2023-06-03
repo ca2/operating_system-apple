@@ -1,5 +1,7 @@
 #include "framework.h"
 #include "region.h"
+#include "acme/primitive/geometry2d/item.h"
+#include "acme/primitive/geometry2d/_defer_item.h"
 
 
 namespace draw2d_quartz2d
@@ -50,14 +52,14 @@ namespace draw2d_quartz2d
 
       auto ppath = CGPathCreateMutable();
 
-      if(m_eregion == ::draw2d::e_region_rect)
+      if(m_pitem->type() == ::draw2d::e_item_rectangle)
       {
 
          CGRect rectangle;
          
-         ::pointer < rectangle_item > pitem = m_pitem;
+         ::pointer < ::geometry2d::rectangle_item > pitem = m_pitem;
 
-         copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pitem->m_item);
 //         rectangle.origin.x = m_x1;
 //         rectangle.origin.y = m_y1;
 //         rectangle.size.width = m_x2 - m_x1;
@@ -66,10 +68,10 @@ namespace draw2d_quartz2d
          CGPathAddRect (ppath, nullptr, rectangle);
 
       }
-      else if(m_eregion == ::draw2d::e_region_polygon)
+      else if(m_pitem->type() == ::draw2d::e_item_polygon)
       {
 
-         ::pointer < polygon_item > pitem = m_pitem;
+         ::pointer < ::geometry2d::polygon_item > pitem = m_pitem;
 
          if(pitem->m_polygon.has_element())
          {
@@ -86,14 +88,14 @@ namespace draw2d_quartz2d
          }
          
       }
-      else if(m_eregion == ::draw2d::e_region_ellipse)
+      else if(m_pitem->type() == ::draw2d::e_item_ellipse)
       {
 
          CGRect rectangle;
          
-         ::pointer < ellipse_item > pitem = m_pitem;
+         ::pointer < ::geometry2d::ellipse_item > pitem = m_pitem;
 
-         copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pitem->m_item);
 //         rectangle.origin.x = m_x1;
 //         rectangle.origin.y = m_y1;
 //         rectangle.size.width = m_x2 - m_x1;
@@ -102,7 +104,7 @@ namespace draw2d_quartz2d
          CGPathAddEllipseInRect(ppath, nullptr, rectangle);
 
       }
-      else if(m_eregion == ::draw2d::e_region_combine)
+      else if(m_pitem->type() == ::draw2d::e_item_combine)
       {
 
          throw ::exception(error_not_supported, "not supported");

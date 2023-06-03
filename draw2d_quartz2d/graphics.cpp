@@ -7,8 +7,9 @@
 #include "pen.h"
 #include "acme/parallelization/synchronous_lock.h"
 #include "acme/platform/scoped_restore.h"
-#include "acme/primitive/geometry2d/shape_array.h"
-#include "acme/primitive/geometry2d/shape.h"
+//#include "acme/primitive/geometry2d/shape_array.h"
+//#include "acme/primitive/geometry2d/shape.h"
+#include "acme/primitive/geometry2d/item.h"
 #include "aura/graphics/image/context_image.h"
 #include "aura/graphics/image/drawing.h"
 #include "aura/graphics/write_text/text_out.h"
@@ -23,6 +24,8 @@
 #include "acme/primitive/geometry2d/_geometry2d.h"
 #include "acme/primitive/geometry2d/_collection.h"
 #include "acme/primitive/geometry2d/_defer.h"
+#include "acme/primitive/geometry2d/_defer_item.h"
+#include "aura/graphics/write_text/_defer_geometry2d_item.h"
 
 
 //unsigned long apple_get_fonts(char *** p);
@@ -1874,7 +1877,7 @@ namespace draw2d_quartz2d
       
       //rectangleOffset += m_pointAddShapeTranslate;
       
-      copy(r, rectangleOffset);
+      copy(r, rectangle);
       
       CGContextBeginPath(m_cgcontext);
    
@@ -1894,7 +1897,7 @@ namespace draw2d_quartz2d
       
       //rectangleOffset += m_pointAddShapeTranslate;
       
-      copy(r, rectangleOffset);
+      copy(r, ellipse);
 
       CGContextBeginPath(m_cgcontext);
    
@@ -1917,8 +1920,7 @@ namespace draw2d_quartz2d
    }
 
    
-
-   void graphics::_add_clipping_shape(const ::rectangle_f64 & rectangle, ___shape < ::draw2d::region > & shape)
+   void graphics::_add_clipping_shape(const ::rectangle_f64 & rectangle, ::draw2d::region * pregion)
    {
    
       _add_shape(rectangle);
@@ -1928,7 +1930,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_clipping_shape(const ::ellipse_f64 & ellipse, ___shape < ::draw2d::region > & shape)
+   void graphics::_add_clipping_shape(const ::ellipse_f64 & ellipse, ::draw2d::region * pregion)
    {
       
       _add_shape(ellipse);
@@ -1938,7 +1940,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_clipping_shape(const ::polygon_f64 & polygon, ___shape < ::draw2d::region > & shape)
+   void graphics::_add_clipping_shape(const ::polygon_f64 & polygon, ::draw2d::region * pregion)
    {
       
       _add_shape(polygon);
@@ -1968,11 +1970,11 @@ namespace draw2d_quartz2d
    
       CGRect r;
       
-      auto rectangleOffset = rectangle;
+//      auto rectangleOffset = rectangle;
+//
+//      rectangleOffset += m_pointAddShapeTranslate;
       
-      rectangleOffset += m_pointAddShapeTranslate;
-      
-      copy(r, rectangleOffset);
+      copy(r, rectangle);
    
       CGContextAddRect(m_cgcontext, r);
       
@@ -2310,44 +2312,53 @@ namespace draw2d_quartz2d
    void graphics::_clip(::draw2d::region * pregion, bool bEO)
    {
 
-      if(pregion == nullptr)
+      if(::is_null(pregion))
       {
 
          return;
 
       }
+      
+      auto pitem = pregion->m_pitem;
 
-      if(pregion->m_eregion == ::draw2d::e_region_combine)
+      if(::is_null(pitem))
+      {
+
+         return;
+
+      }
+      
+      if(pitem->type() == ::draw2d::e_item_combine)
       {
          
-         ::pointer < ::draw2d::region::combine_item > pitem = pregion->m_pitem;
+         ::pointer < ::geometry2d::combine_item > pcombineitem = pitem;
 
-         if(pitem->m_ecombine == ::draw2d::e_combine_intersect)
+         if(pcombineitem->m_ecombine == ::draw2d::e_combine_intersect)
          {
             
-            auto pregion1 = defer_get_os_data(pitem->m_pregion1);
+            auto pregion1 = defer_get_os_data(pcombineitem->m_pregion1);
 
             _clip(pregion1);
 
             _intersect_eo_clip();
 
-            auto pregion2 = defer_get_os_data(pitem->m_pregion2);
+            auto pregion2 = defer_get_os_data(pcombineitem->m_pregion2);
 
             _add_path(pregion2);
 
             _intersect_eo_clip();
 
          }
-         else if(pitem->m_ecombine == ::draw2d::e_combine_add)
+         else if(pcombineitem->m_ecombine == ::draw2d::e_combine_add)
          {
 
-            auto pregion1 = defer_get_os_data(pitem->m_pregion1);
+            auto pregion1 = defer_get_os_data(pcombineitem->m_pregion1);
 
             _clip(pregion1);
 
             _intersect_clip();;
 
-            auto pregion2 = defer_get_os_data(pitem->m_pregion2);
+            auto pregion2 = defer_get_os_data(pcombineitem->m_pregion2);
 
             _add_path(pregion2);
 
@@ -2356,14 +2367,14 @@ namespace draw2d_quartz2d
          }
          
       }
-      else if(pregion->m_eregion == ::draw2d::e_region_rect)
+      else if(pitem->type() == ::draw2d::e_item_rectangle)
       {
          
-         ::pointer < ::draw2d::region::rectangle_item > pitem = pregion->m_pitem;
+         ::pointer < ::geometry2d::rectangle_item > pitem = pregion->m_pitem;
 
          CGRect rectangle;
          
-         copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pitem->m_item);
 
 //         rectangle.origin.x = pregion->m_x1;
 //         rectangle.origin.y = pregion->m_y1;
@@ -2373,24 +2384,24 @@ namespace draw2d_quartz2d
          CGContextAddRect (m_cgcontext, rectangle);
 
       }
-      else if(pregion->m_eregion == ::draw2d::e_region_polygon)
+      else if(pitem->type() == ::draw2d::e_item_polygon)
       {
          
-         ::pointer < ::draw2d::region::polygon_item > pitem = pregion->m_pitem;
+         ::pointer < ::geometry2d::polygon_item > ppolygonitem = pitem;
 
          CGContextBeginPath (m_cgcontext);
 
-         set_polygon(pitem->m_polygon.data(), pitem->m_polygon.size());
+         set_polygon(ppolygonitem->m_polygon.data(), ppolygonitem->m_polygon.size());
 
       }
-      else if(pregion->m_eregion == ::draw2d::e_region_ellipse)
+      else if(pitem->type() == ::draw2d::e_item_ellipse)
       {
 
-         ::pointer < ::draw2d::region::ellipse_item > pitem = pregion->m_pitem;
+         ::pointer < ::geometry2d::ellipse_item > pellipseitem = pitem;
          
          CGRect rectangle;
 
-         copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pellipseitem->m_item);
 
 //         rectangle.origin.x = pregion->m_x1;
 //         rectangle.origin.y = pregion->m_y1;
@@ -2420,21 +2431,30 @@ namespace draw2d_quartz2d
    void graphics::_add_path(::draw2d::region * pregion)
    {
 
-      if(pregion == nullptr)
+      if(::is_null(pregion))
       {
 
          return;
-         
+
       }
-         
-      if(pregion->m_eregion == ::draw2d::e_region_rect)
+      
+      auto pitem = pregion->m_pitem;
+
+      if(::is_null(pitem))
       {
 
-         ::pointer < ::draw2d::region::rectangle_item > pitem = pregion->m_pitem;
+         return;
+
+      }
+      
+      if(pitem->type() == ::draw2d::e_item_rectangle)
+      {
+
+         ::pointer < ::geometry2d::rectangle_item > prectangleitem = pitem;
 
          CGRect rectangle;
          
-         copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, prectangleitem->m_item);
 
 //         rectangle.origin.x = pregion->m_x1;
 //         rectangle.origin.y = pregion->m_y1;
@@ -2444,24 +2464,24 @@ namespace draw2d_quartz2d
          CGContextAddRect (m_cgcontext, rectangle);
 
       }
-      else if(pregion->m_eregion == ::draw2d::e_region_polygon)
+      else if(pitem->type() == ::draw2d::e_item_polygon)
       {
 
-         ::pointer < ::draw2d::region::polygon_item > pitem = pregion->m_pitem;
+         ::pointer < ::geometry2d::polygon_item > ppolygonitem = pitem;
 
          CGContextBeginPath (m_cgcontext);
 
-         set_polygon(pitem->m_polygon.data(), pitem->m_polygon.size());
+         set_polygon(ppolygonitem->m_polygon.data(), ppolygonitem->m_polygon.size());
 
       }
-      else if(pregion->m_eregion == ::draw2d::e_region_ellipse)
+      else if(pitem->type() == ::draw2d::e_item_ellipse)
       {
 
-         ::pointer < ::draw2d::region::ellipse_item > pitem = pregion->m_pitem;
+         ::pointer < ::geometry2d::ellipse_item > pellipseitem = pitem;
 
          CGRect rectangle;
          
-         copy(rectangle, pitem->m_rectangle);
+         copy(rectangle, pellipseitem->m_item);
 
 //         rectangle.origin.x = pregion->m_x1;
 //         rectangle.origin.y = pregion->m_y1;
@@ -2471,37 +2491,37 @@ namespace draw2d_quartz2d
          CGContextAddEllipseInRect(m_cgcontext, rectangle);
 
       }
-      else if(pregion->m_eregion == ::draw2d::e_region_combine)
+      else if(pitem->type() == ::draw2d::e_item_combine)
       {
          
-         ::pointer < ::draw2d::region::combine_item > pitem = pregion->m_pitem;
+         ::pointer < ::geometry2d::combine_item > pcombineitem = pitem;
          
-         if(pitem->m_ecombine == ::draw2d::e_combine_intersect)
+         if(pcombineitem->m_ecombine == ::draw2d::e_combine_intersect)
          {
 
-            auto pregion1 = defer_get_os_data(pitem->m_pregion1);
+            auto pregion1 = defer_get_os_data(pcombineitem->m_pregion1);
 
             _add_path(pregion1);
             
             _intersect_eo_clip();
          
-            auto pregion2 = defer_get_os_data(pitem->m_pregion2);
+            auto pregion2 = defer_get_os_data(pcombineitem->m_pregion2);
 
             _add_path(pregion2);
             
             _intersect_eo_clip();
 
          }
-         else if(pitem->m_ecombine == ::draw2d::e_combine_add)
+         else if(pcombineitem->m_ecombine == ::draw2d::e_combine_add)
          {
 
-            auto pregion1 = defer_get_os_data(pitem->m_pregion1);
+            auto pregion1 = defer_get_os_data(pcombineitem->m_pregion1);
 
             _add_path(pregion1);
             
             _intersect_clip();
          
-            auto pregion2 = defer_get_os_data(pitem->m_pregion2);
+            auto pregion2 = defer_get_os_data(pcombineitem->m_pregion2);
 
             _add_path(pregion2);
             
@@ -3038,22 +3058,22 @@ namespace draw2d_quartz2d
    void graphics::_draw_inline(::draw2d::path * ppath, ::draw2d::pen * ppen)
    {
 
-      for(auto & pshape : *ppath->m_pshapea)
+      for(auto & pitem : ppath->m_itema)
       {
          
-         switch(pshape->eshape())
+         switch(pitem->type())
          {
-         case e_shape_text_out:
+            case ::draw2d::e_item_text_out:
          {
 
-            _draw_inline(pshape->shape<write_text::text_out>(), ppen);
+            _draw_inline(pitem->cast<::geometry2d::text_out_item>()->m_item, ppen);
          
          }
          break;
-         case e_shape_draw_text:
+            case ::draw2d::e_item_draw_text:
          {
 
-            _draw_inline(pshape->shape<write_text::draw_text >(), ppen);
+            _draw_inline(pitem->cast<::geometry2d::draw_text_item >()->m_item, ppen);
          
          }
          break;
@@ -3069,19 +3089,19 @@ namespace draw2d_quartz2d
    void graphics::_fill_inline(::draw2d::path * ppath, ::draw2d::brush * pbrush)
    {
 
-      for(auto & pshape : *ppath->m_pshapea)
+      for(auto & pitem : ppath->m_itema)
       {
          
-         if(pshape->eshape() == e_shape_text_out)
+         if(pitem->type() == ::draw2d::e_item_text_out)
          {
 
-            _fill_inline(pshape->shape < write_text::text_out >(), pbrush);
+            _fill_inline(pitem->cast < ::geometry2d::text_out_item >()->m_item, pbrush);
             
          }
-         else if(pshape->eshape() == e_shape_draw_text)
+         else if(pitem->type() == ::draw2d::e_item_draw_text)
          {
 
-            _fill_inline(pshape->shape < write_text::draw_text >(), pbrush);
+            _fill_inline(pitem->cast < ::geometry2d::draw_text_item >()->m_item, pbrush);
             
          }
 
@@ -3090,42 +3110,42 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_draw_inline(___shape <::draw2d::path> * pshape, ::draw2d::pen * ppen)
-   {
-
-      switch(pshape->eshape())
-      {
-      case e_shape_text_out:
-         _draw_inline(pshape->shape < write_text::text_out >(), ppen);
-         break;
-         case e_shape_draw_text:
-            _draw_inline(pshape->shape < write_text::draw_text>(), ppen);
-            break;
-      default:
-         break;
-      }
-
-   }
-
-
-   void graphics::_fill_inline(___shape < ::draw2d::path > * pshape, ::draw2d::brush * pbrush)
-   {
-
-      switch(pshape->eshape())
-      {
-      case e_shape_text_out:
-         _fill_inline(pshape->shape < write_text::text_out >(), pbrush);
-         return;
-         case e_shape_draw_text:
-            _fill_inline(pshape->shape < write_text::draw_text>(), pbrush);
-            return;
-      default:
-         break;
-      }
-      
-      throw exception(error_null_pointer);
-      
-   }
+//   void graphics::_draw_inline(___shape <::draw2d::path> * pshape, ::draw2d::pen * ppen)
+//   {
+//
+//      switch(pshape->eshape())
+//      {
+//      case e_shape_text_out:
+//         _draw_inline(pshape->shape < write_text::text_out >(), ppen);
+//         break;
+//         case e_shape_draw_text:
+//            _draw_inline(pshape->shape < write_text::draw_text>(), ppen);
+//            break;
+//      default:
+//         break;
+//      }
+//
+//   }
+//
+//
+//   void graphics::_fill_inline(___shape < ::draw2d::path > * pshape, ::draw2d::brush * pbrush)
+//   {
+//
+//      switch(pshape->eshape())
+//      {
+//      case e_shape_text_out:
+//         _fill_inline(pshape->shape < write_text::text_out >(), pbrush);
+//         return;
+//         case e_shape_draw_text:
+//            _fill_inline(pshape->shape < write_text::draw_text>(), pbrush);
+//            return;
+//      default:
+//         break;
+//      }
+//
+//      throw exception(error_null_pointer);
+//
+//   }
 
 
 void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * ppen)

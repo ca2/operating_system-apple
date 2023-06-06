@@ -2,9 +2,9 @@
 #include "graphics.h"
 #include "bitmap.h"
 #include "image.h"
-//#include "brush.h"
-//#include "pen.h"
-//#include "font.h"
+#include "brush.h"
+#include "pen.h"
+#include "font.h"
 #include "acme/parallelization/synchronous_lock.h"
 #include "acme/platform/scoped_restore.h"
 //#include "acme/primitive/geometry2d/shape_array.h"
@@ -12,11 +12,11 @@
 //#include "acme/primitive/geometry2d/item.h"
 #include "aura/graphics/image/context_image.h"
 #include "aura/graphics/image/drawing.h"
-//#include "aura/graphics/write_text/text_out.h"
-//#include "aura/graphics/write_text/draw_text.h"
+#include "aura/graphics/write_text/text_out.h"
+#include "aura/graphics/write_text/draw_text.h"
 #include "aura/platform/context.h"
-//#include "acme/platform/node.h"
-//#include "acme/platform/system.h"
+#include "acme/platform/node.h"
+#include "acme/platform/system.h"
 //#include <math.h>
 //#include <memory.h>
 #include <CoreFoundation/CFDictionary.h>
@@ -106,7 +106,7 @@ namespace draw2d_quartz2d
    }
 
 
-#if 0
+//#if 0
 
 //   void graphics::dump(dump_context & dumpcontext) const
 //   {
@@ -3491,14 +3491,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
    }
 
 
-#endif
-
-
 } // namespace draw2d_quartz2d
-
-
-
-
 
 
 CGContextRef cg_create_bitmap_context(CGSize size)

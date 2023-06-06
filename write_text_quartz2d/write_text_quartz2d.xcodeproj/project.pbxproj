@@ -143,11 +143,12 @@
 		9A64C1982660C6730074030F /* write_text_quartz2d */ = {
 			isa = PBXGroup;
 			children = (
+				9A03B7D12A25BB1500A0E33E /* _____debug.xcconfig */,
+				9A03B7D32A25BB1500A0E33E /* _____release.xcconfig */,
 				9A64C1A82660C6730074030F /* _.cpp */,
 				9A64C1B92660C6730074030F /* _.h */,
 				9A4124B0266D924E00C3FF0E /* _write_text_quartz2d.h */,
 				9A64C1AF2660C6730074030F /* _factory.cpp */,
-				9A03B7D12A25BB1500A0E33E /* _____debug.xcconfig */,
 				9A64C1AB2660C6730074030F /* fonts.cpp */,
 				9A64C1B52660C6730074030F /* fonts.h */,
 				9A64C1992660C6730074030F /* font_enumeration.cpp */,
@@ -155,7 +156,6 @@
 				9AE12D952661D4C0009F476A /* font_enumeration.mm */,
 				9A64C19E2660C6730074030F /* framework.cpp */,
 				9A64C1B12660C6730074030F /* framework.h */,
-				9A03B7D32A25BB1500A0E33E /* _____release.xcconfig */,
 				9A64C1A92660C6730074030F /* write_text.cpp */,
 				9A64C19A2660C6730074030F /* write_text.h */,
 			);

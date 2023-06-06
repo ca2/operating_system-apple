@@ -106,7 +106,7 @@ namespace draw2d_quartz2d
    }
 
 
-#if 0
+//#if 0
 
 //   void graphics::dump(dump_context & dumpcontext) const
 //   {
@@ -3489,9 +3489,6 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       }
 
    }
-
-
-#endif
 
 
 } // namespace draw2d_quartz2d

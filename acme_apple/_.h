@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "acme_posix/_.h"
+#include "acme_darwin/_.h"
 #ifdef __OBJC__
 #include "_mm.h"
 #endif
@@ -14,21 +14,13 @@
 #endif
 
 
-namespace acme
+namespace acme_apple
 {
 
-
-   namespace posix
-   {
+   class node;
 
 
-      class node;
-
-
-   } // namespace posix
-
-
-} // namespace node_gnome
+} // namespace acme_node
 
 
 

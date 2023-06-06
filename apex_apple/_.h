@@ -12,21 +12,13 @@
 #endif
 
 
-namespace apex
+namespace apex_apple
 {
 
-
-   namespace apple
-   {
+   class node;
 
 
-      class node;
-
-
-   } // namespace apple
-
-
-} // namespace apex
+} // namespace apex_apple
 
 
 

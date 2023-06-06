@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "aura_posix/_.h"
+#include "aura_darwin/_.h"
 #include "apex_apple/_.h"
 
 
@@ -12,21 +12,14 @@
 #endif
 
 
-namespace aura
+namespace aura_apple
 {
 
 
-   namespace apple
-   {
+class node;
 
 
-      class node;
-
-
-   } // namespace apple
-
-
-} // namespace aura
+} // namespace aura_apple
 
 
 

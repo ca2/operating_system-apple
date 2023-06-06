@@ -467,13 +467,24 @@ bool uniform_type_conforms_to_data_type(CFStringRef cfstr, enum_data_type edatat
 ::string apple_operating_system_store_release()
 {
    
-   NSOperatingSystemVersion version = [ [ NSProcessInfo processInfo] operatingSystemVersion ];
-   
-   ::string strRelease;
-   
-   strRelease.format("%d.%d", version.majorVersion, version.minorVersion);
-
-   return strRelease;
+   if (@available(macOS 10.10, *))
+   {
+      
+      NSOperatingSystemVersion version = [ [ NSProcessInfo processInfo] operatingSystemVersion ];
+      
+      ::string strRelease;
+      
+      strRelease.format("%d.%d", version.majorVersion, version.minorVersion);
+      
+      return strRelease;
+      
+   }
+   else
+   {
+      
+      return "10.12";
+      
+   }
    
 }
 

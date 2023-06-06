@@ -2,30 +2,29 @@
 #include "graphics.h"
 #include "bitmap.h"
 #include "image.h"
-#include "path.h"
-#include "brush.h"
-#include "pen.h"
+//#include "brush.h"
+//#include "pen.h"
+//#include "font.h"
 #include "acme/parallelization/synchronous_lock.h"
 #include "acme/platform/scoped_restore.h"
 //#include "acme/primitive/geometry2d/shape_array.h"
 //#include "acme/primitive/geometry2d/shape.h"
-#include "acme/primitive/geometry2d/item.h"
+//#include "acme/primitive/geometry2d/item.h"
 #include "aura/graphics/image/context_image.h"
 #include "aura/graphics/image/drawing.h"
-#include "aura/graphics/write_text/text_out.h"
-#include "aura/graphics/write_text/draw_text.h"
+//#include "aura/graphics/write_text/text_out.h"
+//#include "aura/graphics/write_text/draw_text.h"
 #include "aura/platform/context.h"
-#include "acme/platform/node.h"
-#include "acme/platform/system.h"
-#include <math.h>
-#include <memory.h>
+//#include "acme/platform/node.h"
+//#include "acme/platform/system.h"
+//#include <math.h>
+//#include <memory.h>
 #include <CoreFoundation/CFDictionary.h>
-#include "aura/graphics/draw2d/path_simple_optimization.h"
-#include "acme/primitive/geometry2d/_geometry2d.h"
-#include "acme/primitive/geometry2d/_collection.h"
-#include "acme/primitive/geometry2d/_defer.h"
-#include "acme/primitive/geometry2d/_defer_item.h"
-#include "aura/graphics/write_text/_defer_geometry2d_item.h"
+//#include "acme/primitive/geometry2d/_geometry2d.h"
+//#include "acme/primitive/geometry2d/_collection.h"
+//#include "acme/primitive/geometry2d/_defer.h"
+//#include "acme/primitive/geometry2d/_defer_item.h"
+//#include "aura/graphics/write_text/_defer_geometry2d_item.h"
 
 
 //unsigned long apple_get_fonts(char *** p);
@@ -106,6 +105,8 @@ namespace draw2d_quartz2d
 
    }
 
+
+#if 0
 
 //   void graphics::dump(dump_context & dumpcontext) const
 //   {
@@ -1064,116 +1065,6 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::get_text_metrics(::write_text::text_metric * pmetric)
-   {
-
-      if(!m_pfont)
-      {
-       
-         throw exception(::error_null_pointer);
-         
-      }
-      
-      CTFontRef pfont = (CTFontRef) m_pfont->get_os_data(this);
-
-      if(pfont == nullptr)
-      {
-       
-         throw exception(::error_null_pointer);
-         
-      }
-
-      string str(L"123AWZwmc123AWZwmcpQg");
-
-      array < CFTypeRef > pkeys;
-      
-      array < CFTypeRef > pvals;
-      
-      array < CFTypeRef > cfrel;
-      
-      pkeys.add(kCTFontAttributeName);
-      
-      pvals.add(pfont);
-      
-      if(m_pfont->m_bUnderline)
-      {
-         
-         int iUnderlineStyle = kCTUnderlineStyleSingle;
-         
-         CFNumberRef num = CFNumberCreate(kCFAllocatorDefault, kCFNumberIntType, &iUnderlineStyle);
-         
-         cfrel.add(num);
-         
-         pkeys.add(kCTUnderlineStyleAttributeName);
-         
-         pvals.add(num);
-         
-      }
-      
-      CFDictionaryRef attributes = CFDictionaryCreate(
-                                                      kCFAllocatorDefault,
-                                                      pkeys.data(),
-                                                      pvals.data(),
-                                                      pkeys.size(),
-                                                      &kCFTypeDictionaryKeyCallBacks,
-                                                      &kCFTypeDictionaryValueCallBacks);
-      
-      cfrel.add(attributes);
-         
-      CFStringRef string = CFStringCreateWithCString(nullptr, str, kCFStringEncodingUTF8);
-      
-      cfrel.add(string);
-
-      CFAttributedStringRef attrString = CFAttributedStringCreate(kCFAllocatorDefault, string, attributes);
-      
-      cfrel.add(attrString);
-      
-      CTLineRef line = CTLineCreateWithAttributedString(attrString);
-      
-      //CFRelease(attrString);
-      
-      //... contribution https://delphiscience.wordpress.com/2013/01/06/getting-text-metrics-in-firemonkey/
-      //CFRelease(string);
-      
-      //CFRelease(attributes);
-      
-      CGFloat ascent;
-      CGFloat descent;
-      CGFloat leading;
-      
-//      double width = CTLineGetTypographicBounds(line, &ascent,  &descent, &leading);
-      CTLineGetTypographicBounds(line, &ascent,  &descent, &leading);
-      
-      CFRelease(line);
-      
-      for(auto & p : cfrel)
-      {
-         
-         CFRelease(p);
-         
-      }
-      
-      pmetric->m_dAscent = ascent;
-      pmetric->m_dDescent = descent;
-      pmetric->m_dInternalLeading = leading;
-      pmetric->m_dHeight = ascent + descent + leading;
-      pmetric->m_dExternalLeading = leading;
-      //CapHeight := CTFontGetCapHeight(LFontRef);
-      //XHeight := CTFontGetXHeight(LFontRef);
-      //CFRelease(LFontRef);
-//
-//      CGFloat ascent, descent, leading, width;
-//
-//      const_cast < graphics * > (this)->internal_show_text(0, 0, 0, DT_TOPLEFT, str, (int) str.get_length(), kCGTextInvisible, false, &ascent, &descent, &leading, &width);
-//
-//      lpMetrics->tmAscent              = ascent;
-//      lpMetrics->tmDescent             = descent;
-//
-//      pmetric->tmAveCharWidth        = (::i32) (width * (m_pfont.is_null() ? 1.0 : m_pfont->m_dFontWidth) / (double) str.get_length());
-
-      //return true;
-
-   }
 
 
    void graphics::get_output_text_metrics(::write_text::text_metric * lpMetrics)
@@ -1407,136 +1298,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::draw(::draw2d::path * ppath)
-   {
 
-      if(!ppath->m_bPersistent)
-      {
-         
-         if(ppath->m_ppathoptimization.is_null())
-         {
-            
-            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
-            
-         }
-         
-         if(ppath->m_ppathoptimization->draw(this, nullptr))
-         {
-            
-            return;
-            
-         }
-
-      }
-
-      auto path = ppath->template get_os_data < CGMutablePathRef >(this);
-      
-      CGContextAddPath(m_cgcontext, path);
-
-      _draw();
-
-      _draw_inline(ppath, m_ppen);
-
-   }
-
-
-   void graphics::fill(::draw2d::path * ppath)
-   {
-      
-      if(!ppath->m_bPersistent)
-      {
-         
-         if(ppath->m_ppathoptimization.is_null())
-         {
-            
-            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
-            
-         }
-
-         if(ppath->m_ppathoptimization->fill(this, nullptr))
-         {
-            
-            return;
-            
-         }
-
-      }
-
-      auto path = ppath->template get_os_data < CGMutablePathRef >(this);
-      
-      CGContextAddPath(m_cgcontext, path);
-
-      _fill();
-
-      _fill_inline(ppath, m_pbrush);
-
-   }
-
-
-   void graphics::draw(::draw2d::path * ppath, ::draw2d::pen * ppen)
-   {
-      
-      if(!ppath->m_bPersistent)
-      {
-         
-         if(ppath->m_ppathoptimization.is_null())
-         {
-            
-            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
-            
-         }
-
-         if(ppath->m_ppathoptimization->draw(this, ppen))
-         {
-            
-            return;
-            
-         }
-
-      }
-
-      auto path = ppath->template get_os_data < CGMutablePathRef >(this);
-      
-      CGContextAddPath(m_cgcontext, path);
-
-      _draw(ppen);
-
-      _draw_inline(ppath, ppen);
-      
-   }
-
-
-   void graphics::fill(::draw2d::path * ppath, ::draw2d::brush * pbrush)
-   {
-      
-      if(!ppath->m_bPersistent)
-      {
-         
-         if(ppath->m_ppathoptimization.is_null())
-         {
-            
-            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
-            
-         }
-         
-         if(ppath->m_ppathoptimization->fill(this, pbrush))
-         {
-            
-            return;
-            
-         }
-
-      }
-
-      auto path = ppath->template get_os_data < CGMutablePathRef >(this);
-      
-      CGContextAddPath(m_cgcontext, path);
-
-      _fill(pbrush);
-
-      _fill_inline(ppath, pbrush);
-
-   }
 
 
    void graphics::DPtoHIMETRIC(::size_f64 * psize)
@@ -2309,230 +2071,6 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_clip(::draw2d::region * pregion, bool bEO)
-   {
-
-      if(::is_null(pregion))
-      {
-
-         return;
-
-      }
-      
-      auto pitem = pregion->m_pitem;
-
-      if(::is_null(pitem))
-      {
-
-         return;
-
-      }
-      
-      if(pitem->type() == ::draw2d::e_item_combine)
-      {
-         
-         ::pointer < ::geometry2d::combine_item > pcombineitem = pitem;
-
-         if(pcombineitem->m_ecombine == ::draw2d::e_combine_intersect)
-         {
-            
-            auto pregion1 = defer_get_os_data(pcombineitem->m_pregion1);
-
-            _clip(pregion1);
-
-            _intersect_eo_clip();
-
-            auto pregion2 = defer_get_os_data(pcombineitem->m_pregion2);
-
-            _add_path(pregion2);
-
-            _intersect_eo_clip();
-
-         }
-         else if(pcombineitem->m_ecombine == ::draw2d::e_combine_add)
-         {
-
-            auto pregion1 = defer_get_os_data(pcombineitem->m_pregion1);
-
-            _clip(pregion1);
-
-            _intersect_clip();;
-
-            auto pregion2 = defer_get_os_data(pcombineitem->m_pregion2);
-
-            _add_path(pregion2);
-
-            _intersect_clip();;
-
-         }
-         
-      }
-      else if(pitem->type() == ::draw2d::e_item_rectangle)
-      {
-         
-         ::pointer < ::geometry2d::rectangle_item > pitem = pregion->m_pitem;
-
-         CGRect rectangle;
-         
-         copy(rectangle, pitem->m_item);
-
-//         rectangle.origin.x = pregion->m_x1;
-//         rectangle.origin.y = pregion->m_y1;
-//         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
-//         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
-         
-         CGContextAddRect (m_cgcontext, rectangle);
-
-      }
-      else if(pitem->type() == ::draw2d::e_item_polygon)
-      {
-         
-         ::pointer < ::geometry2d::polygon_item > ppolygonitem = pitem;
-
-         CGContextBeginPath (m_cgcontext);
-
-         set_polygon(ppolygonitem->m_polygon.data(), ppolygonitem->m_polygon.size());
-
-      }
-      else if(pitem->type() == ::draw2d::e_item_ellipse)
-      {
-
-         ::pointer < ::geometry2d::ellipse_item > pellipseitem = pitem;
-         
-         CGRect rectangle;
-
-         copy(rectangle, pellipseitem->m_item);
-
-//         rectangle.origin.x = pregion->m_x1;
-//         rectangle.origin.y = pregion->m_y1;
-//         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
-//         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
-
-         CGContextAddEllipseInRect(m_cgcontext, rectangle);
-
-      }
-
-      if(bEO)
-      {
-         
-         _intersect_eo_clip();
-         
-      }
-      else
-      {
-         
-         _intersect_clip();
-         
-      }
-
-   }
-
-
-   void graphics::_add_path(::draw2d::region * pregion)
-   {
-
-      if(::is_null(pregion))
-      {
-
-         return;
-
-      }
-      
-      auto pitem = pregion->m_pitem;
-
-      if(::is_null(pitem))
-      {
-
-         return;
-
-      }
-      
-      if(pitem->type() == ::draw2d::e_item_rectangle)
-      {
-
-         ::pointer < ::geometry2d::rectangle_item > prectangleitem = pitem;
-
-         CGRect rectangle;
-         
-         copy(rectangle, prectangleitem->m_item);
-
-//         rectangle.origin.x = pregion->m_x1;
-//         rectangle.origin.y = pregion->m_y1;
-//         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
-//         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
-
-         CGContextAddRect (m_cgcontext, rectangle);
-
-      }
-      else if(pitem->type() == ::draw2d::e_item_polygon)
-      {
-
-         ::pointer < ::geometry2d::polygon_item > ppolygonitem = pitem;
-
-         CGContextBeginPath (m_cgcontext);
-
-         set_polygon(ppolygonitem->m_polygon.data(), ppolygonitem->m_polygon.size());
-
-      }
-      else if(pitem->type() == ::draw2d::e_item_ellipse)
-      {
-
-         ::pointer < ::geometry2d::ellipse_item > pellipseitem = pitem;
-
-         CGRect rectangle;
-         
-         copy(rectangle, pellipseitem->m_item);
-
-//         rectangle.origin.x = pregion->m_x1;
-//         rectangle.origin.y = pregion->m_y1;
-//         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
-//         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
-
-         CGContextAddEllipseInRect(m_cgcontext, rectangle);
-
-      }
-      else if(pitem->type() == ::draw2d::e_item_combine)
-      {
-         
-         ::pointer < ::geometry2d::combine_item > pcombineitem = pitem;
-         
-         if(pcombineitem->m_ecombine == ::draw2d::e_combine_intersect)
-         {
-
-            auto pregion1 = defer_get_os_data(pcombineitem->m_pregion1);
-
-            _add_path(pregion1);
-            
-            _intersect_eo_clip();
-         
-            auto pregion2 = defer_get_os_data(pcombineitem->m_pregion2);
-
-            _add_path(pregion2);
-            
-            _intersect_eo_clip();
-
-         }
-         else if(pcombineitem->m_ecombine == ::draw2d::e_combine_add)
-         {
-
-            auto pregion1 = defer_get_os_data(pcombineitem->m_pregion1);
-
-            _add_path(pregion1);
-            
-            _intersect_clip();
-         
-            auto pregion2 = defer_get_os_data(pcombineitem->m_pregion2);
-
-            _add_path(pregion2);
-            
-            _intersect_clip();
-
-         }
-
-      }
-
-   }
-
 
    void graphics::_set(::draw2d::brush * pbrush)
    {
@@ -3055,61 +2593,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_draw_inline(::draw2d::path * ppath, ::draw2d::pen * ppen)
-   {
-
-      for(auto & pitem : ppath->m_itema)
-      {
-         
-         switch(pitem->type())
-         {
-            case ::draw2d::e_item_text_out:
-         {
-
-            _draw_inline(pitem->cast<::geometry2d::text_out_item>()->m_item, ppen);
-         
-         }
-         break;
-            case ::draw2d::e_item_draw_text:
-         {
-
-            _draw_inline(pitem->cast<::geometry2d::draw_text_item >()->m_item, ppen);
-         
-         }
-         break;
-            default:
-               break;
-         };
-
-      }
-
-   }
-
-
-   void graphics::_fill_inline(::draw2d::path * ppath, ::draw2d::brush * pbrush)
-   {
-
-      for(auto & pitem : ppath->m_itema)
-      {
-         
-         if(pitem->type() == ::draw2d::e_item_text_out)
-         {
-
-            _fill_inline(pitem->cast < ::geometry2d::text_out_item >()->m_item, pbrush);
-            
-         }
-         else if(pitem->type() == ::draw2d::e_item_draw_text)
-         {
-
-            _fill_inline(pitem->cast < ::geometry2d::draw_text_item >()->m_item, pbrush);
-            
-         }
-
-      }
-
-   }
-
-
+   
 //   void graphics::_draw_inline(___shape <::draw2d::path> * pshape, ::draw2d::pen * ppen)
 //   {
 //
@@ -4005,6 +3489,9 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       }
 
    }
+
+
+#endif
 
 
 } // namespace draw2d_quartz2d

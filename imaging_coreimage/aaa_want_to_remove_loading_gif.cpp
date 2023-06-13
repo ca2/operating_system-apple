@@ -336,7 +336,7 @@ namespace coreimage_imaging
 //      else if (FreeImage_GetBPP(pfi) == 32)
 //      {
 //
-//         ::copy_colorref(pframe->m_pimage->colorref(), pframe->m_pimage->width(), pframe->m_pimage->height(), pframe->m_pimage->scan_size(), (color32_t *)pdata, iScan);
+//         ::copy_image32(pframe->m_pimage->colorref(), pframe->m_pimage->width(), pframe->m_pimage->height(), pframe->m_pimage->scan_size(), (color32_t *)pdata, iScan);
 //
 //         return true;
 //

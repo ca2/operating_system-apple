@@ -207,11 +207,11 @@ namespace coreimage_imaging
 
       int iScan = 0;
 
-      ::acme::malloc < color32_t * > pcolorref;
+      ::acme::malloc < image32_t * > pimage32;
 
-      pcolorref = file_memory_to_image_data(w, h, iScan, memory.data(), memory.size());
+      pimage32 = file_memory_to_image_data(w, h, iScan, memory.data(), memory.size());
       
-      if(pcolorref == nullptr)
+      if(pimage32 == nullptr)
       {
          
          pimage->set_nok();
@@ -226,7 +226,7 @@ namespace coreimage_imaging
       
       pimage->map();
       
-      vertical_swap_copy_colorref(pimage->colorref(), w, h, pimage->scan_size(), pcolorref, iScan);
+      vertical_swap_copy_image32(pimage->image32(), w, h, pimage->scan_size(), pimage32, iScan);
       
       pimage->set_ok_flag();
       

@@ -271,7 +271,7 @@ namespace music
                          
               }
             
-            INFORMATION("AUGraphStart");
+            information("AUGraphStart");
             
             //return ::success;
          }

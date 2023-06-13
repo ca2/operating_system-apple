@@ -325,13 +325,13 @@ namespace music
       }
 
       // returns the midi stream var dword
-      uint32_t GetVDWord(byte * &hpbMidiStream, uint32_t dwLeft, uint32_t &dwValueParam)
+      uint32_t GetVDWord(::u8 * &hpbMidiStream, uint32_t dwLeft, uint32_t &dwValueParam)
       {
 
-         BYTE                    b;
-         uint32_t                   dwUsed  = 0;
-         byte * &            hpbImage = hpbMidiStream;
-         uint32_t               dwValue;
+         ::u8                    b;
+         uint32_t                dwUsed  = 0;
+         ::u8 * &                hpbImage = hpbMidiStream;
+         uint32_t                dwValue;
 
          ASSERT(hpbImage != NULL);
 

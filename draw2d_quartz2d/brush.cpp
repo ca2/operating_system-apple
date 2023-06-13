@@ -93,14 +93,14 @@ namespace draw2d_quartz2d
             
          }
          
-         components[0] = m_color1.red / 255.f;
-         components[1] = m_color1.green / 255.f;
-         components[2] = m_color1.blue / 255.f;
-         components[3] = m_color1.alpha / 255.f;
-         components[4] = m_color2.red / 255.f;
-         components[5] = m_color2.green / 255.f;
-         components[6] = m_color2.blue / 255.f;
-         components[7] = m_color2.alpha / 255.f;
+         components[0] = m_color1.f32_red();
+         components[1] = m_color1.f32_green();
+         components[2] = m_color1.f32_blue();
+         components[3] = m_color1.f32_opacity();
+         components[4] = m_color2.f32_red();
+         components[5] = m_color2.f32_green();
+         components[6] = m_color2.f32_blue();
+         components[7] = m_color2.f32_opacity();
          
          locations[0] = 0.0;
          locations[1] = 1.0;
@@ -129,10 +129,10 @@ namespace draw2d_quartz2d
             
          }
 
-         components[0] = m_color.red / 255.f;
-         components[1] = m_color.green / 255.f;
-         components[2] = m_color.blue / 255.f;
-         components[3] = m_color.alpha / 255.f;
+         components[0] = m_color.f32_red();
+         components[1] = m_color.f32_green();
+         components[2] = m_color.f32_blue();
+         components[3] = m_color.f32_opacity();
          
          if(m_colorref)
          {

@@ -193,7 +193,7 @@ namespace music
                
                string str;
                
-               WARNING("MIDIOutputPortCreate failed with code " << ::as_string((int)result) );
+               warning() << "MIDIOutputPortCreate failed with code " << ::as_string((int)result);
                
                throw ::exception(::error_failed);
                
@@ -243,7 +243,7 @@ namespace music
                
                string str;
                
-               WARNING("MIDIPortConnectSource failed with code " << ::as_string((int)result));
+               warning() << "MIDIPortConnectSource failed with code " << ::as_string((int)result);
                
                throw ::exception(::error_failed);
                
@@ -266,7 +266,7 @@ namespace music
               
                string str;
               
-               WARNING("MIDIPortDisconnectSource failed with code "<< ::as_string((int)result));
+               warning() << "MIDIPortDisconnectSource failed with code "<< ::as_string((int)result);
               
                throw ::exception(::error_failed);
               
@@ -287,7 +287,7 @@ namespace music
               
                string str;
               
-               WARNING("MIDIPortDispose (for MIDI Input) failed with code " << ::as_string((int)result));
+               warning() << "MIDIPortDispose (for MIDI Input) failed with code " << ::as_string((int)result);
               
                throw ::exception(::error_failed);
               
@@ -350,11 +350,11 @@ namespace music
             
             Byte message[3];
             
-            message[0] = (byte) (::music::midi::control_change) | channel;
+            message[0] = (::u8) (::music::midi::control_change) | channel;
             
-            message[1] = (byte) (0x7f & controller);
+            message[1] = (::u8) (0x7f & controller);
             
-            message[2] = (byte) (0x7f & value);
+            message[2] = (::u8) (0x7f & value);
             
             add_short_message(message, 3);
             
@@ -366,9 +366,9 @@ namespace music
             
             Byte message[2];
             
-            message[0] = (byte) (::music::midi::program_change) | channel;
+            message[0] = (::u8) (::music::midi::program_change) | channel;
             
-            message[1] = (byte) (0x7f & instrument);
+            message[1] = (::u8) (0x7f & instrument);
             
             add_short_message(message, 2);
             
@@ -386,7 +386,7 @@ namespace music
             
             Byte message[3];
             
-            message[0] = (byte) (::music::midi::pitch_bend) | channel;
+            message[0] = (::u8) (::music::midi::pitch_bend) | channel;
             
             message[1] = c1;
             
@@ -518,9 +518,9 @@ namespace music
                
                const MIDIPacket & packet = pktlist->packet[i];
             
-               byte b =packet.data[0];
-               byte b1 =packet.data[1];
-               byte b2 =packet.data[2];
+               ::u8 b =packet.data[0];
+               ::u8 b1 =packet.data[1];
+               ::u8 b2 =packet.data[2];
                
                on_os_message(b, b1, b2);
                

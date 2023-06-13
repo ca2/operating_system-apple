@@ -134,7 +134,7 @@ namespace draw2d_quartz2d
          
          int cyMin = minimum(m_size.cy(), size.cy());
          
-         copy_colorref(pcolorref, cxMin, cyMin, iScan, m_pcolorrefRaw, m_iScan);
+         copy_image32(pcolorref, cxMin, cyMin, iScan, m_pcolorrefRaw, m_iScan);
          
       }
       

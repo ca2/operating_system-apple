@@ -150,7 +150,7 @@ namespace coreimage_imaging
 
             int iScan = 0;
 
-            ::acme::malloc < color32_t * > pdata((color32_t *) cg_image_get_image_data(w, h, iScan, pimage));
+            ::acme::malloc < image32_t * > pdata((image32_t *) cg_image_get_image_data(w, h, iScan, pimage));
             // Check for valid `frameImage` before parsing its properties as frames can be corrupted (and `frameImage` even `nil` when `frameImageRef` was valid).
 
             auto p = __new(image_frame);
@@ -162,7 +162,7 @@ namespace coreimage_imaging
             //if(p->m_pimage->create({ w, h }))
             //{
 
-               ::vertical_swap_copy_colorref(p->m_pimage->colorref(), w, h, p->m_pimage->scan_size(), pdata, iScan);
+               ::vertical_swap_copy_image32(p->m_pimage->image32(), w, h, p->m_pimage->scan_size(), pdata, iScan);
 
                p->m_edisposal = ::draw2d::e_disposal_none;
 
@@ -174,7 +174,7 @@ namespace coreimage_imaging
 
                p->m_rectangle.bottom = h;
 
-               p->m_colorTransparent = 0;
+               p->m_colorTransparent = ::color::transparent;
 
                p->m_bTransparent = false;
 

@@ -92,7 +92,7 @@ namespace music
 
                CFRelease(name);
 
-               WARNING("Source:" << ::as_string(iEndpoint) << " - '" << ::string(szBuffer) << "'");
+               warning() << "Source:" << ::as_string(iEndpoint) << " - '" << ::string(szBuffer) << "'";
 
                Endpoint source;
 
@@ -116,7 +116,7 @@ namespace music
             
             ItemCount iEndpointCount = MIDIGetNumberOfDestinations();
             
-            INFORMATION(iEndpointCount << " MIDI destinations");
+            information() << iEndpointCount << " MIDI destinations";
             
             for (int iEndpoint =0; iEndpoint < (int) iEndpointCount; iEndpoint++)
             {
@@ -131,7 +131,7 @@ namespace music
                
                CFRelease(name);
                
-               WARNING("Destination:" << ::as_string(iEndpoint) << " - '" << ::string(szBuffer) << "'");
+               warning() << "Destination:" << ::as_string(iEndpoint) << " - '" << ::string(szBuffer) << "'";
                
                Endpoint destination;
                

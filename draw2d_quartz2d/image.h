@@ -55,7 +55,7 @@ namespace draw2d_quartz2d
 
       void set_mapped() override;
 
-      void blend(const ::point_i32 & pointDst, ::image * pimplSrc, const ::point_i32 & pointSrc, const ::size_i32 & size, byte bA) override;
+      void blend(const ::point_i32 & pointDst, ::image * pimplSrc, const ::point_i32 & pointSrc, const ::size_i32 & size, ::u8 bA) override;
 
 
    };

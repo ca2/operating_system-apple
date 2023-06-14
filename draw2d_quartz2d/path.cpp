@@ -2,6 +2,8 @@
 #include "path.h"
 #include "graphics.h"
 #include "acme/primitive/collection/_generic_array.h"
+#include "acme/primitive/geometry2d/arc.h"
+#include "acme/primitive/geometry2d/line.h"
 //void copy(::draw2d::graphics * pgraphics, const ::lines & lines)
 //{
 //

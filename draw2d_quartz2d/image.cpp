@@ -95,15 +95,15 @@ namespace draw2d_quartz2d
 
       }
       
-      //m_pcolorrefRaw = nullptr;
+      //m_pimage32Raw = nullptr;
       
       //m_iScan = 0;
       
-      color32_t * pcolorref = nullptr;
+      image32_t * pimage32 = nullptr;
       
       i32 iScan = iGoodStride;
 
-      pbitmap->create_bitmap(nullptr, size, (void **) &pcolorref, &iScan);
+      pbitmap->create_bitmap(nullptr, size, (void **) &pimage32, &iScan);
       
       if(pbitmap->get_os_data() == nullptr)
       {
@@ -134,7 +134,7 @@ namespace draw2d_quartz2d
          
          int cyMin = minimum(m_size.cy(), size.cy());
          
-         copy_image32(pcolorref, cxMin, cyMin, iScan, m_pcolorrefRaw, m_iScan);
+         copy_image32(pimage32, cxMin, cyMin, iScan, m_pimage32Raw, m_iScan);
          
       }
       
@@ -146,7 +146,7 @@ namespace draw2d_quartz2d
       
       m_bMapped = false;
       
-      init(size, pcolorref, iScan);
+      init(size, pimage32, iScan);
 
       m_pgraphics->m_pimage = this;
       
@@ -236,7 +236,7 @@ namespace draw2d_quartz2d
      
       auto pimage1 = m_pcontext->m_pauracontext->create_image({cx,  cy});
       
-      pimage1->set_rgb(255, 255, 255);
+      pimage1->clear(::color::white);
       
       {
       
@@ -254,7 +254,7 @@ namespace draw2d_quartz2d
 
       // Black blend image
       auto pimage2 = m_pcontext->m_pauracontext->create_image({cx,  cy});
-      pimage2->fill(0, 0, 0, 0);
+      pimage2->clear(::color::transparent);
 
   
       {
@@ -462,15 +462,15 @@ namespace draw2d_quartz2d
 
 #ifdef __APPLE__
       
-      byte * pdst = &((byte *)pimplDst->colorref())[scanDst * (pimplDst->height() - pointDst.y() - yEnd) + pointDst.x() * sizeof(color32_t)];
+      byte * pdst = &((byte *)pimplDst->colorref())[scanDst * (pimplDst->height() - pointDst.y() - yEnd) + pointDst.x() * sizeof(image32_t)];
 
-      byte * psrc = &((byte *)pimplSrc->colorref())[scanSrc * (pimplSrc->height() - pointSrc.y() - yEnd) + pointSrc.x() * sizeof(color32_t)];
+      byte * psrc = &((byte *)pimplSrc->colorref())[scanSrc * (pimplSrc->height() - pointSrc.y() - yEnd) + pointSrc.x() * sizeof(image32_t)];
 
 #else
 
-      byte * pdst = &((byte *)imageDst.m_pcolorref)[scanDst * pointDst.y + pointDst.x * sizeof(color32_t)];
+      byte * pdst = &((byte *)imageDst.m_pimage32)[scanDst * pointDst.y + pointDst.x * sizeof(image32_t)];
 
-      byte * psrc = &((byte *)imageSrc.m_pcolorref)[scanSrc *  pointSrc.y + pointSrc.x * sizeof(color32_t)];
+      byte * psrc = &((byte *)imageSrc.m_pimage32)[scanSrc *  pointSrc.y + pointSrc.x * sizeof(image32_t)];
 
 #endif
 
@@ -512,7 +512,7 @@ namespace draw2d_quartz2d
                   else if(alpha == 0)
                   {
 
-                     *((color32_t *)pdst2) = 0;
+                     *((image32_t *)pdst2) = 0;
 
                   }
                   else

@@ -33,7 +33,7 @@ namespace multimedia
       void in::init_task()
       {
 
-         TRACE("in::init_instance %X\n", get_itask());
+         information("in::init_instance %X\n", get_itask());
          //SetMainWnd(nullptr);
          //ASSERT(GetMainWnd() == nullptr);
          ::parallelization::set_priority(::e_priority_highest);
@@ -204,7 +204,7 @@ namespace multimedia
 //
 //            if(::success != (mmr =  waveInPrepareHeader(m_Queue, create_new_WAVEHDR(in_get_buffer(), i), sizeof(WAVEHDR))))
 //            {
-//               TRACE("ERROR OPENING Preparing INPUT DEVICE buffer");
+//               information("ERROR OPENING Preparing INPUT DEVICE buffer");
 //               return mmr;
 //            }
 //
@@ -258,7 +258,7 @@ namespace multimedia
 
                      if(::success != (mmr = waveInUnprepareHeader(m_Queue, wave_hdr(i), sizeof(WAVEHDR))))
                      {
-                        TRACE("ERROR OPENING Unpreparing INPUT DEVICE buffer");
+                        information("ERROR OPENING Unpreparing INPUT DEVICE buffer");
                         //return mmr;
                      }
 
@@ -305,7 +305,7 @@ namespace multimedia
          if(::failed(m_estatusWave))
          {
 
-            TRACE("ERROR starting INPUT DEVICE ");
+            information("ERROR starting INPUT DEVICE ");
 
             throw ::exception(m_estatusWave);
 
@@ -338,12 +338,12 @@ namespace multimedia
          {
             if(0 != (status = AudioQueueStop(m_Queue, 1)))
             {
-               TRACE("in::in_stop : ERROR OPENING stopping INPUT DEVICE ");
+               information("in::in_stop : ERROR OPENING stopping INPUT DEVICE ");
             }
          }
          catch(...)
          {
-            TRACE("in::in_stop : Exception OPENING stopping INPUT DEVICE ");
+            information("in::in_stop : Exception OPENING stopping INPUT DEVICE ");
          }
          m_einstate = ::wave::e_in_state_stopped;
 

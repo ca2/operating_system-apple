@@ -71,7 +71,7 @@ namespace music
             if (sequence::e_state_pre_rolled != get_state())
             {
 
-               TRACE( "seqStart(): State is wrong! [%u]", get_state());
+               information( "seqStart(): State is wrong! [%u]", get_state());
 
                return error_unsupported_function;
 
@@ -429,7 +429,7 @@ namespace music
             //        seq_stop_timer(m_pseq);
             //      if(::success != m_estatusLastError)
             //    {
-            //     TRACE( "sequence::Stop() -> midiOutStop() returned %lu in seqStop()!\n", (u32)m_estatusLastError);
+            //     information( "sequence::Stop() -> midiOutStop() returned %lu in seqStop()!\n", (u32)m_estatusLastError);
             //   m_flags.erase(e_flag_waiting);
             // return error_not_ready;
             //}
@@ -481,7 +481,7 @@ namespace music
                   sequence::e_state_stopping != get_state())
             {
 
-               TRACE( "seqTime(): State wrong! [is %u]", get_state());
+               information( "seqTime(): State wrong! [is %u]", get_state());
 
                return error_unsupported_function;
 
@@ -526,7 +526,7 @@ namespace music
                   e_state_stopping != get_state())
             {
 
-               TRACE( "seqTime(): State wrong! [is %u]", get_state());
+               information( "seqTime(): State wrong! [is %u]", get_state());
 
                return error_unsupported_function;
 
@@ -922,7 +922,7 @@ namespace music
 
             //         if(0 == m_uBuffersInMMSYSTEM)
             {
-               TRACE( "seqBufferDone: normal sequencer shutdown.");
+               information( "seqBufferDone: normal sequencer shutdown.");
 
                /* Totally done! Free device and notify.
                 */
@@ -931,7 +931,7 @@ namespace music
                   /*if((estatus = m_buffera.midiOutUnprepareHeader((HMIDIOUT) m_hstream))
                    != ::success)
                    {
-                   TRACE( "midiOutUnprepareHeader failed in seqBufferDone! (%lu)", (u32)estatus);
+                   information( "midiOutUnprepareHeader failed in seqBufferDone! (%lu)", (u32)estatus);
                   //              }*/
                   //           seq_free_context(m_pseq);
                   //         m_pseq = nullptr;

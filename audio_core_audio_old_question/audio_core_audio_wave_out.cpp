@@ -117,7 +117,7 @@ namespace multimedia
 
           if(::success != (mmr =  waveOutPrepareHeader(m_Queue, create_new_WAVEHDR(out_get_buffer(), i), sizeof(WAVEHDR))))
           {
-          TRACE("ERROR OPENING Preparing INPUT DEVICE buffer");
+          information("ERROR OPENING Preparing INPUT DEVICE buffer");
           return mmr;
           }
 
@@ -288,7 +288,7 @@ Opened:
 
           if(0 != (status = AudioQueueAllocateBuffer (m_Queue, out_get_buffer_size(), &buf))
           {
-          TRACE("ERROR OPENING Preparing INPUT DEVICE buffer");
+          information("ERROR OPENING Preparing INPUT DEVICE buffer");
           return error_failed;
           }
 
@@ -404,7 +404,7 @@ Opened:
 
           if(::success != (mmr =  waveOutPrepareHeader(m_Queue, create_new_WAVEHDR(out_get_buffer(), i), sizeof(WAVEHDR))))
           {
-          TRACE("ERROR OPENING Preparing INPUT DEVICE buffer");
+          information("ERROR OPENING Preparing INPUT DEVICE buffer");
           return mmr;
           }
 
@@ -449,7 +449,7 @@ Opened:
 
           if(::success != (mmr = waveOutUnprepareHeader(m_Queue, wave_hdr(i), sizeof(WAVEHDR))))
           {
-          TRACE("ERROR OPENING Unpreparing INPUT DEVICE buffer =%d", mmr);
+          information("ERROR OPENING Unpreparing INPUT DEVICE buffer =%d", mmr);
           }
 
           delete wave_hdr(i);
@@ -503,7 +503,7 @@ Opened:
 
          if(out_get_state() != e_state_playing)
          {
-            TRACE("ERROR out::BufferReady while out_get_state() != e_state_playing");
+            information("ERROR out::BufferReady while out_get_state() != e_state_playing");
             return;
          }
 

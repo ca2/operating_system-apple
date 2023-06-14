@@ -30,7 +30,7 @@ namespace multimedia
 
       bool in::initialize_thread()
       {
-         TRACE("in::init_instance %X\n", get_os_int());
+         information("in::init_instance %X\n", get_os_int());
          //SetMainWnd(nullptr);
          //ASSERT(GetMainWnd() == nullptr);
          ::parallelization::set_priority(::priority_highest);
@@ -192,7 +192,7 @@ namespace multimedia
 //
 //            if(::success != (mmr =  waveInPrepareHeader(m_Queue, create_new_WAVEHDR(in_get_buffer(), i), sizeof(WAVEHDR))))
 //            {
-//               TRACE("ERROR OPENING Preparing INPUT DEVICE buffer");
+//               information("ERROR OPENING Preparing INPUT DEVICE buffer");
 //               return mmr;
 //            }
 //
@@ -242,7 +242,7 @@ namespace multimedia
 
                      if(::success != (mmr = waveInUnprepareHeader(m_Queue, wave_hdr(i), sizeof(WAVEHDR))))
                      {
-                        TRACE("ERROR OPENING Unpreparing INPUT DEVICE buffer");
+                        information("ERROR OPENING Unpreparing INPUT DEVICE buffer");
                         //return mmr;
                      }
 
@@ -275,7 +275,7 @@ namespace multimedia
          if(::success != (m_estatusWave = translate(AudioQueueStart(m_Queue, nullptr))))
          {
 
-            TRACE("ERROR starting INPUT DEVICE ");
+            information("ERROR starting INPUT DEVICE ");
 
             return m_estatusWave;
 
@@ -304,12 +304,12 @@ namespace multimedia
          {
             if(0 != (status = AudioQueueStop(m_Queue, 1)))
             {
-               TRACE("in::in_stop : ERROR OPENING stopping INPUT DEVICE ");
+               information("in::in_stop : ERROR OPENING stopping INPUT DEVICE ");
             }
          }
          catch(...)
          {
-            TRACE("in::in_stop : Exception OPENING stopping INPUT DEVICE ");
+            information("in::in_stop : Exception OPENING stopping INPUT DEVICE ");
          }
          m_estate = state_stopped;
 
@@ -364,7 +364,7 @@ namespace multimedia
          {
             if(::success != (mmr = in_stop()))
             {
-               TRACE("in::Reset error stopping input device");
+               information("in::Reset error stopping input device");
                return mmr;
             }
          }
@@ -373,7 +373,7 @@ namespace multimedia
 //            if(0 != (status = AudioQueueReset(m_Queue)))
             if(0 != (AudioQueueReset(m_Queue)))
             {
-               TRACE("in::Reset error resetting input device");
+               information("in::Reset error resetting input device");
                return error_failed;
             }
          }

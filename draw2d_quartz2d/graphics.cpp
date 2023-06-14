@@ -686,7 +686,7 @@ namespace draw2d_quartz2d
          else
          {
 
-            TRACE("imageSrc nullptr");
+            information("imageSrc nullptr");
 
          }
 

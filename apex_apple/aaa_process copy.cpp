@@ -479,7 +479,7 @@ namespace apple
       if (status != errAuthorizationSuccess)
       {
 
-         TRACE("Error Creating Initial Authorization: %d", status);
+         information("Error Creating Initial Authorization: %d", status);
 
          return false;
 
@@ -499,13 +499,13 @@ namespace apple
       if (status != errAuthorizationSuccess)
       {
 
-         TRACE("Copy Rights Unsuccessful: %d", status);
+         information("Copy Rights Unsuccessful: %d", status);
 
          return false;
 
       }
 
-      TRACE("\n\n** %s **\n\n", "This command should work.");
+      information("\n\n** %s **\n\n", "This command should work.");
 
 //      string_array straParam;
 //
@@ -577,7 +577,7 @@ namespace apple
 
       //    if(i != 0)
       //  {
-      //   TRACE("Failed to setuid: %d", i);
+      //   information("Failed to setuid: %d", i);
       // return -1;
       //}
 
@@ -627,7 +627,7 @@ auto tickStart = ::millis::now();
       if (status != errAuthorizationSuccess)
       {
 
-         TRACE("AuthorizationExecuteWithPrivileges Error: %d", status);
+         information("AuthorizationExecuteWithPrivileges Error: %d", status);
 
          return false;
 
@@ -647,7 +647,7 @@ auto tickStart = ::millis::now();
       status = AuthorizationExecuteWithPrivileges(authorizationRef, tool, kAuthorizationFlagDefaults, args, &pipe);
       if (status != errAuthorizationSuccess)
       {
-         TRACE("AuthorizationExecuteWithPrivileges Error: %d", status);
+         information("AuthorizationExecuteWithPrivileges Error: %d", status);
          return -1;
       }
 
@@ -718,7 +718,7 @@ auto tickStart = ::millis::now();
          }
          else if(ferror(pipe))
          {
-            TRACE("Error reading from file");
+            information("Error reading from file");
             break;
          }
          else
@@ -750,7 +750,7 @@ auto tickStart = ::millis::now();
                   }
                   else if(ferror(pipe))
                   {
-                     TRACE("Error reading from file");
+                     information("Error reading from file");
                      break;
                   }
                   else
@@ -774,7 +774,7 @@ auto tickStart = ::millis::now();
 
       if (status != errAuthorizationSuccess)
       {
-         TRACE("AuthorizationFree Error: %d", status);
+         information("AuthorizationFree Error: %d", status);
       }
 
       //return dwExitCode;

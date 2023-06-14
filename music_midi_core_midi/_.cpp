@@ -13,14 +13,14 @@ namespace music
 
       const uint32_t grbChanMsgLen[] =
       {
-         0,                      /* 0x   not a status byte   */
-         0,                      /* 1x   not a status byte   */
-         0,                      /* 2x   not a status byte   */
-         0,                      /* 3x   not a status byte   */
-         0,                      /* 4x   not a status byte   */
-         0,                      /* 5x   not a status byte   */
-         0,                      /* 6x   not a status byte   */
-         0,                      /* 7x   not a status byte   */
+         0,                      /* 0x   not a status ::u8   */
+         0,                      /* 1x   not a status ::u8   */
+         0,                      /* 2x   not a status ::u8   */
+         0,                      /* 3x   not a status ::u8   */
+         0,                      /* 4x   not a status ::u8   */
+         0,                      /* 5x   not a status ::u8   */
+         0,                      /* 6x   not a status ::u8   */
+         0,                      /* 7x   not a status ::u8   */
          3,                      /* 8x   Note off            */
          3,                      /* 9x   Note on             */
          3,                      /* Ax   Poly pressure       */

@@ -291,14 +291,14 @@ namespace draw2d_quartz2d
       //rectangle_i32_dimension(0, 0, cx, cy),
       //picon);
 
-      byte * r1=(byte*)pimage1->colorref();
-      byte * r2=(byte*)pimage2->colorref();
-      byte * srcM=(byte*)pimageM->colorref();
-      byte * dest=(byte*)colorref();
+      ::u8 * r1=(::u8*)pimage1->colorref();
+      ::u8 * r2=(::u8*)pimage2->colorref();
+      ::u8 * srcM=(::u8*)pimageM->colorref();
+      ::u8 * dest=(::u8*)colorref();
       i32 iSize = cx*cy;
 
-      byte b;
-      byte bMax;
+      ::u8 b;
+      ::u8 bMax;
       while ( iSize-- > 0)
       {
          if(srcM[0] == 255)
@@ -308,11 +308,11 @@ namespace draw2d_quartz2d
          else
          {
             bMax = 0;
-            b =(byte)(r1[0]  - r2[0]);
+            b =(::u8)(r1[0]  - r2[0]);
             bMax = maximum(b, bMax);
-            b =(byte)(r1[1]  - r2[1]);
+            b =(::u8)(r1[1]  - r2[1]);
             bMax = maximum(b, bMax);
-            b =(byte)(r1[2]  - r2[2]);
+            b =(::u8)(r1[2]  - r2[2]);
             bMax = maximum(b, bMax);
             bMax = 255 - bMax;
          }
@@ -371,7 +371,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void image::blend(const ::point_i32 & pointDstParam, ::image * pimplSrc, const ::point_i32 & pointSrcParam, const ::size_i32 & sizeParam, byte bA)
+   void image::blend(const ::point_i32 & pointDstParam, ::image * pimplSrc, const ::point_i32 & pointSrcParam, const ::size_i32 & sizeParam, ::u8 bA)
    {
       
       ::point_i32 pointDst(pointDstParam);
@@ -456,21 +456,21 @@ namespace draw2d_quartz2d
 
       i32 scanSrc = pimplSrc->scan_size();
 
-      byte * pdst2;
+      ::u8 * pdst2;
 
-      byte * psrc2;
+      ::u8 * psrc2;
 
 #ifdef __APPLE__
       
-      byte * pdst = &((byte *)pimplDst->colorref())[scanDst * (pimplDst->height() - pointDst.y() - yEnd) + pointDst.x() * sizeof(image32_t)];
+      ::u8 * pdst = &((::u8 *)pimplDst->colorref())[scanDst * (pimplDst->height() - pointDst.y() - yEnd) + pointDst.x() * sizeof(image32_t)];
 
-      byte * psrc = &((byte *)pimplSrc->colorref())[scanSrc * (pimplSrc->height() - pointSrc.y() - yEnd) + pointSrc.x() * sizeof(image32_t)];
+      ::u8 * psrc = &((::u8 *)pimplSrc->colorref())[scanSrc * (pimplSrc->height() - pointSrc.y() - yEnd) + pointSrc.x() * sizeof(image32_t)];
 
 #else
 
-      byte * pdst = &((byte *)imageDst.m_pimage32)[scanDst * pointDst.y + pointDst.x * sizeof(image32_t)];
+      ::u8 * pdst = &((::u8 *)imageDst.m_pimage32)[scanDst * pointDst.y + pointDst.x * sizeof(image32_t)];
 
-      byte * psrc = &((byte *)imageSrc.m_pimage32)[scanSrc *  pointSrc.y + pointSrc.x * sizeof(image32_t)];
+      ::u8 * psrc = &((::u8 *)imageSrc.m_pimage32)[scanSrc *  pointSrc.y + pointSrc.x * sizeof(image32_t)];
 
 #endif
 
@@ -503,8 +503,8 @@ namespace draw2d_quartz2d
                   //pdst2[1] = (psrc2[1] + (pdst2[1] * (255 - psrc2[3])) / 255);
                   //pdst2[2] = (psrc2[2] + (pdst2[2] * (255 - psrc2[3])) / 255);
                   //pdst2[3] = (psrc2[3] + (pdst2[3] * (255 - psrc2[3])) / 255);
-                  byte a = pdst2[3];
-                  byte alpha = psrc2[3];
+                  ::u8 a = pdst2[3];
+                  ::u8 alpha = psrc2[3];
                   if (a == 0)
                   {
 
@@ -577,12 +577,12 @@ namespace draw2d_quartz2d
                   //pdst2[1] = (psrc2[1] + (pdst2[1] * (255 - psrc2[3])) / 255);
                   //pdst2[2] = (psrc2[2] + (pdst2[2] * (255 - psrc2[3])) / 255);
                   //pdst2[3] = (psrc2[3] + (pdst2[3] * (255 - psrc2[3])) / 255);
-                  //byte acomplement = (~psrc2[3] * bA) >> 8;
+                  //::u8 acomplement = (~psrc2[3] * bA) >> 8;
                   //pdst2[0] = psrc2[0] + ((pdst2[0] * (acomplement)) >> 8);
                   //pdst2[1] = psrc2[1] + ((pdst2[1] * (acomplement)) >> 8);
                   //pdst2[2] = psrc2[2] + ((pdst2[2] * (acomplement)) >> 8);
                   //pdst2[3] = psrc2[3] + ((pdst2[3] * (acomplement)) >> 8);
-                  byte acomplement = (~psrc2[3] * bA) >> 8;
+                  ::u8 acomplement = (~psrc2[3] * bA) >> 8;
                   pdst2[0] = byte_clip(((psrc2[0] * bA) + (pdst2[0] * acomplement)) >> 8);
                   pdst2[1] = byte_clip(((psrc2[1] * bA) + (pdst2[1] * acomplement)) >> 8);
                   pdst2[2] = byte_clip(((psrc2[2] * bA) + (pdst2[2] * acomplement)) >> 8);

@@ -79,7 +79,7 @@ namespace music
 //            goto smf_Open_File_Cleanup;
 //         }
 //
-//         byte * lpbImage;
+//         ::u8 * lpbImage;
 //
 //         lpbImage = GetImage();
 //
@@ -388,7 +388,7 @@ namespace music
 //               uSMPTE = 30;
 //
 //            dwTicksPerSec = (u32)uSMPTE *
-//               (u32)(byte)(m_MusicTempoTimeDivision & 0xFF);
+//               (u32)(::u8)(m_MusicTempoTimeDivision & 0xFF);
 //
 //            return (u32)muldiv32((i32) tkOffset, 1000L, dwTicksPerSec);
 //         }
@@ -475,7 +475,7 @@ namespace music
 //            if (29 == uSMPTE)
 //               uSMPTE = 30;
 //
-//            dwTicksPerSec = (u32)uSMPTE * (u32)(byte)(m_MusicTempoTimeDivision & 0xFF);
+//            dwTicksPerSec = (u32)uSMPTE * (u32)(::u8)(m_MusicTempoTimeDivision & 0xFF);
 //
 //            return (i64) muldiv32((i32) msOffset, dwTicksPerSec, 1000L);
 //         }
@@ -716,7 +716,7 @@ namespace music
 //         }
 //
 //         m_memstorageF1.set_size(iSize);
-//         byte * lpbParam;
+//         ::u8 * lpbParam;
 //         LPDWORD lpdwType;
 //         midi_stream_event_header * pheader;
 //         pheader = (midi_stream_event_header *) &m_memstorageF1.get_data()[0];
@@ -779,7 +779,7 @@ namespace music
 //            {
 //               i32 iTrack = pEvent->GetTrack();
 //               i32 iProgramChange = pEvent->GetChB1();
-//               m_keyframe.rbProgram[iTrack] = (byte) iProgramChange;
+//               m_keyframe.rbProgram[iTrack] = (::u8) iProgramChange;
 //               //if(iProgramChange == 54)
 //               //{
 //               // pEvent->SetChB1(62);
@@ -807,7 +807,7 @@ namespace music
 //               {
 //                  iNotePitch += 12;
 //               }
-//               pEvent->SetNotePitch((byte) iNotePitch);
+//               pEvent->SetNotePitch((::u8) iNotePitch);
 //            }
 //
 //            *lpdw++ = (u32)tkDelta;
@@ -1534,7 +1534,7 @@ namespace music
 //
 //         if (GetFlags().has(::music::midi::InsertSysEx))
 //         {
-//            byte * lpb = (byte *) lpdw;
+//            ::u8 * lpb = (::u8 *) lpdw;
 //            *lpb++ = sys_ex;
 //            GetFlags().erase(::music::midi::InsertSysEx);
 //            --dwLength;
@@ -1614,7 +1614,7 @@ namespace music
 //         ::e_status         smfrc;
 //         ::music::midi::event_v1 *        pevent;
 //         LPDWORD                 lpdw;
-//         byte                    bEvent;
+//         ::u8                    bEvent;
 //         u32                    idx;
 //         u32                    idxChannel;
 //         u32                    idxController;
@@ -1645,7 +1645,7 @@ namespace music
 //                  if (pevent->GetParamSize() != sizeof(m_keyframe.rbTempo))
 //                     return error_invalid_file;
 //
-//                  ::memcpy_dup((byte *)m_keyframe.rbTempo, pevent->GetParam(), pevent->GetParamSize());
+//                  ::memcpy_dup((::u8 *)m_keyframe.rbTempo, pevent->GetParam(), pevent->GetParamSize());
 //               }
 //            }
 //            if((bEvent & 0xF0) == program_change)
@@ -1834,8 +1834,8 @@ namespace music
 //         UNALIGNED CHUNKHDR *       pCh;
 //         i32                        iLeft;
 //         i32                        iLeftInitial;
-//         byte *                     hpbImage;
-//         byte *                     hpbImageInitial;
+//         ::u8 *                     hpbImage;
+//         ::u8 *                     hpbImageInitial;
 //         u32                      dwLength;
 //         //   track_base *            pTrk = nullptr;
 //        ::music::midi::track *                pTrkMidi;
@@ -2111,10 +2111,10 @@ namespace music
 //      u32 mysmfGetTrackEventData(
 //         ::pointer < ::music::midi::file::buffer > pSmf,
 //         ::music::midi::event_v1 *      pEvent,
-//         byte *            pData[])
+//         ::u8 *            pData[])
 //      {
 //         u32               len;
-//         byte *                  hpbImage;
+//         ::u8 *                  hpbImage;
 //         u32 index;
 //
 //         ASSERT(pSmf != nullptr);
@@ -2161,7 +2161,7 @@ namespace music
 //            return ::music::midi::file::error_no_memory;
 //         }
 //
-//         byte * hpbDest, * hpbSrc;
+//         ::u8 * hpbDest, * hpbSrc;
 //
 //         hpbDest = GetImage();
 //
@@ -2379,8 +2379,8 @@ namespace music
 //      track * pTrack = m_ptracks->GetEventTrack(pEventOld);
 //      if(pTrack == nullptr)
 //      return TrackNotFound;
-//      byte * hpbImage = pEventOld->GetImage();
-//      byte * hpbFileImage = m_hpbImage;
+//      ::u8 * hpbImage = pEventOld->GetImage();
+//      ::u8 * hpbFileImage = m_hpbImage;
 //      if(pEventOld->GetImageSize() != pEventNew->m_cbImage)
 //      {
 //      i32 iAddUp = pEventNew->m_cbImage - pEventOld->GetImageSize();
@@ -2406,8 +2406,8 @@ namespace music
 //      track * pTrack = m_ptracks->GetEventTrack(pEventOld);
 //      if(pTrack == nullptr)
 //      return TrackNotFound;
-//      byte * hpbImage = pEventOld->GetImage();
-//      byte * hpbFileImage = m_hpbImage;
+//      ::u8 * hpbImage = pEventOld->GetImage();
+//      ::u8 * hpbFileImage = m_hpbImage;
 //      if(pEventOld->GetImageSize() != pEventNew->m_cbImage)
 //      {
 //      i32 iAddUp = pEventNew->m_cbImage - pEventOld->GetImageSize();
@@ -2438,12 +2438,12 @@ namespace music
 //      track * pTrack = m_ptracks->GetEventTrack(pEvent);
 //      if(pTrack == nullptr)
 //      return TrackNotFound;
-//      byte buffer[256];
+//      ::u8 buffer[256];
 //      u32 dwSetUsed = ::music::midi::event_base::SetVDWord(buffer, 256, tkNewDelta);
 //      imedia_time tkOldDelta;
 //      u32 dwGetUsed = ::music::midi::event_base::GetVDWord(pEvent->GetImage(), 256, &tkOldDelta);
 //      ASSERT(tkOldDelta == pEvent->_GetDelta());
-//      byte * hpbImage = pEvent->GetImage();
+//      ::u8 * hpbImage = pEvent->GetImage();
 //      if(dwSetUsed != dwGetUsed)
 //      {
 //      i32 iAddUp = dwSetUsed - dwGetUsed;
@@ -2561,7 +2561,7 @@ namespace music
 //            union
 //            {
 //               u32   dw;
-//               byte    ba[4];
+//               ::u8    ba[4];
 //            } uA, uB;
 //            uA.dw = (u32) dTempo;
 //            uB.ba[0] = uA.ba[2];
@@ -2617,7 +2617,7 @@ namespace music
 //         return ::music::midi::Success;
 //      }
 //
-//      byte * file::GetImage()
+//      ::u8 * file::GetImage()
 //      {
 //         return get_data();
 //      }
@@ -2999,7 +2999,7 @@ namespace music
 //         ::e_status            smfrc;
 //         ::music::midi::event_v5 *           pevent;
 //         LPDWORD                    lpdw;
-//         byte                       bEvent;
+//         ::u8                       bEvent;
 //         u32                       idx;
 //         u32                       idxChannel;
 //         u32                       idxController;
@@ -3026,7 +3026,7 @@ namespace music
 //                  if (pevent->GetParamSize() != sizeof(m_keyframe.rbTempo))
 //                     return error_invalid_file;
 //
-//                  ::memcpy_dup((byte *)m_keyframe.rbTempo, pevent->GetParam(), pevent->GetParamSize());
+//                  ::memcpy_dup((::u8 *)m_keyframe.rbTempo, pevent->GetParam(), pevent->GetParamSize());
 //               }
 //            }
 //            if((bEvent & 0xF0) == program_change)
@@ -3379,7 +3379,7 @@ namespace music
 //         ::music::midi::track & track = *(class ::music::midi::track *) tracka.TrackAt(0);
 //         if(!track.IsXFFile())
 //         {
-//            byte XFVERSIONID[] = {
+//            ::u8 XFVERSIONID[] = {
 //               0x43,  // YAMAHA ID
 //               0x7B,  //
 //               0x00,  //

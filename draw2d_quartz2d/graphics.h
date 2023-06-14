@@ -250,7 +250,7 @@ namespace draw2d_quartz2d
 //      virtual i32 GetArcDirection() override;
 //      virtual i32 SetArcDirection(i32 nArcDirection) override;
 
-//      bool PolyDraw(const ::point_f64* lpPoints, const byte* lpTypes, i32 nCount) override;
+//      bool PolyDraw(const ::point_f64* lpPoints, const ::u8* lpTypes, i32 nCount) override;
 //      bool polyline_to(const ::point_f64* lpPoints, i32 nCount);
 //      bool poly_polyline(const ::point_f64* lpPoints,
 //                        const ::u32* lpPolyPoints, i32 nCount);
@@ -481,7 +481,7 @@ namespace draw2d_quartz2d
       // MetaFile Functions
       //xxx      void PlayMetaFile(HMETAFILE hMF);
 //      void PlayMetaFile(HENHMETAFILE hEnhMetaFile, const ::rectangle_f64 & rectBounds);
-//      void AddMetaFileComment(::u32 nDataSize, const byte* pCommentData) override;
+//      void AddMetaFileComment(::u32 nDataSize, const ::u8* pCommentData) override;
       // can be used for enhanced metafiles only
 
       // Path Functions

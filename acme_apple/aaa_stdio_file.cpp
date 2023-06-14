@@ -172,7 +172,7 @@ namespace acme_apple
 
       size_t nRead = 0;
 
-      nRead = fread(lpBuf, sizeof(byte), nCount, m_pStream);
+      nRead = fread(lpBuf, sizeof(::u8), nCount, m_pStream);
       
       if(nRead != nCount)
       {
@@ -210,7 +210,7 @@ namespace acme_apple
       ASSERT(m_pStream != nullptr);
       //   ASSERT(fx_is_valid_address(lpBuf, nCount, false));
 
-      if (fwrite(lpBuf, sizeof(byte), nCount, m_pStream) != nCount)
+      if (fwrite(lpBuf, sizeof(::u8), nCount, m_pStream) != nCount)
       {
          
          i32 iErrNo = errno;

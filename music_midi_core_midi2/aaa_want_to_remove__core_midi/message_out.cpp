@@ -388,11 +388,11 @@ namespace music
             
             Byte message[3];
             
-            message[0] = (byte) (::music::midi::note_off) | channel;
+            message[0] = (::u8) (::music::midi::note_off) | channel;
             
-            message[1] = (byte) (0x7f & note);
+            message[1] = (::u8) (0x7f & note);
             
-            message[2] = (byte) (0x7f & velocity);
+            message[2] = (::u8) (0x7f & velocity);
             
             add_short_message(message, 3);
             
@@ -406,11 +406,11 @@ namespace music
 
             Byte message[3];
             
-            message[0] = (byte) (::music::midi::note_on) | channel;
+            message[0] = (::u8) (::music::midi::note_on) | channel;
             
-            message[1] = (byte) (0x7f & note);
+            message[1] = (::u8) (0x7f & note);
             
-            message[2] = (byte) (0x7f & volume);
+            message[2] = (::u8) (0x7f & volume);
             
             add_short_message(message, 3);
             
@@ -424,11 +424,11 @@ namespace music
             
             Byte message[3];
             
-            message[0] = (byte) (::music::midi::control_change) | channel;
+            message[0] = (::u8) (::music::midi::control_change) | channel;
             
-            message[1] = (byte) (0x7f & controller);
+            message[1] = (::u8) (0x7f & controller);
             
-            message[2] = (byte) (0x7f & value);
+            message[2] = (::u8) (0x7f & value);
             
             add_short_message(message, 3);
             
@@ -440,9 +440,9 @@ namespace music
             
             Byte message[2];
             
-            message[0] = (byte) (::music::midi::program_change) | channel;
+            message[0] = (::u8) (::music::midi::program_change) | channel;
             
-            message[1] = (byte) (0x7f & instrument);
+            message[1] = (::u8) (0x7f & instrument);
             
             add_short_message(message, 2);
             
@@ -460,7 +460,7 @@ namespace music
             
             Byte message[3];
             
-            message[0] = (byte) (::music::midi::pitch_bend) | channel;
+            message[0] = (::u8) (::music::midi::pitch_bend) | channel;
             
             message[1] = c1;
             

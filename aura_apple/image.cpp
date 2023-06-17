@@ -13,7 +13,7 @@
 CGImageRef cgimageref_from_image(const ::image * pimage)
 {
 
-   ::acme::malloc < color32_t * > pdst;
+   ::acme::malloc < image32_t * > pdst;
 
    pdst.alloc(pimage->scan_size() * pimage->height());
 

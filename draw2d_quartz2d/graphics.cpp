@@ -10,6 +10,7 @@
 //#include "acme/primitive/geometry2d/shape_array.h"
 //#include "acme/primitive/geometry2d/shape.h"
 //#include "acme/primitive/geometry2d/item.h"
+#include "acme/primitive/geometry2d/ellipse.h"
 #include "aura/graphics/image/context_image.h"
 #include "aura/graphics/image/drawing.h"
 #include "aura/graphics/write_text/text_out.h"
@@ -740,7 +741,7 @@ namespace draw2d_quartz2d
          if(imagedrawing.is_opacity_filter())
          {
          
-            CGContextSetAlpha(m_cgcontext, (CGFloat) imagedrawing.opacity().get_opacity_rate());
+            CGContextSetAlpha(m_cgcontext, (CGFloat) imagedrawing.opacity().f32_opacity());
             
          }
          
@@ -912,7 +913,7 @@ namespace draw2d_quartz2d
          if(imagedrawing.is_opacity_filter())
          {
          
-            CGContextSetAlpha(m_cgcontext, (CGFloat) imagedrawing.opacity().get_opacity_rate());
+            CGContextSetAlpha(m_cgcontext, (CGFloat) imagedrawing.opacity().f32_opacity());
             
          }
 
@@ -974,7 +975,7 @@ namespace draw2d_quartz2d
 
       throw ::exception(error_not_implemented);
 
-      return false;
+      return ::color::transparent;
 
    }
 
@@ -1022,7 +1023,7 @@ namespace draw2d_quartz2d
 
             auto pimage1 = m_pcontext->m_pauracontext->create_image(rectText.size());
             
-            pimage1->fill(0, 0, 0, 0);
+            pimage1->clear(::color::transparent);
             pimage1->get_graphics()->set(get_current_font());
             pimage1->get_graphics()->set(get_current_brush());
             pimage1->get_graphics()->text_out(0, 0, scopedstr);
@@ -2082,7 +2083,7 @@ namespace draw2d_quartz2d
          
       }
 
-      CGContextSetRGBFillColor(m_cgcontext, pbrush->m_color.dr(), pbrush->m_color.dg(), pbrush->m_color.db(), pbrush->m_color.da());
+      CGContextSetRGBFillColor(m_cgcontext, __expand_f32_rgba(pbrush->m_color));
 
    }
 
@@ -2103,7 +2104,7 @@ namespace draw2d_quartz2d
          if(ppen->m_pbrush->m_ebrush == ::draw2d::e_brush_solid)
          {
 
-            CGContextSetRGBStrokeColor(m_cgcontext, ppen->m_pbrush->m_color.dr(), ppen->m_pbrush->m_color.dg(), ppen->m_pbrush->m_color.db(), ppen->m_pbrush->m_color.da());
+            CGContextSetRGBStrokeColor(m_cgcontext, __expand_f32_rgba(ppen->m_pbrush->m_color));
 
          }
 
@@ -2111,7 +2112,7 @@ namespace draw2d_quartz2d
       else
       {
 
-         CGContextSetRGBStrokeColor(m_cgcontext, ppen->m_color.dr(), ppen->m_color.dg(), ppen->m_color.db(), ppen->m_color.da());
+         CGContextSetRGBStrokeColor(m_cgcontext, __expand_f32_rgba(ppen->m_color));
 
       }
       
@@ -2145,7 +2146,7 @@ namespace draw2d_quartz2d
 
       }
 
-      CGContextSetRGBStrokeColor(m_cgcontext, pbrush->m_color.dr(), pbrush->m_color.dg(), pbrush->m_color.db(), pbrush->m_color.da());
+      CGContextSetRGBStrokeColor(m_cgcontext, __expand_f32_rgba(pbrush->m_color));
 
       CGContextSetLineWidth(m_cgcontext, dWidth);
 
@@ -2282,7 +2283,7 @@ namespace draw2d_quartz2d
          r.size.width = inner.width() + f5 * 2.0f;
          r.size.height = inner.height() + f5 * 2.0f;
 
-         CGContextSetRGBFillColor(m_cgcontext, pbrush->m_color1.dr(), pbrush->m_color1.dg(), pbrush->m_color1.db(), pbrush->m_color1.da());
+         CGContextSetRGBFillColor(m_cgcontext, __expand_f32_rgba(pbrush->m_color1));
          CGContextFillRect(m_cgcontext, r);
          
          float f2 = 0.444f;
@@ -2853,7 +2854,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
    void graphics::internal_set_fill_color(const ::color::color & color)
    {
 
-      CGContextSetRGBFillColor(m_cgcontext, color.dr(), color.dg(), color.db(), color.da());
+      CGContextSetRGBFillColor(m_cgcontext, __expand_f32_rgba(color));
 
    }
 
@@ -3123,9 +3124,9 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       bool bStroke = false;
 
-      color32_t crFill;
+      ::color::color colorFill;
 
-      color32_t crStroke;
+      ::color::color colorStroke;
 
       ::draw2d::brush * pbrushDraw = nullptr;
 
@@ -3153,7 +3154,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
                bFill = true;
 
-               crFill = ::is_null(pbrush) ? argb(255, 0, 0, 0) : pbrush->m_color;
+               colorFill = ::is_null(pbrush) ? argb(255, 0, 0, 0) : pbrush->m_color;
 
             }
 
@@ -3164,7 +3165,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
             bStroke = true;
 
-            crStroke = ::is_null(ppen) ? argb(255, 0, 0, 0) : ppen->m_color;
+            colorStroke = ::is_null(ppen) ? argb(255, 0, 0, 0) : ppen->m_color;
 
          }
 
@@ -3268,10 +3269,10 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          if(bFill)
          {
 
-            components[0] = colorref_get_r_value(crFill) / 255.f;
-            components[1] = colorref_get_g_value(crFill) / 255.f;
-            components[2] = colorref_get_b_value(crFill) / 255.f;
-            components[3] = colorref_get_a_value(crFill) / 255.f;
+            components[0] = colorFill.f32_red();
+            components[1] = colorFill.f32_green();
+            components[2] = colorFill.f32_blue();
+            components[3] = colorFill.f32_opacity();
 
             pkeys.add(kCTForegroundColorAttributeName);
             auto color = CGColorCreate(rgbColorSpace, components);
@@ -3289,10 +3290,10 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
             pvals.add(CFNumberCreate(kCFAllocatorDefault, kCFNumberDoubleType, &dStroke));
             cfrel.add(pvals.last());
 
-            components[0] = colorref_get_r_value(crStroke) / 255.f;
-            components[1] = colorref_get_g_value(crStroke) / 255.f;
-            components[2] = colorref_get_b_value(crStroke) / 255.f;
-            components[3] = colorref_get_a_value(crStroke) / 255.f;
+            components[0] = colorStroke.f32_red();
+            components[1] = colorStroke.f32_green();
+            components[2] = colorStroke.f32_blue();
+            components[3] = colorStroke.f32_opacity();
 
             pkeys.add(kCTStrokeColorAttributeName);
             auto color = CGColorCreate(rgbColorSpace, components);

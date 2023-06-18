@@ -211,22 +211,22 @@ namespace draw2d_quartz2d
       
       void reset_clip() override;
       void _intersect_clip() override;
-      virtual void _intersect_eo_clip();
+      void _eo_clip() override;
       
       
-      void intersect_clip(const ::rectangle_f64 & rectangle) override;
-      void intersect_clip(const ::ellipse_f64 & ellipse) override;
-      void intersect_clip(const ::polygon_f64 & polygon) override;
+//      void intersect_clip(const ::rectangle_f64 & rectangle) override;
+//      void intersect_clip(const ::ellipse_f64 & ellipse) override;
+//      void intersect_clip(const ::polygon_f64 & polygon) override;
       
       
       
       
-      void _add_clipping_shape(const ::rectangle_f64 & rectangle, ::draw2d::region * pregion) override;
-      void _add_shape(const ::rectangle_f64 & rectangle_);
-      void _add_clipping_shape(const ::ellipse_f64 & ellipse, ::draw2d::region * pregion) override;
-      void _add_shape(const ::ellipse_f64 & ellipse);
-      void _add_clipping_shape(const ::polygon_f64 & polygon, ::draw2d::region * pregion) override;
-      void _add_shape(const ::polygon_f64 & polygon);
+//      void _add_clipping_shape(const ::rectangle_f64 & rectangle, ::draw2d::region * pregion) override;
+      void _add_shape(const ::rectangle_f64 & rectangle) override;
+//      void _add_clipping_shape(const ::ellipse_f64 & ellipse, ::draw2d::region * pregion) override;
+      void _add_shape(const ::ellipse_f64 & ellipse) override;
+//      void _add_clipping_shape(const ::polygon_f64 & polygon, ::draw2d::region * pregion) override;
+      void _add_shape(const ::polygon_f64 & polygon) override;
 
       
       //virtual void on_apply_clip_region() override;

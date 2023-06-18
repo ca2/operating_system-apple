@@ -1631,89 +1631,89 @@ namespace draw2d_quartz2d
    }
 
    
-   void graphics::intersect_clip(const ::rectangle_f64 & rectangle)
-   {
-      
-      CGRect r;
-      
-      //auto rectangleOffset = rectangle;
-      
-      //rectangleOffset += m_pointAddShapeTranslate;
-      
-      copy(r, rectangle);
-      
-      CGContextBeginPath(m_cgcontext);
-   
-      CGContextAddRect(m_cgcontext, r);
-      
-      CGContextClip(m_cgcontext);
+//   void graphics::intersect_clip(const ::rectangle_f64 & rectangle)
+//   {
+//
+//      CGRect r;
+//
+//      //auto rectangleOffset = rectangle;
+//
+//      //rectangleOffset += m_pointAddShapeTranslate;
+//
+//      copy(r, rectangle);
+//
+//      CGContextBeginPath(m_cgcontext);
+//
+//      CGContextAddRect(m_cgcontext, r);
+//
+//      CGContextClip(m_cgcontext);
+//
+//   }
+//
+//
+//   void graphics::intersect_clip(const ::ellipse_f64 & ellipse)
+//   {
+//
+//      CGRect r;
+//
+//      //auto rectangleOffset = ellipse;
+//
+//      //rectangleOffset += m_pointAddShapeTranslate;
+//
+//      copy(r, ellipse);
+//
+//      CGContextBeginPath(m_cgcontext);
+//
+//      CGContextAddEllipseInRect(m_cgcontext, r);
+//
+//      CGContextClip(m_cgcontext);
+//
+//   }
+//
+//
+//   void graphics::intersect_clip(const ::polygon_f64 & polygon)
+//   {
+//
+//      CGContextBeginPath(m_cgcontext);
+//
+//      set_polygon(polygon.data(), polygon.count());
+//
+//      CGContextClip(m_cgcontext);
+//
+//   }
+//
+//
+//   void graphics::_add_clipping_shape(const ::rectangle_f64 & rectangle, ::draw2d::region * pregion)
+//   {
+//
+//      _add_shape(rectangle);
+//
+//      _intersect_clip();
+//
+//   }
+//
+//
+//   void graphics::_add_clipping_shape(const ::ellipse_f64 & ellipse, ::draw2d::region * pregion)
+//   {
+//
+//      _add_shape(ellipse);
+//
+//      _intersect_clip();
+//
+//   }
+//
+//
+//   void graphics::_add_clipping_shape(const ::polygon_f64 & polygon, ::draw2d::region * pregion)
+//   {
+//
+//      _add_shape(polygon);
+//
+//      _intersect_clip();
+//
+//   }
 
-   }
 
-
-   void graphics::intersect_clip(const ::ellipse_f64 & ellipse)
-   {
-      
-      CGRect r;
-      
-      //auto rectangleOffset = ellipse;
-      
-      //rectangleOffset += m_pointAddShapeTranslate;
-      
-      copy(r, ellipse);
-
-      CGContextBeginPath(m_cgcontext);
-   
-      CGContextAddEllipseInRect(m_cgcontext, r);
-      
-      CGContextClip(m_cgcontext);
-
-   }
-
-
-   void graphics::intersect_clip(const ::polygon_f64 & polygon)
-   {
-      
-      CGContextBeginPath(m_cgcontext);
-   
-      set_polygon(polygon.data(), polygon.count());
-
-      CGContextClip(m_cgcontext);
-
-   }
-
-   
-   void graphics::_add_clipping_shape(const ::rectangle_f64 & rectangle, ::draw2d::region * pregion)
-   {
-   
-      _add_shape(rectangle);
-      
-      _intersect_clip();
-      
-   }
-
-
-   void graphics::_add_clipping_shape(const ::ellipse_f64 & ellipse, ::draw2d::region * pregion)
-   {
-      
-      _add_shape(ellipse);
-      
-      _intersect_clip();
-      
-   }
-
-
-   void graphics::_add_clipping_shape(const ::polygon_f64 & polygon, ::draw2d::region * pregion)
-   {
-      
-      _add_shape(polygon);
-      
-      _intersect_clip();
-      
-   }
-
-
-   void graphics::_intersect_eo_clip()
+   void graphics::_eo_clip()
    {
       
       if(CGContextIsPathEmpty(m_cgcontext))
@@ -1751,7 +1751,7 @@ namespace draw2d_quartz2d
       
       copy(r, ellipse);
    
-      CGContextBeginPath(m_cgcontext);
+      //CGContextBeginPath(m_cgcontext);
    
       CGContextAddEllipseInRect(m_cgcontext, r);
       
@@ -1761,7 +1761,7 @@ namespace draw2d_quartz2d
    void graphics::_add_shape(const ::polygon_f64 & polygon)
    {
    
-      CGContextBeginPath(m_cgcontext);
+      //CGContextBeginPath(m_cgcontext);
    
       set_polygon(polygon.data(), polygon.count());
       

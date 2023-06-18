@@ -52,13 +52,13 @@ namespace draw2d_quartz2d
 
             _clip(pregion1);
 
-            _intersect_eo_clip();
+            _eo_clip();
 
             auto pregion2 = defer_get_os_data(pcombineitem->m_pregion2);
 
             _add_path(pregion2);
 
-            _intersect_eo_clip();
+            _eo_clip();
 
          }
          else if(pcombineitem->m_ecombine == ::draw2d::e_combine_add)
@@ -127,7 +127,7 @@ namespace draw2d_quartz2d
       if(bEO)
       {
          
-         _intersect_eo_clip();
+         _eo_clip();
          
       }
       else
@@ -215,13 +215,13 @@ namespace draw2d_quartz2d
 
             _add_path(pregion1);
             
-            _intersect_eo_clip();
+            _eo_clip();
          
             auto pregion2 = defer_get_os_data(pcombineitem->m_pregion2);
 
             _add_path(pregion2);
             
-            _intersect_eo_clip();
+            _eo_clip();
 
          }
          else if(pcombineitem->m_ecombine == ::draw2d::e_combine_add)

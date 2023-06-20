@@ -412,7 +412,7 @@ namespace multimedia
          if(estatusReset.failed())
          {
          
-            ERROR("in::Reset error resetting input device");
+            error("in::Reset error resetting input device");
                
             throw ::exception(estatusReset, "in::Reset error resetting input device");
             

@@ -117,8 +117,8 @@ namespace multimedia
 
          translate(*m_pdataformat, m_pwaveformat);
          
-         FORMATTED_INFORMATION("m_pdataformat %016" PRIXPTR "\n", m_pdataformat);
-         FORMATTED_INFORMATION("m_Queue %016" PRIXPTR "\n", m_Queue);
+         information("m_pdataformat %016" PRIXPTR "\n", m_pdataformat);
+         information("m_Queue %016" PRIXPTR "\n", m_Queue);
 
          int iBufferCount = 8;
 
@@ -162,7 +162,7 @@ namespace multimedia
             auto osstatusNewOutput = AudioQueueNewOutput(m_pdataformat, WaveOutAudioQueueBufferCallback, this, nullptr, nullptr, 0, &queue);
          
          m_Queue = queue;
-         FORMATTED_INFORMATION("m_Queue %016" PRIXPTR "\n", m_Queue);
+         information("m_Queue %016" PRIXPTR "\n", m_Queue);
 
             m_estatusWave = os_status_status(osstatusNewOutput);
 

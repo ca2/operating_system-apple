@@ -289,7 +289,7 @@ namespace music
 //            if(iVelocity == 0)
 //            {
 //
-//               INFORMATION("iVelocity == 0");
+//               information("iVelocity == 0");
 //
 //               // try to note off;
 //
@@ -306,7 +306,7 @@ namespace music
 //            if(iVelocity == 0)
 //            {
 //
-//               INFORMATION("(note_on command doesn't accept 0 velocity???)");
+//               information("(note_on command doesn't accept 0 velocity???)");
 //
 //               // try to note off;
 //
@@ -333,7 +333,7 @@ namespace music
 //            if(iNote >= 127)
 //            {
 //
-//               INFORMATION("uchNote >= 127 (doesn't accept 127 note off???)");
+//               information("uchNote >= 127 (doesn't accept 127 note off???)");
 //
 //               return;
 //

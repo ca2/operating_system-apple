@@ -223,7 +223,7 @@ namespace coreimage_imaging
 
                }
 
-               p->m_time = ::floating_second(dDelay);
+               p->m_time = ::second_time(dDelay);
 
                if(p->m_time < 5_ms)
                {

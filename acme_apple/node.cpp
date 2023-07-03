@@ -15,6 +15,8 @@
 
 #include <dispatch/dispatch.h>
 
+#include <libproc.h>
+
 int kern_max_proc();
 
 ::string apple_operating_system_store_release();
@@ -242,8 +244,6 @@ return transfer(a);
     }*/
 }
 
-
-} // namespace acme_darwin
 
 
 } // namespace acme_apple

@@ -9,10 +9,13 @@
 
 #include "acme/_operating_system.h"
 
+#include "acme/primitive/primitive/memory.h"
+#include "acme/operating_system/ansi/_pthread.h"
+//#include "acme/primitive/primitive/payload.h"
 
 #include <dispatch/dispatch.h>
 
-
+int kern_max_proc();
 
 ::string apple_operating_system_store_release();
 void apple_operating_system_release(::i32 & iMajor, ::i32 & iMinor, ::i32 & iPatch);
@@ -192,6 +195,55 @@ void node::shell_open(const ::file::path & path, const ::string & strParams, con
    return psummary;
    
 }
+
+
+
+::process_identifier_array node::processes_identifiers()
+{
+
+int  iDoubleKernMaxProc = kern_max_proc() * 2;
+
+::memory memory;
+
+memory.set_size(sizeof(pid_t) * iDoubleKernMaxProc);
+
+pid_t * pids = (pid_t *) memory.data();
+
+const int pidcount = proc_listallpids(pids, (int) memory.size());
+
+process_identifier_array a;
+
+a.set_size(pidcount);
+
+for(int i = 0; i < pidcount; i++)
+{
+   
+   a[i] = pids[i];
+   
+}
+
+//  throw ::exception(error_not_implemented);;
+return transfer(a);
+
+   /*
+    dwa.set_size(0);
+    ::u32 cbNeeded = 0;
+    while(cbNeeded == natural(dwa.get_count()))
+    {
+    dwa.set_size(dwa.get_count() + 1024);
+    if(!EnumProcesses(
+    dwa.get_data(),
+    (::u32) (dwa.get_count() * sizeof(::u32)),
+    &cbNeeded))
+    {
+    return;
+    }
+    dwa.set_size(cbNeeded / sizeof(::u32));
+    }*/
+}
+
+
+} // namespace acme_darwin
 
 
 } // namespace acme_apple

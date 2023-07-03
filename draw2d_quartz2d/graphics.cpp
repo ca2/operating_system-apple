@@ -1931,7 +1931,7 @@ namespace draw2d_quartz2d
             
             auto pnode = psystem->node();
 
-            m_pfont->create_pixel_font(pnode->font_name(e_font_sans), 16.0);
+            m_pfont->create_font(e_font_sans, 16_px);
 
          }
          
@@ -3284,7 +3284,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          if(bStroke)
          {
 
-            double dStroke = ::is_null(ppen) ? 3.0 : ppen->m_dWidth * 100.0 / pfont->m_dFontSize;
+            double dStroke = ::is_null(ppen) ? 3.0 : ppen->m_dWidth * 100.0 / pfont->m_fontsize.f64();
 
             pkeys.add(kCTStrokeWidthAttributeName);
             pvals.add(CFNumberCreate(kCFAllocatorDefault, kCFNumberDoubleType, &dStroke));

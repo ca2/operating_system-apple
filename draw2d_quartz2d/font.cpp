@@ -79,11 +79,11 @@ namespace draw2d_quartz2d
                if(pfontenumeration->m_eventReady.lock(2_s))
                {
 
-                  pfonts->m_pfontenumeration->adapt_font_name(m_strFontFamilyName);
+                  pfonts->m_pfontenumeration->adapt_font_name(m_pfontfamily->m_strFamilyName);
                   
                }
                
-               m_fontName = CFStringCreateWithCString(kCFAllocatorDefault, m_strFontFamilyName, kCFStringEncodingUTF8);
+               m_fontName = CFStringCreateWithCString(kCFAllocatorDefault, m_pfontfamily->m_strFamilyName, kCFStringEncodingUTF8);
                
             }
             
@@ -106,7 +106,7 @@ namespace draw2d_quartz2d
          
          CTFontSymbolicTraits symbolicTraitsMsk = 0;
          
-         int iWeight = m_iFontWeight;
+         int iWeight = m_fontweight.i32();
          
          double dCoreTextWeight = nsfont_get_ctweight(iWeight);
          
@@ -261,7 +261,7 @@ namespace draw2d_quartz2d
          if(fontref != nullptr)
          {
             
-            m_font = CTFontCreateWithGraphicsFont(fontref, m_dFontSize, nullptr, m_fontdescriptor);
+            m_font = CTFontCreateWithGraphicsFont(fontref, m_fontsize.f64(), nullptr, m_fontdescriptor);
             
             if(m_fontName)
             {
@@ -288,7 +288,7 @@ namespace draw2d_quartz2d
          else if(m_fontdescriptor == nullptr)
          {
             
-            auto pfont = CTFontCreateWithName(m_fontName, m_dFontSize, nullptr);
+            auto pfont = CTFontCreateWithName(m_fontName, m_fontsize.f64(), nullptr);
             
             m_font = pfont;
 
@@ -296,7 +296,7 @@ namespace draw2d_quartz2d
          else
          {
             
-            m_font =  CTFontCreateWithFontDescriptor(m_fontdescriptor, m_dFontSize, nullptr);
+            m_font =  CTFontCreateWithFontDescriptor(m_fontdescriptor, m_fontsize.f64(), nullptr);
             
          }
          

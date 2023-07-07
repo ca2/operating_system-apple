@@ -121,7 +121,7 @@ namespace acme_apple
       if (m_pStream == nullptr)
       {
          
-         int iErrNo = errno;
+         auto cerrornumber = c_error_number();
          
          m_estatus = failed_errno_status(iErrNo);
          
@@ -189,7 +189,7 @@ namespace acme_apple
                
                auto errorcode = errno_error_code(iErrNo);
                
-               auto estatus = errno_status(iErrNo);
+               auto estatus = cerrornumber.estatus();
                
                throw ::file::exception(estatus, errorcode, m_path, "fread(nCount) != nCount and ferror");
                
@@ -217,7 +217,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "fwrite != nCount");
          
@@ -238,7 +238,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "fwrite == EOF");
 
@@ -263,7 +263,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "!fgets and !feof");
          
@@ -302,7 +302,7 @@ namespace acme_apple
             
             auto errorcode = errno_error_code(iErrNo);
             
-            auto estatus = errno_status(iErrNo);
+            auto estatus = cerrornumber.estatus();
             
             throw ::file::exception(estatus, errorcode, m_path, "!fgets and !feof");
             
@@ -366,7 +366,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "fseek != 0");
          
@@ -392,7 +392,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "ftell < 0");
 
@@ -411,7 +411,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "fflush != 0");
          
@@ -440,7 +440,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "close != 0");
 
@@ -521,7 +521,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "ftell < 0");
          
@@ -536,7 +536,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "fseek != 0");
          
@@ -551,7 +551,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "ftell < 0");
 
@@ -566,7 +566,7 @@ namespace acme_apple
          
          auto errorcode = errno_error_code(iErrNo);
          
-         auto estatus = errno_status(iErrNo);
+         auto estatus = cerrornumber.estatus();
          
          throw ::file::exception(estatus, errorcode, m_path, "fseek != 0");
          

@@ -510,22 +510,22 @@ namespace multimedia
 
             status = AudioQueueCreateTimeline(m_Queue, &timeLine);
             if(status != noErr)
-               return e_zero;
+               return zero_t{};
 
             status = AudioQueueGetCurrentTime(m_Queue, timeLine, &stamp, nullptr);
 
             if(status != 0)
-               return e_zero;
+               return zero_t{};
 
 
             if(!(stamp.mFlags & kAudioTimeStampSampleTimeValid))
-               return e_zero;
+               return zero_t{};
 
             return (double)stamp.mSampleTime/(double)m_pwaveformat->m_waveformat.nSamplesPerSec;
 
          }
          else
-            return e_zero;
+            return zero_t{};
 
 
       }

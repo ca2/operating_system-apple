@@ -31,9 +31,11 @@ critical_section * get_pid_cs();
 void init_chldstatus(int iPid);
 chldstatus get_chldstatus(int iPid);
 
+#ifndef __APPLE__
 
 CLASS_DECL_APEX void process_get_os_priority(i32 * piOsPolicy, sched_param * pparam, ::enum_priority epriority);
 
+#endif
 
 namespace apex_apple
 {

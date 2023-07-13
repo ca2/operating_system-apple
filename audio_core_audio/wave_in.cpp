@@ -302,7 +302,7 @@ namespace multimedia
          
          m_estatusWave = os_status_status(ostatusStart);
 
-         if(::failed(m_estatusWave))
+         if(m_estatusWave.failed())
          {
 
             information("ERROR starting INPUT DEVICE ");

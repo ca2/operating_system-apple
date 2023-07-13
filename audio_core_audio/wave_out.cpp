@@ -433,7 +433,7 @@ namespace multimedia
 
          m_estatusWave = os_status_status(osstatusStart);
 
-         if(failed(m_estatusWave))
+         if(m_estatusWave.failed())
          {
             
             throw ::exception(m_estatusWave);

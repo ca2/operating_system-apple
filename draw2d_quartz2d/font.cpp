@@ -74,12 +74,12 @@ namespace draw2d_quartz2d
                
                auto * pfonts = pwritetext->fonts();
                
-               auto * pfontenumeration = pfonts->enumeration();
+               auto * pfontenumeration = pfonts->enumeration("system");
                
                if(pfontenumeration->m_eventReady.lock(2_s))
                {
 
-                  pfonts->m_pfontenumeration->adapt_font_name(m_pfontfamily->m_strFamilyName);
+                  pfontenumeration->adapt_font_name(m_pfontfamily->m_strFamilyName);
                   
                }
                

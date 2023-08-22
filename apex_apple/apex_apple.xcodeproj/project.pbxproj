@@ -158,8 +158,6 @@
 		9A787EAD264EE55E003DF8A0 /* datetime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = datetime.h; sourceTree = "<group>"; };
 		9A787EAE264EE55E003DF8A0 /* node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
 		9A787EAF264EE55E003DF8A0 /* _library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
-		9A787EB0264EE55E003DF8A0 /* file_context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = file_context.cpp; sourceTree = "<group>"; };
-		9A787EB1264EE55E003DF8A0 /* file_context.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = file_context.h; sourceTree = "<group>"; };
 		9A787EB2264EE55E003DF8A0 /* _mm_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm_common.h; sourceTree = "<group>"; };
 		9A787EB3264EE55E003DF8A0 /* _.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
 		9A787EB6264EE55E003DF8A0 /* _factory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
@@ -250,8 +248,6 @@
 				9A787EA7264EE55E003DF8A0 /* _mm.h */,
 				9A787EBD264EE55E003DF8A0 /* datetime.cpp */,
 				9A787EAD264EE55E003DF8A0 /* datetime.h */,
-				9A787EB0264EE55E003DF8A0 /* file_context.cpp */,
-				9A787EB1264EE55E003DF8A0 /* file_context.h */,
 				9A787EAA264EE55E003DF8A0 /* framework.cpp */,
 				9A787EBC264EE55E003DF8A0 /* framework.h */,
 				9A787EAC264EE55E003DF8A0 /* node.cpp */,

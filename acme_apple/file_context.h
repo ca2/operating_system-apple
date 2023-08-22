@@ -4,15 +4,15 @@
 #pragma once
 
 
-#include "apex_posix/file_context.h"
+#include "acme_posix/file_context.h"
 
 
-namespace apex_apple
+namespace acme_apple
 {
 
 
    class CLASS_DECL_ACME_POSIX file_context :
-      virtual public ::apex_posix::file_context
+      virtual public ::acme_posix::file_context
    {
    public:
 

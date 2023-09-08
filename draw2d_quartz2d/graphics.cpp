@@ -639,10 +639,10 @@ namespace draw2d_quartz2d
       
       auto rectangleTarget = imagedrawing.target_rectangle();
 
-      double xDst = rectangleTarget.left;
-      double yDst = rectangleTarget.top;
-      double xSrc = rectangleSource.left;
-      double ySrc = rectangleSource.top;
+      double xDst = rectangleTarget.left();
+      double yDst = rectangleTarget.top();
+      double xSrc = rectangleSource.left();
+      double ySrc = rectangleSource.top();
 
       auto pimage = imagedrawing.image();
       
@@ -847,13 +847,13 @@ namespace draw2d_quartz2d
 
             double d = minimum(dW, dH);
             
-            rectFinal.left = 0.0;
+            rectFinal.left() = 0.0;
 
-            rectFinal.top = 0.0;
+            rectFinal.top() = 0.0;
 
-            rectFinal.right = d * nSrcWidth;
+            rectFinal.right() = d * nSrcWidth;
 
-            rectFinal.bottom = d * nSrcHeight;
+            rectFinal.bottom() = d * nSrcHeight;
 
             rectFinal.align_rate(
                imagedrawing.m_pointAlign.x(),
@@ -905,8 +905,8 @@ namespace draw2d_quartz2d
 
          CGRect rectangle;
 
-         rectangle.origin.x = rectFinal.left;
-         rectangle.origin.y = rectFinal.top;
+         rectangle.origin.x = rectFinal.left();
+         rectangle.origin.y = rectFinal.top();
          rectangle.size.width = rectFinal.width();
          rectangle.size.height = rectFinal.height();
          
@@ -1019,7 +1019,7 @@ namespace draw2d_quartz2d
          if (rectIntersect.intersect(rectIntersect, rectText))
          {
 
-            rectText.bottom = rectText.top + rectText.height() * 2;
+            rectText.bottom() = rectText.top() + rectText.height() * 2;
 
             auto pimage1 = m_pcontext->m_pauracontext->create_image(rectText.size());
             
@@ -2229,24 +2229,24 @@ namespace draw2d_quartz2d
          float f1 = 0.666f;
          //top-left
          CGContextSaveGState(m_cgcontext);
-         r.origin.x = outer.left + f1;
-         r.origin.y = outer.top + f1;
+         r.origin.x = outer.left() + f1;
+         r.origin.y = outer.top() + f1;
          r.size.width = fRadius;
          r.size.height = fRadius;
          CGContextClipToRect(m_cgcontext, r);
-         CGContextTranslateCTM(m_cgcontext, inner.left, inner.top);
+         CGContextTranslateCTM(m_cgcontext, inner.left(), inner.top());
          CGContextScaleCTM(m_cgcontext, fRadius, fRadius);
          CGContextDrawRadialGradient(m_cgcontext, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_cgcontext);
 
          //top-right
          CGContextSaveGState(m_cgcontext);
-         r.origin.x = inner.right - f1;
-         r.origin.y = outer.top + f1;
+         r.origin.x = inner.right() - f1;
+         r.origin.y = outer.top() + f1;
          r.size.width = fRadius;
          r.size.height = fRadius;
          CGContextClipToRect(m_cgcontext, r);
-         CGContextTranslateCTM(m_cgcontext, inner.right, inner.top);
+         CGContextTranslateCTM(m_cgcontext, inner.right(), inner.top());
          CGContextScaleCTM(m_cgcontext, fRadius, fRadius);
          CGContextDrawRadialGradient(m_cgcontext, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_cgcontext);
@@ -2254,32 +2254,32 @@ namespace draw2d_quartz2d
          
          //bottom-right
          CGContextSaveGState(m_cgcontext);
-         r.origin.x = inner.right - f1;
-         r.origin.y = inner.bottom - f1;
+         r.origin.x = inner.right() - f1;
+         r.origin.y = inner.bottom() - f1;
          r.size.width = fRadius;
          r.size.height = fRadius;
          CGContextClipToRect(m_cgcontext, r);
-         CGContextTranslateCTM(m_cgcontext, inner.right, inner.bottom);
+         CGContextTranslateCTM(m_cgcontext, inner.right(), inner.bottom());
          CGContextScaleCTM(m_cgcontext, fRadius, fRadius);
          CGContextDrawRadialGradient(m_cgcontext, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_cgcontext);
 
          //bottom-left
          CGContextSaveGState(m_cgcontext);
-         r.origin.x = outer.left + f1;
-         r.origin.y = inner.bottom - f1;
+         r.origin.x = outer.left() + f1;
+         r.origin.y = inner.bottom() - f1;
          r.size.width = fRadius;
          r.size.height = fRadius;
          CGContextClipToRect(m_cgcontext, r);
-         CGContextTranslateCTM(m_cgcontext, inner.left, inner.bottom);
+         CGContextTranslateCTM(m_cgcontext, inner.left(), inner.bottom());
          CGContextScaleCTM(m_cgcontext, fRadius, fRadius);
          CGContextDrawRadialGradient(m_cgcontext, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_cgcontext);
 
          float f5 = 0.25f;
          
-         r.origin.x = inner.left - f5;
-         r.origin.y = inner.top - f5;
+         r.origin.x = inner.left() - f5;
+         r.origin.y = inner.top() - f5;
          r.size.width = inner.width() + f5 * 2.0f;
          r.size.height = inner.height() + f5 * 2.0f;
 
@@ -2288,56 +2288,56 @@ namespace draw2d_quartz2d
          
          float f2 = 0.444f;
          //bottom
-         r.origin.x = inner.left + f2;
-         r.origin.y = inner.bottom - f2;
+         r.origin.x = inner.left() + f2;
+         r.origin.y = inner.bottom() - f2;
          r.size.width = inner.width() - (f2 * 2.0f);
          r.size.height = fRadius;
          CGContextSaveGState(m_cgcontext);
          CGContextClipToRect(m_cgcontext, r);
          s.x = inner.center_x();
          e.x = inner.center_x();
-         s.y = inner.bottom;
-         e.y = outer.bottom;
+         s.y = inner.bottom();
+         e.y = outer.bottom();
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
          CGContextRestoreGState(m_cgcontext);
 
          // top
-         r.origin.x = inner.left + f2;
-         r.origin.y = outer.top + f2;
+         r.origin.x = inner.left() + f2;
+         r.origin.y = outer.top() + f2;
          r.size.width = inner.width() - (f2 * 2.0f);
          r.size.height = fRadius;
          CGContextSaveGState(m_cgcontext);
          CGContextClipToRect(m_cgcontext, r);
          s.x = inner.center_x();
          e.x = inner.center_x();
-         e.y = outer.top;
-         s.y = inner.top;
+         e.y = outer.top();
+         s.y = inner.top();
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
          CGContextRestoreGState(m_cgcontext);
 
          // right
-         r.origin.x = inner.right - f2;
-         r.origin.y = inner.top + f2;
+         r.origin.x = inner.right() - f2;
+         r.origin.y = inner.top() + f2;
          r.size.width = fRadius;
          r.size.height = inner.height() - (f2 * 2.0f);
          CGContextSaveGState(m_cgcontext);
          CGContextClipToRect(m_cgcontext, r);
-         s.x = inner.right;
-         e.x = outer.right;
+         s.x = inner.right();
+         e.x = outer.right();
          e.y = inner.center_y();
          s.y = inner.center_y();
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
          CGContextRestoreGState(m_cgcontext);
 
          // left
-         r.origin.x = outer.left + f2;
-         r.origin.y = inner.top + f2;
+         r.origin.x = outer.left() + f2;
+         r.origin.y = inner.top() + f2;
          r.size.width = fRadius;
          r.size.height = inner.height() - (f2 * 2.0f);
          CGContextSaveGState(m_cgcontext);
          CGContextClipToRect(m_cgcontext, r);
-         s.x = inner.left;
-         e.x = outer.left;
+         s.x = inner.left();
+         e.x = outer.left();
          e.y = inner.center_y();
          s.y = inner.center_y();
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
@@ -2762,8 +2762,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            drawtext.m_rectangle.left + Δx,
-                            drawtext.m_rectangle.top + Δy + offsety,
+                            drawtext.m_rectangle.left() + Δx,
+                            drawtext.m_rectangle.top() + Δy + offsety,
                             0,
                             str, kCGTextStroke,
                             e_align_top_left,
@@ -2813,8 +2813,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            drawtext.m_rectangle.left + Δx,
-                            drawtext.m_rectangle.top + Δy + offsety,
+                            drawtext.m_rectangle.left() + Δx,
+                            drawtext.m_rectangle.top() + Δy + offsety,
                             0,
                             str, kCGTextFill,
                             e_align_top_left,
@@ -2884,19 +2884,19 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       if(ealign & e_align_bottom)
       {
 
-         y = rectangle.bottom;
+         y = rectangle.bottom();
 
       }
       else if(ealign & e_align_vertical_center)
       {
 
-         y = rectangle.top + ::height(rectangle) / 2.0;
+         y = rectangle.top() + ::height(rectangle) / 2.0;
 
       }
       else
       {
 
-         y = rectangle.top;
+         y = rectangle.top();
 
       }
 
@@ -2910,7 +2910,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          str.find_replace("\r", " ");
 
          internal_show_text(
-         rectangle.left,
+         rectangle.left(),
          y,
          ::width(rectangle),
          str,
@@ -2945,7 +2945,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
             {
 
                internal_show_text(
-               rectangle.left,
+               rectangle.left(),
                y,
                ::width(rectangle),
                                   str,
@@ -2980,7 +2980,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
             {
 
                internal_show_text(
-               rectangle.left,
+               rectangle.left(),
                y,
                ::width(rectangle),
                str,
@@ -3015,15 +3015,15 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
             rectangle_f64 rectLower(rectangle);
 
-            rectUpper.bottom = y;
+            rectUpper.bottom() = y;
 
-            rectLower.top = y;
+            rectLower.top() = y;
 
             if(stra.get_count() % 2 == 1)
             {
 
                internal_show_text(
-               rectangle.left,
+               rectangle.left(),
                y,
                ::width(rectangle),
                stra[stra.get_middle_index()],
@@ -3048,9 +3048,9 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 //
 //                  }
 
-               rectUpper.bottom -= Δy/2.0;
+               rectUpper.bottom() -= Δy/2.0;
 
-               rectLower.top += Δy/2.0;
+               rectLower.top() += Δy/2.0;
 
             }
 

@@ -71,19 +71,19 @@ namespace draw2d_quartz2d
    bool path::internal_add_arc(const ::rectangle_f64 & rectangle, double dBeg, double dEnd, bool bClockwise)
    {
       
-      CGFloat d1 = rectangle.right - rectangle.left;
+      CGFloat d1 = rectangle.right() - rectangle.left();
       
       if(d1 <= 0)
          return true;
       
-      CGFloat d2 = rectangle.bottom - rectangle.top;
+      CGFloat d2 = rectangle.bottom() - rectangle.top();
       
       if(d2 <= 0)
          return true;
       
-      CGFloat x = (rectangle.right + rectangle.left) / 2.0;
+      CGFloat x = (rectangle.right() + rectangle.left()) / 2.0;
    
-      CGFloat y = (rectangle.bottom + rectangle.top) / 2.0;
+      CGFloat y = (rectangle.bottom() + rectangle.top()) / 2.0;
    
       if(d1 == d2)
       {
@@ -319,8 +319,8 @@ namespace draw2d_quartz2d
    
       CGRect r;
       
-      r.origin.x = rectangle.left;
-      r.origin.y = rectangle.top;
+      r.origin.x = rectangle.left();
+      r.origin.y = rectangle.top();
       r.size.width = rectangle.width();
       r.size.height = rectangle.height();
       
@@ -339,8 +339,8 @@ namespace draw2d_quartz2d
 
       CGRect r;
       
-      r.origin.x = ellipse.left;
-      r.origin.y = ellipse.top;
+      r.origin.x = ellipse.left();
+      r.origin.y = ellipse.top();
       r.size.width = ellipse.width();
       r.size.height = ellipse.height();
       

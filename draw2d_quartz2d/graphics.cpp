@@ -1842,8 +1842,10 @@ namespace draw2d_quartz2d
       CGFloat ascent, descent, leading, width;
 
       string_array stra;
+      
+      auto range = scopedstr(0, minimum(iIndex, scopedstr.size()));
 
-      stra.add_lines(scopedstr(0, minimum(iIndex, scopedstr.size())));
+      stra.add_lines(range);
       
       ::size_f64 size;
 
@@ -1853,7 +1855,7 @@ namespace draw2d_quartz2d
 
       for(auto str : stra)
       {
-
+         
          const_cast < graphics * > (this)->internal_show_text(0, 0, 0, str, kCGTextInvisible, e_align_top_left, e_draw_text_none, false, &ascent, &descent, &leading, &width, nullptr, nullptr, m_pfont);
 
          size.cy() += ascent + descent + leading;

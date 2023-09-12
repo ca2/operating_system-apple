@@ -357,8 +357,8 @@ namespace draw2d_quartz2d
        BLENDFUNCTION blend);*/
 
 
-      void _get(::draw2d::matrix & matrix) override;
-      void _set(const ::draw2d::matrix & matrix) override;
+      void _get(::geometry2d::matrix & matrix) override;
+      void _set(const ::geometry2d::matrix & matrix) override;
 
       // Text Functions
       void internal_show_text(double x, double y, double w, const  string & str, CGTextDrawingMode emode, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, bool bDraw = true, CGFloat * pascent = nullptr, CGFloat * pdescent = nullptr, CGFloat * pleading = nullptr, CGFloat * pwidth = nullptr, ::draw2d::pen * ppen=nullptr, ::draw2d::brush * pbrush = nullptr, ::write_text::font * pfont = nullptr);

@@ -38,7 +38,7 @@ CGContextRef cg_create_bitmap_context(CGSize size);
 namespace draw2d_quartz2d
 {
 
-   void copy(CGAffineTransform & affine, const ::draw2d::matrix & m)
+   void copy(CGAffineTransform & affine, const ::geometry2d::matrix & m)
    {
 
       affine.a = m.a1;
@@ -51,7 +51,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void copy(::draw2d::matrix & m, const CGAffineTransform & affine)
+   void copy(::geometry2d::matrix & m, const CGAffineTransform & affine)
    {
 
       m.a1 = affine.a;
@@ -1441,7 +1441,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_get(::draw2d::matrix & matrix)
+   void graphics::_get(::geometry2d::matrix & matrix)
    {
 
       synchronous_lock synchronouslock(synchronization());
@@ -1453,7 +1453,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_set(const ::draw2d::matrix & matrix)
+   void graphics::_set(const ::geometry2d::matrix & matrix)
    {
 
       synchronous_lock synchronouslock(synchronization());

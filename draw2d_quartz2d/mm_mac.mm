@@ -55,6 +55,11 @@ CGMutablePathRef cg_mutable_path_from_ns_bezier_path(NSBezierPath * path)
          CGPathCloseSubpath(mutablepath);
          didClosePath = YES;
          break;
+         case NSBezierPathElementQuadraticCurveTo:
+            CGPathAddQuadCurveToPoint(mutablepath, NULL, points[0].x, points[0].y,
+                            points[1].x, points[1].y);
+            didClosePath = NO;
+            break;
       }
       
    }

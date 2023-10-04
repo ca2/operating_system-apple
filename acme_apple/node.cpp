@@ -103,7 +103,7 @@ string node::veriwell_multimedia_music_midi_get_default_implementation_name()
 }
 
 
-void node::node_post(const ::procedure & routineParam)
+void node::user_post(const ::procedure & routineParam)
 {
    
    auto routine = routineParam;

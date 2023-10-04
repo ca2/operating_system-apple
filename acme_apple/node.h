@@ -45,7 +45,7 @@ namespace acme_apple
       string veriwell_multimedia_music_midi_get_default_implementation_name() override;
       
       
-      void node_post(const ::procedure & procedure) override;
+      void user_post(const ::procedure & procedure) override;
       
       
       void shell_open(const ::file::path & path, const ::string & strParams = "", const ::file::path & pathFolder = "") override;

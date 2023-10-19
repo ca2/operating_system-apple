@@ -190,9 +190,13 @@ void node::shell_open(const ::file::path & path, const ::string & strParams, con
       
    }
 
-   psummary->m_strSlashedStore = "macos/" + psummary->m_strStoreRelease;
+   //psummary->m_strSlashedStore = "macos/" + psummary->m_strStoreRelease;
    
-   psummary->m_strSlashedIntegration = "macos/" + psummary->m_strIntegrationRelease;
+   //psummary->m_strSlashedIntegration = "macos/" + psummary->m_strIntegrationRelease;
+
+   psummary->m_strSlashedStore = "macos";
+   
+   psummary->m_strSlashedIntegration = "macos";
 
    return psummary;
    

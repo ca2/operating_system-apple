@@ -33,7 +33,7 @@ namespace multimedia
       void in::init_task()
       {
 
-         information("in::init_instance %X\n", get_itask());
+         informationf("in::init_instance %X\n", get_itask());
          //SetMainWnd(nullptr);
          //ASSERT(GetMainWnd() == nullptr);
          ::parallelization::set_priority(::e_priority_highest);
@@ -305,7 +305,7 @@ namespace multimedia
          if(m_estatusWave.failed())
          {
 
-            information("ERROR starting INPUT DEVICE ");
+            informationf("ERROR starting INPUT DEVICE ");
 
             throw ::exception(m_estatusWave);
 
@@ -338,12 +338,12 @@ namespace multimedia
          {
             if(0 != (status = AudioQueueStop(m_Queue, 1)))
             {
-               information("in::in_stop : ERROR OPENING stopping INPUT DEVICE ");
+               informationf("in::in_stop : ERROR OPENING stopping INPUT DEVICE ");
             }
          }
          catch(...)
          {
-            information("in::in_stop : Exception OPENING stopping INPUT DEVICE ");
+            informationf("in::in_stop : Exception OPENING stopping INPUT DEVICE ");
          }
          m_einstate = ::wave::e_in_state_stopped;
 
@@ -412,7 +412,7 @@ namespace multimedia
          if(estatusReset.failed())
          {
          
-            error("in::Reset error resetting input device");
+            errorf("in::Reset error resetting input device");
                
             throw ::exception(estatusReset, "in::Reset error resetting input device");
             

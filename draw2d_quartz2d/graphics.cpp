@@ -687,7 +687,7 @@ namespace draw2d_quartz2d
          else
          {
 
-            information("imageSrc nullptr");
+            informationf("imageSrc nullptr");
 
          }
 

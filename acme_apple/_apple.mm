@@ -474,7 +474,7 @@ bool uniform_type_conforms_to_data_type(CFStringRef cfstr, enum_data_type edatat
       
       ::string strRelease;
       
-      strRelease.format("%d.%d", version.majorVersion, version.minorVersion);
+      strRelease.formatf("%d.%d", version.majorVersion, version.minorVersion);
       
       return strRelease;
       

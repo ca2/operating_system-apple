@@ -20,6 +20,7 @@
 int kern_max_proc();
 
 ::string apple_operating_system_store_release();
+::string apple_operating_system_application_version();
 void apple_operating_system_release(::i32 & iMajor, ::i32 & iMinor, ::i32 & iPatch);
 
 
@@ -42,214 +43,221 @@ namespace acme_apple
 {
 
 
-node::node()
-{
-   
-   m_pAcmePosix = this;
-   
-}
-
-
-node::~node()
-{
-   
-}
-
-
-int node::node_init_check(int * pi, char *** ppz)
-{
-   
-   return 0;
-   
-}
-
-
-void node::initialize(::particle * pparticle)
-{
-   
-   ::acme_darwin::node::initialize(pparticle);
-   
-}
-
-
-void node::install_sigchld_handler()
-{
-   
-   
-}
-
-
-string node::audio_get_default_implementation_name()
-{
-   
-   return acmesystem()->implementation_name("audio", "core_audio");
-   
-}
-
-
-string node::multimedia_audio_mixer_get_default_implementation_name()
-{
-   
-   return acmesystem()->implementation_name("audio_mixer", "core_audio");
-   
-}
-
-
-string node::veriwell_multimedia_music_midi_get_default_implementation_name()
-{
-   
-   return acmesystem()->implementation_name("music_midi", "core_midi");
-   
-}
-
-
-void node::user_post(const ::procedure & routineParam)
-{
-   
-   auto routine = routineParam;
-   
-   ns_main_async(^{
+   node::node()
+   {
       
-      try
-      {
+      m_pAcmePosix = this;
+      
+   }
+
+
+   node::~node()
+   {
+      
+   }
+
+
+   int node::node_init_check(int * pi, char *** ppz)
+   {
+      
+      return 0;
+      
+   }
+
+
+   void node::initialize(::particle * pparticle)
+   {
+      
+      ::acme_darwin::node::initialize(pparticle);
+      
+   }
+
+
+   void node::install_sigchld_handler()
+   {
+      
+      
+   }
+
+
+   string node::audio_get_default_implementation_name()
+   {
+      
+      return acmesystem()->implementation_name("audio", "core_audio");
+      
+   }
+
+
+   string node::multimedia_audio_mixer_get_default_implementation_name()
+   {
+      
+      return acmesystem()->implementation_name("audio_mixer", "core_audio");
+      
+   }
+
+
+   string node::veriwell_multimedia_music_midi_get_default_implementation_name()
+   {
+      
+      return acmesystem()->implementation_name("music_midi", "core_midi");
+      
+   }
+
+
+   void node::user_post(const ::procedure & routineParam)
+   {
+      
+      auto routine = routineParam;
+      
+      ns_main_async(^{
          
-         routine();
+         try
+         {
+            
+            routine();
+            
+         }
+         catch (...)
+         {
+            
+         }
+         
+      });
+      
+      //return ::success;
+      
+   }
+
+
+   void node::shell_open(const ::file::path & path, const ::string & strParams, const ::file::path & pathFolder)
+   {
+      
+      ns_open_file(path);
+      
+   }
+
+
+   ::file::path node::library_file_name(const ::scoped_string & scopedstr)
+   {
+      
+      return "lib" + scopedstr + ".dylib";
+      
+   }
+
+
+   ::string node::operating_system_store_release()
+   {
+      
+      return ::apple_operating_system_store_release();
+      
+   }
+
+
+   ::pointer <::operating_system::summary > node::operating_system_summary()
+   {
+      
+      auto psummary = __create_new < ::operating_system::summary >();
+      
+      psummary->m_strDistro = "macos";
+      psummary->m_strDistroFamily = "macos";
+      psummary->m_strDistroBranch = "macos";
+      psummary->m_strDistroRelease = operating_system_store_release();
+      
+      apple_operating_system_release(psummary->m_iMajor, psummary->m_iMinor, psummary->m_iPatch);
+      
+      if(psummary->m_iMajor > 10 || (psummary->m_iMajor == 10 && psummary->m_iMinor >= 13))
+      {
+
+         psummary->m_strStoreRelease = "13";
          
       }
-      catch (...)
+      else
       {
          
+         psummary->m_strStoreRelease = "12";
+         
       }
+
+      if(psummary->m_iMajor == 13)
+      {
+
+         psummary->m_strIntegrationRelease= "13";
+         
+      }
+      else
+      {
+         
+         psummary->m_strIntegrationRelease = "12";
+         
+      }
+
+      //psummary->m_strSlashedStore = "macos/" + psummary->m_strStoreRelease;
       
-   });
-   
-   //return ::success;
-   
-}
+      //psummary->m_strSlashedIntegration = "macos/" + psummary->m_strIntegrationRelease;
 
-
-void node::shell_open(const ::file::path & path, const ::string & strParams, const ::file::path & pathFolder)
-{
-   
-   ns_open_file(path);
-   
-}
-
-
-::file::path node::library_file_name(const ::scoped_string & scopedstr)
-{
-   
-   return "lib" + scopedstr + ".dylib";
-   
-}
-
-
-::string node::operating_system_store_release()
-{
-   
-   return ::apple_operating_system_store_release();
-   
-}
-
-
-::pointer <::operating_system::summary > node::operating_system_summary()
-{
-   
-   auto psummary = __create_new < ::operating_system::summary >();
-   
-   psummary->m_strDistro = "macos";
-   psummary->m_strDistroFamily = "macos";
-   psummary->m_strDistroBranch = "macos";
-   psummary->m_strDistroRelease = operating_system_store_release();
-   
-   apple_operating_system_release(psummary->m_iMajor, psummary->m_iMinor, psummary->m_iPatch);
-   
-   if(psummary->m_iMajor > 10 || (psummary->m_iMajor == 10 && psummary->m_iMinor >= 13))
-   {
-
-      psummary->m_strStoreRelease = "13";
+      psummary->m_strSlashedStore = "macos";
       
-   }
-   else
-   {
-      
-      psummary->m_strStoreRelease = "12";
+      psummary->m_strSlashedIntegration = "macos";
+
+      return psummary;
       
    }
 
-   if(psummary->m_iMajor == 13)
+
+   ::process_identifier_array node::processes_identifiers()
    {
 
-      psummary->m_strIntegrationRelease= "13";
-      
+      int  iDoubleKernMaxProc = kern_max_proc() * 2;
+
+      ::memory memory;
+
+      memory.set_size(sizeof(pid_t) * iDoubleKernMaxProc);
+
+      pid_t * pids = (pid_t *) memory.data();
+
+      const int pidcount = proc_listallpids(pids, (int) memory.size());
+
+      process_identifier_array a;
+
+      a.set_size(pidcount);
+
+      for(int i = 0; i < pidcount; i++)
+      {
+         
+         a[i] = pids[i];
+         
+      }
+
+      //  throw ::exception(error_not_implemented);;
+      return transfer(a);
+
+      /*
+       dwa.set_size(0);
+       ::u32 cbNeeded = 0;
+       while(cbNeeded == natural(dwa.get_count()))
+       {
+       dwa.set_size(dwa.get_count() + 1024);
+       if(!EnumProcesses(
+       dwa.get_data(),
+       (::u32) (dwa.get_count() * sizeof(::u32)),
+       &cbNeeded))
+       {
+       return;
+       }
+       dwa.set_size(cbNeeded / sizeof(::u32));
+       }*/
    }
-   else
+
+
+   ::string node::operating_system_application_version()
    {
-      
-      psummary->m_strIntegrationRelease = "12";
+   
+      return apple_operating_system_application_version();
       
    }
-
-   //psummary->m_strSlashedStore = "macos/" + psummary->m_strStoreRelease;
-   
-   //psummary->m_strSlashedIntegration = "macos/" + psummary->m_strIntegrationRelease;
-
-   psummary->m_strSlashedStore = "macos";
-   
-   psummary->m_strSlashedIntegration = "macos";
-
-   return psummary;
-   
-}
-
-
-
-::process_identifier_array node::processes_identifiers()
-{
-
-int  iDoubleKernMaxProc = kern_max_proc() * 2;
-
-::memory memory;
-
-memory.set_size(sizeof(pid_t) * iDoubleKernMaxProc);
-
-pid_t * pids = (pid_t *) memory.data();
-
-const int pidcount = proc_listallpids(pids, (int) memory.size());
-
-process_identifier_array a;
-
-a.set_size(pidcount);
-
-for(int i = 0; i < pidcount; i++)
-{
-   
-   a[i] = pids[i];
-   
-}
-
-//  throw ::exception(error_not_implemented);;
-return transfer(a);
-
-   /*
-    dwa.set_size(0);
-    ::u32 cbNeeded = 0;
-    while(cbNeeded == natural(dwa.get_count()))
-    {
-    dwa.set_size(dwa.get_count() + 1024);
-    if(!EnumProcesses(
-    dwa.get_data(),
-    (::u32) (dwa.get_count() * sizeof(::u32)),
-    &cbNeeded))
-    {
-    return;
-    }
-    dwa.set_size(cbNeeded / sizeof(::u32));
-    }*/
-}
-
 
 
 } // namespace acme_apple
+
 
 

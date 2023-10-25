@@ -498,3 +498,28 @@ void apple_operating_system_release(::i32 & iMajor, ::i32 & iMinor, ::i32 & iPat
    iPatch = (::i32) version.patchVersion;
 
 }
+
+
+void apple_ns_log_main_bundle_info_dictionary()
+{
+   
+   NSDictionary* infoDictionary = [[NSBundle mainBundle] infoDictionary];
+   NSLog(@"%lu Keys:  %@", [infoDictionary count],
+         [[infoDictionary allKeys] componentsJoinedByString: @" ,"]);
+   
+}
+
+
+::string apple_operating_system_application_version()
+{
+   
+   //apple_ns_log_main_bundle_info_dictionary();
+ 
+   NSString *version =[[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
+
+   return [ version UTF8String ];
+
+}
+
+
+

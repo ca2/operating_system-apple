@@ -70,7 +70,7 @@ namespace music
                
                string str;
                
-               str.format("MIDIOutputPortCreate failed with code %i\n", (int) result);
+               str.formatf("MIDIOutputPortCreate failed with code %i\n", (int) result);
                
                throw ::exception(error_resource, str);;
                

@@ -115,7 +115,7 @@ namespace apex_apple
 
       address_array < char * > env;
 
-      auto envp = acmesystem()->m_psubsystem->m_envp;
+      auto envp = acmesystem()->m_pplatform->m_envp;
 
       string strFallback;
 
@@ -299,7 +299,7 @@ namespace apex_apple
 
       int status= 0;
       
-      auto envp = acmesystem()->m_psubsystem->m_envp;
+      auto envp = acmesystem()->m_pplatform->m_envp;
 
       {
 

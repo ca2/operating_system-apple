@@ -1929,10 +1929,6 @@ namespace draw2d_quartz2d
 
             m_pfont.create(this);
             
-            auto psystem = acmesystem();
-            
-            auto pnode = psystem->node();
-
             m_pfont->create_font(e_font_sans, 16_px);
 
          }

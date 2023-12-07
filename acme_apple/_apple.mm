@@ -135,7 +135,7 @@ void _main_sync_runnable(::matter * prunnable, DWORD dwMillis)
    ns_main_sync(^
                 {
                    
-                    __call(prunnable);
+      __call({use_t{}, prunnable});
                    
                 });
    

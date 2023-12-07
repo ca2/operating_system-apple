@@ -49,7 +49,7 @@ namespace write_text_quartz2d
                
             }
             
-            auto pfontenumerationitem = __new(::write_text::font_enumeration_item(pszFontName));
+            auto pfontenumerationitem = __new < ::write_text::font_enumeration_item >(pszFontName);
 
             m_pfontenumerationitema->add(pfontenumerationitem);
 

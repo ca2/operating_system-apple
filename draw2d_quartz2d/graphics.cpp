@@ -1927,7 +1927,7 @@ namespace draw2d_quartz2d
          if(m_pfont.is_null())
          {
 
-            m_pfont.create(this);
+            __construct(m_pfont);
             
             m_pfont->create_font(e_font_sans, 16_px);
 

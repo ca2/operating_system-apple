@@ -51,7 +51,7 @@ namespace draw2d_quartz2d
       if(m_path.has_char())
       {
          
-         ::pointer < ::draw2d_quartz2d::draw2d > pdraw2d = acmesystem()->m_paurasystem->draw2d();
+         ::pointer < ::draw2d_quartz2d::draw2d > pdraw2d = system()->m_paurasystem->draw2d();
          
          fontref = pdraw2d->private_cgfontref(pgraphics->m_pcontext, m_path);
          
@@ -63,7 +63,7 @@ namespace draw2d_quartz2d
          if(m_fontName == nullptr)
          {
             
-            auto psystem = acmesystem()->m_paurasystem;
+            auto psystem = system()->m_paurasystem;
             
             auto * pdraw2d = psystem->draw2d();
 

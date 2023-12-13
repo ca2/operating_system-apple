@@ -6,6 +6,11 @@
 
 //#include "apex_posix/_library.h"
 //#include "acme_apple/_library.h"
+
+
+#if !defined(__MM)
+
+
 //
 //
 //#include "file_context.h"
@@ -16,5 +21,9 @@
 //
 //#include "node.h"
 //
+
+
+#endif
+
 
 

@@ -24,7 +24,7 @@ namespace draw2d_quartz2d
          if(ppath->m_ppathoptimization.is_null())
          {
             
-            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
+            ppath->m_ppathoptimization = __allocate <::draw2d::path_simple_optimization > (ppath);
             
          }
 
@@ -57,7 +57,7 @@ namespace draw2d_quartz2d
          if(ppath->m_ppathoptimization.is_null())
          {
             
-            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
+            ppath->m_ppathoptimization = __allocate < ::draw2d::path_simple_optimization > (ppath);
             
          }
 
@@ -90,7 +90,7 @@ namespace draw2d_quartz2d
          if(ppath->m_ppathoptimization.is_null())
          {
             
-            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
+            ppath->m_ppathoptimization = __allocate < ::draw2d::path_simple_optimization >(ppath);
             
          }
          
@@ -123,7 +123,7 @@ namespace draw2d_quartz2d
          if(ppath->m_ppathoptimization.is_null())
          {
             
-            ppath->m_ppathoptimization = __new(::draw2d::path_simple_optimization(ppath));
+            ppath->m_ppathoptimization = __allocate < ::draw2d::path_simple_optimization > (ppath);
             
          }
          

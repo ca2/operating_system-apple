@@ -31,7 +31,7 @@ namespace draw2d_quartz2d
    string draw2d::write_text_get_default_implementation_name()
    {
 
-      return acmesystem()->implementation_name("write_text", "quartz2d");
+      return system()->implementation_name("write_text", "quartz2d");
 
    }
 
@@ -48,11 +48,11 @@ namespace draw2d_quartz2d
          
       }
       
-      pprivatefont = __new(private_font);
+      pprivatefont = __new < private_font > ();
       
       pprivatefont->m_cgfontref = nullptr;
 
-      auto pmemory = acmesystem()->m_paurasystem->draw2d()->write_text()->get_file_memory(pcontext, path);
+      auto pmemory = system()->m_paurasystem->draw2d()->write_text()->get_file_memory(pcontext, path);
 
       if(!pmemory || pmemory->is_empty())
       {

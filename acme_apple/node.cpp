@@ -83,7 +83,7 @@ namespace acme_apple
    string node::audio_get_default_implementation_name()
    {
       
-      return acmesystem()->implementation_name("audio", "core_audio");
+      return system()->implementation_name("audio", "core_audio");
       
    }
 
@@ -91,7 +91,7 @@ namespace acme_apple
    string node::multimedia_audio_mixer_get_default_implementation_name()
    {
       
-      return acmesystem()->implementation_name("audio_mixer", "core_audio");
+      return system()->implementation_name("audio_mixer", "core_audio");
       
    }
 
@@ -99,7 +99,7 @@ namespace acme_apple
    string node::veriwell_multimedia_music_midi_get_default_implementation_name()
    {
       
-      return acmesystem()->implementation_name("music_midi", "core_midi");
+      return system()->implementation_name("music_midi", "core_midi");
       
    }
 

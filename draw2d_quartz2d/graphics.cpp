@@ -652,7 +652,7 @@ namespace draw2d_quartz2d
          i32 nWidth = rectangleTarget.width();
          i32 nHeight = rectangleTarget.height();
       
-         synchronous_lock synchronouslock(synchronization());
+         _synchronous_lock synchronouslock(synchronization());
 
          pimage->defer_update_image();
          
@@ -665,7 +665,7 @@ namespace draw2d_quartz2d
 
          }
 
-         synchronous_lock slSrc(pgraphicsSrc->synchronization());
+         _synchronous_lock slSrc(pgraphicsSrc->synchronization());
 
          if(pgraphicsSrc->get_os_data() == nullptr)
          {
@@ -1444,7 +1444,7 @@ namespace draw2d_quartz2d
    void graphics::_get(::geometry2d::matrix & matrix)
    {
 
-      synchronous_lock synchronouslock(synchronization());
+      _synchronous_lock synchronouslock(synchronization());
 
       CGAffineTransform affine = CGContextGetCTM(m_cgcontext);
 
@@ -1456,7 +1456,7 @@ namespace draw2d_quartz2d
    void graphics::_set(const ::geometry2d::matrix & matrix)
    {
 
-      synchronous_lock synchronouslock(synchronization());
+      _synchronous_lock synchronouslock(synchronization());
 
       CGAffineTransform affine = CGContextGetCTM(m_cgcontext);
 
@@ -1837,7 +1837,7 @@ namespace draw2d_quartz2d
    ::size_f64 graphics::get_text_extent(const ::scoped_string & scopedstr, ::index iIndex)
    {
       
-      synchronous_lock synchronouslock(synchronization());
+      _synchronous_lock synchronouslock(synchronization());
 
       CGFloat ascent, descent, leading, width;
 
@@ -2636,7 +2636,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       string str(textout.m_strText);
 
-      synchronous_lock ml(synchronization());
+      _synchronous_lock ml(synchronization());
 
       double Δx;
 
@@ -2686,7 +2686,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       string str(textout.m_strText);
 
-      synchronous_lock ml(synchronization());
+      _synchronous_lock ml(synchronization());
 
       double Δx;
 
@@ -2736,7 +2736,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       string str(drawtext.m_strText);
 
-      synchronous_lock ml(synchronization());
+      _synchronous_lock ml(synchronization());
 
       double Δx;
 
@@ -2787,7 +2787,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       string str(drawtext.m_strText);
 
-      synchronous_lock ml(synchronization());
+      _synchronous_lock ml(synchronization());
 
       double Δx;
 
@@ -2862,7 +2862,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       string str(strParam);
 
-      synchronous_lock ml(synchronization());
+      _synchronous_lock ml(synchronization());
 
       if(edrawtext & e_draw_text_expand_tabs)
       {
@@ -3081,7 +3081,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 //
 //      return;
 
-      synchronous_lock synchronouslock(synchronization());
+      _synchronous_lock synchronouslock(synchronization());
 
       //CGContextRef pgraphics = m_cgcontext;
 
@@ -3447,7 +3447,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
    void graphics::internal_draw_text(CGTextDrawingMode emode, double x, double y, CTLineRef line, ::draw2d::brush * pbrush)
    {
 
-      synchronous_lock synchronouslock(synchronization());
+      _synchronous_lock synchronouslock(synchronization());
       
       CGContextRef cgcontext = m_cgcontext;
 

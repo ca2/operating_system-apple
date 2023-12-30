@@ -16,7 +16,16 @@
 #include <dispatch/dispatch.h>
 
 #include <libproc.h>
+int apple_node_process_identifier_modules_paths(int pid, void * p, void (*callback)(void *, const char *, int ));
 
+static void callback_modules_paths(void * p, const char * pszPath, int size)
+{
+   ::string strPath(pszPath, size);
+   ::file::path path(strPath);
+   auto ppatha = (::file::path_array *) p;
+   
+   ppatha->add(path);
+}
 int kern_max_proc();
 
 ::string apple_operating_system_store_release();
@@ -255,6 +264,29 @@ namespace acme_apple
       return apple_operating_system_application_version();
       
    }
+
+
+::file::path_array node::process_identifier_modules_paths(::process_identifier processidentifier)
+{
+   ::file::path_array patha;
+
+#if defined(FREEBSD)
+
+   int iError = 0;
+#else
+   int iError = apple_node_process_identifier_modules_paths((int)processidentifier, &patha, &callback_modules_paths);
+#endif
+   if(iError != 0)
+   {
+      
+      throw ::exception(error_failed);
+      
+   }
+   
+   
+   return patha;
+
+}
 
 
 } // namespace acme_apple

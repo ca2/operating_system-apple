@@ -55,6 +55,7 @@
 		9AA3F9622A9498D3004283CA /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3F95F2A9498D3004283CA /* file_context.cpp */; };
 		9AA3F9632A9498D3004283CA /* file_context.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA3F9612A9498D3004283CA /* file_context.h */; };
 		9AA74F6128484887009BB762 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
+		9ABBFE562B3FDCEC0036DF8C /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */; };
 		9AC14D01297B3410006D9BD3 /* acme_directory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* acme_directory.h */; };
 		9AC14D02297B3410006D9BD3 /* acme_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEF2282C5F6600F5C1CA /* acme_file.h */; };
 		9AC14D04297B3410006D9BD3 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
@@ -172,6 +173,7 @@
 		9A9DCBDE29B8490900D1255B /* libios_acme_posix.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libios_acme_posix.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA3F95F2A9498D3004283CA /* file_context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_context.cpp; sourceTree = "<group>"; };
 		9AA3F9612A9498D3004283CA /* file_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_context.h; sourceTree = "<group>"; };
+		9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_process_identifier_modules_paths.cpp; sourceTree = "<group>"; };
 		9AC14D23297B3410006D9BD3 /* libstatic_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libstatic_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -247,6 +249,7 @@
 				9A93B95828471D39005ACD11 /* image.cpp */,
 				9A93B95928471D39005ACD11 /* image.h */,
 				9A0705FD26627549004E8CB4 /* image.mm */,
+				9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */,
 				9A787E5E264E22CB003DF8A0 /* node.cpp */,
 				9A787E60264E22CB003DF8A0 /* node.h */,
 				9A787E5F264E22CB003DF8A0 /* NSObject+DDExtensions.h */,
@@ -384,7 +387,8 @@
 		9A15A57A264B536C0080670E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1420;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					9A15A581264B536C0080670E = {
 						CreatedOnToolsVersion = 12.5;
@@ -447,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A94028E29E62F5E00C8C249 /* _cg_context.cpp in Sources */,
+				9ABBFE562B3FDCEC0036DF8C /* node_process_identifier_modules_paths.cpp in Sources */,
 				9A787E75264E31BC003DF8A0 /* NSString+SymlinksAndAliases.mm in Sources */,
 				9A93B95A28471D7D005ACD11 /* image.cpp in Sources */,
 				9AA3F9622A9498D3004283CA /* file_context.cpp in Sources */,
@@ -570,6 +575,7 @@
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -577,9 +583,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework.h;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -598,7 +602,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = (
 					.,
 					"$(WorkspaceDir)/source",
@@ -664,6 +667,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -687,7 +691,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = (
 					.,
 					"$(WorkspaceDir)/source",

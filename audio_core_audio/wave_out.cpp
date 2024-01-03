@@ -2,7 +2,7 @@
 #include "wave_out.h"
 #include "translation.h"
 #include "acme/constant/message.h"
-#include "acme/memory/_heap.h"
+///#include "acme/memory/_heap.h"
 #include "acme/operating_system/apple/_apple.h"
 #include "acme/parallelization/synchronous_lock.h"
 
@@ -113,7 +113,7 @@ namespace multimedia
          
          int iSize = sizeof(AudioStreamBasicDescription);
          
-         m_pdataformat = (AudioStreamBasicDescription *) main_memory_allocate_heap::aligned_memory_allocate(iSize, 64);
+         m_pdataformat = (AudioStreamBasicDescription *) ::acme::get()->m_pheapmanagement->memory(::heap::e_memory_main)->aligned_allocate(iSize, 64);
 
          translate(*m_pdataformat, m_pwaveformat);
          

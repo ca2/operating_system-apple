@@ -160,7 +160,7 @@ namespace draw2d_quartz2d
             
          }
          
-         if(ppath->m_ppathoptimization->fill(this, nullptr))
+         if(ppath->m_ppathoptimization->intersect_clip(this))
          {
             
             return;

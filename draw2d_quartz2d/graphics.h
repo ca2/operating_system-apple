@@ -494,6 +494,9 @@ namespace draw2d_quartz2d
       void stroke_and_fill_path() override;
       void stroke_path() override;
       void widen_path() override;
+      
+      void intersect_clip(::draw2d::path * ppath) override;
+      
       using ::draw2d::graphics::draw;
       void draw(::draw2d::path * ppath) override;
       void fill(::draw2d::path * ppath) override;

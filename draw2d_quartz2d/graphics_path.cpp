@@ -147,7 +147,39 @@ namespace draw2d_quartz2d
    }
 
 
+   void graphics::intersect_clip(::draw2d::path * ppath)
+   {
 
+      if(!ppath->m_bPersistent)
+      {
+         
+         if(ppath->m_ppathoptimization.is_null())
+         {
+            
+            ppath->m_ppathoptimization = __allocate < ::draw2d::path_simple_optimization >(ppath);
+            
+         }
+         
+         if(ppath->m_ppathoptimization->fill(this, nullptr))
+         {
+            
+            return;
+            
+         }
+
+      }
+
+      auto path = ppath->template get_os_data < CGMutablePathRef >(this);
+      
+      CGContextAddPath(m_cgcontext, path);
+      
+      _intersect_clip();
+
+//      _fill(pbrush);
+
+//      _fill_inline(ppath, pbrush);
+
+   }
 
 
 } // namespace draw2d_quartz2d

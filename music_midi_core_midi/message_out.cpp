@@ -378,7 +378,7 @@ namespace music
          }
          
          
-         bool message_out::step()
+         bool message_out::midi_message_step()
          {
             
             if(m_packetlist)
@@ -451,7 +451,7 @@ namespace music
          void message_out::add_long_message(Byte * pmessage, int iSize)
          {
             
-            step();
+            midi_message_step();
             
             add_short_message(pmessage, iSize);
 

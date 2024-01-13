@@ -378,7 +378,7 @@ namespace music
          }
          
       
-         bool dls_synth_message_out::step()
+         bool dls_synth_message_out::midi_message_step()
          {
             
             //return ::success;

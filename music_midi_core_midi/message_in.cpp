@@ -423,7 +423,7 @@ namespace music
          }
          
          
-         bool message_in::step()
+         bool message_in::midi_message_step()
          {
             
 //            if(m_packetlist)
@@ -493,7 +493,7 @@ namespace music
          void message_in::add_long_message(Byte * pmessage, int iSize)
          {
             
-            step();
+            midi_message_step();
             
             add_short_message(pmessage, iSize);
 

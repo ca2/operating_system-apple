@@ -12,6 +12,7 @@
 		9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFCC276118A6001E14CC /* Carbon.framework */; };
 		9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFE1276122CB001E14CC /* Cocoa.framework */; };
 		9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412438266C3ECE00C3FF0E /* libacme.dylib */; };
+		9A50DCB82B50CAEB00DAD9CF /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */; };
 		9A734A52284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
 		9A734A53284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
 		9A741591266BD2B700552531 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A74158F266BD25B00552531 /* debug.cpp */; };
@@ -516,6 +517,7 @@
 				9AC14D15297B3410006D9BD3 /* acme_directory.cpp in Sources */,
 				9AC14D16297B3410006D9BD3 /* acme_file.cpp in Sources */,
 				9AC14D17297B3410006D9BD3 /* CAHostTimeBase.cpp in Sources */,
+				9A50DCB82B50CAEB00DAD9CF /* node_process_identifier_modules_paths.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

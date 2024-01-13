@@ -53,7 +53,7 @@ namespace music
             void note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
             void program_change(int iChannel, unsigned char uchProgram) override;
             
-            bool step() override;
+            bool midi_message_step() override;
 
             
             bool use_tick() const override;

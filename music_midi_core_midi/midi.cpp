@@ -232,7 +232,7 @@ namespace music
                
                auto pmessageout = get_message_out(strDevice);
                
-               return __new(::music::midi::sequencer(psequence, pmessageout));
+               return __new < ::music::midi::sequencer >(psequence, pmessageout);
                
             }
             
@@ -296,7 +296,7 @@ namespace music
             if (!pmessagein)
             {
                
-               auto pmidiin = __new(message_in(this, maximum(0, (int) iPort)));
+               auto pmidiin = __new < ::music::midi::core_midi::message_in >(this, maximum(0, (int) iPort));
                
                pmessagein = pmidiin;
                

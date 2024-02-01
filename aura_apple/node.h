@@ -12,6 +12,9 @@
 #include "apex_apple/node.h"
 
 
+struct application_menu_callback;
+
+
 namespace aura_apple
 {
 
@@ -41,6 +44,12 @@ namespace aura_apple
          void on_start_system() override;
         
          void on_system_main() override;
+         
+         
+         virtual void defer_create_windowing_application_delegate(void * pApplication, ::application_menu * papplicationmenu, ::application_menu_callback * papplicationmenucallback);
+
+
+         virtual void ns_app_run();
          
          
       };

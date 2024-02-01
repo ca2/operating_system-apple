@@ -431,7 +431,7 @@ bool os_is_alias(const char * psz)
 bool uniform_type_conforms_to_data_type(CFStringRef cfstr, enum_data_type edatatype)
 {
    
-   if (@available(macOS 11.0, *))
+   if (@available(iOS 14, macOS 11, *))
    {
    
       NSString * nsstr = (__bridge NSString *) cfstr;
@@ -449,6 +449,12 @@ bool uniform_type_conforms_to_data_type(CFStringRef cfstr, enum_data_type edatat
    }
    else
    {
+    
+#ifdef APPLE_IOS
+      
+      return false;
+      
+#else
       
       switch(edatatype)
       {
@@ -458,6 +464,8 @@ bool uniform_type_conforms_to_data_type(CFStringRef cfstr, enum_data_type edatat
             return false;
             
       }
+      
+#endif
       
    }
    

@@ -58,9 +58,6 @@ namespace acme_apple
       
       
       
-      ::process_identifier_array processes_identifiers() override;
-      
-      
       ::string operating_system_application_version() override;
 
       ::file::path_array process_identifier_modules_paths(::process_identifier processidentifier) override;

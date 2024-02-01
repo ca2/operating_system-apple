@@ -77,6 +77,7 @@
 		9AC14D15297B3410006D9BD3 /* acme_directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* acme_directory.cpp */; };
 		9AC14D16297B3410006D9BD3 /* acme_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */; };
 		9AC14D17297B3410006D9BD3 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
+		9AC88B042B6B4D6D008F1C20 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94028D29E62F5E00C8C249 /* _cg_context.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9AFD80B3297B584000BAD9DD;
 			remoteInfo = static_acme_darwin;
+		};
+		9AC107552B6ACC250053DB45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AB15D2229A8811400DFDF90;
+			remoteInfo = ios_acme_darwin;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -359,6 +367,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9AC107562B6ACC250053DB45 /* PBXTargetDependency */,
 			);
 			name = ios_acme_apple;
 			productName = acme_apple;
@@ -389,7 +398,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					9A15A581264B536C0080670E = {
 						CreatedOnToolsVersion = 12.5;
@@ -477,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC88B042B6B4D6D008F1C20 /* _cg_context.cpp in Sources */,
 				9A94DEFB282C606600F5C1CA /* acme_path.cpp in Sources */,
 				9A94DEDD282C4B1C00F5C1CA /* resource.cpp in Sources */,
 				9A94DEFC282C606900F5C1CA /* acme_directory.cpp in Sources */,
@@ -533,6 +543,11 @@
 			isa = PBXTargetDependency;
 			name = static_acme_darwin;
 			targetProxy = 9A9DCB7F29B8246D00D1255B /* PBXContainerItemProxy */;
+		};
+		9AC107562B6ACC250053DB45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ios_acme_darwin;
+			targetProxy = 9AC107552B6ACC250053DB45 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -593,7 +608,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = "@executable_path";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -683,7 +697,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = "@executable_path";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -737,6 +750,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
 				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;
@@ -747,6 +761,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
 				PLATFORM_MODIFIER = ios;
 				SDKROOT = iphoneos;

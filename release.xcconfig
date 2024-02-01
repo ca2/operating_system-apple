@@ -1,0 +1,12 @@
+//
+//  machine.xcconfig
+//  operating_system-macos
+//
+//  Created by Camilo Sasuke Thomas Borregaard Sørensen on 2023-06-06 03:33
+//  with Mummi
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "system.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = NDEBUG $(MACHINE_PREPROCESSOR_DEFINITIONS) $(inherited)

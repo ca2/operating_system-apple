@@ -138,11 +138,22 @@ namespace draw2d_quartz2d
          
       }
       
+      ::pointer < ::user::redraw > puserredraw;
+      
+      if(m_pgraphics)
+      {
+         
+         puserredraw = m_pgraphics->user_redraw();
+         
+      }
+      
       destroy();
       
       m_pbitmap = pbitmap;
       
       m_pgraphics = pgraphics;
+      
+      m_pgraphics->m_puserredraw = puserredraw;
       
       m_bMapped = false;
       

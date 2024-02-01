@@ -38,6 +38,9 @@ namespace aura_apple
 
          ::image_pointer get_file_image(int iSize, const ::file::path & path) override;
 
+         void on_start_system() override;
+        
+         
          
       };
 

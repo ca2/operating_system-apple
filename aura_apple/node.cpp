@@ -227,6 +227,13 @@ _synchronous_lock synchronouslock(this->synchronization());
 
 }
 
+void node::on_start_system()
+{
+   
+   system()->on_branch_system_from_main_thread_startup();
+   
+}
+
 
 
 } // namespace aura_apple

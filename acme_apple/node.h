@@ -14,6 +14,7 @@
 namespace acme_apple
 {
 
+
    class CLASS_DECL_ACME node :
       virtual public ::acme_darwin::node
    {

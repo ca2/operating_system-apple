@@ -5,6 +5,7 @@
 #include "node.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/parallelization/synchronous_lock.h"
+#include "acme/platform/system.h"
 #include "aura/graphics/image/context_image.h"
 #include "aura/platform/context.h"
 

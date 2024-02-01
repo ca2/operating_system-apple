@@ -177,7 +177,7 @@
 		9A8E9DF0282A2FB6005FF778 /* libios_apex_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_apex_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A98EF4A29A5826A009BF01D /* libacme_darwin.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_darwin.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC980C12A71B3E800B1BCF3 /* libstatic_apex_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libstatic_apex_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AC981A72A71B58B00B1BCF3 /* acme_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_darwin.xcodeproj; path = "/Users/camilo/workspace/integration/operating_system/operating_system-darwin/acme_darwin/acme_darwin.xcodeproj"; sourceTree = "<absolute>"; };
+		9AC981A72A71B58B00B1BCF3 /* acme_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_darwin.xcodeproj; path = acme_darwin.xcodeproj; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

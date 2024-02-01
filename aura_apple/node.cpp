@@ -4,7 +4,13 @@
 #include "framework.h"
 #include "node.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
+#include "acme/parallelization/synchronous_lock.h"
+#include "aura/graphics/image/context_image.h"
+#include "aura/platform/context.h"
 
+
+bool apple_get_file_image(::image * pimage, const char * pszFilePath);
+bool apple_get_file_image_by_type_identifier(::image * pimage, const char * pszTypeIdentifier);
 
 namespace aura_apple
 {
@@ -180,6 +186,46 @@ namespace aura_apple
 //         return estatus;
 
       }
+
+
+
+::image_pointer node::get_file_image_by_type_identifier(int iSize, const ::scoped_string & scopedstrTypeIdentifier)
+{
+
+   auto pimage = m_pcontext->m_pauracontext->create_image( { iSize, iSize } );
+
+   _synchronous_lock synchronouslock(this->synchronization());
+
+   if(!apple_get_file_image_by_type_identifier(pimage, scopedstrTypeIdentifier))
+   {
+
+      return nullptr;
+
+   }
+
+   return pimage;
+
+}
+
+
+::image_pointer node::get_file_image(int iSize, const ::file::path & path)
+{
+   
+
+   auto pimage = m_pcontext->m_pauracontext->create_image( { iSize, iSize } );
+
+_synchronous_lock synchronouslock(this->synchronization());
+
+   if(!apple_get_file_image(pimage, path))
+   {
+
+      return nullptr;
+
+   }
+
+   return pimage;
+
+}
 
 
 

@@ -40,6 +40,7 @@ namespace aura_apple
 
          void on_start_system() override;
         
+         void on_system_main() override;
          
          
       };

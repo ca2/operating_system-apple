@@ -100,7 +100,15 @@ namespace acme_apple
    string node::multimedia_audio_mixer_get_default_implementation_name()
    {
       
+#if defined(MACOS)
+      
       return system()->implementation_name("audio_mixer", "core_audio");
+      
+#else
+      
+      return {};
+      
+#endif
       
    }
 

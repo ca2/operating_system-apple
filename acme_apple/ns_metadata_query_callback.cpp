@@ -16,8 +16,16 @@ ns_metadata_query_callback::ns_metadata_query_callback()
 }
 
 
-void ns_metadata_query_callback::ns_metadata_query_callback_on_item(const char * pszName)
+void ns_metadata_query_callback::ns_metadata_query_callback_on_base_path(const char * pszBasePath)
 {
+   
+      
+}
+
+
+void ns_metadata_query_callback::ns_metadata_query_callback_on_item(const char * pszFullPath)
+{
+   
       
 }
    

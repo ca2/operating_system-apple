@@ -27,7 +27,15 @@ enum_status ns_defer_initialize_icloud_access();
 }
 
 
-- (void)install_callback:(ns_metadata_query_callback *) pcallback
+-(void)dealloc
+{
+   
+   NSLog(@"NSMetadataQueryHandler dealloc");
+   
+}
+
+
+- (void)installCallback:(ns_metadata_query_callback *) pcallback
 {
    
    m_pcallback = pcallback;
@@ -38,21 +46,55 @@ enum_status ns_defer_initialize_icloud_access();
    
    NSMetadataQuery * pquery = self.metadata_query;
    
-   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(metadataQueryDidFinishedGathering:) name:NSMetadataQueryDidFinishGatheringNotification object:pquery];
+   NSNotificationCenter * center = [ NSNotificationCenter defaultCenter] ;
    
-   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(metadataQueryDidUpdate:) name:NSMetadataQueryDidUpdateNotification object:pquery];
+   [
+      
+      center
+      addObserverForName : NSMetadataQueryDidUpdateNotification
+      object : pquery
+      queue : pquery.operationQueue
+      usingBlock : ^(NSNotification * _Nonnull notification)
+      {
+         
+         [self metadataQueryDidUpdate : notification];
+         
+      }
+      
+   ];
 
+   
+   [
+      
+      center
+      addObserverForName : NSMetadataQueryDidFinishGatheringNotification
+      object: pquery
+      queue: pquery.operationQueue
+      usingBlock:^(NSNotification * _Nonnull notification)
+      {
+         
+         [self metadataQueryDidFinishedGathering : notification];
+         
+      }
+      
+   ];
+   
+   
 }
 
 
-- (void)metadataQueryDidFinishedGathering:(NSNotification *)notification
+- (void) metadataQueryDidFinishedGathering : (NSNotification *)notification
 {
    
    //[ self metadataQueryDidUpdate : notification ];
    
-   //[self stopQuery];
+   [ self fetchResults ];
    
-   m_bFinished = true;
+   //[ self.metadata_query stopQuery];
+   
+   //m_bFinished = true;
+   
+   m_pcallback->ns_metadata_query_callback_finished();
    
    NSLog(@"NSMetadataQueryWithCallback metadataQueryDidFinishedGathering!!!");
    NSLog(@"NSMetadataQueryWithCallback metadataQueryDidFinishedGathering!!");
@@ -60,14 +102,12 @@ enum_status ns_defer_initialize_icloud_access();
 }
 
 
--(void)uninstall_callback
+-(void)uninstallCallback
 {
    
-   [[NSNotificationCenter defaultCenter] removeObserver:self name:NSMetadataQueryDidFinishGatheringNotification object:self.metadata_query];
+   [[NSNotificationCenter defaultCenter] removeObserver : self name:NSMetadataQueryDidFinishGatheringNotification object:self.metadata_query];
 
-   [[NSNotificationCenter defaultCenter] removeObserver:self name:NSMetadataQueryDidUpdateNotification object:self.metadata_query];
-   
-   m_pcallback->ns_metadata_query_callback_finished();
+   [[NSNotificationCenter defaultCenter] removeObserver : self name:NSMetadataQueryDidUpdateNotification object : self.metadata_query];
    
    self.metadata_query = nil;
    
@@ -79,21 +119,34 @@ enum_status ns_defer_initialize_icloud_access();
 -(void)metadataQueryDidUpdate:(NSNotification *)notification
 {
    
+   [ self fetchResults ];
+   
+}
+
+
+-(void) fetchResults
+{
+   
    NSMetadataQuery * pquery = self.metadata_query;
    
-    [pquery disableUpdates];
+   [ pquery disableUpdates ];
 
    NSLog(@"NSMetadataQueryWithCallback metadataQueryDidUpdate!!!");
 
-    // Look at each element returned by the search
-    // - note it returns the entire list each time this method is called, NOT just the changes
-    long resultCount = [pquery resultCount];
-    for (int i = 0; i < resultCount; i++) {
-        NSMetadataItem *item = [pquery resultAtIndex:i];
-        [self onMetadataItem:item];
-    }
+   // Look at each element returned by the search
+   // - note it returns the entire list each time this method is called, NOT just the changes
+   long resultCount = [ pquery resultCount ];
+   
+   for (int i = 0; i < resultCount; i++)
+   {
+      
+      NSMetadataItem *item = [pquery resultAtIndex:i];
+      
+      [self onMetadataItem:item];
+      
+   }
 
-    [pquery enableUpdates];
+   [ pquery enableUpdates ];
    
 }
 
@@ -101,35 +154,33 @@ enum_status ns_defer_initialize_icloud_access();
 - (void)onMetadataItem:(NSMetadataItem *)item
 {
    
-    NSNumber *isUbiquitous = [item valueForAttribute:NSMetadataItemIsUbiquitousKey];
-    NSNumber *hasUnresolvedConflicts = [item valueForAttribute:NSMetadataUbiquitousItemHasUnresolvedConflictsKey];
-    NSString *downloadingStatus = [item valueForAttribute:NSMetadataUbiquitousItemDownloadingStatusKey];
-    NSNumber *isDownloading = [item valueForAttribute:NSMetadataUbiquitousItemIsDownloadingKey];
-    NSNumber *isUploaded = [item valueForAttribute:NSMetadataUbiquitousItemIsUploadedKey];
-    NSNumber *isUploading = [item valueForAttribute:NSMetadataUbiquitousItemIsUploadingKey];
-    NSNumber *percentDownloaded = [item valueForAttribute:NSMetadataUbiquitousItemPercentDownloadedKey];
-    NSNumber *percentUploaded = [item valueForAttribute:NSMetadataUbiquitousItemPercentUploadedKey];
-    NSURL *url = [item valueForAttribute:NSMetadataItemURLKey];
-   NSURL *path = [item valueForAttribute:NSMetadataItemPathKey];
+   NSNumber *isUbiquitous = [item valueForAttribute:NSMetadataItemIsUbiquitousKey];
+   NSNumber *hasUnresolvedConflicts = [item valueForAttribute:NSMetadataUbiquitousItemHasUnresolvedConflictsKey];
+   NSString *downloadingStatus = [item valueForAttribute:NSMetadataUbiquitousItemDownloadingStatusKey];
+   NSNumber *isDownloading = [item valueForAttribute:NSMetadataUbiquitousItemIsDownloadingKey];
+   NSNumber *isUploaded = [item valueForAttribute:NSMetadataUbiquitousItemIsUploadedKey];
+   NSNumber *isUploading = [item valueForAttribute:NSMetadataUbiquitousItemIsUploadingKey];
+   NSNumber *percentDownloaded = [item valueForAttribute:NSMetadataUbiquitousItemPercentDownloadedKey];
+   NSNumber *percentUploaded = [item valueForAttribute:NSMetadataUbiquitousItemPercentUploadedKey];
+   NSURL *url = [item valueForAttribute:NSMetadataItemURLKey];
+   NSString *path = [item valueForAttribute:NSMetadataItemPathKey];
    long lPathComponentsCount = path.pathComponents.count;
 
-    BOOL documentExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
+   BOOL documentExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
 
-    NSLog(@"isUbiquitous:%@ hasUnresolvedConflicts:%@ downloadinStatus:%@ isDownloading:%@ isUploaded:%@ isUploading:%@ %%downloaded:%@ %%uploaded:%@ pathComponentsCount:%ld, documentExists:%i - %@", isUbiquitous, hasUnresolvedConflicts, downloadingStatus, isDownloading, isUploaded, isUploading, percentDownloaded, percentUploaded, lPathComponentsCount, documentExists, url);
+   NSLog(@"isUbiquitous:%@ hasUnresolvedConflicts:%@ downloadinStatus:%@ isDownloading:%@ isUploaded:%@ isUploading:%@ %%downloaded:%@ %%uploaded:%@ pathComponentsCount:%ld, documentExists:%i - %@", isUbiquitous, hasUnresolvedConflicts, downloadingStatus, isDownloading, isUploaded, isUploading, percentDownloaded, percentUploaded, lPathComponentsCount, documentExists, url);
    
-   NSString * str = [url absoluteString];
-   
-   m_pcallback->ns_metadata_query_callback_on_item([str UTF8String]);
+   m_pcallback->ns_metadata_query_callback_on_item([path UTF8String]);
    
 }
 
 
-- (NSURL *)create_a_nice_url_for_me_with_callback:(ns_metadata_query_callback*) pcallback folder:(const char *) pszFolder andContainerIdentifier: (const char *) pszAppCloudContainerIdentifier
+- (NSString *)calculateBasePathWithCallback:(ns_metadata_query_callback*) pcallback andAppCloudContainerIdentifier: (const char *) pszAppCloudContainerIdentifier
 {
    
-   NSString * strContainerIdentifier = [ [ NSString alloc ] initWithUTF8String : pszAppCloudContainerIdentifier ];
+   NSString * strAppCloudContainerIdentifier = [ [ NSString alloc ] initWithUTF8String : pszAppCloudContainerIdentifier ];
    
-   NSURL * urlContainer = [ [ NSFileManager defaultManager ] URLForUbiquityContainerIdentifier: strContainerIdentifier ];
+   NSURL * urlContainer = [ [ NSFileManager defaultManager ] URLForUbiquityContainerIdentifier: strAppCloudContainerIdentifier ];
    
    if(!urlContainer)
    {
@@ -140,8 +191,6 @@ enum_status ns_defer_initialize_icloud_access();
       
    }
    
-   NSString * strFolder = [ [ NSString alloc ] initWithUTF8String : pszFolder ];
-
    NSURL * urlBase;
    
    if(pcallback->m_bPublic)
@@ -150,38 +199,25 @@ enum_status ns_defer_initialize_icloud_access();
       urlBase = [urlContainer URLByAppendingPathComponent:@"Documents"];
       
    }
-   else{
+   else
+   {
     
       urlBase = urlContainer;
       
    }
 
-   NSURL * url;
-   
-   if([strFolder length] > 0)
-   {
-      
-     url = [urlBase URLByAppendingPathComponent:strFolder];
+   m_strBasePath = [ urlBase absoluteString ];
 
-   }
-   else
-   {
-   
-      url = urlBase;
-   
-   }
-
-   return url;
+   return m_strBasePath;
    
 }
 
 
-
-
- -(void)startListingWithCallback:(ns_metadata_query_callback*) pcallback folder: (const char *) pszFolder andContainerIdentifier: (const char *) pszAppCloudContainerIdentifier
+ -(void)startMetadataQueryWithCallback:(ns_metadata_query_callback*) pcallback andAppCloudContainerIdentifier: (const char *) pszAppCloudContainerIdentifier
 {
 
-   //NSURL *url = [self create_a_nice_url_for_me_with_callback : pcallback folder:pszFolder andContainerIdentifier:pszAppCloudContainerIdentifier];
+   [ self calculateBasePathWithCallback: pcallback andAppCloudContainerIdentifier : pszAppCloudContainerIdentifier ];
+   
    //long lPathComponentsCount = [ [ url pathComponents ] count ];
       
    //NSString * strPath = [ url path ];
@@ -202,37 +238,35 @@ enum_status ns_defer_initialize_icloud_access();
 
    self.metadata_query_handler_hold = self;
    
-   ns_main_async(^()
+   //ns_main_async(^()
    {
-      
-      
       
       {
          
-         id token = [[NSFileManager defaultManager] ubiquityIdentityToken];
+         id token = [ [ NSFileManager defaultManager ] ubiquityIdentityToken ];
          
          if (token == nil)
          {
+            
             NSLog(@"ICloud Is not LogIn");
+            
             throw "failed icloud is not login";
             
             return;
+            
          }
          
       }
-      
 
-      NSMetadataQuery * pquery = [[NSMetadataQuery alloc] init];
+      NSMetadataQuery * pquery = [ NSMetadataQuery new ];
       
       self.metadata_query = pquery;
 
       self->m_bFinished = false;
-   
 
-      NSString * predicateFormat = @"(%K like '2*.txt')";
+      NSString * predicateFormat = @"(%K like '*')";
       
       // Control the directory depth through the number of pathComponents
-         
          
    //      NSPredicate * predicate = [ NSPredicate predicateWithFormat : predicateFormat,
    //                                 NSMetadataItemFSNameKey,
@@ -240,49 +274,70 @@ enum_status ns_defer_initialize_icloud_access();
    //                                 strPath,
    //                                 NSMetadataItemPathKey,
    //                                 lPathComponentsCount + 1 ];
+      
       NSPredicate * predicate = [ NSPredicate predicateWithFormat : predicateFormat,
                                  NSMetadataItemFSNameKey ];
 
-      [pquery setPredicate:predicate];
+      pquery.predicate =predicate;
          //NSArray *dirs = [[NSArray alloc] initWithObjects:urlContainer, nil] ;
 
-        NSArray * searchScopes = [NSArray arrayWithObject:NSMetadataQueryUbiquitousDocumentsScope];
+      NSArray * searchScopes = [NSArray arrayWithObject : NSMetadataQueryUbiquitousDocumentsScope];
    //   NSArray * searchScopes = [NSArray arrayWithObject:url];
 
-         [pquery setSearchScopes:searchScopes];
+      pquery.searchScopes = searchScopes;
       
       //[self setSearchScopes:NSMetadataQueryUbiquitousDataScope];
 
-         NSString * sPred = [predicate predicateFormat];
+      NSString * sPred = [ predicate predicateFormat ];
          
-         NSLog(@"MetaDataQuery predicateFormat %@", sPred);
+      NSLog(@"MetaDataQuery predicateFormat %@", sPred);
          
+      NSOperationQueue * pqueue = [ NSOperationQueue new ];
       
+      pqueue.maxConcurrentOperationCount = 1;
       
+      pquery.operationQueue = pqueue;
+      
+      [ pquery.operationQueue addOperationWithBlock:
+      ^{
+         
+         [ self installCallback : pcallback];
+         
+         [ pquery enableUpdates ];
+         
+         if([ pquery startQuery ])
+         {
+             
+            NSLog(@"MetaDataQuery seems ok");
+            NSLog(@"MetaDataQuery query finished?!?");
 
-      [ self install_callback: pcallback];
-         
-      if([pquery startQuery])
-      {
-         
-         NSLog(@"MetaDataQuery seems ok");
-         while( !self->m_bFinished )
-          {
-            [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:30]];
-          }
-         NSLog(@"MetaDataQuery query finished?!?");
+         }
+         else
+         {
+            
+            NSLog(@"MetaDataQuery failed");
 
-         //CFRunLoopRun();
+         }
          
-      }
-      else{
+      }];
          
-         NSLog(@"MetaDataQuery seems nok");
-
-      }
+//      if([ pquery startQuery ])
+//      {
+//         
+//         while( !self->m_bFinished )
+//          {
+//            [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:30]];
+//          }
+//
+//         //CFRunLoopRun();
+//         
+//      }
+//      else{
+//         
+//
+//      }
       
-      
-   });
+   }
    
 }
 
@@ -294,20 +349,19 @@ void ns_metadata_query_callback::ns_metadata_query_callback_uninstall()
    
    auto p = (__bridge_transfer NSMetadataQueryHandler *) m_pNSMetadataQueryHandler;
    
-   [ p uninstall_callback ];
-   
+   [ p uninstallCallback ];
    
 }
 
 
-
-
-void ns_app_cloud_start_listing(ns_metadata_query_callback * pcallback, const char * pszFolder, const char * pszAppCloudContainerIdentifier)
+void ns_app_cloud_start_metadata_query(ns_metadata_query_callback * pcallback, const char * pszAppCloudContainerIdentifier)
 {
    
-   NSMetadataQueryHandler * queryhandler =
-   [[NSMetadataQueryHandler alloc] init];
+   NSMetadataQueryHandler * queryhandler = [ [ NSMetadataQueryHandler alloc ] init ];
    
-   [queryhandler startListingWithCallback:pcallback folder:pszFolder andContainerIdentifier:pszAppCloudContainerIdentifier];
+   [ queryhandler startMetadataQueryWithCallback : pcallback andAppCloudContainerIdentifier : pszAppCloudContainerIdentifier];
    
 }
+
+
+

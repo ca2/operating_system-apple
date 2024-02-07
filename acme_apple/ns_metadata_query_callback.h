@@ -16,8 +16,10 @@ public:
    bool        m_bPublic;
    
    ns_metadata_query_callback();
+
+   virtual void ns_metadata_query_callback_on_base_path(const char * pszBasePath);
    
-   virtual void ns_metadata_query_callback_on_item(const char * pszName);
+   virtual void ns_metadata_query_callback_on_item(const char * pszFullPath);
    
    virtual void ns_metadata_query_callback_finished();
    

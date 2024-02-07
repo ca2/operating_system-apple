@@ -18,6 +18,7 @@ class ns_metadata_query_callback;
    
    ns_metadata_query_callback * m_pcallback;
    bool m_bFinished;
+   NSString * m_strBasePath;
    
 }
 
@@ -26,14 +27,15 @@ class ns_metadata_query_callback;
 
 -(id)init;
 
-- (void)install_callback:(ns_metadata_query_callback *)pcallback;
-- (void)uninstall_callback;
+- (void)installCallback:(ns_metadata_query_callback *)pcallback;
+- (void)uninstallCallback;
 
-- (void)startListingWithCallback:(ns_metadata_query_callback*) pcallback folder: (const char *) pszFolder andContainerIdentifier :(const char *) pszAppCloudContainerIdentifier;
+- (void)startMetadataQueryWithCallback:(ns_metadata_query_callback*) pcallback andAppCloudContainerIdentifier :(const char *) pszAppCloudContainerIdentifier;
 
 - (void)metadataQueryDidFinishedGathering:(NSNotification *)notification;
 
 -(void)metadataQueryDidUpdate:(NSNotification *)notification;
 
+- (NSString *)calculateBasePathWithCallback:(ns_metadata_query_callback*) pcallback andAppCloudContainerIdentifier: (const char *) pszAppCloudContainerIdentifier;
 
 @end

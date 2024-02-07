@@ -23,7 +23,7 @@ void ns_metadata_query_callback::ns_metadata_query_callback_on_base_path(const c
 }
 
 
-void ns_metadata_query_callback::ns_metadata_query_callback_on_item(const char * pszFullPath)
+void ns_metadata_query_callback::ns_metadata_query_callback_listing(long long ll, const char ** pszaFullPath)
 {
    
       

@@ -133,46 +133,54 @@ enum_status ns_defer_initialize_icloud_access();
 
    NSLog(@"NSMetadataQueryWithCallback metadataQueryDidUpdate!!!");
 
+   
+   
    // Look at each element returned by the search
    // - note it returns the entire list each time this method is called, NOT just the changes
-   long resultCount = [ pquery resultCount ];
+   long long ll = [ pquery resultCount ];
+
+   const char ** psza = (const char **) malloc(sizeof(const char *) * ll);
    
-   for (int i = 0; i < resultCount; i++)
+   for (long long i = 0; i < ll; i++)
    {
       
-      NSMetadataItem *item = [pquery resultAtIndex:i];
+      NSMetadataItem * item = [ pquery resultAtIndex : i ];
       
-      [self onMetadataItem:item];
+      NSString * path = [ item valueForAttribute : NSMetadataItemPathKey ];
+      
+      psza[i] = (const char *) strdup([ path UTF8String ]);
       
    }
 
+   m_pcallback->ns_metadata_query_callback_listing(ll, psza);
+   
    [ pquery enableUpdates ];
    
 }
 
-
-- (void)onMetadataItem:(NSMetadataItem *)item
-{
-   
-   NSNumber *isUbiquitous = [item valueForAttribute:NSMetadataItemIsUbiquitousKey];
-   NSNumber *hasUnresolvedConflicts = [item valueForAttribute:NSMetadataUbiquitousItemHasUnresolvedConflictsKey];
-   NSString *downloadingStatus = [item valueForAttribute:NSMetadataUbiquitousItemDownloadingStatusKey];
-   NSNumber *isDownloading = [item valueForAttribute:NSMetadataUbiquitousItemIsDownloadingKey];
-   NSNumber *isUploaded = [item valueForAttribute:NSMetadataUbiquitousItemIsUploadedKey];
-   NSNumber *isUploading = [item valueForAttribute:NSMetadataUbiquitousItemIsUploadingKey];
-   NSNumber *percentDownloaded = [item valueForAttribute:NSMetadataUbiquitousItemPercentDownloadedKey];
-   NSNumber *percentUploaded = [item valueForAttribute:NSMetadataUbiquitousItemPercentUploadedKey];
-   NSURL *url = [item valueForAttribute:NSMetadataItemURLKey];
-   NSString *path = [item valueForAttribute:NSMetadataItemPathKey];
-   long lPathComponentsCount = path.pathComponents.count;
-
-   BOOL documentExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
-
-   NSLog(@"isUbiquitous:%@ hasUnresolvedConflicts:%@ downloadinStatus:%@ isDownloading:%@ isUploaded:%@ isUploading:%@ %%downloaded:%@ %%uploaded:%@ pathComponentsCount:%ld, documentExists:%i - %@", isUbiquitous, hasUnresolvedConflicts, downloadingStatus, isDownloading, isUploaded, isUploading, percentDownloaded, percentUploaded, lPathComponentsCount, documentExists, url);
-   
-   m_pcallback->ns_metadata_query_callback_on_item([path UTF8String]);
-   
-}
+//
+//- (void)onMetadataItem:(NSMetadataItem *)item
+//{
+//   
+//   NSNumber *isUbiquitous = [item valueForAttribute:NSMetadataItemIsUbiquitousKey];
+//   NSNumber *hasUnresolvedConflicts = [item valueForAttribute:NSMetadataUbiquitousItemHasUnresolvedConflictsKey];
+//   NSString *downloadingStatus = [item valueForAttribute:NSMetadataUbiquitousItemDownloadingStatusKey];
+//   NSNumber *isDownloading = [item valueForAttribute:NSMetadataUbiquitousItemIsDownloadingKey];
+//   NSNumber *isUploaded = [item valueForAttribute:NSMetadataUbiquitousItemIsUploadedKey];
+//   NSNumber *isUploading = [item valueForAttribute:NSMetadataUbiquitousItemIsUploadingKey];
+//   NSNumber *percentDownloaded = [item valueForAttribute:NSMetadataUbiquitousItemPercentDownloadedKey];
+//   NSNumber *percentUploaded = [item valueForAttribute:NSMetadataUbiquitousItemPercentUploadedKey];
+//   NSURL *url = [item valueForAttribute:NSMetadataItemURLKey];
+//   NSString *path = [item valueForAttribute:NSMetadataItemPathKey];
+//   long lPathComponentsCount = path.pathComponents.count;
+//
+//   BOOL documentExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
+//
+//   NSLog(@"isUbiquitous:%@ hasUnresolvedConflicts:%@ downloadinStatus:%@ isDownloading:%@ isUploaded:%@ isUploading:%@ %%downloaded:%@ %%uploaded:%@ pathComponentsCount:%ld, documentExists:%i - %@", isUbiquitous, hasUnresolvedConflicts, downloadingStatus, isDownloading, isUploaded, isUploading, percentDownloaded, percentUploaded, lPathComponentsCount, documentExists, url);
+//   
+//   m_pcallback->ns_metadata_query_callback_listing([path UTF8String]);
+//   
+//}
 
 
 - (NSString *)calculateBasePathWithCallback:(ns_metadata_query_callback*) pcallback andAppCloudContainerIdentifier: (const char *) pszAppCloudContainerIdentifier

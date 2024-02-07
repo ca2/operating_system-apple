@@ -88,131 +88,127 @@ namespace acme_apple
    }
 
 
-void file_listing_handler::ns_metadata_query_callback_on_base_path(const char * pszBasePath)
-{
-   
-   m_pathBase = pszBasePath;
-   
-}
-   
-   
-void file_listing_handler::ns_metadata_query_callback_on_item(const char * pszFullPath)
-{
-   
-   _synchronous_lock _synchronouslock(this->synchronization());
-   
-   m_filelisting.add_unique(pszFullPath);
-   
-   m_filelisting.order();
-   
-//   ::file::path path;
-//   
-//   ::file::path pathName;
-//   
-//   path = pathName.name();
-//   
-//   m_filelisting.m_eflag +=::file::e_flag_file;
-//   
-//   path.m_iDir = 0;
-//   
-//   m_filelisting.defer_add(path);
-   
-}
-
-void file_listing_handler::ns_metadata_query_callback_finished()
-{
- 
-   m_manualresetevent.SetEvent();
-   
-}
-
-
-bool file_listing_handler::enumerate(::file::listing& listing)
-{
-
-   if (listing.m_pathFinal.is_empty())
+   void file_listing_handler::ns_metadata_query_callback_on_base_path(const char * pszBasePath)
    {
       
-      ::string str = listing.m_pathUser;
+      m_pathBase = pszBasePath;
       
-      if(str.begins_eat(acmedirectory()->app_cloud_document()))
+   }
+      
+      
+   void file_listing_handler::ns_metadata_query_callback_listing(long long ll, const char ** pszaFullPath)
+   {
+      
+      _synchronous_lock _synchronouslock(this->synchronization());
+      
+      m_filelisting.erase_all();
+      
+      for(long long i = 0; i < ll; i++)
       {
          
-         listing.m_pathFinal = m_pathBase / str;
+         m_filelisting.add_unique(pszaFullPath[i]);
          
       }
-      else
+      
+      m_filelisting.order();
+      
+   }
+
+
+   void file_listing_handler::ns_metadata_query_callback_finished()
+   {
+    
+      m_manualresetevent.SetEvent();
+      
+   }
+      
+
+   bool file_listing_handler::enumerate(::file::listing& listing)
+   {
+
+      if (listing.m_pathFinal.is_empty())
       {
          
-         listing.m_pathFinal = listing.m_pathUser;
+         ::string str = listing.m_pathUser;
          
+         if(str.begins_eat(acmedirectory()->app_cloud_document()))
+         {
+            
+            listing.m_pathFinal = m_pathBase / str;
+            
+         }
+         else
+         {
+            
+            listing.m_pathFinal = listing.m_pathUser;
+            
+         }
+
       }
 
-   }
+      if (listing.m_pathBasePath.is_empty())
+      {
 
-   if (listing.m_pathBasePath.is_empty())
-   {
+         listing.m_pathBasePath = m_pathBase;
 
-      listing.m_pathBasePath = m_pathBase;
+      }
+      
+      ::string strFolder(listing.m_pathFinal);
+      
+      strFolder += "/";
+      
+      _synchronous_lock _synchronouslock(this->synchronization());
 
-   }
-   
-   ::string strFolder(listing.m_pathFinal);
-   
-   strFolder += "/";
-   
-   _synchronous_lock _synchronouslock(this->synchronization());
+      auto iStart = m_filelisting.find_first_begins(strFolder);
+      
+      if(iStart < 0)
+      {
 
-   auto iStart = m_filelisting.find_first_begins(strFolder);
-   
-   if(iStart < 0)
-   {
+         return false;
 
-      return false;
+      }
 
-   }
+      if (!listing.on_start_enumerating(this))
+      {
 
-   if (!listing.on_start_enumerating(this))
-   {
+         return true;
+
+      }
+      
+      ::index iEnd = iStart + 1;
+      
+      for(iEnd = iStart + 1; iEnd < m_filelisting.size(); iEnd++)
+      {
+         
+         auto & path = m_filelisting[iEnd];
+         
+         if(!path.begins(strFolder))
+         {
+            
+            break;
+            
+         }
+         
+         if(path.find_first('/', strFolder.length()))
+         {
+            
+            break;
+            
+         }
+         
+         path.m_iSize = listing.m_pathFinal.length();
+         
+         path.m_iBasePathLength = m_pathBase.length();
+         
+         path.m_iDir = 0;
+         
+         listing.defer_add(path);
+         
+      }
 
       return true;
 
    }
-   
-   ::index iEnd = iStart + 1;
-   
-   for(iEnd = iStart + 1; iEnd < m_filelisting.size(); iEnd++)
-   {
-      
-      auto & path = m_filelisting[iEnd];
-      
-      if(!path.begins(strFolder))
-      {
-         
-         break;
-         
-      }
-      
-      if(path.find_first('/', strFolder.length()))
-      {
-         
-         break;
-         
-      }
-      
-      path.m_iSize = listing.m_pathFinal.length();
-      
-      path.m_iBasePathLength = m_pathBase.length();
-      
-      path.m_iDir = 0;
-      
-      listing.defer_add(path);
-      
-   }
-
-   return true;
-
-}
 
 
 } // namespace acme_apple

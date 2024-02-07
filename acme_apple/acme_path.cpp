@@ -22,6 +22,7 @@ enum_status ns_symbolic_link_destination(char ** ppszDestination, const char * p
 namespace acme_apple
 {
 
+
    
    acme_path::acme_path()
    {

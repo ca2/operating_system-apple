@@ -58,6 +58,12 @@
 		9AA3F9622A9498D3004283CA /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3F95F2A9498D3004283CA /* file_context.cpp */; };
 		9AA3F9632A9498D3004283CA /* file_context.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA3F9612A9498D3004283CA /* file_context.h */; };
 		9AA74F6128484887009BB762 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
+		9AB09AA62B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */; };
+		9AB09AA72B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */; };
+		9AB09AA82B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */; };
+		9AB09AAC2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */; };
+		9AB09AAD2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */; };
+		9AB09AAE2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */; };
 		9ABBFE562B3FDCEC0036DF8C /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */; };
 		9AC14D01297B3410006D9BD3 /* acme_directory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* acme_directory.h */; };
 		9AC14D02297B3410006D9BD3 /* acme_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEF2282C5F6600F5C1CA /* acme_file.h */; };
@@ -184,6 +190,10 @@
 		9A9DCBDE29B8490900D1255B /* libios_acme_posix.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libios_acme_posix.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA3F95F2A9498D3004283CA /* file_context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_context.cpp; sourceTree = "<group>"; };
 		9AA3F9612A9498D3004283CA /* file_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_context.h; sourceTree = "<group>"; };
+		9AB09AA42B72BA7200E2C3A5 /* NSMetadataQueryHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSMetadataQueryHandler.h; sourceTree = "<group>"; };
+		9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NSMetadataQueryHandler.mm; sourceTree = "<group>"; };
+		9AB09AAA2B72C7B500E2C3A5 /* ns_metadata_query_callback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ns_metadata_query_callback.h; sourceTree = "<group>"; };
+		9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ns_metadata_query_callback.cpp; sourceTree = "<group>"; };
 		9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_process_identifier_modules_paths.cpp; sourceTree = "<group>"; };
 		9AC14D23297B3410006D9BD3 /* libstatic_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libstatic_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -263,6 +273,10 @@
 				9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */,
 				9A787E5E264E22CB003DF8A0 /* node.cpp */,
 				9A787E60264E22CB003DF8A0 /* node.h */,
+				9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */,
+				9AB09AAA2B72C7B500E2C3A5 /* ns_metadata_query_callback.h */,
+				9AB09AA42B72BA7200E2C3A5 /* NSMetadataQueryHandler.h */,
+				9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */,
 				9A787E5F264E22CB003DF8A0 /* NSObject+DDExtensions.h */,
 				9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */,
 				9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */,
@@ -462,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AB09AAC2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */,
 				9A94028E29E62F5E00C8C249 /* _cg_context.cpp in Sources */,
 				9ABBFE562B3FDCEC0036DF8C /* node_process_identifier_modules_paths.cpp in Sources */,
 				9A787E75264E31BC003DF8A0 /* NSString+SymlinksAndAliases.mm in Sources */,
@@ -472,6 +487,7 @@
 				9A78F40928E7A953007F62C0 /* exception_translator.cpp in Sources */,
 				9A787E6E264E234B003DF8A0 /* _factory.cpp in Sources */,
 				9A756981283D4477000D9C84 /* _.cpp in Sources */,
+				9AB09AA62B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
 				9A787E76264E31C2003DF8A0 /* UncaughtExceptionHandler.mm in Sources */,
 				9A787E77264E31C7003DF8A0 /* DDInvocationGrabber.mm in Sources */,
 				9A787E74264E31B7003DF8A0 /* NSObject+DDExtensions.mm in Sources */,
@@ -488,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AB09AAD2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */,
 				9AC88B042B6B4D6D008F1C20 /* _cg_context.cpp in Sources */,
 				9A40BDF42B6B997B0077053E /* node_process_identifier_modules_paths.cpp in Sources */,
 				9A94DEFB282C606600F5C1CA /* acme_path.cpp in Sources */,
@@ -498,6 +515,7 @@
 				9A94DEFA282C606300F5C1CA /* acme_file.cpp in Sources */,
 				9A8E9DA9282A2F61005FF778 /* NSString+SymlinksAndAliases.mm in Sources */,
 				9A8E9DAA282A2F61005FF778 /* debug.cpp in Sources */,
+				9AB09AA72B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
 				9A8E9DAB282A2F61005FF778 /* _factory.cpp in Sources */,
 				9A94DEDC282C4B1C00F5C1CA /* _.cpp in Sources */,
 				9A8E9DAC282A2F61005FF778 /* UncaughtExceptionHandler.mm in Sources */,
@@ -516,12 +534,14 @@
 			files = (
 				9A1BD67E2A0073EA00152CD1 /* _cg_context.cpp in Sources */,
 				9AC14D07297B3410006D9BD3 /* NSString+SymlinksAndAliases.mm in Sources */,
+				9AB09AA82B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
 				9AC14D08297B3410006D9BD3 /* image.cpp in Sources */,
 				9AC14D09297B3410006D9BD3 /* acme_path.cpp in Sources */,
 				9AC14D0A297B3410006D9BD3 /* debug.cpp in Sources */,
 				9AC14D0B297B3410006D9BD3 /* exception_translator.cpp in Sources */,
 				9AC14D0C297B3410006D9BD3 /* _factory.cpp in Sources */,
 				9AC14D0D297B3410006D9BD3 /* _.cpp in Sources */,
+				9AB09AAE2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */,
 				9AC14D0E297B3410006D9BD3 /* UncaughtExceptionHandler.mm in Sources */,
 				9AC14D0F297B3410006D9BD3 /* DDInvocationGrabber.mm in Sources */,
 				9AC14D11297B3410006D9BD3 /* NSObject+DDExtensions.mm in Sources */,

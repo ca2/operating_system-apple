@@ -2,11 +2,27 @@
 //  ns_metadata_query_callback.h
 //  acme_apple
 //
-//  Created by Camilo Sasuke Thomas Borregaard Sørensen on 06/02/24.
+//  Created by Camilo Sasuke Thomas Borregaard Sørensen on 2024-02-06 <3ThomasBorregaardSorensen!!
 //
-
-#ifndef ns_metadata_query_callback_h
-#define ns_metadata_query_callback_h
+#pragma once
 
 
-#endif /* ns_metadata_query_callback_h */
+class ns_metadata_query_callback
+{
+public:
+   
+   void * m_pNSMetadataQueryHandler;
+   
+   bool        m_bPublic;
+   
+   ns_metadata_query_callback();
+   
+   virtual void ns_metadata_query_callback_on_item(const char * pszName);
+   
+   virtual void ns_metadata_query_callback_finished();
+   
+   virtual void ns_metadata_query_callback_uninstall();
+   
+};
+
+   

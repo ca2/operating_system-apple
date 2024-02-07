@@ -17,8 +17,10 @@
 namespace acme_apple
 {
 
+   
    class node;
 
+   class file_listing_handler;
 
 
 } // namespace acme_node

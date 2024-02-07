@@ -2,9 +2,15 @@
 // Recreated on 2021-05-16 15:05 <3ThomasBS_ // for macOS
 // From windowing_ios by camilo on 2022-05-11 06:20 PM <3ThomasBorregaardSorensen!!
 #include "framework.h"
+#include "acme_directory.h"
+#include "file_listing_handler.h"
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/acme_path.h"
-#include "acme_directory.h"
+#include "acme/filesystem/filesystem/listing.h"
+#include "acme/platform/context.h"
+
+
+char * apple_icloud_container_folder(const char * pszAppCloudContainerIdentifier);
 
 
 namespace acme_apple
@@ -636,6 +642,152 @@ namespace acme_apple
 //      return home() / ".config";
 //
 //   }
+
+
+   bool acme_directory::has_app_cloud_document(const char * pszAppCloudContainerIdentifier)
+   {
+      
+      ::string strAppCloudContainerIdentifier;
+      
+      strAppCloudContainerIdentifier = acmepath()->app_cloud_container_identifier(pszAppCloudContainerIdentifier);
+      
+      auto p = apple_icloud_container_folder(strAppCloudContainerIdentifier);
+      
+      if(::is_set(p))
+      {
+         
+         ::free(p);
+         
+         return true;
+         
+      }
+      
+      return false;
+   //   if(acmedirectory()->has_app_cloud_document())
+   //   {
+   //
+   //      ::file::path & path = listing.insert_at(0, "icloud://");
+   //
+   //      path.m_iDir = 1;
+   //
+   //      listing.m_straTitle.insert_at(0, unitext("iCloud"));
+   //
+   //   }
+
+      
+   }
+
+
+   bool acme_directory::defer_enumerate_protocol(::file::listing& listing)
+   {
+      
+      ::file::path pathFinal = listing.m_pathFinal;
+      
+      if(pathFinal.is_empty())
+      {
+         
+         pathFinal = m_pcontext->defer_process_path(listing.m_pathUser);
+         
+      }
+      
+      if(pathFinal.begins_eat("icloud://"))
+      {
+         
+         if(has_app_cloud_document())
+         {
+         
+            const char * pend = nullptr;
+         
+            auto pathServer = pathFinal.get_word("/", &pend);
+         
+            if(pathServer.is_empty())
+            {
+               
+               
+               ::file::path path;
+               
+               listing.m_pathUser = app_cloud_document();
+               
+               if(listing.m_eflag == 0)
+               {
+                  
+                  listing.m_eflag = ::file::e_flag_file_or_folder;
+                  
+               }
+               
+               listing.m_pathUser.m_iDir = 1;
+               
+               ::string strAppCloudContainerIdentifier;
+               
+               acmepath()->app_cloud_container_identifier(strAppCloudContainerIdentifier);
+
+               listing.m_pathFinal = ::apple_icloud_container_folder(strAppCloudContainerIdentifier);
+               
+               listing.m_pathFinal.m_iDir = 1;
+
+               path = listing.m_pathFinal;
+               
+               path.m_iDir = 1;
+               
+               listing.defer_add(path);
+               
+            }
+            else
+            {
+               
+               auto strPath = pathServer;
+               
+               if(strPath.begins_eat(pathServer))
+               {
+                  
+                  strPath.trim_left("/");
+                  
+                  if(!m_pfilelistinghandler_iCloudContainer)
+                  {
+                     
+                     auto pfilelistinghandler = __create_new < ::acme_apple::file_listing_handler >();
+                     
+                     ::string strAppCloudContainerIdentifier;
+                     
+                     strAppCloudContainerIdentifier = pathServer;
+                     
+                     ::string strFolder;
+                     
+                     pfilelistinghandler->start_populating(strAppCloudContainerIdentifier);
+                     
+                     m_pfilelistinghandler_iCloudContainer = pfilelistinghandler;
+                     
+                  }
+                  
+                  return m_pfilelistinghandler_iCloudContainer->enumerate(listing);
+//                  strFolder = strPath;
+//                  
+//                  
+//                  //            ::string_array stra;
+//                  //
+//                  //            stra.c_add(ppsza);
+//                  //
+//                  //            for(auto & str:stra)
+//                  //            {
+//                  //
+//                  //               ::file::path path;
+//                  //
+//                  //               path = str;
+//                  //               listing.defer_add(path);
+//                  //
+//                  //            }
+                  
+               }
+               
+            }
+            
+         }
+         
+      }
+      
+      return false;
+      
+   }
 
 
 } // namespace acme_app

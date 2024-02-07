@@ -6,8 +6,10 @@
 //
 #include "framework.h"
 #include "file_listing_handler.h"
+#include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/listing.h"
 #include "acme/parallelization/synchronous_lock.h"
+#include "acme/primitive/time/_text_stream.h"
 
 
 void ns_app_cloud_start_metadata_query(ns_metadata_query_callback * pcallback, const char * pszAppCloudContainerIdentifier);
@@ -40,6 +42,10 @@ namespace acme_apple
    void file_listing_handler::start_populating(const char * pszAppCloudContainerIdentifier)
    {
       
+      auto start = ::time::now();
+
+      m_manualresetevent.ResetEvent();
+      
       try
       {
          
@@ -60,9 +66,36 @@ namespace acme_apple
          
       }
       
+      m_manualresetevent.wait(1_minute);
+      
+      {
+         
+         _synchronous_lock _synchronouslock(this->synchronization());
+         
+         information() << "Got " << m_filelisting.size() << " items!!";
+         
+         for(auto & path : m_filelisting)
+         {
+            
+            information() << "Got :" << path;
+            
+         }
+         
+         information() << "Got after certain time: " << start.elapsed();
+         
+      }
+
    }
 
 
+void file_listing_handler::ns_metadata_query_callback_on_base_path(const char * pszBasePath)
+{
+   
+   m_pathBase = pszBasePath;
+   
+}
+   
+   
 void file_listing_handler::ns_metadata_query_callback_on_item(const char * pszFullPath)
 {
    
@@ -99,15 +132,28 @@ bool file_listing_handler::enumerate(::file::listing& listing)
 
    if (listing.m_pathFinal.is_empty())
    {
-
-      listing.m_pathFinal = listing.m_pathUser;
+      
+      ::string str = listing.m_pathUser;
+      
+      if(str.begins_eat(acmedirectory()->app_cloud_document()))
+      {
+         
+         listing.m_pathFinal = m_pathBase / str;
+         
+      }
+      else
+      {
+         
+         listing.m_pathFinal = listing.m_pathUser;
+         
+      }
 
    }
 
    if (listing.m_pathBasePath.is_empty())
    {
 
-      listing.m_pathBasePath = listing.m_pathFinal;
+      listing.m_pathBasePath = m_pathBase;
 
    }
    
@@ -153,6 +199,10 @@ bool file_listing_handler::enumerate(::file::listing& listing)
          break;
          
       }
+      
+      path.m_iSize = listing.m_pathFinal.length();
+      
+      path.m_iBasePathLength = m_pathBase.length();
       
       path.m_iDir = 0;
       

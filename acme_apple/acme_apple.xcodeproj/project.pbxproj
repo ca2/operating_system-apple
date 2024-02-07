@@ -11,6 +11,8 @@
 		9A1BD67E2A0073EA00152CD1 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94028D29E62F5E00C8C249 /* _cg_context.cpp */; };
 		9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFCC276118A6001E14CC /* Carbon.framework */; };
 		9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFE1276122CB001E14CC /* Cocoa.framework */; };
+		9A28E3DB2B73FEF900ABB2C5 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E3DA2B73FEF900ABB2C5 /* file.mm */; };
+		9A28E3DC2B73FFA800ABB2C5 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E3DA2B73FEF900ABB2C5 /* file.mm */; };
 		9A40BDBA2B6B65D90077053E /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
 		9A40BDF42B6B997B0077053E /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */; };
 		9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412438266C3ECE00C3FF0E /* libacme.dylib */; };
@@ -149,6 +151,7 @@
 		9A21AFD92761203B001E14CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9A21AFDB2761205C001E14CC /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		9A21AFE1276122CB001E14CC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9A28E3DA2B73FEF900ABB2C5 /* file.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = file.mm; sourceTree = "<group>"; };
 		9A412438266C3ECE00C3FF0E /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A734A50284F5E37003986C7 /* CAHostTimeBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAHostTimeBase.h; sourceTree = "<group>"; };
 		9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAHostTimeBase.cpp; sourceTree = "<group>"; };
@@ -271,6 +274,7 @@
 				9A74158F266BD25B00552531 /* debug.cpp */,
 				9A78F40728E7A945007F62C0 /* exception_translator.cpp */,
 				9A78F40828E7A945007F62C0 /* exception_translator.h */,
+				9A28E3DA2B73FEF900ABB2C5 /* file.mm */,
 				9AA3F95F2A9498D3004283CA /* file_context.cpp */,
 				9AA3F9612A9498D3004283CA /* file_context.h */,
 				9AB09ACA2B73C58D00E2C3A5 /* file_listing_handler.cpp */,
@@ -501,6 +505,7 @@
 				9A78F40928E7A953007F62C0 /* exception_translator.cpp in Sources */,
 				9A787E6E264E234B003DF8A0 /* _factory.cpp in Sources */,
 				9A756981283D4477000D9C84 /* _.cpp in Sources */,
+				9A28E3DB2B73FEF900ABB2C5 /* file.mm in Sources */,
 				9AB09AA62B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
 				9A787E76264E31C2003DF8A0 /* UncaughtExceptionHandler.mm in Sources */,
 				9A787E77264E31C7003DF8A0 /* DDInvocationGrabber.mm in Sources */,
@@ -528,6 +533,7 @@
 				9AB09ACD2B73C59100E2C3A5 /* file_listing_handler.cpp in Sources */,
 				9A40BDBA2B6B65D90077053E /* image.mm in Sources */,
 				9A94DEFA282C606300F5C1CA /* acme_file.cpp in Sources */,
+				9A28E3DC2B73FFA800ABB2C5 /* file.mm in Sources */,
 				9A8E9DA9282A2F61005FF778 /* NSString+SymlinksAndAliases.mm in Sources */,
 				9A8E9DAA282A2F61005FF778 /* debug.cpp in Sources */,
 				9AB09AA72B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,

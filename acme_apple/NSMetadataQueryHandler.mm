@@ -206,7 +206,7 @@ enum_status ns_defer_initialize_icloud_access();
       
    }
 
-   m_strBasePath = [ urlBase absoluteString ];
+   m_strBasePath = [ urlBase path ];
 
    return m_strBasePath;
    
@@ -236,6 +236,9 @@ enum_status ns_defer_initialize_icloud_access();
    //   NSString * predicateFormat = @"((%K BEGINSWITH[cd] 'h') AND (%K BEGINSWITH %@)) AND (%K.pathComponents.@count == %d)"
    //NSString * predicateFormat = @"(%K BEGINSWITH[cd] 'h') AND (%K BEGINSWITH %@) AND (%K.pathComponents.@count == %d)";
 
+   pcallback->ns_metadata_query_callback_on_base_path([m_strBasePath UTF8String]);
+   
+   
    self.metadata_query_handler_hold = self;
    
    //ns_main_async(^()
@@ -264,7 +267,9 @@ enum_status ns_defer_initialize_icloud_access();
 
       self->m_bFinished = false;
 
-      NSString * predicateFormat = @"(%K like '*')";
+      //NSString * predicateFormat = @"(%K like '*')";
+      
+      NSString * predicateFormat = @"(%K BEGINSWITH %@)";
       
       // Control the directory depth through the number of pathComponents
          
@@ -274,9 +279,12 @@ enum_status ns_defer_initialize_icloud_access();
    //                                 strPath,
    //                                 NSMetadataItemPathKey,
    //                                 lPathComponentsCount + 1 ];
-      
+
       NSPredicate * predicate = [ NSPredicate predicateWithFormat : predicateFormat,
-                                 NSMetadataItemFSNameKey ];
+                              NSMetadataItemPathKey,
+                              self->m_strBasePath
+
+      ];
 
       pquery.predicate =predicate;
          //NSArray *dirs = [[NSArray alloc] initWithObjects:urlContainer, nil] ;

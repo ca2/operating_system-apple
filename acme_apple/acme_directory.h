@@ -15,6 +15,10 @@ namespace acme_apple
       virtual public ::acme_darwin::acme_directory
    {
    public:
+      
+      
+      ::pointer < file_listing_handler >     m_pfilelistinghandler_iCloudContainer;
+
 
 
       acme_directory();
@@ -75,6 +79,11 @@ namespace acme_apple
 //      //virtual ::file::path pathfind(const string& pszEnv, const string& pszTopic, const string& pszMode) override;
 //
 //      virtual ::file::path user_appdata_local() override;
+      
+      bool has_app_cloud_document(const char * pszAppId = nullptr) override;
+      
+      bool defer_enumerate_protocol(::file::listing& listing) override;
+
 
    };
 

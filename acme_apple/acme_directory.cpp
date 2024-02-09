@@ -785,9 +785,11 @@ namespace acme_apple
          
       }
       
-      return false;
+      return ::acme_directory::defer_enumerate_protocol(listing);
       
    }
+
+
 
 
 } // namespace acme_app

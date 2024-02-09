@@ -8,7 +8,7 @@
 //#include "acme_apple/_library.h"
 
 
-#if !defined(__MM)
+#if !defined(__OBJECTIVE_CPP__)
 
 
 //

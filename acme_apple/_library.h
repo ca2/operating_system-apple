@@ -7,7 +7,7 @@
 #include "acme_darwin/_library.h"
 
 
-#if !defined(__MM)
+#if !defined(__OBJECTIVE_CPP__)
 
 
 //
@@ -39,7 +39,7 @@
 //
 
 
-#endif // !defined(__MM)
+#endif // !defined(__OBJECTIVE_CPP__)
 
 
 

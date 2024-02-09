@@ -28,7 +28,7 @@ namespace draw2d_quartz2d
       CGLayerRef                    m_cglayer;
 
       i32                           m_iType;
-#ifdef __MM
+#ifdef __OBJECTIVE_CPP__
       NSColor *                     m_nscolorFore;
       NSColor *                     m_nscolorBack;
 #else

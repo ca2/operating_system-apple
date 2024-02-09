@@ -9,7 +9,8 @@
 #include "ns_metadata_query_callback.h"
 #include "acme/constant/status.h"
 
-enum_status ns_defer_initialize_icloud_access();
+
+enum_status ns_defer_initialize_icloud_container_access();
 
 
 @implementation NSMetadataQueryHandler

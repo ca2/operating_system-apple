@@ -28,7 +28,7 @@
 __FACTORY_EXPORT void media_apple_factory(::factory::factory * pfactory)
 {
    
-   pfactory->add_factory_item < ::media_ios::media_item, ::aqua::media_item >();
+   pfactory->add_factory_item < ::media_apple::media_item, ::aqua::media_item >();
 
 }
 

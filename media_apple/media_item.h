@@ -7,7 +7,7 @@
 #pragma once
 
 
-#include "aqua/multimedia/media_item.h'
+#include "aqua/multimedia/media_item.h"
 
 
 namespace media_apple
@@ -18,6 +18,10 @@ class CLASS_DECL_MEDIA_APPLE media_item :
 virtual public ::aqua::media_item
 {
 public:
+   
+   
+   media_item();
+   ~media_item() override;
    
 };
 

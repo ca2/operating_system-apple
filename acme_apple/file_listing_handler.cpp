@@ -12,7 +12,7 @@
 #include "acme/primitive/time/_text_stream.h"
 
 
-void ns_app_cloud_start_metadata_query(ns_metadata_query_callback * pcallback, const char * pszAppCloudContainerIdentifier);
+void ns_app_cloud_start_metadata_query(ns_metadata_query_callback * pcallback, const char * psz_iCloudContainerIdentifier);
 
 
 namespace acme_apple
@@ -39,7 +39,7 @@ namespace acme_apple
    }
 
    
-   void file_listing_handler::start_populating(const char * pszAppCloudContainerIdentifier)
+   void file_listing_handler::start_populating(const char * psz_iCloudContainerIdentifier)
    {
       
       auto start = ::time::now();
@@ -49,7 +49,7 @@ namespace acme_apple
       try
       {
          
-         ns_app_cloud_start_metadata_query(this, pszAppCloudContainerIdentifier);
+         ns_app_cloud_start_metadata_query(this, psz_iCloudContainerIdentifier);
          
       }
       catch (const char * psz)
@@ -131,7 +131,7 @@ namespace acme_apple
          
          ::string str = listing.m_pathUser;
          
-         if(str.begins_eat(acmedirectory()->app_cloud_document()))
+         if(str.begins_eat(acmedirectory()->icloud_container2()))
          {
             
             listing.m_pathFinal = m_pathBase / str;

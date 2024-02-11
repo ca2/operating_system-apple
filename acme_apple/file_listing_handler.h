@@ -35,7 +35,7 @@ namespace acme_apple
       ~file_listing_handler() override;
       
       
-      virtual void start_populating(const char * pszAppCloudContainerId);
+      virtual void start_populating(const char * psz_iCloudContainerId);
       
       bool enumerate(::file::listing & listing) override;
       

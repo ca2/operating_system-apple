@@ -30,12 +30,12 @@ class ns_metadata_query_callback;
 - (void)installCallback:(ns_metadata_query_callback *)pcallback;
 - (void)uninstallCallback;
 
-- (void)startMetadataQueryWithCallback:(ns_metadata_query_callback*) pcallback andAppCloudContainerIdentifier :(const char *) pszAppCloudContainerIdentifier;
+- (void)startMetadataQueryWithCallback:(ns_metadata_query_callback*) pcallback and_iCloudContainerIdentifier :(const char *) psz_iCloudContainerIdentifier;
 
 - (void)metadataQueryDidFinishedGathering:(NSNotification *)notification;
 
 -(void)metadataQueryDidUpdate:(NSNotification *)notification;
 
-- (NSString *)calculateBasePathWithCallback:(ns_metadata_query_callback*) pcallback andAppCloudContainerIdentifier: (const char *) pszAppCloudContainerIdentifier;
+- (NSString *)calculateBasePathWithCallback:(ns_metadata_query_callback*) pcallback and_iCloudContainerIdentifier: (const char *) psz_iCloudContainerIdentifier;
 
 @end

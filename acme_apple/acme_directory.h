@@ -80,7 +80,7 @@ namespace acme_apple
 //
 //      virtual ::file::path user_appdata_local() override;
       
-      bool has_app_cloud_document(const char * pszAppId = nullptr) override;
+      bool has_icloud_container(const char * pszAppId = nullptr) override;
       
       bool defer_enumerate_protocol(::file::listing& listing) override;
 

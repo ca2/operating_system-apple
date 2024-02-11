@@ -10,7 +10,7 @@
 #include "acme/platform/context.h"
 
 
-char * apple_icloud_container_folder(const char * pszAppCloudContainerIdentifier);
+char * apple_icloud_container_folder(const char * psz_iCloudContainerIdentifier);
 
 
 namespace acme_apple
@@ -644,14 +644,14 @@ namespace acme_apple
 //   }
 
 
-   bool acme_directory::has_app_cloud_document(const char * pszAppCloudContainerIdentifier)
+   bool acme_directory::has_icloud_container(const char * psz_iCloudContainerIdentifier)
    {
       
-      ::string strAppCloudContainerIdentifier;
+      ::string str_iCloudContainerIdentifier;
       
-      strAppCloudContainerIdentifier = acmepath()->app_cloud_container_identifier(pszAppCloudContainerIdentifier);
+      str_iCloudContainerIdentifier = acmepath()->icloud_container_identifier(psz_iCloudContainerIdentifier);
       
-      auto p = apple_icloud_container_folder(strAppCloudContainerIdentifier);
+      auto p = apple_icloud_container_folder(str_iCloudContainerIdentifier);
       
       if(::is_set(p))
       {
@@ -663,7 +663,7 @@ namespace acme_apple
       }
       
       return false;
-   //   if(acmedirectory()->has_app_cloud_document())
+   //   if(acmedirectory()->has_icloud_container())
    //   {
    //
    //      ::file::path & path = listing.insert_at(0, "icloud://");
@@ -693,7 +693,7 @@ namespace acme_apple
       if(pathFinal.begins_eat("icloud://"))
       {
          
-         if(has_app_cloud_document())
+         if(has_icloud_container())
          {
          
             const char * pend = nullptr;
@@ -706,7 +706,7 @@ namespace acme_apple
                
                ::file::path path;
                
-               listing.m_pathUser = app_cloud_document();
+               listing.m_pathUser = icloud_container2();
                
                if(listing.m_eflag == 0)
                {
@@ -717,11 +717,11 @@ namespace acme_apple
                
                listing.m_pathUser.m_iDir = 1;
                
-               ::string strAppCloudContainerIdentifier;
+               ::string str_iCloudContainerIdentifier;
                
-               acmepath()->app_cloud_container_identifier(strAppCloudContainerIdentifier);
+               acmepath()->icloud_container_identifier(str_iCloudContainerIdentifier);
 
-               listing.m_pathFinal = ::apple_icloud_container_folder(strAppCloudContainerIdentifier);
+               listing.m_pathFinal = ::apple_icloud_container_folder(str_iCloudContainerIdentifier);
                
                listing.m_pathFinal.m_iDir = 1;
 
@@ -747,13 +747,13 @@ namespace acme_apple
                      
                      auto pfilelistinghandler = __create_new < ::acme_apple::file_listing_handler >();
                      
-                     ::string strAppCloudContainerIdentifier;
+                     ::string str_iCloudContainerIdentifier;
                      
-                     strAppCloudContainerIdentifier = pathServer;
+                     str_iCloudContainerIdentifier = pathServer;
                      
                      ::string strFolder;
                      
-                     pfilelistinghandler->start_populating(strAppCloudContainerIdentifier);
+                     pfilelistinghandler->start_populating(str_iCloudContainerIdentifier);
                      
                      m_pfilelistinghandler_iCloudContainer = pfilelistinghandler;
                      

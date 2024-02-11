@@ -184,12 +184,12 @@ enum_status ns_defer_initialize_icloud_container_access();
 //}
 
 
-- (NSString *)calculateBasePathWithCallback:(ns_metadata_query_callback*) pcallback andAppCloudContainerIdentifier: (const char *) pszAppCloudContainerIdentifier
+- (NSString *)calculateBasePathWithCallback:(ns_metadata_query_callback*) pcallback and_iCloudContainerIdentifier: (const char *) psz_iCloudContainerIdentifier
 {
    
-   NSString * strAppCloudContainerIdentifier = [ [ NSString alloc ] initWithUTF8String : pszAppCloudContainerIdentifier ];
+   NSString * str_iCloudContainerIdentifier = [ [ NSString alloc ] initWithUTF8String : psz_iCloudContainerIdentifier ];
    
-   NSURL * urlContainer = [ [ NSFileManager defaultManager ] URLForUbiquityContainerIdentifier: strAppCloudContainerIdentifier ];
+   NSURL * urlContainer = [ [ NSFileManager defaultManager ] URLForUbiquityContainerIdentifier: str_iCloudContainerIdentifier ];
    
    if(!urlContainer)
    {
@@ -222,10 +222,10 @@ enum_status ns_defer_initialize_icloud_container_access();
 }
 
 
- -(void)startMetadataQueryWithCallback:(ns_metadata_query_callback*) pcallback andAppCloudContainerIdentifier: (const char *) pszAppCloudContainerIdentifier
+ -(void)startMetadataQueryWithCallback:(ns_metadata_query_callback*) pcallback and_iCloudContainerIdentifier: (const char *) psz_iCloudContainerIdentifier
 {
 
-   [ self calculateBasePathWithCallback: pcallback andAppCloudContainerIdentifier : pszAppCloudContainerIdentifier ];
+   [ self calculateBasePathWithCallback: pcallback and_iCloudContainerIdentifier : psz_iCloudContainerIdentifier ];
    
    //long lPathComponentsCount = [ [ url pathComponents ] count ];
       
@@ -371,12 +371,12 @@ void ns_metadata_query_callback::ns_metadata_query_callback_uninstall()
 }
 
 
-void ns_app_cloud_start_metadata_query(ns_metadata_query_callback * pcallback, const char * pszAppCloudContainerIdentifier)
+void ns_app_cloud_start_metadata_query(ns_metadata_query_callback * pcallback, const char * psz_iCloudContainerIdentifier)
 {
    
    NSMetadataQueryHandler * queryhandler = [ [ NSMetadataQueryHandler alloc ] init ];
    
-   [ queryhandler startMetadataQueryWithCallback : pcallback andAppCloudContainerIdentifier : pszAppCloudContainerIdentifier];
+   [ queryhandler startMetadataQueryWithCallback : pcallback and_iCloudContainerIdentifier : psz_iCloudContainerIdentifier];
    
 }
 

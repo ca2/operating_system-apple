@@ -8,10 +8,10 @@
 #import <Foundation/Foundation.h>
 
 
-char * apple_icloud_container_folder(const char * pszAppCloudContainerIdentifier)
+char * apple_icloud_container_folder(const char * psz_iCloudContainerIdentifier)
 {
    
-   NSString * strContainerIdentifier = [[NSString alloc] initWithUTF8String:pszAppCloudContainerIdentifier];
+   NSString * strContainerIdentifier = [[NSString alloc] initWithUTF8String:psz_iCloudContainerIdentifier];
    NSURL * purl =[ [ NSFileManager defaultManager ] URLForUbiquityContainerIdentifier: strContainerIdentifier ];
    
    if(!purl)

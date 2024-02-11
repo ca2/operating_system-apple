@@ -17,8 +17,8 @@ namespace media_apple
    public:
       
      
-      media_type();
-      ~media_type() override;
+      media_apple();
+      ~media_apple() override;
       
       
       static media_apple * get(::particle * pparticle);

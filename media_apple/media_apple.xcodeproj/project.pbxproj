@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0D1C572B78587300E4B572 /* media_player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1C552B78587300E4B572 /* media_player.cpp */; };
+		9A0D1C582B78587300E4B572 /* media_player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1C552B78587300E4B572 /* media_player.cpp */; };
+		9A0D1C592B78587300E4B572 /* media_player.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0D1C562B78587300E4B572 /* media_player.h */; };
+		9A0D1C5A2B78587300E4B572 /* media_player.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0D1C562B78587300E4B572 /* media_player.h */; };
+		9A0D1C672B785E2400E4B572 /* media_apple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1C652B785E2400E4B572 /* media_apple.cpp */; };
+		9A0D1C682B785E2400E4B572 /* media_apple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1C652B785E2400E4B572 /* media_apple.cpp */; };
+		9A0D1C692B785E2400E4B572 /* media_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0D1C662B785E2400E4B572 /* media_apple.h */; };
+		9A0D1C6A2B785E2400E4B572 /* media_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0D1C662B785E2400E4B572 /* media_apple.h */; };
 		9A20EC4B2B771314008A08A2 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A20EC232B771313008A08A2 /* framework.cpp */; };
 		9A20EC552B771314008A08A2 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A20EC382B771314008A08A2 /* framework.h */; };
 		9A20EC592B771314008A08A2 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A20EC3C2B771314008A08A2 /* _factory.cpp */; };
@@ -57,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A0D1C552B78587300E4B572 /* media_player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = media_player.cpp; sourceTree = "<group>"; };
+		9A0D1C562B78587300E4B572 /* media_player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = media_player.h; sourceTree = "<group>"; };
+		9A0D1C652B785E2400E4B572 /* media_apple.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = media_apple.cpp; sourceTree = "<group>"; };
+		9A0D1C662B785E2400E4B572 /* media_apple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = media_apple.h; sourceTree = "<group>"; };
 		9A20EBE92B771090008A08A2 /* libios_media_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_media_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A20EC222B771313008A08A2 /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
 		9A20EC232B771313008A08A2 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
@@ -119,8 +131,12 @@
 				9A20EC3C2B771314008A08A2 /* _factory.cpp */,
 				9A20EC232B771313008A08A2 /* framework.cpp */,
 				9A20EC382B771314008A08A2 /* framework.h */,
+				9A0D1C652B785E2400E4B572 /* media_apple.cpp */,
+				9A0D1C662B785E2400E4B572 /* media_apple.h */,
 				9A20ECC42B771693008A08A2 /* media_item.cpp */,
 				9A20ECC52B771694008A08A2 /* media_item.h */,
+				9A0D1C552B78587300E4B572 /* media_player.cpp */,
+				9A0D1C562B78587300E4B572 /* media_player.h */,
 			);
 			name = media_apple;
 			sourceTree = "<group>";
@@ -142,7 +158,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A20EC5A2B771314008A08A2 /* _.h in Headers */,
+				9A0D1C6A2B785E2400E4B572 /* media_apple.h in Headers */,
 				9A20EC552B771314008A08A2 /* framework.h in Headers */,
+				9A0D1C5A2B78587300E4B572 /* media_player.h in Headers */,
 				9A20ECC72B771694008A08A2 /* media_item.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,7 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A4DDE6E2B775A1E00477878 /* _.h in Headers */,
+				9A0D1C692B785E2400E4B572 /* media_apple.h in Headers */,
 				9A4DDE6F2B775A1E00477878 /* framework.h in Headers */,
+				9A0D1C592B78587300E4B572 /* media_player.h in Headers */,
 				9A4DDE702B775A1E00477878 /* media_item.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +280,8 @@
 				9A20ECE22B77187E008A08A2 /* media.mm in Sources */,
 				9A20EC4B2B771314008A08A2 /* framework.cpp in Sources */,
 				9A20ECC62B771694008A08A2 /* media_item.cpp in Sources */,
+				9A0D1C682B785E2400E4B572 /* media_apple.cpp in Sources */,
+				9A0D1C582B78587300E4B572 /* media_player.cpp in Sources */,
 				9A20ECE32B77187E008A08A2 /* media.cpp in Sources */,
 				9A20EC592B771314008A08A2 /* _factory.cpp in Sources */,
 			);
@@ -272,6 +294,8 @@
 				9A4DDE722B775A1E00477878 /* media.mm in Sources */,
 				9A4DDE732B775A1E00477878 /* framework.cpp in Sources */,
 				9A4DDE742B775A1E00477878 /* media_item.cpp in Sources */,
+				9A0D1C672B785E2400E4B572 /* media_apple.cpp in Sources */,
+				9A0D1C572B78587300E4B572 /* media_player.cpp in Sources */,
 				9A4DDE752B775A1E00477878 /* media.cpp in Sources */,
 				9A4DDE762B775A1E00477878 /* _factory.cpp in Sources */,
 			);

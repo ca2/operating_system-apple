@@ -84,6 +84,8 @@ namespace acme_apple
       
       bool defer_enumerate_protocol(::file::listing& listing) override;
 
+      ::file::path icloud_container2_final(const char * psz_iCloudContainerIdentifier = nullptr) override;
+      
 
    };
 

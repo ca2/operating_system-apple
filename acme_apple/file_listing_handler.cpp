@@ -106,7 +106,26 @@ namespace acme_apple
       for(long long i = 0; i < ll; i++)
       {
          
-         m_filelisting.add_unique(pszaFullPath[i]);
+         auto pszFullPath = pszaFullPath[i];
+         
+         ::file::path pathFull(pszFullPath);
+         
+         pathFull.m_iDir = 0;
+         
+         m_filelisting.add_unique(pathFull);
+         
+         ::file::path pathFolder = pathFull.folder();
+         
+         while(pathFolder.has_char() && pathFolder.begins(m_pathBase))
+         {
+            
+            pathFolder.m_iDir = 1;
+            
+            m_filelisting.add_unique(pathFolder);
+            
+            pathFolder = pathFolder.folder();
+            
+         }
          
       }
       
@@ -153,13 +172,9 @@ namespace acme_apple
 
       }
       
-      ::string strFolder(listing.m_pathFinal);
-      
-      strFolder += "/";
-      
       _synchronous_lock _synchronouslock(this->synchronization());
 
-      auto iStart = m_filelisting.find_first_begins(strFolder);
+      auto iStart = m_filelisting.find_first(listing.m_pathFinal);
       
       if(iStart < 0)
       {
@@ -177,6 +192,10 @@ namespace acme_apple
       
       ::index iEnd = iStart + 1;
       
+      ::string strFolder = listing.m_pathFinal;
+      
+      strFolder += "/";
+      
       for(iEnd = iStart + 1; iEnd < m_filelisting.size(); iEnd++)
       {
          
@@ -189,18 +208,25 @@ namespace acme_apple
             
          }
          
-         if(path.find_first('/', strFolder.length()))
+         ::file::path pathAdd;
+         
+         auto p = path.find_first('/', strFolder.length());
+         
+         if(p)
          {
             
             break;
             
          }
          
-         path.m_iSize = listing.m_pathFinal.length();
+         if(listing.contains(path))
+         {
+          
+            continue;
+            
+         }
          
          path.m_iBasePathLength = m_pathBase.length();
-         
-         path.m_iDir = 0;
          
          listing.defer_add(path);
          

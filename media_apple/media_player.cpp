@@ -9,6 +9,8 @@
 #include "media_item.h"
 #include "aqua/multimedia/media_player_command.h"
 
+#include <dispatch/dispatch.h>
+
 
 void ns_main_async(dispatch_block_t block);
 
@@ -46,7 +48,7 @@ namespace media_apple
 //            break;
          case ::aqua::e_player_event_play:
          {
-            apple_play_media_item(m_pmediaitem->m_pplatformmediaitem);
+//            apple_play_media_item(m_pmediaitem->m_pplatformmediaitem);
             
          }
             break;

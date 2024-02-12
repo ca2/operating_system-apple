@@ -647,17 +647,11 @@ namespace acme_apple
    bool acme_directory::has_icloud_container(const char * psz_iCloudContainerIdentifier)
    {
       
-      ::string str_iCloudContainerIdentifier;
+      auto path = icloud_container2_final(psz_iCloudContainerIdentifier);
       
-      str_iCloudContainerIdentifier = acmepath()->icloud_container_identifier(psz_iCloudContainerIdentifier);
-      
-      auto p = apple_icloud_container_folder(str_iCloudContainerIdentifier);
-      
-      if(::is_set(p))
+      if(path.has_char())
       {
-         
-         ::free(p);
-         
+       
          return true;
          
       }
@@ -681,28 +675,20 @@ namespace acme_apple
    bool acme_directory::defer_enumerate_protocol(::file::listing& listing)
    {
       
-      ::file::path pathFinal = listing.m_pathFinal;
-      
-      if(pathFinal.is_empty())
+      if(has_icloud_container())
       {
          
-         pathFinal = m_pcontext->defer_process_path(listing.m_pathUser);
-         
-      }
+      ::file::path pathUser = listing.m_pathUser;
       
-      if(pathFinal.begins_eat("icloud://"))
+      if(pathUser.begins_eat("icloud://"))
       {
-         
-         if(has_icloud_container())
-         {
          
             const char * pend = nullptr;
          
-            auto pathServer = pathFinal.get_word("/", &pend);
+            auto pathServer = pathUser.get_word("/", &pend);
          
             if(pathServer.is_empty())
             {
-               
                
                ::file::path path;
                
@@ -719,9 +705,7 @@ namespace acme_apple
                
                ::string str_iCloudContainerIdentifier;
                
-               acmepath()->icloud_container_identifier(str_iCloudContainerIdentifier);
-
-               listing.m_pathFinal = ::apple_icloud_container_folder(str_iCloudContainerIdentifier);
+               listing.m_pathFinal = icloud_container2_final();
                
                listing.m_pathFinal.m_iDir = 1;
 
@@ -790,6 +774,29 @@ namespace acme_apple
    }
 
 
+   ::file::path acme_directory::icloud_container2_final(const char * psz_iCloudContainerIdentifier)
+   {
+      
+      ::string str_iCloudContainerIdentifier;
+      
+      str_iCloudContainerIdentifier = acmepath()->icloud_container_identifier(psz_iCloudContainerIdentifier);
+      
+      auto p = apple_icloud_container_folder(str_iCloudContainerIdentifier);
+      
+      if(::is_null(p))
+      {
+         
+         return {};
+         
+      }
+
+      ::file::path path_iCloudContainerIdentifier = p;
+      
+      ::free(p);
+      
+      return path_iCloudContainerIdentifier;
+
+   }
 
 
 } // namespace acme_app

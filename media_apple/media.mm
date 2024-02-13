@@ -10,7 +10,7 @@
 //              {
 //   
 //   
-//   NSError * perror = nil;
+//   NSError * perror = nil;/Users/camilo/workspace/main/operating_system/operating_system-apple/media_apple/media.mm
 //   //   [[AVAudioSession sharedInstance ] setCategory:AVAudioSessionCategoryPlayback
 //   //
 //   //
@@ -29,3 +29,13 @@
 //   
 //});
 //}
+
+void ns_av_session_initialize()
+{
+ 
+   NSError *setCategoryErr = nil;
+   NSError *activationErr  = nil;
+   [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+   [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
+   
+}

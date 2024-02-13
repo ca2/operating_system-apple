@@ -21,6 +21,9 @@ namespace media_apple
       ~media_apple() override;
       
       
+      void on_initialize_particle() override;
+      
+      
       static media_apple * get(::particle * pparticle);
       
    

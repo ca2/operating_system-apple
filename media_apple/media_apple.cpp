@@ -9,6 +9,9 @@
 #include "acme/platform/application.h"
 
 
+void ns_av_session_initialize();
+
+
 namespace media_apple
 {
 
@@ -24,6 +27,17 @@ media_apple::~media_apple()
    
    
 }
+
+
+void media_apple::on_initialize_particle()
+{
+   
+   ::particle::on_initialize_particle();
+   
+   ns_av_session_initialize();
+   
+}
+
 
 
 media_apple * media_apple::get(::particle * pparticle)

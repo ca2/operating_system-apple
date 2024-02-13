@@ -3,6 +3,14 @@
 //
 #include "framework.h"
 #include "file_context.h"
+#include "icloud_file.h"
+#include "acme/filesystem/filesystem/acme_file.h"
+#include "acme/filesystem/filesystem/acme_path.h"
+#include "acme/filesystem/filesystem/file_system_options.h"
+#include "acme/platform/application.h"
+
+
+enum_status ns_defer_initialize_icloud_container_access();
 
 
 namespace acme_apple
@@ -70,7 +78,114 @@ namespace acme_apple
 //   }
 //
 
+// C++ string at STL
+
+// STL - Standard Template Library
+
+// ::std::string
+
+
+// Qt is a C++ framework
+
+// Qt string is called QString
+
+
+// MFC is Microsoft Foundation Classes (for C++)
+
+// MFC string is called CString
+
+// MFC wide string is called CStringW
+
+
+// ATL is Microsoft Active Template Library (for C++)
+
+// ATL string is called ATLString
+
+
+// ca2 is a C++ Framework
+
+// ca2 string is called string
+
+
+   ::file_pointer file_context::defer_get_protocol_file(const ::scoped_string & scopedstrProtocol, const ::file::path & path, ::file::e_open eopen, ::pointer < ::file::exception > * pfileexception)
+   {
+      
+      if(scopedstrProtocol == "icloud")
+      {
+         
+         auto pfilesystemoptions = application()->m_pfilesystemoptions;
+         
+         if(pfilesystemoptions->m_b_iCloudContainer)
+         {
+            
+            auto estatus = ns_defer_initialize_icloud_container_access();
+            
+            if(estatus == error_icloud_not_available)
+            {
+               
+               application()->application_on_status(estatus);
+               
+               throw ::exception(estatus);
+               
+               return nullptr;
+               
+            }
+            
+            auto pfile = __create_new < ::acme_apple::icloud_file >();
+            
+            ::string strName;
+            
+            ::string str_iCloudContainerIdentifier;
+            
+            acmepath()->defer_get_icloud_container_path_name(strName, str_iCloudContainerIdentifier, path);
+            
+            //pfile->m_pathName = "Documents";
+            
+            pfile->m_pathName /= strName;
+            
+            pfile->m_str_iCloudContainerIdentifier = str_iCloudContainerIdentifier;
+            
+            pfile->m_eopen = eopen;
+            
+            if(eopen & ::file::e_open_read)
+            {
+               
+               auto memory = acmefile()->get_app_cloud_data(pfile->m_pathName, nullptr);
+               
+               pfile->get_memory()->assign(memory);
+               
+            }
+            
+            return pfile;
+            
+         }
+      
+      }
+    
+      return ::acme_posix::file_context::defer_get_protocol_file(scopedstrProtocol, path, eopen, pfileexception);
+      
+   }
+
 } // namespace acme_apple
 
 
 
+
+//
+//::enum_status ns_defer_initialize_icloud_container_access()
+//{
+//   
+//   __block enum_status estatus;
+//   
+//   ns_main_sync(^{
+//      
+//      ::platform::get()->node()->defer_initialize_icloud_container_access();
+//      iosWindowApp * papp = (iosWindowApp *) [[UIApplication sharedApplication] delegate];
+//
+//      estatus = [ papp deferInitializeiCloudContainerAccess ];
+//
+//   });
+//   
+//   return estatus;
+//   
+//}

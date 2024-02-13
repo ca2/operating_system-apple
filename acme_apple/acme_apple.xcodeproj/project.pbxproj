@@ -11,6 +11,12 @@
 		9A1BD67E2A0073EA00152CD1 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94028D29E62F5E00C8C249 /* _cg_context.cpp */; };
 		9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFCC276118A6001E14CC /* Carbon.framework */; };
 		9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFE1276122CB001E14CC /* Cocoa.framework */; };
+		9A238E912B7AF79800C199F5 /* icloud_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */; };
+		9A238E922B7AF79800C199F5 /* icloud_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */; };
+		9A238E932B7AF79800C199F5 /* icloud_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */; };
+		9A238E942B7AF79800C199F5 /* icloud_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A238E902B7AF79800C199F5 /* icloud_file.h */; };
+		9A238E952B7AF79800C199F5 /* icloud_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A238E902B7AF79800C199F5 /* icloud_file.h */; };
+		9A238E962B7AF79800C199F5 /* icloud_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A238E902B7AF79800C199F5 /* icloud_file.h */; };
 		9A28E3DB2B73FEF900ABB2C5 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E3DA2B73FEF900ABB2C5 /* file.mm */; };
 		9A28E3DC2B73FFA800ABB2C5 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E3DA2B73FEF900ABB2C5 /* file.mm */; };
 		9A40BDBA2B6B65D90077053E /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
@@ -32,6 +38,8 @@
 		9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
 		9A78F40928E7A953007F62C0 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A78F40728E7A945007F62C0 /* exception_translator.cpp */; };
 		9A78F40A28E7A953007F62C0 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A78F40728E7A945007F62C0 /* exception_translator.cpp */; };
+		9A78FC342B7AFE57006B95FB /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3F95F2A9498D3004283CA /* file_context.cpp */; };
+		9A78FC352B7AFE5A006B95FB /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3F95F2A9498D3004283CA /* file_context.cpp */; };
 		9A86610D296732AA000C82F0 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A86610B296732A9000C82F0 /* UniformTypeIdentifiers.framework */; };
 		9A8E9DA7282A2F61005FF778 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
 		9A8E9DA9282A2F61005FF778 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */; };
@@ -151,6 +159,8 @@
 		9A21AFD92761203B001E14CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9A21AFDB2761205C001E14CC /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		9A21AFE1276122CB001E14CC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = icloud_file.cpp; sourceTree = "<group>"; };
+		9A238E902B7AF79800C199F5 /* icloud_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icloud_file.h; sourceTree = "<group>"; };
 		9A28E3DA2B73FEF900ABB2C5 /* file.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = file.mm; sourceTree = "<group>"; };
 		9A412438266C3ECE00C3FF0E /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A734A50284F5E37003986C7 /* CAHostTimeBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAHostTimeBase.h; sourceTree = "<group>"; };
@@ -281,6 +291,8 @@
 				9AB09ACB2B73C58F00E2C3A5 /* file_listing_handler.h */,
 				9A787E5C264E22CB003DF8A0 /* framework.cpp */,
 				9A787E66264E22CB003DF8A0 /* framework.h */,
+				9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */,
+				9A238E902B7AF79800C199F5 /* icloud_file.h */,
 				9A93B95828471D39005ACD11 /* image.cpp */,
 				9A93B95928471D39005ACD11 /* image.h */,
 				9A0705FD26627549004E8CB4 /* image.mm */,
@@ -340,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A94DEF4282C5F6600F5C1CA /* acme_directory.h in Headers */,
+				9A238E942B7AF79800C199F5 /* icloud_file.h in Headers */,
 				9A94DEF8282C5F6600F5C1CA /* acme_file.h in Headers */,
 				9AB09ACF2B73C59100E2C3A5 /* file_listing_handler.h in Headers */,
 				9AA3F9632A9498D3004283CA /* file_context.h in Headers */,
@@ -352,6 +365,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A238E952B7AF79800C199F5 /* icloud_file.h in Headers */,
 				9AB09AD02B73C59100E2C3A5 /* file_listing_handler.h in Headers */,
 				9A8E9DA7282A2F61005FF778 /* node.h in Headers */,
 			);
@@ -361,6 +375,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A238E962B7AF79800C199F5 /* icloud_file.h in Headers */,
 				9AC14D01297B3410006D9BD3 /* acme_directory.h in Headers */,
 				9AC14D02297B3410006D9BD3 /* acme_file.h in Headers */,
 				9AB09AD12B73C59100E2C3A5 /* file_listing_handler.h in Headers */,
@@ -516,6 +531,7 @@
 				9A94DEF6282C5F6600F5C1CA /* acme_directory.cpp in Sources */,
 				9A94DEF9282C5F6600F5C1CA /* acme_file.cpp in Sources */,
 				9A734A52284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */,
+				9A238E912B7AF79800C199F5 /* icloud_file.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +555,7 @@
 				9AB09AA72B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
 				9A8E9DAB282A2F61005FF778 /* _factory.cpp in Sources */,
 				9A94DEDC282C4B1C00F5C1CA /* _.cpp in Sources */,
+				9A78FC342B7AFE57006B95FB /* file_context.cpp in Sources */,
 				9A8E9DAC282A2F61005FF778 /* UncaughtExceptionHandler.mm in Sources */,
 				9A8E9DAD282A2F61005FF778 /* DDInvocationGrabber.mm in Sources */,
 				9A8E9DAE282A2F61005FF778 /* NSObject+DDExtensions.mm in Sources */,
@@ -546,6 +563,7 @@
 				9A8E9DAF282A2F61005FF778 /* _apple.mm in Sources */,
 				9A8E9DB0282A2F61005FF778 /* node.cpp in Sources */,
 				9A93B95B28471D7F005ACD11 /* image.cpp in Sources */,
+				9A238E922B7AF79800C199F5 /* icloud_file.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +580,7 @@
 				9AC14D0A297B3410006D9BD3 /* debug.cpp in Sources */,
 				9AC14D0B297B3410006D9BD3 /* exception_translator.cpp in Sources */,
 				9AC14D0C297B3410006D9BD3 /* _factory.cpp in Sources */,
+				9A238E932B7AF79800C199F5 /* icloud_file.cpp in Sources */,
 				9AC14D0D297B3410006D9BD3 /* _.cpp in Sources */,
 				9AB09AAE2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */,
 				9AC14D0E297B3410006D9BD3 /* UncaughtExceptionHandler.mm in Sources */,
@@ -574,6 +593,7 @@
 				9AC14D16297B3410006D9BD3 /* acme_file.cpp in Sources */,
 				9AC14D17297B3410006D9BD3 /* CAHostTimeBase.cpp in Sources */,
 				9A50DCB82B50CAEB00DAD9CF /* node_process_identifier_modules_paths.cpp in Sources */,
+				9A78FC352B7AFE5A006B95FB /* file_context.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

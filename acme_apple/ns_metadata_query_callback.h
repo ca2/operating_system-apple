@@ -19,7 +19,7 @@ public:
 
    virtual void ns_metadata_query_callback_on_base_path(const char * pszBasePath);
 
-   virtual void ns_metadata_query_callback_listing(long long ll, const char ** pszaFullPath);
+   virtual void ns_metadata_query_callback_listing(long long ll, const char ** pszaFullPath, int * piaFlag);
    
    virtual void ns_metadata_query_callback_finished();
    

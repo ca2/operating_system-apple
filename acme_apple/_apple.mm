@@ -529,5 +529,45 @@ void apple_ns_log_main_bundle_info_dictionary()
 
 }
 
+bool g_b_iCloudInitialized = false;
+::enum_status g_estatus_iCloud;
 
 
+::enum_status ns_defer_initialize_icloud_container_access()
+{
+
+   if(g_b_iCloudInitialized)
+   {
+      
+      return g_estatus_iCloud;
+      
+   }
+
+   ns_main_sync(^{
+      
+      g_b_iCloudInitialized = true;
+      
+      if ([ [ NSFileManager defaultManager ] URLForUbiquityContainerIdentifier: nil] != nil)
+      {
+         
+         NSLog(@"iCloud is available\n");
+         
+         g_estatus_iCloud = success;
+         
+      }
+      else
+      {
+         
+         NSLog(@"This tutorial requires iCloud, but it is not available.\n");
+         
+         g_estatus_iCloud = error_icloud_not_available;
+         
+         application_send_status(error_icloud_not_available);
+         
+      }
+      
+   });
+   
+   return g_estatus_iCloud;
+
+}

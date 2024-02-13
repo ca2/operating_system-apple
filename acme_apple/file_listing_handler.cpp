@@ -68,22 +68,22 @@ namespace acme_apple
       
       m_manualresetevent.wait(1_minute);
       
-      {
-         
-         _synchronous_lock _synchronouslock(this->synchronization());
-         
-         information() << "Got " << m_filelisting.size() << " items!!";
-         
-         for(auto & path : m_filelisting)
-         {
-            
-            information() << "Got :" << path;
-            
-         }
-         
-         information() << "Got after certain time: " << start.elapsed();
-         
-      }
+//      {
+//         
+//         _synchronous_lock _synchronouslock(this->synchronization());
+//         
+//         information() << "Got " << m_filelisting.size() << " items!!";
+//         
+//         for(auto & path : m_filelisting)
+//         {
+//            
+//            information() << "Got :" << path;
+//            
+//         }
+//         
+//         information() << "Got after certain time: " << start.elapsed();
+//         
+//      }
 
    }
 
@@ -96,7 +96,7 @@ namespace acme_apple
    }
       
       
-   void file_listing_handler::ns_metadata_query_callback_listing(long long ll, const char ** pszaFullPath)
+   void file_listing_handler::ns_metadata_query_callback_listing(long long ll, const char ** pszaFullPath, int * piaFlag)
    {
       
       _synchronous_lock _synchronouslock(this->synchronization());
@@ -110,7 +110,9 @@ namespace acme_apple
          
          ::file::path pathFull(pszFullPath);
          
-         pathFull.m_iDir = 0;
+         int iDir = (piaFlag[i] & 1);
+         
+         pathFull.m_iDir = iDir;
          
          m_filelisting.add_unique(pathFull);
          
@@ -120,6 +122,8 @@ namespace acme_apple
          {
             
             pathFolder.m_iDir = 1;
+            
+            auto psz = pathFolder.c_str() + m_pathBase.length();
             
             m_filelisting.add_unique(pathFolder);
             
@@ -215,7 +219,7 @@ namespace acme_apple
          if(p)
          {
             
-            break;
+            continue;
             
          }
          
@@ -227,8 +231,26 @@ namespace acme_apple
          }
          
          path.m_iBasePathLength = m_pathBase.length();
-         
-         listing.defer_add(path);
+
+         information() << "enumerating : " << path;
+
+         if(!path.ends(".icloud"))
+         {
+            
+            auto pathUser = path;
+            
+            if(pathUser.begins_eat(m_pathBase))
+            {
+             
+               pathUser = acmedirectory()->icloud_container2() / pathUser;
+               
+            }
+            
+            pathUser.m_iDir = path.m_iDir;
+            
+            listing.defer_add(pathUser);
+            
+         }
          
       }
 

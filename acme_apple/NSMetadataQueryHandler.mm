@@ -141,7 +141,7 @@ enum_status ns_defer_initialize_icloud_container_access();
    long long ll = [ pquery resultCount ];
 
    const char ** psza = (const char **) malloc(sizeof(const char *) * ll);
-   
+   int * ia=(int *) malloc(sizeof(int) * ll);
    for (long long i = 0; i < ll; i++)
    {
       
@@ -151,9 +151,20 @@ enum_status ns_defer_initialize_icloud_container_access();
       
       psza[i] = (const char *) strdup([ path UTF8String ]);
       
+      NSString * contentType = [ item valueForAttribute : NSMetadataItemContentTypeKey ];
+      
+      ia[i] = 0;
+      
+      if([ contentType isEqual:@"public.folder"])
+      {
+       
+         ia[i] |= 1;
+         
+      }
+      
    }
 
-   m_pcallback->ns_metadata_query_callback_listing(ll, psza);
+   m_pcallback->ns_metadata_query_callback_listing(ll, psza, ia);
    
    [ pquery enableUpdates ];
    
@@ -201,19 +212,19 @@ enum_status ns_defer_initialize_icloud_container_access();
    }
    
    NSURL * urlBase;
-   
-   if(pcallback->m_bPublic)
-   {
-      
-      urlBase = [urlContainer URLByAppendingPathComponent:@"Documents"];
-      
-   }
-   else
-   {
+//   
+//   if(pcallback->m_bPublic)
+//   {
+//      
+//      urlBase = [urlContainer URLByAppendingPathComponent:@"Documents"];
+//      
+//   }
+//   else
+//   {
     
       urlBase = urlContainer;
       
-   }
+   //}
 
    m_strBasePath = [ urlBase path ];
 

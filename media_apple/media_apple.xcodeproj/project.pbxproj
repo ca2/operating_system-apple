@@ -59,12 +59,12 @@
 			remoteGlobalIDString = 9A8E9E13282A2FEB005FF778;
 			remoteInfo = ios_aura_apple;
 		};
-		9A4DDE6C2B775A1E00477878 /* PBXContainerItemProxy */ = {
+		9A7DD4932B7E7E13004C0943 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A20ECC82B7717AF008A08A2 /* aura_apple.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9A8E9E13282A2FEB005FF778;
-			remoteInfo = ios_aura_apple;
+			remoteGlobalIDString = 9A15A5AB264B54430080670E;
+			remoteInfo = aura_apple;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -233,7 +233,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9A4DDE6B2B775A1E00477878 /* PBXTargetDependency */,
+				9A7DD4942B7E7E13004C0943 /* PBXTargetDependency */,
 			);
 			name = media_apple;
 			productName = media_apple;
@@ -333,10 +333,10 @@
 			name = ios_aura_apple;
 			targetProxy = 9A4DDE5F2B774C2000477878 /* PBXContainerItemProxy */;
 		};
-		9A4DDE6B2B775A1E00477878 /* PBXTargetDependency */ = {
+		9A7DD4942B7E7E13004C0943 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ios_aura_apple;
-			targetProxy = 9A4DDE6C2B775A1E00477878 /* PBXContainerItemProxy */;
+			name = aura_apple;
+			targetProxy = 9A7DD4932B7E7E13004C0943 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

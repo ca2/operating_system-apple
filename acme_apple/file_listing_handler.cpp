@@ -42,7 +42,7 @@ namespace acme_apple
    void file_listing_handler::start_populating(const char * psz_iCloudContainerIdentifier)
    {
       
-      auto start = ::time::now();
+      //auto start = ::time::now();
 
       m_manualresetevent.ResetEvent();
       
@@ -123,7 +123,7 @@ namespace acme_apple
             
             pathFolder.m_iDir = 1;
             
-            auto psz = pathFolder.c_str() + m_pathBase.length();
+            //auto psz = pathFolder.c_str() + m_pathBase.length();
             
             m_filelisting.add_unique(pathFolder);
             

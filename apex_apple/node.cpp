@@ -567,6 +567,35 @@ namespace apex_apple
 ////}
 
 
+bool node::has_ip4_internet()
+{
+   
+   if(!m_preachabilityIp4Internet)
+   {
+    
+      m_preachabilityIp4Internet = reachability_for_ip4_internet();
+      
+   }
+   
+   return m_preachabilityIp4Internet->current_reachability() != e_reachability_none;
+   
+}
+
+bool node::has_ip6_internet()
+{
+  
+   if(!m_preachabilityIp6Internet)
+   {
+    
+      m_preachabilityIp6Internet = reachability_for_ip6_internet();
+      
+   }
+   
+   return m_preachabilityIp6Internet->current_reachability() != e_reachability_none;
+   
+}
+
+
 } // namespace apex_apple
 
 

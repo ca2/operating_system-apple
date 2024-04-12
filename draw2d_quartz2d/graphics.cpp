@@ -3026,7 +3026,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
                ::width(rectangle),
                stra[stra.get_middle_index()],
                kCGTextFill,
-               ealign & e_align_horizontal,
+               (ealign & e_align_horizontal) | e_align_vertical_center,
                e_draw_text_none,
                true,
                &ascent,

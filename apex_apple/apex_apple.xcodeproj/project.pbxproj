@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A3866C22BC8DA1100CBE067 /* reachability.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A3866C12BC8C70700CBE067 /* reachability.cpp */; };
+		9A3866C32BC8DA1200CBE067 /* reachability.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A3866C12BC8C70700CBE067 /* reachability.cpp */; };
+		9A3866C52BC8E26A00CBE067 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3866C42BC8E26A00CBE067 /* CoreFoundation.framework */; };
+		9A3866C72BC8E28800CBE067 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3866C62BC8E28800CBE067 /* SystemConfiguration.framework */; };
 		9A41245B266C41E200C3FF0E /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A41245A266C41E200C3FF0E /* libacme.dylib */; };
 		9A41245D266C41FA00C3FF0E /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A41245C266C41FA00C3FF0E /* libacme_posix.dylib */; };
 		9A412461266C420E00C3FF0E /* libapex_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412460266C420E00C3FF0E /* libapex_posix.dylib */; };
@@ -151,6 +155,10 @@
 		9A0841432935A3DB009F7FF4 /* apex_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = apex_darwin.xcodeproj; path = "../../operating_system-darwin/apex_darwin/apex_darwin.xcodeproj"; sourceTree = "<group>"; };
 		9A15A597264B53DC0080670E /* libapex_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libapex_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A15A608264B551B0080670E /* acme_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_apple.xcodeproj; path = ../acme_apple/acme_apple.xcodeproj; sourceTree = "<group>"; };
+		9A3866C02BC8C70700CBE067 /* reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reachability.h; sourceTree = "<group>"; };
+		9A3866C12BC8C70700CBE067 /* reachability.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = reachability.cpp; sourceTree = "<group>"; };
+		9A3866C42BC8E26A00CBE067 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		9A3866C62BC8E28800CBE067 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9A41245A266C41E200C3FF0E /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A41245C266C41FA00C3FF0E /* libacme_posix.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_posix.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A41245E266C420500C3FF0E /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +193,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3866C72BC8E28800CBE067 /* SystemConfiguration.framework in Frameworks */,
+				9A3866C52BC8E26A00CBE067 /* CoreFoundation.framework in Frameworks */,
 				9A98EF4B29A5826A009BF01D /* libacme_darwin.dylib in Frameworks */,
 				9A865ED9299295270042465F /* libapex_darwin.dylib in Frameworks */,
 				9A41245B266C41E200C3FF0E /* libacme.dylib in Frameworks */,
@@ -261,6 +271,8 @@
 				9A787EAE264EE55E003DF8A0 /* node.h */,
 				9A787EA5264EE55E003DF8A0 /* process.cpp */,
 				9A787EB7264EE55E003DF8A0 /* process.h */,
+				9A3866C02BC8C70700CBE067 /* reachability.h */,
+				9A3866C12BC8C70700CBE067 /* reachability.cpp */,
 				9A787EC1264EE55E003DF8A0 /* timer.mm */,
 			);
 			name = apex_apple;
@@ -269,6 +281,8 @@
 		9A788049264F6A39003DF8A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A3866C62BC8E28800CBE067 /* SystemConfiguration.framework */,
+				9A3866C42BC8E26A00CBE067 /* CoreFoundation.framework */,
 				9A98EF4A29A5826A009BF01D /* libacme_darwin.dylib */,
 				9A5FDF60268985D5003682E6 /* libapex_macos.dylib */,
 				9A412556266DD80A00C3FF0E /* libapex.dylib */,
@@ -391,7 +405,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					9A15A596264B53DC0080670E = {
 						CreatedOnToolsVersion = 12.5;
@@ -505,6 +519,7 @@
 			files = (
 				9A787EE4264EE934003DF8A0 /* node.cpp in Sources */,
 				9A7862AD265038A90034A0E1 /* _factory.cpp in Sources */,
+				9A3866C22BC8DA1100CBE067 /* reachability.cpp in Sources */,
 				9A7EDDAB2671820D00BC7094 /* process.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +530,7 @@
 			files = (
 				9A8E9DE4282A2FB6005FF778 /* node.cpp in Sources */,
 				9A8E9DE5282A2FB6005FF778 /* _factory.cpp in Sources */,
+				9A3866C32BC8DA1200CBE067 /* reachability.cpp in Sources */,
 				9A8E9DE6282A2FB6005FF778 /* process.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

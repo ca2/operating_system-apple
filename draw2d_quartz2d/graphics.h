@@ -214,7 +214,7 @@ namespace draw2d_quartz2d
       void _eo_clip() override;
       
       
-//      void intersect_clip(const ::rectangle_f64 & rectangle) override;
+      void intersect_clip(const ::rectangle_f64 & rectangle) override;
 //      void intersect_clip(const ::ellipse_f64 & ellipse) override;
 //      void intersect_clip(const ::polygon_f64 & polygon) override;
       

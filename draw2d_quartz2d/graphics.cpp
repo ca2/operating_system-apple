@@ -437,7 +437,7 @@ namespace draw2d_quartz2d
       
       copy(rectangle, rectParam);
       
-      CGContextBeginPath(m_cgcontext);
+      //CGContextBeginPath(m_cgcontext);
       
       CGContextAddRect(m_cgcontext, rectangle);
       
@@ -1631,26 +1631,28 @@ namespace draw2d_quartz2d
    }
 
    
-//   void graphics::intersect_clip(const ::rectangle_f64 & rectangle)
-//   {
-//
-//      CGRect r;
-//
-//      //auto rectangleOffset = rectangle;
-//
-//      //rectangleOffset += m_pointAddShapeTranslate;
-//
-//      copy(r, rectangle);
-//
+   void graphics::intersect_clip(const ::rectangle_f64 & rectangle)
+   {
+
+      CGRect r;
+
+      //auto rectangleOffset = rectangle;
+
+      //rectangleOffset += m_pointAddShapeTranslate;
+
+      copy(r, rectangle);
+
 //      CGContextBeginPath(m_cgcontext);
 //
 //      CGContextAddRect(m_cgcontext, r);
 //
 //      CGContextClip(m_cgcontext);
-//
-//   }
-//
-//
+
+      CGContextClipToRect(m_cgcontext, r);
+
+   }
+
+
 //   void graphics::intersect_clip(const ::ellipse_f64 & ellipse)
 //   {
 //

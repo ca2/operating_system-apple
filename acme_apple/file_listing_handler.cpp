@@ -112,8 +112,23 @@ namespace acme_apple
          
          int iDir = (piaFlag[i] & 1);
          
-         pathFull.m_iDir = iDir;
-         
+         if(iDir > 0)
+         {
+            
+            pathFull.m_etype = ::file::e_type_existent_folder;
+            
+         }
+         else if(iDir == 0)
+         {
+            pathFull.m_etype = ::file::e_type_existent_file;
+            
+         }
+         else
+         {
+            
+            pathFull.m_etype = ::file::e_type_doesnt_exist;
+            
+         }
          m_filelisting.add_unique(pathFull);
          
          ::file::path pathFolder = pathFull.folder();
@@ -121,7 +136,7 @@ namespace acme_apple
          while(pathFolder.has_char() && pathFolder.begins(m_pathBase))
          {
             
-            pathFolder.m_iDir = 1;
+            pathFolder.m_etype = ::file::e_type_existent_folder;
             
             //auto psz = pathFolder.c_str() + m_pathBase.length();
             
@@ -194,7 +209,7 @@ namespace acme_apple
 
       }
       
-      ::index iEnd = iStart + 1;
+      ::raw::index iEnd = iStart + 1;
       
       ::string strFolder = listing.m_pathFinal;
       
@@ -246,7 +261,7 @@ namespace acme_apple
                
             }
             
-            pathUser.m_iDir = path.m_iDir;
+            pathUser.m_etype = path.m_etype;
             
             listing.defer_add(pathUser);
             

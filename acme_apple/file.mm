@@ -50,13 +50,13 @@ char * apple_icloud_container_folder(const char * psz_iCloudContainerIdentifier)
    if(isDir)
    {
     
-      return ::file::e_type_folder;
+      return ::file::e_type_existent_folder;
       
    }
    else
    {
       
-      return ::file::e_type_file;
+      return ::file::e_type_existent_file;
       
    }
    
@@ -68,7 +68,7 @@ bool ns_is_folder_at_path(NSString * strPath)
    
    auto etype = ns_file_type_at_path(strPath);
    
-   return etype == ::file::e_type_folder;
+   return etype == ::file::e_type_existent_folder;
    
 }
 
@@ -103,13 +103,13 @@ void ns_defer_create_folder_at_path(NSString * strFolderPath)
    
    auto etype = ns_file_type_at_path(strFolderPath);
    
-   if(etype == ::file::e_type_folder)
+   if(etype == ::file::e_type_existent_folder)
    {
       
       return;
       
    }
-   else if(etype == ::file::e_type_file)
+   else if(etype == ::file::e_type_existent_file)
    {
       
       ns_delete_file_at_path(strFolderPath);

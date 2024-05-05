@@ -701,17 +701,17 @@ namespace acme_apple
                   
                }
                
-               listing.m_pathUser.m_iDir = 1;
+               listing.m_pathUser.m_etype = ::file::e_type_existent_folder;
                
                ::string str_iCloudContainerIdentifier;
                
                listing.m_pathFinal = icloud_container2_final();
                
-               listing.m_pathFinal.m_iDir = 1;
+               listing.m_pathFinal.m_etype = ::file::e_type_existent_folder;
 
                path = listing.m_pathFinal;
                
-               path.m_iDir = 1;
+               path.m_etype =  ::file::e_type_existent_folder;
                
                listing.defer_add(path);
                

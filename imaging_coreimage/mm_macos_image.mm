@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 void * cg_image_get_image_data(int & width, int & height, int & iScan, CGImageRef image);
 

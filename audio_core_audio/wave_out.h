@@ -35,7 +35,7 @@ namespace multimedia
 
          //virtual imedia_time out_get_time() override;
          class ::time out_get_position() override;
-         void out_filled(index iBuffer) override;
+         void out_filled(::raw::index iBuffer) override;
 
          void out_open_ex(::thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::enum_purpose epurpose) override;
          void out_stop() override;

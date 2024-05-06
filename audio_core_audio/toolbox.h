@@ -54,7 +54,7 @@ namespace multimedia
          
          
          AudioStreamBasicDescription * wave_format();
-         AudioQueueBufferRef audio_buffer(index iBuffer);
+         AudioQueueBufferRef audio_buffer(::raw::index iBuffer);
          
          
       } ;

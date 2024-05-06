@@ -275,7 +275,7 @@ namespace multimedia
       }
 
 
-      void out::out_filled(index iBuffer)
+      void out::out_filled(::raw::index iBuffer)
       {
 
          if(out_get_state() != ::wave::e_out_state_playing)
@@ -557,7 +557,7 @@ namespace multimedia
 
          }
 
-         index iBuffer = m_Buffers.find_first(inCompleteAQBuffer);
+         ::raw::index iBuffer = m_Buffers.find_first(inCompleteAQBuffer);
 
          if(iBuffer < 0)
          {

@@ -439,8 +439,23 @@ namespace draw2d_quartz2d
       
       //CGContextBeginPath(m_cgcontext);
       
-      CGContextAddRect(m_cgcontext, rectangle);
+      CGRect r;
       
+      r.origin.x=0;
+      r.origin.y=0;
+      r.size.width=1;
+      r.size.height=1;
+      CGContextSaveGState(m_cgcontext);
+
+      auto rUser = CGContextConvertRectToUserSpace(m_cgcontext, r);
+      
+      auto pixelSizeInUserSpace = rUser.size;
+      CGContextTranslateCTM(m_cgcontext, pixelSizeInUserSpace.width/2.0f, pixelSizeInUserSpace.height/2.0f);
+
+      CGContextAddRect(m_cgcontext, rectangle);
+      //CGFloat translation = 0.5f / [[UIScreen mainScreen] scale];
+      //... your drawing here ...
+      CGContextRestoreGState(m_cgcontext);
       _draw(ppen);
 
    }
@@ -2985,7 +3000,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
                ::width(rectangle),
                str,
                kCGTextFill,
-                                  e_align_top_left,
+                                  (ealign & e_align_horizontal) | e_align_bottom,
                                   edrawtext,
                true,
                &ascent,

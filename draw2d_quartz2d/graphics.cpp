@@ -1851,7 +1851,7 @@ namespace draw2d_quartz2d
 //   }
 
 
-   ::size_f64 graphics::get_text_extent(const ::scoped_string & scopedstr, ::collection::collection::index iIndex)
+   ::size_f64 graphics::get_text_extent(const ::scoped_string & scopedstr, ::collection::index iIndex)
    {
       
       _synchronous_lock synchronouslock(synchronization());
@@ -3336,14 +3336,14 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       CFRelease(string);
       CFRelease(attributes);
       
-      for(::collection::collection::index i = 0; i < cfrel.count(); i++)
+      for(::collection::index i = 0; i < cfrel.count(); i++)
       {
 
          CFRelease(cfrel[i]);
 
       }
 
-      for(::collection::collection::index i = 0; i < crrel.count(); i++)
+      for(::collection::index i = 0; i < crrel.count(); i++)
       {
 
          CGColorRelease(crrel[i]);

@@ -209,7 +209,7 @@ namespace acme_apple
 
       }
       
-      ::collection::collection::index iEnd = iStart + 1;
+      ::collection::index iEnd = iStart + 1;
       
       ::string strFolder = listing.m_pathFinal;
       

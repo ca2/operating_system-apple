@@ -103,7 +103,7 @@ namespace coreimage_imaging
 
       u8 * pbSrc = (u8 *)psrc;
 
-      ::count c = (count)pimage->area();
+      ::collection::count c = (count)pimage->area();
 
       while (c-- > 0)
       {

@@ -302,7 +302,7 @@ namespace draw2d_quartz2d
          
       }
 
-      for(::raw::index i = 0; i < cfrel.count(); i++)
+      for(::collection::collection::index i = 0; i < cfrel.count(); i++)
       {
          
          CFRelease(cfrel[i]);

@@ -354,7 +354,7 @@ namespace music
 //      *
 //      * Returns the number of milliseconds from the start of the stream.
 //      *
-//      * The conversion is performed taking into ac::count the file's time division and
+//      * The conversion is performed taking into ac::collection::count the file's time division and
 //      * tempo map from the first track. Note that the same millisecond value
 //      * might not be valid at a later time if the tempo track is rewritten.
 //      *
@@ -440,7 +440,7 @@ namespace music
 //      *
 //      * Returns the number of ticks from the start of the stream.
 //      *
-//      * The conversion is performed taking into ac::count the file's time division and
+//      * The conversion is performed taking into ac::collection::count the file's time division and
 //      * tempo map from the first track. Note that the same millis value
 //      * might not be valid at a later time if the tempo track is rewritten.
 //      * If the millisecond value does not exactly map to a millis value, then
@@ -3299,9 +3299,9 @@ namespace music
 //         ::ikaraoke::lyric_events_v1 * pEventsV1;
 //         ::ikaraoke::lyric_events_v2 * pEventsV2;
 //
-//         ::index iTokenIndex = -1;
-//         ::index iNoteIndex = -1;
-//         ::index i;
+//         ::collection::index iTokenIndex = -1;
+//         ::collection::index iNoteIndex = -1;
+//         ::collection::index i;
 //         for(i = 0; i < ptracksv1->get_size(); i++)
 //         {
 //            pEventsV1 =   ptracksv1->get_at(i);

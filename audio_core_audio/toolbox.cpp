@@ -116,7 +116,7 @@ namespace multimedia
       }
 
 
-      AudioQueueBufferRef toolbox::audio_buffer(::raw::index iBuffer)
+      AudioQueueBufferRef toolbox::audio_buffer(::collection::collection::index iBuffer)
       {
 
          return m_Buffers[iBuffer];

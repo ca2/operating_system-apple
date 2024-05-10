@@ -56,7 +56,7 @@ void apex_application_set_application_menu(::application_menu * papplicationmenu
 
    GMenu * pmenu = g_menu_new ();
 
-   for(::index i = 0; i < papplicationmenu->get_count(); i++)
+   for(::collection::index i = 0; i < papplicationmenu->get_count(); i++)
    {
 
       string strId = papplicationmenu->element_at(i).m_strId;

@@ -242,7 +242,7 @@ namespace draw2d_quartz2d
 //      void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
       void arc(double x, double y, double w, double h, ::angle_f64 start, ::angle_f64 end) override;
 //      void Arc(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd) override;
-      void polyline(const ::point_f64* lpPoints, ::raw::count nCount) override;
+      void polyline(const ::point_f64* lpPoints, ::raw::collection::count nCount) override;
 
       void angle_arc(double x, double y, double dRadius, ::angle_f64 fStartAngle, ::angle_f64 fSweepAngle) override;
 //      void ArcTo(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
@@ -310,15 +310,15 @@ namespace draw2d_quartz2d
 
 //      void Pie(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
   //    void Pie(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd) override;
-      void set_polygon(const POINT_F64 * lpPoints, ::raw::count nCount);
-      void set_polygon(const ::point_f64 * lpPoints, ::raw::count nCount);
-      void set_polygon(const POINT_F64 * lpPoints, ::raw::count nCount, const ::POINT_F64 & pointOffset);
-      void set_polygon(const ::point_f64 * lpPoints, ::raw::count nCount, const ::point_f64 & pointOffset);
-      void fill_polygon(const ::point_f64 * lpPoints, ::raw::count nCount) override;
+      void set_polygon(const POINT_F64 * lpPoints, ::raw::collection::count nCount);
+      void set_polygon(const ::point_f64 * lpPoints, ::raw::collection::count nCount);
+      void set_polygon(const POINT_F64 * lpPoints, ::raw::collection::count nCount, const ::POINT_F64 & pointOffset);
+      void set_polygon(const ::point_f64 * lpPoints, ::raw::collection::count nCount, const ::point_f64 & pointOffset);
+      void fill_polygon(const ::point_f64 * lpPoints, ::raw::collection::count nCount) override;
 //      void fill_polygon(const ::point_f64* lpPoints, count nCount) override;
-      void draw_polygon(const ::point_f64 * lpPoints, ::raw::count nCount) override;
+      void draw_polygon(const ::point_f64 * lpPoints, ::raw::collection::count nCount) override;
 //      void draw_polygon(const ::point_f64 * lpPoints, count nCount) override;
-      void polygon(const ::point_f64 * ppoint, ::raw::count nCount) override;
+      void polygon(const ::point_f64 * ppoint, ::raw::collection::count nCount) override;
       void round_rectangle(const ::rectangle_f64 & rectangle, double dRadius) override;
       
       
@@ -392,7 +392,7 @@ namespace draw2d_quartz2d
 //      virtual i32 draw_text_ex(char * lpszString, i32 nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams);
 //      void draw_text_ex(const string & str, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams) override;
 
-      size_f64 get_text_extent(const ::scoped_string & scopedstr, ::raw::index iIndex) override;
+      size_f64 get_text_extent(const ::scoped_string & scopedstr, ::collection::collection::index iIndex) override;
       size_f64 get_text_extent(const ::scoped_string & scopedstr) override;
       //size_f64 get_text_extent(const block & block) override;
 //      void get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex) ;

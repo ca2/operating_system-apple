@@ -371,7 +371,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::polyline(const point_f64* lpPoints, ::raw::count nCount)
+   void graphics::polyline(const point_f64* lpPoints, ::raw::collection::count nCount)
    {
 
       if(nCount < 2)
@@ -516,7 +516,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::set_polygon(const POINT_F64 * p, ::raw::count c)
+   void graphics::set_polygon(const POINT_F64 * p, ::raw::collection::count c)
    {
 
       CGContextMoveToPoint(m_cgcontext, p[0].x, p[0].y);
@@ -533,7 +533,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::set_polygon(const point_f64 * p, ::raw::count c)
+   void graphics::set_polygon(const point_f64 * p, ::raw::collection::count c)
    {
 
       set_polygon((const POINT_F64 *) p, c);
@@ -541,7 +541,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::set_polygon(const POINT_F64 * p, ::raw::count c, const POINT_F64 & pointOffset)
+   void graphics::set_polygon(const POINT_F64 * p, ::raw::collection::count c, const POINT_F64 & pointOffset)
    {
 
       CGContextMoveToPoint(m_cgcontext, p[0].x + pointOffset.x, p[0].y + pointOffset.y);
@@ -558,7 +558,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::set_polygon(const point_f64 * p, ::raw::count c, const point_f64 & pointOffset)
+   void graphics::set_polygon(const point_f64 * p, ::raw::collection::count c, const point_f64 & pointOffset)
    {
 
       set_polygon((const POINT_F64 *) p, c, (const POINT_F64 &) pointOffset);
@@ -566,7 +566,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::fill_polygon(const ::point_f64 * pa, ::raw::count nCount)
+   void graphics::fill_polygon(const ::point_f64 * pa, ::raw::collection::count nCount)
    {
 
       if(nCount <= 0)
@@ -585,7 +585,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::draw_polygon(const ::point_f64 * pa, ::raw::count nCount)
+   void graphics::draw_polygon(const ::point_f64 * pa, ::raw::collection::count nCount)
    {
 
       if(nCount <= 0)
@@ -604,7 +604,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::polygon(const ::point_f64 * pa, ::raw::count nCount)
+   void graphics::polygon(const ::point_f64 * pa, ::raw::collection::count nCount)
    {
 
       if(nCount <= 0)
@@ -1851,7 +1851,7 @@ namespace draw2d_quartz2d
 //   }
 
 
-   ::size_f64 graphics::get_text_extent(const ::scoped_string & scopedstr, ::raw::index iIndex)
+   ::size_f64 graphics::get_text_extent(const ::scoped_string & scopedstr, ::collection::collection::index iIndex)
    {
       
       _synchronous_lock synchronouslock(synchronization());
@@ -3336,14 +3336,14 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       CFRelease(string);
       CFRelease(attributes);
       
-      for(::raw::index i = 0; i < cfrel.count(); i++)
+      for(::collection::collection::index i = 0; i < cfrel.count(); i++)
       {
 
          CFRelease(cfrel[i]);
 
       }
 
-      for(::raw::index i = 0; i < crrel.count(); i++)
+      for(::collection::collection::index i = 0; i < crrel.count(); i++)
       {
 
          CGColorRelease(crrel[i]);

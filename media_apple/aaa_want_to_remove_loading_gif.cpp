@@ -9,7 +9,7 @@ namespace coreimage_imaging
 {
 
 
-   //bool draw2d_gif_load_frame(::image * pimageCompose, image_frame_array * pframea, image_frame * pointer, ::index uFrameIndex, u8 * ba, int iScan, colorref_array & cra, int transparentIndex);
+   //bool draw2d_gif_load_frame(::image * pimageCompose, image_frame_array * pframea, image_frame * pointer, ::collection::index uFrameIndex, u8 * ba, int iScan, colorref_array & cra, int transparentIndex);
 
    bool coreimage_load_imagea_frame(::image * pimageCompose, image_frame_array * pimagea, index iFrame, FIBITMAP * pfi);
 
@@ -40,7 +40,7 @@ namespace coreimage_imaging
             try
             {
 
-               ::count cFrame = FreeImage_GetPageCount(m);
+               ::collection::count cFrame = FreeImage_GetPageCount(m);
 
                for (index iFrame = 0; iFrame < cFrame; iFrame++)
                {

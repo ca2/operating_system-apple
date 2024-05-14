@@ -62,6 +62,9 @@ namespace acme_apple
       ::string operating_system_application_version() override;
 
       ::file::path_array process_identifier_modules_paths(::process_identifier processidentifier) override;
+      //void speak(const ::scoped_string & scopedstr) override;
+
+      ::string default_component_implementation(const ::scoped_string & scopedstrComponentName) override;
       
    };
 

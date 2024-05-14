@@ -14,7 +14,7 @@
 //#include "acme/primitive/primitive/payload.h"
 
 #include <dispatch/dispatch.h>
-
+//void ns_speak(const char * psz);
 //#include <libproc.h>
 int apple_node_process_identifier_modules_paths(int pid, void * p, void (*callback)(void *, const char *, int ));
 
@@ -252,7 +252,28 @@ namespace acme_apple
    return patha;
 
 }
+//void node::speak(const ::scoped_string &scopedstr)
+//{
+//   ::string str(scopedstr);
+//   ns_speak(str);
+//
+//   
+//}
 
+
+::string node::default_component_implementation(const ::scoped_string & scopedstrComponentName)
+{
+
+   if(scopedstrComponentName == "nano_speech")
+   {
+    
+      return "avfoundation";
+      
+   }
+   
+   return ::acme_darwin::node::default_component_implementation(scopedstrComponentName);
+
+}
 
 } // namespace acme_apple
 

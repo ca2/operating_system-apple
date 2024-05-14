@@ -54,7 +54,7 @@ namespace music
            
             m_pmidi = psequence->get_midi(strDevice);
             
-            index iDevice = m_iDevice;
+            ::collection::index iDevice = m_iDevice;
             
             if(iDevice < 0)
             {

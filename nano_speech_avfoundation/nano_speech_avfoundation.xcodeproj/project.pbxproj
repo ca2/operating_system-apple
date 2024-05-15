@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A25808B2BF0FB3600266519 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A978D432BF07FE0008976E8 /* libacme.dylib */; };
+		9A2580912BF0FFE700266519 /* ns_speaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A25808F2BF0FFE700266519 /* ns_speaker.h */; };
+		9A2580922BF0FFE700266519 /* ns_speaker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A2580902BF0FFE700266519 /* ns_speaker.mm */; };
+		9A2580942BF1009600266519 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2580932BF1009600266519 /* AVFoundation.framework */; };
+		9A978D292BF07F21008976E8 /* speech.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A978D212BF07F21008976E8 /* speech.cpp */; };
+		9A978D2A2BF07F21008976E8 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A978D222BF07F21008976E8 /* framework.h */; };
+		9A978D2B2BF07F21008976E8 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A978D232BF07F21008976E8 /* _factory.cpp */; };
+		9A978D2C2BF07F21008976E8 /* _library.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A978D242BF07F21008976E8 /* _library.h */; };
+		9A978D2D2BF07F21008976E8 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A978D262BF07F21008976E8 /* _.h */; };
+		9A978D2E2BF07F21008976E8 /* speech.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A978D272BF07F21008976E8 /* speech.h */; };
+		9A978D2F2BF07F21008976E8 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A978D282BF07F21008976E8 /* framework.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A978D422BF07FE0008976E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A978D3C2BF07FE0008976E8 /* acme.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A68A41425114352008DABD2;
+			remoteInfo = acme;
+		};
+		9A978D442BF07FE0008976E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A978D3C2BF07FE0008976E8 /* acme.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AC1067D2B6AC9BD0053DB45;
+			remoteInfo = ios_acme;
+		};
+		9A978D462BF07FE0008976E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A978D3C2BF07FE0008976E8 /* acme.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AD692B6251A753A00C0EBD7;
+			remoteInfo = static_acme;
+		};
+		9A978D482BF07FFD008976E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A978D3C2BF07FE0008976E8 /* acme.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A68A41325114352008DABD2;
+			remoteInfo = acme;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9A25808F2BF0FFE700266519 /* ns_speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ns_speaker.h; sourceTree = "<group>"; };
+		9A2580902BF0FFE700266519 /* ns_speaker.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ns_speaker.mm; sourceTree = "<group>"; };
+		9A2580932BF1009600266519 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9A978D0E2BF077CE008976E8 /* libnano_speech_avfoundation.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libnano_speech_avfoundation.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A978D202BF07F20008976E8 /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
+		9A978D212BF07F21008976E8 /* speech.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = speech.cpp; sourceTree = "<group>"; };
+		9A978D222BF07F21008976E8 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
+		9A978D232BF07F21008976E8 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
+		9A978D242BF07F21008976E8 /* _library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
+		9A978D252BF07F21008976E8 /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
+		9A978D262BF07F21008976E8 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
+		9A978D272BF07F21008976E8 /* speech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speech.h; sourceTree = "<group>"; };
+		9A978D282BF07F21008976E8 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
+		9A978D3C2BF07FE0008976E8 /* acme.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme.xcodeproj; path = ../../../source/app/acme/acme.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A978D0C2BF077CE008976E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A2580942BF1009600266519 /* AVFoundation.framework in Frameworks */,
+				9A25808B2BF0FB3600266519 /* libacme.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A2580882BF0FB3600266519 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A2580932BF1009600266519 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A978D052BF077CD008976E8 = {
+			isa = PBXGroup;
+			children = (
+				9A978D3C2BF07FE0008976E8 /* acme.xcodeproj */,
+				9A978D102BF077CE008976E8 /* nano_speech_avfoundation */,
+				9A978D0F2BF077CE008976E8 /* Products */,
+				9A2580882BF0FB3600266519 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9A978D0F2BF077CE008976E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A978D0E2BF077CE008976E8 /* libnano_speech_avfoundation.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A978D102BF077CE008976E8 /* nano_speech_avfoundation */ = {
+			isa = PBXGroup;
+			children = (
+				9A978D252BF07F21008976E8 /* _____debug.xcconfig */,
+				9A978D202BF07F20008976E8 /* _____release.xcconfig */,
+				9A978D262BF07F21008976E8 /* _.h */,
+				9A978D232BF07F21008976E8 /* _factory.cpp */,
+				9A978D242BF07F21008976E8 /* _library.h */,
+				9A978D282BF07F21008976E8 /* framework.cpp */,
+				9A978D222BF07F21008976E8 /* framework.h */,
+				9A25808F2BF0FFE700266519 /* ns_speaker.h */,
+				9A2580902BF0FFE700266519 /* ns_speaker.mm */,
+				9A978D212BF07F21008976E8 /* speech.cpp */,
+				9A978D272BF07F21008976E8 /* speech.h */,
+			);
+			name = nano_speech_avfoundation;
+			sourceTree = "<group>";
+		};
+		9A978D3D2BF07FE0008976E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A978D432BF07FE0008976E8 /* libacme.dylib */,
+				9A978D452BF07FE0008976E8 /* libios_acme.a */,
+				9A978D472BF07FE0008976E8 /* libstatic_acme.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9A978D0A2BF077CE008976E8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A2580912BF0FFE700266519 /* ns_speaker.h in Headers */,
+				9A978D2D2BF07F21008976E8 /* _.h in Headers */,
+				9A978D2C2BF07F21008976E8 /* _library.h in Headers */,
+				9A978D2A2BF07F21008976E8 /* framework.h in Headers */,
+				9A978D2E2BF07F21008976E8 /* speech.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9A978D0D2BF077CE008976E8 /* nano_speech_avfoundation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A978D172BF077CE008976E8 /* Build configuration list for PBXNativeTarget "nano_speech_avfoundation" */;
+			buildPhases = (
+				9A978D0A2BF077CE008976E8 /* Headers */,
+				9A978D0B2BF077CE008976E8 /* Sources */,
+				9A978D0C2BF077CE008976E8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A978D492BF07FFD008976E8 /* PBXTargetDependency */,
+			);
+			name = nano_speech_avfoundation;
+			productName = node_speech_avfoundation;
+			productReference = 9A978D0E2BF077CE008976E8 /* libnano_speech_avfoundation.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A978D062BF077CD008976E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					9A978D0D2BF077CE008976E8 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 9A978D092BF077CD008976E8 /* Build configuration list for PBXProject "nano_speech_avfoundation" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A978D052BF077CD008976E8;
+			productRefGroup = 9A978D0F2BF077CE008976E8 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A978D3D2BF07FE0008976E8 /* Products */;
+					ProjectRef = 9A978D3C2BF07FE0008976E8 /* acme.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				9A978D0D2BF077CE008976E8 /* nano_speech_avfoundation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A978D432BF07FE0008976E8 /* libacme.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libacme.dylib;
+			remoteRef = 9A978D422BF07FE0008976E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A978D452BF07FE0008976E8 /* libios_acme.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_acme.a;
+			remoteRef = 9A978D442BF07FE0008976E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A978D472BF07FE0008976E8 /* libstatic_acme.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libstatic_acme.a;
+			remoteRef = 9A978D462BF07FE0008976E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A978D0B2BF077CE008976E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A2580922BF0FFE700266519 /* ns_speaker.mm in Sources */,
+				9A978D2F2BF07F21008976E8 /* framework.cpp in Sources */,
+				9A978D2B2BF07F21008976E8 /* _factory.cpp in Sources */,
+				9A978D292BF07F21008976E8 /* speech.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A978D492BF07FFD008976E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = acme;
+			targetProxy = 9A978D482BF07FFD008976E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9A978D152BF077CE008976E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A978D252BF07F21008976E8 /* _____debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_GCD = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_MEMORY_MANAGEMENT = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_STATIC_ANALYZER_MODE = deep;
+				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = NO;
+				CLANG_WARN_ENUM_CONVERSION = NO;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = NO;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_PRAGMA_PACK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = framework.h;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = "@executable_path";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(WorkspaceDir)/operating_system",
+					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/library",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"$(WorkspaceDir)/operating_system",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include/configuration_selection/$(CONFIGURATION)",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include",
+					"$(WorkspaceDir)/port/_",
+					"$(WorkspaceDir)/port/include",
+					"$(WorkspaceDir)/source/app",
+				);
+				USER_HEADER_SEARCH_PATHS = (
+					.,
+					"$(WorkspaceDir)/source",
+					"$(WorkspaceDir)/source/include",
+					"$(WorkspaceDir)/source/app",
+					"$(WorkspaceDir)/source/app/include",
+					"$(WorkspaceDir)/operating_system",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include/configuration_selection/$(CONFIGURATION)",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include",
+					"$(WorkspaceDir)/port/_",
+					"$(WorkspaceDir)/port/include",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/..",
+					"$(PROJECT_DIR)/../..",
+					"$(HOME)/sensitive/sensitive/include",
+				);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "";
+				WorkspaceDir = "$(SRCROOT)/../../..";
+			};
+			name = Debug;
+		};
+		9A978D162BF077CE008976E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A978D202BF07F20008976E8 /* _____release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_GCD = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_MEMORY_MANAGEMENT = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_STATIC_ANALYZER_MODE = deep;
+				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = NO;
+				CLANG_WARN_ENUM_CONVERSION = NO;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = NO;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_PRAGMA_PACK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = framework.h;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = "@executable_path";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(WorkspaceDir)/operating_system",
+					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/library",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"$(WorkspaceDir)/operating_system",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include/configuration_selection/$(CONFIGURATION)",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include",
+					"$(WorkspaceDir)/port/_",
+					"$(WorkspaceDir)/port/include",
+					"$(WorkspaceDir)/source/app",
+				);
+				USER_HEADER_SEARCH_PATHS = (
+					.,
+					"$(WorkspaceDir)/source",
+					"$(WorkspaceDir)/source/include",
+					"$(WorkspaceDir)/source/app",
+					"$(WorkspaceDir)/source/app/include",
+					"$(WorkspaceDir)/operating_system",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include/configuration_selection/$(CONFIGURATION)",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include",
+					"$(WorkspaceDir)/port/_",
+					"$(WorkspaceDir)/port/include",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/..",
+					"$(PROJECT_DIR)/../..",
+					"$(HOME)/sensitive/sensitive/include",
+				);
+				USE_HEADERMAP = NO;
+				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "";
+				WorkspaceDir = "$(SRCROOT)/../../..";
+			};
+			name = Release;
+		};
+		9A978D182BF077CE008976E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PLATFORM_MODIFIER = macos;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9A978D192BF077CE008976E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PLATFORM_MODIFIER = macos;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A978D092BF077CD008976E8 /* Build configuration list for PBXProject "nano_speech_avfoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A978D152BF077CE008976E8 /* Debug */,
+				9A978D162BF077CE008976E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A978D172BF077CE008976E8 /* Build configuration list for PBXNativeTarget "nano_speech_avfoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A978D182BF077CE008976E8 /* Debug */,
+				9A978D192BF077CE008976E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A978D062BF077CD008976E8 /* Project object */;
+}

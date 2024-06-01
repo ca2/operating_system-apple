@@ -164,6 +164,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
    struct sockaddr_in zeroAddress{};
    zeroAddress.sin_len = sizeof(zeroAddress);
    zeroAddress.sin_family = AF_INET;
+   zeroAddress.sin_addr.s_addr = 0x08080808;
    
    return reachability_from_address((const struct sockaddr *) &zeroAddress);
 }
@@ -174,6 +175,10 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
    struct sockaddr_in6 zeroAddress{};
    zeroAddress.sin6_len = sizeof(zeroAddress);
    zeroAddress.sin6_family = AF_INET6;
+   zeroAddress.sin6_addr.__u6_addr.__u6_addr16[0]=0x2001; // Google Public DNS 1
+   zeroAddress.sin6_addr.__u6_addr.__u6_addr16[1]=0x4860;
+   zeroAddress.sin6_addr.__u6_addr.__u6_addr16[2]=0x4860;
+   zeroAddress.sin6_addr.__u6_addr.__u6_addr16[7]=0x8888;
    
    return reachability_from_address((const struct sockaddr *) &zeroAddress);
 }

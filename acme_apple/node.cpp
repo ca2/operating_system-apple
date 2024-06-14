@@ -270,7 +270,13 @@ namespace acme_apple
       return "avfoundation";
       
    }
-   
+   else if(scopedstrComponentName == "nano_idn")
+   {
+    
+      return "libidn";
+      
+   }
+
    return ::acme_darwin::node::default_component_implementation(scopedstrComponentName);
 
 }

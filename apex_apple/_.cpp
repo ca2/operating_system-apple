@@ -123,14 +123,6 @@ i32 defer_run_system()
 
 
 
-//void apple_on_app_activate()
-//{
-//
-//   ::apex::get_system()->call_subject(id_app_activated);
-//
-//}
-
-
 void apple_on_new_file()
 {
 

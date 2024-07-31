@@ -160,12 +160,6 @@ namespace apex_apple
 ////      }
 //
 //
-////void node::os_calc_user_dark_mode()
-////{
-////
-////      ::node_gnome::os_calc_dark_mode();
-////
-////}
 ////
 ////
 ////   string node::os_get_user_theme()
@@ -504,26 +498,7 @@ namespace apex_apple
 ////
 ////   }
 //
-////   bool node::should_launch_on_node(::subject::subject * psubject)
-////   {
-////
-////      if(::is_null(psubject))
-////      {
-////
-////         return false;
-////
-////      }
-////
-////      if(psubject->m_id == id_os_dark_mode)
-////      {
-////
-////         return false;
-////
-////      }
-////
-////      return false;
-////
-////   }
+
 ////
 ////
 ////   bool node::launch_on_node(::subject::subject * psubject)

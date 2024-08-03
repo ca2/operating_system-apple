@@ -716,6 +716,16 @@ namespace music
                   iAddedEvents++;
                   
                }
+               else if(m_pevent->GetType() == ::music::midi::pitch_bend)
+               {
+                  
+                  auto message = MIDI1UPPitchBend(0, m_pevent->GetTrack(), m_pevent->GetChB1(), m_pevent->GetChB2());
+                 
+                  m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
+                  
+                  iAddedEvents++;
+                  
+               }
                m_pevent = nullptr;
 
             }

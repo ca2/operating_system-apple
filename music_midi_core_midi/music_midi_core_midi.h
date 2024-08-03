@@ -6,8 +6,16 @@
 //  Copyright © 2024 ca2 Desenvolvimento de Sofware Ltda. All rights reserved.
 //
 
-#ifndef music_midi_core_midi_h
-#define music_midi_core_midi_h
+#import <Foundation/Foundation.h>
 
+#import <AVFoundation/AVFoundation.h>
 
-#endif /* music_midi_core_midi_h */
+@interface music_midi_core_midi : NSObject
+
+@property (class, strong, readonly) AVAudioEngine *sharedAudioEngine;
+
+- (id)init __attribute__((unavailable("Use +[Model sharedModel] instead")));
++ (id)new __attribute__((unavailable("Use +[Model sharedModel] instead")));
+
+@end
+

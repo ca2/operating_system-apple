@@ -22,6 +22,10 @@
 		9A24D0AB28515F5A000C9873 /* message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA98285126EE008FF906 /* message_out.cpp */; };
 		9A24D0AC28515F5A000C9873 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA86285126EE008FF906 /* midi.cpp */; };
 		9A24D0AD28515F5A000C9873 /* time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAB3285126EE008FF906 /* time.cpp */; };
+		9A3940182C5D4234005804BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3940162C5D4234005804BD /* AVFoundation.framework */; };
+		9A39401A2C5D57DE005804BD /* music_midi_core_midi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A3940192C5D57DE005804BD /* music_midi_core_midi.mm */; };
+		9A39401E2C5D6C34005804BD /* music_midi_core_midi_intrument.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A39401D2C5D6C34005804BD /* music_midi_core_midi_intrument.mm */; };
+		9A3940202C5D7641005804BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A39401F2C5D7641005804BD /* Security.framework */; };
 		9A42B94528EAC1660086559A /* mm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8F68B28EABF440022CD47 /* mm.mm */; };
 		9A5ECD6F28CCC8500084D354 /* libveriwell_multimedia.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1FB76D28B43A7C009B4146 /* libveriwell_multimedia.dylib */; };
 		9A8997BD177D0E7F00C7761E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8997BC177D0E7D00C7761E /* Carbon.framework */; };
@@ -112,6 +116,12 @@
 		07B657D2190F3CBF002DAADE /* music_midi_core_audio_iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "music_midi_core_audio_iosTests-Info.plist"; sourceTree = "<group>"; };
 		07B657D4190F3CBF002DAADE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07B657D6190F3CBF002DAADE /* music_midi_core_audio_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = music_midi_core_audio_iosTests.m; sourceTree = "<group>"; };
+		9A3940162C5D4234005804BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9A3940192C5D57DE005804BD /* music_midi_core_midi.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = music_midi_core_midi.mm; sourceTree = "<group>"; };
+		9A39401B2C5D57FA005804BD /* music_midi_core_midi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = music_midi_core_midi.h; sourceTree = "<group>"; };
+		9A39401C2C5D6BC9005804BD /* music_midi_core_midi_instrument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = music_midi_core_midi_instrument.h; sourceTree = "<group>"; };
+		9A39401D2C5D6C34005804BD /* music_midi_core_midi_intrument.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = music_midi_core_midi_intrument.mm; sourceTree = "<group>"; };
+		9A39401F2C5D7641005804BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = veriwell_multimedia.xcodeproj; path = "../../../source/app-veriwell/multimedia/veriwell_multimedia.xcodeproj"; sourceTree = "<group>"; };
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		9A941C4F1FF34F880028686E /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
@@ -166,6 +176,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3940202C5D7641005804BD /* Security.framework in Frameworks */,
+				9A3940182C5D4234005804BD /* AVFoundation.framework in Frameworks */,
 				9A5ECD6F28CCC8500084D354 /* libveriwell_multimedia.dylib in Frameworks */,
 				9AE641882670824A005F3412 /* AudioUnit.framework in Frameworks */,
 				9A941C501FF34F880028686E /* CoreMIDI.framework in Frameworks */,
@@ -185,6 +197,8 @@
 		07B657B9190F3CBF002DAADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A39401F2C5D7641005804BD /* Security.framework */,
+				9A3940162C5D4234005804BD /* AVFoundation.framework */,
 				9AE641862670813F005F3412 /* AudioToolbox.framework */,
 				9AE64184267080C2005F3412 /* AudioUnit.framework */,
 				9AE6415C26706EA3005F3412 /* libacme.dylib */,
@@ -255,6 +269,10 @@
 				9ABFEAA7285126EE008FF906 /* translation.cpp */,
 				9ABFEA90285126EE008FF906 /* translation.h */,
 				9AE8F68B28EABF440022CD47 /* mm.mm */,
+				9A3940192C5D57DE005804BD /* music_midi_core_midi.mm */,
+				9A39401B2C5D57FA005804BD /* music_midi_core_midi.h */,
+				9A39401C2C5D6BC9005804BD /* music_midi_core_midi_instrument.h */,
+				9A39401D2C5D6C34005804BD /* music_midi_core_midi_intrument.mm */,
 			);
 			name = music_midi_core_midi;
 			sourceTree = "<group>";
@@ -469,6 +487,7 @@
 			files = (
 				9AE8F68C28EABF440022CD47 /* mm.mm in Sources */,
 				9ABFEAD2285126EE008FF906 /* message_out.cpp in Sources */,
+				9A39401A2C5D57DE005804BD /* music_midi_core_midi.mm in Sources */,
 				9ABFEAE5285126EF008FF906 /* time.cpp in Sources */,
 				9ABFEAC1285126EE008FF906 /* midi.cpp in Sources */,
 				9ABFEADD285126EF008FF906 /* translation.cpp in Sources */,
@@ -476,6 +495,7 @@
 				9ABFEABF285126EE008FF906 /* sequencer.cpp in Sources */,
 				9ABFEABD285126EE008FF906 /* dls_synth_message_out.cpp in Sources */,
 				9ABFEAD5285126EE008FF906 /* output_base.cpp in Sources */,
+				9A39401E2C5D6C34005804BD /* music_midi_core_midi_intrument.mm in Sources */,
 				9ABFEABE285126EE008FF906 /* message_in.cpp in Sources */,
 				9ABFEAC8285126EE008FF906 /* input_base.cpp in Sources */,
 				9ABFEAE2285126EF008FF906 /* _factory.cpp in Sources */,

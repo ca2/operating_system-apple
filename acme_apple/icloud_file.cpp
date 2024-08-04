@@ -537,10 +537,21 @@ namespace acme_apple
 //            path = m_pathName;
 //            
 //         }
+         
+         if(m_str_iCloudContainerIdentifier == "Documents")
+         {
+            
+            acmefile()->put_documents_cloud_data(m_pathName,
+                                           
+                                           *get_memory());
+            
+         }
+         else{
+            acmefile()->put_app_cloud_data(m_pathName,
+                                           m_str_iCloudContainerIdentifier,
+                                           *get_memory());
 
-         acmefile()->put_app_cloud_data(m_pathName,
-                                        m_str_iCloudContainerIdentifier,
-                                        *get_memory());
+         }
       
       }
 //      ASSERT_VALID(this);

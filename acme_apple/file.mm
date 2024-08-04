@@ -515,3 +515,125 @@ enum_status ns_cloud_get_data_with_container_id(void ** pp, long & l, const char
 
 
 
+::enum_status ns_cloud_set_documents_data(const char * psz, const void * p, long l)
+{
+   
+   
+   NSData *data = nil;
+
+   if(!p || l <= 0)
+   {
+      
+      return ::success_none;
+      
+   }
+   else
+   {
+      
+      data = [[NSData alloc] initWithBytes:p length:l];
+      
+   }
+   id token = [[NSFileManager defaultManager] ubiquityIdentityToken];
+   if (token == nil)
+   {
+       NSLog(@"ICloud Is not LogIn");
+      
+      return success_none;
+   }
+   else
+   {
+      NSLog(@"ICloud Is LogIn");
+      
+      //Get iCloud container URL
+      NSURL *ubiq = [[NSFileManager defaultManager]URLForUbiquityContainerIdentifier:nil];// in place of nil you can add your container name
+      //Create Document dir in iCloud container and upload/sync SampleData.zip
+      NSString * strComponent = [[NSString alloc] initWithUTF8String:psz];
+      NSURL *ubiquitousPackage = [[ubiq URLByAppendingPathComponent:@"Documents"]URLByAppendingPathComponent:strComponent];
+      NSError * perror = nil;
+      
+      [ data writeToURL : ubiquitousPackage options:  0 error: &perror ];
+      
+      NSString * strUbiquitousPackage = [ [ ubiquitousPackage absoluteURL ] absoluteString ];
+      
+      
+      NSLog(@"Called [ NSData writeToURL ] ubiquitousPackage : %@", strUbiquitousPackage);
+      
+      return ::success;
+      
+   }
+}
+
+void * ns_data_get_data(unsigned long & size, NSData * data)
+{
+   
+   if(data == NULL)
+   {
+      
+      return NULL;
+      
+   }
+   
+   if([data length] <= 0 || [data bytes] == NULL)
+   {
+      
+      return NULL;
+      
+   }
+   
+   void * p = malloc([data length]);
+   
+   if(p == NULL)
+   {
+      
+      return NULL;
+      
+   }
+   
+   memcpy(p, [data bytes], [data length]);
+   
+   size = [data length];
+   
+   return p;
+   
+}
+
+
+::enum_status ns_cloud_get_documents_data(void ** ppdata, long & l, const char * psz)
+{
+   //--------------------------Get data back from iCloud -----------------------------//
+      id token = [[NSFileManager defaultManager] ubiquityIdentityToken];
+      if (token == nil)
+      {
+          NSLog(@"ICloud Is not LogIn");
+      }
+      else
+      {
+          NSLog(@"ICloud Is LogIn");
+         NSString * strComponent = [[NSString alloc] initWithUTF8String:psz];
+          NSError *error = nil;
+          NSURL *ubiq = [[NSFileManager defaultManager]URLForUbiquityContainerIdentifier:nil];// in place of nil you can add your container name
+          NSURL *ubiquitousPackage = [[ubiq URLByAppendingPathComponent:@"Documents"]URLByAppendingPathComponent:strComponent];
+          BOOL isFileDounloaded = [[NSFileManager defaultManager]startDownloadingUbiquitousItemAtURL:ubiquitousPackage error:&error];
+          if (isFileDounloaded) {
+              NSLog(@"%d",isFileDounloaded);
+//              NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//              //changing the file name as SampleData.zip is already present in doc directory which we have used for upload
+//              NSString* fileName = [NSString stringWithFormat:@"RecSampleData.zip"];
+//              NSString* fileAtPath = [documentsDirectory stringByAppendingPathComponent:fileName];
+              NSData *dataFile = [NSData dataWithContentsOfURL:ubiquitousPackage];
+             unsigned long ulSize = 0;
+             *ppdata = ns_data_get_data(ulSize,dataFile);
+             l = ulSize;
+//              BOOL fileStatus = [dataFile writeToFile:fileAtPath atomically:NO];
+//              if (fileStatus) {
+//                  NSLog(@"success");
+//              }
+             return ::success;
+          }
+          else{
+              NSLog(@"%d",isFileDounloaded);
+          }
+      }
+   return error_failed;
+}
+

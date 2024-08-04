@@ -52,6 +52,7 @@ namespace music
             class ::time            m_timePosition;
             ::f64                   m_f64OutputSeconds;
             ::f64                   m_f64DelaySeconds;
+            ::f64                   m_f64StartSampleTime;
             ::f64                   m_f64LastSampleTime;
             ::i32                   m_i32LastFrameCount;
             bool                    m_bStarting;

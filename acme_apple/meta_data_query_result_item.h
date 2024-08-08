@@ -2,11 +2,22 @@
 //  meta_data_query_result_item.h
 //  acme_apple
 //
-//  Created by Camilo Sasuke Thomas Borregaard Sørensen on 05/08/24.
+//  Created by Camilo Sasuke Thomas Borregaard Sørensen on 2024-08-05
+//  <3ThomasBorregaardSorensen!!
 //
 
-#ifndef meta_data_query_result_item_h
-#define meta_data_query_result_item_h
+#import <Foundation/Foundation.h>
 
-
-#endif /* meta_data_query_result_item_h */
+//@interface meta_data_query_result_item : NSObject
+//
+//- (instancetype _Nullable )init NS_UNAVAILABLE;
+//
+//- (instancetype _Nullable )initWithDisplayName:(NSString*_Nonnull)displayName
+//                                       fileUrl:(NSURL*_Nonnull)fileUrl
+//                        hasUnresolvedConflicts:(BOOL)hasUnresolvedConflicts NS_DESIGNATED_INITIALIZER;
+//
+//@property (nonatomic, nonnull) NSString* displayName;
+//@property (nonatomic, nonnull) NSURL* fileUrl;
+//@property (nonatomic) BOOL hasUnresolvedConflicts;
+//
+//@end

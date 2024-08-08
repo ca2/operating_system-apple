@@ -268,6 +268,32 @@ void node::ns_app_run()
 }
 
 
+//void node::_node_file_dialog(::file::file_dialog * pdialog)
+//{
+//
+//   auto puserinteraction = application()->m_pauraapplication->m_puserinteractionMain;
+//   
+//   if(!puserinteraction)
+//   {
+//      
+//      return;
+//      
+//   }
+//   
+//   auto pwindow = puserinteraction->window();
+//   
+//   if(!pwindow)
+//   {
+//      
+//      return;
+//      
+//   }
+//   
+//   pwindow->pick_browse();
+//   
+//}
+
+
 } // namespace aura_apple
 
 

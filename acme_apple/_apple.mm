@@ -533,7 +533,7 @@ bool g_b_iCloudInitialized = false;
 ::enum_status g_estatus_iCloud;
 
 
-::enum_status ns_defer_initialize_icloud_container_access()
+::e_status ns_defer_initialize_icloud_container_access()
 {
 
    if(g_b_iCloudInitialized)

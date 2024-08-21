@@ -59,6 +59,8 @@ namespace music
             MIDIEventPacket *       m_pmidieventpacket = nullptr;
             int                     m_iProgramChangeStreak = -1;
             ::i64                   m_iFrameProgramChangeStreak = -1;
+             
+             ::i32                  m_iAddedEvents;
 
             dls_synth_message_out();
             ~dls_synth_message_out() override;
@@ -85,7 +87,9 @@ namespace music
             void note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
             void note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
             void program_change(int iChannel, unsigned char uchProgram) override;
-            
+            void control_change(int iChannel, unsigned char uchController, unsigned char uchValue) override;
+            void pitch_bend(int iChannel, unsigned short ushBend) override;
+
             bool midi_message_step() override;
 
              void start() override;

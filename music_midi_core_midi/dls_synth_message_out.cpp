@@ -438,6 +438,8 @@ namespace music
                
                f64LastSampleTime = inTimeStamp->mSampleTime;
                
+               m_f64StartSampleTime = inTimeStamp->mSampleTime;
+               
                i32LastFrameCount = 0;
                
                dDiff = 0;
@@ -529,12 +531,12 @@ namespace music
                   
                m_iFrameAbsolute = m_f64SamplingRate * m_f64OutputSeconds;
                       
-               auto iFrame = m_iFrameAbsolute - (::i64) inTimeStamp->mSampleTime;
+               auto iFrame = m_iFrameAbsolute - (::i64) (inTimeStamp->mSampleTime - m_f64StartSampleTime);
                  
                if(iFrame < 0)
                {
                   
-                  double d = inTimeStamp->mSampleTime / m_f64SamplingRate;
+                  double d = (inTimeStamp->mSampleTime - m_f64StartSampleTime) / m_f64SamplingRate;
                   
                   warningf("event skipped %03.3fs %03.3fs %lld frames", d, m_timePosition.floating_second(), iFrame);
                       
@@ -552,14 +554,14 @@ namespace music
 
                       midi_message_step();
                      
-                     if(m_iFrameProgramChangeStreak < inTimeStamp->mSampleTime)
+                     if(m_iFrameProgramChangeStreak < (inTimeStamp->mSampleTime - m_f64StartSampleTime))
                      {
                         
-                        m_iFrameProgramChangeStreak = inTimeStamp->mSampleTime;
+                        m_iFrameProgramChangeStreak = (inTimeStamp->mSampleTime - m_f64StartSampleTime);
                         
                      }
                      
-                     for (;m_iProgramChangeStreak < 16 && m_iFrameProgramChangeStreak < inTimeStamp->mSampleTime + inNumberFrames; m_iProgramChangeStreak++)
+                     for (;m_iProgramChangeStreak < 16 && m_iFrameProgramChangeStreak < (inTimeStamp->mSampleTime + inNumberFrames - m_f64StartSampleTime); m_iProgramChangeStreak++)
                      {
                            
                         int iTrack = m_iProgramChangeStreak;
@@ -600,7 +602,7 @@ namespace music
                         
                      }
                         
-                     for (;m_iProgramChangeStreak>= 16 && m_iProgramChangeStreak < 32 && m_iFrameProgramChangeStreak < inTimeStamp->mSampleTime + inNumberFrames; m_iProgramChangeStreak++)
+                     for (;m_iProgramChangeStreak>= 16 && m_iProgramChangeStreak < 32 && m_iFrameProgramChangeStreak < (inTimeStamp->mSampleTime + inNumberFrames - m_f64StartSampleTime); m_iProgramChangeStreak++)
                      {
                         
                         int iTrack = m_iProgramChangeStreak - 16;

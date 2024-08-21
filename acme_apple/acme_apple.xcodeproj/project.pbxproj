@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9A08443F29367CC1009F7FF4 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A08443E29367CC1009F7FF4 /* libacme_posix.dylib */; };
+		9A0E3BB62C611DE9004A0972 /* get_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E3BB42C611DE9004A0972 /* get_icloud_data.mm */; };
+		9A0E3BB72C611DE9004A0972 /* get_icloud_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0E3BB52C611DE9004A0972 /* get_icloud_data.h */; };
+		9A0E3BB82C611F78004A0972 /* get_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E3BB42C611DE9004A0972 /* get_icloud_data.mm */; };
+		9A0E3BBB2C613402004A0972 /* meta_data_query_result_item.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E3BBA2C613402004A0972 /* meta_data_query_result_item.mm */; };
 		9A1BD67E2A0073EA00152CD1 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94028D29E62F5E00C8C249 /* _cg_context.cpp */; };
 		9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFCC276118A6001E14CC /* Carbon.framework */; };
 		9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFE1276122CB001E14CC /* Cocoa.framework */; };
@@ -68,6 +72,9 @@
 		9A9DCBDD29B8482F00D1255B /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9DCB6729B823BB00D1255B /* libacme_darwin.dylib */; };
 		9AA3F9622A9498D3004283CA /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3F95F2A9498D3004283CA /* file_context.cpp */; };
 		9AA3F9632A9498D3004283CA /* file_context.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA3F9612A9498D3004283CA /* file_context.h */; };
+		9AA56BB52C61AF5A00BF56ED /* set_icloud_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA56BB32C61AF5900BF56ED /* set_icloud_data.h */; };
+		9AA56BB62C61AF5A00BF56ED /* set_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA56BB42C61AF5900BF56ED /* set_icloud_data.mm */; };
+		9AA56BB72C61B38E00BF56ED /* set_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA56BB42C61AF5900BF56ED /* set_icloud_data.mm */; };
 		9AA74F6128484887009BB762 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
 		9AB09AA62B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */; };
 		9AB09AA72B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */; };
@@ -154,6 +161,10 @@
 /* Begin PBXFileReference section */
 		9A0705FD26627549004E8CB4 /* image.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image.mm; sourceTree = "<group>"; };
 		9A08443E29367CC1009F7FF4 /* libacme_posix.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_posix.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0E3BB42C611DE9004A0972 /* get_icloud_data.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = get_icloud_data.mm; sourceTree = "<group>"; };
+		9A0E3BB52C611DE9004A0972 /* get_icloud_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = get_icloud_data.h; sourceTree = "<group>"; };
+		9A0E3BB92C613322004A0972 /* meta_data_query_result_item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = meta_data_query_result_item.h; sourceTree = "<group>"; };
+		9A0E3BBA2C613402004A0972 /* meta_data_query_result_item.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = meta_data_query_result_item.mm; sourceTree = "<group>"; };
 		9A15A582264B536C0080670E /* libacme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A21AFCA276117F4001E14CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9A21AFCC276118A6001E14CC /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -212,6 +223,8 @@
 		9A9DCBDE29B8490900D1255B /* libios_acme_posix.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libios_acme_posix.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA3F95F2A9498D3004283CA /* file_context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_context.cpp; sourceTree = "<group>"; };
 		9AA3F9612A9498D3004283CA /* file_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_context.h; sourceTree = "<group>"; };
+		9AA56BB32C61AF5900BF56ED /* set_icloud_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = set_icloud_data.h; sourceTree = "<group>"; };
+		9AA56BB42C61AF5900BF56ED /* set_icloud_data.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = set_icloud_data.mm; sourceTree = "<group>"; };
 		9AB09AA42B72BA7200E2C3A5 /* NSMetadataQueryHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSMetadataQueryHandler.h; sourceTree = "<group>"; };
 		9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NSMetadataQueryHandler.mm; sourceTree = "<group>"; };
 		9AB09AAA2B72C7B500E2C3A5 /* ns_metadata_query_callback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ns_metadata_query_callback.h; sourceTree = "<group>"; };
@@ -295,11 +308,15 @@
 				9AB09ACB2B73C58F00E2C3A5 /* file_listing_handler.h */,
 				9A787E5C264E22CB003DF8A0 /* framework.cpp */,
 				9A787E66264E22CB003DF8A0 /* framework.h */,
+				9A0E3BB52C611DE9004A0972 /* get_icloud_data.h */,
+				9A0E3BB42C611DE9004A0972 /* get_icloud_data.mm */,
 				9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */,
 				9A238E902B7AF79800C199F5 /* icloud_file.h */,
 				9A93B95828471D39005ACD11 /* image.cpp */,
 				9A93B95928471D39005ACD11 /* image.h */,
 				9A0705FD26627549004E8CB4 /* image.mm */,
+				9A0E3BB92C613322004A0972 /* meta_data_query_result_item.h */,
+				9A0E3BBA2C613402004A0972 /* meta_data_query_result_item.mm */,
 				9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */,
 				9A787E5E264E22CB003DF8A0 /* node.cpp */,
 				9A787E60264E22CB003DF8A0 /* node.h */,
@@ -312,6 +329,8 @@
 				9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */,
 				9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */,
 				9A787E5B264E22CB003DF8A0 /* resource.cpp */,
+				9AA56BB32C61AF5900BF56ED /* set_icloud_data.h */,
+				9AA56BB42C61AF5900BF56ED /* set_icloud_data.mm */,
 				9A787E6A264E22CB003DF8A0 /* timer.mm */,
 				9A787E5D264E22CB003DF8A0 /* UncaughtExceptionHandler.h */,
 				9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */,
@@ -360,9 +379,11 @@
 				9A238E942B7AF79800C199F5 /* icloud_file.h in Headers */,
 				9A94DEF8282C5F6600F5C1CA /* acme_file.h in Headers */,
 				9AB09ACF2B73C59100E2C3A5 /* file_listing_handler.h in Headers */,
+				9AA56BB52C61AF5A00BF56ED /* set_icloud_data.h in Headers */,
 				9AA3F9632A9498D3004283CA /* file_context.h in Headers */,
 				9A787E6F264E2351003DF8A0 /* node.h in Headers */,
 				9A94DEF5282C5F6600F5C1CA /* acme_path.h in Headers */,
+				9A0E3BB72C611DE9004A0972 /* get_icloud_data.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,8 +556,11 @@
 				9A787E70264E2355003DF8A0 /* node.cpp in Sources */,
 				9A94DEF6282C5F6600F5C1CA /* acme_directory.cpp in Sources */,
 				9A94DEF9282C5F6600F5C1CA /* acme_file.cpp in Sources */,
+				9A0E3BB62C611DE9004A0972 /* get_icloud_data.mm in Sources */,
 				9A734A52284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */,
 				9A238E912B7AF79800C199F5 /* icloud_file.cpp in Sources */,
+				9AA56BB62C61AF5A00BF56ED /* set_icloud_data.mm in Sources */,
+				9A0E3BBB2C613402004A0972 /* meta_data_query_result_item.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +580,7 @@
 				9A94DEFA282C606300F5C1CA /* acme_file.cpp in Sources */,
 				9A28E3DC2B73FFA800ABB2C5 /* file.mm in Sources */,
 				9A8E9DA9282A2F61005FF778 /* NSString+SymlinksAndAliases.mm in Sources */,
+				9A0E3BB82C611F78004A0972 /* get_icloud_data.mm in Sources */,
 				9A8E9DAA282A2F61005FF778 /* debug.cpp in Sources */,
 				9AB09AA72B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
 				9A8E9DAB282A2F61005FF778 /* _factory.cpp in Sources */,
@@ -568,6 +593,7 @@
 				9A8E9DAF282A2F61005FF778 /* _apple.mm in Sources */,
 				9A8E9DB0282A2F61005FF778 /* node.cpp in Sources */,
 				9A93B95B28471D7F005ACD11 /* image.cpp in Sources */,
+				9AA56BB72C61B38E00BF56ED /* set_icloud_data.mm in Sources */,
 				9A238E922B7AF79800C199F5 /* icloud_file.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

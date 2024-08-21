@@ -3118,13 +3118,14 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          
       }
 
-      if(str.trimmed().is_empty())
-      {
-
-         return;
-         //throw exception(error_invalid_empty_argument);
-
-      }
+      // Many times user may want to measure spaces
+//      if(str.trimmed().is_empty())
+//      {
+//
+//         return;
+//         //throw exception(error_invalid_empty_argument);
+//
+//      }
       
       CTFontRef font = (CTFontRef) pfont->get_os_data(this);
 

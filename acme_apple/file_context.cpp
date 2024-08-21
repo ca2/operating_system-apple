@@ -159,6 +159,45 @@ namespace acme_apple
             return pfile;
             
          }
+         else{
+          
+            auto pathParse = path;
+            
+            if(pathParse.begins_eat("icloud://Documents/"))
+            {
+
+               auto pfile = __create_new < ::acme_apple::icloud_file >();
+               
+               ::string strName;
+               
+               pfile->m_pathName = pathParse;
+               
+               pfile->m_str_iCloudContainerIdentifier = "Documents";
+               
+               pfile->m_eopen = eopen;
+               
+               if(eopen & ::file::e_open_read)
+               {
+                  
+                  try {
+                     
+                     auto memory = acmefile()->get_documents_cloud_data(pfile->m_pathName);
+                     
+                     pfile->get_memory()->assign(memory);
+                     
+                  }
+                  catch(...)
+                  {
+                     
+                  }
+                  
+               }
+               
+               return pfile;
+
+            }
+            
+         }
       
       }
     

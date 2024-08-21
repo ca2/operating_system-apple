@@ -11,6 +11,8 @@
 		07B657CF190F3CBF002DAADE /* libios_music_midi_core_midi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B657B8190F3CBF002DAADE /* libios_music_midi_core_midi.a */; };
 		07B657D5190F3CBF002DAADE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07B657D3190F3CBF002DAADE /* InfoPlist.strings */; };
 		07B657D7190F3CBF002DAADE /* music_midi_core_audio_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B657D6190F3CBF002DAADE /* music_midi_core_audio_iosTests.m */; };
+		9A0E3BA72C6012D8004A0972 /* music_midi_core_midi_intrument.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A39401D2C5D6C34005804BD /* music_midi_core_midi_intrument.mm */; };
+		9A0E3BA92C6012DE004A0972 /* music_midi_core_midi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A3940192C5D57DE005804BD /* music_midi_core_midi.mm */; };
 		9A24D0A228515F5A000C9873 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAAF285126EE008FF906 /* _factory.cpp */; };
 		9A24D0A328515F5A000C9873 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEAA7285126EE008FF906 /* translation.cpp */; };
 		9A24D0A428515F5A000C9873 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA8A285126EE008FF906 /* framework.cpp */; };
@@ -461,12 +463,14 @@
 				9A24D0A928515F5A000C9873 /* dls_synth_message_out.cpp in Sources */,
 				9A24D0A728515F5A000C9873 /* sequencer.cpp in Sources */,
 				9A24D0AB28515F5A000C9873 /* message_out.cpp in Sources */,
+				9A0E3BA72C6012D8004A0972 /* music_midi_core_midi_intrument.mm in Sources */,
 				9A42B94528EAC1660086559A /* mm.mm in Sources */,
 				9A24D0AA28515F5A000C9873 /* message_in.cpp in Sources */,
 				9A24D0A528515F5A000C9873 /* output_base.cpp in Sources */,
 				9A24D0A228515F5A000C9873 /* _factory.cpp in Sources */,
 				9A24D0A428515F5A000C9873 /* framework.cpp in Sources */,
 				9A24D0AD28515F5A000C9873 /* time.cpp in Sources */,
+				9A0E3BA92C6012DE004A0972 /* music_midi_core_midi.mm in Sources */,
 				9A24D0A328515F5A000C9873 /* translation.cpp in Sources */,
 				9A24D0A828515F5A000C9873 /* input_base.cpp in Sources */,
 				9A24D0AC28515F5A000C9873 /* midi.cpp in Sources */,

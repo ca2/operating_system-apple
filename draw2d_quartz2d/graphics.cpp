@@ -1036,7 +1036,7 @@ namespace draw2d_quartz2d
 
             rectText.bottom() = rectText.top() + rectText.height() * 2;
 
-            auto pimage1 = m_pcontext->m_pauracontext->create_image(rectText.size());
+            auto pimage1 = context_image()->create_image(rectText.size());
             
             pimage1->clear(::color::transparent);
             pimage1->get_graphics()->set(get_current_font());

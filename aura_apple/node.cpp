@@ -195,7 +195,7 @@ namespace aura_apple
 ::image_pointer node::get_file_image_by_type_identifier(int iSize, const ::scoped_string & scopedstrTypeIdentifier)
 {
 
-   auto pimage = m_pcontext->m_pauracontext->create_image( { iSize, iSize } );
+   auto pimage = context_image()->create_image( { iSize, iSize } );
 
    _synchronous_lock synchronouslock(this->synchronization());
 
@@ -215,7 +215,7 @@ namespace aura_apple
 {
    
 
-   auto pimage = m_pcontext->m_pauracontext->create_image( { iSize, iSize } );
+   auto pimage = context_image()->create_image( { iSize, iSize } );
 
 _synchronous_lock synchronouslock(this->synchronization());
 

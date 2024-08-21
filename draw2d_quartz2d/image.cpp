@@ -245,7 +245,7 @@ namespace draw2d_quartz2d
       
       create({cx, cy});
      
-      auto pimage1 = m_pcontext->m_pauracontext->create_image({cx,  cy});
+      auto pimage1 = context_image()->create_image({cx,  cy});
       
       pimage1->clear(::color::white);
       
@@ -264,7 +264,7 @@ namespace draw2d_quartz2d
       }
 
       // Black blend image
-      auto pimage2 = m_pcontext->m_pauracontext->create_image({cx,  cy});
+      auto pimage2 = context_image()->create_image({cx,  cy});
       pimage2->clear(::color::transparent);
 
   
@@ -283,7 +283,7 @@ namespace draw2d_quartz2d
       }
 
       // Mask image
-      auto pimageM= m_pcontext->m_pauracontext->create_image({cx,  cy});
+      auto pimageM= context_image()->create_image({cx,  cy});
 
       {
       

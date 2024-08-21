@@ -132,7 +132,7 @@ NSString * ns_get_folder_name(NSString * strPath, int iEatenCount = 1);
    
    [ self _setDataAtPath : [ m_strDummy UTF8String] withData : szData ofLength: strlen(szData) ];
    
-   NSString * filePattern = [NSString stringWithFormat:@"%@-*.txt", m_strContainerIdForFileName ];
+//   NSString * filePattern = [NSString stringWithFormat:@"%@-*.txt", m_strContainerIdForFileName ];
    
    self.metadataquery = [ [ NSMetadataQuery alloc] init ];
 
@@ -447,16 +447,16 @@ NSString * ns_get_folder_name(NSString * strPath, int iEatenCount = 1);
 //displays it in an alert
 -(void) displayContent{
         //get the documents directory:
-        NSArray *paths = NSSearchPathForDirectoriesInDomains
-                        (NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsDirectory = [paths objectAtIndex:0];
+        //NSArray *paths = NSSearchPathForDirectoriesInDomains
+                        //(NSDocumentDirectory, NSUserDomainMask, YES);
+        //NSString *documentsDirectory = [paths objectAtIndex:0];
 
         //make a file name to write the data to using the documents directory:
-        NSString *fileName = [NSString stringWithFormat:@"%@/textfile.txt",
-                                                      documentsDirectory];
-        NSString *content = [[NSString alloc] initWithContentsOfFile:fileName
-                                                      usedEncoding:nil
-                                                             error:nil];
+//        NSString *fileName = [NSString stringWithFormat:@"%@/textfile.txt",
+//                                                      documentsDirectory];
+//        NSString *content = [[NSString alloc] initWithContentsOfFile:fileName
+                                                      //usedEncoding:nil
+                                                             //error:nil];
         //use simple alert from my library (see previous post for details)
 
 }

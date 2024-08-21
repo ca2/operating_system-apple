@@ -796,3 +796,16 @@ NSString * ns_random_string_of_length(int len)
    
 }
 
+
+
+char * ios_home_folder_path_dup()
+{
+   //get the documents directory:
+   NSArray * paths = NSSearchPathForDirectoriesInDomains
+       (NSDocumentDirectory, NSUserDomainMask, YES);
+   
+   NSString * documentsDirectory = [ paths objectAtIndex : 0 ];
+
+   return strdup([documentsDirectory UTF8String]);
+   
+}

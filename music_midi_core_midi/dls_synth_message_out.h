@@ -36,7 +36,7 @@ namespace music
          {
          public:
             
-            
+            bool                    m_bUseEventList;
             AUNode                  m_nodeOutput;
             AUNode                  m_nodeSynth;
             AUGraph                 m_audiograph;

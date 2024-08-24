@@ -14,6 +14,9 @@
 #include "app-veriwell/multimedia/music/midi/message_out.h"
 #include "dls_synth_message_out.h"
 #include <AudioToolbox/AudioToolbox.h>
+#include "operating_system-apple/media_apple/_.h"
+#include "operating_system-apple/media_apple/media_apple.h"
+#include "acme/platform/system.h"
 CFURLRef xg_url();
 char * ns_format_osstatus(OSStatus osstatus);
 CFTypeRef get_a_soft_midi_synthesizer();
@@ -48,6 +51,8 @@ namespace music
              m_bMessageOutSequencesSequencer = true;
              m_audiograph = nullptr;
              m_iAddedEvents = 0;
+            m_bUseEventList = false;
+
             
          }
          
@@ -61,6 +66,17 @@ namespace music
          
          void dls_synth_message_out::open()
          {
+            m_bOpened = true;
+
+#ifdef APPLE_IOS
+            
+            auto pfactory = system()->factory("media", "ios");
+            
+            pfactory->merge_to_global_factory();
+            
+#endif
+            
+            ::media_apple::media_apple::get(this);
             
             OSStatus result = noErr;
             
@@ -341,7 +357,6 @@ namespace music
 //           
             
 
-             m_bOpened = true;
             //return ::success;
          }
       
@@ -748,7 +763,7 @@ namespace music
 //                                                 iNote,
 //                                                 iVelocity);
           
-          if (__builtin_available(macOS 12, *))
+          if (__builtin_available(macOS 12, iOS 15.0, *))
           {
               
               auto message = MIDI1UPNoteOn(0, iChannel, uchNote, uchVelocity);
@@ -756,6 +771,7 @@ namespace music
               m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
               
               m_iAddedEvents++;
+             
           }
           else
           {
@@ -841,10 +857,10 @@ namespace music
 //                                                    iNote,
 //                                                    uchVelocity);
              
-             if (__builtin_available(macOS 12, *))
+             if (__builtin_available(macOS 12, iOS 15.0, *))
              {
                  
-                 auto message = MIDI1UPNoteOff(0, m_pevent->GetTrack(), m_pevent->GetNotePitch(), m_pevent->GetNoteVelocity());
+                 auto message = MIDI1UPNoteOff(0, iChannel, uchNote, uchVelocity);
                 
                  m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
                  
@@ -895,7 +911,7 @@ namespace music
 //                                                    ::music::midi::program_change,
 //                                                    iChannel,
 //                                                    uchProgram);
-             if (__builtin_available(macOS 12, *))
+             if (__builtin_available(macOS 12, iOS 15.0, *))
              {
                  
                  auto message = MIDI1UPChannelVoiceMessage(0, ::music::midi::program_change >> 4, iChannel, uchProgram, 0);
@@ -936,7 +952,7 @@ namespace music
       void dls_synth_message_out::control_change(int iChannel, unsigned char uchController, unsigned char uchValue)
       {
           
-          if (__builtin_available(macOS 12, *))
+          if (__builtin_available(macOS 12, iOS 15.0, *))
           {
               
               auto message = MIDI1UPChannelVoiceMessage(0, ::music::midi::control_change >> 4, iChannel, uchController, uchValue);
@@ -971,7 +987,7 @@ namespace music
       void dls_synth_message_out::pitch_bend(int iChannel, unsigned short ushBend)
       {
           
-          if (__builtin_available(macOS 12, *))
+          if (__builtin_available(macOS 12, iOS 15.0, *))
           {
               
               auto message = MIDI1UPPitchBend(0, m_pevent->GetTrack(), m_pevent->GetChB1(), m_pevent->GetChB2());
@@ -1007,7 +1023,7 @@ namespace music
          bool dls_synth_message_out::midi_message_step()
         {
              
-             if (__builtin_available(macOS 12, *))
+             if (__builtin_available(macOS 12, iOS 15.0, *))
              {
              
                  if(m_iAddedEvents > 0)
@@ -1028,7 +1044,7 @@ namespace music
 
                  }
                  
-                 if(m_pmidieventpacket)
+                 if(!m_pmidieventpacket)
                  {
                      
                      m_pmidieventpacket = MIDIEventListInit(&m_midieventlist, kMIDIProtocol_1_0);

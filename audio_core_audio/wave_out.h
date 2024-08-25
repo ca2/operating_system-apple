@@ -61,6 +61,8 @@ namespace multimedia
 
          virtual bool on_run_step();
 
+         
+         double out_get_latency() override;
 
 //         void OnOpen();
 

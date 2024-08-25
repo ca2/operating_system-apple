@@ -34,6 +34,7 @@
 		9A941C501FF34F880028686E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A941C4F1FF34F880028686E /* CoreMIDI.framework */; };
 		9A941C521FF34F9E0028686E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A941C511FF34F9E0028686E /* CoreAudio.framework */; };
 		9AA1B44A176361950019E812 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA1B449176361950019E812 /* Cocoa.framework */; };
+		9AB911212C7A955700428ADB /* libmedia_apple.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3F08EE2C7A128800850151 /* libmedia_apple.dylib */; };
 		9ABFEABA285126EE008FF906 /* time.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFEA7E285126EE008FF906 /* time.h */; };
 		9ABFEABD285126EE008FF906 /* dls_synth_message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA81285126EE008FF906 /* dls_synth_message_out.cpp */; };
 		9ABFEABE285126EE008FF906 /* message_in.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFEA82285126EE008FF906 /* message_in.cpp */; };
@@ -95,6 +96,27 @@
 			remoteGlobalIDString = 9A1FB4E328B3FD88009B4146;
 			remoteInfo = veriwell_multimedia_iosTests;
 		};
+		9A3F08ED2C7A128800850151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A3F08E82C7A128800850151 /* media_apple.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A4DDE7B2B775A1E00477878;
+			remoteInfo = media_apple;
+		};
+		9A3F08EF2C7A128800850151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A3F08E82C7A128800850151 /* media_apple.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A20EBE92B771090008A08A2;
+			remoteInfo = ios_media_apple;
+		};
+		9A3F08F22C7A12B100850151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A3F08E82C7A128800850151 /* media_apple.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A4DDE6A2B775A1E00477878;
+			remoteInfo = media_apple;
+		};
 		9A73511A284F9613003986C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */;
@@ -125,6 +147,7 @@
 		9A39401D2C5D6C34005804BD /* music_midi_core_midi_intrument.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = music_midi_core_midi_intrument.mm; sourceTree = "<group>"; };
 		9A39401F2C5D7641005804BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = veriwell_multimedia.xcodeproj; path = "../../../source/app-veriwell/multimedia/veriwell_multimedia.xcodeproj"; sourceTree = "<group>"; };
+		9A3F08E82C7A128800850151 /* media_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = media_apple.xcodeproj; path = ../media_apple/media_apple.xcodeproj; sourceTree = "<group>"; };
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		9A941C4F1FF34F880028686E /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		9A941C511FF34F9E0028686E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -178,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AB911212C7A955700428ADB /* libmedia_apple.dylib in Frameworks */,
 				9A3940202C5D7641005804BD /* Security.framework in Frameworks */,
 				9A3940182C5D4234005804BD /* AVFoundation.framework in Frameworks */,
 				9A5ECD6F28CCC8500084D354 /* libveriwell_multimedia.dylib in Frameworks */,
@@ -241,6 +265,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9A3F08E92C7A128800850151 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A3F08EE2C7A128800850151 /* libmedia_apple.dylib */,
+				9A3F08F02C7A128800850151 /* libios_media_apple.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9ABFEA7D285126EE008FF906 /* music_midi_core_midi */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */,
+				9A3F08E82C7A128800850151 /* media_apple.xcodeproj */,
 				9A8997BC177D0E7D00C7761E /* Carbon.framework */,
 				9AA1B449176361950019E812 /* Cocoa.framework */,
 				9ABFEA7D285126EE008FF906 /* music_midi_core_midi */,
@@ -372,6 +406,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A3F08F32C7A12B100850151 /* PBXTargetDependency */,
 				9AE6415A26706E78005F3412 /* PBXTargetDependency */,
 			);
 			name = music_midi_core_midi;
@@ -407,6 +442,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 9A3F08E92C7A128800850151 /* Products */;
+					ProjectRef = 9A3F08E82C7A128800850151 /* media_apple.xcodeproj */;
+				},
+				{
 					ProductGroup = 9A3D17C1266EF29700AE9A5E /* Products */;
 					ProjectRef = 9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */;
 				},
@@ -440,6 +479,20 @@
 			fileType = wrapper.cfbundle;
 			path = veriwell_multimedia_iosTests.xctest;
 			remoteRef = 9A1FB77028B43A7C009B4146 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A3F08EE2C7A128800850151 /* libmedia_apple.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libmedia_apple.dylib;
+			remoteRef = 9A3F08ED2C7A128800850151 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A3F08F02C7A128800850151 /* libios_media_apple.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_media_apple.a;
+			remoteRef = 9A3F08EF2C7A128800850151 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -514,6 +567,11 @@
 			isa = PBXTargetDependency;
 			target = 07B657B7190F3CBF002DAADE /* ios_music_midi_core_midi */;
 			targetProxy = 07B657CD190F3CBF002DAADE /* PBXContainerItemProxy */;
+		};
+		9A3F08F32C7A12B100850151 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = media_apple;
+			targetProxy = 9A3F08F22C7A12B100850151 /* PBXContainerItemProxy */;
 		};
 		9A73511B284F9613003986C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

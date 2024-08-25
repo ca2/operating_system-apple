@@ -27,6 +27,7 @@
 		9AAEB4DC25291CFF00B39BA1 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DB25291CFF00B39BA1 /* libacme.dylib */; };
 		9AAEB4DE25291CFF00B39BA1 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DD25291CFF00B39BA1 /* libapex.dylib */; };
 		9AAEB4E025291CFF00B39BA1 /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAEB4DF25291CFF00B39BA1 /* libaqua.dylib */; };
+		9ACB3A362C7BDAFF000389E2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D4206D1B71F5590065510D /* CoreAudio.framework */; };
 		9AD862A529B147C00054C9B3 /* libaudio.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD860D329B0C08C0054C9B3 /* libaudio.dylib */; };
 		9AF4C4721F83DD7500197385 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B496616A4A10100875A94 /* framework.cpp */; };
 		9AF4C4731F83DD7500197385 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EAF2917C563A300C458D1 /* _factory.cpp */; };
@@ -154,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACB3A362C7BDAFF000389E2 /* CoreAudio.framework in Frameworks */,
 				9AD862A529B147C00054C9B3 /* libaudio.dylib in Frameworks */,
 				9A74158D266BD08500552531 /* libacme_apple.dylib in Frameworks */,
 				9AAEB4DC25291CFF00B39BA1 /* libacme.dylib in Frameworks */,

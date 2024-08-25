@@ -1,8 +1,8 @@
 #pragma once
 
 
-#include "aura_darwin/_.h"
-#include "apex_apple/_.h"
+#include "operating_system-darwin/aura_darwin/_.h"
+#include "operating_system-apple/apex_apple/_.h"
 
 
 #if defined(_AURA_APPLE_LIBRARY)

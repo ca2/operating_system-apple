@@ -153,7 +153,7 @@ namespace coreimage_imaging
             ::acme::malloc < image32_t * > pdata((image32_t *) cg_image_get_image_data(w, h, iScan, pimage));
             // Check for valid `frameImage` before parsing its properties as frames can be corrupted (and `frameImage` even `nil` when `frameImageRef` was valid).
 
-            auto p = __new < image_frame >();
+            auto p = new image_frame();
 
             p->m_pimage = m_pcontext->m_pauracontext->create_image();
             

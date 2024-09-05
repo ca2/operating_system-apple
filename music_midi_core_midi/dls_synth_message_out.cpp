@@ -51,7 +51,8 @@ namespace music
              m_bMessageOutSequencesSequencer = true;
              m_audiograph = nullptr;
              m_iAddedEvents = 0;
-            m_bUseEventList = false;
+            m_bInRenderMode = false;
+            
 
             
          }
@@ -64,7 +65,7 @@ namespace music
          }
          
          
-         void dls_synth_message_out::open()
+         void dls_synth_message_out::open(bool bForSequencing)
          {
             m_bOpened = true;
 
@@ -73,6 +74,13 @@ namespace music
             auto pfactory = system()->factory("media", "ios");
             
             pfactory->merge_to_global_factory();
+            
+#else
+            
+            auto pfactory = system()->factory("media", "macos");
+            
+            pfactory->merge_to_global_factory();
+
             
 #endif
             
@@ -305,14 +313,24 @@ namespace music
 //                       
 //            }
 //
-            OSStatus status = AudioUnitAddRenderNotify(m_unitSynth, renderNotify, this);
-
-            if (noErr != status)
-              {
-                         
-                 throw ::exception(::error_failed);
-                         
-              }
+            
+            OSStatus status = noErr;
+            
+            if(bForSequencing)
+            {
+               
+               status = AudioUnitAddRenderNotify(m_unitSynth, renderNotify, this);
+               
+               if (noErr != status)
+               {
+                  
+                  throw ::exception(::error_failed);
+                  
+               }
+               
+               m_bInRenderMode = true;
+               
+            }
 
              status = AudioUnitInitialize(m_unitSynth);
             
@@ -323,6 +341,19 @@ namespace music
                  throw ::exception(::error_failed);
                          
               }
+            
+            if(!bForSequencing)
+            {
+             
+               //status = AudioOutputUnitStart(m_unitSynth);
+               
+//               if (noErr != status)
+//               {
+//                          
+//                  throw ::exception(::error_failed);
+//                          
+//               }
+            }
 
             //music_midi_core_midi_start_audio_engine();
             
@@ -762,18 +793,28 @@ namespace music
 //                                                 iChannel,
 //                                                 iNote,
 //                                                 iVelocity);
-          
-          if (__builtin_available(macOS 12, iOS 15.0, *))
-          {
-              
-              auto message = MIDI1UPNoteOn(0, iChannel, uchNote, uchVelocity);
-             
-              m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
-              
-              m_iAddedEvents++;
-             
-          }
-          else
+         
+         bool bHandled = false;
+         
+         if(m_bInRenderMode)
+         {
+            
+            if ( __builtin_available(macOS 12, iOS 15.0, *))
+            {
+               
+               auto message = MIDI1UPNoteOn(0, iChannel, uchNote, uchVelocity);
+               
+               m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
+               
+               m_iAddedEvents++;
+               
+               bHandled = true;
+               
+            }
+            
+         }
+         
+         if(!bHandled)
           {
               
               auto status = MusicDeviceMIDIEvent(m_unitSynth, (::music::midi::note_on >> 4) | iChannel,
@@ -856,18 +897,28 @@ namespace music
 //                                                    iChannel,
 //                                                    iNote,
 //                                                    uchVelocity);
+            
+            bool bHandled = false;
              
-             if (__builtin_available(macOS 12, iOS 15.0, *))
+             if (m_bInRenderMode )
              {
-                 
-                 auto message = MIDI1UPNoteOff(0, iChannel, uchNote, uchVelocity);
                 
-                 m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
-                 
-                 m_iAddedEvents++;
-
+                if(__builtin_available(macOS 12, iOS 15.0, *))
+                {
+                   
+                   auto message = MIDI1UPNoteOff(0, iChannel, uchNote, uchVelocity);
+                   
+                   m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
+                   
+                   m_iAddedEvents++;
+                   
+                   bHandled = true;
+                   
+                }
+                
              }
-             else
+             
+            if(!bHandled)
              {
                  
                  auto status = MusicDeviceMIDIEvent(m_unitSynth, (::music::midi::note_off >> 4) | iChannel,
@@ -911,17 +962,28 @@ namespace music
 //                                                    ::music::midi::program_change,
 //                                                    iChannel,
 //                                                    uchProgram);
-             if (__builtin_available(macOS 12, iOS 15.0, *))
+            
+            bool bHandled = false;
+            
+             if (m_bInRenderMode )
              {
-                 
-                 auto message = MIDI1UPChannelVoiceMessage(0, ::music::midi::program_change >> 4, iChannel, uchProgram, 0);
-                 
-                 m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
-                 
-                 m_iAddedEvents++;
-                 
-             }
-             else
+                
+                if(__builtin_available(macOS 12, iOS 15.0, *))
+                {
+                   
+                   auto message = MIDI1UPChannelVoiceMessage(0, ::music::midi::program_change >> 4, iChannel, uchProgram, 0);
+                   
+                   m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
+                   
+                   m_iAddedEvents++;
+                   
+                   bHandled = true;
+                   
+                }
+                   
+                   }
+            
+            if(!bHandled)
              {
                  
                  
@@ -951,18 +1013,25 @@ namespace music
          
       void dls_synth_message_out::control_change(int iChannel, unsigned char uchController, unsigned char uchValue)
       {
+         bool bHandled = false;
           
-          if (__builtin_available(macOS 12, iOS 15.0, *))
+          if (m_bInRenderMode)
           {
-              
-              auto message = MIDI1UPChannelVoiceMessage(0, ::music::midi::control_change >> 4, iChannel, uchController, uchValue);
-              
-              m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
-              
-              m_iAddedEvents++;
-              
+             if(__builtin_available(macOS 12, iOS 15.0, *))
+             {
+                
+                auto message = MIDI1UPChannelVoiceMessage(0, ::music::midi::control_change >> 4, iChannel, uchController, uchValue);
+                
+                m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
+                
+                m_iAddedEvents++;
+                
+                bHandled = true;
+                
+             }
+             
           }
-          else
+          if(!bHandled)
           {
               
               auto status = MusicDeviceMIDIEvent(m_unitSynth, (::music::midi::control_change >> 4) | iChannel,
@@ -987,17 +1056,30 @@ namespace music
       void dls_synth_message_out::pitch_bend(int iChannel, unsigned short ushBend)
       {
           
-          if (__builtin_available(macOS 12, iOS 15.0, *))
-          {
-              
-              auto message = MIDI1UPPitchBend(0, m_pevent->GetTrack(), m_pevent->GetChB1(), m_pevent->GetChB2());
-              
-              m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
-              
-              m_iAddedEvents++;
-                                
-          }
-          else
+         
+         bool bHandled = false;
+         
+         if(m_bInRenderMode)
+            
+         {
+            
+            if(__builtin_available(macOS 12, iOS 15.0, *))
+            {
+               
+               auto message = MIDI1UPPitchBend(0, m_pevent->GetTrack(), m_pevent->GetChB1(), m_pevent->GetChB2());
+               
+               m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
+               
+               m_iAddedEvents++;
+               
+               bHandled = true;
+               
+               
+               
+            }
+            
+         }
+         if(!bHandled)
           {
               
               int c1 = (ushBend & 0x7F);
@@ -1023,35 +1105,39 @@ namespace music
          bool dls_synth_message_out::midi_message_step()
         {
              
-             if (__builtin_available(macOS 12, iOS 15.0, *))
-             {
-             
-                 if(m_iAddedEvents > 0)
-                 {
+            if(m_bInRenderMode)
+            {
+               if (__builtin_available(macOS 12, iOS 15.0, *))
+               {
+                  
+                  if(m_iAddedEvents > 0)
+                  {
                      
                      auto status = MusicDeviceMIDIEventList(m_unitSynth, (::i32)m_iFrame, &m_midieventlist);
                      
                      if(status != noErr)
                      {
-                         
-                         warningf("MusicDeviceMIDIEventList failed...");
-                         
+                        
+                        warningf("MusicDeviceMIDIEventList failed...");
+                        
                      }
                      
                      m_pmidieventpacket = nullptr;
                      
                      m_iAddedEvents = 0;
-
-                 }
-                 
-                 if(!m_pmidieventpacket)
-                 {
+                     
+                  }
+                  
+                  if(!m_pmidieventpacket)
+                  {
                      
                      m_pmidieventpacket = MIDIEventListInit(&m_midieventlist, kMIDIProtocol_1_0);
                      
-                 }
-                 
-             }
+                  }
+                  
+               }
+               
+            }
              
              return true;
             

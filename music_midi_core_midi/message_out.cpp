@@ -181,7 +181,7 @@ namespace music
 //         }
       
       
-         void message_out::open()
+         void message_out::open(bool bForSequencing)
          {
          
             m_packetlist = nullptr;

@@ -36,7 +36,7 @@ namespace music
          {
          public:
             
-            bool                    m_bUseEventList;
+            //bool                    m_bUseEventList;
             AUNode                  m_nodeOutput;
             AUNode                  m_nodeSynth;
             AUGraph                 m_audiograph;
@@ -62,6 +62,7 @@ namespace music
             ::i64                   m_iFrameProgramChangeStreak = -1;
              
              ::i32                  m_iAddedEvents;
+            bool                    m_bInRenderMode;
 
             dls_synth_message_out();
             ~dls_synth_message_out() override;
@@ -83,7 +84,7 @@ namespace music
             static OSStatus RenderCallback(void* inRefCon, AudioUnitRenderActionFlags* ioActionFlags, const AudioTimeStamp* inTimeStamp,
                                            UInt32 inBusNumber, UInt32 inNumberFrames, AudioBufferList* ioData);
 
-            void open() override;
+            void open(bool bForSequencing) override;
             
             void note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;
             void note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity) override;

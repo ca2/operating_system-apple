@@ -817,7 +817,7 @@ namespace music
          if(!bHandled)
           {
               
-              auto status = MusicDeviceMIDIEvent(m_unitSynth, (::music::midi::note_on >> 4) | iChannel,
+              auto status = MusicDeviceMIDIEvent(m_unitSynth, ::music::midi::note_on | iChannel,
                                                  uchNote,
                                                  uchVelocity,
                                                  0);
@@ -921,7 +921,7 @@ namespace music
             if(!bHandled)
              {
                  
-                 auto status = MusicDeviceMIDIEvent(m_unitSynth, (::music::midi::note_off >> 4) | iChannel,
+                 auto status = MusicDeviceMIDIEvent(m_unitSynth, ::music::midi::note_off | iChannel,
                                                     uchNote,
                                                     uchVelocity,
                                                     0);
@@ -988,7 +988,7 @@ namespace music
                  
                  
                  
-                 auto status = MusicDeviceMIDIEvent(m_unitSynth, (::music::midi::program_change >> 4) | iChannel,
+                 auto status = MusicDeviceMIDIEvent(m_unitSynth, ::music::midi::program_change | iChannel,
                                                     uchProgram,
                                                     0,
                                                     0);
@@ -1034,7 +1034,7 @@ namespace music
           if(!bHandled)
           {
               
-              auto status = MusicDeviceMIDIEvent(m_unitSynth, (::music::midi::control_change >> 4) | iChannel,
+              auto status = MusicDeviceMIDIEvent(m_unitSynth, ::music::midi::control_change | iChannel,
                                                  uchController,
                                                  uchValue,
                                                  0);
@@ -1086,7 +1086,7 @@ namespace music
               
               int c2 = ((ushBend >> 7) & 0x7F);
 
-              auto status = MusicDeviceMIDIEvent(m_unitSynth, (::music::midi::pitch_bend >> 4) | iChannel,
+              auto status = MusicDeviceMIDIEvent(m_unitSynth, ::music::midi::pitch_bend | iChannel,
                                                  c1,
                                                  c2,
                                                  0);

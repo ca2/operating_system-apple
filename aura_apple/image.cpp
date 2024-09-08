@@ -10,7 +10,7 @@
 #include <CoreGraphics/CoreGraphics.h>
 
 
-CGImageRef cgimageref_from_image(const ::image * pimage)
+CGImageRef cgimageref_from_image(const ::image::image * pimage)
 {
 
    ::acme::malloc < image32_t * > pdst;

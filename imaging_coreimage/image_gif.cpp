@@ -28,7 +28,7 @@ namespace coreimage_imaging
 {
 
 
-   void context_image::_load_image(::image * pimage, ::pointer < image_frame_array > & pframea, memory & memory)
+   void image_context::_load_image(::image::image * pimage, ::pointer < ::image::image_frame_array > & pframea, memory & memory)
    {
 
       if(memory.is_empty())
@@ -153,7 +153,7 @@ namespace coreimage_imaging
             ::acme::malloc < image32_t * > pdata((image32_t *) cg_image_get_image_data(w, h, iScan, pimage));
             // Check for valid `frameImage` before parsing its properties as frames can be corrupted (and `frameImage` even `nil` when `frameImageRef` was valid).
 
-            auto p = new image_frame();
+            auto p = ::place(new ::image::image_frame());
 
             p->m_pimage = this->create_image();
             

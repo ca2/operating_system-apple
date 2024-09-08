@@ -322,7 +322,7 @@ namespace draw2d_quartz2d
       void round_rectangle(const ::rectangle_f64 & rectangle, double dRadius) override;
       
       
-      void _draw_raw(const image_drawing & imagedrawing) override;
+      void _draw_raw(const ::image::image_drawing & imagedrawing) override;
 
       // Bitmap Functions
 //      void PatBlt(double x, double y, double dWidth, double dHeight, ::u32 dwRop) override;

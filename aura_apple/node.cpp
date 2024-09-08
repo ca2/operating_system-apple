@@ -8,12 +8,12 @@
 #include "acme/parallelization/synchronous_lock.h"
 #include "acme/platform/application.h"
 #include "acme/platform/system.h"
-#include "aura/graphics/image/context_image.h"
+#include "aura/graphics/image/context.h"
 #include "aura/platform/context.h"
 
 
-bool apple_get_file_image(::image * pimage, const char * pszFilePath);
-bool apple_get_file_image_by_type_identifier(::image * pimage, const char * pszTypeIdentifier);
+bool apple_get_file_image(::image::image * pimage, const char * pszFilePath);
+bool apple_get_file_image_by_type_identifier(::image::image * pimage, const char * pszTypeIdentifier);
 
 namespace aura_apple
 {
@@ -192,10 +192,10 @@ namespace aura_apple
 
 
 
-::image_pointer node::get_file_image_by_type_identifier(int iSize, const ::scoped_string & scopedstrTypeIdentifier)
+::image::image_pointer node::get_file_image_by_type_identifier(int iSize, const ::scoped_string & scopedstrTypeIdentifier)
 {
 
-   auto pimage = context_image()->create_image( { iSize, iSize } );
+   auto pimage = image()->create_image( { iSize, iSize } );
 
    _synchronous_lock synchronouslock(this->synchronization());
 
@@ -211,11 +211,11 @@ namespace aura_apple
 }
 
 
-::image_pointer node::get_file_image(int iSize, const ::file::path & path)
+::image::image_pointer node::get_file_image(int iSize, const ::file::path & path)
 {
    
 
-   auto pimage = context_image()->create_image( { iSize, iSize } );
+   auto pimage = image()->create_image( { iSize, iSize } );
 
 _synchronous_lock synchronouslock(this->synchronization());
 

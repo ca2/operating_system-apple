@@ -8,13 +8,13 @@ namespace coreimage_imaging
 {
 
 
-   context_image::context_image()
+   image_context::image_context()
    {
 
    }
 
 
-   context_image::~context_image()
+   image_context::~image_context()
    {
 
    }

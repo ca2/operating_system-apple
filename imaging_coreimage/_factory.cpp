@@ -28,7 +28,7 @@
 __FACTORY_EXPORT void imaging_coreimage_factory(::factory::factory * pfactory)
 {
 
-   pfactory->add_factory_item < ::coreimage_imaging::context_image, ::context_image >();
+   pfactory->add_factory_item < ::coreimage_imaging::image_context, ::image::image_context >();
    //coreimage_imaging::factory_exchange factoryexchange;
 
 }

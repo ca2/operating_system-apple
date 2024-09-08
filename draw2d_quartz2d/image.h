@@ -9,7 +9,7 @@ namespace draw2d_quartz2d
 
 
    class CLASS_DECL_DRAW2D_QUARTZ2D image :
-      virtual public ::image
+      virtual public ::image::image
    {
    public:
 
@@ -35,7 +35,7 @@ namespace draw2d_quartz2d
 
       //virtual const color32_t * get_data() const override;
 
-      void stretch_image(::image * pimage) override;
+      void stretch_image(::image::image * pimage) override;
 
       void dc_select(bool bSelect = true) override;
 
@@ -49,13 +49,13 @@ namespace draw2d_quartz2d
 //      bool from(const ::point_i32 & pointDest, ::draw2d::graphics * pgraphics, const ::point_i32 & point, const ::size_i32 & sz) override;
 //      bool to(::draw2d::graphics * pgraphics, const ::point_i32 & point, const ::size_i32 & size, const ::point_i32 & pointSrc) override;
 
-      void _draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, const ::point_i32 & pointSrc) override;
+      void _draw_raw(const ::rectangle_i32 & rectDst, ::image::image * pimageSrc, const ::point_i32 & pointSrc) override;
       
-      void SetIconMask(::draw2d::icon * picon, i32 cx, i32 cy) override;
+      void SetIconMask(::image::icon * picon, i32 cx, i32 cy) override;
 
       void set_mapped() override;
 
-      void blend(const ::point_i32 & pointDst, ::image * pimplSrc, const ::point_i32 & pointSrc, const ::size_i32 & size, ::u8 bA) override;
+      void blend(const ::point_i32 & pointDst, ::image::image * pimplSrc, const ::point_i32 & pointSrc, const ::size_i32 & size, ::u8 bA) override;
 
 
    };

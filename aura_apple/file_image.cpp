@@ -31,7 +31,7 @@ bool apple_get_file_image_by_type_identifier(unsigned int * pcr, int cx, int cy,
 //}
 
 
-bool apple_get_file_image(::image * pimage, const char * pszFilePath)
+bool apple_get_file_image(::image::image * pimage, const char * pszFilePath)
 {
 
    pimage->map();
@@ -48,7 +48,7 @@ bool apple_get_file_image(::image * pimage, const char * pszFilePath)
 }
 
 
-bool apple_get_file_image_by_type_identifier(::image * pimage, const char * pszTypeIdentifier)
+bool apple_get_file_image_by_type_identifier(::image::image * pimage, const char * pszTypeIdentifier)
 {
 
    pimage->map();

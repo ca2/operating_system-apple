@@ -11,7 +11,7 @@
 //#include "acme/primitive/geometry2d/shape.h"
 //#include "acme/primitive/geometry2d/item.h"
 #include "acme/primitive/geometry2d/ellipse.h"
-#include "aura/graphics/image/context_image.h"
+#include "aura/graphics/image/context.h"
 #include "aura/graphics/image/drawing.h"
 #include "aura/graphics/write_text/text_out.h"
 #include "aura/graphics/write_text/draw_text.h"
@@ -647,7 +647,7 @@ namespace draw2d_quartz2d
    }
    
 
-   void graphics::_draw_raw(const image_drawing & imagedrawing)
+   void graphics::_draw_raw(const ::image::image_drawing & imagedrawing)
    {
       
       auto rectangleSource = imagedrawing.source_rectangle();
@@ -853,7 +853,7 @@ namespace draw2d_quartz2d
          nSrcWidth = rectangleSource.width();
          nSrcHeight = rectangleSource.height();
 
-         if(imagedrawing.m_eplacement == e_placement_aspect_fit)
+         if(imagedrawing.m_eplacement == ::image::e_placement_aspect_fit)
          {
             
             double dW = nDstWidth / nSrcWidth;
@@ -1036,7 +1036,7 @@ namespace draw2d_quartz2d
 
             rectText.bottom() = rectText.top() + rectText.height() * 2;
 
-            auto pimage1 = context_image()->create_image(rectText.size());
+            auto pimage1 = image()->create_image(rectText.size());
             
             pimage1->clear(::color::transparent);
             pimage1->get_graphics()->set(get_current_font());
@@ -1052,11 +1052,11 @@ namespace draw2d_quartz2d
             
             rectangle_f64 rectangleSource(point_i32(), rectangleDst.size());
             
-            image_source imagesource(pimage1, rectangleSource);
+            ::image::image_source imagesource(pimage1, rectangleSource);
             
-            image_drawing_options imagedrawingoptions(rectangleDst);
+            ::image::image_drawing_options imagedrawingoptions(rectangleDst);
             
-            image_drawing imagedrawing(imagedrawingoptions, imagesource);
+            ::image::image_drawing imagedrawing(imagedrawingoptions, imagesource);
             
             draw(imagedrawing);
 
@@ -2446,11 +2446,11 @@ namespace draw2d_quartz2d
          
          copy(rectangle_i32, rectangle);
          
-         image_source imagesource(pbrush->m_pimage);
+         ::image::image_source imagesource(pbrush->m_pimage);
          
-         image_drawing_options imagedrawingoptions(rectangle_i32);
+         ::image::image_drawing_options imagedrawingoptions(rectangle_i32);
          
-         image_drawing imagedrawing(imagedrawingoptions, imagesource);
+         ::image::image_drawing imagedrawing(imagedrawingoptions, imagesource);
 
          draw(imagedrawing);
 

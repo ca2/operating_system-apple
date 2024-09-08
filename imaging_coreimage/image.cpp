@@ -6,7 +6,7 @@
 //
 #include "framework.h"
 #include "acme/filesystem/filesystem/file_context.h"
-#include "aura/graphics/image/save_image.h"
+#include "aura/graphics/image/save_options.h"
 #include "aura/platform/context.h"
 #include <CoreGraphics/CoreGraphics.h>
 
@@ -19,7 +19,7 @@ void * cg_image_get_image_data(int & width, int & height, int & iScan, CGImageRe
 
 void * nscursor_system(enum_cursor ecursor);
 
-CGImageRef cgimageref_from_image(const ::image * pimage);
+CGImageRef cgimageref_from_image(const ::image::image * pimage);
 
 //void ns_set_cursor_cgimageref(CGImageRef image, int cx, int cy, int xHotSpot, int yHotSpot);
 
@@ -33,7 +33,7 @@ namespace coreimage_imaging
 {
 
 
-   void context_image::save_image(memory & memory, ::image * pimage, const ::save_image * psaveimage)
+   void image_context::save_image(memory & memory, ::image::image * pimage, const ::image::save_options & saveoptions)
    {
 
       if(pimage->is_empty())
@@ -49,9 +49,9 @@ namespace coreimage_imaging
 
       ::acme::malloc < color32_t * > p;
 
-      switch (psaveimage == nullptr ? ::draw2d::e_format_png : psaveimage->m_eformat)
+      switch (saveoptions.m_eformat)
       {
-      case ::draw2d::e_format_jpeg:
+      case ::image::e_format_jpeg:
       {
 
          p = get_jpeg_image_data(size, cgimage);
@@ -76,7 +76,7 @@ namespace coreimage_imaging
    }
 
 
-   void context_image::_load_image( ::image * pimage, const ::payload & varFile, const ::image::load_options & options)
+   void image_context::_load_image(::image::image * pimage, const ::payload & varFile, const ::image::load_options & options)
    {
       
       if(::is_null(pimage))
@@ -126,8 +126,6 @@ namespace coreimage_imaging
          
       }
 
-      auto pcontextimage = pcontext->context_image();
-
       auto pszData = memory.data();
 
       auto size = memory.size();
@@ -166,7 +164,7 @@ namespace coreimage_imaging
 
          //estatus =
          
-         pcontextimage->load_svg(pimage, memory);
+         this->load_svg(pimage, memory);
 
          if (::is_set(pimage) && pimage->is_ok())
          {

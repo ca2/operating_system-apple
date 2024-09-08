@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "image.h"
 #include "aura/platform/context.h"
-#include "aura/graphics/image/context_image.h"
+#include "aura/graphics/image/context.h"
 #include "aura/graphics/image/drawing.h"
 #include "aura/graphics/image/icon.h"
 #include <math.h>
@@ -188,11 +188,11 @@ namespace draw2d_quartz2d
 
       create(size);
       
-      image_source imagesource(pgraphics);
+      ::image::image_source imagesource(pgraphics);
       
-      image_drawing_options imagedrawingoptions(size);
+      ::image::image_drawing_options imagedrawingoptions(size);
       
-      image_drawing imagedrawing(imagedrawingoptions, imagesource);
+      ::image::image_drawing imagedrawing(imagedrawingoptions, imagesource);
       
       m_pgraphics->draw(imagedrawing);
 
@@ -212,28 +212,28 @@ namespace draw2d_quartz2d
       
       m_iScan              = 0;
 
-      ::image::destroy();
+      ::image::image::destroy();
 
    }
 
 
-   void image::_draw_raw(const ::rectangle_i32 & rectDst, ::image * pimageSrc, const ::point_i32 & pointSrc)
+   void image::_draw_raw(const ::rectangle_i32 & rectDst, ::image::image * pimageSrc, const ::point_i32 & pointSrc)
    {
    
       rectangle_f64 rectangleSource(pointSrc, rectDst.size());
    
-      image_source imagesource(pimageSrc, rectangleSource);
+      ::image::image_source imagesource(pimageSrc, rectangleSource);
       
-      image_drawing_options imagedrawingoptions(rectDst);
+      ::image::image_drawing_options imagedrawingoptions(rectDst);
       
-      image_drawing imagedrawing(imagedrawingoptions, imagesource);
+      ::image::image_drawing imagedrawing(imagedrawingoptions, imagesource);
       
       m_pgraphics->draw(imagedrawing);
             
    }
 
 
-   void image::SetIconMask(::draw2d::icon * picon, i32 cx, i32 cy)
+   void image::SetIconMask(::image::icon * picon, i32 cx, i32 cy)
    {
       
       if(cx <= 0 || cy <= 0)
@@ -245,55 +245,55 @@ namespace draw2d_quartz2d
       
       create({cx, cy});
      
-      auto pimage1 = context_image()->create_image({cx,  cy});
+      auto pimage1 = ::particle::image()->create_image({cx,  cy});
       
       pimage1->clear(::color::white);
       
       {
       
-         image_source imagesource(picon);
+         ::image::image_source imagesource(picon);
          
          auto rectangle = ::rectangle_f64_dimension(0, 0, cx, cy);
          
-         image_drawing_options imagedrawingoptions(rectangle);
+         ::image::image_drawing_options imagedrawingoptions(rectangle);
          
-         image_drawing imagedrawing(imagedrawingoptions, imagesource);
+         ::image::image_drawing imagedrawing(imagedrawingoptions, imagesource);
 
          pimage1->g()->draw(imagedrawing);
          
       }
 
       // Black blend image
-      auto pimage2 = context_image()->create_image({cx,  cy});
+      auto pimage2 = ::particle::image()->create_image({cx,  cy});
       pimage2->clear(::color::transparent);
 
   
       {
       
-         image_source imagesource(picon);
+         ::image::image_source imagesource(picon);
          
          auto rectangle = ::rectangle_f64_dimension(0, 0, cx, cy);
          
-         image_drawing_options imagedrawingoptions(rectangle);
+         ::image::image_drawing_options imagedrawingoptions(rectangle);
          
-         image_drawing imagedrawing(imagedrawingoptions, imagesource);
+         ::image::image_drawing imagedrawing(imagedrawingoptions, imagesource);
 
          pimage2->g()->draw(imagedrawing);
          
       }
 
       // Mask image
-      auto pimageM= context_image()->create_image({cx,  cy});
+      auto pimageM= ::particle::image()->create_image({cx,  cy});
 
       {
       
-         image_source imagesource(picon);
+         ::image::image_source imagesource(picon);
          
          auto rectangle = ::rectangle_f64_dimension(0, 0, cx, cy);
          
-         image_drawing_options imagedrawingoptions(rectangle);
+         ::image::image_drawing_options imagedrawingoptions(rectangle);
          
-         image_drawing imagedrawing(imagedrawingoptions, imagesource);
+         ::image::image_drawing imagedrawing(imagedrawingoptions, imagesource);
 
          pimageM->g()->draw(imagedrawing);
          
@@ -348,10 +348,10 @@ namespace draw2d_quartz2d
    }
 
 
-   void image::stretch_image(::image * pimage)
+   void image::stretch_image(::image::image * pimage)
    {
 
-      ::image::stretch_image(pimage);
+      ::image::image::stretch_image(pimage);
 
    }
 
@@ -382,7 +382,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void image::blend(const ::point_i32 & pointDstParam, ::image * pimplSrc, const ::point_i32 & pointSrcParam, const ::size_i32 & sizeParam, ::u8 bA)
+   void image::blend(const ::point_i32 & pointDstParam, ::image::image * pimplSrc, const ::point_i32 & pointSrcParam, const ::size_i32 & sizeParam, ::u8 bA)
    {
       
       ::point_i32 pointDst(pointDstParam);
@@ -391,7 +391,7 @@ namespace draw2d_quartz2d
       
       ::size_i32 size(sizeParam);
 
-      ::image * pimplDst = this;
+      ::image::image * pimplDst = this;
 
       pimplDst->map();
 

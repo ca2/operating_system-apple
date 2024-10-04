@@ -1,9 +1,9 @@
 #include "framework.h"
 #include "acme_posix/pipe.h"
 #include "acme/platform/system.h"
-#include "acme/primitive/collection/str_array.h"
-//#include "acme/primitive/time/time.h"
-//#include "acme/primitive/time/time/time.h"
+#include "acme/prototype/collection/str_array.h"
+//#include "acme/prototype/time/time.h"
+//#include "acme/prototype/time/time/time.h"
 //#include <unistd.h>
 //#include "apex/platform/static_start.h"
 #include "process.h"

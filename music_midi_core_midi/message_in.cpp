@@ -9,7 +9,7 @@
 //#include "app-veriwell/multimedia/music/midi/attribute_message.h"
 //#include "app-veriwell/multimedia/music/midi/midi_listener.h"
 //#include "app-veriwell/multimedia/music/midi/midi_listener_set.h"
-#include "acme/primitive/string/hex.h"
+#include "acme/prototype/string/hex.h"
 #include "app-veriwell/multimedia/music/midi/sequence.h"
 #include "app-veriwell/multimedia/music/midi/sequencer.h"
 #include "app-veriwell/multimedia/music/midi/message_in.h"

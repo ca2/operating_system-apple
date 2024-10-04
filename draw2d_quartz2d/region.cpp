@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "region.h"
-#include "acme/primitive/geometry2d/item.h"
-#include "acme/primitive/geometry2d/_defer_item.h"
+#include "acme/prototype/geometry2d/item.h"
+#include "acme/prototype/geometry2d/_defer_item.h"
 
 
 namespace draw2d_quartz2d

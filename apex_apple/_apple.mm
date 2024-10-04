@@ -6,7 +6,7 @@
 //
 #include "_mm.h"
 //#import "NSString+SymlinksAndAliases.h"
-#import "acme/primitive/primitive/runnable.h"
+#import "acme/prototype/prototype/runnable.h"
 
 char * __strdup(NSString * str)
 {

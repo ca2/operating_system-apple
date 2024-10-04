@@ -9,9 +9,9 @@
 
 #include "acme/_operating_system.h"
 
-#include "acme/primitive/primitive/memory.h"
+#include "acme/prototype/prototype/memory.h"
 #include "acme/operating_system/ansi/_pthread.h"
-//#include "acme/primitive/primitive/payload.h"
+//#include "acme/prototype/prototype/payload.h"
 
 #include <dispatch/dispatch.h>
 //void ns_speak(const char * psz);

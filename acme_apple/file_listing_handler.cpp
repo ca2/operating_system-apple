@@ -9,7 +9,7 @@
 #include "acme/filesystem/filesystem/acme_directory.h"
 #include "acme/filesystem/filesystem/listing.h"
 #include "acme/parallelization/synchronous_lock.h"
-#include "acme/primitive/time/_text_stream.h"
+#include "acme/prototype/time/_text_stream.h"
 
 
 void ns_app_cloud_start_metadata_query(ns_metadata_query_callback * pcallback, const char * psz_iCloudContainerIdentifier);

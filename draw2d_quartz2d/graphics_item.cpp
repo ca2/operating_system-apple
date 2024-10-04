@@ -10,10 +10,10 @@
 #include "path.h"
 #include "aura/graphics/write_text/text_out.h"
 #include "aura/graphics/write_text/draw_text.h"
-//#include "acme/primitive/geometry2d/_geometry2d.h"
-#include "acme/primitive/geometry2d/_collection.h"
-#include "acme/primitive/geometry2d/item.h"
-#include "acme/primitive/geometry2d/_defer_item.h"
+//#include "acme/prototype/geometry2d/_geometry2d.h"
+#include "acme/prototype/geometry2d/_collection.h"
+#include "acme/prototype/geometry2d/item.h"
+#include "acme/prototype/geometry2d/_defer_item.h"
 #include "aura/graphics/write_text/_defer_geometry2d_item.h"
 
 

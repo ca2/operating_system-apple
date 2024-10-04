@@ -7,10 +7,10 @@
 #include "font.h"
 #include "acme/parallelization/synchronous_lock.h"
 #include "acme/platform/scoped_restore.h"
-//#include "acme/primitive/geometry2d/shape_array.h"
-//#include "acme/primitive/geometry2d/shape.h"
-//#include "acme/primitive/geometry2d/item.h"
-#include "acme/primitive/geometry2d/ellipse.h"
+//#include "acme/prototype/geometry2d/shape_array.h"
+//#include "acme/prototype/geometry2d/shape.h"
+//#include "acme/prototype/geometry2d/item.h"
+#include "acme/prototype/geometry2d/ellipse.h"
 #include "aura/graphics/image/context.h"
 #include "aura/graphics/image/drawing.h"
 #include "aura/graphics/write_text/text_out.h"
@@ -21,10 +21,10 @@
 //#include <math.h>
 //#include <memory.h>
 #include <CoreFoundation/CFDictionary.h>
-//#include "acme/primitive/geometry2d/_geometry2d.h"
-//#include "acme/primitive/geometry2d/_collection.h"
-//#include "acme/primitive/geometry2d/_defer.h"
-//#include "acme/primitive/geometry2d/_defer_item.h"
+//#include "acme/prototype/geometry2d/_geometry2d.h"
+//#include "acme/prototype/geometry2d/_collection.h"
+//#include "acme/prototype/geometry2d/_defer.h"
+//#include "acme/prototype/geometry2d/_defer_item.h"
 //#include "aura/graphics/write_text/_defer_geometry2d_item.h"
 
 

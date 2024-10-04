@@ -1,6 +1,6 @@
 #include "framework.h"
 #include "draw2d.h"
-#include "acme/primitive/primitive/memory.h"
+#include "acme/prototype/prototype/memory.h"
 #include "aura/platform/system.h"
 
 

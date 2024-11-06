@@ -47,7 +47,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void region::create(::draw2d::graphics * pgraphics, i8 iCreate)
+   void region::create(::draw2d::graphics * pgraphics, char iCreate)
    {
 
       auto ppath = CGPathCreateMutable();

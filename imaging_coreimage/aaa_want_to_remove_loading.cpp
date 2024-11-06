@@ -164,7 +164,7 @@ namespace coreimage_imaging
 
    ::aura::Resource resource;
 
-   if(!resource.ReadResource(*file.get_memory(), (::u32) MAKEINTRESOURCE(pszId), pszType))
+   if(!resource.ReadResource(*file.get_memory(), (unsigned int) MAKEINTRESOURCE(pszId), pszType))
 
    return false;
 
@@ -308,7 +308,7 @@ namespace coreimage_imaging
 
       }
 
-      FIMEMORY * pmem = FreeImage_OpenMemory(pmemory->get_data(), (::u32) pmemory->get_size());
+      FIMEMORY * pmem = FreeImage_OpenMemory(pmemory->get_data(), (unsigned int) pmemory->get_size());
 
       if (pmem == nullptr)
       {

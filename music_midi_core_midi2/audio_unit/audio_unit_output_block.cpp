@@ -21,7 +21,7 @@ namespace music
       {
          
                   
-         AUOutputBL::AUOutputBL (const CAStreamBasicDescription &inDesc, ::u32 inDefaultNumFrames)
+         AUOutputBL::AUOutputBL (const CAStreamBasicDescription &inDesc, unsigned int inDefaultNumFrames)
          : mFormat (inDesc),
          mBufferMemory(nullptr),
          mBufferList (nullptr),
@@ -42,15 +42,15 @@ namespace music
                delete [] (Byte *)mBufferList;
          }
 
-         void 	AUOutputBL::Prepare (::u32 inNumFrames, bool inWantNullBufferIfAllocated)
+         void 	AUOutputBL::Prepare (unsigned int inNumFrames, bool inWantNullBufferIfAllocated)
          {
-            ::u32 channelsPerBuffer = mFormat.IsInterleaved() ? mFormat.NumberChannels() : 1;
+            unsigned int channelsPerBuffer = mFormat.IsInterleaved() ? mFormat.NumberChannels() : 1;
             
             if (mBufferMemory == nullptr || inWantNullBufferIfAllocated)
             {
                mBufferList->mNumberBuffers = mNumberBuffers;
                AudioBuffer *buf = &mBufferList->mBuffers[0];
-               for (::u32 i = 0; i < mNumberBuffers; ++i, ++buf) {
+               for (unsigned int i = 0; i < mNumberBuffers; ++i, ++buf) {
                   buf->mNumberChannels = channelsPerBuffer;
                   buf->mDataByteSize = mFormat.FramesToBytes (inNumFrames);
                   buf->mData = nullptr;
@@ -58,14 +58,14 @@ namespace music
             }
             else
             {
-               ::u32 nBytes = mFormat.FramesToBytes (inNumFrames);
+               unsigned int nBytes = mFormat.FramesToBytes (inNumFrames);
                if ((nBytes * mNumberBuffers) > AllocatedBytes())
                   throw(OSStatus(kAudioUnitErr_TooManyFramesToProcess));
                
                mBufferList->mNumberBuffers = mNumberBuffers;
                AudioBuffer *buf = &mBufferList->mBuffers[0];
                Byte* p = mBufferMemory;
-               for (::u32 i = 0; i < mNumberBuffers; ++i, ++buf) {
+               for (unsigned int i = 0; i < mNumberBuffers; ++i, ++buf) {
                   buf->mNumberChannels = channelsPerBuffer;
                   buf->mDataByteSize = nBytes;
                   buf->mData = p;
@@ -75,11 +75,11 @@ namespace music
          }
 
 
-         void	AUOutputBL::Allocate (::u32 inNumFrames)
+         void	AUOutputBL::Allocate (unsigned int inNumFrames)
          {
             if (inNumFrames)
             {
-               ::u32 nBytes = mFormat.FramesToBytes (inNumFrames);
+               unsigned int nBytes = mFormat.FramesToBytes (inNumFrames);
                
                if (nBytes <= AllocatedBytes())
                   return;
@@ -91,7 +91,7 @@ namespace music
                
                mBufferSize = nBytes;
                
-               ::u32 memorySize = mBufferSize * mNumberBuffers;
+               unsigned int memorySize = mBufferSize * mNumberBuffers;
                Byte *newMemory = new Byte[memorySize];
                __memset(newMemory, 0, memorySize);	// make buffer "hot"
                
@@ -119,7 +119,7 @@ namespace music
             mFormat.Print();
             printf ("Num Buffers:%d, mFrames:%d, allocatedMemory:%c\n", (int)mBufferList->mNumberBuffers, (int)mFrames, (mBufferMemory != nullptr ? 'T' : 'F'));
             AudioBuffer *buf = &mBufferList->mBuffers[0];
-            for (::u32 i = 0; i < mBufferList->mNumberBuffers; ++i, ++buf)
+            for (unsigned int i = 0; i < mBufferList->mNumberBuffers; ++i, ++buf)
                printf ("\tBuffer:%d, Size:%d, Chans:%d, Buffer:%p\n", (int)i, (int)buf->mDataByteSize, (int)buf->mNumberChannels, buf->mData);
          }
          #endif

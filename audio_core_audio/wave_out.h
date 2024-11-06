@@ -20,7 +20,7 @@ namespace multimedia
       public:
 
 
-         ::u32                                    m_NumPacketsToRead;
+         unsigned int                                    m_NumPacketsToRead;
          array < AudioStreamPacketDescription * >  m_PacketDescs;
          bool                                      m_bDone;
          iptr                                   m_iBufferCount;
@@ -37,7 +37,7 @@ namespace multimedia
          class ::time out_get_position() override;
          void out_filled(::collection::index iBuffer) override;
 
-         void out_open_ex(::thread * pthreadCallback, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::wave::enum_purpose epurpose) override;
+         void out_open_ex(::thread * pthreadCallback, unsigned int uiSamplesPerSec, unsigned int uiChannelCount, unsigned int uiBitsPerSample, ::wave::enum_purpose epurpose) override;
          void out_stop() override;
          void out_close() override;
          void out_pause() override;

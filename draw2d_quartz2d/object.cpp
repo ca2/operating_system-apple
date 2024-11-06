@@ -42,7 +42,7 @@ namespace draw2d_quartz2d
 //   }
 //   
 //   
-//   ::u32 object::GetObjectType() const
+//   unsigned int object::GetObjectType() const
 //   {
 //   
 //      return 0;

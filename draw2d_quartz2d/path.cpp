@@ -258,7 +258,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void path::create(::draw2d::graphics * pgraphics, i8 iCreate)
+   void path::create(::draw2d::graphics * pgraphics, char iCreate)
    {
       
       if(m_path)

@@ -36,7 +36,7 @@ namespace music
             {
                char *p = writeLocation;
                unsigned char str[4], *q = str;
-               *(::u32 *)str = CFSwapInt32HostToBig(t);
+               *(unsigned int *)str = CFSwapInt32HostToBig(t);
                
                bool hasNonPrint = false;
                for (int i = 0; i < 4; ++i) {
@@ -67,10 +67,10 @@ namespace music
 
             const AudioStreamBasicDescription	CAStreamBasicDescription::sEmpty = { 0.0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-            CAStreamBasicDescription::CAStreamBasicDescription(double inSampleRate,		::u32 inFormatID,
-                                                               ::u32 inBytesPerPacket,	::u32 inFramesPerPacket,
-                                                               ::u32 inBytesPerFrame,		::u32 inChannelsPerFrame,
-                                                               ::u32 inBitsPerChannel,	::u32 inFormatFlags)
+            CAStreamBasicDescription::CAStreamBasicDescription(double inSampleRate,		unsigned int inFormatID,
+                                                               unsigned int inBytesPerPacket,	unsigned int inFramesPerPacket,
+                                                               unsigned int inBytesPerFrame,		unsigned int inChannelsPerFrame,
+                                                               unsigned int inBitsPerChannel,	unsigned int inFormatFlags)
             {
                mSampleRate = inSampleRate;
                mFormatID = inFormatID;
@@ -218,7 +218,7 @@ namespace music
                }
             }
 
-            void	CAStreamBasicDescription::GetSimpleName(const AudioStreamBasicDescription& inDescription, char* outName, ::u32 inMaxNameLength, bool inAbbreviate)
+            void	CAStreamBasicDescription::GetSimpleName(const AudioStreamBasicDescription& inDescription, char* outName, unsigned int inMaxNameLength, bool inAbbreviate)
             {
                switch(inDescription.mFormatID)
                {
@@ -249,7 +249,7 @@ namespace music
                      }
                      else
                      {
-                        theKindString = (inAbbreviate ? "::u32" : "Unsigned Integer");
+                        theKindString = (inAbbreviate ? "unsigned int" : "Unsigned Integer");
                      }
                      
                      const char* thePackingString = nullptr;
@@ -454,8 +454,8 @@ namespace music
 
             static bool MatchFormatFlags(const AudioStreamBasicDescription& x, const AudioStreamBasicDescription& y)
             {
-               ::u32 xFlags = x.mFormatFlags;
-               ::u32 yFlags = y.mFormatFlags;
+               unsigned int xFlags = x.mFormatFlags;
+               unsigned int yFlags = y.mFormatFlags;
                
                // match wildcards
                if (x.mFormatID == 0 || y.mFormatID == 0 || xFlags == 0 || yFlags == 0)

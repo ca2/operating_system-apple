@@ -38,12 +38,12 @@ namespace multimedia
       }
 
 
-      void toolbox::wave_allocate_buffer_data(::wave::buffer::item * pbuffer, memsize len, u32 uiAlign)
+      void toolbox::wave_allocate_buffer_data(::wave::buffer::item * pbuffer, memsize len, unsigned int uiAlign)
       {
 
          AudioQueueBufferRef buf = nullptr;
 
-         if(0 != AudioQueueAllocateBuffer(m_Queue, (::u32) len, &buf))
+         if(0 != AudioQueueAllocateBuffer(m_Queue, (unsigned int) len, &buf))
             return;
 
          if(buf == nullptr)

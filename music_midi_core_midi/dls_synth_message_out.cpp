@@ -269,7 +269,7 @@ namespace music
                                          &m_f64SamplingRate,
                                   &sampleRateSize);
             
-//            ::u32 enabled = FALSE;
+//            unsigned int enabled = FALSE;
 //            result = AudioUnitSetProperty(
 //                m_unitSynth,
 //                                          kAUMIDISynthProperty_EnablePreload,
@@ -770,7 +770,7 @@ namespace music
       void dls_synth_message_out::note_on(int iChannel, unsigned char uchNote, unsigned char uchVelocity)
          {
             
-//            int noteOnCommand = ::u32(0x90 | iChannel);
+//            int noteOnCommand = unsigned int(0x90 | iChannel);
 //            
 //            int iNote = uchNote;
 //            
@@ -864,7 +864,7 @@ namespace music
          void dls_synth_message_out::note_off(int iChannel, unsigned char uchNote, unsigned char uchVelocity)
          {
             
-//            int noteOffCommand = ::u32(0x80 | iChannel);
+//            int noteOffCommand = unsigned int(0x80 | iChannel);
 //            
 //            int iNote = uchNote;
             
@@ -946,7 +946,7 @@ namespace music
          {
             
             
-//            int programChangeCommand = ::u32(0xC0 | iChannel);
+//            int programChangeCommand = unsigned int(0xC0 | iChannel);
 //                OSStatus result=    MusicDeviceMIDIEvent (m_unitSynth, programChangeCommand, uchProgram, 0, m_iFrame);
 //                    
 //                    if (noErr != result)

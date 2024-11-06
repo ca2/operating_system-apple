@@ -32,7 +32,7 @@ namespace acme_apple
    {
 
       //m_bPublic = true;
-      //m_iFile = (::u32) hFileNull;
+      //m_iFile = (unsigned int) hFileNull;
 
    }
 
@@ -46,7 +46,7 @@ namespace acme_apple
 //
 //   }
 //
-//   icloud_file::icloud_file(::object * pobject, const char * lpszFileName, ::u32 nOpenFlags) :
+//   icloud_file::icloud_file(::object * pobject, const char * lpszFileName, unsigned int nOpenFlags) :
 //      ::object(pobject)
 //   {
 //
@@ -67,7 +67,7 @@ namespace acme_apple
 //   ::pointer < ::icloud_file::icloud_file > icloud_file::Duplicate() const
 //   {
 //      ASSERT_VALID(this);
-//      ASSERT(m_iFile != (::u32)hFileNull);
+//      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      int iNew = dup(m_iFile);
 //
@@ -75,8 +75,8 @@ namespace acme_apple
 //         return nullptr;
 //
 //      icloud_file* pFile = new icloud_file(get_app(), iNew);
-//      pFile->m_iFile = (::u32)iNew;
-//      ASSERT(pFile->m_iFile != (::u32)hFileNull);
+//      pFile->m_iFile = (unsigned int)iNew;
+//      ASSERT(pFile->m_iFile != (unsigned int)hFileNull);
 ////      pFile->m_bCloseOnDelete = m_bCloseOnDelete;
 //      return pFile;
 //   }
@@ -86,7 +86,7 @@ namespace acme_apple
 //void icloud_file::open(const ::icloud_file::path & path, ::icloud_file::e_open eopen, ::pointer < ::icloud_file::exception > * pfileexception)
 //   {
 //
-//      if (m_iFile != (::u32)hFileNull)
+//      if (m_iFile != (unsigned int)hFileNull)
 //      {
 //         
 //         close();
@@ -109,7 +109,7 @@ namespace acme_apple
 //
 //      }
 //
-//      m_iFile = (::u32)hFileNull;
+//      m_iFile = (unsigned int)hFileNull;
 //      
 //      m_path = path;
 //      
@@ -117,7 +117,7 @@ namespace acme_apple
 //
 //      ASSERT((::icloud_file::e_open_read|::icloud_file::e_open_write|::icloud_file::e_open_read_write) == 3);
 //      
-//      ::u32 dwFlags =  0;
+//      unsigned int dwFlags =  0;
 //      
 //      switch (eopen & 3)
 //      {
@@ -168,7 +168,7 @@ namespace acme_apple
 //         
 //      }
 //
-//      ::u32 dwPermission = 0;
+//      unsigned int dwPermission = 0;
 //
 //      dwPermission |= S_IRUSR | S_IWUSR | S_IXUSR;
 //
@@ -281,7 +281,7 @@ namespace acme_apple
 //   memsize icloud_file::read(void * lpBuf, memsize nCount)
 //   {
 //      ASSERT_VALID(this);
-//      ASSERT(m_iFile != (::u32)hFileNull);
+//      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      if (nCount == 0)
 //         return 0;   // avoid Win32 "null-read"
@@ -339,7 +339,7 @@ namespace acme_apple
 //      
 //      ASSERT_VALID(this);
 //      
-//      ASSERT(m_iFile != (::u32)hFileNull);
+//      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      if (nCount == 0)
 //      {
@@ -382,7 +382,7 @@ namespace acme_apple
 //   void icloud_file::translate(filesize lOff, ::enum_seek eseek)
 //   {
 //
-//      if(m_iFile == (::u32)hFileNull)
+//      if(m_iFile == (unsigned int)hFileNull)
 //      {
 //       //  ::icloud_file::throw_os_error( (int)0);
 //         
@@ -395,14 +395,14 @@ namespace acme_apple
 //      }
 //
 //      ASSERT_VALID(this);
-//      ASSERT(m_iFile != (::u32)hFileNull);
+//      ASSERT(m_iFile != (unsigned int)hFileNull);
 //      ASSERT(eseek == ::e_seek_set || eseek == ::e_seek_from_end || eseek == ::e_seek_current);
 //      ASSERT(::e_seek_set == SEEK_SET && ::e_seek_from_end == SEEK_END && ::e_seek_current == SEEK_CUR);
 //
 //      int lLoOffset = lOff & 0xffffffff;
 //      //int lHiOffset = (lOff >> 32) & 0xffffffff;
 //
-//      filesize posNew = ::lseek(m_iFile, lLoOffset, (::u32)eseek);
+//      filesize posNew = ::lseek(m_iFile, lLoOffset, (unsigned int)eseek);
 //      //      posNew |= ((filesize) lHiOffset) << 32;
 //      if(posNew  == (filesize)-1)
 //      {
@@ -421,7 +421,7 @@ namespace acme_apple
 //   filesize icloud_file::get_position() const
 //   {
 //      ASSERT_VALID(this);
-//      ASSERT(m_iFile != (::u32)hFileNull);
+//      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      int lLoOffset = 0;
 //      //      int lHiOffset = 0;
@@ -458,7 +458,7 @@ namespace acme_apple
 //
 //      /*ASSERT_VALID(this);
 //
-//       if (m_iFile == (::u32)hFileNull)
+//       if (m_iFile == (unsigned int)hFileNull)
 //       return;
 //
 //       if (!::FlushFileBuffers((HANDLE)m_iFile))
@@ -468,7 +468,7 @@ namespace acme_apple
 //   filesize icloud_file::get_position() const
 //   {
 //      ASSERT_VALID(this);
-//      ASSERT(m_iFile != (::u32)hFileNull);
+//      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      int lLoOffset = 0;
 //      //      int lHiOffset = 0;
@@ -494,7 +494,7 @@ namespace acme_apple
 ////
 ////      /*ASSERT_VALID(this);
 ////
-//         if (m_iFile == (::u32)hFileNull)
+//         if (m_iFile == (unsigned int)hFileNull)
 //       return;
 //      
 //      //::flush(m_iFile);
@@ -555,13 +555,13 @@ namespace acme_apple
       
       }
 //      ASSERT_VALID(this);
-//      ASSERT(m_iFile != (::u32)hFileNull);
+//      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      bool bError = false;
-//      if (m_iFile != (::u32)hFileNull)
+//      if (m_iFile != (unsigned int)hFileNull)
 //         bError = ::close(m_iFile) != 0;
 //
-//      m_iFile = (::u32) hFileNull;
+//      m_iFile = (unsigned int) hFileNull;
 //      //      m_bCloseOnDelete = false;
 //      m_path.empty();
 //
@@ -582,11 +582,11 @@ namespace acme_apple
 //   void icloud_file::Abort()
 //   {
 //      ASSERT_VALID(this);
-//      if (m_iFile != (::u32)hFileNull)
+//      if (m_iFile != (unsigned int)hFileNull)
 //      {
 //         // close but ignore errors
 //         ::close(m_iFile);
-//         m_iFile = (::u32)hFileNull;
+//         m_iFile = (unsigned int)hFileNull;
 //      }
 //      m_strFileName.Empty();
 //   }
@@ -598,7 +598,7 @@ namespace acme_apple
 //      
 //      ASSERT_VALID(this);
 //      
-//      ASSERT(m_iFile != (::u32)hFileNull);
+//      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      /*if (!::LockFile((HANDLE)m_iFile, LODWORD(dwPos), HIDWORD(dwPos), LODWORD(dwCount), HIDWORD(dwCount)))
 //       ::macos::file_exception::throw_os_error( (int)::get_last_error());*/
@@ -611,7 +611,7 @@ namespace acme_apple
 //      
 //      ASSERT_VALID(this);
 //      
-//      ASSERT(m_iFile != (::u32)hFileNull);
+//      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      /*      if (!::UnlockFile((HANDLE)m_iFile,  LODWORD(dwPos), HIDWORD(dwPos), LODWORD(dwCount), HIDWORD(dwCount)))
 //       ::macos::file_exception::throw_os_error( (int)::get_last_error());*/
@@ -624,7 +624,7 @@ namespace acme_apple
 //      
 //      ASSERT_VALID(this);
 //      
-//      ASSERT(m_iFile != (::u32)hFileNull);
+//      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      translate((int)dwNewLen, (::enum_seek)::e_seek_set);
 //
@@ -676,7 +676,7 @@ namespace acme_apple
 //      
 //      ::icloud_file::icloud_file::dump(dumpcontext);
 //
-//      dumpcontext << "with handle " << (::u32)m_iFile;
+//      dumpcontext << "with handle " << (unsigned int)m_iFile;
 //      dumpcontext << " and name \"" << m_path << "\"";
 //      dumpcontext << "\n";
 //      
@@ -798,7 +798,7 @@ namespace acme_apple
 //
 //      rStatus.m_attribute = 0;
 //
-//      // get just the low ::u32 of the icloud_file size_i32
+//      // get just the low unsigned int of the icloud_file size_i32
 //      //ASSERT(findFileData.nFileSizeHigh == 0);
 //      //rStatus.m_size = (int)findFileData.nFileSizeLow;
 //

@@ -40,10 +40,10 @@ void * cg_image_get_image_data(int & width, int & height, int & iScan, CGImageRe
    long bytesPerRow = bytesPerPixel * width;
    long bitsPerComponent = 8;
 
-   ::u32 * pixels;
-   pixels = (::u32 *) calloc(height * width, sizeof(::u32));
+   unsigned int * pixels;
+   pixels = (unsigned int *) calloc(height * width, sizeof(unsigned int));
    
-   iScan = width * sizeof(::u32);
+   iScan = width * sizeof(unsigned int);
 
    // 3.
    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();

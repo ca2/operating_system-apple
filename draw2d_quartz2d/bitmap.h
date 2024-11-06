@@ -32,22 +32,22 @@ namespace draw2d_quartz2d
       
       
       void LoadBitmap(const char * lpszResourceName);
-      void LoadBitmap(::u32 nIDResource);
-      void LoadOEMBitmap(::u32 nIDBitmap); // for OBM_/OCR_/OIC_
+      void LoadBitmap(unsigned int nIDResource);
+      void LoadOEMBitmap(unsigned int nIDBitmap); // for OBM_/OCR_/OIC_
 //#ifndef ___NO_AFXCMN_SUPPORT
-//      // xxx      bool LoadMappedBitmap(::u32 nIDBitmap, ::u32 nFlags = 0, LPCOLORMAP lpColorMap = nullptr, int nMapSize = 0);
+//      // xxx      bool LoadMappedBitmap(unsigned int nIDBitmap, unsigned int nFlags = 0, LPCOLORMAP lpColorMap = nullptr, int nMapSize = 0);
 //#endif
-      void CreateBitmap(::draw2d::graphics * pgraphics, const ::size_i32 & size, ::u32 nPlanes, ::u32 nBitcount, const void * lpBits, int iStride) override;
+      void CreateBitmap(::draw2d::graphics * pgraphics, const ::size_i32 & size, unsigned int nPlanes, unsigned int nBitcount, const void * lpBits, int iStride) override;
 //      void CreateBitmapIndirect(::draw2d::graphics * pgraphics, LPBITMAP lpBitmap) override;
       void CreateCompatibleBitmap(::draw2d::graphics * pgraphics, int nWidth, int nHeight) override;
       void CreateDiscardableBitmap(::draw2d::graphics * pgraphics, int nWidth, int nHeight) override;
       void create_bitmap(::draw2d::graphics * pgraphics, const ::size_i32 & size, void **ppvBits, int * piStride) override;
-      void CreateDIBitmap(::draw2d::graphics * pgraphics, int cx, int cy, ::u32 flInit, const void *pjBits, ::u32 iUsage) override;
+      void CreateDIBitmap(::draw2d::graphics * pgraphics, int cx, int cy, unsigned int flInit, const void *pjBits, unsigned int iUsage) override;
       
       //int GetBitmap(BITMAP* pBitMap);
       
-      ::u32 SetBitmapBits(::u32 dwCount, const void * lpBits) override;
-      ::u32 GetBitmapBits(::u32 dwCount, void * lpBits) const override;
+      unsigned int SetBitmapBits(unsigned int dwCount, const void * lpBits) override;
+      unsigned int GetBitmapBits(unsigned int dwCount, void * lpBits) const override;
       ::size_i32 SetBitmapDimension(int nWidth, int nHeight);
       ::size_i32 GetBitmapDimension() const override;
       

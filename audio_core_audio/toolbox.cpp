@@ -44,7 +44,7 @@ namespace multimedia
 
          AudioQueueBufferRef buffer = nullptr;
          
-         OSStatus osstatus = AudioQueueAllocateBuffer(m_Queue, (::u32) len, &buffer);
+         OSStatus osstatus = AudioQueueAllocateBuffer(m_Queue, (unsigned int) len, &buffer);
 
          if(osstatus != 0)
          {

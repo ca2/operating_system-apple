@@ -41,7 +41,7 @@ namespace draw2d_quartz2d
 //   }
 
    
-   void font::create(::draw2d::graphics * pgraphics, i8 iCreate)
+   void font::create(::draw2d::graphics * pgraphics, char iCreate)
    {
    
       array < CFTypeRef >  cfrel;

@@ -286,7 +286,7 @@ namespace coreimage_imaging
       bOk = FreeImage_SaveToMemory(eformat, pfi8, pfm1, iFreeImageSave) != false;
 
       unsigned char * pbData = nullptr;
-      ::u32 dwSize = 0;
+      unsigned int dwSize = 0;
       if (bOk)
          bOk = FreeImage_AcquireMemory(pfm1, &pbData, &dwSize) != false;
       if (bOk)

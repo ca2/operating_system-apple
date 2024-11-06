@@ -187,7 +187,7 @@ namespace coreimage_imaging
                         if (FreeImage_GetTagType(ptag) == FIDT_LONG)
                         {
 
-                           pframe->m_tick = (u32) * ((long *)FreeImage_GetTagValue(ptag));
+                           pframe->m_tick = (unsigned int) * ((long *)FreeImage_GetTagValue(ptag));
 
                         }
 

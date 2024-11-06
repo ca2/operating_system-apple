@@ -26,16 +26,16 @@ namespace draw2d_quartz2d
       // Attributes
 //      operator HPALETTE() const;
       int GetEntryCount() override;
-//      ::u32 GetPaletteEntries(::u32 nStartIndex, ::u32 nNumEntries,
+//      unsigned int GetPaletteEntries(unsigned int nStartIndex, unsigned int nNumEntries,
 //                             LPPALETTEENTRY lpPaletteColors) const;
-//      ::u32 SetPaletteEntries(::u32 nStartIndex, ::u32 nNumEntries,
+//      unsigned int SetPaletteEntries(unsigned int nStartIndex, unsigned int nNumEntries,
 //                             LPPALETTEENTRY lpPaletteColors);
 
       // Operations
-//      void AnimatePalette(::u32 nStartIndex, ::u32 nNumEntries,
+//      void AnimatePalette(unsigned int nStartIndex, unsigned int nNumEntries,
 //                          LPPALETTEENTRY lpPaletteColors);
-      ::u32 GetNearestPaletteIndex(const ::color::color & color) const override;
-      //      bool ResizePalette(::u32 nNumEntries);
+      unsigned int GetNearestPaletteIndex(const ::color::color & color) const override;
+      //      bool ResizePalette(unsigned int nNumEntries);
 
       // Implementation
    };

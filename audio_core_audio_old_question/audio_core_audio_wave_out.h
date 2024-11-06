@@ -16,7 +16,7 @@ namespace multimedia
       public:
 
 
-         ::u32                                    m_NumPacketsToRead;
+         unsigned int                                    m_NumPacketsToRead;
          array < AudioStreamPacketDescription * >  m_PacketDescs;
          bool                                      m_bDone;
          int                                   m_iBufferCount;
@@ -34,7 +34,7 @@ namespace multimedia
          virtual void out_buffer_ready(int iBuffer);
 
          virtual ::e_status     out_open(::thread * pthreadCallback, int iBufferCount, int iBufferSampleCount);
-         virtual ::e_status     out_open_ex(::thread * pthreadCallback, int iBufferCount, int iBufferSampleCount, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::audio::e_purpose epurpose);
+         virtual ::e_status     out_open_ex(::thread * pthreadCallback, int iBufferCount, int iBufferSampleCount, unsigned int uiSamplesPerSec, unsigned int uiChannelCount, unsigned int uiBitsPerSample, ::audio::e_purpose epurpose);
          virtual ::e_status     out_stop() override;
          virtual ::e_status     out_close() override;
          virtual ::e_status     out_pause() override;

@@ -611,7 +611,7 @@ auto tickStart = ::millis::now();
       {
          sleep(100_ms);
       }
-      ::u32 dwExitCode = 0;
+      unsigned int dwExitCode = 0;
       if(!has_exited(&dwExitCode))
       {
          if(pbTimeOut != nullptr)
@@ -696,7 +696,7 @@ auto tickStart = ::millis::now();
 //          m_iPid = pptp_pid;
 auto tickStart = ::millis::now();
 
-      ::u32 tickTimeout = (::u32) durationTimeOut.get_total_milliseconds();
+      unsigned int tickTimeout = (unsigned int) durationTimeOut.get_total_milliseconds();
 
       char sz[1025];
 
@@ -850,7 +850,7 @@ auto tickStart = ::millis::now();
 
       }
 
-      ::u32 dwExitCode = 0;
+      unsigned int dwExitCode = 0;
 
       if(!has_exited())
       {

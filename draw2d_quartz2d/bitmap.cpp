@@ -25,7 +25,7 @@ namespace draw2d_quartz2d
    }
    
    
-   void bitmap::CreateBitmap(::draw2d::graphics * pgraphics, const ::size_i32 & size, ::u32 nPlanes, ::u32 nBitcount, const void * pdata, int iStride)
+   void bitmap::CreateBitmap(::draw2d::graphics * pgraphics, const ::size_i32 & size, unsigned int nPlanes, unsigned int nBitcount, const void * pdata, int iStride)
    {
       
       if(nPlanes != 1 || nBitcount != 32)
@@ -119,13 +119,13 @@ namespace draw2d_quartz2d
    }
    
    
-   void bitmap::CreateDIBitmap(::draw2d::graphics * pgraphics, int cx, int cy, ::u32 flInit, const void *pjBits, ::u32 iUsage)
+   void bitmap::CreateDIBitmap(::draw2d::graphics * pgraphics, int cx, int cy, unsigned int flInit, const void *pjBits, unsigned int iUsage)
    {
       
    }
    
    
-   ::u32 bitmap::SetBitmapBits(::u32 dwCount, const void * lpBits)
+   unsigned int bitmap::SetBitmapBits(unsigned int dwCount, const void * lpBits)
    {
       
       return 0;
@@ -133,7 +133,7 @@ namespace draw2d_quartz2d
    }
    
    
-   ::u32 bitmap::GetBitmapBits(::u32 dwCount, void * lpBits) const
+   unsigned int bitmap::GetBitmapBits(unsigned int dwCount, void * lpBits) const
    {
 
       return 0;
@@ -170,13 +170,13 @@ namespace draw2d_quartz2d
    }
    
    
-   void bitmap::LoadBitmap(::u32 nIDResource)
+   void bitmap::LoadBitmap(unsigned int nIDResource)
    {
       
    }
    
    
-   void bitmap::LoadOEMBitmap(::u32 nIDBitmap)
+   void bitmap::LoadOEMBitmap(unsigned int nIDBitmap)
    {
       
    }

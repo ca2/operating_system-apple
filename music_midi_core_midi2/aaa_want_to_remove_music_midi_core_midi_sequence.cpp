@@ -429,7 +429,7 @@ namespace music
             //        seq_stop_timer(m_pseq);
             //      if(::success != m_estatusLastError)
             //    {
-            //     information( "sequence::Stop() -> midiOutStop() returned %lu in seqStop()!\n", (u32)m_estatusLastError);
+            //     information( "sequence::Stop() -> midiOutStop() returned %lu in seqStop()!\n", (unsigned int)m_estatusLastError);
             //   m_flags.erase(e_flag_waiting);
             // return error_not_ready;
             //}
@@ -450,7 +450,7 @@ namespace music
           *
           * pSeq                      - The sequencer instance.
           *
-          * pTicks                    - A pointer to a u32 where the current position
+          * pTicks                    - A pointer to a unsigned int where the current position
           *                             in ticks will be returned.
           *
           * Returns
@@ -677,7 +677,7 @@ namespace music
              {
              plyriceventa = new array <::ikaraoke::lyric_event_v1, ::ikaraoke::lyric_event_v1 &>;
              }
-             ::memory_file memFile(get_application(), (LPBYTE) &lpdwParam[1], pheader->m_dwLength - sizeof(u32));
+             ::memory_file memFile(get_application(), (LPBYTE) &lpdwParam[1], pheader->m_dwLength - sizeof(unsigned int));
              // x2x                  CArchive ar(&memFile, CArchive::load);
              lyriceventa.Serialize(ar);
              plyriceventa->append(lyriceventa); //
@@ -689,7 +689,7 @@ namespace music
              break;
              case EVENT_ID_NOTE_ON:
              {
-             ::file::byte_stream_memory_file memFile(get_application(), (LPBYTE) &lpdwParam[1], pheader->m_dwLength - sizeof(u32));
+             ::file::byte_stream_memory_file memFile(get_application(), (LPBYTE) &lpdwParam[1], pheader->m_dwLength - sizeof(unsigned int));
              for(int i = 0; i < m_iaLevel.get_size(); i++)
              {
              unsigned char b;
@@ -716,7 +716,7 @@ namespace music
 
          }
 
-         //void CALLBACK sequence::MidiOutProc(HMIDIOUT hmo, u32 wMsg, u32 dwInstance, u32 dwParam1, u32 dwParam2)
+         //void CALLBACK sequence::MidiOutProc(HMIDIOUT hmo, unsigned int wMsg, unsigned int dwInstance, unsigned int dwParam1, unsigned int dwParam2)
          //{
 
          /*UNREFERENCED_PARAMETER(hmo);
@@ -749,7 +749,7 @@ namespace music
 
 
 
-   //      u32 sequence::set_status(u32 uiState)
+   //      unsigned int sequence::set_status(unsigned int uiState)
    //      {
    //         m_uiPreviousState = m_uiState;
    //         m_uiState = uiState;
@@ -859,7 +859,7 @@ namespace music
          }
 
 
-   //      bool sequence::SetMidiOutDevice(u32 uiDevice)
+   //      bool sequence::SetMidiOutDevice(unsigned int uiDevice)
    //      {
    //
    //         if(uiDevice == ::music::midi::device_default)
@@ -931,7 +931,7 @@ namespace music
                   /*if((estatus = m_buffera.midiOutUnprepareHeader((HMIDIOUT) m_hstream))
                    != ::success)
                    {
-                   information( "midiOutUnprepareHeader failed in seqBufferDone! (%lu)", (u32)estatus);
+                   information( "midiOutUnprepareHeader failed in seqBufferDone! (%lu)", (unsigned int)estatus);
                   //              }*/
                   //           seq_free_context(m_pseq);
                   //         m_pseq = nullptr;
@@ -1032,19 +1032,19 @@ namespace music
          }
 
 
-         void sequence::buffer::Initialize(int iSize, u32 dwUser)
+         void sequence::buffer::Initialize(int iSize, unsigned int dwUser)
          {
 
             m_storage.allocate(iSize);
             m_midihdr.lpData           = (char *) m_storage.get_data();
-            m_midihdr.dwBufferLength   = (u32) m_storage.get_size();
+            m_midihdr.dwBufferLength   = (unsigned int) m_storage.get_size();
             m_midihdr.dwUser           = dwUser;
             m_bPrepared                = false;
 
          }
 
 
-         void sequence::buffer_array::Initialize(int iCount, int iSize, u32 dwUser)
+         void sequence::buffer_array::Initialize(int iCount, int iSize, unsigned int dwUser)
          {
             set_size(iCount);
 

@@ -25,7 +25,7 @@ namespace acme_apple
       
 
       void write_string(const ::scoped_string & scopedstr) override;
-      virtual char * read_string(char * lpsz, ::u32 nMax);
+      virtual char * read_string(char * lpsz, unsigned int nMax);
       bool read_string(string & rString) override;
 
 //      void dump(dump_context & dumpcontext) const override;

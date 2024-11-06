@@ -134,12 +134,12 @@ namespace multimedia
 //         return m_estatusWave;
 //
 //Opened:
-//         u32 uiBufferSizeLog2;
-//         u32 uiBufferSize;
-//         u32 uiAnalysisSize;
-//         u32 uiAllocationSize;
-//         u32 uiInterestSize;
-//         u32 uiSkippedSamplesCount;
+//         unsigned int uiBufferSizeLog2;
+//         unsigned int uiBufferSize;
+//         unsigned int uiAnalysisSize;
+//         unsigned int uiAllocationSize;
+//         unsigned int uiInterestSize;
+//         unsigned int uiSkippedSamplesCount;
 //
 //         if(m_pwaveformat->nSamplesPerSec == 44100)
 //         {
@@ -320,7 +320,7 @@ namespace multimedia
       }
 
       /*
-            void CALLBACK in::in_proc(HWAVEIN hwi, ::u32 uMsg, ::u32 dwInstance, ::u32 dwParam1, ::u32 dwParam2)
+            void CALLBACK in::in_proc(HWAVEIN hwi, unsigned int uMsg, unsigned int dwInstance, unsigned int dwParam1, unsigned int dwParam2)
             {
 
                UNREFERENCED_PARAMETER(hwi);
@@ -330,7 +330,7 @@ namespace multimedia
                if(uMsg == WIM_DATA)
                {
                   ASSERT(false);
-                       u32 msSampleTime = timeGetTime();
+                       unsigned int msSampleTime = timeGetTime();
                   thread * pthread = (thread *) dwInstance;
                   ASSERT(pthread != nullptr);
                   LPWAVEHDR lpWaveHdr = (LPWAVEHDR) dwParam1;
@@ -443,7 +443,7 @@ namespace multimedia
                                       AudioQueueRef                        inAQ,
                                       AudioQueueBufferRef                  inBuffer,
                                       const AudioTimeStamp                 *inStartTime,
-                                      ::u32                               inNumPackets,
+                                      unsigned int                               inNumPackets,
                                       const AudioStreamPacketDescription   *inPacketDesc)
       {
 
@@ -457,7 +457,7 @@ namespace multimedia
       void in::HandleInputBuffer( AudioQueueRef                        inAQ,
                                        AudioQueueBufferRef                  inBuffer,
                                        const AudioTimeStamp                 *inStartTime,
-                                       ::u32                               inNumPackets,
+                                       unsigned int                               inNumPackets,
                                        const AudioStreamPacketDescription   *inPacketDesc)
       {
 
@@ -466,7 +466,7 @@ namespace multimedia
 
          m_iBuffer--;
 
-         u32 msSampleTime= ::millis::now();
+         unsigned int msSampleTime= ::millis::now();
 
          int iBuffer = (int) m_Buffers.find_first(inBuffer);
 

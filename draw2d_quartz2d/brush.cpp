@@ -77,7 +77,7 @@ namespace draw2d_quartz2d
    }
 
    
-   void brush::create(::draw2d::graphics * pgraphics, i8 iCreate)
+   void brush::create(::draw2d::graphics * pgraphics, char iCreate)
    {
       
       if(m_ebrush == ::draw2d::e_brush_linear_gradient_point_color || m_ebrush == ::draw2d::e_brush_radial_gradient_color || m_ebrush == ::draw2d::e_brush_box_gradient)

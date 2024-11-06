@@ -17,7 +17,7 @@ namespace draw2d_quartz2d
 
    }
    
-   ::u32 palette::GetNearestPaletteIndex(const ::color::color & color) const
+   unsigned int palette::GetNearestPaletteIndex(const ::color::color & color) const
    {
 
       return 0;

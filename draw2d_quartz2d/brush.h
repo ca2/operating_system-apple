@@ -27,7 +27,7 @@ namespace draw2d_quartz2d
       
       //virtual void * get_os_data() const;
       
-      void create(::draw2d::graphics * pgraphics, i8 iCreate) override;
+      void create(::draw2d::graphics * pgraphics, char iCreate) override;
 
       void destroy() override;
       void destroy_os_data() override;

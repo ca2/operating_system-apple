@@ -37,7 +37,7 @@ namespace multimedia
          virtual ~toolbox();
          
 
-         virtual void wave_allocate_buffer_data(::wave::buffer::item * pbuffer, memsize uiBufferSize, u32 uiAlign);
+         virtual void wave_allocate_buffer_data(::wave::buffer::item * pbuffer, memsize uiBufferSize, unsigned int uiAlign);
          
          virtual void wave_free_buffer_data(::wave::buffer::item * pbuffer) override;
 

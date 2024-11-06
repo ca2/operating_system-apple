@@ -48,7 +48,7 @@ namespace music
 
                bool IsPrepared();
                void Reset();
-               void Initialize(int iSize, u32 dwUser);
+               void Initialize(int iSize, unsigned int dwUser);
 
                inline LPMIDIHDR GetMidiHdr() { return &m_midihdr; }
 
@@ -65,7 +65,7 @@ namespace music
 
 
                void Reset();
-               void Initialize(int iCount, int iSize, u32 dwUser);
+               void Initialize(int iCount, int iSize, unsigned int dwUser);
 
             };
 

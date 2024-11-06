@@ -50,10 +50,10 @@ namespace music
             ::i64                   m_iPositionFrame;
             musical_tick            m_tkPosition;
             class ::time            m_timePosition;
-            ::f64                   m_f64OutputSeconds;
-            ::f64                   m_f64DelaySeconds;
-            ::f64                   m_f64StartSampleTime;
-            ::f64                   m_f64LastSampleTime;
+            double                   m_f64OutputSeconds;
+            double                   m_f64DelaySeconds;
+            double                   m_f64StartSampleTime;
+            double                   m_f64LastSampleTime;
             int                   m_i32LastFrameCount;
             bool                    m_bStarting;
             MIDIEventList           m_midieventlist;

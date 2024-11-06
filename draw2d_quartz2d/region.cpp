@@ -78,7 +78,7 @@ namespace draw2d_quartz2d
             
             CGPathMoveToPoint(ppath, nullptr, pitem->m_polygon[0].x(), pitem->m_polygon[0].y());
 
-            for(i32 i = 1; i < pitem->m_polygon.size(); i++)
+            for(int i = 1; i < pitem->m_polygon.size(); i++)
             {
 
                CGPathAddLineToPoint(ppath, nullptr, pitem->m_polygon[i].x(), pitem->m_polygon[i].y());

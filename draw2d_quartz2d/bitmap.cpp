@@ -25,7 +25,7 @@ namespace draw2d_quartz2d
    }
    
    
-   void bitmap::CreateBitmap(::draw2d::graphics * pgraphics, const ::size_i32 & size, ::u32 nPlanes, ::u32 nBitcount, const void * pdata, i32 iStride)
+   void bitmap::CreateBitmap(::draw2d::graphics * pgraphics, const ::size_i32 & size, ::u32 nPlanes, ::u32 nBitcount, const void * pdata, int iStride)
    {
       
       if(nPlanes != 1 || nBitcount != 32)
@@ -147,7 +147,7 @@ namespace draw2d_quartz2d
    }
    
    
-   size_i32 bitmap::SetBitmapDimension(i32 nWidth, i32 nHeight)
+   size_i32 bitmap::SetBitmapDimension(int nWidth, int nHeight)
    {
       
       return ::size_i32(0, 0);
@@ -182,7 +182,7 @@ namespace draw2d_quartz2d
    }
    
    
-   void bitmap::CreateCompatibleBitmap(::draw2d::graphics * pgraphics, i32 cx, i32 cy)
+   void bitmap::CreateCompatibleBitmap(::draw2d::graphics * pgraphics, int cx, int cy)
    {
       
       CreateBitmap(pgraphics, ::size_i32(cx, cy), 1, 32, nullptr, cx * sizeof(color32_t));
@@ -190,7 +190,7 @@ namespace draw2d_quartz2d
    }
    
    
-   void bitmap::CreateDiscardableBitmap(::draw2d::graphics * pgraphics, i32 nWidth, i32 nHeight)
+   void bitmap::CreateDiscardableBitmap(::draw2d::graphics * pgraphics, int nWidth, int nHeight)
    {
       
       CreateCompatibleBitmap(pgraphics, nWidth, nHeight);

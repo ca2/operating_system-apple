@@ -51,9 +51,9 @@ namespace draw2d_quartz2d
       if(m_path.has_char())
       {
          
-         ::pointer < ::draw2d_quartz2d::draw2d > pdraw2d = system()->m_paurasystem->draw2d();
+         ::pointer < ::draw2d_quartz2d::draw2d > pdraw2d = system()->draw2d();
          
-         fontref = pdraw2d->private_cgfontref(pgraphics->m_pcontext, m_path);
+         fontref = pdraw2d->private_cgfontref(pgraphics->m_papplication, m_path);
          
       }
       
@@ -63,7 +63,7 @@ namespace draw2d_quartz2d
          if(m_fontName == nullptr)
          {
             
-            auto psystem = system()->m_paurasystem;
+            auto psystem = system();
             
             auto * pdraw2d = psystem->draw2d();
 
@@ -106,7 +106,7 @@ namespace draw2d_quartz2d
          
          CTFontSymbolicTraits symbolicTraitsMsk = 0;
          
-         int iWeight = m_fontweight.i32();
+         int iWeight = m_fontweight.int();
          
          double dCoreTextWeight = nsfont_get_ctweight(iWeight);
          

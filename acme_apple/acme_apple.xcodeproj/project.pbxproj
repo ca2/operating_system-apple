@@ -59,15 +59,15 @@
 		9A94028E29E62F5E00C8C249 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94028D29E62F5E00C8C249 /* _cg_context.cpp */; };
 		9A94DEDC282C4B1C00F5C1CA /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E64264E22CB003DF8A0 /* _.cpp */; };
 		9A94DEDD282C4B1C00F5C1CA /* resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5B264E22CB003DF8A0 /* resource.cpp */; };
-		9A94DEF4282C5F6600F5C1CA /* acme_directory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* acme_directory.h */; };
-		9A94DEF5282C5F6600F5C1CA /* acme_path.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEF282C5F6600F5C1CA /* acme_path.h */; };
-		9A94DEF6282C5F6600F5C1CA /* acme_directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* acme_directory.cpp */; };
-		9A94DEF7282C5F6600F5C1CA /* acme_path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* acme_path.cpp */; };
-		9A94DEF8282C5F6600F5C1CA /* acme_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEF2282C5F6600F5C1CA /* acme_file.h */; };
-		9A94DEF9282C5F6600F5C1CA /* acme_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */; };
-		9A94DEFA282C606300F5C1CA /* acme_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */; };
-		9A94DEFB282C606600F5C1CA /* acme_path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* acme_path.cpp */; };
-		9A94DEFC282C606900F5C1CA /* acme_directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* acme_directory.cpp */; };
+		9A94DEF4282C5F6600F5C1CA /* directory_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* directory_system.h */; };
+		9A94DEF5282C5F6600F5C1CA /* path_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEF282C5F6600F5C1CA /* path_system.h */; };
+		9A94DEF6282C5F6600F5C1CA /* directory_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */; };
+		9A94DEF7282C5F6600F5C1CA /* path_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* path_system.cpp */; };
+		9A94DEF8282C5F6600F5C1CA /* file_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEF2282C5F6600F5C1CA /* file_system.h */; };
+		9A94DEF9282C5F6600F5C1CA /* file_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* file_system.cpp */; };
+		9A94DEFA282C606300F5C1CA /* file_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* file_system.cpp */; };
+		9A94DEFB282C606600F5C1CA /* path_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* path_system.cpp */; };
+		9A94DEFC282C606900F5C1CA /* directory_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */; };
 		9A9C50B42BF05C7D0045F581 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9C50B32BF05C7C0045F581 /* AVFoundation.framework */; };
 		9A9DCBDD29B8482F00D1255B /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9DCB6729B823BB00D1255B /* libacme_darwin.dylib */; };
 		9AA3F9622A9498D3004283CA /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3F95F2A9498D3004283CA /* file_context.cpp */; };
@@ -90,13 +90,13 @@
 		9AB09AD12B73C59100E2C3A5 /* file_listing_handler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AB09ACB2B73C58F00E2C3A5 /* file_listing_handler.h */; };
 		9ABBFE562B3FDCEC0036DF8C /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */; };
 		9AC080542B7449BB008BF988 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E3DA2B73FEF900ABB2C5 /* file.mm */; };
-		9AC14D01297B3410006D9BD3 /* acme_directory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* acme_directory.h */; };
-		9AC14D02297B3410006D9BD3 /* acme_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEF2282C5F6600F5C1CA /* acme_file.h */; };
+		9AC14D01297B3410006D9BD3 /* directory_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* directory_system.h */; };
+		9AC14D02297B3410006D9BD3 /* file_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEF2282C5F6600F5C1CA /* file_system.h */; };
 		9AC14D04297B3410006D9BD3 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
-		9AC14D05297B3410006D9BD3 /* acme_path.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEF282C5F6600F5C1CA /* acme_path.h */; };
+		9AC14D05297B3410006D9BD3 /* path_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEF282C5F6600F5C1CA /* path_system.h */; };
 		9AC14D07297B3410006D9BD3 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */; };
 		9AC14D08297B3410006D9BD3 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B95828471D39005ACD11 /* image.cpp */; };
-		9AC14D09297B3410006D9BD3 /* acme_path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* acme_path.cpp */; };
+		9AC14D09297B3410006D9BD3 /* path_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* path_system.cpp */; };
 		9AC14D0A297B3410006D9BD3 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A74158F266BD25B00552531 /* debug.cpp */; };
 		9AC14D0B297B3410006D9BD3 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A78F40728E7A945007F62C0 /* exception_translator.cpp */; };
 		9AC14D0C297B3410006D9BD3 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E65264E22CB003DF8A0 /* _factory.cpp */; };
@@ -107,8 +107,8 @@
 		9AC14D12297B3410006D9BD3 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
 		9AC14D13297B3410006D9BD3 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
 		9AC14D14297B3410006D9BD3 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5E264E22CB003DF8A0 /* node.cpp */; };
-		9AC14D15297B3410006D9BD3 /* acme_directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* acme_directory.cpp */; };
-		9AC14D16297B3410006D9BD3 /* acme_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */; };
+		9AC14D15297B3410006D9BD3 /* directory_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */; };
+		9AC14D16297B3410006D9BD3 /* file_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* file_system.cpp */; };
 		9AC14D17297B3410006D9BD3 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
 		9AC88B042B6B4D6D008F1C20 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94028D29E62F5E00C8C249 /* _cg_context.cpp */; };
 /* End PBXBuildFile section */
@@ -212,12 +212,12 @@
 		9A93B95828471D39005ACD11 /* image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image.cpp; sourceTree = "<group>"; };
 		9A93B95928471D39005ACD11 /* image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image.h; sourceTree = "<group>"; };
 		9A94028D29E62F5E00C8C249 /* _cg_context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _cg_context.cpp; sourceTree = "<group>"; };
-		9A94DEEE282C5F6500F5C1CA /* acme_directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acme_directory.h; sourceTree = "<group>"; };
-		9A94DEEF282C5F6600F5C1CA /* acme_path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acme_path.h; sourceTree = "<group>"; };
-		9A94DEF0282C5F6600F5C1CA /* acme_directory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = acme_directory.cpp; sourceTree = "<group>"; };
-		9A94DEF1282C5F6600F5C1CA /* acme_path.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = acme_path.cpp; sourceTree = "<group>"; };
-		9A94DEF2282C5F6600F5C1CA /* acme_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acme_file.h; sourceTree = "<group>"; };
-		9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = acme_file.cpp; sourceTree = "<group>"; };
+		9A94DEEE282C5F6500F5C1CA /* directory_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = directory_system.h; sourceTree = "<group>"; };
+		9A94DEEF282C5F6600F5C1CA /* path_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = path_system.h; sourceTree = "<group>"; };
+		9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = directory_system.cpp; sourceTree = "<group>"; };
+		9A94DEF1282C5F6600F5C1CA /* path_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = path_system.cpp; sourceTree = "<group>"; };
+		9A94DEF2282C5F6600F5C1CA /* file_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_system.h; sourceTree = "<group>"; };
+		9A94DEF3282C5F6600F5C1CA /* file_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_system.cpp; sourceTree = "<group>"; };
 		9A9C50B32BF05C7C0045F581 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_darwin.xcodeproj; path = "../../operating_system-darwin/acme_darwin/acme_darwin.xcodeproj"; sourceTree = "<group>"; };
 		9A9DCBDE29B8490900D1255B /* libios_acme_posix.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libios_acme_posix.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -288,12 +288,12 @@
 				9A787E69264E22CB003DF8A0 /* _library.h */,
 				9A787E63264E22CB003DF8A0 /* _mm_common.h */,
 				9A787E58264E22CB003DF8A0 /* _mm.h */,
-				9A94DEEE282C5F6500F5C1CA /* acme_directory.h */,
-				9A94DEF0282C5F6600F5C1CA /* acme_directory.cpp */,
-				9A94DEF3282C5F6600F5C1CA /* acme_file.cpp */,
-				9A94DEF2282C5F6600F5C1CA /* acme_file.h */,
-				9A94DEF1282C5F6600F5C1CA /* acme_path.cpp */,
-				9A94DEEF282C5F6600F5C1CA /* acme_path.h */,
+				9A94DEEE282C5F6500F5C1CA /* directory_system.h */,
+				9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */,
+				9A94DEF3282C5F6600F5C1CA /* file_system.cpp */,
+				9A94DEF2282C5F6600F5C1CA /* file_system.h */,
+				9A94DEF1282C5F6600F5C1CA /* path_system.cpp */,
+				9A94DEEF282C5F6600F5C1CA /* path_system.h */,
 				9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */,
 				9A734A50284F5E37003986C7 /* CAHostTimeBase.h */,
 				9A787E5A264E22CB003DF8A0 /* DDInvocationGrabber.h */,
@@ -375,14 +375,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A94DEF4282C5F6600F5C1CA /* acme_directory.h in Headers */,
+				9A94DEF4282C5F6600F5C1CA /* directory_system.h in Headers */,
 				9A238E942B7AF79800C199F5 /* icloud_file.h in Headers */,
-				9A94DEF8282C5F6600F5C1CA /* acme_file.h in Headers */,
+				9A94DEF8282C5F6600F5C1CA /* file_system.h in Headers */,
 				9AB09ACF2B73C59100E2C3A5 /* file_listing_handler.h in Headers */,
 				9AA56BB52C61AF5A00BF56ED /* set_icloud_data.h in Headers */,
 				9AA3F9632A9498D3004283CA /* file_context.h in Headers */,
 				9A787E6F264E2351003DF8A0 /* node.h in Headers */,
-				9A94DEF5282C5F6600F5C1CA /* acme_path.h in Headers */,
+				9A94DEF5282C5F6600F5C1CA /* path_system.h in Headers */,
 				9A0E3BB72C611DE9004A0972 /* get_icloud_data.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,11 +402,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A238E962B7AF79800C199F5 /* icloud_file.h in Headers */,
-				9AC14D01297B3410006D9BD3 /* acme_directory.h in Headers */,
-				9AC14D02297B3410006D9BD3 /* acme_file.h in Headers */,
+				9AC14D01297B3410006D9BD3 /* directory_system.h in Headers */,
+				9AC14D02297B3410006D9BD3 /* file_system.h in Headers */,
 				9AB09AD12B73C59100E2C3A5 /* file_listing_handler.h in Headers */,
 				9AC14D04297B3410006D9BD3 /* node.h in Headers */,
-				9AC14D05297B3410006D9BD3 /* acme_path.h in Headers */,
+				9AC14D05297B3410006D9BD3 /* path_system.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +540,7 @@
 				9A787E75264E31BC003DF8A0 /* NSString+SymlinksAndAliases.mm in Sources */,
 				9A93B95A28471D7D005ACD11 /* image.cpp in Sources */,
 				9AA3F9622A9498D3004283CA /* file_context.cpp in Sources */,
-				9A94DEF7282C5F6600F5C1CA /* acme_path.cpp in Sources */,
+				9A94DEF7282C5F6600F5C1CA /* path_system.cpp in Sources */,
 				9AB09ACC2B73C59000E2C3A5 /* file_listing_handler.cpp in Sources */,
 				9A741591266BD2B700552531 /* debug.cpp in Sources */,
 				9A78F40928E7A953007F62C0 /* exception_translator.cpp in Sources */,
@@ -554,8 +554,8 @@
 				9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */,
 				9AA74F6128484887009BB762 /* image.mm in Sources */,
 				9A787E70264E2355003DF8A0 /* node.cpp in Sources */,
-				9A94DEF6282C5F6600F5C1CA /* acme_directory.cpp in Sources */,
-				9A94DEF9282C5F6600F5C1CA /* acme_file.cpp in Sources */,
+				9A94DEF6282C5F6600F5C1CA /* directory_system.cpp in Sources */,
+				9A94DEF9282C5F6600F5C1CA /* file_system.cpp in Sources */,
 				9A0E3BB62C611DE9004A0972 /* get_icloud_data.mm in Sources */,
 				9A734A52284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */,
 				9A238E912B7AF79800C199F5 /* icloud_file.cpp in Sources */,
@@ -571,13 +571,13 @@
 				9AB09AAD2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */,
 				9AC88B042B6B4D6D008F1C20 /* _cg_context.cpp in Sources */,
 				9A40BDF42B6B997B0077053E /* node_process_identifier_modules_paths.cpp in Sources */,
-				9A94DEFB282C606600F5C1CA /* acme_path.cpp in Sources */,
+				9A94DEFB282C606600F5C1CA /* path_system.cpp in Sources */,
 				9A94DEDD282C4B1C00F5C1CA /* resource.cpp in Sources */,
-				9A94DEFC282C606900F5C1CA /* acme_directory.cpp in Sources */,
+				9A94DEFC282C606900F5C1CA /* directory_system.cpp in Sources */,
 				9A78F40A28E7A953007F62C0 /* exception_translator.cpp in Sources */,
 				9AB09ACD2B73C59100E2C3A5 /* file_listing_handler.cpp in Sources */,
 				9A40BDBA2B6B65D90077053E /* image.mm in Sources */,
-				9A94DEFA282C606300F5C1CA /* acme_file.cpp in Sources */,
+				9A94DEFA282C606300F5C1CA /* file_system.cpp in Sources */,
 				9A28E3DC2B73FFA800ABB2C5 /* file.mm in Sources */,
 				9A8E9DA9282A2F61005FF778 /* NSString+SymlinksAndAliases.mm in Sources */,
 				9A0E3BB82C611F78004A0972 /* get_icloud_data.mm in Sources */,
@@ -607,7 +607,7 @@
 				9AC14D07297B3410006D9BD3 /* NSString+SymlinksAndAliases.mm in Sources */,
 				9AB09AA82B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
 				9AC14D08297B3410006D9BD3 /* image.cpp in Sources */,
-				9AC14D09297B3410006D9BD3 /* acme_path.cpp in Sources */,
+				9AC14D09297B3410006D9BD3 /* path_system.cpp in Sources */,
 				9AC14D0A297B3410006D9BD3 /* debug.cpp in Sources */,
 				9AC080542B7449BB008BF988 /* file.mm in Sources */,
 				9AC14D0B297B3410006D9BD3 /* exception_translator.cpp in Sources */,
@@ -621,8 +621,8 @@
 				9AC14D12297B3410006D9BD3 /* _apple.mm in Sources */,
 				9AC14D13297B3410006D9BD3 /* image.mm in Sources */,
 				9AC14D14297B3410006D9BD3 /* node.cpp in Sources */,
-				9AC14D15297B3410006D9BD3 /* acme_directory.cpp in Sources */,
-				9AC14D16297B3410006D9BD3 /* acme_file.cpp in Sources */,
+				9AC14D15297B3410006D9BD3 /* directory_system.cpp in Sources */,
+				9AC14D16297B3410006D9BD3 /* file_system.cpp in Sources */,
 				9AC14D17297B3410006D9BD3 /* CAHostTimeBase.cpp in Sources */,
 				9A50DCB82B50CAEB00DAD9CF /* node_process_identifier_modules_paths.cpp in Sources */,
 				9A78FC352B7AFE5A006B95FB /* file_context.cpp in Sources */,

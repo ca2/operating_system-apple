@@ -4,15 +4,15 @@
 #pragma once
 
 
-#include "acme_darwin/acme_directory.h"
+#include "acme_darwin/directory_system.h"
 
 
 namespace acme_apple
 {
 
 
-   class CLASS_DECL_ACME acme_directory :
-      virtual public ::acme_darwin::acme_directory
+   class CLASS_DECL_ACME directory_system :
+      virtual public ::acme_darwin::directory_system
    {
    public:
       
@@ -21,8 +21,8 @@ namespace acme_apple
 
 
 
-      acme_directory();
-      ~acme_directory() override;
+      directory_system();
+      ~directory_system() override;
 
 
 //      virtual ::file::path install() override;
@@ -72,8 +72,8 @@ namespace acme_apple
 //
 //      virtual void set_path_install_folder(const ::string & strPath) override;
 //
-//      //virtual  bool        _shell_get_special_folder_path(HWND hwnd, ::file::path& str, i32 csidl, bool fCreate);
-//      //virtual ::file::path _shell_get_special_folder_path(i32 csidl, bool fCreate = true, ::windowing::window* pwindow = nullptr);
+//      //virtual  bool        _shell_get_special_folder_path(HWND hwnd, ::file::path& str, int csidl, bool fCreate);
+//      //virtual ::file::path _shell_get_special_folder_path(int csidl, bool fCreate = true, ::windowing::window* pwindow = nullptr);
 //      //virtual ::file::path _get_known_folder(REFKNOWNFOLDERID kfid);
 //
 //      //virtual ::file::path pathfind(const string& pszEnv, const string& pszTopic, const string& pszMode) override;

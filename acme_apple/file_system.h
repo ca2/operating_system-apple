@@ -1,5 +1,5 @@
 //
-//  acme_file.hpp
+//  file_system.hpp
 //  acme_macos
 //
 //  Created by Camilo Sasuke Thomas Borregaard Sørensen on 18/08/21.
@@ -7,22 +7,22 @@
 #pragma once
 
 
-#include "acme_darwin/acme_file.h"
+#include "acme_darwin/file_system.h"
 
 
 namespace acme_apple
 {
 
 
-   class CLASS_DECL_ACME acme_file :
-      virtual public ::acme_darwin::acme_file
+   class CLASS_DECL_ACME file_system :
+      virtual public ::acme_darwin::file_system
    {
    public:
       
       
       
-      acme_file();
-      ~acme_file() override;
+      file_system();
+      ~file_system() override;
 
       
       ::file::path module() override;

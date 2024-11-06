@@ -27,13 +27,13 @@
 
 
 
-volatile i32 UncaughtExceptionCount = 0;
-//const i32 UncaughtExceptionMaximum = 10;
+volatile int UncaughtExceptionCount = 0;
+//const int UncaughtExceptionMaximum = 10;
 
 //extern void translator_signal_handler(int signal);
 //void SignalHandler(int signal)
 //{
-//   i32 exceptionCount = OSAtomicIncrement32(&UncaughtExceptionCount);
+//   int exceptionCount = OSAtomicIncrement32(&UncaughtExceptionCount);
 //   if (exceptionCount > UncaughtExceptionMaximum)
 //   {
 //      return;
@@ -46,8 +46,8 @@ volatile i32 UncaughtExceptionCount = 0;
 //NSString * const UncaughtExceptionHandlerSignalKey = @"UncaughtExceptionHandlerSignalKey";
 //NSString * const UncaughtExceptionHandlerAddressesKey = @"UncaughtExceptionHandlerAddressesKey";
 
-//volatile i32 UncaughtExceptionCount = 0;
-//const i32 UncaughtExceptionMaximum = 10;
+//volatile int UncaughtExceptionCount = 0;
+//const int UncaughtExceptionMaximum = 10;
 
 //const NSInteger UncaughtExceptionHandlerSkipAddressCount = 4;
 //const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;

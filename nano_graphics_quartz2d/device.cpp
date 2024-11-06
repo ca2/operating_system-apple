@@ -3,10 +3,15 @@
 //
 #include "framework.h"
 #include "device.h"
+#include "icon.h"
 #include "acme/nano/graphics/font.h"
 #include "acme/nano/graphics/brush.h"
 #include "acme/nano/graphics/pen.h"
 #include "acme/prototype/geometry2d/rectangle.h"
+
+
+//void ns_draw_image(CGContextRef cgcontextref, void * pNSImage, int x, int y, int cx);
+
 
 namespace quartz2d
 {
@@ -15,7 +20,7 @@ namespace quartz2d
    {
 
   
-      namespace user
+      namespace graphics
       {
 
 
@@ -192,6 +197,26 @@ namespace quartz2d
       }
 
    }
+
+      
+      void device::attach(void * posdata)
+      {
+         
+         m_bOwn = false;
+
+         m_pdc=(CGContextRef)posdata;
+         
+      }
+      
+      
+      void device::draw(::nano::graphics::icon * picon, int x, int y, int cx, int cy)
+      {
+         
+         ::cast < ::quartz2d::nano::graphics::icon > pquartz2dicon = picon;
+         
+         pquartz2dicon->_draw_in_context(this, x, y, cx, cy);
+         
+      }
 
 
    void device::_set_source(const ::color::color & color)

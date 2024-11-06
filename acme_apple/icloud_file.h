@@ -70,10 +70,10 @@ namespace acme_apple
 //   {
 //
 //
-//      void os_error_to_exception(::i32 lOsError);
-//      void err_no_to_exception(i32 nErrno);
-//      void throw_os_error(::object * pobject, ::i32 lOsError, const char * lpszFileName = nullptr);
-//      void throw_err_no(::object * pobject, i32 nErrno, const char * lpszFileName = nullptr);
+//      void os_error_to_exception(int lOsError);
+//      void err_no_to_exception(int nErrno);
+//      void throw_os_error(::object * pobject, int lOsError, const char * lpszFileName = nullptr);
+//      void throw_err_no(::object * pobject, int nErrno, const char * lpszFileName = nullptr);
 //
 //
 //   }  // namespace file_exception

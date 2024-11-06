@@ -24,7 +24,7 @@ char * __strdup(NSString * str);
 
 void ns_launch_app(const char * psz, const char ** argv, int iFlags);
 bool ns_open_file(const char * psz);
-void ns_main_async(dispatch_block_t block);
+void ns_main_post(dispatch_block_t block);
 
 void apple_on_open_file(const char ** psza, int iCount, const char * pszExtra);
 void apple_accumulate_on_open_file(const char ** psza, int iCount, const char * pszExtra);
@@ -37,6 +37,6 @@ void apex_application_main(int argc, char *argv[], const char * pszCommandLine);
 
 //int is_window(oswindow window);
 
-//void ns_main_sync(dispatch_block_t block, unsigned int uiMillis = -1);
-//void ns_main_async(dispatch_block_t block);
+//void ns_main_send(dispatch_block_t block, unsigned int uiMillis = -1);
+//void ns_main_post(dispatch_block_t block);
 

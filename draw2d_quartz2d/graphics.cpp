@@ -184,7 +184,7 @@ namespace draw2d_quartz2d
    }
 
 
-   i32 graphics::GetDeviceCaps(i32 nIndex)
+   int graphics::GetDeviceCaps(int nIndex)
    {
       
       throw ::exception(error_not_implemented);
@@ -521,7 +521,7 @@ namespace draw2d_quartz2d
 
       CGContextMoveToPoint(m_cgcontext, p[0].x, p[0].y);
 
-      for(i32 i = 1; i < c; i++)
+      for(int i = 1; i < c; i++)
       {
 
          CGContextAddLineToPoint(m_cgcontext, p[i].x, p[i].y);
@@ -546,7 +546,7 @@ namespace draw2d_quartz2d
 
       CGContextMoveToPoint(m_cgcontext, p[0].x + pointOffset.x, p[0].y + pointOffset.y);
 
-      for(i32 i = 1; i < c; i++)
+      for(int i = 1; i < c; i++)
       {
 
          CGContextAddLineToPoint(m_cgcontext, p[i].x + pointOffset.x, p[i].y + pointOffset.y);
@@ -664,8 +664,8 @@ namespace draw2d_quartz2d
       if(rectangleSource.size() == rectangleTarget.size())
       {
       
-         i32 nWidth = rectangleTarget.width();
-         i32 nHeight = rectangleTarget.height();
+         int nWidth = rectangleTarget.width();
+         int nHeight = rectangleTarget.height();
       
          _synchronous_lock synchronouslock(synchronization());
 
@@ -1112,7 +1112,7 @@ namespace draw2d_quartz2d
    }
 
 
-   i32 graphics::StartPage()
+   int graphics::StartPage()
    {
 
       throw ::exception(error_not_implemented);
@@ -1122,7 +1122,7 @@ namespace draw2d_quartz2d
    }
 
 
-   i32 graphics::EndPage()
+   int graphics::EndPage()
    {
 
       throw ::exception(error_not_implemented);;
@@ -1132,7 +1132,7 @@ namespace draw2d_quartz2d
    }
 
 
-   i32 graphics::AbortDoc()
+   int graphics::AbortDoc()
    {
 
       throw ::exception(error_not_implemented);;
@@ -1142,7 +1142,7 @@ namespace draw2d_quartz2d
    }
 
 
-   i32 graphics::EndDoc()
+   int graphics::EndDoc()
    {
 
       throw ::exception(error_not_implemented);
@@ -1392,7 +1392,7 @@ namespace draw2d_quartz2d
    }
 
 
-   i32 graphics::save_graphics_context()
+   int graphics::save_graphics_context()
    {
 
       CGContextSaveGState(m_cgcontext);
@@ -1404,7 +1404,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::restore_graphics_context(i32 nSavedDC)
+   void graphics::restore_graphics_context(int nSavedDC)
    {
 
       bool bRestored = false;
@@ -1576,7 +1576,7 @@ namespace draw2d_quartz2d
    }
 
 
-   i32 graphics::get_clip_box(::rectangle_f64 & rectangle)
+   int graphics::get_clip_box(::rectangle_f64 & rectangle)
    {
 
       CGRect cgrect = CGContextGetClipBoundingBox (m_cgcontext);
@@ -1805,7 +1805,7 @@ namespace draw2d_quartz2d
    }
 
 
-   i32 graphics::draw_text(const char * lpszString, i32 nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign, const ::e_draw_text & edrawtext)
+   int graphics::draw_text(const char * lpszString, int nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign, const ::e_draw_text & edrawtext)
    {
 
       draw_text(string(lpszString, nCount), rectangle, ealign, edrawtext);
@@ -1815,7 +1815,7 @@ namespace draw2d_quartz2d
    }
 
 
-//   size_f64 graphics::get_text_extent(const ::scoped_string * lpszString, strsize nCount, i32 iIndex)
+//   size_f64 graphics::get_text_extent(const ::scoped_string * lpszString, strsize nCount, int iIndex)
 //   {
 //
 //      size_f64 sz;
@@ -1896,7 +1896,7 @@ namespace draw2d_quartz2d
    ::size_f64 graphics::get_text_extent(const ::scoped_string & scopedstr)
    {
 
-      return get_text_extent(scopedstr, (i32) scopedstr.size());
+      return get_text_extent(scopedstr, (int) scopedstr.size());
 
    }
 

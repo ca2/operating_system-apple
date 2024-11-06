@@ -108,7 +108,7 @@ namespace multimedia
 
          /*
 
-          i32 i, iSize;
+          int i, iSize;
 
           iSize = out_get_buffer()->GetBufferCount();
 
@@ -149,7 +149,7 @@ namespace multimedia
 
       }
 
-      i32 out::exit_thread()
+      int out::exit_thread()
       {
 
          ::wave::out::exit_thread();
@@ -160,7 +160,7 @@ namespace multimedia
 
       }
 
-      ::e_status     out::out_open(thread * pthreadCallback, i32 iBufferCount, i32 iBufferSampleCount)
+      ::e_status     out::out_open(thread * pthreadCallback, int iBufferCount, int iBufferSampleCount)
       {
 
          single_lock sLock(mutex(), true);
@@ -276,7 +276,7 @@ Opened:
          uiBufferCount, // group count
          iBufferSampleCount); // group sample count
 
-         /*         i32 i, iSize;
+         /*         int i, iSize;
           iSize = out_get_buffer()->GetBufferCount();
 
           AudioQueueBufferRef buf;
@@ -299,7 +299,7 @@ Opened:
          return m_estatusWave;
       }
 
-      ::e_status     out::out_open_ex(thread * pthreadCallback, i32 iBufferCount, i32 iBufferSampleCount, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::audio::e_purpose epurpose)
+      ::e_status     out::out_open_ex(thread * pthreadCallback, int iBufferCount, int iBufferSampleCount, u32 uiSamplesPerSec, u32 uiChannelCount, u32 uiBitsPerSample, ::audio::e_purpose epurpose)
       {
 
          single_lock sLock(mutex(), true);
@@ -395,7 +395,7 @@ Opened:
 
          m_pprebuffer->open(this, m_pwaveformat->nChannels, uiBufferCount, iBufferSampleCount);
 
-         /*         i32 i, iSize;
+         /*         int i, iSize;
 
           iSize = out_get_buffer()->GetBufferCount();
 
@@ -440,7 +440,7 @@ Opened:
 
          /*         ::e_status     mmr;
 
-          i32 i, iSize;
+          int i, iSize;
 
           iSize =  out_get_buffer()->GetBufferCount();
 

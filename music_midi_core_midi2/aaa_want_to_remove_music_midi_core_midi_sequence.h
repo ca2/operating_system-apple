@@ -48,7 +48,7 @@ namespace music
 
                bool IsPrepared();
                void Reset();
-               void Initialize(i32 iSize, u32 dwUser);
+               void Initialize(int iSize, u32 dwUser);
 
                inline LPMIDIHDR GetMidiHdr() { return &m_midihdr; }
 
@@ -65,7 +65,7 @@ namespace music
 
 
                void Reset();
-               void Initialize(i32 iCount, i32 iSize, u32 dwUser);
+               void Initialize(int iCount, int iSize, u32 dwUser);
 
             };
 
@@ -96,18 +96,18 @@ namespace music
             virtual ~sequence();
 
 
-            void MuteAll(bool bMute = true, i32 iExcludeTrack = -1) override;
-            void MuteTrack(i32 iIndex, bool bMute = true) override;
+            void MuteAll(bool bMute = true, int iExcludeTrack = -1) override;
+            void MuteTrack(int iIndex, bool bMute = true) override;
 
 
-            virtual i32 GetDefaultCodePage() override;
+            virtual int GetDefaultCodePage() override;
 
-            void SetLevelMeter(i32 iLevel) override;
-            i32 SetKeyShift(i32 iKeyShift) override;
-            i32 GetKeyShift() override;
+            void SetLevelMeter(int iLevel) override;
+            int SetKeyShift(int iKeyShift) override;
+            int GetKeyShift() override;
 
             void OnMidiPlaybackEnd(::music::midi::sequence::event * pevent) override;
-            i32 SetTempoShift(i32 iTempoShift);
+            int SetTempoShift(int iTempoShift);
 
             void OnPositionCB(LPMIDIHDR lpmidihdr);
 

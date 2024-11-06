@@ -40,7 +40,7 @@ namespace draw2d_quartz2d
       void dc_select(bool bSelect = true) override;
 
       void create(const ::size_i32 & size, ::enum_flag eflagCreate = DEFAULT_CREATE_IMAGE_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
-      //::e_status create(i32 iWidth, i32 iHeight, ::eobject eobjectCreate = DEFAULT_CREATE_IMAGE_OBJECT_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
+      //::e_status create(int iWidth, int iHeight, ::eobject eobjectCreate = DEFAULT_CREATE_IMAGE_OBJECT_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
       void create(::draw2d::graphics * pgraphics) override;
       void destroy() override;
 
@@ -51,11 +51,11 @@ namespace draw2d_quartz2d
 
       void _draw_raw(const ::rectangle_i32 & rectDst, ::image::image * pimageSrc, const ::point_i32 & pointSrc) override;
       
-      void SetIconMask(::image::icon * picon, i32 cx, i32 cy) override;
+      void SetIconMask(::image::icon * picon, int cx, int cy) override;
 
       void set_mapped() override;
 
-      void blend(const ::point_i32 & pointDst, ::image::image * pimplSrc, const ::point_i32 & pointSrc, const ::size_i32 & size, ::u8 bA) override;
+      void blend(const ::point_i32 & pointDst, ::image::image * pimplSrc, const ::point_i32 & pointSrc, const ::size_i32 & size, unsigned char bA) override;
 
 
    };

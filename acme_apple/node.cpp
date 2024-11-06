@@ -30,10 +30,10 @@ int kern_max_proc();
 
 ::string apple_operating_system_store_release();
 ::string apple_operating_system_application_version();
-void apple_operating_system_release(::i32 & iMajor, ::i32 & iMinor, ::i32 & iPatch);
+void apple_operating_system_release(int & iMajor, int & iMinor, int & iPatch);
 
 
-void ns_main_async(dispatch_block_t block);
+void ns_main_post(dispatch_block_t block);
 
 
 void os_post_quit();
@@ -121,12 +121,12 @@ namespace acme_apple
    }
 
 
-   void node::user_post(const ::procedure & routineParam)
+   void node::_user_post(const ::procedure & routineParam)
    {
       
       auto routine = routineParam;
       
-      ns_main_async(^{
+      ns_main_post(^{
          
          try
          {

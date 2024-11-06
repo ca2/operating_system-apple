@@ -48,9 +48,9 @@ namespace coreimage_imaging
       for (index y = 0; y < pimage->height(); y++)
       {
 
-         u8 * pbDst = ((u8 *)pimage->get_data()) + ((pimage->height() - y - 1) * pimage->scan_size());
+         unsigned char * pbDst = ((unsigned char *)pimage->get_data()) + ((pimage->height() - y - 1) * pimage->scan_size());
 
-         u8 * pbSrc = (u8 *)pdata + (y * iSrcScan);
+         unsigned char * pbSrc = (unsigned char *)pdata + (y * iSrcScan);
 
          for (index x = 0; x < pimage->width(); x++)
          {
@@ -73,9 +73,9 @@ namespace coreimage_imaging
 
 #elif defined(APPLEOS)
 
-      u8 * pbDst = (u8 *)pimage->get_data();
+      unsigned char * pbDst = (unsigned char *)pimage->get_data();
 
-      u8 * pbSrc = (u8 *)pdata;
+      unsigned char * pbSrc = (unsigned char *)pdata;
 
       ::collection::count c = (count)pimage->area();
 
@@ -103,8 +103,8 @@ namespace coreimage_imaging
       {
 
          ::memcpy_dup(
-            &((u8 *)pimage->get_data())[pimage->scan_size() * (h - i - 1)],
-            &((u8 *)pdata)[iSrcScan * i],
+            &((unsigned char *)pimage->get_data())[pimage->scan_size() * (h - i - 1)],
+            &((unsigned char *)pdata)[iSrcScan * i],
             iLineSize);
 
       }
@@ -252,7 +252,7 @@ namespace coreimage_imaging
 
       }
 
-      pcontext->m_papexcontext->file().as_memory(varFile, *pmemory);
+      papplication->file().as_memory(varFile, *pmemory);
 
       const char * psz = (const char *)pmemory->get_data();
 

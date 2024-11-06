@@ -82,12 +82,12 @@ namespace windows
    class graphics;
    class matter;
 
-   template < i32 t_iHandleCount >
+   template < int t_iHandleCount >
    class handle_base
    {
    public:
       HANDLE m_handlea[t_iHandleCount];
-      static const i32 s_iHandleCount = t_iHandleCount;
+      static const int s_iHandleCount = t_iHandleCount;
    };
 
    template < class H >
@@ -172,7 +172,7 @@ public:
 
 
 public:
-   CT * from_handle(HANDLE h, CT * (* pfnAllocator) (::pointer<::acme::application> HANDLE) = nullptr, ::pointer<::acme::application>app = nullptr);
+   CT * from_handle(HANDLE h, CT * (* pfnAllocator) (::pointer<::platform::application> HANDLE) = nullptr, ::pointer<::platform::application>app = nullptr);
    void delete_temp();
 
    void set_permanent(HANDLE h, CT * permOb);
@@ -232,7 +232,7 @@ handle_map < HT, CT > ::handle_map(::matter * pobject) :
 }
 
 template < class HT, class CT >
-CT* handle_map < HT, CT >::from_handle(HANDLE h, CT * (*pfnAllocator) (::pointer<::acme::application> HANDLE), ::pointer<::acme::application>app)
+CT* handle_map < HT, CT >::from_handle(HANDLE h, CT * (*pfnAllocator) (::pointer<::platform::application> HANDLE), ::pointer<::platform::application>app)
 {
 
    single_lock synchronouslock(&m_mutex, true);

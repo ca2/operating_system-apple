@@ -49,7 +49,7 @@ namespace multimedia
          return true;
       }
 
-      i32 in::exit_thread()
+      int in::exit_thread()
       {
          m_eventExitInstance.SetEvent();
          return thread::exit_thread();
@@ -70,7 +70,7 @@ namespace multimedia
          return thread::pre_translate_message(pusermessage);
       }
 
-      ::e_status     in::in_open(i32 iBufferCount, i32 iBufferSampleCount)
+      ::e_status     in::in_open(int iBufferCount, int iBufferSampleCount)
       {
 
          if(m_Queue != nullptr && m_estate != e_state_initial)
@@ -183,9 +183,9 @@ namespace multimedia
 //            uiInterestSize,
 //            uiSkippedSamplesCount);
 //
-///*         i32 i, iSize;
+///*         int i, iSize;
 //
-//         iSize = (i32) in_get_buffer()->GetBufferCount();
+//         iSize = (int) in_get_buffer()->GetBufferCount();
 //
 //         for(i = 0; i < iSize; i++)
 //         {
@@ -233,9 +233,9 @@ namespace multimedia
 
          free_buffers();
 
-         /*         i32 i, iSize;
+         /*         int i, iSize;
 
-                  iSize = (i32) in_get_buffer()->GetBufferCount();
+                  iSize = (int) in_get_buffer()->GetBufferCount();
 
                   for(i = 0; i < iSize; i++)
                   {
@@ -391,7 +391,7 @@ namespace multimedia
 
 
 
-      ::e_status     in::in_add_buffer(i32 iBuffer)
+      ::e_status     in::in_add_buffer(int iBuffer)
       {
 
          AudioQueueBufferRef buf = audio_buffer(iBuffer);

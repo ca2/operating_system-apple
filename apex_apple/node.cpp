@@ -192,7 +192,7 @@ namespace apex_apple
 ////
 ////      bool bOk2 = true;
 ////
-////      //if(m_psystem->m_pacmedirectory->system_short_name().contains_ci("manjaro"))
+////      //if(m_psystem->directory_system()->system_short_name().contains_ci("manjaro"))
 ////      {
 ////
 ////         bOk2 = ::node_gnome::gsettings_set("org.gnome.desktop.wm.preferences", "theme", strUserTheme);

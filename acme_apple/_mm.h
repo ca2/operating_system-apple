@@ -25,8 +25,8 @@ void set_apex_system_as_thread();
 
 char * __strdup(NSString * str);
 
-void ns_main_sync(dispatch_block_t block);
-void ns_main_async(dispatch_block_t block);
+void ns_main_send(dispatch_block_t block);
+void ns_main_post(dispatch_block_t block);
 
 
 #include "NSString+SymlinksAndAliases.h"

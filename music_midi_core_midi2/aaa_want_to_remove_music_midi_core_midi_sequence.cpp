@@ -657,14 +657,14 @@ namespace music
              lpbData = (LPBYTE) pheader;
              LPDWORD lpdwParam;
 
-             i32 iSize = pheader->m_dwLength;
+             int iSize = pheader->m_dwLength;
              switch(pheader->m_dwType)
              {
              case 0:
              {
              array < ::ikaraoke::lyric_event_v1, ::ikaraoke::lyric_event_v1 &> * plyriceventa = nullptr;
              array < ::ikaraoke::lyric_event_v1, ::ikaraoke::lyric_event_v1 &> lyriceventa;
-             for(i32 i = sizeof(file::midi_stream_event_header); i < iSize;)
+             for(int i = sizeof(file::midi_stream_event_header); i < iSize;)
              {
              pheader = (file::midi_stream_event_header *) &lpbData[i];
              lpdwParam = (LPDWORD) &lpbData[i + sizeof(file::midi_stream_event_header)];
@@ -690,9 +690,9 @@ namespace music
              case EVENT_ID_NOTE_ON:
              {
              ::file::byte_stream_memory_file memFile(get_application(), (LPBYTE) &lpdwParam[1], pheader->m_dwLength - sizeof(u32));
-             for(i32 i = 0; i < m_iaLevel.get_size(); i++)
+             for(int i = 0; i < m_iaLevel.get_size(); i++)
              {
-             ::u8 b;
+             unsigned char b;
              memFile >> b;
              m_iaLevel.element_at(i) = b;
              }
@@ -794,7 +794,7 @@ namespace music
    //         lpmdd->m_uiSeqState = m_uiState;
    //      }
 
-         i32 sequence::GetKeyShift()
+         int sequence::GetKeyShift()
          {
 
             if(m_pfile == nullptr)
@@ -804,7 +804,7 @@ namespace music
 
          }
 
-         i32 sequence::SetKeyShift(i32 iKeyShift)
+         int sequence::SetKeyShift(int iKeyShift)
          {
             /*//    single_lock slStream(&m_csStream, false);
              //  slStream.lock();
@@ -817,7 +817,7 @@ namespace music
              }
              //slStream.unlock();
              return true;
-             void sequence::SetKeyShift(i32 iShift)
+             void sequence::SetKeyShift(int iShift)
              {*/
             bool bPlay = IsPlaying();
             imedia_time ticks = 0;
@@ -848,7 +848,7 @@ namespace music
          }
 
 
-         i32 sequence::SetTempoShift(i32 iTempoShift)
+         int sequence::SetTempoShift(int iTempoShift)
          {
 
             //midiStreamPause(m_hstream);
@@ -903,9 +903,9 @@ namespace music
    //         return ::success;
    //      }
 
-         void sequence::SetLevelMeter(i32 iLevel)
+         void sequence::SetLevelMeter(int iLevel)
          {
-            for(i32 i = 0; i < m_iaLevel.get_size(); i++)
+            for(int i = 0; i < m_iaLevel.get_size(); i++)
             {
                m_iaLevel.element_at(i) = iLevel;
             }
@@ -1032,7 +1032,7 @@ namespace music
          }
 
 
-         void sequence::buffer::Initialize(i32 iSize, u32 dwUser)
+         void sequence::buffer::Initialize(int iSize, u32 dwUser)
          {
 
             m_storage.allocate(iSize);
@@ -1044,13 +1044,13 @@ namespace music
          }
 
 
-         void sequence::buffer_array::Initialize(i32 iCount, i32 iSize, u32 dwUser)
+         void sequence::buffer_array::Initialize(int iCount, int iSize, u32 dwUser)
          {
             set_size(iCount);
 
-            i32 i;
+            int i;
 
-            /*   for(i32 i = 0; i < this->get_size() - 1; i++)
+            /*   for(int i = 0; i < this->get_size() - 1; i++)
              {
              this->element_at(i).SetNextMidiHdr(this->element_at(i + 1).GetMidiHdr());
              }
@@ -1072,7 +1072,7 @@ namespace music
 
          void sequence::buffer_array::Reset()
          {
-            for(i32 i = 0; i < this->get_size(); i++)
+            for(int i = 0; i < this->get_size(); i++)
             {
                this->element_at(i).Reset();
             }
@@ -1124,7 +1124,7 @@ namespace music
           {
           ::e_status     mmr = ::success;
 
-          for (i32 i = 0; i < this->get_size(); i++)
+          for (int i = 0; i < this->get_size(); i++)
           {
           ::e_status     mmrBuffer = this->element_at(i).midiOutUnprepareHeader(hmidiout);
           if(mmrBuffer != ::success)
@@ -1138,7 +1138,7 @@ namespace music
           ::e_status     sequence::buffer_array::midiOutPrepareHeader(HMIDIOUT hmidiout)
           {
           ::e_status     estatus = ::success;
-          for(i32 i = 0; i < this->get_size(); i++)
+          for(int i = 0; i < this->get_size(); i++)
           {
           estatus = this->element_at(i).midiOutPrepareHeader(
           hmidiout);
@@ -1171,7 +1171,7 @@ namespace music
          //  {
          /*
           ::e_status     estatus = ::success;
-          for(i32 i = 0; i < this->get_size(); i++)
+          for(int i = 0; i < this->get_size(); i++)
           {
           estatus = this->element_at(i).midiStreamOut(
           hmidiout);
@@ -1189,7 +1189,7 @@ namespace music
          // }
 
 
-         void sequence::MuteAll(bool bMute, i32 iExcludeTrack)
+         void sequence::MuteAll(bool bMute, int iExcludeTrack)
          {
 
             bool bPlay = IsPlaying();
@@ -1219,7 +1219,7 @@ namespace music
          }
 
 
-         void sequence::MuteTrack(i32 iIndex, bool bMute)
+         void sequence::MuteTrack(int iIndex, bool bMute)
          {
 
             bool bPlay = IsPlaying();
@@ -1255,7 +1255,7 @@ namespace music
          }
 
 
-         i32 sequence::GetDefaultCodePage()
+         int sequence::GetDefaultCodePage()
          {
             return 1252;
          }

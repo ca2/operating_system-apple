@@ -25,7 +25,7 @@ namespace draw2d_quartz2d
 
       // Attributes
 //      operator HPALETTE() const;
-      i32 GetEntryCount() override;
+      int GetEntryCount() override;
 //      ::u32 GetPaletteEntries(::u32 nStartIndex, ::u32 nNumEntries,
 //                             LPPALETTEENTRY lpPaletteColors) const;
 //      ::u32 SetPaletteEntries(::u32 nStartIndex, ::u32 nNumEntries,

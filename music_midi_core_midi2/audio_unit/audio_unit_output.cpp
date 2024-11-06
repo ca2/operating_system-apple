@@ -744,7 +744,7 @@ namespace music
 
             // ------------------------------------------------------------------------------------------------------
 
-            void output::programChange(u8 progChangeNum, u8 midiChannelInUse)
+            void output::programChange(unsigned char progChangeNum, unsigned char midiChannelInUse)
             {
                OSStatus result;
                require_noerr (result = MusicDeviceMIDIEvent(m_synth_unit,
@@ -761,7 +761,7 @@ namespace music
 
             // ------------------------------------------------------------------------------------------------------
 
-            void output::setBank(u8 midiChannelInUse)
+            void output::setBank(unsigned char midiChannelInUse)
             {
                OSStatus result;
                require_noerr (result = MusicDeviceMIDIEvent(m_synth_unit,
@@ -787,7 +787,7 @@ namespace music
                
                m_strCustomSoundFont = custom_sound_font;
                
-               u8 midiChannelInUse = 0;
+               unsigned char midiChannelInUse = 0;
                
                OSStatus result;
                

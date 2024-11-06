@@ -101,7 +101,7 @@ namespace draw2d_quartz2d
       
       image32_t * pimage32 = nullptr;
       
-      i32 iScan = iGoodStride;
+      int iScan = iGoodStride;
 
       pbitmap->create_bitmap(nullptr, size, (void **) &pimage32, &iScan);
       
@@ -233,7 +233,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void image::SetIconMask(::image::icon * picon, i32 cx, i32 cy)
+   void image::SetIconMask(::image::icon * picon, int cx, int cy)
    {
       
       if(cx <= 0 || cy <= 0)
@@ -302,14 +302,14 @@ namespace draw2d_quartz2d
       //rectangle_i32_dimension(0, 0, cx, cy),
       //picon);
 
-      ::u8 * r1=(::u8*)pimage1->image32();
-      ::u8 * r2=(::u8*)pimage2->image32();
-      ::u8 * srcM=(::u8*)pimageM->image32();
-      ::u8 * dest=(::u8*)image32();
-      i32 iSize = cx*cy;
+      unsigned char * r1=(unsigned char*)pimage1->image32();
+      unsigned char * r2=(unsigned char*)pimage2->image32();
+      unsigned char * srcM=(unsigned char*)pimageM->image32();
+      unsigned char * dest=(unsigned char*)image32();
+      int iSize = cx*cy;
 
-      ::u8 b;
-      ::u8 bMax;
+      unsigned char b;
+      unsigned char bMax;
       while ( iSize-- > 0)
       {
          if(srcM[0] == 255)
@@ -319,11 +319,11 @@ namespace draw2d_quartz2d
          else
          {
             bMax = 0;
-            b =(::u8)(r1[0]  - r2[0]);
+            b =(unsigned char)(r1[0]  - r2[0]);
             bMax = maximum(b, bMax);
-            b =(::u8)(r1[1]  - r2[1]);
+            b =(unsigned char)(r1[1]  - r2[1]);
             bMax = maximum(b, bMax);
-            b =(::u8)(r1[2]  - r2[2]);
+            b =(unsigned char)(r1[2]  - r2[2]);
             bMax = maximum(b, bMax);
             bMax = 255 - bMax;
          }
@@ -382,7 +382,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void image::blend(const ::point_i32 & pointDstParam, ::image::image * pimplSrc, const ::point_i32 & pointSrcParam, const ::size_i32 & sizeParam, ::u8 bA)
+   void image::blend(const ::point_i32 & pointDstParam, ::image::image * pimplSrc, const ::point_i32 & pointSrcParam, const ::size_i32 & sizeParam, unsigned char bA)
    {
       
       ::point_i32 pointDst(pointDstParam);
@@ -463,25 +463,25 @@ namespace draw2d_quartz2d
          
       }
 
-      i32 scanDst = pimplDst->scan_size();
+      int scanDst = pimplDst->scan_size();
 
-      i32 scanSrc = pimplSrc->scan_size();
+      int scanSrc = pimplSrc->scan_size();
 
-      ::u8 * pdst2;
+      unsigned char * pdst2;
 
-      ::u8 * psrc2;
+      unsigned char * psrc2;
 
 #ifdef __APPLE__
       
-      ::u8 * pdst = &((::u8 *)pimplDst->image32())[scanDst * (pimplDst->height() - pointDst.y() - yEnd) + pointDst.x() * sizeof(image32_t)];
+      unsigned char * pdst = &((unsigned char *)pimplDst->image32())[scanDst * (pimplDst->height() - pointDst.y() - yEnd) + pointDst.x() * sizeof(image32_t)];
 
-      ::u8 * psrc = &((::u8 *)pimplSrc->image32())[scanSrc * (pimplSrc->height() - pointSrc.y() - yEnd) + pointSrc.x() * sizeof(image32_t)];
+      unsigned char * psrc = &((unsigned char *)pimplSrc->image32())[scanSrc * (pimplSrc->height() - pointSrc.y() - yEnd) + pointSrc.x() * sizeof(image32_t)];
 
 #else
 
-      ::u8 * pdst = &((::u8 *)imageDst.m_pimage32)[scanDst * pointDst.y + pointDst.x * sizeof(image32_t)];
+      unsigned char * pdst = &((unsigned char *)imageDst.m_pimage32)[scanDst * pointDst.y + pointDst.x * sizeof(image32_t)];
 
-      ::u8 * psrc = &((::u8 *)imageSrc.m_pimage32)[scanSrc *  pointSrc.y + pointSrc.x * sizeof(image32_t)];
+      unsigned char * psrc = &((unsigned char *)imageSrc.m_pimage32)[scanSrc *  pointSrc.y + pointSrc.x * sizeof(image32_t)];
 
 #endif
 
@@ -514,8 +514,8 @@ namespace draw2d_quartz2d
                   //pdst2[1] = (psrc2[1] + (pdst2[1] * (255 - psrc2[3])) / 255);
                   //pdst2[2] = (psrc2[2] + (pdst2[2] * (255 - psrc2[3])) / 255);
                   //pdst2[3] = (psrc2[3] + (pdst2[3] * (255 - psrc2[3])) / 255);
-                  ::u8 a = pdst2[3];
-                  ::u8 alpha = psrc2[3];
+                  unsigned char a = pdst2[3];
+                  unsigned char alpha = psrc2[3];
                   if (a == 0)
                   {
 
@@ -588,12 +588,12 @@ namespace draw2d_quartz2d
                   //pdst2[1] = (psrc2[1] + (pdst2[1] * (255 - psrc2[3])) / 255);
                   //pdst2[2] = (psrc2[2] + (pdst2[2] * (255 - psrc2[3])) / 255);
                   //pdst2[3] = (psrc2[3] + (pdst2[3] * (255 - psrc2[3])) / 255);
-                  //::u8 acomplement = (~psrc2[3] * bA) >> 8;
+                  //unsigned char acomplement = (~psrc2[3] * bA) >> 8;
                   //pdst2[0] = psrc2[0] + ((pdst2[0] * (acomplement)) >> 8);
                   //pdst2[1] = psrc2[1] + ((pdst2[1] * (acomplement)) >> 8);
                   //pdst2[2] = psrc2[2] + ((pdst2[2] * (acomplement)) >> 8);
                   //pdst2[3] = psrc2[3] + ((pdst2[3] * (acomplement)) >> 8);
-                  ::u8 acomplement = (~psrc2[3] * bA) >> 8;
+                  unsigned char acomplement = (~psrc2[3] * bA) >> 8;
                   pdst2[0] = ::u8_clip(((psrc2[0] * bA) + (pdst2[0] * acomplement)) >> 8);
                   pdst2[1] = ::u8_clip(((psrc2[1] * bA) + (pdst2[1] * acomplement)) >> 8);
                   pdst2[2] = ::u8_clip(((psrc2[2] * bA) + (pdst2[2] * acomplement)) >> 8);

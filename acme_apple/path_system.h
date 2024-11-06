@@ -4,21 +4,21 @@
 #pragma once
 
 
-#include "acme_darwin/acme_path.h"
+#include "acme_darwin/path_system.h"
 
 
 namespace acme_apple
 {
 
 
-   class CLASS_DECL_ACME acme_path :
-      virtual public ::acme_darwin::acme_path
+   class CLASS_DECL_ACME path_system :
+      virtual public ::acme_darwin::path_system
    {
    public:
 
 
-      acme_path();
-      ~acme_path() override;
+      path_system();
+      ~path_system() override;
 
 
       

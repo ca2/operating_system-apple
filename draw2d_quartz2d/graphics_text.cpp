@@ -119,7 +119,7 @@ namespace draw2d_quartz2d
    //      lpMetrics->tmAscent              = ascent;
    //      lpMetrics->tmDescent             = descent;
    //
-   //      pmetric->tmAveCharWidth        = (::i32) (width * (m_pfont.is_null() ? 1.0 : m_pfont->m_dFontWidth) / (double) str.get_length());
+   //      pmetric->tmAveCharWidth        = (int) (width * (m_pfont.is_null() ? 1.0 : m_pfont->m_dFontWidth) / (double) str.get_length());
 
       //return true;
 

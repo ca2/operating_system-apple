@@ -26,11 +26,11 @@ namespace music
 
             /*         double GetTempoShiftRate();
 
-             bool IsTrackMute(i32 iIndex);
+             bool IsTrackMute(int iIndex);
 
-             void MuteAll(bool bMute = true, i32 iExcludeTrack = -1);
+             void MuteAll(bool bMute = true, int iExcludeTrack = -1);
 
-             void MuteTrack(i32 iIndex, bool bMute = true);
+             void MuteTrack(int iIndex, bool bMute = true);
 
              ::e_status     WorkSeekBegin();
 
@@ -54,17 +54,17 @@ namespace music
 
              ::music::midi::tempo_map_entry * GetTempoMapEntry(const imedia_time & position);
 
-             i32 GetTempoShift();
+             int GetTempoShift();
 
-             ::e_status     SetTempoShift(i32 iTempoShift);
+             ::e_status     SetTempoShift(int iTempoShift);
 
              void ToWorkStorage();
 
              void FromWorkStorage();
 
-             i32 GetKeyShift();
+             int GetKeyShift();
 
-             i32 SetKeyShift(i32 iKeyShift);
+             int SetKeyShift(int iKeyShift);
 
              bool IsSoftKaraokeFile(bool bWork = false, string_array * pstra = nullptr);
 
@@ -88,11 +88,11 @@ namespace music
 
              ::e_status     WorkWriteXFTracks(string_array & tokena, imedia_time_array & positiona, ::music::xf::info_header & xfinfoheader);
 
-             i32 CalcMelodyTrack(::music::midi::events ** ppEvents, imedia_time_array * pTicks);
+             int CalcMelodyTrack(::music::midi::events ** ppEvents, imedia_time_array * pTicks);
 
-             i32 WorkCalcMelodyTrack(::music::midi::events ** ppEvents, imedia_time_array & positiona, int_array & iaTokenLine);
+             int WorkCalcMelodyTrack(::music::midi::events ** ppEvents, imedia_time_array & positiona, int_array & iaTokenLine);
 
-             i32 GetFormat();
+             int GetFormat();
 
              ::e_status     WorkMergeTracks();
 
@@ -108,7 +108,7 @@ namespace music
 
              void delete_contents();
 
-             i32 GetDivision();
+             int GetDivision();
 
              imedia_time GetPosition();
 
@@ -118,11 +118,11 @@ namespace music
 
              void WorkSeekEnd();
 
-             ::e_status     OpenFile(::music::midi::file::buffer &file, i32 openMode);
+             ::e_status     OpenFile(::music::midi::file::buffer &file, int openMode);
 
-             ::e_status     OpenFile(::file::file & file, i32 openMode);
+             ::e_status     OpenFile(::file::file & file, int openMode);
 
-             ::e_status     OpenFile(primitive::memory * pmemstorage, i32 openMode, ::music::e_storage);
+             ::e_status     OpenFile(primitive::memory * pmemstorage, int openMode, ::music::e_storage);
 
              ::e_status     OpenFile(primitive::memory * pmemstorage, ::music::midi::file::e_open eopenmode, ::music::e_storage estorage);
 

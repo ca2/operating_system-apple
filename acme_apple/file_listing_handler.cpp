@@ -6,7 +6,7 @@
 //
 #include "framework.h"
 #include "file_listing_handler.h"
-#include "acme/filesystem/filesystem/acme_directory.h"
+#include "acme/filesystem/filesystem/directory_system.h"
 #include "acme/filesystem/filesystem/listing.h"
 #include "acme/parallelization/synchronous_lock.h"
 #include "acme/prototype/time/_text_stream.h"
@@ -169,7 +169,7 @@ namespace acme_apple
          
          ::string str = listing.m_pathUser;
          
-         if(str.begins_eat(acmedirectory()->icloud_container2()))
+         if(str.begins_eat(directory_system()->icloud_container2()))
          {
             
             listing.m_pathFinal = m_pathBase / str;
@@ -257,7 +257,7 @@ namespace acme_apple
             if(pathUser.begins_eat(m_pathBase))
             {
              
-               pathUser = acmedirectory()->icloud_container2() / pathUser;
+               pathUser = directory_system()->icloud_container2() / pathUser;
                
             }
             

@@ -1,8 +1,8 @@
 #include "framework.h"
 #include "stdio_file.h"
 #include "acme/filesystem/file/exception.h"
-#include "acme/filesystem/filesystem/acme_file.h"
-#include "acme/filesystem/filesystem/acme_directory.h"
+#include "acme/filesystem/filesystem/file_system.h"
+#include "acme/filesystem/filesystem/directory_system.h"
 #include <fcntl.h>
 
 
@@ -37,7 +37,7 @@ namespace acme_apple
       if ((eopen & ::file::e_open_defer_create_directory) && (eopen & ::file::e_open_write))
       {
          
-         acmedirectory()->create(path.folder());
+         directory_system()->create(path.folder());
          
       }
 
@@ -49,7 +49,7 @@ namespace acme_apple
       // ASSERT(m_bCloseOnDelete);
 
       char szMode[4]; // C-runtime open string
-      i32 nMode = 0;
+      int nMode = 0;
 
       // determine read/write mode depending on ::ca2::filesp mode
       if (eopen & ::file::e_open_create)
@@ -91,7 +91,7 @@ namespace acme_apple
       }
 
       // will be inverted if not necessary
-      i32 nFlags = O_RDONLY;
+      int nFlags = O_RDONLY;
       if (eopen & (::file::e_open_write | ::file::e_open_read_write))
          nFlags ^= O_RDONLY;
 
@@ -111,7 +111,7 @@ namespace acme_apple
       szMode[nMode++] = '\0';
 
       // open a C-runtime low-level file handle
-      //i32 nHandle = _open_osfhandle(m_hFile, nFlags);
+      //int nHandle = _open_osfhandle(m_hFile, nFlags);
 
       // open a C-runtime stream from that handle
       //if (nHandle != -1)
@@ -172,7 +172,7 @@ namespace acme_apple
 
       size_t nRead = 0;
 
-      nRead = fread(lpBuf, sizeof(::u8), nCount, m_pStream);
+      nRead = fread(lpBuf, sizeof(unsigned char), nCount, m_pStream);
       
       if(nRead != nCount)
       {
@@ -185,7 +185,7 @@ namespace acme_apple
                
                clearerr(m_pStream);
                
-               i32 iErrNo = errno;
+               int iErrNo = errno;
                
                auto errorcode = errno_error_code(iErrNo);
                
@@ -210,10 +210,10 @@ namespace acme_apple
       ASSERT(m_pStream != nullptr);
       //   ASSERT(fx_is_valid_address(lpBuf, nCount, false));
 
-      if (fwrite(lpBuf, sizeof(::u8), nCount, m_pStream) != nCount)
+      if (fwrite(lpBuf, sizeof(unsigned char), nCount, m_pStream) != nCount)
       {
          
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          
@@ -234,7 +234,7 @@ namespace acme_apple
       if (fwrite(scopedstr.begin(), 1, scopedstr.size(), m_pStream) == EOF)
       {
 
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          
@@ -259,7 +259,7 @@ namespace acme_apple
          
          clearerr(m_pStream);
          
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          
@@ -281,7 +281,7 @@ namespace acme_apple
 
       //rString = &afxWchNil;    // is_empty string without deallocating
       rString.empty();
-      const i32 nMaxSize = 128;
+      const int nMaxSize = 128;
       char * lpsz = rString.get_buffer(nMaxSize);
       char * lpszResult;
       strsize nLen = 0;
@@ -298,7 +298,7 @@ namespace acme_apple
             
             clearerr(m_pStream);
             
-            i32 iErrNo = errno;
+            int iErrNo = errno;
             
             auto errorcode = errno_error_code(iErrNo);
             
@@ -343,7 +343,7 @@ namespace acme_apple
       ASSERT(eseek == ::e_seek_set || eseek== ::e_seek_from_end || eseek== ::e_seek_current);
       ASSERT(m_pStream != nullptr);
 
-      i32 nFrom;
+      int nFrom;
       switch(eseek)
       {
       case ::e_seek_set:
@@ -362,7 +362,7 @@ namespace acme_apple
       if (fseek(m_pStream, lOff, nFrom) != 0)
       {
          
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          
@@ -388,7 +388,7 @@ namespace acme_apple
       if (pos < 0)
       {
          
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          
@@ -407,7 +407,7 @@ namespace acme_apple
       if (m_pStream != nullptr && fflush(m_pStream) != 0)
       {
          
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          
@@ -424,7 +424,7 @@ namespace acme_apple
       ASSERT_VALID(this);
       ASSERT(m_pStream != nullptr);
 
-      i32 nErr = 0;
+      int nErr = 0;
 
       if (m_pStream != nullptr)
          nErr = fclose(m_pStream);
@@ -436,7 +436,7 @@ namespace acme_apple
       if (nErr != 0)
       {
          
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          
@@ -517,7 +517,7 @@ namespace acme_apple
       if (nCurrent < 0)
       {
          
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          
@@ -532,7 +532,7 @@ namespace acme_apple
       if (nResult != 0)
       {
          
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          
@@ -547,7 +547,7 @@ namespace acme_apple
       if (nLength < 0)
       {
          
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          
@@ -562,7 +562,7 @@ namespace acme_apple
       if (nResult != 0)
       {
          
-         i32 iErrNo = errno;
+         int iErrNo = errno;
          
          auto errorcode = errno_error_code(iErrNo);
          

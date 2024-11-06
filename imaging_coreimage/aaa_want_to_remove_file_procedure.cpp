@@ -106,7 +106,7 @@ long DLL_CALLCONV __TellProc2(fi_handle handle)
 
 //static u32 _stdcall  __ReadProc3 (void *buffer, u32 size, u32 count, fi_handle handle);
 //static u32 _stdcall __WriteProc3 (void *buffer, u32 size, u32 count, fi_handle handle);
-//static i32 _stdcall __SeekProc3 (fi_handle handle, long offset, i32 origin);
+//static int _stdcall __SeekProc3 (fi_handle handle, long offset, int origin);
 //static long _stdcall __TellProc3 (fi_handle handle);
 
 

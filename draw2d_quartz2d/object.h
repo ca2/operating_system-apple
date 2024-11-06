@@ -24,9 +24,9 @@ namespace draw2d_quartz2d
       bool delete_object();
       
       
-      i32 get_object(i32 nCount, void * lpObject) const;
+      int get_object(int nCount, void * lpObject) const;
       //::u32 GetObjectType() const override;
-      //bool CreateStockObject(i32 nIndex) override;
+      //bool CreateStockObject(int nIndex) override;
       //bool UnrealizeObject() override;
       
    };

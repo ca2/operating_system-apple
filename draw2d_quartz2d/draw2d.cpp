@@ -36,7 +36,7 @@ namespace draw2d_quartz2d
    }
 
    
-   CGFontRef draw2d::private_cgfontref(::acme::context * pcontext, const ::file::path & path)
+   CGFontRef draw2d::private_cgfontref(::platform::context * pcontext, const ::file::path & path)
    {
       
       auto & pprivatefont = m_mapPrivateFont[path];
@@ -52,7 +52,7 @@ namespace draw2d_quartz2d
       
       pprivatefont->m_cgfontref = nullptr;
 
-      auto pmemory = system()->m_paurasystem->draw2d()->write_text()->get_file_memory(pcontext, path);
+      auto pmemory = system()->draw2d()->write_text()->get_file_memory(pcontext, path);
 
       if(!pmemory || pmemory->is_empty())
       {

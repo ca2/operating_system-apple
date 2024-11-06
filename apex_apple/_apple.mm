@@ -93,7 +93,7 @@ char * mm_error_description(OSStatus status)
 //}
 
 
-void ns_main_async(dispatch_block_t block)
+void ns_main_post(dispatch_block_t block)
 {
    
    //   dispatch_block_t block = ^{
@@ -117,7 +117,7 @@ void ns_main_async(dispatch_block_t block)
 }
 
 
-void ns_main_sync(dispatch_block_t block, unsigned int)
+void ns_main_send(dispatch_block_t block, unsigned int)
 {
    
    //   dispatch_block_t block = ^{
@@ -150,7 +150,7 @@ class matter;
 void main_async_runnable(::matter * prunnable)
 {
    
-   ns_main_async(^
+   ns_main_post(^
                  {
 
                     __call(prunnable);
@@ -165,7 +165,7 @@ void main_async_runnable(::matter * prunnable)
 void _main_sync_runnable(::matter * prunnable, DWORD dwMillis)
 {
    
-   ns_main_sync(^
+   ns_main_send(^
                 {
                    
                     __call(prunnable);

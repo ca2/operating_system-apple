@@ -44,7 +44,7 @@ namespace multimedia
          
          
          virtual bool initialize_thread() override;
-         virtual i32 exit_thread() override;
+         virtual int exit_thread() override;
          
          
          virtual void free_buffers();

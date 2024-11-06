@@ -80,7 +80,7 @@ namespace multimedia
       }
 
    
-      void in::in_open(i32 iBufferCount, i32 iBufferSampleCount)
+      void in::in_open(int iBufferCount, int iBufferSampleCount)
       {
 
          if(m_Queue != nullptr && m_einstate != ::wave::e_in_state_initial)
@@ -195,9 +195,9 @@ namespace multimedia
 //            uiInterestSize,
 //            uiSkippedSamplesCount);
 //
-///*         i32 i, iSize;
+///*         int i, iSize;
 //
-//         iSize = (i32) in_get_buffer()->GetBufferCount();
+//         iSize = (int) in_get_buffer()->GetBufferCount();
 //
 //         for(i = 0; i < iSize; i++)
 //         {
@@ -249,9 +249,9 @@ namespace multimedia
 
          free_buffers();
 
-         /*         i32 i, iSize;
+         /*         int i, iSize;
 
-                  iSize = (i32) in_get_buffer()->GetBufferCount();
+                  iSize = (int) in_get_buffer()->GetBufferCount();
 
                   for(i = 0; i < iSize; i++)
                   {
@@ -425,7 +425,7 @@ namespace multimedia
       }
 
 
-      void in::in_add_buffer(i32 iBuffer)
+      void in::in_add_buffer(int iBuffer)
       {
 
          AudioQueueBufferRef buf = audio_buffer(iBuffer);

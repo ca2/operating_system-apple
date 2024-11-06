@@ -40,8 +40,8 @@ namespace music
             ~output();
             
             
-            void setBank(u8 midiChannelInUse);
-            void programChange(u8 progChangeNum, u8 midiChannelInUse);
+            void setBank(unsigned char midiChannelInUse);
+            void programChange(unsigned char progChangeNum, unsigned char midiChannelInUse);
 
             
             bool outputToDisk(const char* outputFilePath,

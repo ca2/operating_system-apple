@@ -109,7 +109,7 @@ namespace aura
 //
 //      }
 
-//      i32 linux::get_image_by_extension(per_fork * pfork, oswindow oswindow, image_key & key, color32_t crBk)
+//      int linux::get_image_by_extension(per_fork * pfork, oswindow oswindow, image_key & key, color32_t crBk)
 //      {
 //
 //         return 0x80000000;
@@ -119,10 +119,10 @@ namespace aura
 
 
 
-//      i32 linux::get_file_extension_image(oswindow oswindow, const string & strExtension, e_file_attribute eattribute, e_icon eicon, color32_t crBk)
+//      int linux::get_file_extension_image(oswindow oswindow, const string & strExtension, e_file_attribute eattribute, e_icon eicon, color32_t crBk)
 //      {
 //
-//         i32 iImage;
+//         int iImage;
 //
 //         wstring wstrFilePath;
 //
@@ -235,7 +235,7 @@ namespace aura
 
       //   if (lpsf == nullptr)
       //      return false;
-      //   i32 iType;
+      //   int iType;
       //   switch (eicon)
       //   {
       //   case icon_normal:
@@ -264,7 +264,7 @@ namespace aura
 
       //   char szPath[_MAX_PATH * 10];
       //   string strPath;
-      //   //   i32 iImage = 0x80000000;
+      //   //   int iImage = 0x80000000;
 
       //   HICON hicon16 = nullptr;
       //   HICON hicon48 = nullptr;
@@ -285,7 +285,7 @@ namespace aura
 
 
 
-      //   i32 iIcon = 0x80000000;
+      //   int iIcon = 0x80000000;
       //   ::u32 uFlags = 0;
 
       //   SHFILEINFO shfi16;
@@ -325,7 +325,7 @@ namespace aura
       //         }
       //      }
       //   }
-      //   if (pcontext->m_papexcontext->dir().is(::str::international::unicode_to_utf8(szFilePath)))
+      //   if (papplication->dir().is(::str::international::unicode_to_utf8(szFilePath)))
       //   {
       //      if (imagekey.m_iIcon == 0x80000000)
       //      {
@@ -476,10 +476,10 @@ namespace aura
 
 
 
-      //i32 linux::get_image(per_fork * pfork, oswindow oswindow, image_key imagekey, LPITEMIDLIST lpiidlAbsolute, const unichar * lpcszExtra, color32_t crBk)
+      //int linux::get_image(per_fork * pfork, oswindow oswindow, image_key imagekey, LPITEMIDLIST lpiidlAbsolute, const unichar * lpcszExtra, color32_t crBk)
       //{
 
-      //   i32 iImage = get_image(pfork, oswindow, imagekey, lpiidlAbsolute, lpiidlChild, lpcszExtra, crBk);
+      //   int iImage = get_image(pfork, oswindow, imagekey, lpiidlAbsolute, lpiidlChild, lpcszExtra, crBk);
 
       //   _017ItemIDListFree(pfork, lpiidlChild);
 
@@ -581,19 +581,19 @@ namespace aura
       }
 
 
-      i32 shell::impl_get_file_image(const image_key & imagekeyParam)
+      int shell::impl_get_file_image(const image_key & imagekeyParam)
       {
 
          image_key imagekey(imagekeyParam);
 
-         i32 iImage = 0x80000000;
+         int iImage = 0x80000000;
 
          if (::str::case_insensitive_begins(imagekey.m_strPath, "uifs:"))
          {
 
-            auto pcontext = m_pcontext;
+            auto papplication = application();
 
-            ::file::path path = pcontext->m_papexcontext->dir().matter("cloud.ico");
+            ::file::path path = papplication->dir().matter("cloud.ico");
 
             for (auto iSize : m_iaSize)
             {
@@ -615,9 +615,9 @@ namespace aura
          else if (::str::case_insensitive_begins(imagekey.m_strPath, "fs:"))
          {
 
-            auto pcontext = m_pcontext;
+            auto papplication = application();
 
-            ::file::path path = pcontext->m_papexcontext->dir().matter("remote.ico");
+            ::file::path path = papplication->dir().matter("remote.ico");
 
             for (auto iSize : m_iaSize)
             {
@@ -639,9 +639,9 @@ namespace aura
          else if (::str::case_insensitive_begins(imagekey.m_strPath, "ftp:"))
          {
 
-            auto pcontext = m_pcontext;
+            auto papplication = application();
 
-            ::file::path path = pcontext->m_papexcontext->dir().matter("ftp.ico");
+            ::file::path path = papplication->dir().matter("ftp.ico");
 
             for (auto iSize : m_iaSize)
             {
@@ -668,15 +668,15 @@ namespace aura
          if (::str::case_insensitive_ends(imagekey.m_strPath, ".aura"))
          {
 
-            auto pcontext = m_pcontext;
+            auto papplication = application();
 
-            string str = pcontext->m_papexcontext->file().as_string(imagekey.m_strPath);
+            string str = papplication->file().as_string(imagekey.m_strPath);
 
             if (::str::case_insensitive_begins_eat(str, "ca2prompt\r\n"))
             {
                str.trim();
-               /*HICON hicon16 = (HICON) ::LoadImage(nullptr, pcontext->m_papexcontext->dir().matter(str + "/mainframe/icon.ico"), IMAGE_ICON, 16, 16, LR_LOADFROMFILE);
-               HICON hicon48 = (HICON) ::LoadImage(nullptr, pcontext->m_papexcontext->dir().matter(str + "/mainframe/icon.ico"), IMAGE_ICON, 48, 48, LR_LOADFROMFILE);
+               /*HICON hicon16 = (HICON) ::LoadImage(nullptr, papplication->dir().matter(str + "/mainframe/icon.ico"), IMAGE_ICON, 16, 16, LR_LOADFROMFILE);
+               HICON hicon48 = (HICON) ::LoadImage(nullptr, papplication->dir().matter(str + "/mainframe/icon.ico"), IMAGE_ICON, 48, 48, LR_LOADFROMFILE);
                synchronous_lock sl1(m_pil48Hover->mutex());
                synchronous_lock sl2(m_pil48->mutex());
                iImage = m_pil16->add_icon_os_data(hicon16);
@@ -705,7 +705,7 @@ namespace aura
          if (iFind >= 0 || iFind2 >= 2)
          {
             string strProtocol = string(imagekey.m_strPath).Left(maximum(iFind, iFind2));
-            i32 i = 0;
+            int i = 0;
 
             while (i < strProtocol.get_length() && ansi_char_is_alphanumeric(strProtocol[i]))
             {
@@ -748,9 +748,9 @@ namespace aura
          if (::str::case_insensitive_ends(imagekey.m_strPath, ".desktop"))
          {
 
-            auto pcontext = m_pcontext;
+            auto papplication = application();
 
-            string str = pcontext->m_papexcontext->file().as_string(imagekey.m_strPath);
+            string str = papplication->file().as_string(imagekey.m_strPath);
 
             string_array stra;
 
@@ -800,7 +800,7 @@ namespace aura
 
             }
 
-            auto pcontext = m_pcontext;
+            auto papplication = application();
 
             auto pcontextimage = pcontext->context_image();
 
@@ -961,10 +961,10 @@ namespace aura
 //
 
 
-//      i32 linux::get_image(oswindow oswindow, const string & strPath, e_file_attribute eattribute, e_icon eicon, color32_t crBk)
+//      int linux::get_image(oswindow oswindow, const string & strPath, e_file_attribute eattribute, e_icon eicon, color32_t crBk)
 //      {
 //
-//         i32 iImage = 0x80000000;
+//         int iImage = 0x80000000;
 //
 //         {
 //            if (colorref_get_a_value(crBk) != 255)
@@ -1033,11 +1033,11 @@ namespace aura
 //
 
 
-      i32 shell::get_image_by_file_extension(image_key & imagekey)
-      //i32 linux::get_image_foo(oswindow oswindow, const string & strExtension, e_file_attribute eattribute, e_icon eicon, color32_t crBk)
+      int shell::get_image_by_file_extension(image_key & imagekey)
+      //int linux::get_image_foo(oswindow oswindow, const string & strExtension, e_file_attribute eattribute, e_icon eicon, color32_t crBk)
       {
 
-         i32 iImage = 0x80000000;
+         int iImage = 0x80000000;
 
          {
 

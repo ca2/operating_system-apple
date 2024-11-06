@@ -4,7 +4,7 @@
 #include "framework.h"
 #include "node.h"
 #include "acme/exception/interface_only.h"
-#include "acme/filesystem/filesystem/acme_directory.h"
+#include "acme/filesystem/filesystem/directory_system.h"
 #include "acme/parallelization/synchronous_lock.h"
 #include "acme/platform/application.h"
 #include "acme/platform/system.h"
@@ -243,7 +243,7 @@ void node::on_system_main()
    
    auto papp = platform()->application();
 
-   void * pApplication = (void *) (::acme::application *) papp;
+   ::platform::application * papplication = (void *) (::platform::application *) papp;
 
    defer_create_windowing_application_delegate(pApplication, papp->application_menu(), papp);
    
@@ -252,7 +252,7 @@ void node::on_system_main()
 }
 
 
-void node::defer_create_windowing_application_delegate(void * pApplication, ::application_menu * papplicationmenu, ::application_menu_callback * papplicationmenucallback)
+void node::defer_create_windowing_application_delegate(::platform::application * papplication, ::application_menu * papplicationmenu, ::application_menu_callback * papplicationmenucallback)
 {
    
    throw ::interface_only();

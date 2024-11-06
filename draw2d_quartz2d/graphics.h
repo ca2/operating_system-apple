@@ -27,7 +27,7 @@ namespace draw2d_quartz2d
       CGContextRef                  m_cgcontext;
       CGLayerRef                    m_cglayer;
 
-      i32                           m_iType;
+      int                           m_iType;
 #ifdef __OBJECTIVE_CPP__
       NSColor *                     m_nscolorFore;
       NSColor *                     m_nscolorBack;
@@ -75,9 +75,9 @@ namespace draw2d_quartz2d
       void DeleteDC() override;
 
       // Device-Context Functions
-      virtual i32 save_graphics_context() override;
-      virtual void restore_graphics_context(i32 iSavedGraphicsContext) override;
-      i32 GetDeviceCaps(i32 nIndex) override;
+      virtual int save_graphics_context() override;
+      virtual void restore_graphics_context(int iSavedGraphicsContext) override;
+      int GetDeviceCaps(int nIndex) override;
       ::u32 SetBoundsRect(const ::rectangle_f64 & rectBounds, ::u32 flags) override;
       ::u32 GetBoundsRect(::rectangle_f64 * rectBounds, ::u32 flags) override;
       // xxx      bool ResetDC(const DEVMODE* lpDevMode);
@@ -86,17 +86,17 @@ namespace draw2d_quartz2d
       point_f64 GetBrushOrg() override;
       point_f64 SetBrushOrg(double x, double y) override;
       point_f64 SetBrushOrg(const ::point_f64 & point) override;
-//      i32 EnumObjects(i32 nObjectType,
-//                          i32 (CALLBACK* lpfn)(void *, LPARAM), LPARAM lpData) override;
+//      int EnumObjects(int nObjectType,
+//                          int (CALLBACK* lpfn)(void *, LPARAM), LPARAM lpData) override;
 
 //      // Type-safe selection helpers
 //   public:
-//      virtual ::draw2d::object* SelectStockObject(i32 nIndex) override;
+//      virtual ::draw2d::object* SelectStockObject(int nIndex) override;
 //      ::draw2d::pen* SelectObject(::draw2d::pen* pPen) override;
 //      ::draw2d::brush* SelectObject(::draw2d::brush* pBrush) override;
 //      virtual ::write_text::font* SelectObject(::write_text::font* pFont) override;
       void set(::draw2d::bitmap* pBitmap) override;
-//      i32 SelectObject(::draw2d::region* pRgn) override;       // special return for regions
+//      int SelectObject(::draw2d::region* pRgn) override;       // special return for regions
 //      ::draw2d::object* SelectObject(::draw2d::object* pObject);
 
 
@@ -113,15 +113,15 @@ namespace draw2d_quartz2d
 
 //      // Drawing-Attribute Functions
 //      color32_t GetBkColor() const;
-//      i32 GetBkMode() const;
-//      i32 GetPolyFillMode() override;
-//      i32 GetROP2() override;
-//      i32 GetStretchBltMode() override;
+//      int GetBkMode() const;
+//      int GetPolyFillMode() override;
+//      int GetROP2() override;
+//      int GetStretchBltMode() override;
 //
 //      //virtual color32_t SetBkColor(const ::color::color & color);
-//      i32 SetBkMode(i32 nBkMode);
-//      i32 SetPolyFillMode(i32 nPolyFillMode) override;
-//      i32 SetROP2(i32 nDrawMode) override;
+//      int SetBkMode(int nBkMode);
+//      int SetPolyFillMode(int nPolyFillMode) override;
+//      int SetROP2(int nDrawMode) override;
       void set_interpolation_mode(::draw2d::enum_interpolation_mode einterpolationmode) override;
 
       // xxx      bool GetColorAdjustment(LPCOLORADJUSTMENT lpColorAdjust) const;
@@ -138,8 +138,8 @@ namespace draw2d_quartz2d
 //#endif
 //
 //      // Graphics mode
-//      i32 SetGraphicsMode(i32 iMode) override;
-//      i32 GetGraphicsMode() override;
+//      int SetGraphicsMode(int iMode) override;
+//      int GetGraphicsMode() override;
 
 //      // World transform
 //      bool SetWorldTransform(const XFORM* pXform);
@@ -147,9 +147,9 @@ namespace draw2d_quartz2d
 //      bool GetWorldTransform(XFORM* pXform) const;
 
       // Mapping Functions
-//      virtual i32 GetMapMode() override;
+//      virtual int GetMapMode() override;
       virtual point_f64 get_origin() override;
-//      virtual i32 SetMapMode(i32 nMapMode) override;
+//      virtual int SetMapMode(int nMapMode) override;
 //      // Viewport Origin
       virtual point_f64 set_origin(double x, double y) override;
       virtual point_f64 set_origin(const ::point_f64 & point) override;
@@ -174,10 +174,10 @@ namespace draw2d_quartz2d
       virtual size_f64 scale_window_ext(double xNum, double xDenom, double yNum, double yDenom) override;
 
       // Coordinate Functions
-      void DPtoLP(::point_f64 * ppoints, i32 nCount = 1) const;
+      void DPtoLP(::point_f64 * ppoints, int nCount = 1) const;
       void DPtoLP(::rectangle_f64 * prectangle) override;
       void DPtoLP(::size_f64 * psize) override;
-      void LPtoDP(::point_f64 * ppoints, i32 nCount = 1) const;
+      void LPtoDP(::point_f64 * ppoints, int nCount = 1) const;
       void LPtoDP(::rectangle_f64 * prectangle) override;
       void LPtoDP(::size_f64 * psize) override;
 
@@ -194,19 +194,19 @@ namespace draw2d_quartz2d
       void paint_region(::draw2d::region * pregion) override;
 
       // Clipping Functions
-      i32 get_clip_box(::rectangle_f64 & rectangle) override;
+      int get_clip_box(::rectangle_f64 & rectangle) override;
       //void PtVisible(double x, double y) override;
       //void PtVisible(const ::point_f64 & point) override;
       //void RectVisible(const ::rectangle_f64 & rectangle) override;
-//      virtual i32 SelectClipRgn(::draw2d::region* pRgn) override;
-//      virtual i32 ExcludeClipRect(double x1, double y1, double x2, double y2) override;
-//      virtual i32 ExcludeClipRect(const ::rectangle_f64 & rectangle) override;
-      //i32 ExcludeUpdateRgn(::user::interaction * pWnd);
-      //virtual i32 IntersectClipRect(double x1, double y1, double x2, double y2) override;
-      //virtual i32 IntersectClipRect(const ::rectangle_f64 & rectangle) override;
-      //virtual i32 OffsetClipRgn(double x, double y) override;
-      //virtual i32 OffsetClipRgn(const ::size_f64 & size) override;
-      //virtual i32 SelectClipRgn(::draw2d::region* pRgn, i32 nMode) override;
+//      virtual int SelectClipRgn(::draw2d::region* pRgn) override;
+//      virtual int ExcludeClipRect(double x1, double y1, double x2, double y2) override;
+//      virtual int ExcludeClipRect(const ::rectangle_f64 & rectangle) override;
+      //int ExcludeUpdateRgn(::user::interaction * pWnd);
+      //virtual int IntersectClipRect(double x1, double y1, double x2, double y2) override;
+      //virtual int IntersectClipRect(const ::rectangle_f64 & rectangle) override;
+      //virtual int OffsetClipRgn(double x, double y) override;
+      //virtual int OffsetClipRgn(const ::size_f64 & size) override;
+      //virtual int SelectClipRgn(::draw2d::region* pRgn, int nMode) override;
       
       
       void reset_clip() override;
@@ -237,7 +237,7 @@ namespace draw2d_quartz2d
       //    ::point_f64 MoveTo(const ::point_f64 & point);
       void line_to(const ::point_f64 & point) override;
       //  bool LineTo(const ::point_f64 & point);
-//      void Arc(double x1, double y1, i32 w, i32 h, double start, double extends) override;
+//      void Arc(double x1, double y1, int w, int h, double start, double extends) override;
   //    void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
 //      void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
       void arc(double x, double y, double w, double h, ::angle_f64 start, ::angle_f64 end) override;
@@ -247,16 +247,16 @@ namespace draw2d_quartz2d
       void angle_arc(double x, double y, double dRadius, ::angle_f64 fStartAngle, ::angle_f64 fSweepAngle) override;
 //      void ArcTo(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
       void arc_to(const ::rectangle_f64 & rectangle, const ::point_f64 & pointStart, const ::point_f64 & pointEnd) override;
-//      virtual i32 GetArcDirection() override;
-//      virtual i32 SetArcDirection(i32 nArcDirection) override;
+//      virtual int GetArcDirection() override;
+//      virtual int SetArcDirection(int nArcDirection) override;
 
-//      bool PolyDraw(const ::point_f64* lpPoints, const ::u8* lpTypes, i32 nCount) override;
-//      bool polyline_to(const ::point_f64* lpPoints, i32 nCount);
+//      bool PolyDraw(const ::point_f64* lpPoints, const unsigned char* lpTypes, int nCount) override;
+//      bool polyline_to(const ::point_f64* lpPoints, int nCount);
 //      bool poly_polyline(const ::point_f64* lpPoints,
-//                        const ::u32* lpPolyPoints, i32 nCount);
+//                        const ::u32* lpPolyPoints, int nCount);
 //
-//      bool poly_bezier(const ::point_f64* lpPoints, i32 nCount);
-//      bool poly_bezier_to(const ::point_f64* lpPoints, i32 nCount);
+//      bool poly_bezier(const ::point_f64* lpPoints, int nCount);
+//      bool poly_bezier_to(const ::point_f64* lpPoints, int nCount);
 
       // Simple Drawing Functions
       void fill_rectangle(const ::rectangle_f64 & rectangle, ::draw2d::brush* pbrush) override;
@@ -272,7 +272,7 @@ namespace draw2d_quartz2d
       
 //      void draw_icon(double x, double y, ::draw2d::icon * picon) override;
 //      void draw_icon(const ::point_f64 & point, ::draw2d::icon * picon) override;
-//      void draw_icon(double x, double y, ::draw2d::icon * picon, i32 cx, i32 cy, ::u32 istepIfAniCur, HBRUSH hbrFlickerFreeDraw, ::u32 diFlags) override;
+//      void draw_icon(double x, double y, ::draw2d::icon * picon, int cx, int cy, ::u32 istepIfAniCur, HBRUSH hbrFlickerFreeDraw, ::u32 diFlags) override;
 //      void DrawState(const ::point_f64 & point, const ::size_f64 & size, HBITMAP hBitmap, ::u32 nFlags,
 //                             HBRUSH hBrush = nullptr) override;
 //      void DrawState(const ::point_f64 & point, const ::size_f64 & size, ::draw2d::bitmap* pBitmap, ::u32 nFlags,
@@ -282,9 +282,9 @@ namespace draw2d_quartz2d
             bool DrawState(const ::point_f64 & point, const ::size_f64 & size, HICON hIcon, ::u32 nFlags,
                            ::draw2d::brush* pBrush = nullptr);*/
 //      void DrawState(const ::point_f64 & point, const ::size_f64 & size, const char * lpszText, ::u32 nFlags,
-//                             bool bPrefixText = true, i32 nTextLen = 0, HBRUSH hBrush = nullptr) override;
+//                             bool bPrefixText = true, int nTextLen = 0, HBRUSH hBrush = nullptr) override;
 //      void DrawState(const ::point_f64 & point, const ::size_f64 & size, const char * lpszText, ::u32 nFlags,
-//                             bool bPrefixText = true, i32 nTextLen = 0, ::draw2d::brush* pBrush = nullptr) override;
+//                             bool bPrefixText = true, int nTextLen = 0, ::draw2d::brush* pBrush = nullptr) override;
       //xxx      bool DrawState(const ::point_f64 & point, const ::size_f64 & size, DRAWSTATEPROC lpDrawProc,
       //xxx         LPARAM lData, ::u32 nFlags, HBRUSH hBrush = nullptr);
       //xxx      bool DrawState(const ::point_f64 & point, const ::size_f64 & size, DRAWSTATEPROC lpDrawProc,
@@ -330,7 +330,7 @@ namespace draw2d_quartz2d
 //      void BitBltRaw(double x, double y, double dWidth, double dHeight, ::draw2d::graphics * pgraphicsSrc,
 //                     double xSrc, double ySrc, ::u32 dwRop) override;
 //      void StretchBltRaw(double x, double y, double nWidth, double nHeight, ::draw2d::graphics * pgraphicsSrc,
-//                                 double xSrc, double ySrc, i32 nSrcWidth, i32 nSrcHeight, ::u32 dwRop) override;
+//                                 double xSrc, double ySrc, int nSrcWidth, int nSrcHeight, ::u32 dwRop) override;
       ::color::color GetPixel(double x, double y) override;
       ::color::color GetPixel(const ::point_f64 & point) override;
       ::color::color SetPixel(double x, double y, const ::color::color & color) override;
@@ -346,14 +346,14 @@ namespace draw2d_quartz2d
       void SetPixelV(const ::point_f64 & point, const ::color::color & color) override;
 //      void GradientFill(TRIVERTEX* pVertices, WINULONG nVertices,
 //                        void * pMesh, WINULONG nMeshElements, ::u32 dwMode) override;
-//      void TransparentBlt(double xDest, double yDest, i32 nDestWidth, i32 nDestHeight,
-//                          ::draw2d::graphics * pgraphicsSrc, double xSrc, double ySrc, i32 nSrcWidth, i32 nSrcHeight,
+//      void TransparentBlt(double xDest, double yDest, int nDestWidth, int nDestHeight,
+//                          ::draw2d::graphics * pgraphicsSrc, double xSrc, double ySrc, int nSrcWidth, int nSrcHeight,
 //                          ::u32 clrTransparent) override;
 
-//      void alpha_blendRaw(double xDest, double yDest, i32 nDestWidth, i32 nDestHeight, ::draw2d::graphics * pgraphicsSrc, double xSrc, double ySrc, i32 nSrcWidth, i32 nSrcHeight, double dOpacity) override;
+//      void alpha_blendRaw(double xDest, double yDest, int nDestWidth, int nDestHeight, ::draw2d::graphics * pgraphicsSrc, double xSrc, double ySrc, int nSrcWidth, int nSrcHeight, double dOpacity) override;
 
-      /*void alpha_blend(double xDest, double yDest, i32 nDestWidth, i32 nDestHeight,
-       ::draw2d::graphics * pgraphicsSrc, double xSrc, double ySrc, i32 nSrcWidth, i32 nSrcHeight,
+      /*void alpha_blend(double xDest, double yDest, int nDestWidth, int nDestHeight,
+       ::draw2d::graphics * pgraphicsSrc, double xSrc, double ySrc, int nSrcWidth, int nSrcHeight,
        BLENDFUNCTION blend);*/
 
 
@@ -380,50 +380,50 @@ namespace draw2d_quartz2d
 //                              const char * lpszString, ::u32 nCount, int * lpDxWidths);
 //      void ExtTextOut(double x, double y, ::u32 nOptions, const ::rectangle_f64 & rectangle,
 //                      const string & str, int * lpDxWidths) override;
-//      virtual size_f64 TabbedTextOut(double x, double y, const char * lpszString, i32 nCount,
-//                                 i32 nTabPositions, int * lpnTabStopPositions, i32 nTabOrigin);
+//      virtual size_f64 TabbedTextOut(double x, double y, const char * lpszString, int nCount,
+//                                 int nTabPositions, int * lpnTabStopPositions, int nTabOrigin);
 //      size_f64 TabbedTextOut(double x, double y, const string & str,
-//                         i32 nTabPositions, int * lpnTabStopPositions, i32 nTabOrigin);
+//                         int nTabPositions, int * lpnTabStopPositions, int nTabOrigin);
 
-      virtual i32 draw_text(const char * lpszString, i32 nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none);
+      virtual int draw_text(const char * lpszString, int nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none);
 //      void draw_text(const string & str, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
       void draw_text(const string & strParam,const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
 
-//      virtual i32 draw_text_ex(char * lpszString, i32 nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams);
+//      virtual int draw_text_ex(char * lpszString, int nCount, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams);
 //      void draw_text_ex(const string & str, const ::rectangle_f64 & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams) override;
 
       size_f64 get_text_extent(const ::scoped_string & scopedstr, ::collection::index iIndex) override;
       size_f64 get_text_extent(const ::scoped_string & scopedstr) override;
       //size_f64 get_text_extent(const block & block) override;
-//      void get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, i32 iIndex) ;
+//      void get_text_extent(size_f64 & size, const char * lpszString, strsize nCount, int iIndex) ;
 //      void get_text_extent(size_f64 & size, const char * lpszString, strsize nCount) override;
 //      void get_text_extent(size_f64 & size, const string & str) override;
 //      size_f64 GetOutputTextExtent(const char * lpszString, strsize nCount) override;
 //      size_f64 GetOutputTextExtent(const string & str) override;
-//      size_f64 GetTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions);
-//      size_f64 GetTabbedTextExtent(const string & str, i32 nTabPositions, int * lpnTabStopPositions);
-//      size_f64 GetOutputTabbedTextExtent(const char * lpszString, strsize nCount, i32 nTabPositions, int * lpnTabStopPositions);
-//      size_f64 GetOutputTabbedTextExtent(const string & str, i32 nTabPositions, int * lpnTabStopPositions) ;
+//      size_f64 GetTabbedTextExtent(const char * lpszString, strsize nCount, int nTabPositions, int * lpnTabStopPositions);
+//      size_f64 GetTabbedTextExtent(const string & str, int nTabPositions, int * lpnTabStopPositions);
+//      size_f64 GetOutputTabbedTextExtent(const char * lpszString, strsize nCount, int nTabPositions, int * lpnTabStopPositions);
+//      size_f64 GetOutputTabbedTextExtent(const string & str, int nTabPositions, int * lpnTabStopPositions) ;
 //      void GrayString(::draw2d::brush* pBrush,
-//                              void (CALLBACK* lpfnOutput)(HDC, LPARAM, i32), LPARAM lpData,
-//                              i32 nCount, double x, double y, double dWidth, double dHeight) override;
+//                              void (CALLBACK* lpfnOutput)(HDC, LPARAM, int), LPARAM lpData,
+//                              int nCount, double x, double y, double dWidth, double dHeight) override;
       ::u32 GetTextAlign() override;
       ::u32 SetTextAlign(::u32 nFlags) override;
-//      i32 GetTextFace(i32 nCount, char * lpszFacename);
-//      i32 GetTextFace(string & rString) override;
+//      int GetTextFace(int nCount, char * lpszFacename);
+//      int GetTextFace(string & rString) override;
       void get_text_metrics(::write_text::text_metric * lpMetrics) override;
       void get_output_text_metrics(::write_text::text_metric * lpMetrics) override;
-//      i32 SetTextJustification(i32 nBreakExtra, i32 nBreakCount) override;
-//      i32 GetTextCharacterExtra() override;
-//      i32 SetTextCharacterExtra(i32 nCharExtra) override;
+//      int SetTextJustification(int nBreakExtra, int nBreakCount) override;
+//      int GetTextCharacterExtra() override;
+//      int SetTextCharacterExtra(int nCharExtra) override;
 
-      //xxx      ::u32 GetCharacterPlacement(const char * lpString, i32 nCount, i32 nMaxExtent, LPGCP_RESULTS lpResults, ::u32 dwFlags) const;
-      //xxx      ::u32 GetCharacterPlacement(string & str, i32 nMaxExtent, LPGCP_RESULTS lpResults, ::u32 dwFlags) const;
+      //xxx      ::u32 GetCharacterPlacement(const char * lpString, int nCount, int nMaxExtent, LPGCP_RESULTS lpResults, ::u32 dwFlags) const;
+      //xxx      ::u32 GetCharacterPlacement(string & str, int nMaxExtent, LPGCP_RESULTS lpResults, ::u32 dwFlags) const;
 
 //#if (_WIN32_WINNT >= 0x0500)
 //
-//      void GetTextExtentExPointI(LPWORD pgiIn, i32 cgi, i32 nMaxExtent, int * lpnFit, int * alpDx, __out_opt LPSIZE32 LPSIZE32) const;
-//      void GetTextExtentPointI(LPWORD pgiIn, i32 cgi, __out_opt LPSIZE32 LPSIZE32) const;
+//      void GetTextExtentExPointI(LPWORD pgiIn, int cgi, int nMaxExtent, int * lpnFit, int * alpDx, __out_opt LPSIZE32 LPSIZE32) const;
+//      void GetTextExtentPointI(LPWORD pgiIn, int cgi, __out_opt LPSIZE32 LPSIZE32) const;
 //
 //#endif
 
@@ -434,7 +434,7 @@ namespace draw2d_quartz2d
 //      void DrawFrameControl(rectangle_f64 * prectangle, ::u32 nType, ::u32 nState);
 
 //      // Scrolling Functions
-//      void ScrollDC(i32 Δx, i32 Δy, const ::rectangle_f64 & rectScroll, const ::rectangle_f64 & rectClip,
+//      void ScrollDC(int Δx, int Δy, const ::rectangle_f64 & rectScroll, const ::rectangle_f64 & rectClip,
 //                    ::draw2d::region* pRgnUpdate, rectangle_f64 * lpRectUpdate) override;
 //
 //      // font Functions
@@ -445,7 +445,7 @@ namespace draw2d_quartz2d
 //
 //      //xxx      void GetCharABCWidths(::u32 nFirstChar, ::u32 nLastChar, LPABC lpabc) const;
 //      ::u32 GetFontData(::u32 dwTable, ::u32 dwOffset, void * lpData, ::u32 cbData) override;
-//      //xxx      i32 GetKerningPairs(i32 nPairs, LPKERNINGPAIR lpkrnpair) const;
+//      //xxx      int GetKerningPairs(int nPairs, LPKERNINGPAIR lpkrnpair) const;
 //      //xxx      ::u32 GetOutlineTextMetrics(::u32 cbData, LPOUTLINETEXTMETRIC lpotm) const;
 //      //xxx      ::u32 GetGlyphOutline(::u32 nChar, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPGLYPHMETRICS lpgm,
 //      //xxx    ::u32 cbBuffer, void * lpBuffer, const MAT2* lpmat2) const;
@@ -465,23 +465,23 @@ namespace draw2d_quartz2d
 //#endif
 //
 //      // Printer/Device Escape Functions
-//      virtual i32 Escape(i32 nEscape, i32 nCount, const char * lpszInData, void * lpOutData) override;
-//      i32 Escape(i32 nEscape, i32 nInputSize, const char * lpszInputData, i32 nOutputSize, char * lpszOutputData) override;
-//      i32 DrawEscape(i32 nEscape, i32 nInputSize, const char * lpszInputData) override;
+//      virtual int Escape(int nEscape, int nCount, const char * lpszInData, void * lpOutData) override;
+//      int Escape(int nEscape, int nInputSize, const char * lpszInputData, int nOutputSize, char * lpszOutputData) override;
+//      int DrawEscape(int nEscape, int nInputSize, const char * lpszInputData) override;
 
       // Escape helpers
-      //i32 StartDoc(const ::string & lpszDocName) override;  // old Win3.0 version
-      //xxx      i32 StartDoc(LPDOCINFO lpDocInfo);
-      i32 StartPage() override;
-      i32 EndPage() override;
-      //i32 SetAbortProc(bool (CALLBACK* lpfn)(HDC, i32)) override;
-      i32 AbortDoc() override;
-      i32 EndDoc() override;
+      //int StartDoc(const ::string & lpszDocName) override;  // old Win3.0 version
+      //xxx      int StartDoc(LPDOCINFO lpDocInfo);
+      int StartPage() override;
+      int EndPage() override;
+      //int SetAbortProc(bool (CALLBACK* lpfn)(HDC, int)) override;
+      int AbortDoc() override;
+      int EndDoc() override;
 
       // MetaFile Functions
       //xxx      void PlayMetaFile(HMETAFILE hMF);
 //      void PlayMetaFile(HENHMETAFILE hEnhMetaFile, const ::rectangle_f64 & rectBounds);
-//      void AddMetaFileComment(::u32 nDataSize, const ::u8* pCommentData) override;
+//      void AddMetaFileComment(::u32 nDataSize, const unsigned char* pCommentData) override;
       // can be used for enhanced metafiles only
 
       // Path Functions
@@ -510,8 +510,8 @@ namespace draw2d_quartz2d
 
       float GetMiterLimit() override;
       void SetMiterLimit(float fMiterLimit) override;
-      //i32 GetPath(::point_f64 * lpPoints, LPBYTE lpTypes, i32 nCount) ;
-      //void SelectClipPath(i32 nMode) override;
+      //int GetPath(::point_f64 * lpPoints, LPBYTE lpTypes, int nCount) ;
+      //void SelectClipPath(int nMode) override;
 
       // Misc Helper Functions
 //      static ::draw2d::brush* PASCAL GetHalftoneBrush(::base::application * papp);

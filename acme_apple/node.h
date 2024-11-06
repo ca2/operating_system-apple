@@ -21,7 +21,7 @@ namespace acme_apple
    public:
 
       
-      //__creatable_from_library(node, ::acme::node, "acme_apple");
+      //__creatable_from_library(node, ::platform::node, "acme_apple");
       
 
       node();
@@ -46,7 +46,7 @@ namespace acme_apple
       string veriwell_multimedia_music_midi_get_default_implementation_name() override;
       
       
-      void user_post(const ::procedure & procedure) override;
+      void _user_post(const ::procedure & procedure) override;
       
       
       void shell_open(const ::file::path & path, const ::string & strParams = "", const ::file::path & pathFolder = "") override;

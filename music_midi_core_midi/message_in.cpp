@@ -350,11 +350,11 @@ namespace music
             
             Byte message[3];
             
-            message[0] = (::u8) (::music::midi::control_change) | channel;
+            message[0] = (unsigned char) (::music::midi::control_change) | channel;
             
-            message[1] = (::u8) (0x7f & controller);
+            message[1] = (unsigned char) (0x7f & controller);
             
-            message[2] = (::u8) (0x7f & value);
+            message[2] = (unsigned char) (0x7f & value);
             
             add_short_message(message, 3);
             
@@ -366,9 +366,9 @@ namespace music
             
             Byte message[2];
             
-            message[0] = (::u8) (::music::midi::program_change) | channel;
+            message[0] = (unsigned char) (::music::midi::program_change) | channel;
             
-            message[1] = (::u8) (0x7f & instrument);
+            message[1] = (unsigned char) (0x7f & instrument);
             
             add_short_message(message, 2);
             
@@ -386,7 +386,7 @@ namespace music
             
             Byte message[3];
             
-            message[0] = (::u8) (::music::midi::pitch_bend) | channel;
+            message[0] = (unsigned char) (::music::midi::pitch_bend) | channel;
             
             message[1] = c1;
             
@@ -518,9 +518,9 @@ namespace music
                
                const MIDIPacket & packet = pktlist->packet[i];
             
-               ::u8 b =packet.data[0];
-               ::u8 b1 =packet.data[1];
-               ::u8 b2 =packet.data[2];
+               unsigned char b =packet.data[0];
+               unsigned char b1 =packet.data[1];
+               unsigned char b2 =packet.data[2];
                
                on_os_message(b, b1, b2);
                

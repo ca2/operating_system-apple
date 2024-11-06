@@ -24,7 +24,7 @@ namespace draw2d_quartz2d
 
    }
 
-   i32 palette::GetEntryCount()
+   int palette::GetEntryCount()
    {
 
       return 0;

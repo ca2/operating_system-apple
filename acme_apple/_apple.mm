@@ -83,7 +83,7 @@ char * mm_error_description(OSStatus status)
 //}
 
 
-//void ns_main_async(dispatch_block_t block)
+//void ns_main_post(dispatch_block_t block)
 //{
 //   
 //   //   dispatch_block_t block = ^{
@@ -117,7 +117,7 @@ class matter;
 void main_async_runnable(::matter * prunnable)
 {
    
-   ns_main_async(^
+   ns_main_post(^
    {
 
       prunnable->run();
@@ -132,10 +132,10 @@ void main_async_runnable(::matter * prunnable)
 void _main_sync_runnable(::matter * prunnable, DWORD dwMillis)
 {
    
-   ns_main_sync(^
+   ns_main_send(^
                 {
                    
-      __call({use_t{}, prunnable});
+      __call(prunnable);
                    
                 });
    
@@ -496,14 +496,14 @@ bool uniform_type_conforms_to_data_type(CFStringRef cfstr, enum_data_type edatat
    
 }
 
-void apple_operating_system_release(::i32 & iMajor, ::i32 & iMinor, ::i32 & iPatch)
+void apple_operating_system_release(int & iMajor, int & iMinor, int & iPatch)
 {
    
    NSOperatingSystemVersion version = [ [ NSProcessInfo processInfo] operatingSystemVersion ];
 
-   iMajor = (::i32) version.majorVersion;
-   iMinor = (::i32) version.minorVersion;
-   iPatch = (::i32) version.patchVersion;
+   iMajor = (int) version.majorVersion;
+   iMinor = (int) version.minorVersion;
+   iPatch = (int) version.patchVersion;
 
 }
 
@@ -543,7 +543,7 @@ bool g_b_iCloudInitialized = false;
       
    }
 
-   ns_main_sync(^{
+   ns_main_send(^{
       
       g_b_iCloudInitialized = true;
       

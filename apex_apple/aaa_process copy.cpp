@@ -135,7 +135,7 @@ void install_sigchld_handler()
 }
 
 
-CLASS_DECL_APEX void process_get_os_priority(i32 * piOsPolicy, i32 iCa2Priority);
+CLASS_DECL_APEX void process_get_os_priority(int * piOsPolicy, int iCa2Priority);
 
 
 namespace apple
@@ -266,10 +266,10 @@ namespace apple
       }
 
 
-      if(epriority != (i32) ::priority_none)
+      if(epriority != (int) ::priority_none)
       {
 
-         i32 iOsPriority;
+         int iOsPriority;
          
          process_get_os_priority(&iOsPriority, epriority);
 
@@ -404,14 +404,14 @@ namespace apple
 
       ::file::path path = str;
 
-      if(pcontext->m_papexcontext->file().exists(path.folder() / "libapex.dylib"))
+      if(papplication->file().exists(path.folder() / "libapex.dylib"))
       {
 
          ::file::path folderNew = path.folder();
 
          folderNew -= 3;
 
-         if(pcontext->m_papexcontext->file().exists(folderNew / "libapex.dylib"))
+         if(papplication->file().exists(folderNew / "libapex.dylib"))
          {
 
             strFallback = folderNew;

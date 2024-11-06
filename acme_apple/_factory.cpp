@@ -13,7 +13,7 @@ IMPLEMENT_FACTORY(acme_apple)
    
    acme_darwin_factory(pfactory);
 
-   pfactory->add_factory_item < ::acme_apple::node, ::acme::node > ();
+   pfactory->add_factory_item < ::acme_apple::node, ::platform::node > ();
    //create_factory < ::posix::file_memory_map, ::file::memory_map >();
    pfactory->add_factory_item < ::acme_apple::file_context, ::file_context >();
    

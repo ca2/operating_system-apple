@@ -2,41 +2,52 @@
 #pragma once
 
 
-#include "apex/innate_ui/icon.h"
+#include "acme/nano/graphics/icon.h"
 //#include <gtk/gtk.h>
 //#include <QPixmap>
 
 
-namespace innate_ui_appkit
+
+namespace quartz2d
 {
 
-
-   class CLASS_DECL_INNATE_UI_APPKIT icon :
-      virtual public ::innate_ui::icon
+   namespace nano
    {
-   public:
 
-
-      //GdkPaintable *  m_pgdkpaintable;
-      //QPixmap *m_pqpixmap;
-#ifdef __OBJC__
-      NSImage * m_pnsimage;
-#else
-      void * m_pNSImage;
-#endif
-      icon();
-      ~icon() override;
-
-
-      void _create() override;
-      virtual void __create();
+  
+      namespace graphics
+   {
       
-      void __icon_release();
+      class CLASS_DECL_NANO_GRAPHICS_QUARTZ2D icon :
+      virtual public ::nano::graphics::icon
+      {
+         public:
+         
+         
+         //GdkPaintable *  m_pgdkpaintable;
+         //QPixmap *m_pqpixmap;
+#ifdef __OBJC__
+         NSImage * m_pnsimage;
+#else
+         void * m_pNSImage;
+#endif
+         icon();
+         ~icon() override;
+         
+         void load_image_file(const void *p, memsize size) override;
 
-   };
-
-
-} // namespace innate_ui_appkit
+         
+         ///void _create() override;
+         //virtual void __create();
+         
+         //void __icon_release();
+         
+         void _draw_in_context(::quartz2d::nano::graphics::device * pdevice, int x, int y, int cx, int cy);
+         
+      };
+      } // namespace graphics
+      } // namespace nano
+      } // namespace quartz2d
 
 
 

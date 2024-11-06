@@ -121,7 +121,7 @@ namespace music
 //         {
 //            ASSERT(dRate >= 0.0);
 //            ASSERT(dRate <= 1.0);
-//            return (imedia_time) (i32) (get_sequence()->m_tkLength * dRate);
+//            return (imedia_time) (int) (get_sequence()->m_tkLength * dRate);
 //         }
 
 
@@ -350,7 +350,7 @@ namespace music
 //
 
 
-         bool player::SetTempoShift(i32 iTempoShift)
+         bool player::SetTempoShift(int iTempoShift)
          {
             //   if(IsPlaying())
             {

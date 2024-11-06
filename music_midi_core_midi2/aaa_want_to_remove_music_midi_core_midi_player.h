@@ -51,7 +51,7 @@ namespace music
 
             //imedia_time RateToTicks(double dRate) override;
 
-            bool SetTempoShift(i32 iTempoShift);
+            bool SetTempoShift(int iTempoShift);
 
             //bool SetMidiOutDevice(u32 uiDevice) override;
 

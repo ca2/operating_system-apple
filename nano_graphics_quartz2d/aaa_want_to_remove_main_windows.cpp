@@ -4,7 +4,7 @@
 #include "acme/os/_application.h"
 
 
-//CLASS_DECL_ACME i32 main_windows(HINSTANCE hinstance, HINSTANCE hPrevInstance, char * pCmdLine, int nCmdShow)
+//CLASS_DECL_ACME int main_windows(HINSTANCE hinstance, HINSTANCE hPrevInstance, char * pCmdLine, int nCmdShow)
 //{
 //
 //   int iStatus = -1;
@@ -84,7 +84,7 @@
 //      mainstruct.m_bUserEx = true;
 //      mainstruct.m_bShowApplicationInformation = false;
 //
-//      auto psystem = ::place(new ::acme::system());
+//      auto psystem = ::place(new ::platform::system());
 //
 //      psystem->system_construct(&mainstruct, hinstance, hPrevInstance, pCmdLine, nCmdShow);
 //

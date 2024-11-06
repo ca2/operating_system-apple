@@ -54,14 +54,14 @@ namespace music
             ::f64                   m_f64DelaySeconds;
             ::f64                   m_f64StartSampleTime;
             ::f64                   m_f64LastSampleTime;
-            ::i32                   m_i32LastFrameCount;
+            int                   m_i32LastFrameCount;
             bool                    m_bStarting;
             MIDIEventList           m_midieventlist;
             MIDIEventPacket *       m_pmidieventpacket = nullptr;
             int                     m_iProgramChangeStreak = -1;
             ::i64                   m_iFrameProgramChangeStreak = -1;
              
-             ::i32                  m_iAddedEvents;
+             int                  m_iAddedEvents;
             bool                    m_bInRenderMode;
 
             dls_synth_message_out();

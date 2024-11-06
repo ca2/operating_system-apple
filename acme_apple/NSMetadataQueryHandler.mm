@@ -261,7 +261,7 @@ enum_status ns_defer_initialize_icloud_container_access();
    
    self.metadata_query_handler_hold = self;
    
-   //ns_main_async(^()
+   //ns_main_post(^()
    {
       
       {

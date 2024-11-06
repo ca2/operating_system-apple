@@ -628,7 +628,7 @@ namespace music
 //                           
 //                           m_iFrame = m_iFrameProgramChangeStreak - (::i64) inTimeStamp->mSampleTime;
 //                           
-//                           auto status = MusicDeviceMIDIEventList(m_unitSynth, (::i32)m_iFrame, &m_midieventlist);
+//                           auto status = MusicDeviceMIDIEventList(m_unitSynth, (int)m_iFrame, &m_midieventlist);
 //                           
 //                           if(status != noErr)
 //                           {
@@ -679,7 +679,7 @@ namespace music
 //                           
 //                           m_iFrame = m_iFrameProgramChangeStreak - (::i64) inTimeStamp->mSampleTime;
 //                           
-//                           MusicDeviceMIDIEventList(m_unitSynth, (::i32)m_iFrame, &m_midieventlist);
+//                           MusicDeviceMIDIEventList(m_unitSynth, (int)m_iFrame, &m_midieventlist);
 //                           
 //                           m_pmidieventpacket = MIDIEventListInit(&m_midieventlist, kMIDIProtocol_1_0);
 //                           
@@ -1113,7 +1113,7 @@ namespace music
                   if(m_iAddedEvents > 0)
                   {
                      
-                     auto status = MusicDeviceMIDIEventList(m_unitSynth, (::i32)m_iFrame, &m_midieventlist);
+                     auto status = MusicDeviceMIDIEventList(m_unitSynth, (int)m_iFrame, &m_midieventlist);
                      
                      if(status != noErr)
                      {

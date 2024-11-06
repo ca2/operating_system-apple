@@ -138,7 +138,7 @@ namespace multimedia
       }
 
 
-      i32 toolbox::exit_thread()
+      int toolbox::exit_thread()
       {
 
          if(m_runmode != nullptr)

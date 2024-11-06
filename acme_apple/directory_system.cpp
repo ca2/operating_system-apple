@@ -2,7 +2,7 @@
 // Recreated on 2021-05-16 15:05 <3ThomasBS_ // for macOS
 // From windowing_ios by camilo on 2022-05-11 06:20 PM <3ThomasBorregaardSorensen!!
 #include "framework.h"
-#include "acme_directory.h"
+#include "directory_system.h"
 #include "file_listing_handler.h"
 #include "acme/filesystem/filesystem/directory_system.h"
 #include "acme/filesystem/filesystem/path_system.h"
@@ -17,7 +17,7 @@ namespace acme_apple
 {
 
    
-   acme_directory::acme_directory()
+   directory_system::directory_system()
    {
 
       //m_pplatformdir = this;
@@ -25,14 +25,14 @@ namespace acme_apple
    }
 
 
-   acme_directory::~acme_directory()
+   directory_system::~directory_system()
    {
 
 
    }
 
 
-//   string acme_directory::dir_root()
+//   string directory_system::dir_root()
 //   {
 //
 //      return home() / ".config/ca2";
@@ -40,7 +40,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::get_memory_map_base_folder_path() 
+//   ::file::path directory_system::get_memory_map_base_folder_path() 
 //   {
 //
 //      return home() / ".config/ca2/memory_map";
@@ -48,7 +48,7 @@ namespace acme_apple
 //   }
 //
 //
-////   ::file::path acme_directory::home()
+////   ::file::path directory_system::home()
 ////   {
 ////
 ////      return getenv("HOME");
@@ -56,7 +56,7 @@ namespace acme_apple
 ////   }
 //
 //
-//   ::file::path acme_directory::program_data()
+//   ::file::path directory_system::program_data()
 //   {
 //
 //      return home() / "application";
@@ -64,7 +64,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::roaming()
+//   ::file::path directory_system::roaming()
 //   {
 //
 //      return home() / "Library/Application Support";
@@ -72,7 +72,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::appdata()
+//   ::file::path directory_system::appdata()
 //   {
 //
 //      return ca2roaming() / "appdata" / app_relative();
@@ -80,7 +80,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::public_system()
+//   ::file::path directory_system::public_system()
 //   {
 //
 //      return public_root() / "system";
@@ -88,7 +88,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::system()
+//   ::file::path directory_system::system()
 //   {
 //
 //      return ca2roaming() / "system";
@@ -96,7 +96,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::config()
+//   ::file::path directory_system::config()
 //   {
 //
 //      return ca2roaming() / "config";
@@ -104,7 +104,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::local()
+//   ::file::path directory_system::local()
 //   {
 //
 //      return ca2roaming() / "local";
@@ -112,7 +112,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::sensitive()
+//   ::file::path directory_system::sensitive()
 //   {
 //
 //   #ifdef LINUX
@@ -133,7 +133,7 @@ namespace acme_apple
 //
 //
 //
-//   string acme_directory::system_short_name()
+//   string directory_system::system_short_name()
 //   {
 //
 //   #ifdef _UWP
@@ -151,7 +151,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::relative(::file::path path)
+//   ::file::path directory_system::relative(::file::path path)
 //   {
 //
 //      path.find_replace(":", "");
@@ -165,7 +165,7 @@ namespace acme_apple
 //   #ifdef _UWP
 //
 //
-//   ::file::path acme_directory::app_relative()
+//   ::file::path directory_system::app_relative()
 //   {
 //
 //      return "";
@@ -176,7 +176,7 @@ namespace acme_apple
 //   #else
 //
 //
-//   ::file::path acme_directory::app_relative()
+//   ::file::path directory_system::app_relative()
 //   {
 //
 //      ::file::path path = m_psystem->file_system()->module();
@@ -192,7 +192,7 @@ namespace acme_apple
 //
 //
 //
-//   ::file::path acme_directory::inplace_install(string strAppId, string strPlatform, string strConfiguration)
+//   ::file::path directory_system::inplace_install(string strAppId, string strPlatform, string strConfiguration)
 //   {
 //
 //   #ifdef LINUX_DESKTOP
@@ -248,7 +248,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::inplace_matter_install(string strAppId, string strPlatform, string strConfiguration)
+//   ::file::path directory_system::inplace_matter_install(string strAppId, string strPlatform, string strConfiguration)
 //   {
 //
 //   #ifdef LINUX_DESKTOP
@@ -279,7 +279,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::install()
+//   ::file::path directory_system::install()
 //   {
 //
 //      if (m_pathInstallFolder == nullptr || m_pathInstallFolder.is_empty())
@@ -294,7 +294,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::default_install()
+//   ::file::path directory_system::default_install()
 //   {
 //
 //   #ifdef ANDROID
@@ -314,7 +314,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::beforeca2()
+//   ::file::path directory_system::beforeca2()
 //   {
 //
 //      return file_path_folder(install());
@@ -332,7 +332,7 @@ namespace acme_apple
 //   #include <Shlobj.h>
 //
 //
-//   ::file::path acme_directory::program_files_x86()
+//   ::file::path directory_system::program_files_x86()
 //   {
 //
 //      wstring wstrModuleFolder(get_buffer, sizeof(unichar) * 8);
@@ -357,7 +357,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::program_files()
+//   ::file::path directory_system::program_files()
 //   {
 //
 //      wstring wstrModuleFolder(get_buffer, sizeof(unichar) * 8);
@@ -387,7 +387,7 @@ namespace acme_apple
 //   #else
 //
 //
-//   ::file::path acme_directory::program_files_x86()
+//   ::file::path directory_system::program_files_x86()
 //   {
 //
 //      ::file::path path("/opt/ca2");
@@ -397,7 +397,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::program_files()
+//   ::file::path directory_system::program_files()
 //   {
 //
 //      ::file::path path("/opt/ca2");
@@ -410,7 +410,7 @@ namespace acme_apple
 //   #endif
 //
 //
-//   ::file::path acme_directory::stage(string strAppId, string strPlatform, string strConfiguration)
+//   ::file::path directory_system::stage(string strAppId, string strPlatform, string strConfiguration)
 //   {
 //
 //      return inplace_install(strAppId, strPlatform, strConfiguration) / "time" / time_binary_platform(strPlatform) / strConfiguration;
@@ -421,7 +421,7 @@ namespace acme_apple
 ////   #ifdef LINUX
 //
 //
-//   ::file::path acme_directory::home()
+//   ::file::path directory_system::home()
 //   {
 //
 //      return getenv("HOME");
@@ -435,7 +435,7 @@ namespace acme_apple
 //   #if defined(_UWP) || defined(__APPLE__) || defined(LINUX) || defined(ANDROID)
 //
 //
-////   ::file::path acme_directory::bookmark()
+////   ::file::path directory_system::bookmark()
 ////   {
 ////
 ////      auto psystem = m_psystem;
@@ -453,7 +453,7 @@ namespace acme_apple
 //   #ifdef _UWP
 //
 //
-//   ::file::path acme_directory::home()
+//   ::file::path directory_system::home()
 //   {
 //
 //      return "";
@@ -466,7 +466,7 @@ namespace acme_apple
 //
 //
 //
-//   void acme_directory::set_path_install_folder(const ::string & strPath)
+//   void directory_system::set_path_install_folder(const ::string & strPath)
 //   {
 //
 //      m_pathInstallFolder = strPath;
@@ -474,7 +474,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::bookmark()
+//   ::file::path directory_system::bookmark()
 //   {
 //
 //      return localconfig() / "bookmark";
@@ -485,7 +485,7 @@ namespace acme_apple
 //
 //
 //
-//   ::file::path acme_directory::sys_temp()
+//   ::file::path directory_system::sys_temp()
 //   {
 //
 //      return appdata() / "time";
@@ -493,7 +493,7 @@ namespace acme_apple
 //   }
 //
 //
-//   //::string acme_directory::dir_root()
+//   //::string directory_system::dir_root()
 //   //{
 //
 //   //   return "";
@@ -501,7 +501,7 @@ namespace acme_apple
 //   //}
 //
 //
-//   //::file::path acme_directory::home()
+//   //::file::path directory_system::home()
 //   //{
 //
 //   //   return "";
@@ -509,7 +509,7 @@ namespace acme_apple
 //   //}
 //
 //
-//   //::file::path acme_directory::program_data()
+//   //::file::path directory_system::program_data()
 //   //{
 //
 //   //   return "";
@@ -517,7 +517,7 @@ namespace acme_apple
 //   //}
 //
 //
-//   ::file::path acme_directory::ca2appdata()
+//   ::file::path directory_system::ca2appdata()
 //   {
 //
 //      return ca2roaming() / "appdata";
@@ -526,14 +526,14 @@ namespace acme_apple
 //
 //
 //
-//   ::file::path acme_directory::public_root()
+//   ::file::path directory_system::public_root()
 //   {
 //
 //      return program_data() / "ca2";
 //
 //   }
 //
-//   ::file::path acme_directory::ca2roaming()
+//   ::file::path directory_system::ca2roaming()
 //   {
 //
 //      return roaming() / "ca2";
@@ -541,7 +541,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::localconfig()
+//   ::file::path directory_system::localconfig()
 //   {
 //
 //      return ca2roaming() / "localconfig";
@@ -549,15 +549,15 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_directory::module()
+//   ::file::path directory_system::module()
 //   {
 //
-//      return ::acme_directory::module();
+//      return ::directory_system::module();
 //
 //   }
 //
 //   //
-//   //::file::path acme_directory::base_module()
+//   //::file::path directory_system::base_module()
 //   //{
 //   //
 //   //   return "";
@@ -565,23 +565,14 @@ namespace acme_apple
 //   //}
 //   //
 //
-//   //::file::path acme_directory::ca2_module()
+//   //::file::path directory_system::ca2_module()
 //   //{
 //   //
 //   //   return "";
 //   //
 //   //}
 //   //
-//   ::file::path acme_directory::archive()
-//   {
-//
-//      return "";
-//
-//   }
-//
-//
-//
-//   ::file::path acme_directory::tool()
+//   ::file::path directory_system::archive()
 //   {
 //
 //      return "";
@@ -589,7 +580,16 @@ namespace acme_apple
 //   }
 //
 //
-//   //::file::path acme_directory::roaming()
+//
+//   ::file::path directory_system::tool()
+//   {
+//
+//      return "";
+//
+//   }
+//
+//
+//   //::file::path directory_system::roaming()
 //   //{
 //
 //   //   return "";
@@ -597,7 +597,7 @@ namespace acme_apple
 //   //}
 //
 //
-//   ::file::path acme_directory::pathfind(const string& pszEnv, const string& pszTopic, const string& pszMode)
+//   ::file::path directory_system::pathfind(const string& pszEnv, const string& pszTopic, const string& pszMode)
 //   {
 //
 //      ::file::path_array stra;
@@ -606,7 +606,7 @@ namespace acme_apple
 //
 //      string strCandidate;
 //
-//      for (i32 i = 0; i < stra.get_count(); i++)
+//      for (int i = 0; i < stra.get_count(); i++)
 //      {
 //
 //         strCandidate = stra[i] / pszTopic;
@@ -626,7 +626,7 @@ namespace acme_apple
 //   }
 //
 //
-//   //::file::path acme_directory::get_memory_map_base_folder_path()
+//   //::file::path directory_system::get_memory_map_base_folder_path()
 //   //{
 //
 //   //   return "";
@@ -634,7 +634,7 @@ namespace acme_apple
 //   //}
 //
 //
-//   ::file::path acme_directory::user_appdata_local()
+//   ::file::path directory_system::user_appdata_local()
 //   {
 //
 //      //return _shell_get_special_folder_path(CSIDL_LOCAL_APPDATA);
@@ -644,7 +644,7 @@ namespace acme_apple
 //   }
 
 
-   bool acme_directory::has_icloud_container(const char * psz_iCloudContainerIdentifier)
+   bool directory_system::has_icloud_container(const char * psz_iCloudContainerIdentifier)
    {
       
       auto path = icloud_container2_final(psz_iCloudContainerIdentifier);
@@ -672,7 +672,7 @@ namespace acme_apple
    }
 
 
-   bool acme_directory::defer_enumerate_protocol(::file::listing& listing)
+   bool directory_system::defer_enumerate_protocol(::file::listing& listing)
    {
       
       if(has_icloud_container())
@@ -769,17 +769,17 @@ namespace acme_apple
          
       }
       
-      return ::acme_directory::defer_enumerate_protocol(listing);
+      return ::directory_system::defer_enumerate_protocol(listing);
       
    }
 
 
-   ::file::path acme_directory::icloud_container2_final(const char * psz_iCloudContainerIdentifier)
+   ::file::path directory_system::icloud_container2_final(const char * psz_iCloudContainerIdentifier)
    {
       
       ::string str_iCloudContainerIdentifier;
       
-      str_iCloudContainerIdentifier = acmepath()->icloud_container_identifier(psz_iCloudContainerIdentifier);
+      str_iCloudContainerIdentifier = path_system()->icloud_container_identifier(psz_iCloudContainerIdentifier);
       
       auto p = apple_icloud_container_folder(str_iCloudContainerIdentifier);
       

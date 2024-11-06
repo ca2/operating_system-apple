@@ -268,7 +268,7 @@ namespace music
             ::math::math::MaxClip(&dRate, 1.0);
             ::math::math::MinClip(&dRate,  0.0);
 
-            preroll.tkBase = (imedia_time) (i32) ((double) get_sequence()->m_tkLength * dRate);
+            preroll.tkBase = (imedia_time) (int) ((double) get_sequence()->m_tkLength * dRate);
             preroll.tkEnd  = get_sequence()->m_tkLength;
 
             get_sequence()->set_midi_out_device(m_pplayer->get_midi_out_device());

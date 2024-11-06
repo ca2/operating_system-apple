@@ -30,7 +30,7 @@ namespace multimedia
          void in_initialize_encoder() override;
 
 
-         void in_add_buffer(i32 iBuffer) override;
+         void in_add_buffer(int iBuffer) override;
 
 
          virtual void * get_os_data();
@@ -39,7 +39,7 @@ namespace multimedia
          AudioQueueRef in_get_safe_AudioQueueRef();
 
 
-         void in_open(i32 iBufferCount, i32 iBufferSampleCount) override;
+         void in_open(int iBufferCount, int iBufferSampleCount) override;
          void in_close() override;
          void in_stop() override;
          void in_start() override;

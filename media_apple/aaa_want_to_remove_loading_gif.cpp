@@ -9,7 +9,7 @@ namespace coreimage_imaging
 {
 
 
-   //bool draw2d_gif_load_frame(::image * pimageCompose, image_frame_array * pframea, image_frame * pointer, ::collection::index uFrameIndex, u8 * ba, int iScan, colorref_array & cra, int transparentIndex);
+   //bool draw2d_gif_load_frame(::image * pimageCompose, image_frame_array * pframea, image_frame * pointer, ::collection::index uFrameIndex, unsigned char * ba, int iScan, colorref_array & cra, int transparentIndex);
 
    bool coreimage_load_imagea_frame(::image * pimageCompose, image_frame_array * pimagea, index iFrame, FIBITMAP * pfi);
 
@@ -159,7 +159,7 @@ namespace coreimage_imaging
                         if (FreeImage_GetTagType(ptag) == FIDT_BYTE)
                         {
 
-                           pframe->m_bLocalPalette = *((u8 *)FreeImage_GetTagValue(ptag)) == 0;
+                           pframe->m_bLocalPalette = *((unsigned char *)FreeImage_GetTagValue(ptag)) == 0;
 
                         }
 
@@ -173,7 +173,7 @@ namespace coreimage_imaging
                         if (FreeImage_GetTagType(ptag) == FIDT_BYTE)
                         {
 
-                           auto iDisposal = *((u8 *)FreeImage_GetTagValue(ptag));
+                           auto iDisposal = *((unsigned char *)FreeImage_GetTagValue(ptag));
 
                            pframe->gif_set_disposal(iDisposal);
 
@@ -302,7 +302,7 @@ namespace coreimage_imaging
 //
 //            cra_from_quada(cra, pbi->bmiColors, pbi->bmiHeader.biClrUsed);
 //
-//            /*if (!draw2d_gif_load_frame(pimageCompose, pframea, pframe, iFrame, (u8 *)pdata, iScan, cra, transparentIndex))
+//            /*if (!draw2d_gif_load_frame(pimageCompose, pframea, pframe, iFrame, (unsigned char *)pdata, iScan, cra, transparentIndex))
 //            {
 //
 //               return false;
@@ -323,7 +323,7 @@ namespace coreimage_imaging
 //
 //#endif
 //
-//            //if (!draw2d_gif_load_frame(pimageCompose, pframea, pframe, iFrame, (u8 *)pdata, iScan, pframea->m_colorrefa, transparentIndex))
+//            //if (!draw2d_gif_load_frame(pimageCompose, pframea, pframe, iFrame, (unsigned char *)pdata, iScan, pframea->m_colorrefa, transparentIndex))
 //            //{
 //
 //            //   return false;

@@ -93,13 +93,13 @@ namespace coreimage_imaging
       if(options.toy)
       {
          
-         pcontext->m_papexcontext->file()->safe_get_memory(varFile, memory);
+         papplication->file()->safe_get_memory(varFile, memory);
          
       }
       else
       {
          
-         pcontext->m_papexcontext->file()->as_memory(varFile, memory);
+         papplication->file()->as_memory(varFile, memory);
 
    
       }
@@ -179,7 +179,7 @@ namespace coreimage_imaging
       else if (bGif)
       {
 
-      //m_psystem->m_pacmefile->put_contents("/home/camilo/a.gif", memory);
+      //m_psystem->file_system()->put_contents("/home/camilo/a.gif", memory);
 
          _load_multi_frame_image(pimage, memory);
 

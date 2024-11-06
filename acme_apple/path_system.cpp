@@ -3,7 +3,7 @@
 // From windowing_ios by camilo on 2022-05-11 06:19 PM <3ThomasBorregaardSorensen!!
 #include "framework.h"
 #include "acme/filesystem/filesystem/path_system.h"
-#include "acme_path.h"
+#include "path_system.h"
 
 //enum
 //{
@@ -24,7 +24,7 @@ namespace acme_apple
 
 
    
-   acme_path::acme_path()
+   path_system::path_system()
    {
 
       //m_pplatformpath = this;
@@ -32,14 +32,14 @@ namespace acme_apple
    }
 
 
-   acme_path::~acme_path()
+   path_system::~path_system()
    {
 
 
    }
 
 
-//   ::file::path acme_path::app_module()
+//   ::file::path path_system::app_module()
 //   {
 //
 //      ::file::path path = apple_app_module_path();
@@ -50,7 +50,7 @@ namespace acme_apple
 //
 
 
-//   void acme_path::create_symbolic_link(const char * pszLink, const char * pszSource)
+//   void path_system::create_symbolic_link(const char * pszLink, const char * pszSource)
 //   {
 //
 //      if(!ns_create_alias(pszLink, pszSource))
@@ -65,7 +65,7 @@ namespace acme_apple
 //   }
 //
 //
-//   bool acme_path::is_symbolic_link(const char * pszLink)
+//   bool path_system::is_symbolic_link(const char * pszLink)
 //   {
 //
 //      auto estatus = ns_symbolic_link_destination(nullptr, pszLink);
@@ -82,7 +82,7 @@ namespace acme_apple
 //   }
 //
 //
-//   ::file::path acme_path::symbolic_link_destination(const char * pszLink)
+//   ::file::path path_system::symbolic_link_destination(const char * pszLink)
 //   {
 //
 //      string strDestination;
@@ -105,7 +105,7 @@ namespace acme_apple
 //   }
 //
 //
-//   bool acme_path::has_custom_icon(const char * path)
+//   bool path_system::has_custom_icon(const char * path)
 //   {
 //
 ////      FSRef ref;

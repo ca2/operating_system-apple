@@ -115,5 +115,5 @@
 @end
 
 
-void ns_main_async(dispatch_block_t block);
-//void ns_main_sync(dispatch_block_t block, unsigned int uiMillist = -1);
+void ns_main_post(dispatch_block_t block);
+//void ns_main_send(dispatch_block_t block, unsigned int uiMillist = -1);

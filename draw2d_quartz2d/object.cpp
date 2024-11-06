@@ -18,7 +18,7 @@ namespace draw2d_quartz2d
    }
    
    
-   i32 object::get_object(i32 nCount, void * lpObject) const
+   int object::get_object(int nCount, void * lpObject) const
    {
       
       return 0;
@@ -26,7 +26,7 @@ namespace draw2d_quartz2d
    }
    
    
-//   bool object::CreateStockObject(i32 nIndex)
+//   bool object::CreateStockObject(int nIndex)
 //   {
 //      
 //      return 0;

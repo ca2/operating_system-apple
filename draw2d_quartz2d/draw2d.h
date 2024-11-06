@@ -33,7 +33,7 @@ namespace draw2d_quartz2d
       string write_text_get_default_implementation_name() override;
 
       
-      CGFontRef private_cgfontref(::acme::context * pcontext, const ::file::path & path);
+      CGFontRef private_cgfontref(::platform::context * pcontext, const ::file::path & path);
       
       
    };

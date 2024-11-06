@@ -4,8 +4,8 @@
 #include "framework.h"
 #include "acme_directory.h"
 #include "file_listing_handler.h"
-#include "acme/filesystem/filesystem/acme_directory.h"
-#include "acme/filesystem/filesystem/acme_path.h"
+#include "acme/filesystem/filesystem/directory_system.h"
+#include "acme/filesystem/filesystem/path_system.h"
 #include "acme/filesystem/filesystem/listing.h"
 #include "acme/platform/context.h"
 
@@ -144,7 +144,7 @@ namespace acme_apple
 //
 //      ::file::path pathSystemShortName = localconfig() / "system_short_name.txt";
 //
-//      return m_pacmefile->as_string(pathSystemShortName).trimmed();
+//      return file_system()->as_string(pathSystemShortName).trimmed();
 //
 //   #endif
 //
@@ -179,7 +179,7 @@ namespace acme_apple
 //   ::file::path acme_directory::app_relative()
 //   {
 //
-//      ::file::path path = m_psystem->m_pacmefile->module();
+//      ::file::path path = m_psystem->file_system()->module();
 //
 //      path = relative(path);
 //
@@ -237,11 +237,11 @@ namespace acme_apple
 //
 //   #elif defined(ANDROID)
 //
-//      return pacmedirectory->roaming();
+//      return pdirectorysystem->roaming();
 //
 //   #else
 //
-//      return m_psystem->m_pacmefile->module().folder(4);
+//      return m_psystem->file_system()->module().folder(4);
 //
 //   #endif
 //
@@ -267,11 +267,11 @@ namespace acme_apple
 //
 //   #elif defined(ANDROID)
 //
-//      return pacmedirectory->roaming();
+//      return pdirectorysystem->roaming();
 //
 //   #else
 //
-//      return m_psystem->m_pacmefile->module().folder(4);
+//      return m_psystem->file_system()->module().folder(4);
 //
 //   #endif
 //
@@ -299,11 +299,11 @@ namespace acme_apple
 //
 //   #ifdef ANDROID
 //
-//      return pacmedirectory->roaming();
+//      return pdirectorysystem->roaming();
 //
 //   #elif defined(__APPLE__)
 //
-//      return m_psystem->m_pacmefile->module().folder(3);
+//      return m_psystem->file_system()->module().folder(3);
 //
 //   #else
 //
@@ -440,9 +440,9 @@ namespace acme_apple
 ////
 ////      auto psystem = m_psystem;
 ////
-////      auto pacmedirectory = psystem->m_pacmedirectory;
+////      auto pdirectorysystem = psystem->directory_system();
 ////
-////      return pacmedirectory->localconfig() / "bookmark";
+////      return pdirectorysystem->localconfig() / "bookmark";
 ////
 ////   }
 //
@@ -657,7 +657,7 @@ namespace acme_apple
       }
       
       return false;
-   //   if(acmedirectory()->has_icloud_container())
+   //   if(directory_system()->has_icloud_container())
    //   {
    //
    //      ::file::path & path = listing.insert_at(0, "icloud://");

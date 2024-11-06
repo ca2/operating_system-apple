@@ -523,7 +523,7 @@ namespace draw2d_quartz2d
                   else if(alpha == 0)
                   {
 
-                     ((image32_t *)pdst2)->m_u32 = 0;
+                     ((image32_t *)pdst2)->m_ui = 0;
 
                   }
                   else

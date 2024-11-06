@@ -36,7 +36,7 @@ bool apple_get_file_image(::image::image * pimage, const char * pszFilePath)
 
    pimage->map();
 
-   if(!apple_get_file_image(&pimage->get_data()->m_u32, pimage->width(), pimage->height(), pimage->scan_size(), pszFilePath))
+   if(!apple_get_file_image(&pimage->get_data()->m_ui, pimage->width(), pimage->height(), pimage->scan_size(), pszFilePath))
    {
 
       return false;
@@ -53,7 +53,7 @@ bool apple_get_file_image_by_type_identifier(::image::image * pimage, const char
 
    pimage->map();
 
-   if(!apple_get_file_image_by_type_identifier(&pimage->get_data()->m_u32, pimage->width(), pimage->height(), pimage->scan_size(), pszTypeIdentifier))
+   if(!apple_get_file_image_by_type_identifier(&pimage->get_data()->m_ui, pimage->width(), pimage->height(), pimage->scan_size(), pszTypeIdentifier))
    {
 
       return false;

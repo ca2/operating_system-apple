@@ -261,7 +261,7 @@ namespace draw2d_quartz2d
          if(fontref != nullptr)
          {
             
-            m_font = CTFontCreateWithGraphicsFont(fontref, m_fontsize.f64(), nullptr, m_fontdescriptor);
+            m_font = CTFontCreateWithGraphicsFont(fontref, m_fontsize.double(), nullptr, m_fontdescriptor);
             
             if(m_fontName)
             {
@@ -288,7 +288,7 @@ namespace draw2d_quartz2d
          else if(m_fontdescriptor == nullptr)
          {
             
-            auto pfont = CTFontCreateWithName(m_fontName, m_fontsize.f64(), nullptr);
+            auto pfont = CTFontCreateWithName(m_fontName, m_fontsize.double(), nullptr);
             
             m_font = pfont;
 
@@ -296,7 +296,7 @@ namespace draw2d_quartz2d
          else
          {
             
-            m_font =  CTFontCreateWithFontDescriptor(m_fontdescriptor, m_fontsize.f64(), nullptr);
+            m_font =  CTFontCreateWithFontDescriptor(m_fontdescriptor, m_fontsize.double(), nullptr);
             
          }
          

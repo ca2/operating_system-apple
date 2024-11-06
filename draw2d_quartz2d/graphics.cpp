@@ -3300,7 +3300,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          if(bStroke)
          {
 
-            double dStroke = ::is_null(ppen) ? 3.0 : ppen->m_dWidth * 100.0 / pfont->m_fontsize.f64();
+            double dStroke = ::is_null(ppen) ? 3.0 : ppen->m_dWidth * 100.0 / pfont->m_fontsize.double();
 
             pkeys.add(kCTStrokeWidthAttributeName);
             pvals.add(CFNumberCreate(kCFAllocatorDefault, kCFNumberDoubleType, &dStroke));

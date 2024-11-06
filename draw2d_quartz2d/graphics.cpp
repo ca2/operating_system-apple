@@ -2098,7 +2098,7 @@ namespace draw2d_quartz2d
          
       }
 
-      CGContextSetRGBFillColor(m_cgcontext, __expand_f32_rgba(pbrush->m_color));
+      CGContextSetRGBFillColor(m_cgcontext, __expand_float_rgba(pbrush->m_color));
 
    }
 
@@ -2119,7 +2119,7 @@ namespace draw2d_quartz2d
          if(ppen->m_pbrush->m_ebrush == ::draw2d::e_brush_solid)
          {
 
-            CGContextSetRGBStrokeColor(m_cgcontext, __expand_f32_rgba(ppen->m_pbrush->m_color));
+            CGContextSetRGBStrokeColor(m_cgcontext, __expand_float_rgba(ppen->m_pbrush->m_color));
 
          }
 
@@ -2127,7 +2127,7 @@ namespace draw2d_quartz2d
       else
       {
 
-         CGContextSetRGBStrokeColor(m_cgcontext, __expand_f32_rgba(ppen->m_color));
+         CGContextSetRGBStrokeColor(m_cgcontext, __expand_float_rgba(ppen->m_color));
 
       }
       
@@ -2161,7 +2161,7 @@ namespace draw2d_quartz2d
 
       }
 
-      CGContextSetRGBStrokeColor(m_cgcontext, __expand_f32_rgba(pbrush->m_color));
+      CGContextSetRGBStrokeColor(m_cgcontext, __expand_float_rgba(pbrush->m_color));
 
       CGContextSetLineWidth(m_cgcontext, dWidth);
 
@@ -2298,7 +2298,7 @@ namespace draw2d_quartz2d
          r.size.width = inner.width() + f5 * 2.0f;
          r.size.height = inner.height() + f5 * 2.0f;
 
-         CGContextSetRGBFillColor(m_cgcontext, __expand_f32_rgba(pbrush->m_color1));
+         CGContextSetRGBFillColor(m_cgcontext, __expand_float_rgba(pbrush->m_color1));
          CGContextFillRect(m_cgcontext, r);
          
          float f2 = 0.444f;
@@ -2869,7 +2869,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
    void graphics::internal_set_fill_color(const ::color::color & color)
    {
 
-      CGContextSetRGBFillColor(m_cgcontext, __expand_f32_rgba(color));
+      CGContextSetRGBFillColor(m_cgcontext, __expand_float_rgba(color));
 
    }
 

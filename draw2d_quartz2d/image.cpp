@@ -253,7 +253,7 @@ namespace draw2d_quartz2d
       
          ::image::image_source imagesource(picon);
          
-         auto rectangle = ::rectangle_f64_dimension(0, 0, cx, cy);
+         auto rectangle = ::rectangle_double_dimension(0, 0, cx, cy);
          
          ::image::image_drawing_options imagedrawingoptions(rectangle);
          
@@ -272,7 +272,7 @@ namespace draw2d_quartz2d
       
          ::image::image_source imagesource(picon);
          
-         auto rectangle = ::rectangle_f64_dimension(0, 0, cx, cy);
+         auto rectangle = ::rectangle_double_dimension(0, 0, cx, cy);
          
          ::image::image_drawing_options imagedrawingoptions(rectangle);
          
@@ -289,7 +289,7 @@ namespace draw2d_quartz2d
       
          ::image::image_source imagesource(picon);
          
-         auto rectangle = ::rectangle_f64_dimension(0, 0, cx, cy);
+         auto rectangle = ::rectangle_double_dimension(0, 0, cx, cy);
          
          ::image::image_drawing_options imagedrawingoptions(rectangle);
          
@@ -299,7 +299,7 @@ namespace draw2d_quartz2d
          
       }
       //pimageM->g()->draw(
-      //rectangle_i32_dimension(0, 0, cx, cy),
+      //rectangle_int_dimension(0, 0, cx, cy),
       //picon);
 
       unsigned char * r1=(unsigned char*)pimage1->image32();
@@ -594,10 +594,10 @@ namespace draw2d_quartz2d
                   //pdst2[2] = psrc2[2] + ((pdst2[2] * (acomplement)) >> 8);
                   //pdst2[3] = psrc2[3] + ((pdst2[3] * (acomplement)) >> 8);
                   unsigned char acomplement = (~psrc2[3] * bA) >> 8;
-                  pdst2[0] = ::u8_clip(((psrc2[0] * bA) + (pdst2[0] * acomplement)) >> 8);
-                  pdst2[1] = ::u8_clip(((psrc2[1] * bA) + (pdst2[1] * acomplement)) >> 8);
-                  pdst2[2] = ::u8_clip(((psrc2[2] * bA) + (pdst2[2] * acomplement)) >> 8);
-                  pdst2[3] = ::u8_clip(((psrc2[3] * bA) + (pdst2[3] * acomplement)) >> 8);
+                  pdst2[0] = ::byte_clip(((psrc2[0] * bA) + (pdst2[0] * acomplement)) >> 8);
+                  pdst2[1] = ::byte_clip(((psrc2[1] * bA) + (pdst2[1] * acomplement)) >> 8);
+                  pdst2[2] = ::byte_clip(((psrc2[2] * bA) + (pdst2[2] * acomplement)) >> 8);
+                  pdst2[3] = ::byte_clip(((psrc2[3] * bA) + (pdst2[3] * acomplement)) >> 8);
 
 
 

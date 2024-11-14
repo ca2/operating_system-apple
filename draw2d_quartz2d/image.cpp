@@ -51,7 +51,7 @@ namespace draw2d_quartz2d
 
 
    // bPreserve is currently disregarded
-   void image::create(const ::size_i32 & size, ::enum_flag eflagCreate, int iGoodStride, bool bPreserve)
+   void image::create(const ::int_size & size, ::enum_flag eflagCreate, int iGoodStride, bool bPreserve)
    {
 
       if(m_pbitmap.is_set()
@@ -184,7 +184,7 @@ namespace draw2d_quartz2d
 
       }
 
-      ::size_i32 size = pbitmap->get_size();
+      ::int_size size = pbitmap->get_size();
 
       create(size);
       
@@ -217,10 +217,10 @@ namespace draw2d_quartz2d
    }
 
 
-   void image::_draw_raw(const ::rectangle_i32 & rectDst, ::image::image * pimageSrc, const ::point_i32 & pointSrc)
+   void image::_draw_raw(const ::int_rectangle & rectDst, ::image::image * pimageSrc, const ::int_point & pointSrc)
    {
    
-      rectangle_f64 rectangleSource(pointSrc, rectDst.size());
+      double_rectangle rectangleSource(pointSrc, rectDst.size());
    
       ::image::image_source imagesource(pimageSrc, rectangleSource);
       
@@ -382,14 +382,14 @@ namespace draw2d_quartz2d
    }
 
 
-   void image::blend(const ::point_i32 & pointDstParam, ::image::image * pimplSrc, const ::point_i32 & pointSrcParam, const ::size_i32 & sizeParam, unsigned char bA)
+   void image::blend(const ::int_point & pointDstParam, ::image::image * pimplSrc, const ::int_point & pointSrcParam, const ::int_size & sizeParam, unsigned char bA)
    {
       
-      ::point_i32 pointDst(pointDstParam);
+      ::int_point pointDst(pointDstParam);
       
-      ::point_i32 pointSrc(pointSrcParam);
+      ::int_point pointSrc(pointSrcParam);
       
-      ::size_i32 size(sizeParam);
+      ::int_size size(sizeParam);
 
       ::image::image * pimplDst = this;
 

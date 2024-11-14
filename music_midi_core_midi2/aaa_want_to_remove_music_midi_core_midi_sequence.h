@@ -88,7 +88,7 @@ namespace music
 
 
 
-            u64                                 m_uiStart;
+            huge_natural                                 m_uiStart;
             bool                                m_bStart;
 
             

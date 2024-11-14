@@ -68,7 +68,7 @@ namespace draw2d_quartz2d
    }
    
    
-   bool path::internal_add_arc(const ::rectangle_f64 & rectangle, double dBeg, double dEnd, bool bClockwise)
+   bool path::internal_add_arc(const ::double_rectangle & rectangle, double dBeg, double dEnd, bool bClockwise)
    {
       
       CGFloat d1 = rectangle.right() - rectangle.left();
@@ -299,10 +299,10 @@ namespace draw2d_quartz2d
    }
 
 
-   bool path::_set(::draw2d::graphics * pgraphics, const ::arc_f64 & arc)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::double_arc & arc)
    {
    
-      ::rectangle_f64 rectangle;
+      ::double_rectangle rectangle;
       
       rectangle = arc;
       
@@ -314,7 +314,7 @@ namespace draw2d_quartz2d
    
 
    
-   bool path::_set(::draw2d::graphics * pgraphics, const ::rectangle_f64 & rectangle)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::double_rectangle & rectangle)
    {
    
       CGRect r;
@@ -334,7 +334,7 @@ namespace draw2d_quartz2d
    }
          
 
-   bool path::_set(::draw2d::graphics * pgraphics, const ::ellipse_f64 & ellipse)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::double_ellipse & ellipse)
    {
 
       CGRect r;
@@ -353,7 +353,7 @@ namespace draw2d_quartz2d
       
    }
 
-   bool path::_set(::draw2d::graphics * pgraphics, const ::lines_f64 & lines)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::double_lines & lines)
    {
    
       ::array < CGPoint > points;
@@ -375,7 +375,7 @@ namespace draw2d_quartz2d
    }
                     
 
-   bool path::_set(::draw2d::graphics * pgraphics, const ::polygon_f64 & polygon)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::double_polygon & polygon)
    {
 
       ::array < CGPoint > points;
@@ -399,7 +399,7 @@ namespace draw2d_quartz2d
    }
 
 
-   bool path::_set(::draw2d::graphics * pgraphics, const ::line_f64 & line)
+   bool path::_set(::draw2d::graphics * pgraphics, const ::double_line & line)
    {
       
       if(line.m_p1 != m_pointEnd)
@@ -430,7 +430,7 @@ namespace draw2d_quartz2d
    }
    
 
-   bool path::contains(::draw2d::graphics_pointer & pgraphics, const ::point_f64 & point)
+   bool path::contains(::draw2d::graphics_pointer & pgraphics, const ::double_point & point)
    {
     
       CGMutablePathRef ppath = get_os_data <CGMutablePathRef>(pgraphics);

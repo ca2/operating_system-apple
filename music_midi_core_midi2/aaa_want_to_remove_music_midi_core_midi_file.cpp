@@ -477,7 +477,7 @@ namespace music
 //
 //            dwTicksPerSec = (unsigned int)uSMPTE * (unsigned int)(unsigned char)(m_MusicTempoTimeDivision & 0xFF);
 //
-//            return (i64) muldiv32((int) msOffset, dwTicksPerSec, 1000L);
+//            return (huge_integer) muldiv32((int) msOffset, dwTicksPerSec, 1000L);
 //         }
 //
 //         /* Walk the tempo map and find the nearest millisecond position. Linearly

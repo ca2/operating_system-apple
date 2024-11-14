@@ -32,7 +32,7 @@ namespace music
             
          }
 
-         ::u64 nano_to_absolute(::u64 nano)
+         ::huge_natural nano_to_absolute(::huge_natural nano)
          {
             
             return nano * sTimebaseInfo.denom / sTimebaseInfo.numer;

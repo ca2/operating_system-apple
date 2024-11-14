@@ -395,7 +395,7 @@ namespace innate_ui_appkit
    }
 
 
-   void __impact::set_position(const ::point_i32 & pointParam)
+   void __impact::set_position(const ::int_point & pointParam)
    {
 
       auto point = pointParam;
@@ -424,7 +424,7 @@ namespace innate_ui_appkit
    }
 
 
-   void __impact::set_size(const ::size_i32 & sizeParam)
+   void __impact::set_size(const ::int_size & sizeParam)
    {
 
       auto size = sizeParam;
@@ -441,12 +441,12 @@ namespace innate_ui_appkit
    }
 
 
-   void __impact::adjust_for_client_size(const ::size_i32 & sizeParam)
+   void __impact::adjust_for_client_size(const ::int_size & sizeParam)
    {
 
       auto size = sizeParam;
 
-      set_size(sizeParam + ::size_i32(8, 40));
+      set_size(sizeParam + ::int_size(8, 40));
 
       // sync([this, size]()
       //    {

@@ -31,7 +31,7 @@ namespace music
 
          CFStringRef ConnectedEndpointName(MIDIEndpointRef endpoint);
 
-         ::u64 nano_to_absolute(::u64 nano);
+         ::huge_natural nano_to_absolute(::huge_natural nano);
 
          // The following is copied from: http://developer.apple.com/qa/qa2004/qa1374.html
          CFStringRef EndpointName(MIDIEndpointRef endpoint, bool isExternal);
@@ -205,7 +205,7 @@ namespace music
          }
 
 
-         ::e_status     midi::translate_os_result(string & strMessage, string & strOsMessage, ::music::midi::object * pobject, i64 iOsResult, const string & strContext, const string & strText)
+         ::e_status     midi::translate_os_result(string & strMessage, string & strOsMessage, ::music::midi::object * pobject, huge_integer iOsResult, const string & strContext, const string & strText)
          {
 
             ::e_status     estatus = iOsResult == 0 ? ::success : error_failed;

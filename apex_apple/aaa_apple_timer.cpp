@@ -2,8 +2,8 @@ void * CreateDispatchQueue();
 
 void CancelDispatchSource(void * p);
 
-void * CreateDispatchTimer(u64 interval, u64 leeway, void * queue, void(*timer)(void * p), void * p);
-void * ResetDispatchTimer(void * timer, u64 interval, u64 leeway);
+void * CreateDispatchTimer(huge_natural interval, huge_natural leeway, void * queue, void(*timer)(void * p), void * p);
+void * ResetDispatchTimer(void * timer, huge_natural interval, huge_natural leeway);
 
 void ReleaseDispatch(void * p);
 

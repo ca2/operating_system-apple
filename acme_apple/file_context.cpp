@@ -44,7 +44,7 @@ namespace acme_apple
 //   //   else
 //   //   {
 //   //
-//   //      varRet = (((u64) data.nFileSizeHigh) << 32) | (u64) data.nFileSizeLow;
+//   //      varRet = (((huge_natural) data.nFileSizeHigh) << 32) | (huge_natural) data.nFileSizeLow;
 //   //
 //   //      ((::file::path &) path).m_iSize = varRet.m_i64;
 //   //

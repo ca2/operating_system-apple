@@ -201,7 +201,7 @@ namespace acme_apple
 //
 //      string strFolder;
 //
-//      strsize iFind = strAppId.find('/');
+//      character_count iFind = strAppId.find('/');
 //
 //      if (strPlatform.compare_ci("win32") == 0 || strPlatform.compare_ci("x86") == 0)
 //      {
@@ -257,7 +257,7 @@ namespace acme_apple
 //
 //      string strFolder;
 //
-//      strsize iFind = strAppId.find('/');
+//      character_count iFind = strAppId.find('/');
 //
 //      path = ca2roaming();
 //

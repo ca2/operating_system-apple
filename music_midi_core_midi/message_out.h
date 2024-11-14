@@ -52,7 +52,7 @@ namespace music
 
             ::pointer < ::music::midi::core_midi::midi > m_pmidi;
 
-            u64                m_ui64Start;
+            huge_natural                m_ui64Start;
 
             MIDIEndpointRef m_endpoint;
             

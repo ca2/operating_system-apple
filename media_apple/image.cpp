@@ -13,7 +13,7 @@
 
 CFDataRef CopyImagePixels(CGImageRef inImage);
 
-void * file_memory_to_image_data(int & width, int & height, int & iScan, const void * pdata, unsigned long size_i32);
+void * file_memory_to_image_data(int & width, int & height, int & iScan, const void * pdata, unsigned long int_size);
 
 void * cg_image_get_image_data(int & width, int & height, int & iScan, CGImageRef image);
 

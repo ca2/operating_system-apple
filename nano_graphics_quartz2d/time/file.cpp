@@ -136,9 +136,9 @@ filesize file_length_dup(const char * path)
 
    DWORD dwHi = 0;
 
-   u64 u = GetFileSize(hfile, &dwHi);
+   huge_natural u = GetFileSize(hfile, &dwHi);
 
-   u |= ((u64)dwHi) << 32ULL;
+   u |= ((huge_natural)dwHi) << 32ULL;
 
    CloseHandle(hfile);
 
@@ -469,7 +469,7 @@ struct PROCESS_INFO_t
 ////      // The previously supplied buffer wasn't enough.
 ////      delete pSysHandleInformation;
 ////      size = needed + 1024;
-////      pSysHandleInformation = (PSYSTEM_HANDLE_INFORMATION)new unsigned char[size_i32];
+////      pSysHandleInformation = (PSYSTEM_HANDLE_INFORMATION)new unsigned char[int_size];
 ////      status = NtQuerySystemInformation( SystemHandleInformation, pSysHandleInformation, size, &needed );
 ////      if( !NT_SUCCESS(status))
 ////      {

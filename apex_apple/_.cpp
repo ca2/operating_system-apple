@@ -34,7 +34,7 @@ char * mm_ca2_command_line();
 //}
 
 
-//void * CreateDispatchTimer(u64 interval, u64 leeway, void * queue, void (*pfnTimer)(void * p), void * p)
+//void * CreateDispatchTimer(huge_natural interval, huge_natural leeway, void * queue, void (*pfnTimer)(void * p), void * p)
 //{
 //
 //   dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, (dispatch_queue_t) queue);
@@ -55,7 +55,7 @@ char * mm_ca2_command_line();
 //}
 //
 //
-//void * ResetDispatchTimer(void * timerParam, u64 interval, u64 leeway)
+//void * ResetDispatchTimer(void * timerParam, huge_natural interval, huge_natural leeway)
 //{
 //
 //   dispatch_source_t timer = (dispatch_source_t) timerParam;
@@ -272,10 +272,10 @@ bool __node_further_file_is_equal(file::path const & path1, file::path const & p
 
 
 
-i64 oswindow_id(oswindow w)
+huge_integer oswindow_id(oswindow w)
 {
 
-   return (i64) (w);
+   return (huge_integer) (w);
 
 }
 

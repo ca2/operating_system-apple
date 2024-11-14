@@ -23,9 +23,9 @@ namespace avfoundation
  
 #ifdef _DEBUG
  
- i64 speech::increment_reference_count() {}
- i64 speech::decrement_reference_count() {}
- i64 speech::release() {}
+ huge_integer speech::increment_reference_count() {}
+ huge_integer speech::decrement_reference_count() {}
+ huge_integer speech::release() {}
  
 #endif
  

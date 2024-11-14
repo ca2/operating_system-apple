@@ -311,7 +311,7 @@ namespace aura
       //         strPath = szPath;
       //         if (strPath == "*")
       //         {
-      //            strsize iFind = strFilePath.reverse_find('.');
+      //            character_count iFind = strFilePath.reverse_find('.');
 
       //            imagekey.m_iIcon = 0x80000000;
       //            imagekey.m_pszExtension = (char*)&strFilePath[iFind];
@@ -700,8 +700,8 @@ namespace aura
          }
          // try to find "uifs:// http:// ftp:// like addresses"
          // then should show icon by extension or if is folder
-         strsize iFind = imagekey.m_strPath.find_ci("://");
-         strsize iFind2 = imagekey.m_strPath.find_ci(":");
+         character_count iFind = imagekey.m_strPath.find_ci("://");
+         character_count iFind2 = imagekey.m_strPath.find_ci(":");
          if (iFind >= 0 || iFind2 >= 2)
          {
             string strProtocol = string(imagekey.m_strPath).Left(maximum(iFind, iFind2));
@@ -833,11 +833,11 @@ namespace aura
 
             pimage->get_graphics()->set_interpolation_mode(::draw2d::e_interpolation_mode_high_quality_bicubic);
 
-            pimage->get_graphics()->stretch(::size_i32(16, 16), pimage1->get_graphics(), pimage1->rectangle());
+            pimage->get_graphics()->stretch(::int_size(16, 16), pimage1->get_graphics(), pimage1->rectangle());
 
             pimage->get_graphics()->set_interpolation_mode(::draw2d::e_interpolation_mode_high_quality_bicubic);
 
-            pimage->get_graphics()->stretch(::size_i32(48, 48), pimage->get_graphics(), pimage->rectangle());
+            pimage->get_graphics()->stretch(::int_size(48, 48), pimage->get_graphics(), pimage->rectangle());
 
             synchronous_lock sl1(m_pilHover[48]->mutex());
 
@@ -1116,7 +1116,7 @@ namespace aura
 //               pimage->fill(255, colorref_get_r_value(crBk), colorref_get_g_value(crBk), colorref_get_b_value(crBk));
 //               pimage->get_graphics()->set_alpha_mode(::draw2d::alpha_mode_blend);
 //
-//               m_pilHover[iSize]->draw(pimage->get_graphics(), iImage, ::point_i32(), 0);
+//               m_pilHover[iSize]->draw(pimage->get_graphics(), iImage, ::int_point(), 0);
 //               m_pilHover[iSize]->m_pimage->g()->set_alpha_mode(::draw2d::alpha_mode_set);
 //               m_pilHover[iSize]->m_pimage->g()->BitBlt(iImage * 48, 0, 48, 48, pimage->get_graphics());
 //               m_pilHover[iSize]->m_pimage->g()->set_alpha_mode(::draw2d::alpha_mode_blend);
@@ -1125,15 +1125,15 @@ namespace aura
 //
 //            {
 //               auto & d = m_pilHover[iSize]->m_pimage;
-//               size_i32 s = m_pil[iSize]->m_pimage->get_size();
+//               int_size s = m_pil[iSize]->m_pimage->get_size();
 //               ::image_pointer pimage;
 //               pimage = __create_image(d->size());
 //               pimage->fill(255, colorref_get_r_value(crBk), colorref_get_g_value(crBk), colorref_get_b_value(crBk));
 //               pimage->get_graphics()->set_alpha_mode(::draw2d::alpha_mode_blend);
-//               pimage->get_graphics()->draw(::point_i32(), d->size(), d->get_graphics());
-//               pimage->get_graphics()->fill_rectangle(rectangle_i32(d->size()), argb(123, colorref_get_r_value(crBk), colorref_get_g_value(crBk), colorref_get_b_value(crBk)));
+//               pimage->get_graphics()->draw(::int_point(), d->size(), d->get_graphics());
+//               pimage->get_graphics()->fill_rectangle(int_rectangle(d->size()), argb(123, colorref_get_r_value(crBk), colorref_get_g_value(crBk), colorref_get_b_value(crBk)));
 //               m_pil[iSize]->m_pimage->g()->set_alpha_mode(::draw2d::alpha_mode_set);
-//               m_pil[iSize]->m_pimage->g()->draw(::point_i32(), d->size(), pimage->get_graphics());
+//               m_pil[iSize]->m_pimage->g()->draw(::int_point(), d->size(), pimage->get_graphics());
 //               m_pil[iSize]->m_pimage->g()->set_alpha_mode(::draw2d::alpha_mode_blend);
 //
 //            }

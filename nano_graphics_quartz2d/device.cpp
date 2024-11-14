@@ -79,7 +79,7 @@ namespace quartz2d
    }
 
 
-   void device::_draw_text(const ::string & str, const ::rectangle_i32 & rectangleText, const ::e_align & ealign, const ::e_draw_text & edrawtext, ::nano::graphics::brush * pnanobrushBack, ::nano::graphics::brush * pnanobrushText, ::nano::graphics::font * pnanofont)
+   void device::_draw_text(const ::string & str, const ::int_rectangle & rectangleText, const ::e_align & ealign, const ::e_draw_text & edrawtext, ::nano::graphics::brush * pnanobrushBack, ::nano::graphics::brush * pnanobrushText, ::nano::graphics::font * pnanofont)
    {
       
       _select_font(pnanofont);
@@ -140,7 +140,7 @@ namespace quartz2d
    }
 
 
-   ::size_i32 device::get_text_extents(const ::string & str, ::nano::graphics::font * pnanofont)
+   ::int_size device::get_text_extents(const ::string & str, ::nano::graphics::font * pnanofont)
    {
       
       _select_font(pnanofont);
@@ -150,7 +150,7 @@ namespace quartz2d
       CGContextShowText (m_pdc, str, str.length());//10
       CGPoint pointSize = CGContextGetTextPosition(m_pdc);
 
-      ::size_i32 size;
+      ::int_size size;
       
       size.cx() = pointSize.x;
       size.cy() = pnanofont->m_iFontSize;
@@ -160,7 +160,7 @@ namespace quartz2d
    }
 
 
-   void device::rectangle(const ::rectangle_i32 & rectangle, ::nano::graphics::brush * pnanobrush, ::nano::graphics::pen * pnanopen)
+   void device::rectangle(const ::int_rectangle & rectangle, ::nano::graphics::brush * pnanobrush, ::nano::graphics::pen * pnanopen)
    {
 
       int iWidth = pnanopen ? pnanopen->m_iWidth : 0;

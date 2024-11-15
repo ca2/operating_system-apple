@@ -77,7 +77,7 @@ namespace music
 
             }
 
-            m_evMmsgDone.ResetEvent();
+            m_evMmsgDone.reset_happening();
 
             ::e_status     estatus = ::success;
 
@@ -371,7 +371,7 @@ namespace music
    //            return error_unsupported_function;
    //
    //         set_status(e_state_playing);
-   //         m_evMmsgDone.ResetEvent();
+   //         m_evMmsgDone.reset_happening();
    //
    //         //    ::e_status     estatus = 0;
    //         //    single_lock slStream(&m_csStream, false);
@@ -421,7 +421,7 @@ namespace music
             set_state(e_state_stopping);
             m_flags.add(sequence::e_flag_waiting);
 
-            m_eventMidiPlaybackEnd.ResetEvent();
+            m_eventMidiPlaybackEnd.reset_happening();
 
 
    //         if(m_pseq != nullptr)
@@ -940,7 +940,7 @@ namespace music
                m_estatusLastError = ::success;
                m_flags.erase(e_flag_waiting);
 
-               m_evMmsgDone.SetEvent();
+               m_evMmsgDone.set_happening();
             }
          }
 

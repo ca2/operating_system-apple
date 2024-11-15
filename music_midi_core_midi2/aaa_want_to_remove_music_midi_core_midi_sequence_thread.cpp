@@ -313,7 +313,7 @@ namespace music
          void sequence_thread::SendTempoChange()
          {
             ASSERT(!get_sequence()->IsPlaying());
-            get_sequence()->m_evMmsgDone.ResetEvent();
+            get_sequence()->m_evMmsgDone.reset_happening();
             PostTempoChange();
             get_sequence()->m_evMmsgDone.wait();
          }

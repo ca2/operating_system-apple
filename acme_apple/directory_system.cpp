@@ -649,7 +649,7 @@ namespace acme_apple
       
       auto path = icloud_container2_final(psz_iCloudContainerIdentifier);
       
-      if(path.has_char())
+      if(path.has_character())
       {
        
          return true;

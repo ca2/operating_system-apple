@@ -48,7 +48,7 @@ namespace draw2d_quartz2d
       
       CGFontRef fontref = nullptr;
       
-      if(m_path.has_char())
+      if(m_path.has_character())
       {
          
          ::pointer < ::draw2d_quartz2d::draw2d > pdraw2d = system()->draw2d();
@@ -76,7 +76,7 @@ namespace draw2d_quartz2d
                
                auto * pfontenumeration = pfonts->enumeration("system");
                
-               if(pfontenumeration->m_eventReady.lock(2_s))
+               if(pfontenumeration->m_happeningReady.lock(2_s))
                {
 
                   pfontenumeration->adapt_font_name(m_pfontfamily->m_strFamilyName);
@@ -106,7 +106,7 @@ namespace draw2d_quartz2d
          
          CTFontSymbolicTraits symbolicTraitsMsk = 0;
          
-         int iWeight = m_fontweight.int();
+         int iWeight = m_fontweight.as_int();
          
          double dCoreTextWeight = nsfont_get_ctweight(iWeight);
          
@@ -261,7 +261,7 @@ namespace draw2d_quartz2d
          if(fontref != nullptr)
          {
             
-            m_font = CTFontCreateWithGraphicsFont(fontref, m_fontsize.double(), nullptr, m_fontdescriptor);
+            m_font = CTFontCreateWithGraphicsFont(fontref, m_fontsize.as_double(), nullptr, m_fontdescriptor);
             
             if(m_fontName)
             {
@@ -288,7 +288,7 @@ namespace draw2d_quartz2d
          else if(m_fontdescriptor == nullptr)
          {
             
-            auto pfont = CTFontCreateWithName(m_fontName, m_fontsize.double(), nullptr);
+            auto pfont = CTFontCreateWithName(m_fontName, m_fontsize.as_double(), nullptr);
             
             m_font = pfont;
 
@@ -296,7 +296,7 @@ namespace draw2d_quartz2d
          else
          {
             
-            m_font =  CTFontCreateWithFontDescriptor(m_fontdescriptor, m_fontsize.double(), nullptr);
+            m_font =  CTFontCreateWithFontDescriptor(m_fontdescriptor, m_fontsize.as_double(), nullptr);
             
          }
          

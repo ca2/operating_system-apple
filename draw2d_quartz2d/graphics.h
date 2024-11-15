@@ -240,11 +240,11 @@ namespace draw2d_quartz2d
 //      void Arc(double x1, double y1, int w, int h, double start, double extends) override;
   //    void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
 //      void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
-      void arc(double x, double y, double w, double h, ::angle_f64 start, ::angle_f64 end) override;
+      void arc(double x, double y, double w, double h, ::double_angle start, ::double_angle end) override;
 //      void Arc(const ::double_rectangle & rectangle, const ::double_point & pointStart, const ::double_point & pointEnd) override;
       void polyline(const ::double_point* lpPoints, ::collection::count nCount) override;
 
-      void angle_arc(double x, double y, double dRadius, ::angle_f64 fStartAngle, ::angle_f64 fSweepAngle) override;
+      void angle_arc(double x, double y, double dRadius, ::double_angle fStartAngle, ::double_angle fSweepAngle) override;
 //      void ArcTo(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
       void arc_to(const ::double_rectangle & rectangle, const ::double_point & pointStart, const ::double_point & pointEnd) override;
 //      virtual int GetArcDirection() override;
@@ -310,9 +310,9 @@ namespace draw2d_quartz2d
 
 //      void Pie(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
   //    void Pie(const ::double_rectangle & rectangle, const ::double_point & pointStart, const ::double_point & pointEnd) override;
-      void set_polygon(const POINT_F64 * lpPoints, ::collection::count nCount);
+      void set_polygon(const DOUBLE_POINT * lpPoints, ::collection::count nCount);
       void set_polygon(const ::double_point * lpPoints, ::collection::count nCount);
-      void set_polygon(const POINT_F64 * lpPoints, ::collection::count nCount, const ::POINT_F64 & pointOffset);
+      void set_polygon(const DOUBLE_POINT * lpPoints, ::collection::count nCount, const ::DOUBLE_POINT & pointOffset);
       void set_polygon(const ::double_point * lpPoints, ::collection::count nCount, const ::double_point & pointOffset);
       void fill_polygon(const ::double_point * lpPoints, ::collection::count nCount) override;
 //      void fill_polygon(const ::double_point* lpPoints, count nCount) override;

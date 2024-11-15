@@ -9,7 +9,7 @@
 
 #include "acme/filesystem/filesystem/enumerator.h"
 #include "acme/filesystem/filesystem/listing.h"
-#include "acme/parallelization/manual_reset_event.h"
+#include "acme/parallelization/manual_reset_happening.h"
 #include "acme_apple/ns_metadata_query_callback.h"
 
 
@@ -26,7 +26,7 @@ namespace acme_apple
       
       ::file::path                           m_pathBase;
       ::file::listing                        m_filelisting;
-      ::manual_reset_event                   m_manualresetevent;
+      ::manual_reset_happening               m_manualresethappening;
       
       ::pointer < file_listing_handler >     m_pfilelistinghandlerHold;
       

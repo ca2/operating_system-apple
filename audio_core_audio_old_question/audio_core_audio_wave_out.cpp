@@ -30,7 +30,7 @@ namespace multimedia
          m_peffect            = nullptr;
          //m_dwLostSampleBytes  = 0;
          m_bDone              = false;
-         m_eventRunning.ResetEvent();
+         m_eventRunning.reset_happening();
 
       }
 
@@ -544,7 +544,7 @@ Opened:
          if(m_estate != e_state_playing && m_estate != e_state_paused)
             return error_failed;
 
-         m_eventStopped.ResetEvent();
+         m_eventStopped.reset_happening();
 
          m_pprebuffer->Stop();
 
@@ -723,7 +723,7 @@ Opened:
             delete peffect;
          }
 
-         m_eventStopped.SetEvent();
+         m_eventStopped.set_happening();
 
          m_pplayer->OnEvent(::wave::player::EventPlaybackEnd);
 

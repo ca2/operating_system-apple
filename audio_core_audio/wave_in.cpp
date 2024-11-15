@@ -37,7 +37,7 @@ namespace multimedia
          //SetMainWnd(nullptr);
          //ASSERT(GetMainWnd() == nullptr);
          ::parallelization::set_priority(::e_priority_highest);
-         //m_evInitialized.SetEvent();
+         //m_evInitialized.set_happening();
 
          ::wave::in::init_task();
 
@@ -57,7 +57,7 @@ namespace multimedia
       void in::term_task()
       {
 
-         m_eventExitInstance.SetEvent();
+         m_eventExitInstance.set_happening();
 
          thread::term_task();
 
@@ -347,7 +347,7 @@ namespace multimedia
          }
          m_einstate = ::wave::e_in_state_stopped;
 
-         m_eventStopped.SetEvent();
+         m_eventStopped.set_happening();
 
          //return ::success;
 

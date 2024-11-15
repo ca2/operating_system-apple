@@ -26,7 +26,7 @@ namespace acme_apple
       
       m_pfilelistinghandlerHold = this;
       
-      m_manualresetevent.ResetEvent();
+      m_manualresethappening.reset_happening();
       
    }
 
@@ -44,7 +44,7 @@ namespace acme_apple
       
       //auto start = ::time::now();
 
-      m_manualresetevent.ResetEvent();
+      m_manualresethappening.reset_happening();
       
       try
       {
@@ -66,7 +66,7 @@ namespace acme_apple
          
       }
       
-      m_manualresetevent.wait(1_minute);
+      m_manualresethappening.wait(1_minute);
       
 //      {
 //         
@@ -133,7 +133,7 @@ namespace acme_apple
          
          ::file::path pathFolder = pathFull.folder();
          
-         while(pathFolder.has_char() && pathFolder.begins(m_pathBase))
+         while(pathFolder.has_character() && pathFolder.begins(m_pathBase))
          {
             
             pathFolder.m_etype = ::file::e_type_existent_folder;
@@ -156,7 +156,7 @@ namespace acme_apple
    void file_listing_handler::ns_metadata_query_callback_finished()
    {
     
-      m_manualresetevent.SetEvent();
+      m_manualresethappening.set_happening();
       
    }
       

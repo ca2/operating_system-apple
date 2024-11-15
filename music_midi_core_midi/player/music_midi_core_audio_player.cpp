@@ -48,7 +48,7 @@ namespace music
             
             set_thread_priority(::multithreading::priority_normal);
             
-            m_evInitialized.SetEvent();
+            m_evInitialized.set_happening();
             
             return true;
          }
@@ -360,7 +360,7 @@ namespace music
               ::music::midi::sequence::FlagTempoChange,
               ::music::midi::sequence::FlagNull);
               imedia_time tk = get_sequence()->GetPositionTicks();
-              get_sequence()->m_evMmsgDone.ResetEvent();
+              get_sequence()->m_evMmsgDone.reset_happening();
               link.m_tkRestart = tk + get_sequence()->m_tkBase;
               //m_bChangingTempo = true;
               get_sequence()->Stop();

@@ -486,7 +486,7 @@ namespace music
                
                // if the user supplies a sound bank, we'll set that before we initialize and start playing
             #ifdef MACOS
-               if (m_strCustomSoundFont.has_char())
+               if (m_strCustomSoundFont.has_character())
                {
                   
                   INFO("setting soundfont <%s>\n", m_strCustomSoundFont.c_str());

@@ -787,7 +787,7 @@ namespace aura
 
          }
 
-         if (strIcon48.has_char())
+         if (strIcon48.has_character())
          {
 
 

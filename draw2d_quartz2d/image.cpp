@@ -157,7 +157,7 @@ namespace draw2d_quartz2d
       
       m_bMapped = false;
       
-      init(size, pimage32, iScan);
+      pixmap::initialize(size, pimage32, iScan);
 
       m_pgraphics->m_pimage = this;
       
@@ -253,7 +253,7 @@ namespace draw2d_quartz2d
       
          ::image::image_source imagesource(picon);
          
-         auto rectangle = ::rectangle_double_dimension(0, 0, cx, cy);
+         auto rectangle = ::double_rectangle_dimension(0, 0, cx, cy);
          
          ::image::image_drawing_options imagedrawingoptions(rectangle);
          
@@ -272,7 +272,7 @@ namespace draw2d_quartz2d
       
          ::image::image_source imagesource(picon);
          
-         auto rectangle = ::rectangle_double_dimension(0, 0, cx, cy);
+         auto rectangle = ::double_rectangle_dimension(0, 0, cx, cy);
          
          ::image::image_drawing_options imagedrawingoptions(rectangle);
          
@@ -289,7 +289,7 @@ namespace draw2d_quartz2d
       
          ::image::image_source imagesource(picon);
          
-         auto rectangle = ::rectangle_double_dimension(0, 0, cx, cy);
+         auto rectangle = ::double_rectangle_dimension(0, 0, cx, cy);
          
          ::image::image_drawing_options imagedrawingoptions(rectangle);
          

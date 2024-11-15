@@ -351,7 +351,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::arc(double x, double y, double w, double h, ::angle_f64 start, ::angle_f64 extends)
+   void graphics::arc(double x, double y, double w, double h, ::double_angle start, ::double_angle extends)
    {
 
       double end = start + extends;
@@ -516,7 +516,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::set_polygon(const POINT_F64 * p, ::collection::count c)
+   void graphics::set_polygon(const DOUBLE_POINT * p, ::collection::count c)
    {
 
       CGContextMoveToPoint(m_cgcontext, p[0].x, p[0].y);
@@ -536,12 +536,12 @@ namespace draw2d_quartz2d
    void graphics::set_polygon(const double_point * p, ::collection::count c)
    {
 
-      set_polygon((const POINT_F64 *) p, c);
+      set_polygon((const DOUBLE_POINT *) p, c);
 
    }
 
 
-   void graphics::set_polygon(const POINT_F64 * p, ::collection::count c, const POINT_F64 & pointOffset)
+   void graphics::set_polygon(const DOUBLE_POINT * p, ::collection::count c, const DOUBLE_POINT & pointOffset)
    {
 
       CGContextMoveToPoint(m_cgcontext, p[0].x + pointOffset.x, p[0].y + pointOffset.y);
@@ -561,7 +561,7 @@ namespace draw2d_quartz2d
    void graphics::set_polygon(const double_point * p, ::collection::count c, const double_point & pointOffset)
    {
 
-      set_polygon((const POINT_F64 *) p, c, (const POINT_F64 &) pointOffset);
+      set_polygon((const DOUBLE_POINT *) p, c, (const DOUBLE_POINT &) pointOffset);
 
    }
 
@@ -1168,7 +1168,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::angle_arc(double x, double y, double dRadius, ::angle_f64 fStartAngle, ::angle_f64 fSweepAngle)
+   void graphics::angle_arc(double x, double y, double dRadius, ::double_angle fStartAngle, ::double_angle fSweepAngle)
    {
 
       throw ::exception(error_not_implemented);;
@@ -3300,7 +3300,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          if(bStroke)
          {
 
-            double dStroke = ::is_null(ppen) ? 3.0 : ppen->m_dWidth * 100.0 / pfont->m_fontsize.double();
+            double dStroke = ::is_null(ppen) ? 3.0 : ppen->m_dWidth * 100.0 / pfont->m_fontsize.as_double();
 
             pkeys.add(kCTStrokeWidthAttributeName);
             pvals.add(CFNumberCreate(kCFAllocatorDefault, kCFNumberDoubleType, &dStroke));

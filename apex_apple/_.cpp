@@ -224,7 +224,7 @@ string ca2_command_line()
 //
 //}
 //
-//void copy(CGPoint & pointTarget, const POINT_F64 & pointSource)
+//void copy(CGPoint & pointTarget, const DOUBLE_POINT & pointSource)
 //{
 //
 //   ppointTarget->x      = ppointSource->x;
@@ -233,7 +233,7 @@ string ca2_command_line()
 //}
 //
 //
-//void copy(POINT_F64 & pointTarget, const CGPoint & pointSource)
+//void copy(DOUBLE_POINT & pointTarget, const CGPoint & pointSource)
 //{
 //
 //   ppointTarget->x      = ppointSource->x;

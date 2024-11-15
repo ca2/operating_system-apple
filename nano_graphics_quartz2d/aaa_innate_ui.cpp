@@ -6,7 +6,7 @@
 #include "acme/platform/platform.h"
 #include "acme/platform/application.h"
 #include "acme/platform/system.h"
-#include "acme/parallelization/manual_reset_event.h"
+#include "acme/parallelization/manual_reset_happening.h"
 #include "acme/prototype/geometry2d/size.h"
 #include "acme/windowing_system/windowing_system.h"
 
@@ -111,9 +111,9 @@ namespace innate_ui_appkit
    //
    //
    //    }
-   //    manual_reset_event event;
+   //    manual_reset_happening event;
    //
-   //    event.ResetEvent();
+   //    event.reset_happening();
    //
    //    ::platform::get()->application()->fork([this, &event]()
    //       {
@@ -124,7 +124,7 @@ namespace innate_ui_appkit
    //                ::PeekMessage(&msg, nullptr, 0, 0, 0);
    //                m_hthread = ::GetCurrentThread();
    //                m_dwThread = ::GetCurrentThreadId();
-   //                event.SetEvent();
+   //                event.set_happening();
    //                while (::task_get_run())
    //                {
    //                   DWORD timeout = 100; // 100 ::times;

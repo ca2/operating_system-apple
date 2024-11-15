@@ -34,7 +34,7 @@ namespace multimedia
          //SetMainWnd(nullptr);
          //ASSERT(GetMainWnd() == nullptr);
          ::parallelization::set_priority(::priority_highest);
-         m_evInitialized.SetEvent();
+         m_evInitialized.set_happening();
 
 
          if(!::wave::in::initialize_thread())
@@ -51,7 +51,7 @@ namespace multimedia
 
       int in::exit_thread()
       {
-         m_eventExitInstance.SetEvent();
+         m_eventExitInstance.set_happening();
          return thread::exit_thread();
       }
 
@@ -313,7 +313,7 @@ namespace multimedia
          }
          m_estate = state_stopped;
 
-         m_eventStopped.SetEvent();
+         m_eventStopped.set_happening();
 
          return ::success;
 

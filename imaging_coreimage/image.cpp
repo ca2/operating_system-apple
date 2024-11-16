@@ -88,7 +88,7 @@ namespace coreimage_imaging
       
       memory memory;
       
-      auto pcontext = m_pcontext->m_pauracontext;
+      auto papplication = application();
       
       if(options.toy)
       {
@@ -224,7 +224,7 @@ namespace coreimage_imaging
       
       pimage->map();
       
-      vertical_swap_copy_image32(pimage->image32(), w, h, pimage->scan_size(), pimage32, iScan);
+      pimage->image32()->vertical_swap_copy(w, h, pimage->scan_size(), pimage32, iScan);
       
       pimage->set_ok_flag();
       

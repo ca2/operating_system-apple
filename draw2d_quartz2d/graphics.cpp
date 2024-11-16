@@ -2446,13 +2446,18 @@ namespace draw2d_quartz2d
          
          copy(int_rectangle, rectangle);
          
-         ::image::image_source imagesource(pbrush->m_pimage);
-         
-         ::image::image_drawing_options imagedrawingoptions(int_rectangle);
-         
-         ::image::image_drawing imagedrawing(imagedrawingoptions, imagesource);
-
-         draw(imagedrawing);
+         if(!int_rectangle.is_empty())
+         {
+            
+            ::image::image_source imagesource(pbrush->m_pimage);
+            
+            ::image::image_drawing_options imagedrawingoptions(int_rectangle);
+            
+            ::image::image_drawing imagedrawing(imagedrawingoptions, imagesource);
+            
+            draw(imagedrawing);
+            
+         }
 
       }
       else if(pbrush->m_ebrush == ::draw2d::e_brush_solid)

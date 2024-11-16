@@ -113,7 +113,7 @@ namespace acme_apple
       if(scopedstrProtocol == "icloud")
       {
          
-         auto pfilesystemoptions = application()->m_pfilesystemoptions;
+         auto pfilesystemoptions = application()->m_pfilesystemoptions.get();
          
          if(pfilesystemoptions->m_b_iCloudContainer)
          {

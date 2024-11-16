@@ -178,7 +178,7 @@ namespace apex_apple
 ////
 ////      // indirect wall-changer sourceforge.net contribution
 ////
-////      auto edesktop = psystem->get_edesktop();
+////      auto edesktop = psystem->get_eoperating_ambient();
 ////
 ////      switch (edesktop)
 ////      {
@@ -259,7 +259,7 @@ namespace apex_apple
 ////
 ////      auto pnode = Node;
 ////
-////      auto edesktop = psystem->get_edesktop();
+////      auto edesktop = psystem->get_eoperating_ambient();
 ////
 ////      switch (edesktop)
 ////      {
@@ -307,7 +307,7 @@ namespace apex_apple
 ////   void node::enable_wallpaper_change_notification()
 ////   {
 ////
-////      auto edesktop = psystem->get_edesktop();
+////      auto edesktop = psystem->get_eoperating_ambient();
 ////
 ////      switch (edesktop)
 ////      {

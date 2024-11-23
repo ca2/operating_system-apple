@@ -55,7 +55,7 @@ namespace innate_ui_appkit
 //         m_pqwidget = new QLabel(pappkitwindowParent->m_pqwidget);
          //gtk_label_set_xalign(GTK_LABEL(m_pgtkwidget), 0.0);
          
-         __create();
+         __øcreate();
 
       }
 

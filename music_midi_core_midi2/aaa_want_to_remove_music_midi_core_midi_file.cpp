@@ -1358,18 +1358,18 @@ namespace music
 //         //   if(m_cbPendingLyricEventV1 >= (3 * sizeof(unsigned int)))
 //         //   {
 //         //      // offset Lyric CallBack Event Code
-//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_pevent->m_nType;
+//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_phappening->m_nType;
 //         //   }
 //         //   if(m_cbPendingLyricEventV1 >= (2 * sizeof(unsigned int)))
 //         //   {
 //         //      // offset Lyric CallBack Event Code
-//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_pevent->m_nTrack;
+//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_phappening->m_nTrack;
 //         //   }
 //         //   if(m_cbPendingLyricEventV1 >= (1 * sizeof(unsigned int)))
 //         //   {
 //         //      // offset Lyric CallBack Event Code
-//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_pevent->m_nCurrentIndex;
-//         //      m_pPendingLyricEventV1->m_Union.m_pevent->m_nCurrentIndex++;
+//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_phappening->m_nCurrentIndex;
+//         //      m_pPendingLyricEventV1->m_Union.m_phappening->m_nCurrentIndex++;
 //         //   }
 //         memFile.seek_to_begin();
 //         memFile.read(lpdw, dwLength);
@@ -1445,18 +1445,18 @@ namespace music
 //         //   if(m_cbPendingLyricEventV1 >= (3 * sizeof(unsigned int)))
 //         //   {
 //         //      // offset Lyric CallBack Event Code
-//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_pevent->m_nType;
+//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_phappening->m_nType;
 //         //   }
 //         //   if(m_cbPendingLyricEventV1 >= (2 * sizeof(unsigned int)))
 //         //   {
 //         //      // offset Lyric CallBack Event Code
-//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_pevent->m_nTrack;
+//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_phappening->m_nTrack;
 //         //   }
 //         //   if(m_cbPendingLyricEventV1 >= (1 * sizeof(unsigned int)))
 //         //   {
 //         //      // offset Lyric CallBack Event Code
-//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_pevent->m_nCurrentIndex;
-//         //      m_pPendingLyricEventV1->m_Union.m_pevent->m_nCurrentIndex++;
+//         //      *lpdw++ = m_pPendingLyricEventV1->m_Union.m_phappening->m_nCurrentIndex;
+//         //      m_pPendingLyricEventV1->m_Union.m_phappening->m_nCurrentIndex++;
 //         //   }
 //         //   m_pPendingLyricEventV1->ToData(lpdw, m_cbPendingLyricEventV1);
 //         //   if (0 == (m_cbPendingLyricEventV1 -= dwLength))

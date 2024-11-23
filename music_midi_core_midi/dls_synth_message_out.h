@@ -46,15 +46,15 @@ namespace music
             CFTypeRef               m_pAVAudioUnitMIDIInstrument = nullptr;
             
             AudioUnit               m_unitMixer;
-            ::music::midi::event *  m_pevent = nullptr;
-            ::huge_integer                   m_iPositionFrame;
-            musical_tick            m_tkPosition;
-            class ::time            m_timePosition;
-            double                   m_f64OutputSeconds;
-            double                   m_f64DelaySeconds;
-            double                   m_f64StartSampleTime;
-            double                   m_f64LastSampleTime;
-            int                   m_i32LastFrameCount;
+            ::music::midi::happening *    m_phappening = nullptr;
+            ::huge_integer                m_iPositionFrame;
+            musical_tick                  m_tkPosition;
+            class ::time                  m_timePosition;
+            double                        m_dOutputSeconds;
+            double                        m_dDelaySeconds;
+            double                        m_dStartSampleTime;
+            double                        m_dLastSampleTime;
+            int                           m_iLastFrameCount;
             bool                    m_bStarting;
             MIDIEventList           m_midieventlist;
             MIDIEventPacket *       m_pmidieventpacket = nullptr;

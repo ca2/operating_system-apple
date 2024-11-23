@@ -46,7 +46,7 @@ namespace acme_apple
 //   //
 //   //      varRet = (((huge_natural) data.nFileSizeHigh) << 32) | (huge_natural) data.nFileSizeLow;
 //   //
-//   //      ((::file::path &) path).m_iSize = varRet.m_i64;
+//   //      ((::file::path &) path).m_iSize = varRet.m_hi;
 //   //
 //   //   }
 //   //
@@ -67,7 +67,7 @@ namespace acme_apple
 //
 //         payloadLength = (iptr)stat.st_size;
 //
-//         ((::file::path &)path).m_iSize = payloadLength.m_i64;
+//         ((::file::path &)path).m_iSize = payloadLength.m_hi;
 //
 //      }
 //

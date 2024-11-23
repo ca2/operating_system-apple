@@ -24,7 +24,7 @@ namespace media_apple
       ~media_player();
       
       
-      void OnEvent(::aqua::enum_player_event eevent, ::aqua::media_player_command * pcommand) override;
+      void OnHappening(::aqua::enum_player_happening ehappening, ::aqua::media_player_command * pcommand) override;
       
       void post_command(::aqua::media_player_command* pcommand) override;
 

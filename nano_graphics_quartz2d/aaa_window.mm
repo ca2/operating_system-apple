@@ -14,7 +14,7 @@ namespace innate_ui_appkit
 {
    
 
-//   void window::__create()
+//   void window::__øcreate()
 //   {
 //
 //      // m_hwnd = CreateWindowW(_get_class_name(), L"", WS_DLGFRAME | WS_CAPTION | WS_POPUPWINDOW,

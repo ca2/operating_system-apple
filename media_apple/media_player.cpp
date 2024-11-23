@@ -35,18 +35,18 @@ namespace media_apple
    }
 
 
-   void media_player::OnEvent(::aqua::enum_player_event eevent, ::aqua::media_player_command * pcommand)
+   void media_player::OnHappening(::aqua::enum_player_happening ehappening, ::aqua::media_player_command * pcommand)
    {
    
-      switch(eevent)
+      switch(ehappening)
       {
-//         case ::aqua::e_player_event_:
+//         case ::aqua::e_player_happening_:
 //         {
 //            
 //            
 //         }
 //            break;
-         case ::aqua::e_player_event_play:
+         case ::aqua::e_player_happening_play:
          {
 //            apple_play_media_item(m_pmediaitem->m_pplatformmediaitem);
             

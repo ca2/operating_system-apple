@@ -52,7 +52,9 @@ media_apple * media_apple::get(::particle * pparticle)
       
    }
    
-   pparticle->__construct(pmediaapple);
+   __refdbg_this(pparticle);
+   
+   pparticle->__øconstruct(pmediaapple);
    
    pparticle->application()->payload("media_apple") = pmediaapple;
    

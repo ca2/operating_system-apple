@@ -399,14 +399,14 @@ namespace music
          }
 
 
-//         void player::PostNotifyEvent(::music::midi::player::e_notify_event eevent)
+//         void player::PostNotifyEvent(::music::midi::player::e_notify_happening ehappening)
 //         {
 //            if(m_puie != nullptr)
 //            {
 //               ::pointer < ::music::midi::player::notify_event > pdata(__new(::music::midi::player::notify_event));
 //               pdata->m_pplayer = this;
-//               pdata->m_enotifyevent = eevent;
-//               m_puie->post_object(::music::midi::player::message_notify_event, 0, pdata);
+//               pdata->m_enotifyevent = ehappening;
+//               m_puie->post_object(::music::midi::player::message_notify_happening, 0, pdata);
 //            }
 //         }
 
@@ -507,7 +507,7 @@ namespace music
 //            pdata->m_pplayer = this;
 //            if(m_puie != nullptr)
 //            {
-//               m_puie->post_object(::music::midi::player::message_notify_event, 0, pdata);
+//               m_puie->post_object(::music::midi::player::message_notify_happening, 0, pdata);
 //            }
 //         }
 

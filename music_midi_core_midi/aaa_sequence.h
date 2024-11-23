@@ -86,7 +86,7 @@
 //         };
 //         
 //         class event :
-//         public ::music::midi::sequence::event
+//         public ::music::midi::sequence::happening
 //         {
 //         public:
 //            
@@ -138,7 +138,7 @@
 //         int32_t SetKeyShift(int32_t iKeyShift);
 //         int32_t GetKeyShift();
 //         
-//         void OnMidiPlaybackEnd(::music::midi::sequence::event * pevent);
+//         void OnMidiPlaybackEnd(::music::midi::sequence::happening * pevent);
 //         int32_t SetTempoShift(int32_t iTempoShift);
 //         
 //         void OnPositionCB(LPMIDIHDR lpmidihdr);
@@ -162,7 +162,7 @@
 //         virtual bool IsInSpecialModeV001();
 //         virtual bool WasInSpecialModeV001();
 //         
-//         virtual void OnEvent(::music::midi::sequence::event * pevent);
+//         virtual void OnEvent(::music::midi::sequence::happening * pevent);
 //         
 //         
 ////         ::multimedia::e_result AllocBuffers();
@@ -222,7 +222,7 @@
 //         }
 //         
 //         using ::music::midi::sequence::create_new_event;
-//         virtual ::music::midi::sequence::event * create_new_event(::music::midi::sequence::e_event eevent, LPMIDIHDR lpmidihdr);
+//         virtual ::music::midi::sequence::happening * create_new_event(::music::midi::sequence::e_happening ehappening, LPMIDIHDR lpmidihdr);
 //         
 //         int seq_dump();
 //         ::music::midi::event * seq_get_next_event();

@@ -66,20 +66,20 @@ namespace music
          }
 
 
-         bool sequence_thread::PostMidiSequenceEvent(::music::midi::sequence * pseq, sequence::e_event eevent)
+         bool sequence_thread::PostMidiSequenceEvent(::music::midi::sequence * pseq, sequence::e_happening ehappening)
          {
 
-            return post_object(message_event,  (WPARAM) pseq, pseq->create_new_event(eevent));
+            return post_object(message_event,  (WPARAM) pseq, pseq->create_new_event(ehappening));
 
          }
 
 
-         bool sequence_thread::PostMidiSequenceEvent(::music::midi::sequence * psequenceParam, sequence::e_event eevent, LPMIDIHDR lpmh)
+         bool sequence_thread::PostMidiSequenceEvent(::music::midi::sequence * psequenceParam, sequence::e_happening ehappening, LPMIDIHDR lpmh)
          {
             
             ::pointer < sequence > psequence = psequenceParam;
 
-            return post_object(message_event,  (WPARAM) psequenceParam, psequence->create_new_event(eevent, lpmh));
+            return post_object(message_event,  (WPARAM) psequenceParam, psequence->create_new_event(ehappening, lpmh));
 
          }
 
@@ -89,13 +89,13 @@ namespace music
 
             ::pointer < ::user::message > pusermessage(pmessage);
 
-            ::pointer < sequence::event > pevent(pusermessage->m_lparam);
+            ::pointer < sequence::happening > pevent(pusermessage->m_lparam);
 
             auto pseq = pevent->m_psequence;
 
             pseq->OnEvent(pevent);
 
-            switch(pevent->m_eevent)
+            switch(pevent->m_ehappening)
             {
             case sequence::e_event_midi_playback_end:
             {
@@ -205,13 +205,13 @@ namespace music
 
          }
 
-   //      void sequence_thread::PostNotifyEvent(e_notify_event eevent)
+   //      void sequence_thread::PostNotifyEvent(e_notify_happening ehappening)
    //      {
    //         if(m_pplayer != nullptr)
    //         {
    //            auto pdata(__new(notify_event));
-   //            pdata->m_enotifyevent = eevent;
-   //            m_pplayer->post_object(::music::midi::player::message_notify_event, 0, pdata);
+   //            pdata->m_enotifyevent = ehappening;
+   //            m_pplayer->post_object(::music::midi::player::message_notify_happening, 0, pdata);
    //         }
    //      }
 

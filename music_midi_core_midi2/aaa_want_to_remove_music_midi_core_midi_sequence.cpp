@@ -95,7 +95,7 @@ namespace music
          }
          
          
-         void sequence::OnEvent(::music::midi::sequence::event * pevent)
+         void sequence::OnEvent(::music::midi::sequence::happening * pevent)
          {
 
             ::music::midi::sequence::OnEvent(pevent);
@@ -911,7 +911,7 @@ namespace music
             }
          }
 
-            void sequence::OnMidiPlaybackEnd(::music::midi::sequence::event * pevent)
+            void sequence::OnMidiPlaybackEnd(::music::midi::sequence::happening * pevent)
          {
             UNREFERENCED_PARAMETER(pevent);
             single_lock synchronouslock(mutex(), true);
@@ -944,10 +944,10 @@ namespace music
             }
          }
 
-   //         void sequence::OnEvent(::music::midi::sequence::event * pevent)
+   //         void sequence::OnEvent(::music::midi::sequence::happening * pevent)
    //      {
    //         ::music::midi::sequence::OnEvent(pevent);
-   //         switch(pevent->m_eevent)
+   //         switch(pevent->m_ehappening)
    //         {
    //
    ////            case EventStopped:
@@ -1276,14 +1276,14 @@ namespace music
          }
 
 
-            ::pointer < ::music::midi::sequence::event > sequence::create_new_event(e_event eevent, LPMIDIHDR lpmidihdr)
+            ::pointer < ::music::midi::sequence::happening > sequence::create_new_event(e_happening ehappening, LPMIDIHDR lpmidihdr)
          {
 
             ASSERT(::is_set(this));
 
             auto pevent           = __new(event());
 
-            pevent->m_eevent        = eevent;
+            pevent->m_ehappening        = ehappening;
             pevent->m_psequence     = this;
             pevent->m_lpmh          = lpmidihdr;
 

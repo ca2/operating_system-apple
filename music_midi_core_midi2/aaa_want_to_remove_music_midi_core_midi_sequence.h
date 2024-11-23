@@ -71,7 +71,7 @@ namespace music
 
             
             class event :
-            public ::music::midi::sequence::event
+            public ::music::midi::sequence::happening
             {
             public:
 
@@ -106,7 +106,7 @@ namespace music
             int SetKeyShift(int iKeyShift) override;
             int GetKeyShift() override;
 
-            void OnMidiPlaybackEnd(::music::midi::sequence::event * pevent) override;
+            void OnMidiPlaybackEnd(::music::midi::sequence::happening * pevent) override;
             int SetTempoShift(int iTempoShift);
 
             void OnPositionCB(LPMIDIHDR lpmidihdr);
@@ -162,10 +162,10 @@ namespace music
                return m_pthread;
             }
 
-            virtual void OnEvent(::music::midi::sequence::event * pevent) override;
+            virtual void OnEvent(::music::midi::sequence::happening * pevent) override;
             
             using ::music::midi::sequence::create_new_event;
-            virtual ::pointer < ::music::midi::sequence::event > create_new_event(sequence::e_event eevent, LPMIDIHDR lpmidihdr);
+            virtual ::pointer < ::music::midi::sequence::happening > create_new_event(sequence::e_happening ehappening, LPMIDIHDR lpmidihdr);
 
             virtual ::pointer < ::music::midi::play_thread > on_midi_sequence_start() override;
 

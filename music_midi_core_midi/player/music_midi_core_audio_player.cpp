@@ -403,14 +403,14 @@ namespace music
          }
          
          
-         void player::PostNotifyEvent(::music::midi::player::enum_notify_event eevent)
+         void player::PostNotifyEvent(::music::midi::player::enum_notify_happening ehappening)
          {
             if(m_puie != NULL)
             {
                ::music::midi::player::notify_event * pdata = new ::music::midi::player::notify_event;
                pdata->m_pplayer = this;
-               pdata->m_enotifyevent = eevent;
-               m_puie->post_message(::music::midi::player::message_notify_event, 0 , (LPARAM) pdata);
+               pdata->m_enotifyevent = ehappening;
+               m_puie->post_message(::music::midi::player::message_notify_happening, 0 , (LPARAM) pdata);
             }
          }
          
@@ -512,7 +512,7 @@ namespace music
             pdata->m_pplayer = this;
             if(m_puie != NULL)
             {
-               m_puie->post_message(::music::midi::player::message_notify_event, 0 , (LPARAM) pdata);
+               m_puie->post_message(::music::midi::player::message_notify_happening, 0 , (LPARAM) pdata);
             }
             else
             {

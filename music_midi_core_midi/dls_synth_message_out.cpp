@@ -261,12 +261,12 @@ namespace music
                                
             }
              
-             UInt32 sampleRateSize = sizeof(m_f64SamplingRate);
+             UInt32 sampleRateSize = sizeof(m_dSamplingRate);
              AudioUnitGetProperty(m_unitSynth,
                                          kAudioUnitProperty_SampleRate,
                                   kAudioUnitScope_Output,
                                          0,
-                                         &m_f64SamplingRate,
+                                         &m_dSamplingRate,
                                   &sampleRateSize);
             
 //            unsigned int enabled = FALSE;
@@ -412,11 +412,11 @@ namespace music
          
          m_iFrameAbsolute = 0;
          
-         m_f64DelaySeconds = 5.0;
+         m_dDelaySeconds = 5.0;
          
          m_timePosition = 0_s;
          
-         m_f64OutputSeconds = 0.;
+         m_dOutputSeconds = 0.;
           
          // Start the graph
          //auto result = AUGraphStart (m_audiograph);
@@ -472,8 +472,8 @@ namespace music
          if (*ioActionFlags & kAudioUnitRenderAction_PreRender)
          {
             
-            auto f64LastSampleTime = m_f64LastSampleTime;
-            auto i32LastFrameCount = m_i32LastFrameCount;
+            auto f64LastSampleTime = m_dLastSampleTime;
+            auto i32LastFrameCount = m_iLastFrameCount;
             
             double dDiff;
             
@@ -484,7 +484,7 @@ namespace music
                
                f64LastSampleTime = inTimeStamp->mSampleTime;
                
-               m_f64StartSampleTime = inTimeStamp->mSampleTime;
+               m_dStartSampleTime = inTimeStamp->mSampleTime;
                
                i32LastFrameCount = 0;
                
@@ -494,7 +494,7 @@ namespace music
             else
             {
                
-               dDiff = inTimeStamp->mSampleTime - (m_f64LastSampleTime + m_i32LastFrameCount);
+               dDiff = inTimeStamp->mSampleTime - (m_dLastSampleTime + m_iLastFrameCount);
                
                if(dDiff < 0)
                {
@@ -525,31 +525,31 @@ namespace music
             if(dDiff > 0)
             {
 
-               dDelayNow = dDiff / m_f64SamplingRate;
+               dDelayNow = dDiff / m_dSamplingRate;
                
                warningf("oVeRlOaD?!? dDiff = %0.1f   dDelayNow = %3.3f", dDiff, dDelayNow);
                
-               m_f64DelaySeconds += dDelayNow;
+               m_dDelaySeconds += dDelayNow;
                
             }
             
-            m_f64LastSampleTime = inTimeStamp->mSampleTime;
+            m_dLastSampleTime = inTimeStamp->mSampleTime;
             
-            //m_i32LastFrameCount = inNumberFrames;
+            //m_iLastFrameCount = inNumberFrames;
             
-            m_i32LastFrameCount = iFramesToQueue;
+            m_iLastFrameCount = iFramesToQueue;
             
             m_iAddedEvents = 0;
             
             while(true)
             {
                   
-               if(m_pevent == nullptr)
+               if(m_phappening == nullptr)
                {
                      
                   auto tickMax = m_psequencer->m_psequence->m_tkEnd;
 
-                  auto estatus = m_psequencer->m_psequence->m_pfile->WorkGetNextEvent(m_pevent, tickMax, true);
+                  auto estatus = m_psequencer->m_psequence->m_pfile->WorkGetNextEvent(m_phappening, tickMax, true);
                      
                   if (::success != estatus)
                   {
@@ -573,20 +573,20 @@ namespace music
                      
                }
                
-               m_f64OutputSeconds = m_timePosition.floating_second() + m_f64DelaySeconds;
+               m_dOutputSeconds = m_timePosition.floating_second() + m_dDelaySeconds;
                   
-               m_iFrameAbsolute = m_f64SamplingRate * m_f64OutputSeconds;
+               m_iFrameAbsolute = m_dSamplingRate * m_dOutputSeconds;
                       
-               auto iFrame = m_iFrameAbsolute - (::huge_integer) (inTimeStamp->mSampleTime - m_f64StartSampleTime);
+               auto iFrame = m_iFrameAbsolute - (::huge_integer) (inTimeStamp->mSampleTime - m_dStartSampleTime);
                  
                if(iFrame < 0)
                {
                   
-                  double d = (inTimeStamp->mSampleTime - m_f64StartSampleTime) / m_f64SamplingRate;
+                  double d = (inTimeStamp->mSampleTime - m_dStartSampleTime) / m_dSamplingRate;
                   
                   warningf("event skipped %03.3fs %03.3fs %lld frames", d, m_timePosition.floating_second(), iFrame);
                       
-                  m_pevent = nullptr;
+                  m_phappening = nullptr;
                   
                   continue;
                       
@@ -600,14 +600,14 @@ namespace music
 
                       midi_message_step();
                      
-                     if(m_iFrameProgramChangeStreak < (inTimeStamp->mSampleTime - m_f64StartSampleTime))
+                     if(m_iFrameProgramChangeStreak < (inTimeStamp->mSampleTime - m_dStartSampleTime))
                      {
                         
-                        m_iFrameProgramChangeStreak = (inTimeStamp->mSampleTime - m_f64StartSampleTime);
+                        m_iFrameProgramChangeStreak = (inTimeStamp->mSampleTime - m_dStartSampleTime);
                         
                      }
                      
-                     for (;m_iProgramChangeStreak < 16 && m_iFrameProgramChangeStreak < (inTimeStamp->mSampleTime + inNumberFrames - m_f64StartSampleTime); m_iProgramChangeStreak++)
+                     for (;m_iProgramChangeStreak < 16 && m_iFrameProgramChangeStreak < (inTimeStamp->mSampleTime + inNumberFrames - m_dStartSampleTime); m_iProgramChangeStreak++)
                      {
                            
                         int iTrack = m_iProgramChangeStreak;
@@ -642,13 +642,13 @@ namespace music
 //                           
 //                           iAddedEvents = 0;
 //                           
-//                           m_iFrameProgramChangeStreak += (int)(m_f64SamplingRate *0.040);
+//                           m_iFrameProgramChangeStreak += (int)(m_dSamplingRate *0.040);
 //                           
 //                        }
                         
                      }
                         
-                     for (;m_iProgramChangeStreak>= 16 && m_iProgramChangeStreak < 32 && m_iFrameProgramChangeStreak < (inTimeStamp->mSampleTime + inNumberFrames - m_f64StartSampleTime); m_iProgramChangeStreak++)
+                     for (;m_iProgramChangeStreak>= 16 && m_iProgramChangeStreak < 32 && m_iFrameProgramChangeStreak < (inTimeStamp->mSampleTime + inNumberFrames - m_dStartSampleTime); m_iProgramChangeStreak++)
                      {
                         
                         int iTrack = m_iProgramChangeStreak - 16;
@@ -685,7 +685,7 @@ namespace music
 //                           
 //                           iAddedEvents = 0;
 //                           
-//                           m_iFrameProgramChangeStreak += (int)(m_f64SamplingRate *0.020);
+//                           m_iFrameProgramChangeStreak += (int)(m_dSamplingRate *0.020);
 //
 //                        }
                         
@@ -711,44 +711,44 @@ namespace music
 //               MusicDeviceMIDIEventList(m_unitSynth,
 //                                        iFrame, plist);
                   
-               //on_event(m_pevent);
+               //on_event(m_phappening);
                
-               if(m_pevent->GetType() == ::music::midi::note_on)
+               if(m_phappening->GetType() == ::music::midi::note_on)
                {
                   
                    note_on(
-                           m_pevent->GetTrack(), m_pevent->GetNotePitch(), m_pevent->GetNoteVelocity());
+                           m_phappening->GetTrack(), m_phappening->GetNotePitch(), m_phappening->GetNoteVelocity());
                   
                }
-               else if(m_pevent->GetType() == ::music::midi::note_off)
+               else if(m_phappening->GetType() == ::music::midi::note_off)
                {
 
                    note_off(
-                            m_pevent->GetTrack(),
-                            m_pevent->GetNotePitch(),
-                            m_pevent->GetNoteVelocity());
+                            m_phappening->GetTrack(),
+                            m_phappening->GetNotePitch(),
+                            m_phappening->GetNoteVelocity());
                   
                }
-               else if(m_pevent->GetType() == ::music::midi::program_change)
+               else if(m_phappening->GetType() == ::music::midi::program_change)
                {
-                   program_change(m_pevent->GetTrack(), m_pevent->GetProgram());
+                   program_change(m_phappening->GetTrack(), m_phappening->GetProgram());
                    
                    
-//                  auto message = MIDI1UPChannelVoiceMessage(0, ::music::midi::program_change >> 4, m_pevent->GetTrack(), m_pevent->GetProgram(), 0);
+//                  auto message = MIDI1UPChannelVoiceMessage(0, ::music::midi::program_change >> 4, m_phappening->GetTrack(), m_phappening->GetProgram(), 0);
 //                 
 //                  m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
 //                  
 //                  iAddedEvents++;
                   
                }
-               else if(m_pevent->GetType() == ::music::midi::pitch_bend)
+               else if(m_phappening->GetType() == ::music::midi::pitch_bend)
                {
                    
-                   auto ushBend = (unsigned short)((unsigned short)(m_pevent->GetChB1() & 127) | ((unsigned short)((m_pevent->GetChB2() & 127) << 7)));
+                   auto ushBend = (unsigned short)((unsigned short)(m_phappening->GetChB1() & 127) | ((unsigned short)((m_phappening->GetChB2() & 127) << 7)));
                    
-                   pitch_bend(m_pevent->GetTrack(), ushBend);
+                   pitch_bend(m_phappening->GetTrack(), ushBend);
                   
-//                  auto message = MIDI1UPPitchBend(0, m_pevent->GetTrack(), m_pevent->GetChB1(), m_pevent->GetChB2());
+//                  auto message = MIDI1UPPitchBend(0, m_phappening->GetTrack(), m_phappening->GetChB1(), m_phappening->GetChB2());
 //                 
 //                  m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
 //                  
@@ -756,7 +756,7 @@ namespace music
                   
                }
                 
-               m_pevent = nullptr;
+               m_phappening = nullptr;
 
             }
               
@@ -1066,7 +1066,7 @@ namespace music
             if(__builtin_available(macOS 12, iOS 15.0, *))
             {
                
-               auto message = MIDI1UPPitchBend(0, m_pevent->GetTrack(), m_pevent->GetChB1(), m_pevent->GetChB2());
+               auto message = MIDI1UPPitchBend(0, m_phappening->GetTrack(), m_phappening->GetChB1(), m_phappening->GetChB2());
                
                m_pmidieventpacket = MIDIEventListAdd(&m_midieventlist, 65535, m_pmidieventpacket, 0, sizeof(message), &message);
                

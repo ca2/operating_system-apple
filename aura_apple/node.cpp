@@ -46,7 +46,7 @@ namespace aura_apple
 //      ::extended::transport<appindicator> node::new_appindicator()
 //      {
 //
-//         auto pappindicator = __create<appindicator>();
+//         auto pappindicator = __øcreate<appindicator>();
 //
 //         if (!pappindicator)
 //         {

@@ -52,7 +52,7 @@ namespace innate_ui_appkit
    void dialog::_create()
    {
 
-      __create();
+      __øcreate();
       // m_hwnd = CreateWindowW(_get_class_name(), L"", WS_DLGFRAME | WS_CAPTION | WS_POPUPWINDOW,
       //         CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, (HINSTANCE) ::platform::get()->m_hinstanceThis,
       //         nullptr);

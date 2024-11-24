@@ -8,6 +8,7 @@
 #include "acme/parallelization/synchronous_lock.h"
 #include "acme/platform/application.h"
 #include "acme/platform/system.h"
+#include "acme/windowing/windowing.h"
 #include "aura/graphics/image/context.h"
 #include "aura/platform/context.h"
 
@@ -241,29 +242,29 @@ void node::on_start_system()
 void node::on_system_main()
 {
    
-   auto papp = platform()->application();
-
-   defer_create_windowing_application_delegate(papp, papp->application_menu(), papp);
+//   auto papp = platform()->application();
+//
+//   defer_create_windowing_application_delegate(papp, papp->application_menu(), papp);
    
-   ns_app_run();
+   system()->acme_windowing()->windowing_application_main_loop();
 
 }
 
 
-void node::defer_create_windowing_application_delegate(::platform::application * papplication, ::application_menu * papplicationmenu, ::application_menu_callback * papplicationmenucallback)
-{
-   
-   throw ::interface_only();
-   
-}
+//void node::defer_create_windowing_application_delegate(::platform::application * papplication, ::application_menu * papplicationmenu, ::application_menu_callback * papplicationmenucallback)
+//{
+//   
+//   throw ::interface_only();
+//   
+//}
 
 
-void node::ns_app_run()
-{
- 
-   throw ::interface_only();
-   
-}
+//void node::ns_app_run()
+//{
+// 
+//   throw ::interface_only();
+//   
+//}
 
 
 //void node::_node_file_dialog(::file::file_dialog * pdialog)

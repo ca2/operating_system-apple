@@ -282,6 +282,14 @@ namespace acme_apple
 }
 
 
+//void node::defer_create_windowing_application_delegate(::platform::application * papplication, ::application_menu * papplicationmenu, ::application_menu_callback * papplicationmenucallback)
+//{
+//
+//   acme_defer_create_windowing_application_delegate(papplication, papplicationmenu, papplicationmenucallback);
+//   
+//}
+
+
 } // namespace acme_apple
 
 

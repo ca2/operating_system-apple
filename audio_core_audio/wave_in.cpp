@@ -57,7 +57,7 @@ namespace multimedia
       void in::term_task()
       {
 
-         m_eventExitInstance.set_happening();
+         m_happeningExitInstance.set_happening();
 
          thread::term_task();
 
@@ -347,7 +347,7 @@ namespace multimedia
          }
          m_einstate = ::wave::e_in_state_stopped;
 
-         m_eventStopped.set_happening();
+         m_happeningStopped.set_happening();
 
          //return ::success;
 

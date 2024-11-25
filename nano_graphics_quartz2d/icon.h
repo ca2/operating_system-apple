@@ -26,10 +26,13 @@ namespace quartz2d
          
          //GdkPaintable *  m_pgdkpaintable;
          //QPixmap *m_pqpixmap;
-#ifdef __OBJC__
-         NSImage * m_pnsimage;
-#else
+          
+#ifdef APPLE_IOS
+        void * m_pUIImage;
+#elif defined(MACOS)
          void * m_pNSImage;
+#else
+#error "todo"
 #endif
          icon();
          ~icon() override;

@@ -8,7 +8,14 @@
 //
 #include "framework.h"
 #include "device.h"
+#ifdef APPLE_IOS
+#import <UIKit/UIKit.h>
+#elif defined(MACOS)
 #import <AppKit/AppKit.h>
+#else
+#error "todo"
+#endif
+
 #include "icon.h"
 
 
@@ -31,11 +38,16 @@ void icon::load_image_file(const void *p, memsize size)
    //auto size = m_memory.size();
    
    NSData *imageData = [[NSData alloc] initWithBytes:p length:size];
-   
+#ifdef APPLE_IOS
+    // Create NSImage from NSData
+    UIImage *image = [[UIImage alloc] initWithData:imageData];
+#elif defined(MACOS)
+    
    // Create NSImage from NSData
    NSImage *image = [[NSImage alloc] initWithData:imageData];
    
-   m_pnsimage = image;
+   m_pNSImage = image;
+#endif
    
 }
 

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A28CBB72CF413D500C6D8B1 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A2FCFC52C9D3C27000CF701 /* _.h */; };
+		9A28CBB82CF413D500C6D8B1 /* device.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A52435E2CD4B3B7006ED868 /* device.h */; };
+		9A28CBB92CF413D500C6D8B1 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A2FCFCF2C9D3C3F000CF701 /* framework.h */; };
+		9A28CBBA2CF413D500C6D8B1 /* icon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A5244242CD72179006ED868 /* icon.h */; };
+		9A28CBBC2CF413D500C6D8B1 /* icon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A5244282CD72195006ED868 /* icon.cpp */; };
+		9A28CBBD2CF413D500C6D8B1 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A2FCFC62C9D3C27000CF701 /* _.cpp */; };
+		9A28CBBE2CF413D500C6D8B1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A2FCFC72C9D3C27000CF701 /* _factory.cpp */; };
+		9A28CBBF2CF413D500C6D8B1 /* icon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A5244252CD72179006ED868 /* icon.mm */; };
+		9A28CBC02CF413D500C6D8B1 /* device.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52435F2CD4B3B7006ED868 /* device.cpp */; };
+		9A28CBC22CF413D500C6D8B1 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7E17422C9DF5F700EE8CA6 /* AppKit.framework */; };
+		9A28CBC32CF413D500C6D8B1 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7E173F2C9DF5E700EE8CA6 /* libacme.dylib */; };
 		9A2FCFCA2C9D3C27000CF701 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A2FCFC52C9D3C27000CF701 /* _.h */; };
 		9A2FCFCB2C9D3C27000CF701 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A2FCFC62C9D3C27000CF701 /* _.cpp */; };
 		9A2FCFCC2C9D3C27000CF701 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A2FCFC72C9D3C27000CF701 /* _factory.cpp */; };
@@ -21,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A28CBB52CF413D500C6D8B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AA829242CAF88FE00DA11E9 /* acme.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A68A41325114352008DABD2;
+			remoteInfo = acme;
+		};
 		9AA829272CAF88FE00DA11E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9AA829242CAF88FE00DA11E9 /* acme.xcodeproj */;
@@ -31,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A28CBC72CF413D500C6D8B1 /* libios_nano_graphics_quartz2d.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_nano_graphics_quartz2d.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2FCE052C9D3ADC000CF701 /* libnano_graphics_quartz2d.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libnano_graphics_quartz2d.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2FCFC52C9D3C27000CF701 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9A2FCFC62C9D3C27000CF701 /* _.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
@@ -49,6 +68,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9A28CBC12CF413D500C6D8B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A28CBC22CF413D500C6D8B1 /* AppKit.framework in Frameworks */,
+				9A28CBC32CF413D500C6D8B1 /* libacme.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A2FCE032C9D3ADC000CF701 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2FCE052C9D3ADC000CF701 /* libnano_graphics_quartz2d.dylib */,
+				9A28CBC72CF413D500C6D8B1 /* libios_nano_graphics_quartz2d.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +137,17 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		9A28CBB62CF413D500C6D8B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A28CBB72CF413D500C6D8B1 /* _.h in Headers */,
+				9A28CBB82CF413D500C6D8B1 /* device.h in Headers */,
+				9A28CBB92CF413D500C6D8B1 /* framework.h in Headers */,
+				9A28CBBA2CF413D500C6D8B1 /* icon.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A2FCE012C9D3ADC000CF701 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,6 +162,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9A28CBB32CF413D500C6D8B1 /* ios_nano_graphics_quartz2d */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A28CBC42CF413D500C6D8B1 /* Build configuration list for PBXNativeTarget "ios_nano_graphics_quartz2d" */;
+			buildPhases = (
+				9A28CBB62CF413D500C6D8B1 /* Headers */,
+				9A28CBBB2CF413D500C6D8B1 /* Sources */,
+				9A28CBC12CF413D500C6D8B1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A28CBB42CF413D500C6D8B1 /* PBXTargetDependency */,
+			);
+			name = ios_nano_graphics_quartz2d;
+			packageProductDependencies = (
+			);
+			productName = innate_ui_appkit;
+			productReference = 9A28CBC72CF413D500C6D8B1 /* libios_nano_graphics_quartz2d.a */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 		9A2FCE042C9D3ADC000CF701 /* nano_graphics_quartz2d */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A2FCE102C9D3ADC000CF701 /* Build configuration list for PBXNativeTarget "nano_graphics_quartz2d" */;
@@ -177,11 +237,24 @@
 			projectRoot = "";
 			targets = (
 				9A2FCE042C9D3ADC000CF701 /* nano_graphics_quartz2d */,
+				9A28CBB32CF413D500C6D8B1 /* ios_nano_graphics_quartz2d */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9A28CBBB2CF413D500C6D8B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A28CBBC2CF413D500C6D8B1 /* icon.cpp in Sources */,
+				9A28CBBD2CF413D500C6D8B1 /* _.cpp in Sources */,
+				9A28CBBE2CF413D500C6D8B1 /* _factory.cpp in Sources */,
+				9A28CBBF2CF413D500C6D8B1 /* icon.mm in Sources */,
+				9A28CBC02CF413D500C6D8B1 /* device.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A2FCE022C9D3ADC000CF701 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,6 +270,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9A28CBB42CF413D500C6D8B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = acme;
+			targetProxy = 9A28CBB52CF413D500C6D8B1 /* PBXContainerItemProxy */;
+		};
 		9AA829282CAF88FE00DA11E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = acme;
@@ -205,6 +283,32 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9A28CBC52CF413D500C6D8B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
+				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				PLATFORM_MODIFIER = ios;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9A28CBC62CF413D500C6D8B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
+				EXECUTABLE_EXTENSION = "$(STATIC_LIBRARY_EXTENSION:default=a)";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				PLATFORM_MODIFIER = ios;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 		9A2FCE0E2C9D3ADC000CF701 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A7E17532C9DF6E400EE8CA6 /* _____debug.xcconfig */;
@@ -212,13 +316,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_DEADCODE_DEADSTORES = NO;
 				CLANG_ANALYZER_GCD = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_MEMORY_MANAGEMENT = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_CPP_STATIC_DESTRUCTORS = YES;
 				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -248,19 +352,23 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = YES;
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXCLUDED_ARCHS = "";
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -280,22 +388,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				HEADER_SEARCH_PATHS = "$(WorkspaceDir)/../operating_system/include";
+				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = "@executable_path";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/$(CONFIGURATION)/library",
 				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = NO;
-				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 				SYSTEM_HEADER_SEARCH_PATHS = (
@@ -337,13 +441,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_DEADCODE_DEADSTORES = NO;
 				CLANG_ANALYZER_GCD = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_MEMORY_MANAGEMENT = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_CPP_STATIC_DESTRUCTORS = YES;
 				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -373,20 +477,24 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = YES;
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXCLUDED_ARCHS = "";
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -405,21 +513,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				HEADER_SEARCH_PATHS = "$(WorkspaceDir)/../operating_system/include";
+				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = "@executable_path";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/$(CONFIGURATION)/library",
 				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = NO;
-				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 				SYSTEM_HEADER_SEARCH_PATHS = (
@@ -503,6 +607,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9A28CBC42CF413D500C6D8B1 /* Build configuration list for PBXNativeTarget "ios_nano_graphics_quartz2d" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A28CBC52CF413D500C6D8B1 /* Debug */,
+				9A28CBC62CF413D500C6D8B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9A2FCE002C9D3ADC000CF701 /* Build configuration list for PBXProject "nano_graphics_quartz2d" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

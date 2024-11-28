@@ -4,7 +4,7 @@
 //  coalescing common parts of appkit and uikit acme_window_bridge in apple_kit acme_window_bridge by camilo on 2024-11-28 00:57 <3ThomasBorregaardSorensen
 
 #include "framework.h"
-#include "window.h"
+//#include "window.h"
 #include "acme_window_bridge.h"
 #include "acme/nano/graphics/device.h"
 #include "acme/constant/id.h"
@@ -130,21 +130,17 @@ void acme_window_bridge::on_right_button_down(double xHost, double yHost, double
    
    ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
-   bool bFore= pelemental->fore_on_right_button_down(pmouse);
+   pelemental->fore_on_right_button_down(pmouse);
    
-   if(!bFore)
+   if(pmouse->m_bRet)
    {
       
-      bool bBack = pelemental->back_on_right_button_down(pmouse);
-      
-      if(!bBack)
-      {
-         
-         printf_line("unhandled right button down");
-         
-      }
+      return;
       
    }
+      
+   pelemental->back_on_right_button_down(pmouse);
+      
 }
 
 
@@ -161,21 +157,17 @@ void acme_window_bridge::on_mouse_move(double xHost, double yHost, double xAbsol
    
    ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
-   bool bFore= pelemental->fore_on_mouse_move(pmouse);
+   pelemental->fore_on_mouse_move(pmouse);
    
-   if(!bFore)
+   if(pmouse->m_bRet)
    {
       
-      bool bBack = pelemental->back_on_mouse_move(pmouse);
-      
-      if(!bBack)
-      {
-         
-         printf_line("unhandled right button down");
-         
-      }
+      return;
       
    }
+   
+   pelemental->back_on_mouse_move(pmouse);
+   
 }
 
 //

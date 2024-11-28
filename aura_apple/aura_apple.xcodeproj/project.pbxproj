@@ -167,13 +167,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A8E9E22282A2FEB005FF778 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -314,7 +307,6 @@
 			buildPhases = (
 				9A8E9E18282A2FEB005FF778 /* Headers */,
 				9A8E9E1D282A2FEB005FF778 /* Sources */,
-				9A8E9E22282A2FEB005FF778 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -334,7 +326,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					9A15A5AB264B54430080670E = {
 						CreatedOnToolsVersion = 12.5;

@@ -36,10 +36,8 @@
 		9A787E6E264E234B003DF8A0 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E65264E22CB003DF8A0 /* _factory.cpp */; };
 		9A787E6F264E2351003DF8A0 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
 		9A787E70264E2355003DF8A0 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5E264E22CB003DF8A0 /* node.cpp */; };
-		9A787E74264E31B7003DF8A0 /* NSObject+DDExtensions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */; };
 		9A787E75264E31BC003DF8A0 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */; };
 		9A787E76264E31C2003DF8A0 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */; };
-		9A787E77264E31C7003DF8A0 /* DDInvocationGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6B264E22CB003DF8A0 /* DDInvocationGrabber.mm */; };
 		9A787E80264E89F4003DF8A0 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A787E7F264E89F4003DF8A0 /* CoreServices.framework */; };
 		9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
 		9A78F40928E7A953007F62C0 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A78F40728E7A945007F62C0 /* exception_translator.cpp */; };
@@ -52,8 +50,6 @@
 		9A8E9DAA282A2F61005FF778 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A74158F266BD25B00552531 /* debug.cpp */; };
 		9A8E9DAB282A2F61005FF778 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E65264E22CB003DF8A0 /* _factory.cpp */; };
 		9A8E9DAC282A2F61005FF778 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */; };
-		9A8E9DAD282A2F61005FF778 /* DDInvocationGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6B264E22CB003DF8A0 /* DDInvocationGrabber.mm */; };
-		9A8E9DAE282A2F61005FF778 /* NSObject+DDExtensions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */; };
 		9A8E9DAF282A2F61005FF778 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
 		9A8E9DB0282A2F61005FF778 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5E264E22CB003DF8A0 /* node.cpp */; };
 		9A93B95A28471D7D005ACD11 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B95828471D39005ACD11 /* image.cpp */; };
@@ -104,8 +100,6 @@
 		9AC14D0C297B3410006D9BD3 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E65264E22CB003DF8A0 /* _factory.cpp */; };
 		9AC14D0D297B3410006D9BD3 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E64264E22CB003DF8A0 /* _.cpp */; };
 		9AC14D0E297B3410006D9BD3 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */; };
-		9AC14D0F297B3410006D9BD3 /* DDInvocationGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6B264E22CB003DF8A0 /* DDInvocationGrabber.mm */; };
-		9AC14D11297B3410006D9BD3 /* NSObject+DDExtensions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */; };
 		9AC14D12297B3410006D9BD3 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
 		9AC14D13297B3410006D9BD3 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
 		9AC14D14297B3410006D9BD3 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5E264E22CB003DF8A0 /* node.cpp */; };
@@ -183,17 +177,14 @@
 		9A74158F266BD25B00552531 /* debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = debug.cpp; sourceTree = "<group>"; };
 		9A7724A52A257C3500B9A835 /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
 		9A7724A62A257C3500B9A835 /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
-		9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+DDExtensions.mm"; sourceTree = "<group>"; };
 		9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SymlinksAndAliases.h"; sourceTree = "<group>"; };
 		9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+SymlinksAndAliases.mm"; sourceTree = "<group>"; };
 		9A787E58264E22CB003DF8A0 /* _mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm.h; sourceTree = "<group>"; };
 		9A787E59264E22CB003DF8A0 /* _apple.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = _apple.mm; sourceTree = "<group>"; };
-		9A787E5A264E22CB003DF8A0 /* DDInvocationGrabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDInvocationGrabber.h; sourceTree = "<group>"; };
 		9A787E5B264E22CB003DF8A0 /* resource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = resource.cpp; sourceTree = "<group>"; };
 		9A787E5C264E22CB003DF8A0 /* framework.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9A787E5D264E22CB003DF8A0 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		9A787E5E264E22CB003DF8A0 /* node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = node.cpp; sourceTree = "<group>"; };
-		9A787E5F264E22CB003DF8A0 /* NSObject+DDExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+DDExtensions.h"; sourceTree = "<group>"; };
 		9A787E60264E22CB003DF8A0 /* node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
 		9A787E63264E22CB003DF8A0 /* _mm_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm_common.h; sourceTree = "<group>"; };
 		9A787E64264E22CB003DF8A0 /* _.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
@@ -202,7 +193,6 @@
 		9A787E68264E22CB003DF8A0 /* _c_mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _c_mm.h; sourceTree = "<group>"; };
 		9A787E69264E22CB003DF8A0 /* _library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
 		9A787E6A264E22CB003DF8A0 /* timer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = timer.mm; sourceTree = "<group>"; };
-		9A787E6B264E22CB003DF8A0 /* DDInvocationGrabber.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DDInvocationGrabber.mm; sourceTree = "<group>"; };
 		9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UncaughtExceptionHandler.mm; sourceTree = "<group>"; };
 		9A787E6D264E22CB003DF8A0 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9A787E7F264E89F4003DF8A0 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -292,8 +282,6 @@
 				9A787E63264E22CB003DF8A0 /* _mm_common.h */,
 				9A734A50284F5E37003986C7 /* CAHostTimeBase.h */,
 				9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */,
-				9A787E5A264E22CB003DF8A0 /* DDInvocationGrabber.h */,
-				9A787E6B264E22CB003DF8A0 /* DDInvocationGrabber.mm */,
 				9A74158F266BD25B00552531 /* debug.cpp */,
 				9A94DEEE282C5F6500F5C1CA /* directory_system.h */,
 				9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */,
@@ -324,8 +312,6 @@
 				9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */,
 				9AB09AA42B72BA7200E2C3A5 /* NSMetadataQueryHandler.h */,
 				9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */,
-				9A787E5F264E22CB003DF8A0 /* NSObject+DDExtensions.h */,
-				9A787E50264E22CB003DF8A0 /* NSObject+DDExtensions.mm */,
 				9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */,
 				9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */,
 				9A94DEEF282C5F6600F5C1CA /* path_system.h */,
@@ -551,8 +537,6 @@
 				9A28E3DB2B73FEF900ABB2C5 /* file.mm in Sources */,
 				9AB09AA62B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
 				9A787E76264E31C2003DF8A0 /* UncaughtExceptionHandler.mm in Sources */,
-				9A787E77264E31C7003DF8A0 /* DDInvocationGrabber.mm in Sources */,
-				9A787E74264E31B7003DF8A0 /* NSObject+DDExtensions.mm in Sources */,
 				9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */,
 				9AA74F6128484887009BB762 /* image.mm in Sources */,
 				9A787E70264E2355003DF8A0 /* node.cpp in Sources */,
@@ -589,8 +573,6 @@
 				9A94DEDC282C4B1C00F5C1CA /* _.cpp in Sources */,
 				9A78FC342B7AFE57006B95FB /* file_context.cpp in Sources */,
 				9A8E9DAC282A2F61005FF778 /* UncaughtExceptionHandler.mm in Sources */,
-				9A8E9DAD282A2F61005FF778 /* DDInvocationGrabber.mm in Sources */,
-				9A8E9DAE282A2F61005FF778 /* NSObject+DDExtensions.mm in Sources */,
 				9A734A53284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */,
 				9A8E9DAF282A2F61005FF778 /* _apple.mm in Sources */,
 				9A8E9DB0282A2F61005FF778 /* node.cpp in Sources */,
@@ -619,8 +601,6 @@
 				9A5404EC2CE727D00009869E /* set_icloud_data.mm in Sources */,
 				9AB09AAE2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */,
 				9AC14D0E297B3410006D9BD3 /* UncaughtExceptionHandler.mm in Sources */,
-				9AC14D0F297B3410006D9BD3 /* DDInvocationGrabber.mm in Sources */,
-				9AC14D11297B3410006D9BD3 /* NSObject+DDExtensions.mm in Sources */,
 				9AC14D12297B3410006D9BD3 /* _apple.mm in Sources */,
 				9AC14D13297B3410006D9BD3 /* image.mm in Sources */,
 				9AC14D14297B3410006D9BD3 /* node.cpp in Sources */,

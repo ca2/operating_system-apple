@@ -219,7 +219,7 @@ namespace acme_apple
 //   ns_main_send(^{
 //      
 //      ::platform::get()->node()->defer_initialize_icloud_container_access();
-//      iosWindowApp * papp = (iosWindowApp *) [[UIApplication sharedApplication] delegate];
+//      iosApp * papp = (iosApp *) [[UIApplication sharedApplication] delegate];
 //
 //      estatus = [ papp deferInitializeiCloudContainerAccess ];
 //

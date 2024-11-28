@@ -54,6 +54,7 @@ namespace quartz2d
       
       void _select_font(::nano::graphics::font * pnanofont);
       
+      void translate(int x, int y) override;
       
    };
 

@@ -32,12 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9A28CBB52CF413D500C6D8B1 /* PBXContainerItemProxy */ = {
+		9A4754132CF5EA7500ED30AE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9AA829242CAF88FE00DA11E9 /* acme.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9A68A41325114352008DABD2;
-			remoteInfo = acme;
+			remoteGlobalIDString = 9AC100A72B6AC9BD0053DB45;
+			remoteInfo = ios_acme;
 		};
 		9AA829272CAF88FE00DA11E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -173,7 +173,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9A28CBB42CF413D500C6D8B1 /* PBXTargetDependency */,
+				9A4754142CF5EA7500ED30AE /* PBXTargetDependency */,
 			);
 			name = ios_nano_graphics_quartz2d;
 			packageProductDependencies = (
@@ -270,10 +270,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9A28CBB42CF413D500C6D8B1 /* PBXTargetDependency */ = {
+		9A4754142CF5EA7500ED30AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = acme;
-			targetProxy = 9A28CBB52CF413D500C6D8B1 /* PBXContainerItemProxy */;
+			name = ios_acme;
+			targetProxy = 9A4754132CF5EA7500ED30AE /* PBXContainerItemProxy */;
 		};
 		9AA829282CAF88FE00DA11E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

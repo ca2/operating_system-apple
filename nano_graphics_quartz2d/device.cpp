@@ -244,7 +244,14 @@ namespace quartz2d
 
    }
 
-
+      
+      void device::translate(int x, int y)
+      {
+        
+         CGContextTranslateCTM(m_pdc, x, y);
+         
+      }
+      
 
       } //namespace user
 

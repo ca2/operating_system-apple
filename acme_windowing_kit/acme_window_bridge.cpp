@@ -36,6 +36,19 @@ void screen_coordinates_aware_copy(::int_point & point, const CGPoint & cgpoint)
 namespace apple_kit
 {
 
+
+acme_window_bridge::acme_window_bridge()
+{
+   
+}
+
+
+acme_window_bridge::~acme_window_bridge()
+{
+   
+}
+
+
 void acme_window_bridge::on_left_button_up(double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
@@ -303,6 +316,14 @@ void acme_window_bridge::on_mouse_move(double xHost, double yHost, double xAbsol
 //   return nullptr;
 //   
 //}
+
+
+::acme::windowing::window * acme_window_bridge::acme_windowing_window()
+{
+   
+   return nullptr;
+   
+}
 
 
 } // namespace apple_kit

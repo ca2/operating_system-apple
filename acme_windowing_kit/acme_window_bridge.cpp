@@ -14,6 +14,7 @@
 #include "acme/user/micro/elemental.h"
 #include "acme/user/user/frame_interaction.h"
 #include "acme/user/user/mouse.h"
+#include "acme/windowing/window.h"
 #include <CoreGraphics/CoreGraphics.h>
 
 void ns_main_post(dispatch_block_t block);
@@ -38,13 +39,15 @@ namespace apple_kit
 void acme_window_bridge::on_left_button_up(double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
-   auto pmouse = m_pwindow->__create_new <::user::mouse>();
+   auto pacmewindowingwindow = acme_windowing_window();
+   
+   auto pmouse = pacmewindowingwindow->__create_new <::user::mouse>();
    
    pmouse->m_pointHost = {xHost, yHost};
    
    pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
    
-   ::cast < ::micro::elemental > pelemental = m_pwindow->m_pacmeuserinteraction;
+   ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
    pelemental->fore_on_left_button_up(pmouse);
    
@@ -63,13 +66,15 @@ void acme_window_bridge::on_left_button_up(double xHost, double yHost, double xA
 void acme_window_bridge::on_left_button_down(double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
-   auto pmouse = m_pwindow->__create_new <::user::mouse>();
+   auto pacmewindowingwindow = acme_windowing_window();
+   
+   auto pmouse = pacmewindowingwindow->__create_new <::user::mouse>();
    
    pmouse->m_pointHost = {xHost, yHost};
    
    pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
    
-   ::cast < ::micro::elemental > pelemental = m_pwindow->m_pacmeuserinteraction;
+   ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
    pelemental->fore_on_left_button_down(pmouse);
    
@@ -88,13 +93,15 @@ void acme_window_bridge::on_left_button_down(double xHost, double yHost, double 
 void acme_window_bridge::on_right_button_up(double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
-   auto pmouse = m_pwindow->__create_new <::user::mouse>();
+   auto pacmewindowingwindow = acme_windowing_window();
+   
+   auto pmouse = pacmewindowingwindow->__create_new <::user::mouse>();
    
    pmouse->m_pointHost = {xHost, yHost};
    
    pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
    
-   ::cast < ::micro::elemental > pelemental = m_pwindow->m_pacmeuserinteraction;
+   ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
    pelemental->fore_on_right_button_up(pmouse);
    
@@ -113,13 +120,15 @@ void acme_window_bridge::on_right_button_up(double xHost, double yHost, double x
 void acme_window_bridge::on_right_button_down(double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
-   auto pmouse = m_pwindow->__create_new <::user::mouse>();
+   auto pacmewindowingwindow = acme_windowing_window();
+   
+   auto pmouse = pacmewindowingwindow->__create_new <::user::mouse>();
    
    pmouse->m_pointHost = {xHost, yHost};
    
    pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
    
-   ::cast < ::micro::elemental > pelemental = m_pwindow->m_pacmeuserinteraction;
+   ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
    bool bFore= pelemental->fore_on_right_button_down(pmouse);
    
@@ -142,13 +151,15 @@ void acme_window_bridge::on_right_button_down(double xHost, double yHost, double
 void acme_window_bridge::on_mouse_move(double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
-   auto pmouse = m_pwindow->__create_new <::user::mouse>();
+   auto pacmewindowingwindow = acme_windowing_window();
+   
+   auto pmouse = pacmewindowingwindow->__create_new <::user::mouse>();
    
    pmouse->m_pointHost = {xHost, yHost};
    
    pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
    
-   ::cast < ::micro::elemental > pelemental = m_pwindow->m_pacmeuserinteraction;
+   ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
    bool bFore= pelemental->fore_on_mouse_move(pmouse);
    
@@ -167,139 +178,139 @@ void acme_window_bridge::on_mouse_move(double xHost, double yHost, double xAbsol
    }
 }
 
-
-void acme_window_bridge::on_char(int iChar)
-{
-   
-   //m_pwindow->on_char(iChar);
-   
-}
-
-
-void acme_window_bridge::_on_draw_background(CGContextRef cg, CGSize sizeFrame)
-{
-   
-   //::pointer<quartz2d::nano::graphics::device>pnanodevice = ::place(new quartz2d::nano::graphics::device(cg));
-   
-   m_pwindow->_draw_background(cg);
-   
-}
-
-
-void acme_window_bridge::_on_draw_foreground(CGContextRef cg, CGSize sizeFrame)
-{
-   
-   //::pointer<quartz2d::nano::graphics::device>pnanodevice = ::place(new quartz2d::nano::graphics::device(cg));
-   
-   m_pwindow->_draw_foreground(cg);
-   
-}
-
-
-void acme_window_bridge::on_layout(int x, int y, int w, int h)
-{
-   
-   ::int_rectangle r;
-   r.left() = x;
-   r.top() = y;
-   r.right() = x+w;
-   r.bottom() = y+h;
-   
-   m_pwindow->m_pacmeuserinteraction->set_rectangle(r);
-   
-}
-
-
-bool acme_window_bridge::_is_top_most() const
-{
-   
-   //   return m_pwindow->m_pacmeuserinteraction->m_bTopMost;
-   
-   ::cast<::acme::user::frame_interaction> pelemental = m_pwindow->m_pacmeuserinteraction;
-   
-   if(!pelemental)
-   {
-      
-      return false;
-      
-   }
-   
-   return pelemental->m_bTopMost;
-   
-}
-
-
-bool acme_window_bridge::_is_popup_window() const
-{
-   
-   return m_pwindow->m_pacmeuserinteraction->is_popup_window();
-   
-}
-
-
-void acme_window_bridge::ios_window_become_main()
-{
-   
-   return m_pwindow->ios_window_become_main();
-   
-}
-
-
-void acme_window_bridge::ios_window_resign_main()
-{
-   
-   return m_pwindow->ios_window_resign_main();
-   
-}
-
-
-void acme_window_bridge::ios_window_become_key()
-{
-   
-   return m_pwindow->ios_window_become_key();
-   
-}
-
-
-void acme_window_bridge::ios_window_resign_key()
-{
-   
-   return m_pwindow->ios_window_resign_key();
-   
-}
-
-
-void acme_window_bridge::ios_window_on_show()
-{
-   
-   return m_pwindow->ios_window_on_show();
-   
-}
-
-
-void acme_window_bridge::ios_window_on_hide()
-{
-   
-   return m_pwindow->ios_window_on_hide();
-   
-}
+//
+//void acme_window_bridge::on_char(int iChar)
+//{
+//   
+//   //pacmewindowingwindow->on_char(iChar);
+//   
+//}
+//
+//
+//void acme_window_bridge::_on_draw_background(CGContextRef cg, CGSize sizeFrame)
+//{
+//   
+//   //::pointer<quartz2d::nano::graphics::device>pnanodevice = ::place(new quartz2d::nano::graphics::device(cg));
+//   
+//   pacmewindowingwindow->_draw_background(cg);
+//   
+//}
+//
+//
+//void acme_window_bridge::_on_draw_foreground(CGContextRef cg, CGSize sizeFrame)
+//{
+//   
+//   //::pointer<quartz2d::nano::graphics::device>pnanodevice = ::place(new quartz2d::nano::graphics::device(cg));
+//   
+//   pacmewindowingwindow->_draw_foreground(cg);
+//   
+//}
+//
+//
+//void acme_window_bridge::on_layout(int x, int y, int w, int h)
+//{
+//   
+//   ::int_rectangle r;
+//   r.left() = x;
+//   r.top() = y;
+//   r.right() = x+w;
+//   r.bottom() = y+h;
+//   
+//   pacmewindowingwindow->m_pacmeuserinteraction->set_rectangle(r);
+//   
+//}
+//
+//
+//bool acme_window_bridge::_is_top_most() const
+//{
+//   
+//   //   return pacmewindowingwindow->m_pacmeuserinteraction->m_bTopMost;
+//   
+//   ::cast<::acme::user::frame_interaction> pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
+//   
+//   if(!pelemental)
+//   {
+//      
+//      return false;
+//      
+//   }
+//   
+//   return pelemental->m_bTopMost;
+//   
+//}
+//
+//
+//bool acme_window_bridge::_is_popup_window() const
+//{
+//   
+//   return pacmewindowingwindow->m_pacmeuserinteraction->is_popup_window();
+//   
+//}
+//
+//
+//void acme_window_bridge::ios_window_become_main()
+//{
+//   
+//   return pacmewindowingwindow->ios_window_become_main();
+//   
+//}
+//
+//
+//void acme_window_bridge::ios_window_resign_main()
+//{
+//   
+//   return pacmewindowingwindow->ios_window_resign_main();
+//   
+//}
+//
+//
+//void acme_window_bridge::ios_window_become_key()
+//{
+//   
+//   return pacmewindowingwindow->ios_window_become_key();
+//   
+//}
+//
+//
+//void acme_window_bridge::ios_window_resign_key()
+//{
+//   
+//   return pacmewindowingwindow->ios_window_resign_key();
+//   
+//}
+//
+//
+//void acme_window_bridge::ios_window_on_show()
+//{
+//   
+//   return pacmewindowingwindow->ios_window_on_show();
+//   
+//}
 
 
-void acme_window_bridge::do_tasks()
-{
-   
-   ::task_run();
-   
-}
-
-
-
-ios_window * acme_window_bridge::_ios_window()
-{
-   
-   return nullptr;
-   
-}
+//void acme_window_bridge::ios_window_on_hide()
+//{
+//   
+//   return pacmewindowingwindow->ios_window_on_hide();
+//   
+//}
+//
+//
+//void acme_window_bridge::do_tasks()
+//{
+//   
+//   ::task_run();
+//   
+//}
+//
+//
+//
+//ios_window * acme_window_bridge::_ios_window()
+//{
+//   
+//   return nullptr;
+//   
+//}
 
 
 } // namespace apple_kit

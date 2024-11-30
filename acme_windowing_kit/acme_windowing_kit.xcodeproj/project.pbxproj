@@ -143,6 +143,13 @@
 			name = acme_windowing_kit;
 			sourceTree = "<group>";
 		};
+		9AED89852CFB8F450078A45B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -237,6 +244,10 @@
 				{
 					ProductGroup = 9A3E324E2CF83601007DC9EE /* Products */;
 					ProjectRef = 9A3E324D2CF83601007DC9EE /* acme_apple.xcodeproj */;
+				},
+				{
+					ProductGroup = 9AED89852CFB8F450078A45B /* Products */;
+					ProjectRef = 9A3E324A2CF835E0007DC9EE /* acme_apple.xcodeproj */;
 				},
 			);
 			projectRoot = "";

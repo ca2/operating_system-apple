@@ -105,6 +105,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9AA1F7E12D18B90E00DB0C45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9AC3F29B2CF81EBF0061DCC0 = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +244,10 @@
 				{
 					ProductGroup = 9A3E324E2CF83601007DC9EE /* Products */;
 					ProjectRef = 9A3E324D2CF83601007DC9EE /* acme_apple.xcodeproj */;
+				},
+				{
+					ProductGroup = 9AA1F7E12D18B90E00DB0C45 /* Products */;
+					ProjectRef = 9A3E324A2CF835E0007DC9EE /* acme_apple.xcodeproj */;
 				},
 			);
 			projectRoot = "";

@@ -55,7 +55,7 @@ namespace acme_apple
    node::node()
    {
       
-      m_pAcmePosix = this;
+      //m_pAcmePosix = this;
       
    }
 

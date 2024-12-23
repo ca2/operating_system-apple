@@ -20,7 +20,7 @@ namespace apex_apple
 
          //m_pGtkSettingsDefault = nullptr;
 
-         m_pApexPosix = this;
+         //m_pApexPosix = this;
 
       }
 

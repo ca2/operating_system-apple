@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -256,6 +256,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1520;
+				ORGANIZATIONNAME = "ca2 Software Development";
 				TargetAttributes = {
 					9A64C1702660C62C0074030F = {
 						CreatedOnToolsVersion = 12.5;
@@ -263,7 +264,7 @@
 				};
 			};
 			buildConfigurationList = 9A64C16C2660C62C0074030F /* Build configuration list for PBXProject "write_text_quartz2d" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

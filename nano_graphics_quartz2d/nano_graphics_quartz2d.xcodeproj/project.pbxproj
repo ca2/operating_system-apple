@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -202,6 +202,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1610;
+				ORGANIZATIONNAME = "ca2 Software Development";
 				TargetAttributes = {
 					9A2FCE042C9D3ADC000CF701 = {
 						CreatedOnToolsVersion = 16.0;
@@ -209,6 +210,7 @@
 				};
 			};
 			buildConfigurationList = 9A2FCE002C9D3ADC000CF701 /* Build configuration list for PBXProject "nano_graphics_quartz2d" */;
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -217,7 +219,6 @@
 			);
 			mainGroup = 9A2FCDFC2C9D3ADC000CF701;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 9A2FCE062C9D3ADC000CF701 /* Products */;
 			projectDirPath = "";
 			projectReferences = (

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -422,7 +422,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1520;
-				ORGANIZATIONNAME = "ca2 Desenvolvimento de Sofware Ltda.";
+				ORGANIZATIONNAME = "ca2 Software Development";
 				TargetAttributes = {
 					07B657C6190F3CBF002DAADE = {
 						TestTargetID = A1CFD777154F5EAA007447E2;
@@ -430,7 +430,7 @@
 				};
 			};
 			buildConfigurationList = A1CFD772154F5EA7007447E2 /* Build configuration list for PBXProject "music_midi_core_midi" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

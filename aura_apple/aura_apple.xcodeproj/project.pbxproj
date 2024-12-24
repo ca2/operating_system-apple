@@ -327,6 +327,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1610;
+				ORGANIZATIONNAME = "ca2 Software Development";
 				TargetAttributes = {
 					9A15A5AB264B54430080670E = {
 						CreatedOnToolsVersion = 12.5;

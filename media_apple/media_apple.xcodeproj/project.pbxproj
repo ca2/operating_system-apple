@@ -82,7 +82,7 @@
 		9A20EC412B771314008A08A2 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9A20ECC42B771693008A08A2 /* media_item.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = media_item.cpp; sourceTree = "<group>"; };
 		9A20ECC52B771694008A08A2 /* media_item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = media_item.h; sourceTree = "<group>"; };
-		9A20ECC82B7717AF008A08A2 /* aura_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura_apple.xcodeproj; path = ../aura_apple/aura_apple.xcodeproj; sourceTree = "<group>"; };
+		9A20ECC82B7717AF008A08A2 /* aura_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = aura_apple.xcodeproj; path = ../aura_apple/aura_apple.xcodeproj; sourceTree = SOURCE_ROOT; };
 		9A20ECE02B77187E008A08A2 /* media.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = media.mm; sourceTree = "<group>"; };
 		9A20ECE12B77187E008A08A2 /* media.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = media.cpp; sourceTree = "<group>"; };
 		9A4DDE7B2B775A1E00477878 /* libmedia_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libmedia_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };

@@ -9,6 +9,78 @@
 
 #include <CoreGraphics/CoreGraphics.h>
 
+template < typename CORE_FOUNDATION_TYPE >
+class core_foundation_reference
+{
+public:
+   
+   CORE_FOUNDATION_TYPE      m_cftype;
+   
+   core_foundation_reference()
+   {
+      m_cftype = nullptr;
+   }
+   core_foundation_reference(CORE_FOUNDATION_TYPE cftype)
+   {
+      m_cftype = cftype;
+   }
+
+   ~core_foundation_reference()
+   {
+    
+      if(m_cftype)
+      {
+       
+         CFRelease(m_cftype);
+         
+      }
+      
+   }
+   
+   
+   operator CORE_FOUNDATION_TYPE()
+   {
+    
+      return m_cftype;
+      
+   }
+      
+   
+};
+
+template < typename CORE_FOUNDATION_TYPE >
+::core_foundation_reference < CORE_FOUNDATION_TYPE > as_CFRef(CORE_FOUNDATION_TYPE cftype)
+{
+ 
+   return ::core_foundation_reference < CORE_FOUNDATION_TYPE >(cftype);
+   
+}
+
+
+class keep_cgcontext
+{
+public:
+   
+   CGContextRef m_cgcontext;
+   
+   keep_cgcontext(CGContextRef cgcontext):
+      m_cgcontext(cgcontext)
+   {
+      
+      CGContextSaveGState(m_cgcontext);
+
+   }
+   
+   ~keep_cgcontext()
+   {
+      // Restore the CGContext state
+      CGContextRestoreGState(m_cgcontext);
+      
+   }
+
+   
+};
+
 
 namespace quartz2d
 {
@@ -27,7 +99,7 @@ namespace quartz2d
    public:
 
 
-      CGContextRef                  m_pdc;
+      CGContextRef                  m_cgcontext;
       bool                          m_bOwn;
 
       
@@ -35,7 +107,7 @@ namespace quartz2d
       device(CGContextRef pdc);
       ~device() override;
 
-      void attach(void * posdata) override;
+      void attach(void * posdata, const ::int_size & size) override;
       void _draw_text(const ::string & str, const ::int_rectangle & rectangleText, const ::e_align & ealign, const ::e_draw_text & edrawtext, ::nano::graphics::brush * pnanobrushBack, ::nano::graphics::brush * pnanobrushText, ::nano::graphics::font * pnanofont) override;
       
       ::int_size get_text_extents(const ::string & str, ::nano::graphics::font * pnanofont) override;

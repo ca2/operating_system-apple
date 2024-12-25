@@ -59,8 +59,10 @@ void icon::load_image_file(const void *p, memsize size)
       
       void icon::_draw_in_context(::quartz2d::nano::graphics::device * pdevice, int x, int y, int cx, int cy)
       {
+         
 #ifdef MACOS
-         auto pnsgraphicscontext = [NSGraphicsContext graphicsContextWithCGContext:pdevice->m_pdc flipped: true];
+         
+         auto pnsgraphicscontext = [NSGraphicsContext graphicsContextWithCGContext:pdevice->m_cgcontext flipped: true];
          
          [ NSGraphicsContext setCurrentContext:pnsgraphicscontext ];
          

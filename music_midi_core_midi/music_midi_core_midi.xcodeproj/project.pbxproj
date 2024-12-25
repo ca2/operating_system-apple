@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -146,8 +146,8 @@
 		9A39401C2C5D6BC9005804BD /* music_midi_core_midi_instrument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = music_midi_core_midi_instrument.h; sourceTree = "<group>"; };
 		9A39401D2C5D6C34005804BD /* music_midi_core_midi_intrument.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = music_midi_core_midi_intrument.mm; sourceTree = "<group>"; };
 		9A39401F2C5D7641005804BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = veriwell_multimedia.xcodeproj; path = "../../../source/app-veriwell/multimedia/veriwell_multimedia.xcodeproj"; sourceTree = "<group>"; };
-		9A3F08E82C7A128800850151 /* media_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = media_apple.xcodeproj; path = ../media_apple/media_apple.xcodeproj; sourceTree = "<group>"; };
+		9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = veriwell_multimedia.xcodeproj; path = "../../../source/app-veriwell/multimedia/veriwell_multimedia.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		9A3F08E82C7A128800850151 /* media_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = media_apple.xcodeproj; path = ../media_apple/media_apple.xcodeproj; sourceTree = SOURCE_ROOT; };
 		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		9A941C4F1FF34F880028686E /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		9A941C511FF34F9E0028686E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -422,7 +422,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1520;
-				ORGANIZATIONNAME = "ca2 Desenvolvimento de Sofware Ltda.";
+				ORGANIZATIONNAME = "ca2 Software Development";
 				TargetAttributes = {
 					07B657C6190F3CBF002DAADE = {
 						TestTargetID = A1CFD777154F5EAA007447E2;
@@ -430,7 +430,7 @@
 				};
 			};
 			buildConfigurationList = A1CFD772154F5EA7007447E2 /* Build configuration list for PBXProject "music_midi_core_midi" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

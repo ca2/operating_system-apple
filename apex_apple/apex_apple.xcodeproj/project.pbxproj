@@ -119,27 +119,6 @@
 			remoteGlobalIDString = 9AC981832A71B53F00B1BCF3;
 			remoteInfo = static_apex_darwin;
 		};
-		9AC981AF2A71B58C00B1BCF3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9AC981A72A71B58B00B1BCF3 /* acme_darwin.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9AFD807F297B578700BAD9DD;
-			remoteInfo = acme_darwin;
-		};
-		9AC981B12A71B58C00B1BCF3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9AC981A72A71B58B00B1BCF3 /* acme_darwin.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9AB15D3929A8811400DFDF90;
-			remoteInfo = ios_acme_darwin;
-		};
-		9AC981B32A71B58C00B1BCF3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9AC981A72A71B58B00B1BCF3 /* acme_darwin.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9AFD80BA297B584000BAD9DD;
-			remoteInfo = static_acme_darwin;
-		};
 		9AC981B52A71B5AE00B1BCF3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A15A608264B551B0080670E /* acme_apple.xcodeproj */;
@@ -185,7 +164,6 @@
 		9A8E9DF0282A2FB6005FF778 /* libios_apex_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_apex_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A98EF4A29A5826A009BF01D /* libacme_darwin.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_darwin.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC980C12A71B3E800B1BCF3 /* libstatic_apex_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libstatic_apex_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AC981A72A71B58B00B1BCF3 /* acme_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = acme_darwin.xcodeproj; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,7 +204,6 @@
 				9A787EA1264EE55E003DF8A0 /* apex_apple */,
 				9A15A598264B53DC0080670E /* Products */,
 				9A788049264F6A39003DF8A0 /* Frameworks */,
-				9AC981A72A71B58B00B1BCF3 /* acme_darwin.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -292,16 +269,6 @@
 				9A41245A266C41E200C3FF0E /* libacme.dylib */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9AC981A82A71B58B00B1BCF3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9AC981B02A71B58C00B1BCF3 /* libacme_darwin.dylib */,
-				9AC981B22A71B58C00B1BCF3 /* libios_acme_darwin.a */,
-				9AC981B42A71B58C00B1BCF3 /* libstatic_acme_darwin.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +373,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1540;
+				ORGANIZATIONNAME = "ca2 Software Development";
 				TargetAttributes = {
 					9A15A596264B53DC0080670E = {
 						CreatedOnToolsVersion = 12.5;
@@ -427,10 +395,6 @@
 				{
 					ProductGroup = 9A15A609264B551B0080670E /* Products */;
 					ProjectRef = 9A15A608264B551B0080670E /* acme_apple.xcodeproj */;
-				},
-				{
-					ProductGroup = 9AC981A82A71B58B00B1BCF3 /* Products */;
-					ProjectRef = 9AC981A72A71B58B00B1BCF3 /* acme_darwin.xcodeproj */;
 				},
 				{
 					ProductGroup = 9A0841442935A3DB009F7FF4 /* Products */;
@@ -487,27 +451,6 @@
 			fileType = "compiled.mach-o.dylib";
 			path = libstatic_apex_darwin.a;
 			remoteRef = 9AC981A32A71B57800B1BCF3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9AC981B02A71B58C00B1BCF3 /* libacme_darwin.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libacme_darwin.dylib;
-			remoteRef = 9AC981AF2A71B58C00B1BCF3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9AC981B22A71B58C00B1BCF3 /* libios_acme_darwin.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libios_acme_darwin.a;
-			remoteRef = 9AC981B12A71B58C00B1BCF3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9AC981B42A71B58C00B1BCF3 /* libstatic_acme_darwin.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libstatic_acme_darwin.a;
-			remoteRef = 9AC981B32A71B58C00B1BCF3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

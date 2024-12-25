@@ -52,7 +52,7 @@ namespace quartz2d
       void _set_fill_color(const ::color::color & color);
       
       
-      void _select_font(::nano::graphics::font * pnanofont);
+      //void _select_font(::nano::graphics::font * pnanofont);
       
       void translate(int x, int y) override;
       

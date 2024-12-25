@@ -8,7 +8,7 @@
 #include "acme/nano/graphics/brush.h"
 #include "acme/nano/graphics/pen.h"
 #include "acme/prototype/geometry2d/rectangle.h"
-
+#include <CoreText/CoreText.h>
 
 //void ns_draw_image(CGContextRef cgcontextref, void * pNSImage, int x, int y, int cx);
 
@@ -82,7 +82,7 @@ namespace quartz2d
    void device::_draw_text(const ::string & str, const ::int_rectangle & rectangleText, const ::e_align & ealign, const ::e_draw_text & edrawtext, ::nano::graphics::brush * pnanobrushBack, ::nano::graphics::brush * pnanobrushText, ::nano::graphics::font * pnanofont)
    {
       
-      _select_font(pnanofont);
+      //_select_font(pnanofont);
       
       float w, h;
 
@@ -90,52 +90,143 @@ namespace quartz2d
 
       h = rectangleText.height();
       
-      _select_font(pnanofont);
+      //_select_font(pnanofont);
 
       CGContextSetTextPosition(m_pdc, 0, 0);
       CGContextSetTextDrawingMode (m_pdc, kCGTextInvisible);
-      CGContextShowText (m_pdc, str, str.length());
-      CGPoint pointSize = CGContextGetTextPosition(m_pdc);
-      pointSize.y = pnanofont->m_iFontSize;
+      
+      
+      auto context = m_pdc;
+      
+      
+      //CGContextShowText (m_pdc, str, str.length());
+      
+      // Step 1: Create a CFString from the C string
+          CFStringRef string = CFStringCreateWithCString(NULL, str.c_str(), kCFStringEncodingUTF8);
+      CFStringRef font_name = CFStringCreateWithCString(NULL, pnanofont->m_strFontName.c_str(), kCFStringEncodingUTF8);
 
-      CGContextSetTextDrawingMode (m_pdc, kCGTextFill);
-      CGAffineTransform trans = CGAffineTransformMakeScale(1, -1);
-      CGContextSetTextMatrix(m_pdc, trans);
-      CGContextSetRGBFillColor (m_pdc, __expand_float_rgba(pnanobrushText->m_color));
+          // Step 2: Create a CTFont to specify the font and size
+          CTFontRef font = CTFontCreateWithName(font_name, pnanofont->m_iFontSize, NULL);
 
+          // Step 3: Create an attributes dictionary
+          CFDictionaryRef attributes = CFDictionaryCreate(
+              NULL,
+              (const void *[]){ kCTFontAttributeName },
+              (const void *[]){ font },
+              1,
+              &kCFTypeDictionaryKeyCallBacks,
+              &kCFTypeDictionaryValueCallBacks);
+
+          // Step 4: Create an attributed string
+          CFAttributedStringRef attrString = CFAttributedStringCreate(NULL, string, attributes);
+
+          // Step 5: Create a CTLine from the attributed string
+          CTLineRef line = CTLineCreateWithAttributedString(attrString);
+
+      
+      double ascent, descent, leading;
+        double width = CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
+        double height = ascent + descent;
+
+        // Create a CGSize with the measured dimensions
+        CGSize textSize = CGSizeMake(width, height);
+
+      
       double x = rectangleText.left();
       
       double y = rectangleText.top();
 
+   
       if(ealign & e_align_horizontal_center)
       {
 
-         x += ((double) rectangleText.width() - pointSize.x) / 2.0;
+         x += ((double) rectangleText.width() - textSize.width) / 2.0;
 
       }
       else if(ealign & e_align_right)
       {
 
-         x += (double) rectangleText.width() - pointSize.x;
+         x += (double) rectangleText.width() - textSize.width;
 
       }
 
       if(ealign & e_align_vertical_center)
       {
 
-         y += ((double) rectangleText.height() - pointSize.y) / 2.0;
+         y += ((double) rectangleText.height() - textSize.height) / 2.0;
 
       }
       else if(ealign & e_align_bottom)
       {
 
-         y += (double) rectangleText.height() - pointSize.y;
+         y += (double) rectangleText.height() - textSize.height;
 
       }
       
-      y += pointSize.y;
+      y += textSize.height;
+      
+      CGContextSetTextPosition(context, x, y);
 
-      CGContextShowTextAtPoint (m_pdc, x, y, str, str.length());
+//oordinate system if needed
+          CGContextSaveGState(context);
+          CGContextTranslateCTM(context, 0, CGBitmapContextGetHeight(context));
+          CGContextScaleCTM(context, 1.0, -1.0);
+
+          // Step 7: Draw the text
+          CTLineDraw(line, context);
+
+          // Restore the CGContext state
+          CGContextRestoreGState(context);
+
+          // Release Core Foundation objects
+          CFRelease(line);
+          CFRelease(attrString);
+          CFRelease(attributes);
+          CFRelease(font);
+          CFRelease(string);
+      
+//      
+//      CGPoint pointSize = CGContextGetTextPosition(m_pdc);
+//      pointSize.y = pnanofont->m_iFontSize;
+//
+//      CGContextSetTextDrawingMode (m_pdc, kCGTextFill);
+//      CGAffineTransform trans = CGAffineTransformMakeScale(1, -1);
+//      CGContextSetTextMatrix(m_pdc, trans);
+//      CGContextSetRGBFillColor (m_pdc, __expand_float_rgba(pnanobrushText->m_color));
+
+//      double x = rectangleText.left();
+//      
+//      double y = rectangleText.top();
+//
+//      if(ealign & e_align_horizontal_center)
+//      {
+//
+//         x += ((double) rectangleText.width() - pointSize.x) / 2.0;
+//
+//      }
+//      else if(ealign & e_align_right)
+//      {
+//
+//         x += (double) rectangleText.width() - pointSize.x;
+//
+//      }
+//
+//      if(ealign & e_align_vertical_center)
+//      {
+//
+//         y += ((double) rectangleText.height() - pointSize.y) / 2.0;
+//
+//      }
+//      else if(ealign & e_align_bottom)
+//      {
+//
+//         y += (double) rectangleText.height() - pointSize.y;
+//
+//      }
+//      
+//      y += pointSize.y;
+//
+//      CGContextShowTextAtPoint (m_pdc, x, y, str, str.length());
 
    }
 
@@ -143,16 +234,55 @@ namespace quartz2d
    ::int_size device::get_text_extents(const ::string & str, ::nano::graphics::font * pnanofont)
    {
       
-      _select_font(pnanofont);
+      //_select_font(pnanofont);
 
-      CGContextSetTextPosition(m_pdc, 0, 0);
-      CGContextSetTextDrawingMode (m_pdc, kCGTextInvisible);//5
-      CGContextShowText (m_pdc, str, str.length());//10
-      CGPoint pointSize = CGContextGetTextPosition(m_pdc);
+//      CGContextSetTextPosition(m_pdc, 0, 0);
+//      CGContextSetTextDrawingMode (m_pdc, kCGTextInvisible);//5
+//      CGContextShowText (m_pdc, str, str.length());//10
+//      CGPoint pointSize = CGContextGetTextPosition(m_pdc);
+
+      
+      // Step 1: Create a CFString from the C string
+         CFStringRef string = CFStringCreateWithCString(NULL, str.c_str(), kCFStringEncodingUTF8);
+
+      CFStringRef font_name = CFStringCreateWithCString(NULL, pnanofont->m_strFontName.c_str(), kCFStringEncodingUTF8);
+
+          // Step 2: Create a CTFont to specify the font and size
+          CTFontRef font = CTFontCreateWithName(font_name, pnanofont->m_iFontSize, NULL);
+
+         // Step 3: Create an attributes dictionary
+         CFDictionaryRef attributes = CFDictionaryCreate(
+             NULL,
+             (const void *[]){ kCTFontAttributeName },
+             (const void *[]){ font },
+             1,
+             &kCFTypeDictionaryKeyCallBacks,
+             &kCFTypeDictionaryValueCallBacks);
+
+         // Step 4: Create an attributed string
+         CFAttributedStringRef attrString = CFAttributedStringCreate(NULL, string, attributes);
+
+         // Step 5: Create a CTLine from the attributed string
+         CTLineRef line = CTLineCreateWithAttributedString(attrString);
+
+         // Step 6: Measure the text
+         double ascent, descent, leading;
+         double width = CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
+         double height = ascent + descent;
+
+         // Create a CGSize with the measured dimensions
+         CGSize textSize = CGSizeMake(width, height);
+
+         // Release Core Foundation objects
+         CFRelease(line);
+         CFRelease(attrString);
+         CFRelease(attributes);
+         CFRelease(font);
+         CFRelease(string);
 
       ::int_size size;
       
-      size.cx() = pointSize.x;
+      size.cx() = textSize.width;
       size.cy() = pnanofont->m_iFontSize;
       
       return size;
@@ -233,16 +363,16 @@ namespace quartz2d
 
    }
 
-   
-   void device::_select_font(::nano::graphics::font * pnanofont)
-   {
-      
-      CGContextSelectFont (m_pdc,
-                   pnanofont->m_strFontName.c_str(),
-                   pnanofont->m_iFontSize,
-                   kCGEncodingMacRoman);
-
-   }
+//   
+//   void device::_select_font(::nano::graphics::font * pnanofont)
+//   {
+//      
+////      CGContextSelectFont (m_pdc,
+////                   pnanofont->m_strFontName.c_str(),
+////                   pnanofont->m_iFontSize,
+////                   kCGEncodingMacRoman);
+//
+//   }
 
       
       void device::translate(int x, int y)

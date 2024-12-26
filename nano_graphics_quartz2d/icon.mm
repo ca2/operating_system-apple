@@ -78,7 +78,7 @@ void icon::load_image_file(const void *p, memsize size)
           
 #elif defined(APPLE_IOS)
           
-          UIGraphicsPushContext(pdevice->m_pdc);
+         UIGraphicsPushContext(pdevice->m_cgcontext);
           
           CGRect nsrect;
           

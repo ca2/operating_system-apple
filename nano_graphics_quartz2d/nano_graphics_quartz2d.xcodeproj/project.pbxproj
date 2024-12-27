@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A45ED7B2D1E8078008CC280 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A82C9E32D1A4389004F0BA0 /* acme.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A68A41425114352008DABD2;
+			remoteInfo = acme;
+		};
+		9A45ED7D2D1E8078008CC280 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A82C9E32D1A4389004F0BA0 /* acme.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AC1067D2B6AC9BD0053DB45;
+			remoteInfo = ios_acme;
+		};
+		9A45ED7F2D1E8078008CC280 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A82C9E32D1A4389004F0BA0 /* acme.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AD692B6251A753A00C0EBD7;
+			remoteInfo = static_acme;
+		};
 		9AA03EB32D1A4A540079C423 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A82C9E32D1A4389004F0BA0 /* acme.xcodeproj */;
@@ -123,6 +144,9 @@
 		9AA03EA82D1A49F70079C423 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				9A45ED7C2D1E8078008CC280 /* libacme.dylib */,
+				9A45ED7E2D1E8078008CC280 /* libios_acme.a */,
+				9A45ED802D1E8078008CC280 /* libstatic_acme.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,7 +242,6 @@
 				Base,
 			);
 			mainGroup = 9A2FCDFC2C9D3ADC000CF701;
-			minimizedProjectReferenceProxies = 1;
 			productRefGroup = 9A2FCE062C9D3ADC000CF701 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -234,6 +257,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A45ED7C2D1E8078008CC280 /* libacme.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libacme.dylib;
+			remoteRef = 9A45ED7B2D1E8078008CC280 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A45ED7E2D1E8078008CC280 /* libios_acme.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libios_acme.a;
+			remoteRef = 9A45ED7D2D1E8078008CC280 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A45ED802D1E8078008CC280 /* libstatic_acme.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libstatic_acme.a;
+			remoteRef = 9A45ED7F2D1E8078008CC280 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9A28CBBB2CF413D500C6D8B1 /* Sources */ = {

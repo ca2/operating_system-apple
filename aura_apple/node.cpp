@@ -270,7 +270,7 @@ void node::on_system_main()
 //void node::_node_file_dialog(::file::file_dialog * pdialog)
 //{
 //
-//   auto puserinteraction = application()->m_pauraapplication->m_puserinteractionMain;
+//   auto puserinteraction = application()->m_pauraapplication->m_pacmeuserinteractionMain;
 //   
 //   if(!puserinteraction)
 //   {

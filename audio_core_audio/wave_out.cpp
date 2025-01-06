@@ -646,17 +646,34 @@ namespace multimedia
       
       if (AudioObjectHasProperty( _currentOutputDeviceID(), &property))
       {
+
+         AudioObjectPropertyAddress property2{};
          
-         UInt32 dataSize = 0;
-         
-         UInt32 latencyFrameCount = 0;
-         
-         OSStatus result = AudioObjectGetPropertyData( _currentOutputDeviceID(), &property, 0, NULL, &dataSize, &latencyFrameCount );
-         
-         if(result == noErr)
+         property2.mSelector = kAudioDevicePropertyNominalSampleRate;
+
+         if (AudioObjectHasProperty( _currentOutputDeviceID(), &property2))
          {
             
-            return (double) latencyFrameCount / (double) m_pwaveformat->m_waveformat.nSamplesPerSec;
+            
+            UInt32 dataSize = 0;
+            
+            UInt32 latencyFrameCount = 0;
+            
+            OSStatus result = AudioObjectGetPropertyData( _currentOutputDeviceID(), &property, 0, NULL, &dataSize, &latencyFrameCount );
+            
+            
+            UInt32 dataSize2 = 0;
+            
+            UInt32 nominalSampleRate = 0;
+            
+            OSStatus result2 = AudioObjectGetPropertyData( _currentOutputDeviceID(), &property, 0, NULL, &dataSize2, &nominalSampleRate );
+            
+            if(result == noErr && result2 == noErr)
+            {
+               
+               return (double) latencyFrameCount / (double) nominalSampleRate;
+               
+            }
             
          }
          

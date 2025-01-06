@@ -614,6 +614,10 @@ namespace multimedia
 
       }
    
+
+#ifdef MACOS
+   
+   
    AudioDeviceID _currentOutputDeviceID()
    {
        AudioObjectPropertyAddress theAddress = {
@@ -632,33 +636,54 @@ namespace multimedia
 
        return currentOutputDevice;
    }
+   
+   Float64 getCurrentOutputDeviceLatency()
+   {
+      
+      AudioObjectPropertyAddress property{};
+      
+      property.mSelector = kAudioDevicePropertyLatency;
+      
+      if (AudioObjectHasProperty( _currentOutputDeviceID(), &property))
+      {
+         
+         UInt32 dataSize = 0;
+         
+         UInt32 latencyFrameCount = 0;
+         
+         OSStatus result = AudioObjectGetPropertyData( _currentOutputDeviceID(), &property, 0, NULL, &dataSize, &latencyFrameCount );
+         
+         if(result == noErr)
+         {
+            
+            return (double) latencyFrameCount / (double) m_pwaveformat->m_waveformat.nSamplesPerSec;
+            
+         }
+         
+      }
+      
+      return 0.0;
+      
+   }
+   
+#else
+   
+   Float64 getCurrentOutputDeviceLatency()
+   {
+    
+      return 0.0;
+      
+   }
+   
+   
+#endif
 
       double out::out_get_latency()
       {
          
-         AudioObjectPropertyAddress property{};
+         auto dCurrentOutputDeviceLatency = getCurrentOutputDeviceLatency();
          
-         property.mSelector = kAudioDevicePropertyLatency;
-         
-         if (AudioObjectHasProperty( _currentOutputDeviceID(), &property))
-         {
-            
-            UInt32 dataSize = 0;
-            
-            UInt32 latencyFrameCount = 0;
-            
-            OSStatus result = AudioObjectGetPropertyData( _currentOutputDeviceID(), &property, 0, NULL, &dataSize, &latencyFrameCount );
-            
-            if(result == noErr)
-            {
-               
-               return (double) latencyFrameCount / (double) m_pwaveformat->m_waveformat.nSamplesPerSec;
-               
-            }
-            
-         }
-         
-         return 0.0;
+         return dCurrentOutputDeviceLatency;
          
       }
 

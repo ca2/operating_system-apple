@@ -16,8 +16,6 @@
 		9A28CBBE2CF413D500C6D8B1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A2FCFC72C9D3C27000CF701 /* _factory.cpp */; };
 		9A28CBBF2CF413D500C6D8B1 /* icon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A5244252CD72179006ED868 /* icon.mm */; };
 		9A28CBC02CF413D500C6D8B1 /* device.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52435F2CD4B3B7006ED868 /* device.cpp */; };
-		9A28CBC22CF413D500C6D8B1 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7E17422C9DF5F700EE8CA6 /* AppKit.framework */; };
-		9A28CBC32CF413D500C6D8B1 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7E173F2C9DF5E700EE8CA6 /* libacme.dylib */; };
 		9A2FCFCA2C9D3C27000CF701 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A2FCFC52C9D3C27000CF701 /* _.h */; };
 		9A2FCFCB2C9D3C27000CF701 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A2FCFC62C9D3C27000CF701 /* _.cpp */; };
 		9A2FCFCC2C9D3C27000CF701 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A2FCFC72C9D3C27000CF701 /* _factory.cpp */; };
@@ -60,6 +58,13 @@
 			remoteGlobalIDString = 9A68A41325114352008DABD2;
 			remoteInfo = acme;
 		};
+		9AB54F2C2D2BC8F700AFBCB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A82C9E32D1A4389004F0BA0 /* acme.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AC100A72B6AC9BD0053DB45;
+			remoteInfo = ios_acme;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -82,15 +87,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9A28CBC12CF413D500C6D8B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9A28CBC22CF413D500C6D8B1 /* AppKit.framework in Frameworks */,
-				9A28CBC32CF413D500C6D8B1 /* libacme.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9A2FCE032C9D3ADC000CF701 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -185,11 +181,11 @@
 			buildPhases = (
 				9A28CBB62CF413D500C6D8B1 /* Headers */,
 				9A28CBBB2CF413D500C6D8B1 /* Sources */,
-				9A28CBC12CF413D500C6D8B1 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9AB54F2D2D2BC8F700AFBCB1 /* PBXTargetDependency */,
 			);
 			name = ios_nano_graphics_quartz2d;
 			packageProductDependencies = (
@@ -314,6 +310,11 @@
 			isa = PBXTargetDependency;
 			name = acme;
 			targetProxy = 9AA03EB32D1A4A540079C423 /* PBXContainerItemProxy */;
+		};
+		9AB54F2D2D2BC8F700AFBCB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ios_acme;
+			targetProxy = 9AB54F2C2D2BC8F700AFBCB1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

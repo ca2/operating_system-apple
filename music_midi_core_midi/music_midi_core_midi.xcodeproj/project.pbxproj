@@ -124,6 +124,13 @@
 			remoteGlobalIDString = 9A735060284F795B003986C7;
 			remoteInfo = ios_veriwell_multimedia;
 		};
+		9AB54F732D2BD28F00AFBCB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A3F08E82C7A128800850151 /* media_apple.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A20EBE82B771090008A08A2;
+			remoteInfo = ios_media_apple;
+		};
 		9AE6415926706E78005F3412 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A3D17C0266EF29700AE9A5E /* veriwell_multimedia.xcodeproj */;
@@ -370,6 +377,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9AB54F742D2BD28F00AFBCB1 /* PBXTargetDependency */,
 				9A73511B284F9613003986C7 /* PBXTargetDependency */,
 			);
 			name = ios_music_midi_core_midi;
@@ -577,6 +585,11 @@
 			isa = PBXTargetDependency;
 			name = ios_veriwell_multimedia;
 			targetProxy = 9A73511A284F9613003986C7 /* PBXContainerItemProxy */;
+		};
+		9AB54F742D2BD28F00AFBCB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ios_media_apple;
+			targetProxy = 9AB54F732D2BD28F00AFBCB1 /* PBXContainerItemProxy */;
 		};
 		9AE6415A26706E78005F3412 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

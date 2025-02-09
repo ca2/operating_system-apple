@@ -485,7 +485,7 @@ namespace apex_apple
 ////   }
 //
 //
-////   void * node::node_wrap_window(void * pvoidDisplay, huge_integer window)
+////   void * node::node_wrap_window(void * pvoidDisplay, long long window)
 ////   {
 ////
 ////      Display * pdisplay = (Display *) pvoidDisplay;

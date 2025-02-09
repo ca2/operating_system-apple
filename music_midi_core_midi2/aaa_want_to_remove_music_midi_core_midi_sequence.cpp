@@ -114,7 +114,7 @@ namespace music
          ::pointer < play_thread > sequence::on_midi_sequence_start()
          {
             
-            auto iDevice = m_pthread->m_pplayer->get_midi_out_device().huge_integer();
+            auto iDevice = m_pthread->m_pplayer->get_midi_out_device().long_long;
             
             ::pointer < department > pdepartment = papplication->midi();
             

@@ -6,7 +6,7 @@
 //
 #include "framework.h"
 #include "acme/filesystem/filesystem/file_context.h"
-#include "aura/graphics/image/save_options.h"
+#include "aura/graphics/image/encoding_options.h"
 #include "aura/platform/context.h"
 #include <CoreGraphics/CoreGraphics.h>
 
@@ -33,7 +33,7 @@ namespace coreimage_imaging
 {
 
 
-   void image_context::save_image(memory & memory, ::image::image * pimage, const ::image::save_options & saveoptions)
+   void image_context::save_image(memory & memory, ::image::image * pimage, const ::image::encoding_options & encodingoptions)
    {
 
       if(pimage->is_empty())
@@ -49,7 +49,7 @@ namespace coreimage_imaging
 
       ::acme::malloc < color32_t * > p;
 
-      switch (saveoptions.m_eformat)
+      switch (encodingoptions.m_eformat)
       {
       case ::image::e_format_jpeg:
       {

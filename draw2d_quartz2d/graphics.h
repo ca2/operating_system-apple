@@ -38,8 +38,8 @@ namespace draw2d_quartz2d
 
       bool                          m_bForeColor;
       bool                          m_bBackColor;
-      huge_natural                           m_uiForeColor;
-      huge_natural                           m_uiBackColor;
+      unsigned long long                           m_uiForeColor;
+      unsigned long long                           m_uiBackColor;
       bool                          m_bPrinting;
 
       

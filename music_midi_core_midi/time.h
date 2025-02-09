@@ -21,7 +21,7 @@ namespace music
 
          void mach_init_timebase();
       
-         ::huge_natural nano_to_absolute(::huge_natural nano);
+         unsigned long long nano_to_absolute(unsigned long long nano);
 
       
       }

@@ -47,7 +47,7 @@ namespace music
             
             AudioUnit               m_unitMixer;
             ::music::midi::happening *    m_phappening = nullptr;
-            ::huge_integer                m_iPositionFrame;
+            long long                m_iPositionFrame;
             musical_tick                  m_tkPosition;
             class ::time                  m_timePosition;
             double                        m_dOutputSeconds;
@@ -59,7 +59,7 @@ namespace music
             MIDIEventList           m_midieventlist;
             MIDIEventPacket *       m_pmidieventpacket = nullptr;
             int                     m_iProgramChangeStreak = -1;
-            ::huge_integer                   m_iFrameProgramChangeStreak = -1;
+            long long                   m_iFrameProgramChangeStreak = -1;
              
              int                  m_iAddedEvents;
             bool                    m_bInRenderMode;

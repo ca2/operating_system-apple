@@ -20,7 +20,7 @@ namespace coreimage_imaging
       void _load_image(::image::image * pimageParam, const ::payload & varFile, const ::image::load_options & options = ::image::load_options()) override;
 
       void _load_image(::image::image * pimage, ::pointer < ::image::image_frame_array > & pframea, memory & memory) override;
-      void save_image(memory & memory, ::image::image * pimage, const ::image::save_options & saveoptions) override;
+      void save_image(memory & memory, ::image::image * pimage, const ::image::encoding_options & encodingoptions) override;
 
 //      virtual void * create_os_cursor(oswindow oswindow, const image * pimage, int xHotSpot, int yHotSpot);
 //      //virtual HCURSOR load_default_cursor(e_cursor ecursor) override;

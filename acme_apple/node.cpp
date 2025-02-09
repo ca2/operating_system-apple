@@ -175,10 +175,10 @@ namespace acme_apple
       
       auto psummary = __create_new < ::operating_system::summary >();
       
-      psummary->m_strDistro = "macos";
-      psummary->m_strDistroFamily = "macos";
-      psummary->m_strDistroBranch = "macos";
-      psummary->m_strDistroRelease = operating_system_store_release();
+      psummary->m_strSystem = "macos";
+      psummary->m_strSystemFamily = "macos";
+      psummary->m_strSystemBranch = "macos";
+      psummary->m_strSystemRelease = operating_system_store_release();
       
       apple_operating_system_release(psummary->m_iMajor, psummary->m_iMinor, psummary->m_iPatch);
       
@@ -212,9 +212,9 @@ namespace acme_apple
       
       //psummary->m_strSlashedIntegration = "macos/" + psummary->m_strIntegrationRelease;
 
-      psummary->m_strSlashedStore = "macos";
+      psummary->m_strSystemAmbientRelease = "macos";
       
-      psummary->m_strSlashedIntegration = "macos";
+      //psummary->m_strSlashedIntegration = "macos";
 
       return psummary;
       

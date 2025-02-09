@@ -55,7 +55,7 @@ namespace music
                
             };
             
-            huge_natural                m_ui64Start;
+            unsigned long long                m_ui64Start;
 
             MIDIEndpointRef m_endpoint;
             

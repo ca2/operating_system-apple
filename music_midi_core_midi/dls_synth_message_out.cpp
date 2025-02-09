@@ -577,7 +577,7 @@ namespace music
                   
                m_iFrameAbsolute = m_dSamplingRate * m_dOutputSeconds;
                       
-               auto iFrame = m_iFrameAbsolute - (::huge_integer) (inTimeStamp->mSampleTime - m_dStartSampleTime);
+               auto iFrame = m_iFrameAbsolute - (long long) (inTimeStamp->mSampleTime - m_dStartSampleTime);
                  
                if(iFrame < 0)
                {
@@ -626,7 +626,7 @@ namespace music
 //                        if(iAddedEvents > 0)
 //                        {
 //                           
-//                           m_iFrame = m_iFrameProgramChangeStreak - (::huge_integer) inTimeStamp->mSampleTime;
+//                           m_iFrame = m_iFrameProgramChangeStreak - (long long) inTimeStamp->mSampleTime;
 //                           
 //                           auto status = MusicDeviceMIDIEventList(m_unitSynth, (int)m_iFrame, &m_midieventlist);
 //                           
@@ -677,7 +677,7 @@ namespace music
 //                        if(iAddedEvents > 0)
 //                        {
 //                           
-//                           m_iFrame = m_iFrameProgramChangeStreak - (::huge_integer) inTimeStamp->mSampleTime;
+//                           m_iFrame = m_iFrameProgramChangeStreak - (long long) inTimeStamp->mSampleTime;
 //                           
 //                           MusicDeviceMIDIEventList(m_unitSynth, (int)m_iFrame, &m_midieventlist);
 //                           

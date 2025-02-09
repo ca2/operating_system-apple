@@ -33,7 +33,7 @@ namespace multimedia
       void in::init_task()
       {
 
-         informationf("in::init_instance %X\n", get_itask());
+         informationf("in::init_instance %llX\n", task_index().m_i);
          //SetMainWnd(nullptr);
          //ASSERT(GetMainWnd() == nullptr);
          ::parallelization::set_priority(::e_priority_highest);

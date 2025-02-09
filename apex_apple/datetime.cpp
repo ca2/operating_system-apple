@@ -197,13 +197,13 @@ static inline int IsLeapYear(int Year)
  *   Nothing.
  */
 CLASS_DECL_ACME void WINAPI RtlTimeToTimeFields(
-   const huge_natural *liTime,
+   const unsigned long long *liTime,
    PTIME_FIELDS TimeFields)
 {
    int SecondsInDay;
-   huge_natural cleaps, years, yearday, months;
-   huge_natural Days;
-   ::huge_integer Time;
+   unsigned long long cleaps, years, yearday, months;
+   unsigned long long Days;
+   long long Time;
 
    /* Extract millisecond from time and convert time into seconds */
    TimeFields->Milliseconds =
@@ -267,7 +267,7 @@ CLASS_DECL_ACME void WINAPI RtlTimeToTimeFields(
  */
 int_bool WINAPI RtlTimeFieldsToTime(
    PTIME_FIELDS tfTimeFields,
-   huge_natural * Time)
+   unsigned long long * Time)
 {
    int month, year, cleaps, day;
 
@@ -308,7 +308,7 @@ int_bool WINAPI RtlTimeFieldsToTime(
           584817 ;                      /* zero that on 1601-01-01 */
    /* done */
 
-   *Time = (((((::huge_integer) day * HOURSPERDAY +
+   *Time = (((((long long) day * HOURSPERDAY +
                         tfTimeFields->Hour) * MINSPERHOUR +
                        tfTimeFields->Minute) * SECSPERMIN +
                       tfTimeFields->Second ) * 1000 +
@@ -370,15 +370,15 @@ int TIME_GetBias(void)
  *   Success: STATUS_SUCCESS.
  *   Failure: An NTSTATUS error code indicating the problem.
  */
-int WINAPI RtlLocalTimeToSystemTime( const ::huge_natural *LocalTime,
-                                          ::huge_natural * SystemTime)
+int WINAPI RtlLocalTimeToSystemTime( const unsigned long long *LocalTime,
+                                          unsigned long long * SystemTime)
 {
    int bias;
 
 //xxx    information("(%point, %int_point)\n", LocalTime, SystemTime);
 
    bias = TIME_GetBias();
-   *SystemTime = *LocalTime + bias * (::huge_integer)TICKSPERSEC;
+   *SystemTime = *LocalTime + bias * (long long)TICKSPERSEC;
    return 0;
 }
 
@@ -395,15 +395,15 @@ int WINAPI RtlLocalTimeToSystemTime( const ::huge_natural *LocalTime,
  *   Success: STATUS_SUCCESS.
  *   Failure: An NTSTATUS error code indicating the problem.
  */
-int WINAPI RtlSystemTimeToLocalTime( const ::huge_natural *SystemTime,
-                                          ::huge_natural * LocalTime )
+int WINAPI RtlSystemTimeToLocalTime( const unsigned long long *SystemTime,
+                                          unsigned long long * LocalTime )
 {
    int bias;
 
 //xxx    information("(%point, %int_point)\n", SystemTime, LocalTime);
 
    bias = TIME_GetBias();
-   *LocalTime = *SystemTime - bias * (::huge_integer)TICKSPERSEC;
+   *LocalTime = *SystemTime - bias * (long long)TICKSPERSEC;
    return 0;
 }
 
@@ -420,7 +420,7 @@ int WINAPI RtlSystemTimeToLocalTime( const ::huge_natural *SystemTime,
  *   Success: true.
  *   Failure: false, if the resulting value will not fit in a unsigned int.
  */
-int_bool WINAPI RtlTimeToSecondsSince1970( const huge_natural *Time, LPDWORD Seconds )
+int_bool WINAPI RtlTimeToSecondsSince1970( const unsigned long long *Time, LPDWORD Seconds )
 {
    ULONGLONG tmp = *Time;
    tmp = tmp / TICKSPERSEC - SECS_1601_TO_1970;
@@ -442,7 +442,7 @@ int_bool WINAPI RtlTimeToSecondsSince1970( const huge_natural *Time, LPDWORD Sec
  *   Success: true.
  *   Failure: false, if the resulting value will not fit in a unsigned int.
  */
-int_bool WINAPI RtlTimeToSecondsSince1980( const huge_natural *Time, LPDWORD Seconds )
+int_bool WINAPI RtlTimeToSecondsSince1980( const unsigned long long *Time, LPDWORD Seconds )
 {
    ULONGLONG tmp = *Time;
    tmp = tmp / TICKSPERSEC - SECS_1601_TO_1980;
@@ -463,7 +463,7 @@ int_bool WINAPI RtlTimeToSecondsSince1980( const huge_natural *Time, LPDWORD Sec
  * RETURNS
  *   Nothing.
  */
-void WINAPI RtlSecondsSince1970ToTime( unsigned int Seconds, huge_natural *Time )
+void WINAPI RtlSecondsSince1970ToTime( unsigned int Seconds, unsigned long long *Time )
 {
    ULONGLONG secs = Seconds * (ULONGLONG)TICKSPERSEC + TICKS_1601_TO_1970;
    *Time = secs;
@@ -481,7 +481,7 @@ void WINAPI RtlSecondsSince1970ToTime( unsigned int Seconds, huge_natural *Time 
  * RETURNS
  *   Nothing.
  */
-void WINAPI RtlSecondsSince1980ToTime( unsigned int Seconds, huge_natural *Time )
+void WINAPI RtlSecondsSince1980ToTime( unsigned int Seconds, unsigned long long *Time )
 {
    ULONGLONG secs = Seconds * (ULONGLONG)TICKSPERSEC + TICKS_1601_TO_1980;
    *Time = secs;
@@ -499,9 +499,9 @@ void WINAPI RtlSecondsSince1980ToTime( unsigned int Seconds, huge_natural *Time 
  * RETURNS
  *   Nothing.
  */
-void WINAPI RtlTimeToElapsedTimeFields( const huge_natural *Time, PTIME_FIELDS TimeFields )
+void WINAPI RtlTimeToElapsedTimeFields( const unsigned long long *Time, PTIME_FIELDS TimeFields )
 {
-   ::huge_integer time;
+   long long time;
    int rem;
 
    time = *Time / TICKSPERSEC;
@@ -523,7 +523,7 @@ void WINAPI RtlTimeToElapsedTimeFields( const huge_natural *Time, PTIME_FIELDS T
 #ifdef _UWP
 
 
-const ::huge_integer DELTA_EPOCH_IN_MICROSECS= 11644473600000000;
+const long long DELTA_EPOCH_IN_MICROSECS= 11644473600000000;
 
 /* IN UNIX the use of the timezone struct is obsolete;
  I don't know why you use it. See http://linux.about.com/od/commands/l/blcmdl2_gettime.htm
@@ -541,7 +541,7 @@ struct timezone2
 //int gettimeofday(timeval *tv/*in*/, struct timezone2 *tz/*in*/)
 //{
 //  FILETIME ft;
-//  ::huge_integer tmpres = 0;
+//  long long tmpres = 0;
 //  TIME_ZONE_INFORMATION tz_winapi;
 //  int rez=0;
 //
@@ -584,7 +584,7 @@ struct timezone2
  *   Success: STATUS_SUCCESS.
  *   Failure: An NTSTATUS error code indicating the problem.
  */
-int WINAPI NtQuerySystemTime( huge_natural * Time )
+int WINAPI NtQuerySystemTime( unsigned long long * Time )
 {
 
    struct timeval now;
@@ -607,9 +607,9 @@ int WINAPI NtQuerySystemTime( huge_natural * Time )
  *  lower or higher than what Windows gives. Also too high counter values are
  *  reported to give problems.
  */
-int WINAPI NtQueryPerformanceCounter( huge_natural * Counter, huge_natural * Frequency )
+int WINAPI NtQueryPerformanceCounter( unsigned long long * Counter, unsigned long long * Frequency )
 {
-   huge_natural now;
+   unsigned long long now;
 
    if (!Counter) return STATUS_ACCESS_VIOLATION;
 
@@ -629,7 +629,7 @@ int WINAPI NtQueryPerformanceCounter( huge_natural * Counter, huge_natural * Fre
  */
 ULONGLONG WINAPI NtGetTickCount(void)
 {
-   huge_natural now;
+   unsigned long long now;
 
    NtQuerySystemTime( &now );
    return (CSHORT) ((now - server_start_time) / 10000);
@@ -933,12 +933,12 @@ int WINAPI RtlSetTimeZoneInformation( const RTL_TIME_ZONE_INFORMATION *tzinfo )
 
 
 #ifndef _UWP
-int WINAPI NtSetSystemTime(const huge_natural *NewTime, huge_natural *OldTime)
+int WINAPI NtSetSystemTime(const unsigned long long *NewTime, unsigned long long *OldTime)
 {
    struct timeval tv;
    //time_t tm_t;
    unsigned int sec, oldsec;
-   huge_natural tm;
+   unsigned long long tm;
 
    /* Return the old time if necessary */
    if (!OldTime) OldTime = &tm;
@@ -1035,7 +1035,7 @@ int_bool WINAPI FileTimeToSystemTime( const filetime_t *ft, system_time_t * syst
 int_bool WINAPI SystemTimeToFileTime( const system_time_t *syst, filetime_t * ft )
 {
    TIME_FIELDS tf;
-   huge_natural t;
+   unsigned long long t;
 
    tf.Year = syst->wYear;
    tf.Month = syst->wMonth;
@@ -1070,7 +1070,7 @@ int_bool WINAPI SystemTimeToFileTime( const system_time_t *syst, filetime_t * ft
 CLASS_DECL_ACME void GetSystemTimeAsFileTime(
    filetime_t * time) /* [out] Destination for the current utc time */
 {
-   huge_natural t;
+   unsigned long long t;
    NtQuerySystemTime( &t );
    *time = t;
 }
@@ -1091,7 +1091,7 @@ CLASS_DECL_ACME void GetSystemTimeAsFileTime(
 CLASS_DECL_ACME void GetSystemTime(system_time_t * systime)
 {
    filetime_t ft;
-   huge_natural t;
+   unsigned long long t;
 
    NtQuerySystemTime(&t);
    //ft.dwLowDateTime = t.u.LowPart;

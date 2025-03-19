@@ -219,7 +219,7 @@ bool reachability::start_notifier()
 
 void reachability::stop_notifier()
 {
-   if (m_networkreachabilityref)
+   if (m_networkreachabilityref && m_runloopref)
    {
       
       SCNetworkReachabilityUnscheduleFromRunLoop(m_networkreachabilityref, m_runloopref, kCFRunLoopDefaultMode);

@@ -4,13 +4,9 @@
 //
 //  Created by Camilo Sasuke on 28/05/21.
 //
-#import <Foundation/Foundation.h>
+//#import <Foundation/Foundation.h>
+#include "framework.h"
 
-#ifdef APPLE_IOS
-#import <UIKit/UIKit.h>
-#else
-#import <AppKit/AppKit.h>
-#endif
 
 
 unsigned long apple_get_fonts(char ***p)
@@ -46,6 +42,8 @@ unsigned long apple_get_fonts(char ***p)
    return c;
 
 }
+
+
 
 
 

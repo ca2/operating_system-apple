@@ -3,6 +3,7 @@
 #include "draw2d.h"
 #include "aura/graphics/write_text/fonts.h"
 #include "aura/graphics/draw2d/draw2d.h"
+#include "acme/platform/application.h"
 #include "aura/platform/system.h"
 
 

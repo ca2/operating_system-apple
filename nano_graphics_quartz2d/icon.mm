@@ -8,13 +8,13 @@
 //
 #include "framework.h"
 #include "device.h"
-#ifdef APPLE_IOS
-#import <UIKit/UIKit.h>
-#elif defined(MACOS)
-#import <AppKit/AppKit.h>
-#else
-#error "todo"
-#endif
+//#ifdef APPLE_IOS
+//#import <UIKit/UIKit.h>
+//#elif defined(MACOS)
+//#import <AppKit/AppKit.h>
+//#else
+//#error "todo"
+//#endif
 
 #include "icon.h"
 

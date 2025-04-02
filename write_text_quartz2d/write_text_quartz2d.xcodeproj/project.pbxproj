@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A58CB602D9CD28700DE95D0 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE12D992661D577009F476A /* AppKit.framework */; };
 		9A64C1C02660C6730074030F /* font_enumeration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1992660C6730074030F /* font_enumeration.cpp */; };
 		9A64C1C12660C6730074030F /* write_text.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C19A2660C6730074030F /* write_text.h */; };
 		9A64C1C22660C6730074030F /* font_enumeration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A64C19D2660C6730074030F /* font_enumeration.h */; };
@@ -34,10 +35,16 @@
 		9A882ED72844AA66004113D1 /* font_enumeration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AE12D952661D4C0009F476A /* font_enumeration.mm */; };
 		9A882ED82844AA66004113D1 /* font_enumeration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C1992660C6730074030F /* font_enumeration.cpp */; };
 		9AE12D962661D4C0009F476A /* font_enumeration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AE12D952661D4C0009F476A /* font_enumeration.mm */; };
-		9AE12D9A2661D577009F476A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE12D992661D577009F476A /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A58CB4F2D9CC0CB00DE95D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A6A47252660CB45004ED97A /* aura.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A98A6031771D67E000AE16E;
+			remoteInfo = aura;
+		};
 		9A6A472B2660CB45004ED97A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A6A47252660CB45004ED97A /* aura.xcodeproj */;
@@ -51,13 +58,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 9AE24D431904CEFE001AEFFB;
 			remoteInfo = aura_iosTests;
-		};
-		9A6A47312660CB55004ED97A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A6A47252660CB45004ED97A /* aura.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9A98A6031771D67E000AE16E;
-			remoteInfo = aura;
 		};
 		9A882EE92844AAF0004113D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AE12D9A2661D577009F476A /* AppKit.framework in Frameworks */,
+				9A58CB602D9CD28700DE95D0 /* AppKit.framework in Frameworks */,
 				9A6A47382660CB83004ED97A /* libaura.dylib in Frameworks */,
 				9A6A47352660CB61004ED97A /* libacme.dylib in Frameworks */,
 				9A6A47372660CB61004ED97A /* libapex.dylib in Frameworks */,
@@ -217,7 +217,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9A6A47322660CB55004ED97A /* PBXTargetDependency */,
+				9A58CB502D9CC0CB00DE95D0 /* PBXTargetDependency */,
 			);
 			name = write_text_quartz2d;
 			productName = write_text_quartz2d;
@@ -257,7 +257,7 @@
 				};
 			};
 			buildConfigurationList = 9A64C16C2660C62C0074030F /* Build configuration list for PBXProject "write_text_quartz2d" */;
-			compatibilityVersion = "Xcode 12.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -360,10 +360,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9A6A47322660CB55004ED97A /* PBXTargetDependency */ = {
+		9A58CB502D9CC0CB00DE95D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = aura;
-			targetProxy = 9A6A47312660CB55004ED97A /* PBXContainerItemProxy */;
+			targetProxy = 9A58CB4F2D9CC0CB00DE95D0 /* PBXContainerItemProxy */;
 		};
 		9A882EEA2844AAF0004113D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -401,7 +401,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -416,7 +415,6 @@
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework.h;
@@ -434,7 +432,6 @@
 					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/$(CONFIGURATION)/library",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SYSTEM_HEADER_SEARCH_PATHS = (
@@ -496,7 +493,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -511,7 +507,6 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework.h;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -527,7 +522,6 @@
 					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/$(CONFIGURATION)/library",
 				);
-				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SYSTEM_HEADER_SEARCH_PATHS = (

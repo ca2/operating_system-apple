@@ -242,7 +242,7 @@ void node::on_start_system()
 void node::on_system_main()
 {
    
-//   auto papp = platform()->application();
+//   auto papp = ::system()->application();
 //
 //   defer_create_windowing_application_delegate(papp, papp->application_menu(), papp);
    

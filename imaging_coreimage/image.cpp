@@ -63,7 +63,9 @@ namespace coreimage_imaging
 
       }
       break;
+         case ::image::e_format_none:
          case ::image::e_format_png:
+            
          {
 
             unsigned long size;

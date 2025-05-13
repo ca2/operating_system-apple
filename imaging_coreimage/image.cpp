@@ -43,33 +43,54 @@ namespace coreimage_imaging
 
       }
 
-      unsigned long size;
-
-      CGImageRef cgimage = cgimageref_from_image(pimage);
-
-      ::acme::malloc < color32_t * > p;
-
       switch (encodingoptions.m_eformat)
       {
       case ::image::e_format_jpeg:
       {
 
+         unsigned long size;
+
+         ::acme::malloc < color32_t * > p;
+
+         CGImageRef cgimage = cgimageref_from_image(pimage);
+
          p = get_jpeg_image_data(size, cgimage);
+         
+         CGImageRelease(cgimage);
+
+         memory.assign(p, size);
+
 
       }
       break;
+         case ::image::e_format_png:
+         {
+
+            unsigned long size;
+
+            ::acme::malloc < color32_t * > p;
+
+            CGImageRef cgimage = cgimageref_from_image(pimage);
+
+            p = get_jpeg_image_data(size, cgimage);
+            
+            CGImageRelease(cgimage);
+
+            memory.assign(p, size);
+
+
+         }
+         break;
       default:
       {
 
-         p = get_png_image_data(size, cgimage);
+         ::image::image_context::save_image(memory, pimage, encodingoptions);
+
+      }
+            break;
 
       }
 
-      }
-
-      CGImageRelease(cgimage);
-
-      memory.assign(p, size);
 
       //return true;
 

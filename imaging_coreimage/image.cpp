@@ -72,7 +72,7 @@ namespace coreimage_imaging
 
             CGImageRef cgimage = cgimageref_from_image(pimage);
 
-            p = get_jpeg_image_data(size, cgimage);
+            p = get_png_image_data(size, cgimage);
             
             CGImageRelease(cgimage);
 

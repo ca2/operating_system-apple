@@ -146,14 +146,14 @@ namespace draw2d_quartz2d
 //      bool ModifyWorldTransform(const XFORM* pXform,unsigned int iMode);
 //      bool GetWorldTransform(XFORM* pXform) const;
 
-      // Mapping Functions
-//      virtual int GetMapMode() override;
-      virtual double_point get_origin() override;
-//      virtual int SetMapMode(int nMapMode) override;
-//      // Viewport Origin
-      virtual double_point set_origin(double x, double y) override;
-      virtual double_point set_origin(const ::double_point & point) override;
-      virtual double_point offset_origin(double nWidth, double nHeight) override;
+//      // Mapping Functions
+////      virtual int GetMapMode() override;
+//      virtual double_point get_origin() override;
+////      virtual int SetMapMode(int nMapMode) override;
+////      // Viewport Origin
+//      virtual double_point set_origin(double x, double y) override;
+//      virtual double_point set_origin(const ::double_point & point) override;
+//      virtual double_point offset_origin(double nWidth, double nHeight) override;
 
       // Viewport Extent
       virtual double_size get_extents() override;
@@ -169,9 +169,9 @@ namespace draw2d_quartz2d
 
       // Window extent
       double_size GetWindowExt() override;
-      virtual double_size set_window_ext(double cx, double cy) override;
-      double_size set_window_ext(const ::double_size & size) override;
-      virtual double_size scale_window_ext(double xNum, double xDenom, double yNum, double yDenom) override;
+//      virtual double_size set_window_ext(double cx, double cy) override;
+//      double_size set_window_ext(const ::double_size & size) override;
+//      virtual double_size scale_window_ext(double xNum, double xDenom, double yNum, double yDenom) override;
 
       // Coordinate Functions
       void DPtoLP(::double_point * ppoints, int nCount = 1) const;
@@ -226,7 +226,7 @@ namespace draw2d_quartz2d
 //      void _add_clipping_shape(const ::double_ellipse & ellipse, ::draw2d::region * pregion) override;
       void _add_shape(const ::double_ellipse & ellipse) override;
 //      void _add_clipping_shape(const ::double_polygon & polygon, ::draw2d::region * pregion) override;
-      void _add_shape(const ::double_polygon & polygon) override;
+      void _add_shape(const ::double_polygon_base & polygon) override;
 
       
       //virtual void on_apply_clip_region() override;
@@ -235,7 +235,7 @@ namespace draw2d_quartz2d
       virtual double_point current_position() override;
       //      ::double_point MoveTo(double x, double y);
       //    ::double_point MoveTo(const ::double_point & point);
-      void line_to(const ::double_point & point) override;
+      //void line(double x1, double y1, double x2, double y2) override;
       //  bool LineTo(const ::double_point & point);
 //      void Arc(double x1, double y1, int w, int h, double start, double extends) override;
   //    void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
@@ -370,7 +370,7 @@ namespace draw2d_quartz2d
 
 //      void BitBltAlphaBlend(double x, double y, double dWidth, double dHeight, ::draw2d::graphics * pgraphicsSrc, double xSrc, double ySrc) override;
 
-      void draw_line(double x1, double y1, double x2, double y2, ::draw2d::pen * ppen) override;
+      void line(double x1, double y1, double x2, double y2, ::draw2d::pen * ppen) override;
       void text_out(double x, double y, const ::scoped_string & scopedstr) override;
 
 //      void text_out(double x, double y, const string & str) override;
@@ -385,9 +385,9 @@ namespace draw2d_quartz2d
 //      double_size TabbedTextOut(double x, double y, const string & str,
 //                         int nTabPositions, int * lpnTabStopPositions, int nTabOrigin);
 
-      virtual int draw_text(const char * lpszString, int nCount, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none);
+//      int draw_text(const char * lpszString, int nCount, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
 //      void draw_text(const string & str, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
-      void draw_text(const string & strParam,const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
+      void draw_text(const ::scoped_string & strParam,const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
 
 //      virtual int draw_text_ex(char * lpszString, int nCount, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams);
 //      void draw_text_ex(const string & str, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams) override;

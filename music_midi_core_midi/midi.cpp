@@ -247,7 +247,7 @@ namespace music
             if(strDevice == "core_midi:DLS Synth")
             {
                
-               return __create_new<dls_synth_message_out>();
+               return øcreate_new<dls_synth_message_out>();
                
             }
             
@@ -261,7 +261,7 @@ namespace music
                if (!pmessageout)
                {
                   
-                  auto pmidiout = __create_new < message_out >();
+                  auto pmidiout = øcreate_new < message_out >();
                   
                   pmessageout = pmidiout;
                   
@@ -282,7 +282,7 @@ namespace music
 //         if(strDevice == "core_midi:DLS Synth")
 //         {
 //            
-//            return __create_new<my_message_in>();
+//            return øcreate_new<my_message_in>();
 //            
 //         }
          

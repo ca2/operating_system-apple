@@ -82,7 +82,7 @@ namespace acme_apple
       
       bool has_icloud_container(const char * pszAppId = nullptr) override;
       
-      bool defer_enumerate_protocol(::file::listing& listing) override;
+      bool defer_enumerate_protocol(::file::listing_base& listing) override;
 
       ::file::path icloud_container2_final(const char * psz_iCloudContainerIdentifier = nullptr) override;
       

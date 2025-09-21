@@ -37,7 +37,7 @@ namespace acme_apple
       
       virtual void start_populating(const char * psz_iCloudContainerId);
       
-      bool enumerate(::file::listing & listing) override;
+      bool enumerate(::file::listing_base & listing) override;
       
       void ns_metadata_query_callback_on_base_path(const char * pszBasePath) override;
       

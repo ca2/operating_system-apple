@@ -83,7 +83,7 @@ namespace quartz2d
 ////
 ////
 //
-//      main_post([this](){__øcreate();});
+//      main_post([this](){øcreate();});
 //
 //   }
 

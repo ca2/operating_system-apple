@@ -672,7 +672,7 @@ namespace acme_apple
    }
 
 
-   bool directory_system::defer_enumerate_protocol(::file::listing& listing)
+   bool directory_system::defer_enumerate_protocol(::file::listing_base& listing)
    {
       
       if(has_icloud_container())
@@ -729,7 +729,7 @@ namespace acme_apple
                   if(!m_pfilelistinghandler_iCloudContainer)
                   {
                      
-                     auto pfilelistinghandler = __create_new < ::acme_apple::file_listing_handler >();
+                     auto pfilelistinghandler = øcreate_new < ::acme_apple::file_listing_handler >();
                      
                      ::string str_iCloudContainerIdentifier;
                      

@@ -146,7 +146,7 @@ namespace acme_apple
    }
 
 
-   void node::shell_open(const ::file::path & path, const ::string & strParams, const ::file::path & pathFolder)
+   void node::shell_open(const ::file::path & path, const ::scoped_string & scopedstrParams, const ::file::path & pathFolder)
    {
       
       ns_open_file(path);
@@ -173,7 +173,7 @@ namespace acme_apple
    ::pointer <::operating_system::summary > node::operating_system_summary()
    {
       
-      auto psummary = __create_new < ::operating_system::summary >();
+      auto psummary = øcreate_new < ::operating_system::summary >();
       
       psummary->m_strSystem = "macos";
       psummary->m_strSystemFamily = "macos";
@@ -231,9 +231,9 @@ namespace acme_apple
    }
 
 
-::file::path_array node::process_identifier_modules_paths(::process_identifier processidentifier)
+::file::path_array_base node::process_identifier_modules_paths(::process_identifier processidentifier)
 {
-   ::file::path_array patha;
+   ::file::path_array_base patha;
 
 #if defined(FREEBSD)
 

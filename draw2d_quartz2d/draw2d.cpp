@@ -48,7 +48,7 @@ namespace draw2d_quartz2d
          
       }
       
-      pprivatefont = __allocate private_font();
+      pprivatefont = øallocate private_font();
       
       pprivatefont->m_cgfontref = nullptr;
 

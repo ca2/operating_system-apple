@@ -36,7 +36,7 @@ namespace media_apple
    void media_item::assign_media_player()
 {
       
-      m_pmediaplayer = __allocate ::media_apple::media_player();
+      m_pmediaplayer = øallocate ::media_apple::media_player();
       
       m_pmediaplayer->initialize(this);
       

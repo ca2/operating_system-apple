@@ -161,7 +161,7 @@ namespace acme_apple
    }
       
 
-   bool file_listing_handler::enumerate(::file::listing& listing)
+   bool file_listing_handler::enumerate(::file::listing_base& listing)
    {
 
       if (listing.m_pathFinal.is_empty())

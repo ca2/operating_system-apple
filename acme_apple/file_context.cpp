@@ -131,7 +131,7 @@ namespace acme_apple
                
             }
             
-            auto pfile = __create_new < ::acme_apple::icloud_file >();
+            auto pfile = øcreate_new < ::acme_apple::icloud_file >();
             
             ::string strName;
             
@@ -166,7 +166,7 @@ namespace acme_apple
             if(pathParse.begins_eat("icloud://Documents/"))
             {
 
-               auto pfile = __create_new < ::acme_apple::icloud_file >();
+               auto pfile = øcreate_new < ::acme_apple::icloud_file >();
                
                ::string strName;
                

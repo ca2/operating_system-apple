@@ -267,12 +267,12 @@ namespace draw2d_quartz2d
    }
 
 
-   double_point graphics::set_origin(const ::double_point & point)
-   {
-
-      return set_origin(point.x(), point.y());
-
-   }
+//   double_point graphics::set_origin(const ::double_point & point)
+//   {
+//
+//      return set_origin(point.x(), point.y());
+//
+//   }
 
 
    double_size graphics::set_extents(const ::double_size & size)
@@ -291,12 +291,12 @@ namespace draw2d_quartz2d
    }
 
 
-   double_size graphics::set_window_ext(const ::double_size & size)
-   {
-
-      return ::double_size(0, 0);
-      
-   }
+//   double_size graphics::set_window_ext(const ::double_size & size)
+//   {
+//
+//      return ::double_size(0, 0);
+//      
+//   }
 
 
    void graphics::DPtoLP(::double_rectangle * prectangle)
@@ -1448,12 +1448,12 @@ namespace draw2d_quartz2d
    }
 
 
-   double_point graphics::get_origin()
-   {
-
-      return ::draw2d::graphics::get_origin();
-
-   }
+//   double_point graphics::get_origin()
+//   {
+//
+//      return ::draw2d::graphics::get_origin();
+//
+//   }
 
 
    void graphics::_get(::geometry2d::matrix & matrix)
@@ -1490,25 +1490,25 @@ namespace draw2d_quartz2d
    }
 
 
-   double_point graphics::set_origin(double x, double y)
-   {
+//   double_point graphics::set_origin(double x, double y)
+//   {
+//
+//      double_point pt =get_origin();
+//      
+//      pt.x() = x - pt.x();
+//      pt.y() = y - pt.y();
+//      
+//      return offset_origin(pt.x(), pt.y());
+//      
+//   }
 
-      double_point pt =get_origin();
-      
-      pt.x() = x - pt.x();
-      pt.y() = y - pt.y();
-      
-      return offset_origin(pt.x(), pt.y());
-      
-   }
 
-
-   double_point graphics::offset_origin(double nWidth, double nHeight)
-   {
-
-      return ::draw2d::graphics::offset_origin(nWidth, nHeight);
-
-   }
+//   double_point graphics::offset_origin(double nWidth, double nHeight)
+//   {
+//
+//      return ::draw2d::graphics::offset_origin(nWidth, nHeight);
+//
+//   }
 
 
    void graphics::clear_current_point()
@@ -1556,24 +1556,24 @@ namespace draw2d_quartz2d
    }
 
 
-   double_size graphics::set_window_ext(double x, double y)
-   {
+//   double_size graphics::set_window_ext(double x, double y)
+//   {
+//
+//      throw ::exception(error_not_implemented);
+//      
+//      return ::double_size(0, 0);
+//
+//   }
 
-      throw ::exception(error_not_implemented);
-      
-      return ::double_size(0, 0);
-
-   }
-
-
-   double_size graphics::scale_window_ext(double xNum, double xDenom, double yNum, double yDenom)
-   {
-
-      throw ::exception(error_not_implemented);
-      
-      return ::double_size(0, 0);
-
-   }
+//
+//   double_size graphics::scale_window_ext(double xNum, double xDenom, double yNum, double yDenom)
+//   {
+//
+//      throw ::exception(error_not_implemented);
+//      
+//      return ::double_size(0, 0);
+//
+//   }
 
 
    int graphics::get_clip_box(::double_rectangle & rectangle)
@@ -1775,7 +1775,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_shape(const ::double_polygon & polygon)
+   void graphics::_add_shape(const ::double_polygon_base & polygon)
    {
    
       //CGContextBeginPath(m_cgcontext);
@@ -1804,15 +1804,15 @@ namespace draw2d_quartz2d
 
    }
 
-
-   int graphics::draw_text(const char * lpszString, int nCount, const ::double_rectangle & rectangle, const ::e_align & ealign, const ::e_draw_text & edrawtext)
-   {
-
-      draw_text(string(lpszString, nCount), rectangle, ealign, edrawtext);
-
-      return 0;
-      
-   }
+//
+//   int graphics::draw_text(const char * lpszString, int nCount, const ::double_rectangle & rectangle, const ::e_align & ealign, const ::e_draw_text & edrawtext)
+//   {
+//
+//      draw_text(string(lpszString, nCount), rectangle, ealign, edrawtext);
+//
+//      return 0;
+//      
+//   }
 
 
 //   double_size graphics::get_text_extent(const ::scoped_string * lpszString, character_count nCount, int iIndex)
@@ -1944,7 +1944,7 @@ namespace draw2d_quartz2d
          if(m_pfont.is_null())
          {
 
-            __øconstruct(m_pfont);
+            øconstruct(m_pfont);
             
             m_pfont->create_font(e_font_sans, 16_px);
 
@@ -1973,7 +1973,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::draw_line(double x1, double y1, double x2, double y2, ::draw2d::pen * ppen)
+   void graphics::line(double x1, double y1, double x2, double y2, ::draw2d::pen * ppen)
    {
 
       CGContextBeginPath(m_cgcontext);
@@ -1990,21 +1990,21 @@ namespace draw2d_quartz2d
 
    }
 
-
-   void graphics::line_to(const ::double_point & point)
-   {
-
-      CGContextBeginPath(m_cgcontext);
-
-      CGContextMoveToPoint(m_cgcontext, m_point.x(), m_point.y());
-
-      CGContextAddLineToPoint(m_cgcontext, point.x(), point.y());
-
-      _draw();
-
-      m_point = point;
-
-   }
+//
+//   void graphics::line(const ::double_point & p1, const ::double_point & p2)
+//   {
+//
+//      CGContextBeginPath(m_cgcontext);
+//
+//      CGContextMoveToPoint(m_cgcontext, p1.x(), p1.y());
+//
+//      CGContextAddLineToPoint(m_cgcontext, p2.x(), p2.y());
+//
+//      _draw();
+//
+//      m_point = p2;
+//
+//   }
 
 
    void graphics::set_alpha_mode(::draw2d::enum_alpha_mode ealphamode)
@@ -2879,7 +2879,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
    }
 
 
-   void graphics::draw_text(const string & strParam,const ::double_rectangle & rectangle, const ::e_align & ealign, const ::e_draw_text & edrawtext)
+   void graphics::draw_text(const ::scoped_string & strParam,const ::double_rectangle & rectangle, const ::e_align & ealign, const ::e_draw_text & edrawtext)
    {
 
       string str(strParam);

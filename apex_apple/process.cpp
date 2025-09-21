@@ -53,10 +53,10 @@ namespace apex_apple
    }
 
 
-   bool process::create_child_process(const ::string & pszCmdLine,bool bPiped,const ::string & pszDir, ::enum_priority epriority)
+   bool process::create_child_process(const ::scoped_string & scopedstrCmdLine,bool bPiped,const ::scoped_string & scopedstrDir, ::enum_priority epriority)
    {
 
-      if(!::operating_system::process::create_child_process(pszCmdLine, bPiped, pszDir, epriority))
+      if(!::operating_system::process::create_child_process(scopedstrCmdLine, bPiped, scopedstrDir, epriority))
       {
 
          return false;
@@ -65,9 +65,9 @@ namespace apex_apple
 
       string_array straParam;
 
-      address_array < char * > argv;
+      address_array_base < char * > argv;
 
-      ::explode_command_line(straParam, pszCmdLine, &argv);
+      ::explode_command_line(straParam, scopedstrCmdLine, &argv);
 
       posix_spawnattr_t attr;
 
@@ -113,7 +113,7 @@ namespace apex_apple
 
       }
 
-      address_array < char * > env;
+      address_array_base < char * > env;
 
       auto envp = ::system()->m_envp;
 
@@ -267,19 +267,19 @@ namespace apex_apple
    }
 
 
-   bool process::synch_elevated(const ::string & strCmdLineParam, int iShow, const class ::time & timeTimeOut,bool * pbTimeOut)
+   bool process::synch_elevated(const ::scoped_string & strCmdLineParam, int iShow, const class ::time & timeTimeOut,bool * pbTimeOut)
    {
 
       string_array straParam;
 
-      address_array < char * > argv;
+      address_array_base < char * > argv;
 
       if (access("/usr/bin/gksu", X_OK) != 0)
       {
 
          m_exitstatus.m_iExitCode = -1;
 
-         output_error_message("gksu is not installed, please install gksu.","Please, install gksu.",e_message_box_icon_information);
+         output_error_message("gksu is not installed, please install gksu.","Please, install gksu.",::user::e_message_box_icon_information);
 
          return false;
 

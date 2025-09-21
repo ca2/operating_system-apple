@@ -54,7 +54,7 @@ void acme_window_bridge::on_left_button_up(double xHost, double yHost, double xA
    
    auto pacmewindowingwindow = acme_windowing_window();
    
-   auto pmouse = pacmewindowingwindow->__create_new <::user::mouse>();
+   auto pmouse = pacmewindowingwindow->øcreate_new <::user::mouse>();
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -81,7 +81,7 @@ void acme_window_bridge::on_left_button_down(double xHost, double yHost, double 
    
    auto pacmewindowingwindow = acme_windowing_window();
    
-   auto pmouse = pacmewindowingwindow->__create_new <::user::mouse>();
+   auto pmouse = pacmewindowingwindow->øcreate_new <::user::mouse>();
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -108,7 +108,7 @@ void acme_window_bridge::on_right_button_up(double xHost, double yHost, double x
    
    auto pacmewindowingwindow = acme_windowing_window();
    
-   auto pmouse = pacmewindowingwindow->__create_new <::user::mouse>();
+   auto pmouse = pacmewindowingwindow->øcreate_new <::user::mouse>();
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -135,7 +135,7 @@ void acme_window_bridge::on_right_button_down(double xHost, double yHost, double
    
    auto pacmewindowingwindow = acme_windowing_window();
    
-   auto pmouse = pacmewindowingwindow->__create_new <::user::mouse>();
+   auto pmouse = pacmewindowingwindow->øcreate_new <::user::mouse>();
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -162,7 +162,7 @@ void acme_window_bridge::on_mouse_move(double xHost, double yHost, double xAbsol
    
    auto pacmewindowingwindow = acme_windowing_window();
    
-   auto pmouse = pacmewindowingwindow->__create_new <::user::mouse>();
+   auto pmouse = pacmewindowingwindow->øcreate_new <::user::mouse>();
    
    pmouse->m_pointHost = {xHost, yHost};
    

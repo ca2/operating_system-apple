@@ -28,7 +28,7 @@ namespace innate_ui_appkit
 {
    
 
-   void dialog::__øcreate()
+   void dialog::øcreate()
    {
 
       // m_hwnd = CreateWindowW(_get_class_name(), L"", WS_DLGFRAME | WS_CAPTION | WS_POPUPWINDOW,

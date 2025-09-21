@@ -49,7 +49,7 @@ namespace acme_apple
       void _user_post(const ::procedure & procedure) override;
       
       
-      void shell_open(const ::file::path & path, const ::string & strParams = "", const ::file::path & pathFolder = "") override;
+      void shell_open(const ::file::path & path, const ::scoped_string & strParams = "", const ::file::path & pathFolder = "") override;
       
       ::file::path library_file_name(const ::scoped_string & scopedstr) override;
 
@@ -61,7 +61,7 @@ namespace acme_apple
       
       ::string operating_system_application_version() override;
 
-      ::file::path_array process_identifier_modules_paths(::process_identifier processidentifier) override;
+      ::file::path_array_base process_identifier_modules_paths(::process_identifier processidentifier) override;
       //void speak(const ::scoped_string & scopedstr) override;
 
       ::string default_component_implementation(const ::scoped_string & scopedstrComponentName) override;

@@ -79,7 +79,7 @@ namespace quartz2d
    }
 
 
-   void device::_draw_text(const ::string & str, const ::int_rectangle & rectangleText, const ::e_align & ealign, const ::e_draw_text & edrawtext, ::nano::graphics::brush * pnanobrushBack, ::nano::graphics::brush * pnanobrushText, ::nano::graphics::font * pnanofont)
+   void device::_draw_text(const ::scoped_string & scopedstr, const ::int_rectangle & rectangleText, const ::e_align & ealign, const ::e_draw_text & edrawtext, ::nano::graphics::brush * pnanobrushBack, ::nano::graphics::brush * pnanobrushText, ::nano::graphics::font * pnanofont)
    {
       
       //_select_font(pnanofont);
@@ -99,7 +99,7 @@ namespace quartz2d
       //CGContextShowText (m_cgcontext, str, str.length());
       
       // Step 1: Create a CFString from the C string
-      auto string = as_CFRef(CFStringCreateWithCString(NULL, str.c_str(), kCFStringEncodingUTF8));
+      auto string = as_CFRef(CFStringCreateWithCString(NULL, scopedstr.c_str(), kCFStringEncodingUTF8));
       
       auto font_name = as_CFRef(CFStringCreateWithCString(NULL, pnanofont->m_strFontName.c_str(), kCFStringEncodingUTF8));
 
@@ -239,7 +239,7 @@ namespace quartz2d
    }
 
 
-   ::int_size device::get_text_extents(const ::string & str, ::nano::graphics::font * pnanofont)
+   ::int_size device::get_text_extents(const ::scoped_string & scopedstr, ::nano::graphics::font * pnanofont)
    {
       
       //_select_font(pnanofont);
@@ -251,7 +251,7 @@ namespace quartz2d
 
       
       // Step 1: Create a CFString from the C string
-         auto string = as_CFRef(CFStringCreateWithCString(NULL, str.c_str(), kCFStringEncodingUTF8));
+         auto string = as_CFRef(CFStringCreateWithCString(NULL, scopedstr.c_str(), kCFStringEncodingUTF8));
 
       auto font_name = as_CFRef(CFStringCreateWithCString(NULL, pnanofont->m_strFontName.c_str(), kCFStringEncodingUTF8));
 

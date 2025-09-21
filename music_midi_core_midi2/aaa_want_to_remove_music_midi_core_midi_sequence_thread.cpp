@@ -50,8 +50,8 @@ namespace music
          {
             
             ::music::midi::sequence_thread::install_message_routing(psender);
-   //         MESSAGE_LINK(e_message_player_command, pchannel, this, &sequence_thread::OnCommand);
-            MESSAGE_LINK(e_message_midi_sequence_event, psender, this, &sequence_thread::OnMidiSequenceEvent);
+   //         USER_MESSAGE_LINK(::user::e_message_player_command, pchannel, this, &sequence_thread::OnCommand);
+            USER_MESSAGE_LINK(::user::e_message_midi_sequence_event, psender, this, &sequence_thread::OnMidiSequenceEvent);
          }
 
          void sequence_thread::Stop(imedia_time msEllapse)

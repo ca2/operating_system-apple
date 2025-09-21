@@ -72,7 +72,7 @@ namespace innate_ui_appkit
       ::pointer < ::innate_ui_appkit::window > pappkitwindowParent = pwindowParent;
 
       
-      __øcreate();
+      øcreate();
       //m_pqwidget = new QPushButton(pappkitwindowParent->m_pqwidget);
 
       //gtk_widget_set_visible(m_pgtkwidget, true);

@@ -358,7 +358,9 @@ namespace draw2d_quartz2d
    
       ::array < CGPoint > points;
       
-      ::generic::array::copy(points, lines);
+      //::generic::array::copy(points, lines);
+      
+      points.copy(lines);
       
       for(auto & point : points)
       {
@@ -380,7 +382,9 @@ namespace draw2d_quartz2d
 
       ::array < CGPoint > points;
       
-      ::generic::array::copy(points, polygon);
+      //::generic::array::copy(points, polygon);
+      
+      points.copy(polygon);
       
       for(auto & point : points)
       {

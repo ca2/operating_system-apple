@@ -77,7 +77,7 @@ namespace music
             
             void common_construct();
             
-            void initialize_message_out(::music::midi::midi * pmidi, const ::string & strDeviceId) override;
+            void initialize_message_out(::music::midi::midi * pmidi, const ::scoped_string & scopedstrDeviceId) override;
             
             void open(bool bForSequencing) override;
             

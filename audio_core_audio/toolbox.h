@@ -29,7 +29,7 @@ namespace multimedia
 //         aligned_pointer < AudioQueueRef >                   m_Queue;
          AudioStreamBasicDescription *                         m_pdataformat;
          AudioQueueRef                                         m_Queue;
-         comparable_raw_array < AudioQueueBufferRef >          m_Buffers;
+         comparable_raw_array_base < AudioQueueBufferRef >     m_Buffers;
          SInt64                                                m_CurrentPacket;
          CFRunLoopRef                                          m_runloop;
          CFStringRef                                           m_runmode;

@@ -205,7 +205,7 @@ namespace music
          }
 
 
-         ::e_status     midi::translate_os_result(string & strMessage, string & strOsMessage, ::music::midi::object * pobject, long long iOsResult, const string & strContext, const string & strText)
+         ::e_status     midi::translate_os_result(string & strMessage, string & strOsMessage, ::music::midi::object * pobject, long long iOsResult, const ::scoped_string & scopedstrContext, const ::scoped_string & scopedstrText)
          {
 
             ::e_status     estatus = iOsResult == 0 ? ::success : error_failed;
@@ -222,29 +222,29 @@ namespace music
          }
       
          
-         ::pointer < ::music::midi::sequencer > midi::create_midi_sequencer(::music::midi::sequence * psequence, const string& strDevice)
+         ::pointer < ::music::midi::sequencer > midi::create_midi_sequencer(::music::midi::sequence * psequence, const ::scoped_string & scopedstrDevice)
          {
             
-            string strEngine = device_engine(strDevice);
+            string strEngine = device_engine(scopedstrDevice);
             
             if (strEngine.is_empty() || strEngine.case_insensitive_equals(m_strName))
             {
                
-               auto pmessageout = get_message_out(strDevice);
+               auto pmessageout = get_message_out(scopedstrDevice);
                
                return new ::music::midi::sequencer(psequence, pmessageout);
                
             }
             
-            return ::music::midi::midi::create_midi_sequencer(psequence, strDevice);
+            return ::music::midi::midi::create_midi_sequencer(psequence, scopedstrDevice);
             
          }
 
          
-         ::pointer < ::music::midi::message_out > midi::get_message_out(const string & strDevice)
+         ::pointer < ::music::midi::message_out > midi::get_message_out(const ::scoped_string & scopedstrDevice)
          {
             
-            if(strDevice == "core_midi:DLS Synth")
+            if(scopedstrDevice == "core_midi:DLS Synth")
             {
                
                return øcreate_new<dls_synth_message_out>();
@@ -256,7 +256,7 @@ namespace music
             //if (iPort >= 0 && iPort < m_cPortCount)
             {
                
-               auto & pmessageout = m_mapMessageOut[strDevice];
+               auto & pmessageout = m_mapMessageOut[scopedstrDevice];
                
                if (!pmessageout)
                {
@@ -276,7 +276,7 @@ namespace music
          }
 
       
-      ::pointer < ::music::midi::message_in > midi::get_message_in(const string & strDevice)
+      ::pointer < ::music::midi::message_in > midi::get_message_in(const ::scoped_string & scopedstrDevice)
       {
          
 //         if(strDevice == "core_midi:DLS Synth")
@@ -286,12 +286,12 @@ namespace music
 //            
 //         }
          
-         auto iPort = get_midi_in_device_port(strDevice);
+         auto iPort = get_midi_in_device_port(scopedstrDevice);
          
          if (iPort >= 0)
          {
             
-            auto & pmessagein = m_mapMessageIn[strDevice];
+            auto & pmessagein = m_mapMessageIn[scopedstrDevice];
             
             if (!pmessagein)
             {
@@ -311,10 +311,10 @@ namespace music
       }
 
          
-         ::pointer < ::music::midi::midi > midi::get_device_midi(const string & strDevice)
+         ::pointer < ::music::midi::midi > midi::get_device_midi(const ::scoped_string & scopedstrDevice)
          {
 
-            string strEngine = device_engine(strDevice);
+            string strEngine = device_engine(scopedstrDevice);
 
             if (m_strName.case_insensitive_equals(strEngine))
             {

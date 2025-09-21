@@ -46,12 +46,12 @@ namespace music
          
       }
 
-         void message_out::initialize_message_out(::music::midi::midi * pmidi, const string & strDriver)
+         void message_out::initialize_message_out(::music::midi::midi * pmidi, const ::scoped_string & scopedstrDriver)
          {
             
             //auto estatus =
             
-            output_base::initialize_message_out(pmidi, strDriver);
+            output_base::initialize_message_out(pmidi, scopedstrDriver);
             
             
 //            if(!estatus)

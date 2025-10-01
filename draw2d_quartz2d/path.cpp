@@ -203,6 +203,35 @@ namespace draw2d_quartz2d
    bool path::internal_add_move(double x, double y)
    {
       
+      if(isnan(x))
+      {
+         
+         information() << "draw2d_quartz2d::path::internal_add_move x isnan";
+         
+      }
+
+      if(isnan(y))
+      {
+         
+         information() << "draw2d_quartz2d::path::internal_add_move y isnan";
+         
+      }
+
+      
+      if(isnan(m_pointOffset.x()))
+      {
+         
+         information() << "draw2d_quartz2d::path::internal_add_move m_pointOffset.x() isnan";
+         
+      }
+
+      if(isnan(m_pointOffset.y()))
+      {
+         
+         information() << "draw2d_quartz2d::path::internal_add_move m_pointOffset.y() isnan";
+         
+      }
+
       x+= m_pointOffset.x();
       y+= m_pointOffset.y();
       

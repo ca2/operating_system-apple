@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "app-core/multimedia/multimedia/multimedia.h"
+#include "app-multimedia/multimedia/multimedia/multimedia.h"
 #include <AudioToolbox/AudioToolbox.h>
 
 

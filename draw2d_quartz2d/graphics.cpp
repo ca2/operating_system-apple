@@ -1851,7 +1851,7 @@ namespace draw2d_quartz2d
 //   }
 
 
-   ::double_size graphics::get_text_extent(const ::scoped_string & scopedstr, ::collection::index iIndex)
+   ::double_size graphics::_get_text_extent(const ::scoped_string & scopedstr, ::collection::index iIndex)
    {
       
       _synchronous_lock synchronouslock(synchronization());
@@ -1893,10 +1893,10 @@ namespace draw2d_quartz2d
    }
 
 
-   ::double_size graphics::get_text_extent(const ::scoped_string & scopedstr)
+   ::double_size graphics::_get_text_extent(const ::scoped_string & scopedstr)
    {
 
-      return get_text_extent(scopedstr, (int) scopedstr.size());
+      return _get_text_extent(scopedstr, (int) scopedstr.size());
 
    }
 

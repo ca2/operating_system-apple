@@ -392,8 +392,8 @@ namespace draw2d_quartz2d
 //      virtual int draw_text_ex(char * lpszString, int nCount, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams);
 //      void draw_text_ex(const string & str, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams) override;
 
-      double_size get_text_extent(const ::scoped_string & scopedstr, ::collection::index iIndex) override;
-      double_size get_text_extent(const ::scoped_string & scopedstr) override;
+      double_size _get_text_extent(const ::scoped_string & scopedstr, ::collection::index iIndex) override;
+      double_size _get_text_extent(const ::scoped_string & scopedstr) override;
       //double_size get_text_extent(const block & block) override;
 //      void get_text_extent(double_size & size, const char * lpszString, character_count nCount, int iIndex) ;
 //      void get_text_extent(double_size & size, const char * lpszString, character_count nCount) override;

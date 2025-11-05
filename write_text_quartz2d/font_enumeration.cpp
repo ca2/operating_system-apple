@@ -48,6 +48,9 @@ namespace write_text_quartz2d
                continue;
                
             }
+             
+             
+             __refdbg_add_referer;
             
             auto pfontenumerationitem = new ::write_text::font_enumeration_item(pszFontName);
 

@@ -52,7 +52,7 @@ namespace write_text_quartz2d
              
              __refdbg_add_referer;
             
-            auto pfontenumerationitem = new ::write_text::font_enumeration_item(pszFontName);
+            auto pfontenumerationitem = øallocate ::write_text::font_enumeration_item(pszFontName);
 
             m_pfontenumerationitema->add(pfontenumerationitem);
 

@@ -212,7 +212,7 @@ namespace acme_apple
       
       //psummary->m_strSlashedIntegration = "macos/" + psummary->m_strIntegrationRelease;
 
-      psummary->m_strSystemAmbientRelease = "macos";
+      psummary->m_strSystemAmbientReleaseArchitecture = "macos";
       
       //psummary->m_strSlashedIntegration = "macos";
 

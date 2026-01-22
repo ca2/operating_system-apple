@@ -166,13 +166,13 @@ namespace coreimage_imaging
 
                p->m_edisposal = ::draw2d::e_disposal_none;
 
-               p->m_rectangle.left() = 0;
+               p->m_rectangle.left = 0;
 
-               p->m_rectangle.top() = 0;
+               p->m_rectangle.top = 0;
 
-               p->m_rectangle.right() = w;
+               p->m_rectangle.right = w;
 
-               p->m_rectangle.bottom() = h;
+               p->m_rectangle.bottom = h;
 
                p->m_colorTransparent = ::color::transparent;
 
@@ -180,9 +180,9 @@ namespace coreimage_imaging
 
                p->m_bLocalPalette = false;
 
-               pframea->m_size.cx() = maximum(w, pframea->m_size.cx());
+               pframea->m_size.cx = maximum(w, pframea->m_size.cx);
 
-               pframea->m_size.cy() = maximum(h, pframea->m_size.cy());
+               pframea->m_size.cy = maximum(h, pframea->m_size.cy);
 
                pframea->add(p);
 

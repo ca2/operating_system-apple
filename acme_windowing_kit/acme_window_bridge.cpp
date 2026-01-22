@@ -216,10 +216,10 @@ void acme_window_bridge::on_mouse_move(double xHost, double yHost, double xAbsol
 //{
 //   
 //   ::int_rectangle r;
-//   r.left() = x;
-//   r.top() = y;
-//   r.right() = x+w;
-//   r.bottom() = y+h;
+//   r.left = x;
+//   r.top = y;
+//   r.right = x+w;
+//   r.bottom = y+h;
 //   
 //   pacmewindowingwindow->m_pacmeuserinteraction->set_rectangle(r);
 //   

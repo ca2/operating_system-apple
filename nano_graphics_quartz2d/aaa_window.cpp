@@ -420,9 +420,9 @@ namespace innate_ui_appkit
          if(pdialog)
          {
 
-            //m_pqwidget->move(point.x(), point.y());
+            //m_pqwidget->move(point.x, point.y);
 
-            //gtk_fixed_put(GTK_FIXED(pdialog->m_pgtkwidgetFixed), m_pgtkwidget, point.x(), point.y());
+            //gtk_fixed_put(GTK_FIXED(pdialog->m_pgtkwidgetFixed), m_pgtkwidget, point.x, point.y);
 
          }
 
@@ -440,9 +440,9 @@ namespace innate_ui_appkit
       m_procedureaLayoutParent.add([this, size]()
       {
 
-         //gtk_widget_set_size_request(m_pqwidget, size.cx(), size.cy());
-         //m_pqwidget->resize(size.cx(), size.cy());
-         __set_size(size.cx(), size.cy());
+         //gtk_widget_set_size_request(m_pqwidget, size.cx, size.cy);
+         //m_pqwidget->resize(size.cx, size.cy);
+         __set_size(size.cx, size.cy);
 
       });
 
@@ -461,8 +461,8 @@ namespace innate_ui_appkit
       //
       //       RECT r{};
       //
-      //       r.right = r.left + size.cx();
-      //       r.bottom = r.top + size.cy();
+      //       r.right = r.left + size.cx;
+      //       r.bottom = r.top + size.cy;
       //
       //
       //       AdjustWindowRect(&r, _get_style(), FALSE);

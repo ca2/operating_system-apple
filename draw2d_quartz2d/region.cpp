@@ -76,12 +76,12 @@ namespace draw2d_quartz2d
          if(pitem->m_polygon.has_element())
          {
             
-            CGPathMoveToPoint(ppath, nullptr, pitem->m_polygon[0].x(), pitem->m_polygon[0].y());
+            CGPathMoveToPoint(ppath, nullptr, pitem->m_polygon[0].x, pitem->m_polygon[0].y);
 
             for(int i = 1; i < pitem->m_polygon.size(); i++)
             {
 
-               CGPathAddLineToPoint(ppath, nullptr, pitem->m_polygon[i].x(), pitem->m_polygon[i].y());
+               CGPathAddLineToPoint(ppath, nullptr, pitem->m_polygon[i].x, pitem->m_polygon[i].y);
 
             }
 
@@ -113,7 +113,7 @@ namespace draw2d_quartz2d
 
       CGPathCloseSubpath(ppath);
       
-      CGAffineTransform transformTranslation = CGAffineTransformMakeTranslation(m_pointOffset.x(), m_pointOffset.y());
+      CGAffineTransform transformTranslation = CGAffineTransformMakeTranslation(m_pointOffset.x, m_pointOffset.y);
       
       m_path = CGPathCreateMutableCopyByTransformingPath(ppath, &transformTranslation);
       

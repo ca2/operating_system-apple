@@ -9,8 +9,8 @@ namespace draw2d_quartz2d
    bitmap::bitmap()
    {
       
-      m_size.cx() = 0;
-      m_size.cy() = 0;
+      m_size.cx = 0;
+      m_size.cy = 0;
       m_cgcontext = nullptr;
       m_iScan = 0;
       
@@ -40,7 +40,7 @@ namespace draw2d_quartz2d
       try
       {
       
-         m_memory.set_size(size.cy() * iStride);
+         m_memory.set_size(size.cy * iStride);
          
       }
       catch(...)
@@ -59,7 +59,7 @@ namespace draw2d_quartz2d
       
       CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
       
-      m_cgcontext = CGBitmapContextCreate(m_pdata, size.cx(), size.cy(), 8, iStride, colorspace, kCGImageAlphaPremultipliedLast);
+      m_cgcontext = CGBitmapContextCreate(m_pdata, size.cx, size.cy, 8, iStride, colorspace, kCGImageAlphaPremultipliedLast);
       
       CGColorSpaceRelease(colorspace);
       
@@ -86,7 +86,7 @@ namespace draw2d_quartz2d
       if(pdata != nullptr)
       {
       
-         ::memory_copy(m_pdata, pdata, size.cy() * iStride);
+         ::memory_copy(m_pdata, pdata, size.cy * iStride);
          
       }
       
@@ -100,7 +100,7 @@ namespace draw2d_quartz2d
    void bitmap::create_bitmap(::draw2d::graphics * pgraphics, const ::int_size & size, void ** ppdata, int * piStride)
    {
       
-      CreateBitmap(pgraphics, size, 1, 32, nullptr, size.cx() * sizeof(color32_t));
+      CreateBitmap(pgraphics, size, 1, 32, nullptr, size.cx * sizeof(color32_t));
 
       if(ppdata != nullptr)
       {
@@ -211,8 +211,8 @@ namespace draw2d_quartz2d
 //      }
 //       
 //      //dumpcontext << "bm.bmType = " << bm.bmType;
-//      dumpcontext << "\nbm.bmHeight = " << m_size.cy();
-//      dumpcontext << "\nbm.bmWidth = " << m_size.cx();
+//      dumpcontext << "\nbm.bmHeight = " << m_size.cy;
+//      dumpcontext << "\nbm.bmWidth = " << m_size.cx;
 //      dumpcontext << "\nbm.bmWidthBytes = " << m_iScan;
 //      dumpcontext << "\nbm.bmPlanes = " << 1;
 //      dumpcontext << "\nbm.bmBitsPixel = " << 32;
@@ -230,9 +230,9 @@ namespace draw2d_quartz2d
       
       m_cgcontext       = (CGContextRef) pbitmapcontext;
       
-      m_size.cx()   = (int) CGBitmapContextGetWidth(m_cgcontext);
+      m_size.cx   = (int) CGBitmapContextGetWidth(m_cgcontext);
       
-      m_size.cy()   = (int) CGBitmapContextGetHeight(m_cgcontext);
+      m_size.cy   = (int) CGBitmapContextGetHeight(m_cgcontext);
       
       m_iScan     = (int) CGBitmapContextGetBytesPerRow(m_cgcontext);
       
@@ -263,9 +263,9 @@ namespace draw2d_quartz2d
          
       }
       
-      m_size.cx() = 0;
+      m_size.cx = 0;
       
-      m_size.cy() = 0;
+      m_size.cy = 0;
       
       m_iScan = 0;
       

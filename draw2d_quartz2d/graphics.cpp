@@ -270,7 +270,7 @@ namespace draw2d_quartz2d
 //   double_point graphics::set_origin(const ::double_point & point)
 //   {
 //
-//      return set_origin(point.x(), point.y());
+//      return set_origin(point.x, point.y);
 //
 //   }
 
@@ -654,10 +654,10 @@ namespace draw2d_quartz2d
       
       auto rectangleTarget = imagedrawing.target_rectangle();
 
-      double xDst = rectangleTarget.left();
-      double yDst = rectangleTarget.top();
-      double xSrc = rectangleSource.left();
-      double ySrc = rectangleSource.top();
+      double xDst = rectangleTarget.left;
+      double yDst = rectangleTarget.top;
+      double xSrc = rectangleSource.left;
+      double ySrc = rectangleSource.top;
 
       auto pimage = imagedrawing.image();
       
@@ -862,17 +862,17 @@ namespace draw2d_quartz2d
 
             double d = minimum(dW, dH);
             
-            rectFinal.left() = 0.0;
+            rectFinal.left = 0.0;
 
-            rectFinal.top() = 0.0;
+            rectFinal.top = 0.0;
 
-            rectFinal.right() = d * nSrcWidth;
+            rectFinal.right = d * nSrcWidth;
 
-            rectFinal.bottom() = d * nSrcHeight;
+            rectFinal.bottom = d * nSrcHeight;
 
             rectFinal.align_rate(
-               imagedrawing.m_pointAlign.x(),
-               imagedrawing.m_pointAlign.y(),
+               imagedrawing.m_pointAlign.x,
+               imagedrawing.m_pointAlign.y,
                imagedrawing.m_rectangleTarget);
             
             nDstWidth = rectFinal.width();
@@ -920,8 +920,8 @@ namespace draw2d_quartz2d
 
          CGRect rectangle;
 
-         rectangle.origin.x = rectFinal.left();
-         rectangle.origin.y = rectFinal.top();
+         rectangle.origin.x = rectFinal.left;
+         rectangle.origin.y = rectFinal.top;
          rectangle.size.width = rectFinal.width();
          rectangle.size.height = rectFinal.height();
          
@@ -1034,7 +1034,7 @@ namespace draw2d_quartz2d
          if (rectIntersect.intersect(rectIntersect, rectText))
          {
 
-            rectText.bottom() = rectText.top() + rectText.height() * 2;
+            rectText.bottom = rectText.top + rectText.height() * 2;
 
             auto pimage1 = image()->create_image(rectText.size());
             
@@ -1043,7 +1043,7 @@ namespace draw2d_quartz2d
             pimage1->get_graphics()->set(get_current_brush());
             pimage1->get_graphics()->text_out(0, 0, scopedstr);
 
-            pimage1->blend(::double_point(), m_pimageAlphaBlend, double_point((int)maximum(0, x - m_pointAlphaBlend.x()), (int)maximum(0, y - m_pointAlphaBlend.y())), rectText.size());
+            pimage1->blend(::double_point(), m_pimageAlphaBlend, double_point((int)maximum(0, x - m_pointAlphaBlend.x), (int)maximum(0, y - m_pointAlphaBlend.y)), rectText.size());
 
             set_alpha_mode(::draw2d::e_alpha_mode_blend);
 
@@ -1495,10 +1495,10 @@ namespace draw2d_quartz2d
 //
 //      double_point pt =get_origin();
 //      
-//      pt.x() = x - pt.x();
-//      pt.y() = y - pt.y();
+//      pt.x = x - pt.x;
+//      pt.y = y - pt.y;
 //      
-//      return offset_origin(pt.x(), pt.y());
+//      return offset_origin(pt.x, pt.y);
 //      
 //   }
 
@@ -1822,7 +1822,7 @@ namespace draw2d_quartz2d
 //
 //      get_text_extent(sz, lpszString, nCount, iIndex);
 //
-//      return double_size((int) sz.cx(), (int) sz.cy());
+//      return double_size((int) sz.cx, (int) sz.cy);
 //
 //   }
 //
@@ -1834,7 +1834,7 @@ namespace draw2d_quartz2d
 //
 //      get_text_extent(double_size, lpszString, nCount, (int) nCount);
 //
-//      return ::double_size(double_size.cx(), double_size.cy());
+//      return ::double_size(double_size.cx, double_size.cy);
 //
 //   }
 
@@ -1866,25 +1866,25 @@ namespace draw2d_quartz2d
       
       ::double_size size;
 
-      size.cy() = 0;
+      size.cy = 0;
 
-      size.cx() = 0;
+      size.cx = 0;
 
       for(auto str : stra)
       {
          
          const_cast < graphics * > (this)->internal_show_text(0, 0, 0, str, kCGTextInvisible, e_align_top_left, e_draw_text_none, false, &ascent, &descent, &leading, &width, nullptr, nullptr, m_pfont);
 
-         size.cy() += ascent + descent + leading;
+         size.cy += ascent + descent + leading;
 
 //         if(leading <= 0)
 //         {
 //
-//            size.cy() += descent;
+//            size.cy += descent;
 //
 //         }
 
-         size.cx() = maximum(size.cx(), width);
+         size.cx = maximum(size.cx, width);
 
       }
       
@@ -1984,9 +1984,9 @@ namespace draw2d_quartz2d
 
       _draw(ppen);
 
-      m_point.x() = x2;
+      m_point.x = x2;
       
-      m_point.y() = y2;
+      m_point.y = y2;
 
    }
 
@@ -1996,9 +1996,9 @@ namespace draw2d_quartz2d
 //
 //      CGContextBeginPath(m_cgcontext);
 //
-//      CGContextMoveToPoint(m_cgcontext, p1.x(), p1.y());
+//      CGContextMoveToPoint(m_cgcontext, p1.x, p1.y);
 //
-//      CGContextAddLineToPoint(m_cgcontext, p2.x(), p2.y());
+//      CGContextAddLineToPoint(m_cgcontext, p2.x, p2.y);
 //
 //      _draw();
 //
@@ -2244,24 +2244,24 @@ namespace draw2d_quartz2d
          float f1 = 0.666f;
          //top-left
          CGContextSaveGState(m_cgcontext);
-         r.origin.x = outer.left() + f1;
-         r.origin.y = outer.top() + f1;
+         r.origin.x = outer.left + f1;
+         r.origin.y = outer.top + f1;
          r.size.width = fRadius;
          r.size.height = fRadius;
          CGContextClipToRect(m_cgcontext, r);
-         CGContextTranslateCTM(m_cgcontext, inner.left(), inner.top());
+         CGContextTranslateCTM(m_cgcontext, inner.left, inner.top);
          CGContextScaleCTM(m_cgcontext, fRadius, fRadius);
          CGContextDrawRadialGradient(m_cgcontext, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_cgcontext);
 
          //top-right
          CGContextSaveGState(m_cgcontext);
-         r.origin.x = inner.right() - f1;
-         r.origin.y = outer.top() + f1;
+         r.origin.x = inner.right - f1;
+         r.origin.y = outer.top + f1;
          r.size.width = fRadius;
          r.size.height = fRadius;
          CGContextClipToRect(m_cgcontext, r);
-         CGContextTranslateCTM(m_cgcontext, inner.right(), inner.top());
+         CGContextTranslateCTM(m_cgcontext, inner.right, inner.top);
          CGContextScaleCTM(m_cgcontext, fRadius, fRadius);
          CGContextDrawRadialGradient(m_cgcontext, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_cgcontext);
@@ -2269,32 +2269,32 @@ namespace draw2d_quartz2d
          
          //bottom-right
          CGContextSaveGState(m_cgcontext);
-         r.origin.x = inner.right() - f1;
-         r.origin.y = inner.bottom() - f1;
+         r.origin.x = inner.right - f1;
+         r.origin.y = inner.bottom - f1;
          r.size.width = fRadius;
          r.size.height = fRadius;
          CGContextClipToRect(m_cgcontext, r);
-         CGContextTranslateCTM(m_cgcontext, inner.right(), inner.bottom());
+         CGContextTranslateCTM(m_cgcontext, inner.right, inner.bottom);
          CGContextScaleCTM(m_cgcontext, fRadius, fRadius);
          CGContextDrawRadialGradient(m_cgcontext, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_cgcontext);
 
          //bottom-left
          CGContextSaveGState(m_cgcontext);
-         r.origin.x = outer.left() + f1;
-         r.origin.y = inner.bottom() - f1;
+         r.origin.x = outer.left + f1;
+         r.origin.y = inner.bottom - f1;
          r.size.width = fRadius;
          r.size.height = fRadius;
          CGContextClipToRect(m_cgcontext, r);
-         CGContextTranslateCTM(m_cgcontext, inner.left(), inner.bottom());
+         CGContextTranslateCTM(m_cgcontext, inner.left, inner.bottom);
          CGContextScaleCTM(m_cgcontext, fRadius, fRadius);
          CGContextDrawRadialGradient(m_cgcontext, grad, s, 0, e, 1.0f, kCGGradientDrawsBeforeStartLocation);
          CGContextRestoreGState(m_cgcontext);
 
          float f5 = 0.25f;
          
-         r.origin.x = inner.left() - f5;
-         r.origin.y = inner.top() - f5;
+         r.origin.x = inner.left - f5;
+         r.origin.y = inner.top - f5;
          r.size.width = inner.width() + f5 * 2.0f;
          r.size.height = inner.height() + f5 * 2.0f;
 
@@ -2303,56 +2303,56 @@ namespace draw2d_quartz2d
          
          float f2 = 0.444f;
          //bottom
-         r.origin.x = inner.left() + f2;
-         r.origin.y = inner.bottom() - f2;
+         r.origin.x = inner.left + f2;
+         r.origin.y = inner.bottom - f2;
          r.size.width = inner.width() - (f2 * 2.0f);
          r.size.height = fRadius;
          CGContextSaveGState(m_cgcontext);
          CGContextClipToRect(m_cgcontext, r);
          s.x = inner.center_x();
          e.x = inner.center_x();
-         s.y = inner.bottom();
-         e.y = outer.bottom();
+         s.y = inner.bottom;
+         e.y = outer.bottom;
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
          CGContextRestoreGState(m_cgcontext);
 
          // top
-         r.origin.x = inner.left() + f2;
-         r.origin.y = outer.top() + f2;
+         r.origin.x = inner.left + f2;
+         r.origin.y = outer.top + f2;
          r.size.width = inner.width() - (f2 * 2.0f);
          r.size.height = fRadius;
          CGContextSaveGState(m_cgcontext);
          CGContextClipToRect(m_cgcontext, r);
          s.x = inner.center_x();
          e.x = inner.center_x();
-         e.y = outer.top();
-         s.y = inner.top();
+         e.y = outer.top;
+         s.y = inner.top;
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
          CGContextRestoreGState(m_cgcontext);
 
          // right
-         r.origin.x = inner.right() - f2;
-         r.origin.y = inner.top() + f2;
+         r.origin.x = inner.right - f2;
+         r.origin.y = inner.top + f2;
          r.size.width = fRadius;
          r.size.height = inner.height() - (f2 * 2.0f);
          CGContextSaveGState(m_cgcontext);
          CGContextClipToRect(m_cgcontext, r);
-         s.x = inner.right();
-         e.x = outer.right();
+         s.x = inner.right;
+         e.x = outer.right;
          e.y = inner.center_y();
          s.y = inner.center_y();
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
          CGContextRestoreGState(m_cgcontext);
 
          // left
-         r.origin.x = outer.left() + f2;
-         r.origin.y = inner.top() + f2;
+         r.origin.x = outer.left + f2;
+         r.origin.y = inner.top + f2;
          r.size.width = fRadius;
          r.size.height = inner.height() - (f2 * 2.0f);
          CGContextSaveGState(m_cgcontext);
          CGContextClipToRect(m_cgcontext, r);
-         s.x = inner.left();
-         e.x = outer.left();
+         s.x = inner.left;
+         e.x = outer.left;
          e.y = inner.center_y();
          s.y = inner.center_y();
          CGContextDrawLinearGradient(pgraphics, (CGGradientRef) pbrush->m_osdata[0], s, e, 0);
@@ -2378,9 +2378,9 @@ namespace draw2d_quartz2d
 
          CGPoint myStartPoint, myEndPoint;
 
-         CGContextTranslateCTM(pgraphics, pbrush->m_point.x(), pbrush->m_point.y());
+         CGContextTranslateCTM(pgraphics, pbrush->m_point.x, pbrush->m_point.y);
 
-         CGContextScaleCTM(pgraphics, pbrush->m_size.cx(), pbrush->m_size.cy());
+         CGContextScaleCTM(pgraphics, pbrush->m_size.cx, pbrush->m_size.cy);
 
          myStartPoint.x = 0;
 
@@ -2409,13 +2409,13 @@ namespace draw2d_quartz2d
 
          CGPoint point1, point2;
 
-         point1.x = pbrush->m_point1.x();
+         point1.x = pbrush->m_point1.x;
 
-         point1.y = pbrush->m_point1.y();
+         point1.y = pbrush->m_point1.y;
 
-         point2.x = pbrush->m_point2.x();
+         point2.x = pbrush->m_point2.x;
 
-         point2.y = pbrush->m_point2.y();
+         point2.y = pbrush->m_point2.y;
          
          CGRect r;
          
@@ -2682,8 +2682,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            textout.m_point.x() + Δx,
-                            textout.m_point.y() + Δy + offsety,
+                            textout.m_point.x + Δx,
+                            textout.m_point.y + Δy + offsety,
                             0, str,
                              kCGTextStroke,
                             e_align_top_left,
@@ -2732,8 +2732,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            textout.m_point.x() + Δx,
-                            textout.m_point.y() + Δy + offsety,
+                            textout.m_point.x + Δx,
+                            textout.m_point.y + Δy + offsety,
                             0, str,
                              kCGTextFill,
                             e_align_top_left,
@@ -2782,8 +2782,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            drawtext.m_rectangle.left() + Δx,
-                            drawtext.m_rectangle.top() + Δy + offsety,
+                            drawtext.m_rectangle.left + Δx,
+                            drawtext.m_rectangle.top + Δy + offsety,
                             0,
                             str, kCGTextStroke,
                             e_align_top_left,
@@ -2833,8 +2833,8 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       {
 
          internal_show_text(
-                            drawtext.m_rectangle.left() + Δx,
-                            drawtext.m_rectangle.top() + Δy + offsety,
+                            drawtext.m_rectangle.left + Δx,
+                            drawtext.m_rectangle.top + Δy + offsety,
                             0,
                             str, kCGTextFill,
                             e_align_top_left,
@@ -2904,19 +2904,19 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       if(ealign & e_align_bottom)
       {
 
-         y = rectangle.bottom();
+         y = rectangle.bottom;
 
       }
       else if(ealign & e_align_vertical_center)
       {
 
-         y = rectangle.top() + ::height(rectangle) / 2.0;
+         y = rectangle.top + ::height(rectangle) / 2.0;
 
       }
       else
       {
 
-         y = rectangle.top();
+         y = rectangle.top;
 
       }
 
@@ -2930,7 +2930,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          str.find_replace("\r", " ");
 
          internal_show_text(
-         rectangle.left(),
+         rectangle.left,
          y,
          ::width(rectangle),
          str,
@@ -2965,7 +2965,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
             {
 
                internal_show_text(
-               rectangle.left(),
+               rectangle.left,
                y,
                ::width(rectangle),
                                   str,
@@ -3000,7 +3000,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
             {
 
                internal_show_text(
-               rectangle.left(),
+               rectangle.left,
                y,
                ::width(rectangle),
                str,
@@ -3035,15 +3035,15 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
             double_rectangle rectLower(rectangle);
 
-            rectUpper.bottom() = y;
+            rectUpper.bottom = y;
 
-            rectLower.top() = y;
+            rectLower.top = y;
 
             if(stra.get_count() % 2 == 1)
             {
 
                internal_show_text(
-               rectangle.left(),
+               rectangle.left,
                y,
                ::width(rectangle),
                stra[stra.get_middle_index()],
@@ -3068,9 +3068,9 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 //
 //                  }
 
-               rectUpper.bottom() -= Δy/2.0;
+               rectUpper.bottom -= Δy/2.0;
 
-               rectLower.top() += Δy/2.0;
+               rectLower.top += Δy/2.0;
 
             }
 

@@ -130,9 +130,9 @@ namespace quartz2d
       CGSize textSize = CGSizeMake(width, height);
 
       
-      double x = rectangleText.left();
+      double x = rectangleText.left;
       
-      double y = rectangleText.top();
+      double y = rectangleText.top;
 
       if(ealign & e_align_horizontal_center)
       {
@@ -202,9 +202,9 @@ namespace quartz2d
 //      CGContextSetTextMatrix(m_cgcontext, trans);
 //      CGContextSetRGBFillColor (m_cgcontext, __expand_float_rgba(pnanobrushText->m_color));
 
-//      double x = rectangleText.left();
+//      double x = rectangleText.left;
 //      
-//      double y = rectangleText.top();
+//      double y = rectangleText.top;
 //
 //      if(ealign & e_align_horizontal_center)
 //      {
@@ -290,8 +290,8 @@ namespace quartz2d
 
       ::int_size size;
       
-      size.cx() = textSize.width;
-      size.cy() = textSize.height;
+      size.cx = textSize.width;
+      size.cy = textSize.height;
       
       return size;
 
@@ -305,8 +305,8 @@ namespace quartz2d
 
       CGRect rect;
       
-      rect.origin.x = rectangle.left();
-      rect.origin.y = rectangle.top();
+      rect.origin.x = rectangle.left;
+      rect.origin.y = rectangle.top;
       rect.size.width = rectangle.width();
       rect.size.height = rectangle.height();
 

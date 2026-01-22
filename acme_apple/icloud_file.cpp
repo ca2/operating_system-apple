@@ -66,7 +66,7 @@ namespace acme_apple
 
 //   ::pointer < ::icloud_file::icloud_file > icloud_file::Duplicate() const
 //   {
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      int iNew = dup(m_iFile);
@@ -95,7 +95,7 @@ namespace acme_apple
 //      
 //      //auto eopen = eopenParam;
 //
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      ASSERT(!(eopen & ::icloud_file::e_open_text) );   // text mode not supported
 //
 //      // icloud_file objects are always binary and CreateFile does not need flag
@@ -280,7 +280,7 @@ namespace acme_apple
 //
 //   memsize icloud_file::read(void * lpBuf, memsize nCount)
 //   {
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      if (nCount == 0)
@@ -337,7 +337,7 @@ namespace acme_apple
 //   void icloud_file::write(const void * lpBuf, memsize nCount)
 //   {
 //      
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      
 //      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
@@ -394,7 +394,7 @@ namespace acme_apple
 //         
 //      }
 //
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      ASSERT(m_iFile != (unsigned int)hFileNull);
 //      ASSERT(eseek == ::e_seek_set || eseek == ::e_seek_from_end || eseek == ::e_seek_current);
 //      ASSERT(::e_seek_set == SEEK_SET && ::e_seek_from_end == SEEK_END && ::e_seek_current == SEEK_CUR);
@@ -420,7 +420,7 @@ namespace acme_apple
 //
 //   filesize icloud_file::get_position() const
 //   {
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      int lLoOffset = 0;
@@ -456,7 +456,7 @@ namespace acme_apple
 //
 //       */
 //
-//      /*ASSERT_VALID(this);
+//      /*ASSERT_OK(this);
 //
 //       if (m_iFile == (unsigned int)hFileNull)
 //       return;
@@ -467,7 +467,7 @@ namespace acme_apple
 
 //   filesize icloud_file::get_position() const
 //   {
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      int lLoOffset = 0;
@@ -492,7 +492,7 @@ namespace acme_apple
 ////
 ////       */
 ////
-////      /*ASSERT_VALID(this);
+////      /*ASSERT_OK(this);
 ////
 //         if (m_iFile == (unsigned int)hFileNull)
 //       return;
@@ -554,7 +554,7 @@ namespace acme_apple
          }
       
       }
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
 //      bool bError = false;
@@ -581,7 +581,7 @@ namespace acme_apple
 
 //   void icloud_file::Abort()
 //   {
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      if (m_iFile != (unsigned int)hFileNull)
 //      {
 //         // close but ignore errors
@@ -596,7 +596,7 @@ namespace acme_apple
 //   void icloud_file::lock(filesize dwPos, filesize dwCount)
 //   {
 //      
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      
 //      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
@@ -609,7 +609,7 @@ namespace acme_apple
 //   void icloud_file::unlock(filesize dwPos, filesize dwCount)
 //   {
 //      
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      
 //      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
@@ -622,7 +622,7 @@ namespace acme_apple
 //   void icloud_file::set_size(filesize dwNewLen)
 //   {
 //      
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //      
 //      ASSERT(m_iFile != (unsigned int)hFileNull);
 //
@@ -645,7 +645,7 @@ namespace acme_apple
 //   filesize icloud_file::size() const
 //   {
 //      
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //
 //      // seek is a non const operation
 //      icloud_file * pfile = (icloud_file*)this;
@@ -686,7 +686,7 @@ namespace acme_apple
 //   string icloud_file::get_file_name() const
 //   {
 //
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //
 //      ::icloud_file::file_status status;
 //
@@ -700,7 +700,7 @@ namespace acme_apple
 //   string icloud_file::get_file_title() const
 //   {
 //
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //
 //      ::icloud_file::file_status status;
 //
@@ -724,7 +724,7 @@ namespace acme_apple
 //      
 //      ::icloud_file::file_status status;
 //      
-//      ASSERT_VALID(this);
+//      ASSERT_OK(this);
 //
 //      if (m_iFile != hFileNull)
 //      {

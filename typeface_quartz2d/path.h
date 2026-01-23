@@ -4,11 +4,11 @@
 #include "aura/graphics/draw2d/path.h"
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE path :
+   class CLASS_DECL_TYPEFACE_QUARTZ2D path :
       virtual public ::draw2d::path
    {
    public:
@@ -68,7 +68,7 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

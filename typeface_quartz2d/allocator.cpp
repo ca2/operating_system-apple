@@ -7,7 +7,7 @@
 #endif
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
@@ -47,7 +47,7 @@ namespace typeface_freetype
       if (scopedstrName == "freetype" || scopedstrName.is_empty())
       {
 
-         return øcreate_new<::typeface_freetype::face>();
+         return øcreate_new<::typeface_quartz2d::face>();
       }
       else
       {
@@ -61,7 +61,7 @@ namespace typeface_freetype
    }
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

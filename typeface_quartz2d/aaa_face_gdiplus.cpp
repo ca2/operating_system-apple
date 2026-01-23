@@ -29,7 +29,7 @@ void defer_initialize_gdiplus()
 }
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
@@ -243,6 +243,6 @@ namespace typeface_freetype
    }
 
 
-}// namespace typeface_freetype
+}// namespace typeface_quartz2d
 
 

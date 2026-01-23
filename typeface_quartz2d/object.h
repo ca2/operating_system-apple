@@ -4,11 +4,11 @@
 #include "aura/graphics/draw2d/object.h"
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE object :
+   class CLASS_DECL_TYPEFACE_QUARTZ2D object :
       virtual public ::draw2d::object
    {
    public:

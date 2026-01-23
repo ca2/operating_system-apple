@@ -7,11 +7,11 @@
 
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE face:
+   class CLASS_DECL_TYPEFACE_QUARTZ2D face:
       virtual public ::typeface::face
    {
    public:
@@ -36,5 +36,5 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 

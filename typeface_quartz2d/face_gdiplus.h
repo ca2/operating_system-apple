@@ -6,12 +6,12 @@
 #include <gdiplus.h>
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
    class face_gdiplus :
-      virtual public ::typeface_freetype::face
+      virtual public ::typeface_quartz2d::face
    {
    public:
 
@@ -29,5 +29,5 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 

@@ -3,10 +3,10 @@
 #include "allocator.h"
 
 
-__FACTORY_EXPORT void typeface_freetype_factory(::factory::factory * pfactory)
+__FACTORY_EXPORT void typeface_quartz2d_factory(::factory::factory * pfactory)
 {
 
-   pfactory->add_factory_item<::typeface_freetype::allocator, ::typeface::allocator>();
+   pfactory->add_factory_item<::typeface_quartz2d::allocator, ::typeface::allocator>();
 
 }
 

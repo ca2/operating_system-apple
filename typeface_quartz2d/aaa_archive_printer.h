@@ -1,17 +1,17 @@
 #pragma once
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE printer :
+   class CLASS_DECL_TYPEFACE_QUARTZ2D printer :
       virtual public ::aura::printer
    {
    public:
 
 
-      class CLASS_DECL_TYPEFACE_FREETYPE document_properties :
+      class CLASS_DECL_TYPEFACE_QUARTZ2D document_properties :
          virtual public ::object
       {
       public:
@@ -25,7 +25,7 @@ namespace typeface_freetype
          virtual ~document_properties();
 
 
-         virtual bool initialize(::typeface_freetype::printer * pprinter, DEVMODE * pdevmode = nullptr);
+         virtual bool initialize(::typeface_quartz2d::printer * pprinter, DEVMODE * pdevmode = nullptr);
          virtual bool close();
          virtual ::draw2d::graphics * create_graphics();
 
@@ -51,6 +51,6 @@ namespace typeface_freetype
 
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 

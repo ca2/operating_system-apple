@@ -5,23 +5,26 @@
 
 
 #include "bred/typeface/face.h"
-#include <ft2build.h>
-#include FT_FREETYPE_H
+//#include <ft2build.h>
+//#include FT_FREETYPE_H
+
+#include <CoreText/CoreText.h>
+#include <CoreGraphics/CoreGraphics.h>
 
 
-namespace typeface_freetype
+
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE face :
+   class CLASS_DECL_TYPEFACE_QUARTZ2D face :
       virtual public ::typeface::face
    {
    public:
 
-
-      bool m_bFace;
-      FT_Face m_face;
-      int m_iCapHeight = -1;
+      CTFontRef   m_font = nullptr;
+      bool        m_bFace = false;
+      double         m_dCapHeight = -1.0;
       ::memory m_memoryFace;
 
 
@@ -35,10 +38,10 @@ namespace typeface_freetype
       void create_character(::typeface::character& ch, const ::scoped_string& scopedstr) override;
 
 
-      void get_text_metric(::write_text::text_metric* ptextmetrics);
+      void get_text_metric(::write_text::text_metric* ptextmetrics) override;
 
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 

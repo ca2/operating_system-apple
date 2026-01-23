@@ -34,7 +34,7 @@
 #include "graphics.h"
 
 
-#define GL2D_GRAPHICS(pgraphics) (dynamic_cast < ::typeface_freetype::graphics * > (pgraphics))
+#define GL2D_GRAPHICS(pgraphics) (dynamic_cast < ::typeface_quartz2d::graphics * > (pgraphics))
 #define GL2D_HDC(pgraphics) (GL2D_GRAPHICS(pgraphics)->m_hdc)
 
 
@@ -74,14 +74,14 @@ namespace opengl
 
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
    class draw2d;
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

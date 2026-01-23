@@ -5,11 +5,11 @@
 #include "bred/typeface/typeface.h"
 
 
-namespace typeface_fontconfig
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE typeface : virtual public ::typeface::typeface
+   class CLASS_DECL_TYPEFACE_QUARTZ2D typeface : virtual public ::typeface::typeface
    {
    public:
 

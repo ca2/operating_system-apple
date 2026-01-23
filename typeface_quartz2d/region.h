@@ -4,7 +4,7 @@
 #include "aura/graphics/draw2d/region.h"
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
@@ -53,7 +53,7 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

@@ -1,12 +1,12 @@
 #pragma once
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE palette :
-      virtual public ::typeface_freetype::object,
+   class CLASS_DECL_TYPEFACE_QUARTZ2D palette :
+      virtual public ::typeface_quartz2d::object,
       virtual public ::draw2d::palette
    {
    public:
@@ -39,7 +39,7 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

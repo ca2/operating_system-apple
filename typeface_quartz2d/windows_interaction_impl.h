@@ -9,7 +9,7 @@
 
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 

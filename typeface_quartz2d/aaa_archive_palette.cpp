@@ -1,7 +1,7 @@
 #include "framework.h"
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
@@ -24,7 +24,7 @@ namespace typeface_freetype
    }
    palette* palette::from_handle(::particle * pparticle, HPALETTE hPalette)
    {
-      //return dynamic_cast < palette * > (::typeface_freetype::object::from_handle(papp, hPalette));
+      //return dynamic_cast < palette * > (::typeface_quartz2d::object::from_handle(papp, hPalette));
       return nullptr;
    }
    bool palette::CreatePalette(LPLOGPALETTE lpLogPalette)
@@ -34,8 +34,8 @@ namespace typeface_freetype
    }
    bool palette::CreateHalftonePalette(::image::image *pimage)
    {
-      //ASSERT(pgraphics != nullptr && (dynamic_cast<::typeface_freetype::graphics * >(pgraphics))->get_handle1() != nullptr);
-      //return attach(::CreateHalftonePalette((dynamic_cast<::typeface_freetype::graphics * >(pgraphics))->get_handle1()));
+      //ASSERT(pgraphics != nullptr && (dynamic_cast<::typeface_quartz2d::graphics * >(pgraphics))->get_handle1() != nullptr);
+      //return attach(::CreateHalftonePalette((dynamic_cast<::typeface_quartz2d::graphics * >(pgraphics))->get_handle1()));
       return false;
 
    }
@@ -72,4 +72,4 @@ namespace typeface_freetype
       ::GetObject((HANDLE) get_os_data(), sizeof(unsigned short), &nEntries); return (int)nEntries;
    }
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d

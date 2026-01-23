@@ -9,11 +9,11 @@
 #include "face.h"
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE draw2d :
+   class CLASS_DECL_TYPEFACE_QUARTZ2D draw2d :
       virtual public ::draw2d_gpu::draw2d
    {
    public:
@@ -75,7 +75,7 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

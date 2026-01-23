@@ -6,11 +6,11 @@
 
 #include "aura/graphics/write_text/font.h"
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE font : 
+   class CLASS_DECL_TYPEFACE_QUARTZ2D font : 
       virtual public ::write_text::font
    {
    public:
@@ -47,7 +47,7 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

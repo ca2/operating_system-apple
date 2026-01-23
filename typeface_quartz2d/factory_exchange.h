@@ -1,11 +1,11 @@
 #pragma once
 
 
-//namespace typeface_freetype
+//namespace typeface_quartz2d
 //{
 //
 //
-//   class CLASS_DECL_TYPEFACE_FREETYPE factory_exchange :
+//   class CLASS_DECL_TYPEFACE_QUARTZ2D factory_exchange :
 //      virtual public ::object
 //   {
 //   public:
@@ -18,7 +18,7 @@
 //   };
 //
 //
-//} // namespace typeface_freetype
+//} // namespace typeface_quartz2d
 
 
 

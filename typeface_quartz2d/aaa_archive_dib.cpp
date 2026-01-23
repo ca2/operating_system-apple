@@ -2,7 +2,7 @@
 #include "omp.h"
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
@@ -154,7 +154,7 @@ namespace typeface_freetype
    bool image::create(::draw2d::graphics * pgraphics)
    {
 
-      ::draw2d::bitmap * pbitmap = (dynamic_cast<::typeface_freetype::graphics * >(pgraphics))->get_current_bitmap();
+      ::draw2d::bitmap * pbitmap = (dynamic_cast<::typeface_quartz2d::graphics * >(pgraphics))->get_current_bitmap();
 
       if(pbitmap == nullptr)
          return false;
@@ -193,7 +193,7 @@ namespace typeface_freetype
       return pgraphics->BitBlt(point, size, get_graphics(), ptSrc);
 
       /*  return SetDIBitsToDevice(
-           (dynamic_cast<::typeface_freetype::graphics * >(pgraphics))->get_handle1(),
+           (dynamic_cast<::typeface_quartz2d::graphics * >(pgraphics))->get_handle1(),
            point.x, point.y,
            size.cx, size.cy,
            ptSrc.x, ptSrc.y, ptSrc.y, cy - ptSrc.y,
@@ -2715,7 +2715,7 @@ namespace typeface_freetype
 
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

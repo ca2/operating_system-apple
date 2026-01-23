@@ -92,11 +92,11 @@ DECLARE_HANDLE(HPBUFFERARB);
 #define TEXTURE_WIDTH   64
 #define TEXTURE_HEIGHT  64
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE bitmap : 
+   class CLASS_DECL_TYPEFACE_QUARTZ2D bitmap : 
       virtual public ::draw2d::bitmap
    {
    public:
@@ -198,7 +198,7 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

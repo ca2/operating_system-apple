@@ -10,11 +10,11 @@
 struct OffscreenContext;
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE image :
+   class CLASS_DECL_TYPEFACE_QUARTZ2D image :
       virtual public ::image::image
    {
    public:
@@ -157,7 +157,7 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

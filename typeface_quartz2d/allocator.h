@@ -5,11 +5,11 @@
 #include "bred/typeface/allocator.h"
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE allocator : virtual public ::typeface::allocator
+   class CLASS_DECL_TYPEFACE_QUARTZ2D allocator : virtual public ::typeface::allocator
    {
    public:
 
@@ -26,4 +26,4 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d

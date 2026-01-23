@@ -2,7 +2,7 @@
 #include <WinSpool.h>
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
@@ -70,7 +70,7 @@ namespace typeface_freetype
       close();
    }
 
-   bool printer::document_properties::initialize(::typeface_freetype::printer * pprinter, DEVMODE * pdevmode)
+   bool printer::document_properties::initialize(::typeface_quartz2d::printer * pprinter, DEVMODE * pdevmode)
    {
       __UNREFERENCED_PARAMETER(pdevmode);
       if (m_pdevmode != nullptr)
@@ -118,5 +118,5 @@ namespace typeface_freetype
    }
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 

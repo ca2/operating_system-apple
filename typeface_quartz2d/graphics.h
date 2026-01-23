@@ -14,14 +14,14 @@
 //   int height;
 //   //fbo_t* fbo;
 //};
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
    
    class draw2d;
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE graphics :
+   class CLASS_DECL_TYPEFACE_QUARTZ2D graphics :
       virtual public ::draw2d_gpu::graphics
    {
    public:
@@ -164,7 +164,7 @@ namespace typeface_freetype
       // Type-safe selection helpers
    public:
 
-      ::typeface_freetype::draw2d * typeface_freetype();
+      ::typeface_quartz2d::draw2d * typeface_quartz2d();
 
 
       virtual ::draw2d::object* SelectStockObject(int nIndex);
@@ -633,12 +633,12 @@ namespace typeface_freetype
    };
 
 
-   CLASS_DECL_TYPEFACE_FREETYPE graphics * thread_graphics();
+   CLASS_DECL_TYPEFACE_QUARTZ2D graphics * thread_graphics();
 
-   CLASS_DECL_TYPEFACE_FREETYPE void thread_graphics(graphics * graphics);
+   CLASS_DECL_TYPEFACE_QUARTZ2D void thread_graphics(graphics * graphics);
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 
 

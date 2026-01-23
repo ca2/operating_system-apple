@@ -6,8 +6,119 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9A5A9D592F23CFE400F3FA1F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5A9D582F23CFE400F3FA1F /* CoreText.framework */; };
+		9A5A9D5B2F23CFF100F3FA1F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5A9D5A2F23CFF100F3FA1F /* CoreFoundation.framework */; };
+		9A5A9D5D2F23D00400F3FA1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5A9D5C2F23D00400F3FA1F /* CoreGraphics.framework */; };
+		9AD590452F23CC7000356667 /* brush.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5902B2F23CC7000356667 /* brush.h */; };
+		9AD590462F23CC7000356667 /* face.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5902F2F23CC7000356667 /* face.h */; };
+		9AD590472F23CC7000356667 /* image.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590382F23CC7000356667 /* image.h */; };
+		9AD590482F23CC7000356667 /* line1.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590392F23CC7000356667 /* line1.h */; };
+		9AD590492F23CC7000356667 /* character.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5902C2F23CC7000356667 /* character.h */; };
+		9AD5904A2F23CC7000356667 /* draw2d.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5902E2F23CC7000356667 /* draw2d.h */; };
+		9AD5904B2F23CC7000356667 /* factory_exchange.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590332F23CC7000356667 /* factory_exchange.h */; };
+		9AD5904C2F23CC7000356667 /* _opengl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5901E2F23CC7000356667 /* _opengl.h */; };
+		9AD5904E2F23CC7000356667 /* region.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5903E2F23CC7000356667 /* region.h */; };
+		9AD5904F2F23CC7000356667 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5903B2F23CC7000356667 /* object.h */; };
+		9AD590502F23CC7000356667 /* typeface.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590402F23CC7000356667 /* typeface.h */; };
+		9AD590512F23CC7000356667 /* face1.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590322F23CC7000356667 /* face1.h */; };
+		9AD590522F23CC7000356667 /* pen.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5903D2F23CC7000356667 /* pen.h */; };
+		9AD590542F23CC7000356667 /* vase_rend_draft_1.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590422F23CC7000356667 /* vase_rend_draft_1.h */; };
+		9AD590552F23CC7000356667 /* vase_rend_draft_2.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590432F23CC7000356667 /* vase_rend_draft_2.h */; };
+		9AD590562F23CC7000356667 /* windows_interaction_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590442F23CC7000356667 /* windows_interaction_impl.h */; };
+		9AD590572F23CC7000356667 /* allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590282F23CC7000356667 /* allocator.h */; };
+		9AD590582F23CC7000356667 /* resource.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5903F2F23CC7000356667 /* resource.h */; };
+		9AD590592F23CC7000356667 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590352F23CC7000356667 /* framework.h */; };
+		9AD5905A2F23CC7000356667 /* font.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590342F23CC7000356667 /* font.h */; };
+		9AD5905B2F23CC7000356667 /* path.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5903C2F23CC7000356667 /* path.h */; };
+		9AD5905C2F23CC7000356667 /* color.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5902D2F23CC7000356667 /* color.h */; };
+		9AD5905D2F23CC7000356667 /* face_gdiplus.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590312F23CC7000356667 /* face_gdiplus.h */; };
+		9AD5905E2F23CC7000356667 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5901B2F23CC7000356667 /* _.h */; };
+		9AD5905F2F23CC7000356667 /* bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5902A2F23CC7000356667 /* bitmap.h */; };
+		9AD590602F23CC7000356667 /* graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD590372F23CC7000356667 /* graphics.h */; };
+		9AD590612F23CC7000356667 /* line2.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD5903A2F23CC7000356667 /* line2.h */; };
+		9AD590662F23CC7000356667 /* allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD590292F23CC7000356667 /* allocator.cpp */; };
+		9AD590672F23CC7000356667 /* typeface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD590412F23CC7000356667 /* typeface.cpp */; };
+		9AD590692F23CC7000356667 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD590362F23CC7000356667 /* framework.cpp */; };
+		9AD5906A2F23CC7000356667 /* face.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD590302F23CC7000356667 /* face.cpp */; };
+		9AD5906B2F23CC7000356667 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5901C2F23CC7000356667 /* _.cpp */; };
+		9AD5906C2F23CC7000356667 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5901D2F23CC7000356667 /* _factory.cpp */; };
+		9AD5907F2F23CFA500356667 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD5907E2F23CFA500356667 /* libacme.dylib */; };
+		9AD590812F23CFA500356667 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD590802F23CFA500356667 /* libapex.dylib */; };
+		9AD590832F23CFA500356667 /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD590822F23CFA500356667 /* libaqua.dylib */; };
+		9AD590852F23CFA500356667 /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD590842F23CFA500356667 /* libaura.dylib */; };
+		9AD590872F23CFA500356667 /* libaxis.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD590862F23CFA500356667 /* libaxis.dylib */; };
+		9AD590892F23CFA500356667 /* libberg.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD590882F23CFA500356667 /* libberg.dylib */; };
+		9AD5908B2F23CFA500356667 /* libbred.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD5908A2F23CFA500356667 /* libbred.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A5A9D562F23CFCB00F3FA1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AD590722F23CF8F00356667 /* bred.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A281A5C252432B5009FA9CB;
+			remoteInfo = bred;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		9A3BC8A82F23C9E80043B263 /* libtypeface_quartz2d.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libtypeface_quartz2d.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5A9D582F23CFE400F3FA1F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		9A5A9D5A2F23CFF100F3FA1F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		9A5A9D5C2F23D00400F3FA1F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9A5A9D5E2F23D06A00F3FA1F /* _____debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
+		9A5A9D5F2F23D06A00F3FA1F /* _____release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
+		9AD5901B2F23CC7000356667 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
+		9AD5901C2F23CC7000356667 /* _.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
+		9AD5901D2F23CC7000356667 /* _factory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
+		9AD5901E2F23CC7000356667 /* _opengl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _opengl.h; sourceTree = "<group>"; };
+		9AD5901F2F23CC7000356667 /* aaa_archive_dib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aaa_archive_dib.h; sourceTree = "<group>"; };
+		9AD590202F23CC7000356667 /* aaa_archive_dib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = aaa_archive_dib.cpp; sourceTree = "<group>"; };
+		9AD590212F23CC7000356667 /* aaa_archive_palette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aaa_archive_palette.h; sourceTree = "<group>"; };
+		9AD590222F23CC7000356667 /* aaa_archive_palette.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = aaa_archive_palette.cpp; sourceTree = "<group>"; };
+		9AD590232F23CC7000356667 /* aaa_archive_printer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aaa_archive_printer.h; sourceTree = "<group>"; };
+		9AD590242F23CC7000356667 /* aaa_archive_printer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = aaa_archive_printer.cpp; sourceTree = "<group>"; };
+		9AD590252F23CC7000356667 /* aaa_face.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = aaa_face.cpp; sourceTree = "<group>"; };
+		9AD590262F23CC7000356667 /* aaa_face_gdiplus.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = aaa_face_gdiplus.cpp; sourceTree = "<group>"; };
+		9AD590272F23CC7000356667 /* aaaa_thumbnail_dc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = aaaa_thumbnail_dc.cpp; sourceTree = "<group>"; };
+		9AD590282F23CC7000356667 /* allocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = allocator.h; sourceTree = "<group>"; };
+		9AD590292F23CC7000356667 /* allocator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = allocator.cpp; sourceTree = "<group>"; };
+		9AD5902A2F23CC7000356667 /* bitmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bitmap.h; sourceTree = "<group>"; };
+		9AD5902B2F23CC7000356667 /* brush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = brush.h; sourceTree = "<group>"; };
+		9AD5902C2F23CC7000356667 /* character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = character.h; sourceTree = "<group>"; };
+		9AD5902D2F23CC7000356667 /* color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = color.h; sourceTree = "<group>"; };
+		9AD5902E2F23CC7000356667 /* draw2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw2d.h; sourceTree = "<group>"; };
+		9AD5902F2F23CC7000356667 /* face.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = face.h; sourceTree = "<group>"; };
+		9AD590302F23CC7000356667 /* face.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = face.cpp; sourceTree = "<group>"; };
+		9AD590312F23CC7000356667 /* face_gdiplus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = face_gdiplus.h; sourceTree = "<group>"; };
+		9AD590322F23CC7000356667 /* face1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = face1.h; sourceTree = "<group>"; };
+		9AD590332F23CC7000356667 /* factory_exchange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = factory_exchange.h; sourceTree = "<group>"; };
+		9AD590342F23CC7000356667 /* font.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = font.h; sourceTree = "<group>"; };
+		9AD590352F23CC7000356667 /* framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
+		9AD590362F23CC7000356667 /* framework.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
+		9AD590372F23CC7000356667 /* graphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = graphics.h; sourceTree = "<group>"; };
+		9AD590382F23CC7000356667 /* image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image.h; sourceTree = "<group>"; };
+		9AD590392F23CC7000356667 /* line1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = line1.h; sourceTree = "<group>"; };
+		9AD5903A2F23CC7000356667 /* line2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = line2.h; sourceTree = "<group>"; };
+		9AD5903B2F23CC7000356667 /* object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
+		9AD5903C2F23CC7000356667 /* path.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = path.h; sourceTree = "<group>"; };
+		9AD5903D2F23CC7000356667 /* pen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pen.h; sourceTree = "<group>"; };
+		9AD5903E2F23CC7000356667 /* region.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = region.h; sourceTree = "<group>"; };
+		9AD5903F2F23CC7000356667 /* resource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = resource.h; sourceTree = "<group>"; };
+		9AD590402F23CC7000356667 /* typeface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = typeface.h; sourceTree = "<group>"; };
+		9AD590412F23CC7000356667 /* typeface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = typeface.cpp; sourceTree = "<group>"; };
+		9AD590422F23CC7000356667 /* vase_rend_draft_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vase_rend_draft_1.h; sourceTree = "<group>"; };
+		9AD590432F23CC7000356667 /* vase_rend_draft_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vase_rend_draft_2.h; sourceTree = "<group>"; };
+		9AD590442F23CC7000356667 /* windows_interaction_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = windows_interaction_impl.h; sourceTree = "<group>"; };
+		9AD590722F23CF8F00356667 /* bred.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = bred.xcodeproj; path = ../../../source/app/bred/bred.xcodeproj; sourceTree = SOURCE_ROOT; };
+		9AD5907E2F23CFA500356667 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AD590802F23CFA500356667 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AD590822F23CFA500356667 /* libaqua.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaqua.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AD590842F23CFA500356667 /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AD590862F23CFA500356667 /* libaxis.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaxis.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AD590882F23CFA500356667 /* libberg.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libberg.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AD5908A2F23CFA500356667 /* libbred.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libbred.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -15,6 +126,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A5A9D5D2F23D00400F3FA1F /* CoreGraphics.framework in Frameworks */,
+				9A5A9D5B2F23CFF100F3FA1F /* CoreFoundation.framework in Frameworks */,
+				9A5A9D592F23CFE400F3FA1F /* CoreText.framework in Frameworks */,
+				9AD5907F2F23CFA500356667 /* libacme.dylib in Frameworks */,
+				9AD590812F23CFA500356667 /* libapex.dylib in Frameworks */,
+				9AD590832F23CFA500356667 /* libaqua.dylib in Frameworks */,
+				9AD590852F23CFA500356667 /* libaura.dylib in Frameworks */,
+				9AD590872F23CFA500356667 /* libaxis.dylib in Frameworks */,
+				9AD590892F23CFA500356667 /* libberg.dylib in Frameworks */,
+				9AD5908B2F23CFA500356667 /* libbred.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -24,7 +145,10 @@
 		9A3BC89F2F23C9E80043B263 = {
 			isa = PBXGroup;
 			children = (
+				9AD590722F23CF8F00356667 /* bred.xcodeproj */,
+				9AD5901A2F23CC3C00356667 /* typeface_quartz2d */,
 				9A3BC8A92F23C9E80043B263 /* Products */,
+				9AD5907D2F23CFA500356667 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -36,6 +160,81 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9A5A9D4E2F23CFC300F3FA1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9AD5901A2F23CC3C00356667 /* typeface_quartz2d */ = {
+			isa = PBXGroup;
+			children = (
+				9A5A9D5E2F23D06A00F3FA1F /* _____debug.xcconfig */,
+				9A5A9D5F2F23D06A00F3FA1F /* _____release.xcconfig */,
+				9AD5901B2F23CC7000356667 /* _.h */,
+				9AD5901C2F23CC7000356667 /* _.cpp */,
+				9AD5901D2F23CC7000356667 /* _factory.cpp */,
+				9AD5901E2F23CC7000356667 /* _opengl.h */,
+				9AD5901F2F23CC7000356667 /* aaa_archive_dib.h */,
+				9AD590202F23CC7000356667 /* aaa_archive_dib.cpp */,
+				9AD590212F23CC7000356667 /* aaa_archive_palette.h */,
+				9AD590222F23CC7000356667 /* aaa_archive_palette.cpp */,
+				9AD590232F23CC7000356667 /* aaa_archive_printer.h */,
+				9AD590242F23CC7000356667 /* aaa_archive_printer.cpp */,
+				9AD590252F23CC7000356667 /* aaa_face.cpp */,
+				9AD590262F23CC7000356667 /* aaa_face_gdiplus.cpp */,
+				9AD590272F23CC7000356667 /* aaaa_thumbnail_dc.cpp */,
+				9AD590282F23CC7000356667 /* allocator.h */,
+				9AD590292F23CC7000356667 /* allocator.cpp */,
+				9AD5902A2F23CC7000356667 /* bitmap.h */,
+				9AD5902B2F23CC7000356667 /* brush.h */,
+				9AD5902C2F23CC7000356667 /* character.h */,
+				9AD5902D2F23CC7000356667 /* color.h */,
+				9AD5902E2F23CC7000356667 /* draw2d.h */,
+				9AD5902F2F23CC7000356667 /* face.h */,
+				9AD590302F23CC7000356667 /* face.cpp */,
+				9AD590312F23CC7000356667 /* face_gdiplus.h */,
+				9AD590322F23CC7000356667 /* face1.h */,
+				9AD590332F23CC7000356667 /* factory_exchange.h */,
+				9AD590342F23CC7000356667 /* font.h */,
+				9AD590352F23CC7000356667 /* framework.h */,
+				9AD590362F23CC7000356667 /* framework.cpp */,
+				9AD590372F23CC7000356667 /* graphics.h */,
+				9AD590382F23CC7000356667 /* image.h */,
+				9AD590392F23CC7000356667 /* line1.h */,
+				9AD5903A2F23CC7000356667 /* line2.h */,
+				9AD5903B2F23CC7000356667 /* object.h */,
+				9AD5903C2F23CC7000356667 /* path.h */,
+				9AD5903D2F23CC7000356667 /* pen.h */,
+				9AD5903E2F23CC7000356667 /* region.h */,
+				9AD5903F2F23CC7000356667 /* resource.h */,
+				9AD590402F23CC7000356667 /* typeface.h */,
+				9AD590412F23CC7000356667 /* typeface.cpp */,
+				9AD590422F23CC7000356667 /* vase_rend_draft_1.h */,
+				9AD590432F23CC7000356667 /* vase_rend_draft_2.h */,
+				9AD590442F23CC7000356667 /* windows_interaction_impl.h */,
+			);
+			name = typeface_quartz2d;
+			sourceTree = "<group>";
+		};
+		9AD5907D2F23CFA500356667 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A5A9D5C2F23D00400F3FA1F /* CoreGraphics.framework */,
+				9A5A9D5A2F23CFF100F3FA1F /* CoreFoundation.framework */,
+				9A5A9D582F23CFE400F3FA1F /* CoreText.framework */,
+				9AD5907E2F23CFA500356667 /* libacme.dylib */,
+				9AD590802F23CFA500356667 /* libapex.dylib */,
+				9AD590822F23CFA500356667 /* libaqua.dylib */,
+				9AD590842F23CFA500356667 /* libaura.dylib */,
+				9AD590862F23CFA500356667 /* libaxis.dylib */,
+				9AD590882F23CFA500356667 /* libberg.dylib */,
+				9AD5908A2F23CFA500356667 /* libbred.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -43,6 +242,33 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AD590452F23CC7000356667 /* brush.h in Headers */,
+				9AD590462F23CC7000356667 /* face.h in Headers */,
+				9AD590472F23CC7000356667 /* image.h in Headers */,
+				9AD590482F23CC7000356667 /* line1.h in Headers */,
+				9AD590492F23CC7000356667 /* character.h in Headers */,
+				9AD5904A2F23CC7000356667 /* draw2d.h in Headers */,
+				9AD5904B2F23CC7000356667 /* factory_exchange.h in Headers */,
+				9AD5904C2F23CC7000356667 /* _opengl.h in Headers */,
+				9AD5904E2F23CC7000356667 /* region.h in Headers */,
+				9AD5904F2F23CC7000356667 /* object.h in Headers */,
+				9AD590502F23CC7000356667 /* typeface.h in Headers */,
+				9AD590512F23CC7000356667 /* face1.h in Headers */,
+				9AD590522F23CC7000356667 /* pen.h in Headers */,
+				9AD590542F23CC7000356667 /* vase_rend_draft_1.h in Headers */,
+				9AD590552F23CC7000356667 /* vase_rend_draft_2.h in Headers */,
+				9AD590562F23CC7000356667 /* windows_interaction_impl.h in Headers */,
+				9AD590572F23CC7000356667 /* allocator.h in Headers */,
+				9AD590582F23CC7000356667 /* resource.h in Headers */,
+				9AD590592F23CC7000356667 /* framework.h in Headers */,
+				9AD5905A2F23CC7000356667 /* font.h in Headers */,
+				9AD5905B2F23CC7000356667 /* path.h in Headers */,
+				9AD5905C2F23CC7000356667 /* color.h in Headers */,
+				9AD5905D2F23CC7000356667 /* face_gdiplus.h in Headers */,
+				9AD5905E2F23CC7000356667 /* _.h in Headers */,
+				9AD5905F2F23CC7000356667 /* bitmap.h in Headers */,
+				9AD590602F23CC7000356667 /* graphics.h in Headers */,
+				9AD590612F23CC7000356667 /* line2.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +286,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A5A9D572F23CFCB00F3FA1F /* PBXTargetDependency */,
 			);
 			name = typeface_quartz2d;
 			packageProductDependencies = (
@@ -94,6 +321,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9A3BC8A92F23C9E80043B263 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A5A9D4E2F23CFC300F3FA1F /* Products */;
+					ProjectRef = 9AD590722F23CF8F00356667 /* bred.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9A3BC8A72F23C9E80043B263 /* typeface_quartz2d */,
@@ -106,21 +339,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AD590662F23CC7000356667 /* allocator.cpp in Sources */,
+				9AD590672F23CC7000356667 /* typeface.cpp in Sources */,
+				9AD590692F23CC7000356667 /* framework.cpp in Sources */,
+				9AD5906A2F23CC7000356667 /* face.cpp in Sources */,
+				9AD5906B2F23CC7000356667 /* _.cpp in Sources */,
+				9AD5906C2F23CC7000356667 /* _factory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9A5A9D572F23CFCB00F3FA1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = bred;
+			targetProxy = 9A5A9D562F23CFCB00F3FA1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		9A3BC8AA2F23C9E80043B263 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A5A9D5E2F23D06A00F3FA1F /* _____debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -146,43 +393,74 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HS8735NRM5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = framework.h;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				INSTALL_PATH = "@executable_path";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(WorkspaceDir)/operating_system",
+					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/$(CONFIGURATION)/library",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/configuration",
+					"$(WorkspaceDir)/port/include",
+					"$(WorkspaceDir)/source/app/include",
+				);
+				USER_HEADER_SEARCH_PATHS = (
+					.,
+					"$(WorkspaceDir)/source",
+					"$(WorkspaceDir)/source/app",
+					"$(WorkspaceDir)/source/app/_include",
+					"$(WorkspaceDir)/operating_system",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/configuration_selection/$(CONFIGURATION)",
+					"$(WorkspaceDir)/port/_",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/..",
+					"$(PROJECT_DIR)/../..",
+					"$(HOME)/sensitive/sensitive/include",
+				);
+				USE_HEADERMAP = NO;
+				WorkspaceDir = "$(SRCROOT)/../../..";
 			};
 			name = Debug;
 		};
 		9A3BC8AB2F23C9E80043B263 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A5A9D5F2F23D06A00F3FA1F /* _____release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -208,50 +486,83 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HS8735NRM5;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = framework.h;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				INSTALL_PATH = "@executable_path";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(WorkspaceDir)/operating_system",
+					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/$(CONFIGURATION)/library",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/configuration",
+					"$(WorkspaceDir)/port/include",
+					"$(WorkspaceDir)/source/app/include",
+				);
+				USER_HEADER_SEARCH_PATHS = (
+					.,
+					"$(WorkspaceDir)/source",
+					"$(WorkspaceDir)/source/app",
+					"$(WorkspaceDir)/source/app/_include",
+					"$(WorkspaceDir)/operating_system",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/configuration_selection/$(CONFIGURATION)",
+					"$(WorkspaceDir)/port/_",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/..",
+					"$(PROJECT_DIR)/../..",
+					"$(HOME)/sensitive/sensitive/include",
+				);
+				USE_HEADERMAP = NO;
+				WorkspaceDir = "$(SRCROOT)/../../..";
 			};
 			name = Release;
 		};
 		9A3BC8AD2F23C9E80043B263 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HS8735NRM5;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				EXECUTABLE_EXTENSION = dylib;
+				MACH_O_TYPE = mh_dylib;
+				PLATFORM_MODIFIER = macos;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		9A3BC8AE2F23C9E80043B263 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HS8735NRM5;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				EXECUTABLE_EXTENSION = dylib;
+				MACH_O_TYPE = mh_dylib;
+				PLATFORM_MODIFIER = macos;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};

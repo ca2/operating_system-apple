@@ -10,12 +10,12 @@
 #include <GdiPlus.h>
 
 
-namespace typeface_freetype
+namespace typeface_quartz2d
 {
 
 
-   class CLASS_DECL_TYPEFACE_FREETYPE pen : 
-      virtual public ::typeface_freetype::object,
+   class CLASS_DECL_TYPEFACE_QUARTZ2D pen : 
+      virtual public ::typeface_quartz2d::object,
       virtual public ::draw2d::pen
    {
    public:
@@ -41,6 +41,6 @@ namespace typeface_freetype
    };
 
 
-} // namespace typeface_freetype
+} // namespace typeface_quartz2d
 
 

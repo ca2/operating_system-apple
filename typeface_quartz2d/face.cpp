@@ -68,7 +68,7 @@ void face::create_character(
 
       if (m_dCapHeight < 0)
       {
-         m_dCapHeight = (int)CTFontGetCapHeight(m_font);
+         m_dCapHeight = CTFontGetCapHeight(m_font);
       }
    }
 
@@ -105,24 +105,32 @@ void face::create_character(
       &glyph,
       &advance,
       1);
-
-   int width  = (int)ceil(bounds.size.width);
+   //auto fH = bounds.size.height;
+   auto width  = (int)ceil(2.0f + bounds.origin.x +bounds.size.width);
    int height = (int)ceil(bounds.size.height);
-
    if (width <= 0 || height <= 0)
       return;
-   
-   ch.Size = { width, height };
+   int h5 = height + 3;
+
+   auto yorigin =bounds.origin.y -1.0f;
    ch.Bearing = {
       (int)floor(bounds.origin.x),
-      (int)ceil(bounds.origin.y + bounds.size.height)
+      //(int)ceil(yorigin+ bounds.size.height)
+      (int)ceil(yorigin+ height)
    };
+   //float yRoundingFix =((float)ch.Bearing.y) - (yorigin + //bounds.size.height);
+   float yRoundingFix =((float)ch.Bearing.y) - (yorigin + bounds.size.height);
+   //yRoundingFix =yRoundingFix;
+
+   ch.Size = { width, h5 };
+
    ch.Advance = (unsigned int)ceil(advance.width);
-   ch.h2 = m_dCapHeight - ch.Bearing.y;
+   //ch.aHeight2 = m_dCapHeight - ch.Bearing.y;
+   ch.aHeight2 = ceil(m_dCapHeight-ceil(bounds.size.height + yorigin));
 
 
    ::memory memory;
-   memory.set_size(width * height * 4);
+   memory.set_size(width * h5 * 4);
    memset(memory.data(), 0, memory.size());
 
    CGColorSpaceRef cs = CGColorSpaceCreateDeviceRGB();
@@ -131,7 +139,7 @@ void face::create_character(
       CGBitmapContextCreate(
          memory.data(),
          width,
-         height,
+         h5,
          8,
          width * 4,
          cs,
@@ -142,9 +150,16 @@ void face::create_character(
    CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
    CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
 
+   auto y= yorigin;
    // Flip Y (Quartz is upside down vs bitmap)
-   CGContextTranslateCTM(ctx, -bounds.origin.x,
-                         height + bounds.origin.y);
+   //CGContextTranslateCTM(ctx, -bounds.origin.x,
+   CGContextTranslateCTM(ctx, -bounds.origin.x + 2.0f,
+                         //height + y);
+                          //m_dCapHeight*1.0f - fH - y);
+                         -y - 1.0f + yRoundingFix);
+                         //-y +yRoundingFix);
+   ::string str(scopedstr);
+   informationf("Character %s y %f boundssizeheight %f (%f)", str.m_begin, y, bounds.size.height, m_dCapHeight);
 
    CGPoint pos = CGPointMake(0, 0);
    CTFontDrawGlyphs(m_font, &glyph, &pos, 1, ctx);

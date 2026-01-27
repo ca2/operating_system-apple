@@ -289,6 +289,13 @@ namespace acme_apple
 //   
 //}
 
+::string node::dynamic_library_suffix()
+{
+
+   return ".dylib";
+
+}
+
 
 } // namespace acme_apple
 

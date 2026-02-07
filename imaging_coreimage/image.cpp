@@ -111,7 +111,7 @@ namespace coreimage_imaging
       
       memory memory;
       
-      auto papplication = application();
+      auto papplication = m_papplication;
       
       if(options.toy)
       {

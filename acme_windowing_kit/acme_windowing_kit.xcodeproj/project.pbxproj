@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9A14C4DF2D1B6E63009C09EF /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A14C4DE2D1B6E63009C09EF /* libacme.dylib */; };
+		9A8EC0DB2F35A68E001EAC80 /* acme_window_bridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3F2CF2CF8205F0061DCC0 /* acme_window_bridge.mm */; };
+		9A8EC0DC2F35A68E001EAC80 /* acme_window_bridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3F2CF2CF8205F0061DCC0 /* acme_window_bridge.mm */; };
+		9A8EC0DF2F35AB3E001EAC80 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EC0DA2F35A4EB001EAC80 /* window.cpp */; };
+		9A8EC0E02F35AB3E001EAC80 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EC0DA2F35A4EB001EAC80 /* window.cpp */; };
 		9AC3F2DA2CF821C30061DCC0 /* acme_window_bridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3F2CE2CF8205F0061DCC0 /* acme_window_bridge.cpp */; };
 		9AC3F2DB2CF821C30061DCC0 /* acme_window_bridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3F2CE2CF8205F0061DCC0 /* acme_window_bridge.cpp */; };
 /* End PBXBuildFile section */
@@ -32,6 +36,8 @@
 /* Begin PBXFileReference section */
 		9A14C4DE2D1B6E63009C09EF /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3E324A2CF835E0007DC9EE /* acme_apple.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_apple.xcodeproj; path = ../acme_apple/acme_apple.xcodeproj; sourceTree = SOURCE_ROOT; };
+		9A8EC0D22F35A40C001EAC80 /* window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
+		9A8EC0DA2F35A4EB001EAC80 /* window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
 		9AC3F2A42CF81EBF0061DCC0 /* libacme_windowing_kit.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libacme_windowing_kit.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC3F2C82CF8205F0061DCC0 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9AC3F2C92CF8205F0061DCC0 /* _.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 				9AC3F2CF2CF8205F0061DCC0 /* acme_window_bridge.mm */,
 				9AC3F2D02CF8205F0061DCC0 /* framework.h */,
 				9AC3F2D12CF8205F0061DCC0 /* framework.cpp */,
+				9A8EC0D22F35A40C001EAC80 /* window.h */,
+				9A8EC0DA2F35A4EB001EAC80 /* window.cpp */,
 			);
 			name = acme_windowing_kit;
 			sourceTree = "<group>";
@@ -245,6 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8EC0DF2F35AB3E001EAC80 /* window.cpp in Sources */,
+				9A8EC0DB2F35A68E001EAC80 /* acme_window_bridge.mm in Sources */,
 				9AC3F2DA2CF821C30061DCC0 /* acme_window_bridge.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8EC0E02F35AB3E001EAC80 /* window.cpp in Sources */,
+				9A8EC0DC2F35A68E001EAC80 /* acme_window_bridge.mm in Sources */,
 				9AC3F2DB2CF821C30061DCC0 /* acme_window_bridge.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

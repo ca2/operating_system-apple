@@ -18,7 +18,21 @@
 namespace apple_kit
 {
 
-   class acme_window_bridge :
+
+namespace acme
+{
+
+namespace windowing
+{
+
+class window;
+
+} // namespace windowing
+
+
+} //namespace acme
+
+  class acme_window_bridge :
    virtual public ::particle
    {
    public:
@@ -26,18 +40,24 @@ namespace apple_kit
       //bool m_bRunningAppMainLoop;
       //::uikit::acme::windowing::window *     m_pwindow;
       //CFTypeRef                  m_pnsacmewindow;
-      
+      bool m_bRunningAppMainLoop;
+      ::apple_kit::acme::windowing::window *     m_papplekitacmewindowingwindow;
+      CFTypeRef   m_pnsacmewindowAppleKit;
+
       
       acme_window_bridge();
       ~acme_window_bridge() override;
       
+      
+      virtual void attach_ns_acme_window(CGRect cgrect);
+      
 //      void attach_ns_acme_window(CGRect cgrect);
 //      
-//      void display();
-//      
-//      void hide();
-//      
-//      void do_tasks();
+      virtual void display();
+//
+      virtual void hide();
+//
+      virtual void do_tasks();
       
       virtual void on_left_button_up(double xHost, double yHost, double xAbsolute, double yAbsolute);
       
@@ -52,17 +72,18 @@ namespace apple_kit
       
 //      virtual void on_char(int iChar);
 //      
-//      virtual void _on_draw_background(CGContextRef cg, CGSize sizeFrame);
+      virtual void _on_draw_background(CGContextRef cg, CGSize sizeFrame);
+      
+      virtual void _on_draw_foreground(CGContextRef cg, CGSize sizeFrame);
+
 //      
-//      virtual void _on_draw_foreground(CGContextRef cg, CGSize sizeFrame);
-//      
-//      virtual void redraw();
+      virtual void redraw();
 //      
 //      //virtual void stop();
 //      
-//      virtual void close();
+      virtual void close();
 //      
-//      virtual void set_position(int x, int y);
+      virtual void set_position(int x, int y);
 //      
 //      virtual void on_layout(int x, int y, int w, int h);
 //      
@@ -74,9 +95,9 @@ namespace apple_kit
 //      
 //      virtual void ios_window_resign_key();
 //      
-//      virtual CGRect get_frame();
+      virtual CGRect get_frame();
 //      
-//      virtual void _run_modal_loop();
+      virtual void _run_modal_loop();
 //      
 //      virtual bool _is_top_most() const;
 //      

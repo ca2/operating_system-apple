@@ -4,7 +4,7 @@
 //  coalescing common parts of appkit and uikit acme_window_bridge in apple_kit acme_window_bridge by camilo on 2024-11-28 00:57 <3ThomasBorregaardSorensen
 
 #include "framework.h"
-//#include "window.h"
+#include "window.h"
 #include "acme_window_bridge.h"
 #include "acme/nano/graphics/device.h"
 #include "acme/constant/id.h"
@@ -48,7 +48,11 @@ acme_window_bridge::~acme_window_bridge()
    
 }
 
-
+void acme_window_bridge::attach_ns_acme_window(CGRect cgrect)
+{
+   
+   
+}
 void acme_window_bridge::on_left_button_up(double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
@@ -192,25 +196,25 @@ void acme_window_bridge::on_mouse_move(double xHost, double yHost, double xAbsol
 //}
 //
 //
-//void acme_window_bridge::_on_draw_background(CGContextRef cg, CGSize sizeFrame)
-//{
-//   
-//   //::pointer<quartz2d::nano::graphics::device>pnanodevice = ::place(new quartz2d::nano::graphics::device(cg));
-//   
-//   pacmewindowingwindow->_draw_background(cg);
-//   
-//}
-//
-//
-//void acme_window_bridge::_on_draw_foreground(CGContextRef cg, CGSize sizeFrame)
-//{
-//   
-//   //::pointer<quartz2d::nano::graphics::device>pnanodevice = ::place(new quartz2d::nano::graphics::device(cg));
-//   
-//   pacmewindowingwindow->_draw_foreground(cg);
-//   
-//}
-//
+void acme_window_bridge::_on_draw_background(CGContextRef cg, CGSize sizeFrame)
+{
+   
+   //::pointer<quartz2d::nano::graphics::device>pnanodevice = ::place(new quartz2d::nano::graphics::device(cg));
+   
+   m_papplekitacmewindowingwindow->_draw_background(cg);
+   
+}
+
+
+void acme_window_bridge::_on_draw_foreground(CGContextRef cg, CGSize sizeFrame)
+{
+   
+   //::pointer<quartz2d::nano::graphics::device>pnanodevice = ::place(new quartz2d::nano::graphics::device(cg));
+   
+   m_papplekitacmewindowingwindow->_draw_foreground(cg);
+   
+}
+
 //
 //void acme_window_bridge::on_layout(int x, int y, int w, int h)
 //{
@@ -301,12 +305,12 @@ void acme_window_bridge::on_mouse_move(double xHost, double yHost, double xAbsol
 //}
 //
 //
-//void acme_window_bridge::do_tasks()
-//{
-//   
-//   ::task_run();
-//   
-//}
+void acme_window_bridge::do_tasks()
+{
+   
+   ::task_run();
+   
+}
 //
 //
 //

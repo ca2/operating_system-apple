@@ -1480,6 +1480,17 @@ namespace draw2d_quartz2d
       affineInverted = CGAffineTransformInvert(affine);
 
       CGContextConcatCTM(m_cgcontext, affineInverted);
+      
+      if(m_iYFlipHeight > 0)
+      {
+         
+         CGAffineTransform affineFlip;
+         
+         affineFlip = CGAffineTransform(1, 0,  0, -1, 0, m_iYFlipHeight);
+         
+         CGContextConcatCTM(m_cgcontext, affineFlip);
+         
+      }
 
       CGAffineTransform affineSet;
 

@@ -365,41 +365,6 @@ void acme_window_bridge::set_position(int x, int y)
 //}
 
 
-void ns_screen_copy(CGRect & rect, const ::INT_RECTANGLE & rectangle)
-{
-   
-   UIScreen * pscreenMain = [ UIScreen mainScreen ];
-   
-   CGRect CGRectFrame = [ pscreenMain bounds];
-   
-   rect.origin.x = rectangle.left;
-   
-   rect.origin.y = CGRectFrame.size.height - rectangle.bottom;
-   
-   rect.size.width = rectangle.right - rectangle.left;
-   
-   rect.size.height = rectangle.bottom - rectangle.top;
-   
-}
-
-
-void ns_screen_copy(::INT_RECTANGLE & rectangle, CGRect & rect)
-{
-   
-   UIScreen * pscreenMain = [ UIScreen mainScreen ];
-   
-   CGRect CGRectFrame = [ pscreenMain bounds];
-   
-   rectangle.left = rect.origin.x;
-   
-   rectangle.bottom = CGRectFrame.size.height - rect.origin.y;
-   
-   rectangle.right = rectangle.left + rect.size.width;
-   
-   rectangle.top = rectangle.bottom - rect.size.height;
-   
-}
-
 
 void acme_window_bridge::_run_modal_loop()
 {

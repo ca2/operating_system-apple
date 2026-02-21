@@ -70,7 +70,7 @@ namespace draw2d_quartz2d
       // Constructors
 //      bool CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
 //      bool CreateIC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
-      void CreateCompatibleDC(::draw2d::graphics * pgraphics) override;
+      void create_compatible_graphics(::draw2d::graphics * pgraphics) override;
 
       void DeleteDC() override;
 

@@ -128,7 +128,7 @@ namespace typeface_quartz2d
                     const_char_pointer lpszOutput, const void * lpInitData);
       void create_memory_graphics(const ::int_size & size = {}) override;
       void create_window_graphics(::windowing::window * pwindow) override;
-      void CreateCompatibleDC(::draw2d::graphics * pgraphics) override;
+      void create_compatible_graphics(::draw2d::graphics * pgraphics) override;
 
       //void set_hint_window_output() override;
 
@@ -613,7 +613,7 @@ namespace typeface_quartz2d
       virtual void set(::draw2d::bitmap* pbitmap) override;
       virtual ::draw2d::object* set_stock_object(int nIndex) override;
 
-      void CreateWindowDC(oswindow wnd) override;
+      void create_window_graphics(oswindow wnd) override;
       void is_valid_update_window_thread() override;
 
 

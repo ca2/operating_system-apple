@@ -37,22 +37,22 @@ namespace apple_kit
 {
 
 
-acme_window_bridge::acme_window_bridge()
-{
-   
-}
+//acme_window_bridge::acme_window_bridge()
+//{
+//   
+//}
+//
+//
+//acme_window_bridge::~acme_window_bridge()
+//{
+//   
+//}
 
-
-acme_window_bridge::~acme_window_bridge()
-{
-   
-}
-
-void acme_window_bridge::attach_ns_acme_window(CGRect cgrect)
-{
-   
-   
-}
+//void acme_window_bridge::attach_ns_acme_window(CGRect cgrect)
+//{
+//   
+//   
+//}
 void acme_window_bridge::on_left_button_up(double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    

@@ -49,7 +49,7 @@ namespace coreimage_imaging
 
                   pframea->add(pframe);
 
-                  øconstruct(pframe->m_pimage);
+                  constructø(pframe->m_pimage);
 
                   pframe->m_iFrame = iFrame;
 
@@ -252,7 +252,7 @@ namespace coreimage_imaging
 
       image_pointer pimageFrame;
 
-      auto estatus = øconstruct(pimageFrame);
+      auto estatus = constructø(pimageFrame);
 
       if (!estatus || !pimageFrame)
       {

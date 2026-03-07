@@ -1955,7 +1955,7 @@ namespace draw2d_quartz2d
          if(m_pfont.is_null())
          {
 
-            øconstruct(m_pfont);
+            constructø(m_pfont);
             
             m_pfont->create_font(e_font_sans, 16_px);
 

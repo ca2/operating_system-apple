@@ -109,7 +109,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
    try
    {
       
-      øconstruct_new(preachability);
+      construct_newø(preachability);
       
       preachability->m_networkreachabilityref = networkreachabilityref;
       

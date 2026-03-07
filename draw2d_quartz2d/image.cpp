@@ -76,11 +76,11 @@ namespace draw2d_quartz2d
       
       ::draw2d::bitmap_pointer pbitmap;
       
-      øconstruct(pbitmap);
+      constructø(pbitmap);
 
       ::draw2d::graphics_pointer pgraphics;
       
-      øconstruct(pgraphics);
+      constructø(pgraphics);
 
       //m_pbitmap.defer_create(this);
 

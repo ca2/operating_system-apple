@@ -121,7 +121,7 @@ namespace acme_apple
    }
 
 
-   void node::_user_post(const ::procedure & routineParam)
+   void node::user_post(const ::procedure & routineParam)
    {
       
       auto routine = routineParam;

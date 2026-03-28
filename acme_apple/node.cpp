@@ -173,7 +173,7 @@ namespace acme_apple
    ::pointer <::operating_system::summary > node::operating_system_summary()
    {
       
-      auto psummary = øcreate_new < ::operating_system::summary >();
+      auto psummary = create_newø < ::operating_system::summary >();
       
       psummary->m_strSystem = "macos";
       psummary->m_strSystemFamily = "macos";

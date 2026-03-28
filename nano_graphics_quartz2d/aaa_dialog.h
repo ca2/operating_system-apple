@@ -24,7 +24,7 @@ namespace innate_ui_appkit
       ~dialog() override;
 
 
-      virtual void øcreate();
+      virtual void createø();
       void _create() override;
       //void _get_class(WNDCLASSEXW & wcex);
       //void set_text(const ::scoped_string & scopedstr) override;

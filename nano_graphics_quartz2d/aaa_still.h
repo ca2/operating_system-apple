@@ -25,7 +25,7 @@ class icon;
       still();
       ~still() override;
 
-      virtual void øcreate();
+      virtual void createø();
 
       void _create_child(window * pwindowParent) override;
       void create_icon_still(::innate_ui::window * pwindowParent) override;

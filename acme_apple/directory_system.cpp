@@ -729,7 +729,7 @@ namespace acme_apple
                   if(!m_pfilelistinghandler_iCloudContainer)
                   {
                      
-                     auto pfilelistinghandler = øcreate_new < ::acme_apple::file_listing_handler >();
+                     auto pfilelistinghandler = create_newø < ::acme_apple::file_listing_handler >();
                      
                      ::string str_iCloudContainerIdentifier;
                      

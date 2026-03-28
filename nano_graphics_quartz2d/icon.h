@@ -41,7 +41,7 @@ namespace quartz2d
 
          
          ///void _create() override;
-         //virtual void øcreate();
+         //virtual void createø();
          
          //void __icon_release();
          

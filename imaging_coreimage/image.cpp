@@ -145,6 +145,13 @@ namespace coreimage_imaging
          
          pimage->set_nok();
          
+         if(options.functionLoaded)
+         {
+          
+            options.functionLoaded(pimage);
+            
+         }
+         
          return;
          
       }
@@ -155,8 +162,7 @@ namespace coreimage_imaging
 
       char pszPngSignature []= {(char)137, 80, 78 ,71, 13 ,10, 26 ,10};
 
-      bool bPng = size > sizeof(pszPngSignature)
-      && strncmp((const char *) pszData, pszPngSignature, sizeof(pszPngSignature)) == 0;
+      bool bPng = size > sizeof(pszPngSignature) && strncmp((const char *) pszData, pszPngSignature, sizeof(pszPngSignature)) == 0;
 
       bool bJpegBegins = memory.begins("\x0FF\x0D8");
 
@@ -215,6 +221,13 @@ namespace coreimage_imaging
          pimage->set_ok_flag();
 
          pimage->m_estatus = ::success;
+         
+         if(options.functionLoaded)
+         {
+            
+            options.functionLoaded(pimage);
+            
+         }
 
          return;
 
@@ -238,6 +251,13 @@ namespace coreimage_imaging
          pimage->set_nok();
 
          pimage->m_estatus = ::error_failed;
+         
+         if(options.functionLoaded)
+         {
+            
+            options.functionLoaded(pimage);
+            
+         }
 
          return;
 
@@ -251,6 +271,12 @@ namespace coreimage_imaging
       
       pimage->set_ok_flag();
       
+      if(options.functionLoaded)
+      {
+         
+         options.functionLoaded(pimage);
+         
+      }
       //return true;
 
    }

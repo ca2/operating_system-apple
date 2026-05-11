@@ -203,7 +203,7 @@ CLASS_DECL_ACME void WINAPI RtlTimeToTimeFields(
    int SecondsInDay;
    ::u64 cleaps, years, yearday, months;
    ::u64 Days;
-   long long Time;
+   ::i64 Time;
 
    /* Extract millisecond from time and convert time into seconds */
    TimeFields->Milliseconds =
@@ -308,7 +308,7 @@ int_bool WINAPI RtlTimeFieldsToTime(
           584817 ;                      /* zero that on 1601-01-01 */
    /* done */
 
-   *Time = (((((long long) day * HOURSPERDAY +
+   *Time = (((((::i64) day * HOURSPERDAY +
                         tfTimeFields->Hour) * MINSPERHOUR +
                        tfTimeFields->Minute) * SECSPERMIN +
                       tfTimeFields->Second ) * 1000 +
@@ -378,7 +378,7 @@ int WINAPI RtlLocalTimeToSystemTime( const ::u64 *LocalTime,
 //xxx    information("(%point, %int_point)\n", LocalTime, SystemTime);
 
    bias = TIME_GetBias();
-   *SystemTime = *LocalTime + bias * (long long)TICKSPERSEC;
+   *SystemTime = *LocalTime + bias * (::i64)TICKSPERSEC;
    return 0;
 }
 
@@ -403,7 +403,7 @@ int WINAPI RtlSystemTimeToLocalTime( const ::u64 *SystemTime,
 //xxx    information("(%point, %int_point)\n", SystemTime, LocalTime);
 
    bias = TIME_GetBias();
-   *LocalTime = *SystemTime - bias * (long long)TICKSPERSEC;
+   *LocalTime = *SystemTime - bias * (::i64)TICKSPERSEC;
    return 0;
 }
 
@@ -501,7 +501,7 @@ void WINAPI RtlSecondsSince1980ToTime( ::u32 Seconds, ::u64 *Time )
  */
 void WINAPI RtlTimeToElapsedTimeFields( const ::u64 *Time, PTIME_FIELDS TimeFields )
 {
-   long long time;
+   ::i64 time;
    int rem;
 
    time = *Time / TICKSPERSEC;
@@ -523,7 +523,7 @@ void WINAPI RtlTimeToElapsedTimeFields( const ::u64 *Time, PTIME_FIELDS TimeFiel
 #ifdef _UWP
 
 
-const long long DELTA_EPOCH_IN_MICROSECS= 11644473600000000;
+const ::i64 DELTA_EPOCH_IN_MICROSECS= 11644473600000000;
 
 /* IN UNIX the use of the timezone struct is obsolete;
  I don't know why you use it. See http://linux.about.com/od/commands/l/blcmdl2_gettime.htm
@@ -541,7 +541,7 @@ struct timezone2
 //int gettimeofday(timeval *tv/*in*/, struct timezone2 *tz/*in*/)
 //{
 //  FILETIME ft;
-//  long long tmpres = 0;
+//  ::i64 tmpres = 0;
 //  TIME_ZONE_INFORMATION tz_winapi;
 //  int rez=0;
 //

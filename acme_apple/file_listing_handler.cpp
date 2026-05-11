@@ -96,14 +96,14 @@ namespace acme_apple
    }
       
       
-   void file_listing_handler::ns_metadata_query_callback_listing(long long ll, const char ** pszaFullPath, int * piaFlag)
+   void file_listing_handler::ns_metadata_query_callback_listing(::i64 ll, const char ** pszaFullPath, int * piaFlag)
    {
       
       _synchronous_lock _synchronouslock(this->synchronization());
       
       m_filelisting.erase_all();
       
-      for(long long i = 0; i < ll; i++)
+      for(::i64 i = 0; i < ll; i++)
       {
          
          auto pszFullPath = pszaFullPath[i];

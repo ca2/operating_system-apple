@@ -107,7 +107,7 @@ namespace draw2d_quartz2d
          
          CTFontSymbolicTraits symbolicTraitsMsk = 0;
          
-         int iWeight = m_fontweight.as_int();
+         int iWeight = m_fontweight.as_i32();
          
          double dCoreTextWeight = nsfont_get_ctweight(iWeight);
          

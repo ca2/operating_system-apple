@@ -32,9 +32,9 @@ namespace avfoundation
       
 #ifdef _DEBUG
       
-      virtual long long increment_reference_count() override;
-      virtual long long decrement_reference_count() override;
-      virtual long long release() override;
+      virtual ::i64 increment_reference_count() override;
+      virtual ::i64 decrement_reference_count() override;
+      virtual ::i64 release() override;
       
 #endif
       

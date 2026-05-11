@@ -52,7 +52,7 @@ namespace music
             virtual ::e_status enumerate_midi_devices() override;
 
             using ::music::midi::midi::translate_os_result;
-            virtual ::e_status translate_os_result(string & strMessage, string & strOsMessage, ::music::midi::object * pobject, long long iOsResult, const ::scoped_string & scopedstrContext, const ::scoped_string & scopedstrText) override;
+            virtual ::e_status translate_os_result(string & strMessage, string & strOsMessage, ::music::midi::object * pobject, ::i64 iOsResult, const ::scoped_string & scopedstrContext, const ::scoped_string & scopedstrText) override;
 
             virtual ::pointer < ::music::midi::sequencer > create_midi_sequencer(::music::midi::sequence * psequence, const ::scoped_string & scopedstrDevice) override;
             

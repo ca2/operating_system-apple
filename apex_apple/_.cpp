@@ -272,10 +272,10 @@ bool __node_further_file_is_equal(file::path const & path1, file::path const & p
 
 
 
-long long oswindow_id(oswindow w)
+::i64 oswindow_id(oswindow w)
 {
 
-   return (long long) (w);
+   return (::i64) (w);
 
 }
 

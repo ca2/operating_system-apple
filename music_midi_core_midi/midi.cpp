@@ -205,7 +205,7 @@ namespace music
          }
 
 
-         ::e_status     midi::translate_os_result(string & strMessage, string & strOsMessage, ::music::midi::object * pobject, long long iOsResult, const ::scoped_string & scopedstrContext, const ::scoped_string & scopedstrText)
+         ::e_status     midi::translate_os_result(string & strMessage, string & strOsMessage, ::music::midi::object * pobject, ::i64 iOsResult, const ::scoped_string & scopedstrContext, const ::scoped_string & scopedstrText)
          {
 
             ::e_status     estatus = iOsResult == 0 ? ::success : error_failed;

@@ -85,7 +85,7 @@ namespace multimedia
       }
 
 
-      void out::out_open_ex(thread * pthreadCallback, unsigned int uiSamplesPerSec, unsigned int uiChannelCount, unsigned int uiBitsPerSample, ::wave::enum_purpose epurpose)
+      void out::out_open_ex(thread * pthreadCallback, ::u32 uiSamplesPerSec, ::u32 uiChannelCount, ::u32 uiBitsPerSample, ::wave::enum_purpose epurpose)
       {
 
          synchronous_lock synchronouslock(synchronization());
@@ -217,9 +217,9 @@ namespace multimedia
 
          int i = 0;
 
-         unsigned int property_running;
+         ::u32 property_running;
 
-         unsigned int size;
+         ::u32 size;
 
          while(i < 50)
          {
@@ -293,7 +293,7 @@ namespace multimedia
 
          OSStatus status;
 
-         buffer->mAudioDataByteSize = (unsigned int) out_get_buffer_size();
+         buffer->mAudioDataByteSize = (::u32) out_get_buffer_size();
 
          status = AudioQueueEnqueueBuffer(m_Queue, buffer, 0, nullptr);
 

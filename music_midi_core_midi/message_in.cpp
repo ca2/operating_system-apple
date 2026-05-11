@@ -85,7 +85,7 @@ namespace music
             
                auto sources = m_pmidi->get_source_endpoints();
             
-               for (unsigned int n = 0; n < sources.size(); n++)
+               for (::u32 n = 0; n < sources.size(); n++)
                {
                   
                   if (sources[n].m_strName == strDriver)
@@ -104,7 +104,7 @@ namespace music
                if(!bFound)
                {
                
-                  for (unsigned int n = 0; n < sources.size(); n++)
+                  for (::u32 n = 0; n < sources.size(); n++)
                   {
                      
                      if (sources[n].m_strName == strDriver)

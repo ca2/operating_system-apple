@@ -31,7 +31,7 @@ namespace music
 
          CFStringRef ConnectedEndpointName(MIDIEndpointRef endpoint);
 
-         unsigned long long nano_to_absolute(unsigned long long nano);
+         ::u64 nano_to_absolute(::u64 nano);
 
          // The following is copied from: http://developer.apple.com/qa/qa2004/qa1374.html
          CFStringRef EndpointName(MIDIEndpointRef endpoint, bool isExternal);

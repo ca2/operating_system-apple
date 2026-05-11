@@ -312,10 +312,10 @@ CTFontRef CreateFontConvertedToFamily(CTFontRef iFont, CFStringRef iFamily)
 
 
 CGContextRef CreateARGBBitmapContext (CGImageRef inImage, int cx, int cy);
-bool GetImagePixelData(unsigned int * pcr, int cx, int cy, int iScan, CGImageRef inImage);
+bool GetImagePixelData(::u32 * pcr, int cx, int cy, int iScan, CGImageRef inImage);
 
 
-bool mm_get_file_image(unsigned int * pcr, int cx, int cy, int iScan, const ::string & psz);
+bool mm_get_file_image(::u32 * pcr, int cx, int cy, int iScan, const ::string & psz);
 
 
 
@@ -327,15 +327,15 @@ bool mm_get_file_image(unsigned int * pcr, int cx, int cy, int iScan, const ::st
 
 
 CGContextRef CreateARGBBitmapContext (CGImageRef inImage, int cx, int cy);
-bool GetImagePixelData(unsigned int * pcr, int cx, int cy, int iScan, CGImageRef inImage);
+bool GetImagePixelData(::u32 * pcr, int cx, int cy, int iScan, CGImageRef inImage);
 
 
-bool mm_get_file_image(unsigned int * pcr, int cx, int cy, int iScan, const ::string & psz);
+bool mm_get_file_image(::u32 * pcr, int cx, int cy, int iScan, const ::string & psz);
 
 
 
 
-bool GetImagePixelData(unsigned int * pcr, int cx, int cy, int iScan, CGImageRef inImage)
+bool GetImagePixelData(::u32 * pcr, int cx, int cy, int iScan, CGImageRef inImage)
 {
 
    CGContextRef cgctx = CreateARGBBitmapContext(inImage, cx, cy);
@@ -361,7 +361,7 @@ bool GetImagePixelData(unsigned int * pcr, int cx, int cy, int iScan, CGImageRef
       for(int y = cy - 1; y >= 0; y--)
       {
 
-         unsigned char * pline = (unsigned char *) &((unsigned int*)data)[y * cx];
+         unsigned char * pline = (unsigned char *) &((::u32*)data)[y * cx];
 
          ::memcpy_dup(pdest, pline, cx* 4);
 

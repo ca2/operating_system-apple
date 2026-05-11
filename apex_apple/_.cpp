@@ -34,7 +34,7 @@ char * mm_ca2_command_line();
 //}
 
 
-//void * CreateDispatchTimer(unsigned long long interval, unsigned long long leeway, void * queue, void (*pfnTimer)(void * p), void * p)
+//void * CreateDispatchTimer(::u64 interval, ::u64 leeway, void * queue, void (*pfnTimer)(void * p), void * p)
 //{
 //
 //   dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, (dispatch_queue_t) queue);
@@ -55,7 +55,7 @@ char * mm_ca2_command_line();
 //}
 //
 //
-//void * ResetDispatchTimer(void * timerParam, unsigned long long interval, unsigned long long leeway)
+//void * ResetDispatchTimer(void * timerParam, ::u64 interval, ::u64 leeway)
 //{
 //
 //   dispatch_source_t timer = (dispatch_source_t) timerParam;

@@ -37,6 +37,6 @@ void apex_application_main(int argc, char *argv[], const char * pszCommandLine);
 
 //int is_window(oswindow window);
 
-//void ns_main_send(dispatch_block_t block, unsigned int uiMillis = -1);
+//void ns_main_send(dispatch_block_t block, ::u32 uiMillis = -1);
 //void ns_main_post(dispatch_block_t block);
 

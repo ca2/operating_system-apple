@@ -305,10 +305,10 @@ namespace coreimage_imaging
 //   long bytesPerRow = bytesPerPixel * width;
 //   long bitsPerComponent = 8;
 //
-//   unsigned int * pixels;
-//   pixels = (unsigned int *) calloc(height * width, sizeof(unsigned int));
+//   ::u32 * pixels;
+//   pixels = (::u32 *) calloc(height * width, sizeof(::u32));
 //   
-//   iScan = width * sizeof(unsigned int);
+//   iScan = width * sizeof(::u32);
 //
 //   // 3.
 //   CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();

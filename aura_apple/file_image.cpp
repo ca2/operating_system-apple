@@ -9,11 +9,11 @@
 #include "aura/graphics/image/image.h"
 
 
-bool apple_get_file_image(unsigned int * pcr, int cx, int cy, int iScan, const char * pszFilePath);
-bool apple_get_file_image_by_type_identifier(unsigned int * pcr, int cx, int cy, int iScan, const char * pszTypeIdentifier);
+bool apple_get_file_image(::u32 * pcr, int cx, int cy, int iScan, const char * pszFilePath);
+bool apple_get_file_image_by_type_identifier(::u32 * pcr, int cx, int cy, int iScan, const char * pszTypeIdentifier);
 
 
-//bool apple_get_file_image(unsigned int * pcr, int cx, int cy, int iScan, const char * pszFilePath)
+//bool apple_get_file_image(::u32 * pcr, int cx, int cy, int iScan, const char * pszFilePath)
 //{
 //
 //
@@ -23,7 +23,7 @@ bool apple_get_file_image_by_type_identifier(unsigned int * pcr, int cx, int cy,
 //}
 
 
-//bool macos1_get_file_image_by_type_identifier(unsigned int * pcr, int cx, int cy, int iScan, const char * pszTypeIdentifier)
+//bool macos1_get_file_image_by_type_identifier(::u32 * pcr, int cx, int cy, int iScan, const char * pszTypeIdentifier)
 //{
 //
 //   return mm1_get_file_image_by_type_identifier(pcr, cx, cy, iScan, pszTypeIdentifier);

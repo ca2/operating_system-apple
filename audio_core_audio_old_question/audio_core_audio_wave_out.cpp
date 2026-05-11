@@ -56,13 +56,13 @@ namespace multimedia
          if(succeeded(m_estatusWave = translate(AudioQueueNewOutput(&m_dataformat, WaveOutAudioQueueBufferCallback, this, nullptr, kCFRunLoopCommonModes, 0, &m_Queue))))
             return;
 
-         unsigned int uiBufferSizeLog2;
-         unsigned int uiBufferSize;
-         unsigned int uiAnalysisSize;
-         unsigned int uiAllocationSize;
-         unsigned int uiInterestSize;
-         unsigned int uiSkippedSamplesCount;
-         unsigned int uiBufferCount = m_iBufferCount;
+         ::u32 uiBufferSizeLog2;
+         ::u32 uiBufferSize;
+         ::u32 uiAnalysisSize;
+         ::u32 uiAllocationSize;
+         ::u32 uiInterestSize;
+         ::u32 uiSkippedSamplesCount;
+         ::u32 uiBufferCount = m_iBufferCount;
 
          //   if(m_pwaveformat->nSamplesPerSec == 44100)
 //         if(true)
@@ -224,13 +224,13 @@ namespace multimedia
 
 Opened:
 
-         unsigned int uiBufferSizeLog2;
-         unsigned int uiBufferSize;
-         unsigned int uiAnalysisSize;
-         unsigned int uiAllocationSize;
-         unsigned int uiInterestSize;
-         unsigned int uiSkippedSamplesCount;
-         unsigned int uiBufferCount = iBufferCount;
+         ::u32 uiBufferSizeLog2;
+         ::u32 uiBufferSize;
+         ::u32 uiAnalysisSize;
+         ::u32 uiAllocationSize;
+         ::u32 uiInterestSize;
+         ::u32 uiSkippedSamplesCount;
+         ::u32 uiBufferCount = iBufferCount;
 
          if(m_pwaveformat->nSamplesPerSec == 44100)
          {
@@ -299,7 +299,7 @@ Opened:
          return m_estatusWave;
       }
 
-      ::e_status     out::out_open_ex(thread * pthreadCallback, int iBufferCount, int iBufferSampleCount, unsigned int uiSamplesPerSec, unsigned int uiChannelCount, unsigned int uiBitsPerSample, ::audio::e_purpose epurpose)
+      ::e_status     out::out_open_ex(thread * pthreadCallback, int iBufferCount, int iBufferSampleCount, ::u32 uiSamplesPerSec, ::u32 uiChannelCount, ::u32 uiBitsPerSample, ::audio::e_purpose epurpose)
       {
 
          single_lock sLock(mutex(), true);
@@ -347,13 +347,13 @@ Opened:
 
          }
 
-         unsigned int uiBufferSizeLog2;
-         unsigned int uiBufferSize;
-         unsigned int uiAnalysisSize;
-         unsigned int uiAllocationSize;
-         unsigned int uiInterestSize;
-         unsigned int uiSkippedSamplesCount;
-         unsigned int uiBufferCount = iBufferCount;
+         ::u32 uiBufferSizeLog2;
+         ::u32 uiBufferSize;
+         ::u32 uiAnalysisSize;
+         ::u32 uiAllocationSize;
+         ::u32 uiInterestSize;
+         ::u32 uiSkippedSamplesCount;
+         ::u32 uiBufferCount = iBufferCount;
 
          //   if(m_pwaveformat->nSamplesPerSec == 44100)
          if(true)

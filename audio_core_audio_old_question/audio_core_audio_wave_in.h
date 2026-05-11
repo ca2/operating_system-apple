@@ -52,14 +52,14 @@ namespace multimedia
                                        AudioQueueRef                        inAQ,
                                        AudioQueueBufferRef                  inBuffer,
                                        const AudioTimeStamp                 *inStartTime,
-                                       unsigned int                               inNumPackets,
+                                       ::u32                               inNumPackets,
                                        const AudioStreamPacketDescription   *inPacketDesc);
 
 
          void HandleInputBuffer(AudioQueueRef                        inAQ,
                                 AudioQueueBufferRef                  inBuffer,
                                 const AudioTimeStamp                 *inStartTime,
-                                unsigned int                               inNumPackets,
+                                ::u32                               inNumPackets,
                                 const AudioStreamPacketDescription   *inPacketDesc);
 
 

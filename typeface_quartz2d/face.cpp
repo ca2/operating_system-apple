@@ -124,7 +124,7 @@ void face::create_character(
 
    ch.Size = { width, h5 };
 
-   ch.Advance = (unsigned int)ceil(advance.width);
+   ch.Advance = (::u32)ceil(advance.width);
    //ch.aHeight2 = m_dCapHeight - ch.Bearing.y;
    ch.aHeight2 = ceil(m_dCapHeight-ceil(bounds.size.height + yorigin));
 

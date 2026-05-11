@@ -1071,7 +1071,7 @@ namespace draw2d_quartz2d
    }
 
 
-   unsigned int graphics::GetTextAlign()
+   ::u32 graphics::GetTextAlign()
    {
 
       throw ::exception(error_not_implemented);;
@@ -1092,7 +1092,7 @@ namespace draw2d_quartz2d
 
 
    // graphics 3.1 Specific functions
-   unsigned int graphics::SetBoundsRect(const ::double_rectangle & rectBounds, unsigned int flags)
+   ::u32 graphics::SetBoundsRect(const ::double_rectangle & rectBounds, ::u32 flags)
    {
 
       throw ::exception(error_not_implemented);
@@ -1102,7 +1102,7 @@ namespace draw2d_quartz2d
    }
 
 
-   unsigned int graphics::GetBoundsRect(::double_rectangle * rectBounds, unsigned int flags)
+   ::u32 graphics::GetBoundsRect(::double_rectangle * rectBounds, ::u32 flags)
    {
 
       throw ::exception(error_not_implemented);
@@ -1604,7 +1604,7 @@ namespace draw2d_quartz2d
    }
 
 
-   unsigned int graphics::SetTextAlign(unsigned int nFlags)
+   ::u32 graphics::SetTextAlign(::u32 nFlags)
    {
 
       throw ::exception(error_not_implemented);;
@@ -1614,7 +1614,7 @@ namespace draw2d_quartz2d
    }
 
 
-   unsigned int graphics::GetLayout()
+   ::u32 graphics::GetLayout()
    {
 
       throw ::exception(error_not_implemented);;
@@ -1624,7 +1624,7 @@ namespace draw2d_quartz2d
    }
 
 
-   unsigned int graphics::SetLayout(unsigned int dwSetLayout)
+   ::u32 graphics::SetLayout(::u32 dwSetLayout)
    {
 
       throw ::exception(error_not_implemented);;

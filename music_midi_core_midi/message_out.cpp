@@ -95,7 +95,7 @@ namespace music
 //
 //               auto destinations  = m_pmidi->get_destination_endpoints();
 //
-//               for (unsigned int n = 0; n < destinations.size(); n++)
+//               for (::u32 n = 0; n < destinations.size(); n++)
 //               {
 //
 //                  if (destinations[n].m_strName == strDriver)
@@ -114,7 +114,7 @@ namespace music
 //               if(!bFound)
 //               {
 //
-//                  for (unsigned int n = 0; n < destinations.size(); n++)
+//                  for (::u32 n = 0; n < destinations.size(); n++)
 //                  {
 //
 //                     if (destinations[n].m_strName == strDriver)

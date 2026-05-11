@@ -31,9 +31,9 @@ namespace draw2d_quartz2d
 
 
       /*bool CreateRectRgn(int x1, int y1, int x2, int y2);
-       bool CreateRectRgnIndirect(const ::int_rectangle & rectangle);
+       bool CreateRectRgnIndirect(const ::i32_rectangle & rectangle);
        bool CreateEllipticRgn(int x1, int y1, int x2, int y2);
-       bool CreateEllipticRgnIndirect(const ::int_rectangle & rectangle);
+       bool CreateEllipticRgnIndirect(const ::i32_rectangle & rectangle);
        bool CreatePolygonRgn(INT_POINT * lpPoints, int nCount, int nMode);
        bool CreatePolyPolygonRgn(INT_POINT * lpPoints, LPINT lpPolyCounts,
        int nCount, int nPolyFillMode);
@@ -44,16 +44,16 @@ namespace draw2d_quartz2d
 
       // Operations
       //void SetRectRgn(int x1, int y1, int x2, int y2);
-      //void SetRectRgn(const ::int_rectangle & rectangle);
+      //void SetRectRgn(const ::i32_rectangle & rectangle);
       //int CombineRgn(const ::draw2d::region* pRgn1, const ::draw2d::region* pRgn2, int nCombineMode);
       //int CopyRgn(const ::draw2d::region* pRgnSrc);
       //bool EqualRgn(const ::draw2d::region* pRgn) const;
       //int OffsetRgn(int x, int y);
-      //int OffsetRgn(const ::int_point & point);
+      //int OffsetRgn(const ::i32_point & point);
       //int GetRgnBox(INT_RECTANGLE * prectangle) const;
       //bool PtInRegion(int x, int y) const;
-      //bool PtInRegion(const ::int_point & point) const;
-      //bool RectInRegion(const ::int_rectangle & rectangle) const;
+      //bool PtInRegion(const ::i32_point & point) const;
+      //bool RectInRegion(const ::i32_rectangle & rectangle) const;
       // xxx      int GetRegionData(LPRGNDATA lpRgnData, int nCount) const;
 
 //      bool get(cairo_t * pdc);

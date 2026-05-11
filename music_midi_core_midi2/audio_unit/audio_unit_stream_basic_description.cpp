@@ -405,12 +405,12 @@ namespace music
                   }
                }
                
-               //	floating int_point vs integer for linear PCM only
+               //	floating i32_point vs integer for linear PCM only
                if((!isDone) && ((x.mFormatID == kAudioFormatLinearPCM) && (y.mFormatID == kAudioFormatLinearPCM)))
                {
                   if((x.mFormatFlags & kAudioFormatFlagIsFloat) != (y.mFormatFlags & kAudioFormatFlagIsFloat))
                   {
-                     //	floating int_point is better than integer
+                     //	floating i32_point is better than integer
                      theAnswer = y.mFormatFlags & kAudioFormatFlagIsFloat;
                      isDone = true;
                   }

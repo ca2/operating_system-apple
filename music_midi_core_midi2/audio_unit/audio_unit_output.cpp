@@ -264,7 +264,7 @@ namespace music
                AudioUnit outputUnit = 0;
                AUNode outputNode;
                
-               // the frame int_size is the I/O int_size to the device
+               // the frame i32_size is the I/O i32_size to the device
                // the device is going to run at a sample rate it is set at
                // so, when we set this, we also have to set the maximum frames for the graph nodes
                ::u32 nodeCount;

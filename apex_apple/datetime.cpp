@@ -375,7 +375,7 @@ int WINAPI RtlLocalTimeToSystemTime( const ::u64 *LocalTime,
 {
    int bias;
 
-//xxx    information("(%point, %int_point)\n", LocalTime, SystemTime);
+//xxx    information("(%point, %i32_point)\n", LocalTime, SystemTime);
 
    bias = TIME_GetBias();
    *SystemTime = *LocalTime + bias * (::i64)TICKSPERSEC;
@@ -400,7 +400,7 @@ int WINAPI RtlSystemTimeToLocalTime( const ::u64 *SystemTime,
 {
    int bias;
 
-//xxx    information("(%point, %int_point)\n", SystemTime, LocalTime);
+//xxx    information("(%point, %i32_point)\n", SystemTime, LocalTime);
 
    bias = TIME_GetBias();
    *LocalTime = *SystemTime - bias * (::i64)TICKSPERSEC;

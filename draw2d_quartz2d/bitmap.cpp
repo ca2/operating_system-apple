@@ -25,7 +25,7 @@ namespace draw2d_quartz2d
    }
    
    
-   void bitmap::CreateBitmap(::draw2d::graphics * pgraphics, const ::int_size & size, ::u32 nPlanes, ::u32 nBitcount, const void * pdata, int iStride)
+   void bitmap::CreateBitmap(::draw2d::graphics * pgraphics, const ::i32_size & size, ::u32 nPlanes, ::u32 nBitcount, const void * pdata, int iStride)
    {
       
       if(nPlanes != 1 || nBitcount != 32)
@@ -97,7 +97,7 @@ namespace draw2d_quartz2d
    }
    
   
-   void bitmap::create_bitmap(::draw2d::graphics * pgraphics, const ::int_size & size, void ** ppdata, int * piStride)
+   void bitmap::create_bitmap(::draw2d::graphics * pgraphics, const ::i32_size & size, void ** ppdata, int * piStride)
    {
       
       CreateBitmap(pgraphics, size, 1, 32, nullptr, size.cx * sizeof(color32_t));
@@ -147,21 +147,21 @@ namespace draw2d_quartz2d
    }
    
    
-   int_size bitmap::SetBitmapDimension(int nWidth, int nHeight)
+   i32_size bitmap::SetBitmapDimension(int nWidth, int nHeight)
    {
       
-      return ::int_size(0, 0);
+      return ::i32_size(0, 0);
       
    }
    
    
-   int_size bitmap::GetBitmapDimension() const
+   i32_size bitmap::GetBitmapDimension() const
    {
       
       if(m_osdata[0] == nullptr)
       {
 
-         return ::int_size(0, 0);
+         return ::i32_size(0, 0);
 
       }
       
@@ -185,7 +185,7 @@ namespace draw2d_quartz2d
    void bitmap::CreateCompatibleBitmap(::draw2d::graphics * pgraphics, int cx, int cy)
    {
       
-      CreateBitmap(pgraphics, ::int_size(cx, cy), 1, 32, nullptr, cx * sizeof(color32_t));
+      CreateBitmap(pgraphics, ::i32_size(cx, cy), 1, 32, nullptr, cx * sizeof(color32_t));
       
    }
    

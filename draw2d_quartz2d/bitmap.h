@@ -18,7 +18,7 @@ namespace draw2d_quartz2d
       
 
       memory                        m_memory;
-      ::int_size                    m_size;
+      ::i32_size                    m_size;
       CGContextRef                  m_cgcontext;
       int                           m_iScan;
       color32_t *                   m_pdata;
@@ -37,19 +37,19 @@ namespace draw2d_quartz2d
 //#ifndef ___NO_AFXCMN_SUPPORT
 //      // xxx      bool LoadMappedBitmap(::u32 nIDBitmap, ::u32 nFlags = 0, LPCOLORMAP lpColorMap = nullptr, int nMapSize = 0);
 //#endif
-      void CreateBitmap(::draw2d::graphics * pgraphics, const ::int_size & size, ::u32 nPlanes, ::u32 nBitcount, const void * lpBits, int iStride) override;
+      void CreateBitmap(::draw2d::graphics * pgraphics, const ::i32_size & size, ::u32 nPlanes, ::u32 nBitcount, const void * lpBits, int iStride) override;
 //      void CreateBitmapIndirect(::draw2d::graphics * pgraphics, LPBITMAP lpBitmap) override;
       void CreateCompatibleBitmap(::draw2d::graphics * pgraphics, int nWidth, int nHeight) override;
       void CreateDiscardableBitmap(::draw2d::graphics * pgraphics, int nWidth, int nHeight) override;
-      void create_bitmap(::draw2d::graphics * pgraphics, const ::int_size & size, void **ppvBits, int * piStride) override;
+      void create_bitmap(::draw2d::graphics * pgraphics, const ::i32_size & size, void **ppvBits, int * piStride) override;
       void CreateDIBitmap(::draw2d::graphics * pgraphics, int cx, int cy, ::u32 flInit, const void *pjBits, ::u32 iUsage) override;
       
       //int GetBitmap(BITMAP* pBitMap);
       
       ::u32 SetBitmapBits(::u32 dwCount, const void * lpBits) override;
       ::u32 GetBitmapBits(::u32 dwCount, void * lpBits) const override;
-      ::int_size SetBitmapDimension(int nWidth, int nHeight);
-      ::int_size GetBitmapDimension() const override;
+      ::i32_size SetBitmapDimension(int nWidth, int nHeight);
+      ::i32_size GetBitmapDimension() const override;
       
       //void dump(dump_context & dumpcontext) const override;
       

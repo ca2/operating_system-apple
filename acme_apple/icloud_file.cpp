@@ -798,7 +798,7 @@ namespace acme_apple
 //
 //      rStatus.m_attribute = 0;
 //
-//      // get just the low ::u32 of the icloud_file int_size
+//      // get just the low ::u32 of the icloud_file i32_size
 //      //ASSERT(findFileData.nFileSizeHigh == 0);
 //      //rStatus.m_size = (int)findFileData.nFileSizeLow;
 //

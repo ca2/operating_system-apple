@@ -39,23 +39,23 @@ namespace draw2d_quartz2d
 
       void dc_select(bool bSelect = true) override;
 
-      void create(const ::int_size & size, ::enum_flag eflagCreate = DEFAULT_CREATE_IMAGE_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
+      void create(const ::i32_size & size, ::enum_flag eflagCreate = DEFAULT_CREATE_IMAGE_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
       //::e_status create(int iWidth, int iHeight, ::eobject eobjectCreate = DEFAULT_CREATE_IMAGE_OBJECT_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
       void create(::draw2d::graphics * pgraphics) override;
       void destroy() override;
 
 
 
-//      bool from(const ::int_point & pointDest, ::draw2d::graphics * pgraphics, const ::int_point & point, const ::int_size & sz) override;
-//      bool to(::draw2d::graphics * pgraphics, const ::int_point & point, const ::int_size & size, const ::int_point & pointSrc) override;
+//      bool from(const ::i32_point & pointDest, ::draw2d::graphics * pgraphics, const ::i32_point & point, const ::i32_size & sz) override;
+//      bool to(::draw2d::graphics * pgraphics, const ::i32_point & point, const ::i32_size & size, const ::i32_point & pointSrc) override;
 
-      void _draw_raw(const ::int_rectangle & rectDst, ::image::image * pimageSrc, const ::int_point & pointSrc) override;
+      void _draw_raw(const ::i32_rectangle & rectDst, ::image::image * pimageSrc, const ::i32_point & pointSrc) override;
       
       void SetIconMask(::image::icon * picon, int cx, int cy) override;
 
       void set_mapped() override;
 
-      void blend(const ::int_point & pointDst, ::image::image * pimplSrc, const ::int_point & pointSrc, const ::int_size & size, unsigned char bA) override;
+      void blend(const ::i32_point & pointDst, ::image::image * pimplSrc, const ::i32_point & pointSrc, const ::i32_size & size, unsigned char bA) override;
 
 
    };

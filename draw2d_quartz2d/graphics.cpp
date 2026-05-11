@@ -1047,10 +1047,10 @@ namespace draw2d_quartz2d
 
             set_alpha_mode(::draw2d::e_alpha_mode_blend);
 
-            auto rectangleDst=int_rectangle(::int_point((int)x, (int)y),
+            auto rectangleDst=i32_rectangle(::i32_point((int)x, (int)y),
                                  rectText.size());
             
-            double_rectangle rectangleSource(int_point(), rectangleDst.size());
+            double_rectangle rectangleSource(i32_point(), rectangleDst.size());
             
             ::image::image_source imagesource(pimage1, rectangleSource);
             
@@ -2453,16 +2453,16 @@ namespace draw2d_quartz2d
 
          CGRect rectangle = CGContextGetClipBoundingBox(pgraphics);
          
-         ::int_rectangle int_rectangle;
+         ::i32_rectangle i32_rectangle;
          
-         copy(int_rectangle, rectangle);
+         copy(i32_rectangle, rectangle);
          
-         if(!int_rectangle.is_empty())
+         if(!i32_rectangle.is_empty())
          {
             
             ::image::image_source imagesource(pbrush->m_pimage);
             
-            ::image::image_drawing_options imagedrawingoptions(int_rectangle);
+            ::image::image_drawing_options imagedrawingoptions(i32_rectangle);
             
             ::image::image_drawing imagedrawing(imagedrawingoptions, imagesource);
             
@@ -3512,12 +3512,12 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       if(pbrush != nullptr)
       {
  
-         //pbrush->m_point1 -= int_point(x, y);
-         //pbrush->m_point2 -= int_point(x, y);
+         //pbrush->m_point1 -= i32_point(x, y);
+         //pbrush->m_point2 -= i32_point(x, y);
          //_fill(pbrush, emode >= kCGTextFillClip);
          _fill(pbrush, false);
-         //pbrush->m_point1 += int_point(x, y);
-         //pbrush->m_point2 += int_point(x, y);
+         //pbrush->m_point1 += i32_point(x, y);
+         //pbrush->m_point2 += i32_point(x, y);
 
       }
 

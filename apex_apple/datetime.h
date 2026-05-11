@@ -14,25 +14,25 @@
 ///*********************************************************************
 // *      LocalFileTimeToFileTime                         (KERNEL32.@)
 // */
-//CLASS_DECL_APEX_POSIX int_bool LocalFileTimeToFileTime(const filetime_t * pfiletimeLocal, filetime_t * pfiletimeUTC);
+//CLASS_DECL_APEX_POSIX ::i32_bool LocalFileTimeToFileTime(const filetime_t * pfiletimeLocal, filetime_t * pfiletimeUTC);
 //
 //
 ///*********************************************************************
 // *      FileTimeToLocalFileTime                         (KERNEL32.@)
 // */
-//CLASS_DECL_APEX_POSIX int_bool FileTimeToLocalFileTime(const filetime_t * pfiletimeUTC, filetime_t * pfiletimeLocal);
+//CLASS_DECL_APEX_POSIX ::i32_bool FileTimeToLocalFileTime(const filetime_t * pfiletimeUTC, filetime_t * pfiletimeLocal);
 //
 //
 ///*********************************************************************
 // *      FileTimeToSystemTime                            (KERNEL32.@)
 // */
-//CLASS_DECL_APEX_POSIX int_bool FileTimeToSystemTime(const filetime_t * pfiletime, system_time_t * psystemtime);
+//CLASS_DECL_APEX_POSIX ::i32_bool FileTimeToSystemTime(const filetime_t * pfiletime, system_time_t * psystemtime);
 //
 //
 ///*********************************************************************
 // *      SystemTimeToFileTime                            (KERNEL32.@)
 // */
-//CLASS_DECL_APEX_POSIX int_bool SystemTimeToFileTime(const system_time_t * psystemtime, filetime_t * pfiletime);
+//CLASS_DECL_APEX_POSIX ::i32_bool SystemTimeToFileTime(const system_time_t * psystemtime, filetime_t * pfiletime);
 //
 //
 ///***********************************************************************

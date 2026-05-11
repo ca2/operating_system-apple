@@ -265,7 +265,7 @@ CLASS_DECL_ACME void WINAPI RtlTimeToTimeFields(
  *   Success: true.
  *   Failure: false.
  */
-int_bool WINAPI RtlTimeFieldsToTime(
+::i32_bool WINAPI RtlTimeFieldsToTime(
    PTIME_FIELDS tfTimeFields,
    ::u64 * Time)
 {
@@ -420,7 +420,7 @@ int WINAPI RtlSystemTimeToLocalTime( const ::u64 *SystemTime,
  *   Success: true.
  *   Failure: false, if the resulting value will not fit in a ::u32.
  */
-int_bool WINAPI RtlTimeToSecondsSince1970( const ::u64 *Time, LPDWORD Seconds )
+::i32_bool WINAPI RtlTimeToSecondsSince1970( const ::u64 *Time, LPDWORD Seconds )
 {
    ULONGLONG tmp = *Time;
    tmp = tmp / TICKSPERSEC - SECS_1601_TO_1970;
@@ -442,7 +442,7 @@ int_bool WINAPI RtlTimeToSecondsSince1970( const ::u64 *Time, LPDWORD Seconds )
  *   Success: true.
  *   Failure: false, if the resulting value will not fit in a ::u32.
  */
-int_bool WINAPI RtlTimeToSecondsSince1980( const ::u64 *Time, LPDWORD Seconds )
+::i32_bool WINAPI RtlTimeToSecondsSince1980( const ::u64 *Time, LPDWORD Seconds )
 {
    ULONGLONG tmp = *Time;
    tmp = tmp / TICKSPERSEC - SECS_1601_TO_1980;
@@ -679,7 +679,7 @@ static int weekday_to_mday(int year, int day, int mon, int day_of_week)
    return mday;
 }
 
-int_bool match_tz_date(const RTL_SYSTEM_TIME *st, const RTL_SYSTEM_TIME *reg_st)
+::i32_bool match_tz_date(const RTL_SYSTEM_TIME *st, const RTL_SYSTEM_TIME *reg_st)
 {
    unsigned short wDay;
 
@@ -700,7 +700,7 @@ int_bool match_tz_date(const RTL_SYSTEM_TIME *st, const RTL_SYSTEM_TIME *reg_st)
    return true;
 }
 
-int_bool match_tz_info(const RTL_TIME_ZONE_INFORMATION *tzi, const RTL_TIME_ZONE_INFORMATION *reg_tzi)
+::i32_bool match_tz_info(const RTL_TIME_ZONE_INFORMATION *tzi, const RTL_TIME_ZONE_INFORMATION *reg_tzi)
 {
    if (tzi->Bias == reg_tzi->Bias &&
        match_tz_date(&tzi->StandardDate, &reg_tzi->StandardDate) &&
@@ -712,7 +712,7 @@ int_bool match_tz_info(const RTL_TIME_ZONE_INFORMATION *tzi, const RTL_TIME_ZONE
 
 /*
 
-static int_bool reg_query_value(HKEY hkey, const widechar * name, ::u32 type, void *data, ::u32 count)
+static ::i32_bool reg_query_value(HKEY hkey, const widechar * name, ::u32 type, void *data, ::u32 count)
 {
     UNICODE_STRING nameW;
     char buf[256];
@@ -973,7 +973,7 @@ int WINAPI NtSetSystemTime(const ::u64 *NewTime, ::u64 *OldTime)
 /*********************************************************************
  *      LocalFileTimeToFileTime                         (KERNEL32.@)
  */
-CLASS_DECL_ACME int_bool WINAPI LocalFileTimeToFileTime( const filetime_t *localft, filetime_t * utcft )
+CLASS_DECL_ACME ::i32_bool WINAPI LocalFileTimeToFileTime( const filetime_t *localft, filetime_t * utcft )
 {
 
    int status;
@@ -991,7 +991,7 @@ CLASS_DECL_ACME int_bool WINAPI LocalFileTimeToFileTime( const filetime_t *local
 /*********************************************************************
  *      FileTimeToLocalFileTime                         (KERNEL32.@)
  */
-CLASS_DECL_ACME int_bool WINAPI FileTimeToLocalFileTime( const filetime_t *utcft, filetime_t * localft )
+CLASS_DECL_ACME ::i32_bool WINAPI FileTimeToLocalFileTime( const filetime_t *utcft, filetime_t * localft )
 {
    int status;
    if (status = RtlSystemTimeToLocalTime( utcft, localft ))
@@ -1010,7 +1010,7 @@ CLASS_DECL_ACME int_bool WINAPI FileTimeToLocalFileTime( const filetime_t *utcft
 /*********************************************************************
  *      FileTimeToSystemTime                            (KERNEL32.@)
  */
-int_bool WINAPI FileTimeToSystemTime( const filetime_t *ft, system_time_t * syst )
+::i32_bool WINAPI FileTimeToSystemTime( const filetime_t *ft, system_time_t * syst )
 {
 
    TIME_FIELDS tf;
@@ -1032,7 +1032,7 @@ int_bool WINAPI FileTimeToSystemTime( const filetime_t *ft, system_time_t * syst
 /*********************************************************************
  *      SystemTimeToFileTime                            (KERNEL32.@)
  */
-int_bool WINAPI SystemTimeToFileTime( const system_time_t *syst, filetime_t * ft )
+::i32_bool WINAPI SystemTimeToFileTime( const system_time_t *syst, filetime_t * ft )
 {
    TIME_FIELDS tf;
    ::u64 t;

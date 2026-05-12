@@ -11,16 +11,26 @@
 #endif
 
 
+#include "operating_system-apple/core_graphics/_struct.h"
+
 namespace core_graphics
 {
 
 
    class core_graphics;
 
-   class ns_image;
+   class cg_image;
 
+   class cg_context;
+
+   class cg_color;
 
 } // namespace core_graphics
 
 
+namespace core_foundation
+{
 
+   class cf_string;
+
+} // namespace core_foundation

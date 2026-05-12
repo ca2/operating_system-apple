@@ -23,7 +23,9 @@ namespace core_graphics
       
       ~core_graphics();
    
-      ::pointer < ns_image > load_icon();
+      ::pointer < cg_color > create_color(const ::color::color & color);
+      
+      ::pointer < ::core_foundation::cf_string > create_string(const ::scoped_string & scopedstr);
    
    };
 

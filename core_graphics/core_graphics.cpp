@@ -7,6 +7,8 @@
 //
 #include "framework.h"
 #include "core_graphics.h"
+#include "cf_string.h"
+#include "cg_color.h"
 
 
 static ::core_graphics::core_graphics * g_pcoregraphics = nullptr;
@@ -30,6 +32,37 @@ namespace core_graphics
    }
 
 
+//::pointer < ns_image > core_graphics::load_icon(enum_cursor ecursor)
+//{
+//   
+//   return {};
+//   
+//}
+
+::pointer < cg_color > core_graphics::create_color(const ::color::color & color)
+{
+   
+   auto pcgcolor = create_newø<cg_color>();
+   
+   pcgcolor->create_color(color);
+   
+   return pcgcolor;
+   
+}
+
+
+::pointer < ::core_foundation::cf_string > core_graphics::create_string(const ::scoped_string & scopedstr)
+{
+   
+   
+   auto pcfstring = create_newø<::core_foundation::cf_string>();
+   
+   pcfstring->create_string(scopedstr);
+   
+   return pcfstring;
+   
+}
+
 } // namespace core_graphics
 
 
@@ -46,7 +79,7 @@ CLASS_DECL_CORE_GRAPHICS ::core_graphics::core_graphics & CoreGraphics()
       g_pcoregraphics->initialize(::system());
       
    }
-   *
-   return g_pcoregraphics;
+   
+   return * g_pcoregraphics;
    
 }

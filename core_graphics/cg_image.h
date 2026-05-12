@@ -12,17 +12,17 @@ namespace core_graphics
 {
 
 
-   class CLASS_DECL_CORE_GRAPHICS ns_image :
+   class CLASS_DECL_CORE_GRAPHICS cg_image :
       virtual public ::particle
    {
    public:
       
       
-      ns_image_t m_nsimage;
+      cg_image_t m_cgimage;
       
       
-      ns_image();
-      ~ns_image();
+      cg_image();
+      ~cg_image();
       
       
       virtual ::i32_size get_size();

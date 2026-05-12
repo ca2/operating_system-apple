@@ -7,25 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A09CD702FB3213D00E22155 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A09CD6F2FB3213D00E22155 /* AppKit.framework */; };
 		9A0B954F2FB30C0400EEAAE1 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B954B2FB30C0400EEAAE1 /* _.cpp */; };
 		9A0B95502FB30C0400EEAAE1 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B954E2FB30C0400EEAAE1 /* framework.cpp */; };
 		9A0B95512FB30C0400EEAAE1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B954C2FB30C0400EEAAE1 /* _factory.cpp */; };
 		9A0B95522FB30C0400EEAAE1 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0B954D2FB30C0400EEAAE1 /* framework.h */; };
 		9A0B95532FB30C0400EEAAE1 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0B954A2FB30C0400EEAAE1 /* _.h */; };
-		9A0B95552FB30C1D00EEAAE1 /* ns_bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B95542FB30C1A00EEAAE1 /* ns_bitmap.cpp */; };
-		9A0B95572FB30C2900EEAAE1 /* ns_bitmap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B95562FB30C2200EEAAE1 /* ns_bitmap.mm */; };
+		9A0B95552FB30C1D00EEAAE1 /* ns_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B95542FB30C1A00EEAAE1 /* ns_image.cpp */; };
+		9A0B95572FB30C2900EEAAE1 /* ns_image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B95562FB30C2200EEAAE1 /* ns_image.mm */; };
+		9A13BC962FB320CD007F4EFA /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A13BC952FB320CD007F4EFA /* libacme.dylib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9A09CD692FB3211900E22155 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A13BC972FB320DE007F4EFA /* acme.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A68A41325114352008DABD2;
+			remoteInfo = acme;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		9A09CD6F2FB3213D00E22155 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9A0B95392FB30B3000EEAAE1 /* libcore_graphics.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libcore_graphics.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A0B95492FB30BDC00EEAAE1 /* ns_bitmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ns_bitmap.h; sourceTree = "<group>"; };
+		9A0B95492FB30BDC00EEAAE1 /* ns_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ns_image.h; sourceTree = "<group>"; };
 		9A0B954A2FB30C0400EEAAE1 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		9A0B954B2FB30C0400EEAAE1 /* _.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
 		9A0B954C2FB30C0400EEAAE1 /* _factory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
 		9A0B954D2FB30C0400EEAAE1 /* framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9A0B954E2FB30C0400EEAAE1 /* framework.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
-		9A0B95542FB30C1A00EEAAE1 /* ns_bitmap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ns_bitmap.cpp; sourceTree = "<group>"; };
-		9A0B95562FB30C2200EEAAE1 /* ns_bitmap.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ns_bitmap.mm; sourceTree = "<group>"; };
+		9A0B95542FB30C1A00EEAAE1 /* ns_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ns_image.cpp; sourceTree = "<group>"; };
+		9A0B95562FB30C2200EEAAE1 /* ns_image.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ns_image.mm; sourceTree = "<group>"; };
+		9A13BC952FB320CD007F4EFA /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A13BC972FB320DE007F4EFA /* acme.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme.xcodeproj; path = ../../../source/app/acme/acme.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,16 +48,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A09CD702FB3213D00E22155 /* AppKit.framework in Frameworks */,
+				9A13BC962FB320CD007F4EFA /* libacme.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A09CD4B2FB3210C00E22155 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9A0B95302FB30B3000EEAAE1 = {
 			isa = PBXGroup;
 			children = (
+				9A13BC972FB320DE007F4EFA /* acme.xcodeproj */,
 				9A0B95482FB30BC100EEAAE1 /* core_graphics */,
+				9A13BC942FB320CD007F4EFA /* Frameworks */,
 				9A0B953A2FB30B3000EEAAE1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,11 +89,20 @@
 				9A0B954C2FB30C0400EEAAE1 /* _factory.cpp */,
 				9A0B954D2FB30C0400EEAAE1 /* framework.h */,
 				9A0B954E2FB30C0400EEAAE1 /* framework.cpp */,
-				9A0B95562FB30C2200EEAAE1 /* ns_bitmap.mm */,
-				9A0B95542FB30C1A00EEAAE1 /* ns_bitmap.cpp */,
-				9A0B95492FB30BDC00EEAAE1 /* ns_bitmap.h */,
+				9A0B95562FB30C2200EEAAE1 /* ns_image.mm */,
+				9A0B95542FB30C1A00EEAAE1 /* ns_image.cpp */,
+				9A0B95492FB30BDC00EEAAE1 /* ns_image.h */,
 			);
 			name = core_graphics;
+			sourceTree = "<group>";
+		};
+		9A13BC942FB320CD007F4EFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A09CD6F2FB3213D00E22155 /* AppKit.framework */,
+				9A13BC952FB320CD007F4EFA /* libacme.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +131,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A09CD6A2FB3211900E22155 /* PBXTargetDependency */,
 			);
 			name = core_graphics;
 			packageProductDependencies = (
@@ -130,6 +166,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9A0B953A2FB30B3000EEAAE1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A09CD4B2FB3210C00E22155 /* Products */;
+					ProjectRef = 9A13BC972FB320DE007F4EFA /* acme.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9A0B95382FB30B3000EEAAE1 /* core_graphics */,
@@ -145,12 +187,20 @@
 				9A0B954F2FB30C0400EEAAE1 /* _.cpp in Sources */,
 				9A0B95502FB30C0400EEAAE1 /* framework.cpp in Sources */,
 				9A0B95512FB30C0400EEAAE1 /* _factory.cpp in Sources */,
-				9A0B95572FB30C2900EEAAE1 /* ns_bitmap.mm in Sources */,
-				9A0B95552FB30C1D00EEAAE1 /* ns_bitmap.cpp in Sources */,
+				9A0B95572FB30C2900EEAAE1 /* ns_image.mm in Sources */,
+				9A0B95552FB30C1D00EEAAE1 /* ns_image.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A09CD6A2FB3211900E22155 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = acme;
+			targetProxy = 9A09CD692FB3211900E22155 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9A0B953B2FB30B3000EEAAE1 /* Debug */ = {

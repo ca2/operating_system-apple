@@ -1,13 +1,13 @@
 //
-//  ns_bitmap.mm
+//  ns_image.mm
 //  core_graphics
 //
 //  Created by Camilo Sasuke Thomas Borregaard Sørensen on 12/05/26.
 //
-#include <CoreGraphics/CoreGraphics.h>
+#include <AppKit/AppKit.h>
 
 
-void ns_bitmap_release(void * & pNS)
+void ns_image_release(void * & pNS)
 {
  
    if(!pNS)
@@ -17,19 +17,24 @@ void ns_bitmap_release(void * & pNS)
       
    }
    
-   __bridge_transfer NSBitmap * pns = pNS;
+   // Transfers ownership to ARC. ARC will release 'pns' when this function exits.
+   NSImage * pns = (__bridge_transfer NSImage *)pNS;
    
+   // Clear the original pointer so the caller knows it's gone
    pNS = nullptr;
-   
-   pns = nil;
    
 }
 
 
-void ns_bitmap_get_size(void * pNS, ::i32 & w,::i32 & h)
+void ns_image_get_size(void * pNS, ::i32 & w,::i32 & h)
 {
-   __bridge NSBitmap * pns = pNS;
+   NSImage * image = (__bridge NSImage *)pNS;
  
-   pns size
+   CGImageRef cgImage = [image CGImageForProposedRect:NULL
+                                              context:nil
+                                                hints:nil];
+
+   w  = (::i32) CGImageGetWidth(cgImage);
+   h = (::i32) CGImageGetHeight(cgImage);
    
 }

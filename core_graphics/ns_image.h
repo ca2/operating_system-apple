@@ -24,7 +24,7 @@ namespace core_graphics
    {
    public:
       
-      ns_image_t m_nsimage; 
+      ns_image_t m_nsimage;
       
       
       ns_image();
@@ -38,6 +38,7 @@ namespace core_graphics
    };
 
 } // namespace core_graphics
+
 
 
 

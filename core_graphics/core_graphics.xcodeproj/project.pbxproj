@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9A09CD702FB3213D00E22155 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A09CD6F2FB3213D00E22155 /* AppKit.framework */; };
+		9A09CD752FB332B700E22155 /* core_graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A09CD742FB332B300E22155 /* core_graphics.h */; };
+		9A09CD772FB3334B00E22155 /* core_graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A09CD762FB3334A00E22155 /* core_graphics.cpp */; };
 		9A0B954F2FB30C0400EEAAE1 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B954B2FB30C0400EEAAE1 /* _.cpp */; };
 		9A0B95502FB30C0400EEAAE1 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B954E2FB30C0400EEAAE1 /* framework.cpp */; };
 		9A0B95512FB30C0400EEAAE1 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B954C2FB30C0400EEAAE1 /* _factory.cpp */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		9A09CD6F2FB3213D00E22155 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9A09CD742FB332B300E22155 /* core_graphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core_graphics.h; sourceTree = "<group>"; };
+		9A09CD762FB3334A00E22155 /* core_graphics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = core_graphics.cpp; sourceTree = "<group>"; };
 		9A0B95392FB30B3000EEAAE1 /* libcore_graphics.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libcore_graphics.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0B95492FB30BDC00EEAAE1 /* ns_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ns_image.h; sourceTree = "<group>"; };
 		9A0B954A2FB30C0400EEAAE1 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				9A0B954A2FB30C0400EEAAE1 /* _.h */,
 				9A0B954B2FB30C0400EEAAE1 /* _.cpp */,
 				9A0B954C2FB30C0400EEAAE1 /* _factory.cpp */,
+				9A09CD762FB3334A00E22155 /* core_graphics.cpp */,
+				9A09CD742FB332B300E22155 /* core_graphics.h */,
 				9A0B954D2FB30C0400EEAAE1 /* framework.h */,
 				9A0B954E2FB30C0400EEAAE1 /* framework.cpp */,
 				9A0B95562FB30C2200EEAAE1 /* ns_image.mm */,
@@ -114,6 +120,7 @@
 			files = (
 				9A0B95522FB30C0400EEAAE1 /* framework.h in Headers */,
 				9A0B95532FB30C0400EEAAE1 /* _.h in Headers */,
+				9A09CD752FB332B700E22155 /* core_graphics.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A0B954F2FB30C0400EEAAE1 /* _.cpp in Sources */,
+				9A09CD772FB3334B00E22155 /* core_graphics.cpp in Sources */,
 				9A0B95502FB30C0400EEAAE1 /* framework.cpp in Sources */,
 				9A0B95512FB30C0400EEAAE1 /* _factory.cpp in Sources */,
 				9A0B95572FB30C2900EEAAE1 /* ns_image.mm in Sources */,

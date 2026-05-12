@@ -15,7 +15,9 @@ namespace core_graphics
 {
 
 
-   class ns_bitmap;
+   class core_graphics;
+
+   class ns_image;
 
 
 } // namespace core_graphics

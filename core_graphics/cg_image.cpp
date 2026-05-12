@@ -9,8 +9,6 @@
 #include "ns_image.h"
 #include "acme/prototype/geometry2d/size.h"
 
-void ns_image_release(void * & pNS);
-void ns_image_get_size(void * pNS, ::i32 & w,::i32 & h);
 
 namespace core_graphics
 {

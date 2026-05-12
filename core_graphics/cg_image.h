@@ -12,17 +12,11 @@ namespace core_graphics
 {
 
 
-   struct ns_image_t
-   {
-      
-      void * m_pNS;
-
-   };
-
    class CLASS_DECL_CORE_GRAPHICS ns_image :
       virtual public ::particle
    {
    public:
+      
       
       ns_image_t m_nsimage;
       

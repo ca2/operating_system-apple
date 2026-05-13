@@ -11,7 +11,7 @@
 #include "cg_color.h"
 
 
-static ::core_graphics::core_graphics * g_pcoregraphics = nullptr;
+static ::pointer <::core_graphics::core_graphics > g_pcoregraphics;
 
 namespace core_graphics
 {
@@ -31,6 +31,12 @@ namespace core_graphics
       
    }
 
+   core_graphics::~core_graphics()
+
+{
+   
+   
+}
 
 //::pointer < ns_image > core_graphics::load_icon(enum_cursor ecursor)
 //{
@@ -74,7 +80,7 @@ CLASS_DECL_CORE_GRAPHICS ::core_graphics::core_graphics & CoreGraphics()
    if(!g_pcoregraphics)
    {
       
-      g_pcoregraphics = new ::core_graphics::core_graphics();
+      g_pcoregraphics = allocateø ::core_graphics::core_graphics();
       
       g_pcoregraphics->initialize(::system());
       

@@ -35,7 +35,7 @@ namespace core_graphics
    
       auto s = cg_image_get_size(m_cgimage);
       
-      return {(::i32) s.width,(::i32)s.height};
+      return {(::i32) s.w,(::i32)s.h};
       
    }
 

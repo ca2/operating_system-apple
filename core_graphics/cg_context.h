@@ -125,9 +125,22 @@ virtual public ::particle
       virtual void draw_image(::core_graphics::cg_image * pcgimage, const ::i32_point& point, const ::i32_rectangle & rectangle);
       virtual void set_blend_mode_on(bool bSet);
       virtual void set_anti_alias_on(bool bSet);
-      virtual void set_line_width(int iWidth);
+      virtual void set_line_width(float fWidth);
       virtual void set_stroke_color(::core_graphics::cg_color * pcgcolor);
       virtual void set_fill_color(::core_graphics::cg_color * pcgcolor);
       
+      virtual void draw_text(
+            const ::scoped_string & scopedstr,
+            const ::i32_rectangle & rectangle,
+            cg_color * pcgcolor,
+            ::core_text::ct_font * pctfont,
+            unsigned int format,
+            enum_align ealign);
+      
    };
+
+
 } // namespace innate_subsystem_macos
+
+
+

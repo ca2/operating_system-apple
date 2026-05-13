@@ -9,9 +9,15 @@
 // Graphics.mm
 // Objective-C++ macOS implementation using CoreGraphics/CoreText
 //
-
-#import <Cocoa/Cocoa.h>
-#import <CoreText/CoreText.h>
+#include "framework.h"
+#include "cg_color.h"
+#include "cg_context.h"
+#include "cg_image.h"
+#include "ct_font.h"
+#include "_mm.h"
+#include "acme/prototype/geometry2d/rectangle.h"
+//#import <Cocoa/Cocoa.h>
+//#import <CoreText/CoreText.h>
 
 
 namespace core_graphics
@@ -575,21 +581,30 @@ namespace core_graphics
 //   }
  void cg_context::draw_line(const ::i32_point & point1, const ::i32_point & point2)
 {
+    
+    cg_point cgpoint1;
+    cgpoint1.x = point1.x;
+    cgpoint1.y = point1.y;
+    
+    cg_point cgpoint2;
+    cgpoint2.x = point2.x;
+    cgpoint2.y = point2.y;
 
-    cg_context_draw_line(m_cgcontext, point1.x, point1.y, point2.x, point2.y);
+    cg_context_draw_line(m_cgcontext, cgpoint1, cgpoint2);
    
 }
 
 void cg_context::draw_rect(const ::i32_rectangle & rectangle)
 {
    
-   CGRect rc = CGRectMake(
-                          rectangle.left,
-                          rectangle.top,
-                          rectangle.width(),
-                          rectangle.height());
+   cg_rect cgrect;
+
+   cgrect.origin.x = rectangle.left;
+   cgrect.origin.y = rectangle.top;
+   cgrect.size.w = rectangle.width();
+   cgrect.size.h = rectangle.height();
    
-   cg_context_draw_rect(m_cgcontext, rc);
+   cg_context_draw_rect(m_cgcontext, cgrect);
    
 }
 
@@ -597,26 +612,28 @@ void cg_context::draw_rect(const ::i32_rectangle & rectangle)
 void cg_context::fill_ellipse(const ::i32_rectangle & rectangle)
 {
    
-   CGRect rc = CGRectMake(
-                          rectangle.left,
-                          rectangle.top,
-                          rectangle.width(),
-                          rectangle.height());
-   
-   cg_context_fill_ellipse(m_cgcontext, rc);
+   cg_rect cgrect;
+
+   cgrect.origin.x = rectangle.left;
+   cgrect.origin.y = rectangle.top;
+   cgrect.size.w = rectangle.width();
+   cgrect.size.h = rectangle.height();
+
+   cg_context_fill_ellipse(m_cgcontext, cgrect);
    
 }
 
 void cg_context::draw_ellipse(const ::i32_rectangle & rectangle)
 {
    
-   CGRect rc = CGRectMake(
-                          rectangle.left,
-                          rectangle.top,
-                          rectangle.width(),
-                          rectangle.height());
-   
-   cg_context_draw_ellipse(m_cgcontext, rc);
+   cg_rect cgrect;
+
+   cgrect.origin.x = rectangle.left;
+   cgrect.origin.y = rectangle.top;
+   cgrect.size.w = rectangle.width();
+   cgrect.size.h = rectangle.height();
+
+   cg_context_draw_ellipse(m_cgcontext, cgrect);
    
 }
 
@@ -624,34 +641,54 @@ void cg_context::draw_ellipse(const ::i32_rectangle & rectangle)
 void cg_context::fill_rect(const ::i32_rectangle & rectangle)
 {
    
-   CGRect rc = CGRectMake(
-                          rectangle.left,
-                          rectangle.top,
-                          rectangle.width(),
-                          rectangle.height());
-   
-   cg_context_fill_rect(m_cgcontext, rc);
+   cg_rect cgrect;
+
+   cgrect.origin.x = rectangle.left;
+   cgrect.origin.y = rectangle.top;
+   cgrect.size.w = rectangle.width();
+   cgrect.size.h = rectangle.height();
+
+   cg_context_fill_rect(m_cgcontext, cgrect);
    
 }
 
 
-void cg_rect::draw_image(::core_graphics::ns_image * pnsimage, const ::i32_rectangle & rectangle)
+void cg_context::draw_image(::core_graphics::cg_image * pcgimage, const ::i32_rectangle & rectangle)
 {
    
-   CGRect rc = CGRectMake(
-                          rectangle.left,
-                          rectangle.top,
-                          rectangle.width(),
-                          rectangle.height());
-   
-   cg_context_draw_image(m_cgcontext, pnsimage->m_nsimage,  rc);
+   cg_rect cgrect;
+
+   cgrect.origin.x = rectangle.left;
+   cgrect.origin.y = rectangle.top;
+   cgrect.size.w = rectangle.width();
+   cgrect.size.h = rectangle.height();
+
+   cg_context_draw_image(m_cgcontext, pcgimage->m_cgimage, cgrect);
    
    
 }
 
 
 
+void cg_context::draw_image(::core_graphics::cg_image * pcgimage, const ::i32_point & point, const ::i32_rectangle & rectangle)
+{
 
+   cg_point cgpoint;
+
+   cgpoint.x = point.x;
+   cgpoint.y = point.y;
+
+   cg_rect cgrect;
+
+   cgrect.origin.x = rectangle.left;
+   cgrect.origin.y = rectangle.top;
+   cgrect.size.w = rectangle.width();
+   cgrect.size.h = rectangle.height();
+
+   cg_context_draw_image(m_cgcontext, pcgimage->m_cgimage, cgpoint, cgrect);
+   
+   
+}
 
 
 void cg_context::set_blend_mode_on(bool bSet)
@@ -668,19 +705,59 @@ void cg_context::set_anti_alias_on(bool bSet)
    
 }
 
-void cg_context::set_stroke_color(const ::color::color  & color)
+
+void cg_context::set_fill_color(::core_graphics::cg_color * pcgcolor)
 {
    
-   
+   cg_context_set_fill_color_with_color(m_cgcontext, pcgcolor->m_cgcolor);
    
 }
 
-void cg_context::set_stroke_color(int iWidth)
+
+void cg_context::set_stroke_color(::core_graphics::cg_color * pcgcolor)
 {
    
-   cg_contex
+   cg_context_set_stroke_color_with_color(m_cgcontext, pcgcolor->m_cgcolor);
    
 }
+
+void cg_context::set_line_width(float fWidth)
+{
+   
+   cg_context_set_line_width(m_cgcontext, fWidth);
+   
+}
+
+
+void cg_context::draw_text(
+      const ::scoped_string & scopedstr,
+      const ::i32_rectangle & rectangle,
+      cg_color * pcgcolor,
+      ::core_text::ct_font * pctfont,
+      unsigned int format,
+      enum_align ealign)
+{
+   
+   
+   cg_rect cgrect;
+   
+   cgrect.origin.x = rectangle.left;
+   cgrect.origin.y = rectangle.top;
+   cgrect.size.w = rectangle.width();
+   cgrect.size.h = rectangle.height();
+   
+   
+   cg_context_draw_text(
+                        m_cgcontext,
+                        scopedstr.c_str(), scopedstr.length(),
+                        cgrect,
+                        pcgcolor->m_cgcolor,
+                        pctfont->m_ctfont,
+                        format,
+                        ealign
+                        );
+   
+   }
 
 
 } // namespace core_graphics

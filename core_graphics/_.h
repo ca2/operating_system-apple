@@ -28,6 +28,14 @@ namespace core_graphics
 } // namespace core_graphics
 
 
+namespace core_text
+{
+
+   class ct_font;
+
+} // namespace core_text
+
+
 namespace core_foundation
 {
 

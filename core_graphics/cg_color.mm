@@ -6,3 +6,38 @@
 //  <3ThomasBorregaardSørensen!!
 //
 
+#include <CoreGraphics/CoreGraphics.h>
+#include "_mm.h"
+
+
+void cg_color_release(cg_color_t & cgcolor)
+{
+ 
+   if(cgcolor.is_set())
+   {
+      
+      CGColorRelease(CGCOLOR(cgcolor));
+      
+      cgcolor.clear();
+      
+   }
+   
+   
+}
+
+
+cg_color_t cg_color_create(cg_float rgba[4])
+{
+   
+   CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+
+   CGColorRef color = CGColorCreate(colorSpace, rgba);
+
+   CGColorSpaceRelease(colorSpace);
+
+   return {(::uptr) color};
+
+}
+
+
+

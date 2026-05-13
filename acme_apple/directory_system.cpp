@@ -683,11 +683,11 @@ namespace acme_apple
       if(pathUser.begins_eat("icloud://"))
       {
          
-            const char * pend = nullptr;
+         auto strParse = pathUser;
          
-            auto pathServer = pathUser.get_word("/", &pend);
+            auto strPath = strParse.get_word("/");
          
-            if(pathServer.is_empty())
+            if(strPath.is_empty())
             {
                
                ::file::path path;
@@ -719,12 +719,7 @@ namespace acme_apple
             else
             {
                
-               auto strPath = pathServer;
-               
-               if(strPath.begins_eat(pathServer))
-               {
-                  
-                  strPath.trim_left("/");
+                  //strPath.trim_left("/");
                   
                   if(!m_pfilelistinghandler_iCloudContainer)
                   {
@@ -733,7 +728,7 @@ namespace acme_apple
                      
                      ::string str_iCloudContainerIdentifier;
                      
-                     str_iCloudContainerIdentifier = pathServer;
+                     str_iCloudContainerIdentifier = strParse;
                      
                      ::string strFolder;
                      
@@ -761,7 +756,7 @@ namespace acme_apple
 //                  //
 //                  //            }
                   
-               }
+               //}
                
             }
             

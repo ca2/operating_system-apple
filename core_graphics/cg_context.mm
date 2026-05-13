@@ -7,9 +7,9 @@
 //
 
 #include <Cocoa/Cocoa.h>
-#include "__mm.h"
+#include "_mm.h"
 
-//#define CG() ((CGContextRef)cgcontext)
+//#define CGCONTEXT(cgcontext) ((CGContextRef)cgcontext)
 
 //
 // Graphics.mm
@@ -470,124 +470,60 @@
 //   }
 //
 //
-   void Graphics::_defer_text_tools()
-   {
-
-      if (!m_pfont)
-      {
-
-         constructø(m_pfont);
-
-         m_pfont->initialize_font("Arial", 14);
-
-      }
-
-      if (!m_pbrushText
-         || m_colorBrushText != m_colorText)
-      {
-
-         m_colorBrushText = m_colorText;
-
-         m_pbrushText =
-         [NSColor colorWithCalibratedRed:
-            m_colorText.f32_red()
-                                      green:
-            m_colorText.f32_green()
-                                       blue:
-            m_colorText.f32_blue()
-                                      alpha:
-            m_colorText.f32_opacity()];
-
-      }
-
-   }
+//   void cg_contex::_defer_text_tools()
+//   {
+//
+//      if (!m_pfont)
+//      {
+//
+//         constructø(m_pfont);
+//
+//         m_pfont->initialize_font("Arial", 14);
+//
+//      }
+//
+//      if (!m_pbrushText
+//         || m_colorBrushText != m_colorText)
+//      {
+//
+//         m_colorBrushText = m_colorText;
+//
+//         m_pbrushText =
+//         [NSColor colorWithCalibratedRed:
+//            m_colorText.f32_red()
+//                                      green:
+//            m_colorText.f32_green()
+//                                       blue:
+//            m_colorText.f32_blue()
+//                                      alpha:
+//            m_colorText.f32_opacity()];
+//
+//      }
+//
+//   }
 
 
 void cg_context_draw_text(
-                          cg_context_t cgcontext,
+      cg_context_t cgcontext,
       const char * text,
       int cchText,
-      CGRect rect,
-      CGColor cgcolor,
+      cg_rect rect,
+      cg_color_t cgcolor,
+      ct_font_t ctfont,
       unsigned int format,
       enum_align ealign)
-   {
+{
 
-      ::string str;
+   
+   CGRect cgrect;
+   
+   cgrect.origin.x = rect.origin.x;
+   cgrect.origin.y = rect.origin.y;
+   cgrect.size.width = rect.size.w;
+   cgrect.size.height = rect.size.h;
 
-      if (cchText >= 0)
-      {
+   auto cfstr = create_cf_string(text, cchText);
 
-         str.assign(text, cchText);
-
-      }
-      else
-      {
-
-         str = text;
-
-      }
-
-      _defer_text_tools();
-
-      NSString * nsstr =
-      [NSString stringWithUTF8String:str.c_str()];
-
-      auto pfontMac =
-      m_pfont->impl<::innate_subsystem_macos::Font>();
-
-      NSMutableParagraphStyle * style =
-      [[NSMutableParagraphStyle alloc] init];
-
-      if (ealign & e_align_right)
-      {
-
-         style.alignment = NSTextAlignmentRight;
-
-      }
-      else if (ealign & e_align_horizontal_center)
-      {
-
-         style.alignment = NSTextAlignmentCenter;
-
-      }
-      else
-      {
-
-         style.alignment = NSTextAlignmentLeft;
-
-      }
-
-   ::string str;
-
-   if (cchText >= 0)
-   {
-
-      str.assign(text, cchText);
-
-   }
-   else
-   {
-
-      str = text;
-
-   }
-
-   NSString * nsstr =
-   [NSString stringWithUTF8String:str.c_str()];
-
-   //
-   // Convert NSFont -> CTFont
-   //
-   CTFontRef ctfont =
-   CTFontCreateWithName(
-      (__bridge CFStringRef)pfont->m_nsfont.fontName,
-      pfont->m_nsfont.pointSize,
-      nullptr);
-
-   //
-   // Alignment
-   //
    CTTextAlignment alignment = kCTTextAlignmentLeft;
 
    if (ealign & e_align_right)
@@ -636,8 +572,8 @@ void cg_context_draw_text(
 
    CFTypeRef values[] =
    {
-      ctfont,
-      cgcolor,
+      CTFONT(ctfont),
+      CGCOLOR(cgcolor),
       paragraphStyle
    };
 
@@ -656,7 +592,7 @@ void cg_context_draw_text(
    CFAttributedStringRef attributedString =
    CFAttributedStringCreate(
       kCFAllocatorDefault,
-      (__bridge CFStringRef)nsstr,
+      CFSTRING(cfstr),
       attributes);
 
    CTFramesetterRef framesetter =
@@ -666,7 +602,7 @@ void cg_context_draw_text(
    CGMutablePathRef path =
    CGPathCreateMutable();
 
-   CGPathAddRect(path, nullptr, rect);
+   CGPathAddRect(path, nullptr, cgrect);
 
    CTFrameRef frame =
    CTFramesetterCreateFrame(
@@ -675,105 +611,166 @@ void cg_context_draw_text(
       path,
       nullptr);
 
-   //
-   // CoreGraphics text coordinates:
-   // flip vertically
-   //
-   CGContextSaveGState(cgcontext);
+   CGContextSaveGState(CGCONTEXT(cgcontext));
 
    CGContextTranslateCTM(
-      cgcontext,
+                         CGCONTEXT(cgcontext),
       0,
-      rect.origin.y * 2.0 + rect.size.height);
+      cgrect.origin.y * 2.0 + cgrect.size.height);
 
-   CGContextScaleCTM(cgcontext, 1.0, -1.0);
+   CGContextScaleCTM(CGCONTEXT(cgcontext), 1.0, -1.0);
 
-   CTFrameDraw(frame, cgcontext);
+   CTFrameDraw(frame, CGCONTEXT(cgcontext));
 
-   CGContextRestoreGState(cgcontext);
+   CGContextRestoreGState(CGCONTEXT(cgcontext));
 
-   //
-   // Cleanup
-   //
    CFRelease(frame);
    CFRelease(path);
    CFRelease(framesetter);
    CFRelease(attributedString);
    CFRelease(attributes);
    CFRelease(paragraphStyle);
-   CFRelease(ctfont);
 
-   }
-//
-//
-//} // namespace innate_subsystem_macos
-//
+}
 
 
-voic cg_context_line_to(cg_context_t cgcontext, CGFloat x1, CGFloat y1, CGFloat x2, CGFloat y2)
+void cg_context_draw_line(cg_context_t cgcontext, cg_point point1, cg_point point2)
 {
    
-   CGContextBeginPath(CG());
+   CGContextBeginPath(CGCONTEXT(cgcontext));
          
    CGContextMoveToPoint(
-            CG(),
-            x1,
-            y1);
+                        CGCONTEXT(cgcontext),
+            point1.x,
+            point1.y);
    
    CGContextAddLineToPoint(
-      CG(),
-      x2,
-      y2;
+      CGCONTEXT(cgcontext),
+      point2.x,
+      point2.y);
    
-  CGContextStrokePath(CG());
+  CGContextStrokePath(CGCONTEXT(cgcontext));
    
    
 }
 
-void cg_context_fill_rect(cg_context_t cgcontext, CGRect cgrect)
+
+void cg_context_draw_rect(cg_context_t cgcontext, cg_rect rect)
 {
    
-   CGContextFillRect(CG(), cgrect);
-
+   CGRect cgrect;
+   
+   cgrect.origin.x = rect.origin.x;
+   cgrect.origin.y = rect.origin.y;
+   cgrect.size.width = rect.size.w;
+   cgrect.size.height = rect.size.h;
+   
+   CGContextStrokeRect(CGCONTEXT(cgcontext), cgrect);
    
 }
 
 
-void cg_context_set_fill_color_with_color(cg_context_t cgcontext, CGColorRef cgcolor)
+void cg_context_fill_rect(cg_context_t cgcontext, cg_rect rect)
 {
    
-   CGContextSetFillColorWithColor(CG(), cgcolor);
+   CGRect cgrect;
+   
+   cgrect.origin.x = rect.origin.x;
+   cgrect.origin.y = rect.origin.y;
+   cgrect.size.width = rect.size.w;
+   cgrect.size.height = rect.size.h;
+   
+   CGContextFillRect(CGCONTEXT(cgcontext), cgrect);
+   
+}
+
+
+void cg_context_draw_ellipse(cg_context_t cgcontext, cg_rect rect)
+{
+   
+   CGRect cgrect;
+   
+   cgrect.origin.x = rect.origin.x;
+   cgrect.origin.y = rect.origin.y;
+   cgrect.size.width = rect.size.w;
+   cgrect.size.height = rect.size.h;
+   
+   CGContextStrokeEllipseInRect(CGCONTEXT(cgcontext), cgrect);
+   
+}
+
+
+void cg_context_fill_ellipse(cg_context_t cgcontext, cg_rect rect)
+{
+   
+   CGRect cgrect;
+   
+   cgrect.origin.x = rect.origin.x;
+   cgrect.origin.y = rect.origin.y;
+   cgrect.size.width = rect.size.w;
+   cgrect.size.height = rect.size.h;
+   
+   CGContextFillEllipseInRect(CGCONTEXT(cgcontext), cgrect);
+   
+}
+
+
+void cg_context_set_fill_color_with_color(cg_context_t cgcontext, cg_color_t cgcolor)
+{
+   
+   CGContextSetFillColorWithColor(CGCONTEXT(cgcontext), CGCOLOR(cgcolor));
 
 }
 
 
-void cg_context_draw_image(cg_context_t cgcontext, ns_image_t nsimage, CGPoint point, CGRect rect)
+void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_rect rect)
 {
    
+   CGRect cgrectDraw;
+   
+   cgrectDraw.origin.x = rect.origin.x;
+   cgrectDraw.origin.y = rect.origin.y;
+   cgrectDraw.size.width = rect.size.w;
+   cgrectDraw.size.height = rect.size.h;
+
+   CGContextDrawImage(CGCONTEXT(cgcontext), cgrectDraw, CGIMAGE(cgimage));
    
    
-         CGRect rc = CGRectMake(
-            point.x,
-            point.y,
-            rect.size.width,
-            rect.size.height);
+}
+
+void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_point point, cg_rect rect)
+{
    
-         CGImageRef subImage =
-         CGImageCreateWithImageInRect(pbitmapMac->m_cgimage,
-            rect);
+   CGRect cgrectDraw;
    
-   //      CGContextDrawImage(ctx, rc, subImage);
-   //
-   //      CGImageRelease(subImage);
-   //
+   cgrectDraw.origin.x = point.x;
+   cgrectDraw.origin.y = point.y;
+   cgrectDraw.size.width = rect.size.w;
+   cgrectDraw.size.height = rect.size.h;
+
+   CGRect cgrect;
+   
+   cgrect.origin.x = rect.origin.x;
+   cgrect.origin.y = rect.origin.y;
+   cgrect.size.width = rect.size.w;
+   cgrect.size.height = rect.size.h;
+
+   CGImageRef subImage =
+   CGImageCreateWithImageInRect(CGIMAGE(cgimage),
+      cgrect);
+
+   CGContextDrawImage(CGCONTEXT(cgcontext), cgrectDraw, subImage);
+   
+   CGImageRelease(subImage);
+   
 }
 
 
 
-void cg_context_set_stroke_color_with_color(cg_context_t cgcontext, CGColorRef cgcolor)
+void cg_context_set_stroke_color_with_color(cg_context_t cgcontext, cg_color_t cgcolor)
 {
    
-   CGContextSetStrokeColorWithColor(CG(), cgcolor);
+   CGContextSetStrokeColorWithColor(CGCONTEXT(cgcontext), CGCOLOR(cgcolor));
 
 }
 
@@ -781,41 +778,25 @@ void cg_context_set_stroke_color_with_color(cg_context_t cgcontext, CGColorRef c
 void cg_context_set_blend_mode_on(cg_context_t cgcontext, bool bSet)
 {
 
-      CGContextSetBlendMode(
-         CG(),
+   CGContextSetBlendMode(
+         CGCONTEXT(cgcontext),
          bSet ? kCGBlendModeNormal : kCGBlendModeCopy);
 
-   //m_pcgcontext->set_blend_mode(bSet);
-   
 }
 
 
 void cg_context_set_anti_alias_on(cg_context_t cgcontext, bool bSet)
 {
 
-   CGContextSetShouldAntialias(CG(), bOn);
-
-}
-
-void cg_context_set_stroke_with_color(cg_context_t cgcontext, CGColorRef cgcolor)
-//      CGContextSetFillColorWithColor(
-//         ctx,
-//         pbrushMac->m_color.CGColor);
-
-
-void cg_context_set_stroke_with_color(cg_context_t cgcontext, CGColorRef cgcolor)
-{
-
-   CGContextSetStrokeColorWithColor(CG(), cgcolor);
+   CGContextSetShouldAntialias(CGCONTEXT(cgcontext), bSet);
 
 }
 
 
-
-void cg_context_set_line_width(cg_context_t cgcontext, CGFloat fLineWidth)
+void cg_context_set_line_width(cg_context_t cgcontext, cg_float fLineWidth)
 {
 
-   CGContextSetLineWidth(CG(), bOn);
+   CGContextSetLineWidth(CGCONTEXT(cgcontext), fLineWidth);
 
 }
 

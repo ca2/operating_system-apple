@@ -44,17 +44,23 @@ namespace core_foundation
 
    struct cf_string_t : public cf_type { };
 
+
 }
 
 
 namespace core_graphics
 {
 
+   using cg_float = double;
+
 
    struct cg_context_t : public ::core_foundation::cf_type { };
    struct cg_color_t : public ::core_foundation::cf_type { };
    struct cg_image_t : public ::core_foundation::cf_type { };
 
+   struct cg_point { cg_float x; cg_float y;};
+   struct cg_size { cg_float w; cg_float h;};
+   struct cg_rect { cg_point origin; cg_size size;};
 
 } // namespace core_graphics
 

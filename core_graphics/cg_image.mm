@@ -5,36 +5,30 @@
 //  Created by Camilo Sasuke Thomas Borregaard Sørensen on 12/05/26.
 //
 #include <AppKit/AppKit.h>
+#include "_mm.h"
 
-
-void ns_image_release(void * & pNS)
+void cg_image_release(cg_image_t & cgimage)
 {
  
-   if(!pNS)
+   if(cgimage.is_set())
    {
       
-      return;
+      CGImageRelease(CGIMAGE(cgimage));
+      
+      cgimage.clear();
       
    }
-   
-   // Transfers ownership to ARC. ARC will release 'pns' when this function exits.
-   NSImage * pns = (__bridge_transfer NSImage *)pNS;
-   
-   // Clear the original pointer so the caller knows it's gone
-   pNS = nullptr;
-   
 }
 
 
-void ns_image_get_size(void * pNS, ::i32 & w,::i32 & h)
+cg_size cg_image_get_size(cg_image_t cgimage)
 {
-   NSImage * image = (__bridge NSImage *)pNS;
- 
-   CGImageRef cgImage = [image CGImageForProposedRect:NULL
-                                              context:nil
-                                                hints:nil];
-
-   w  = (::i32) CGImageGetWidth(cgImage);
-   h = (::i32) CGImageGetHeight(cgImage);
+   
+   cg_size size;
+   
+   size.w  = (::i32) CGImageGetWidth(CGIMAGE(cgimage));
+   size.h = (::i32) CGImageGetHeight(CGIMAGE(cgimage));
+   
+   return size;
    
 }

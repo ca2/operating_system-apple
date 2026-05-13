@@ -6,7 +6,7 @@
 //  <3ThomasBorregaardSørensen!!
 //
 #include <CoreText/CoreText.h>
-
+#include "_mm.h"
 
 
 void ct_font_release(ct_font_t & ctfont)
@@ -14,7 +14,7 @@ void ct_font_release(ct_font_t & ctfont)
    if(ctfont.is_set())
    {
       
-      CTFontRelease(CTFont(ctfont));
+      CFRelease(CTFONT(ctfont));
       
       ctfont.clear();
       

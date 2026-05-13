@@ -33,18 +33,20 @@ namespace core_foundation
          
    }
       
-      void cf_string::create_string(const ::scoped_string & scopedstr)
-{
+   void cf_string::create_string(const ::scoped_string & scopedstr)
+   {
          
-         if(m_cfstring.is_set())
-         {
-            
-            cf_release(m_cfstring);
-            
-         }
-         m_cfstring = create_cf_string(scopedstr);
+      if(m_cfstring.is_set())
+      {
+         
+         cf_release(m_cfstring);
+         
+      }
+      m_cfstring = create_cf_string(scopedstr.c_str(), scopedstr.length());
    
    }
 
 
 } // namespace core_foundation
+
+

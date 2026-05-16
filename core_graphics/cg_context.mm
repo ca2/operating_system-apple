@@ -630,12 +630,12 @@ void cg_context_draw_text(
 
    CGContextSaveGState(CGCONTEXT(cgcontext));
 
-   CGContextTranslateCTM(
-                         CGCONTEXT(cgcontext),
-      0,
-      cgrect.origin.y * 2.0 + cgrect.size.height);
-
-   CGContextScaleCTM(CGCONTEXT(cgcontext), 1.0, -1.0);
+//   CGContextTranslateCTM(
+//                         CGCONTEXT(cgcontext),
+//      0,
+//      cgrect.origin.y * 2.0 + cgrect.size.height);
+//
+//   CGContextScaleCTM(CGCONTEXT(cgcontext), 1.0, -1.0);
 
    CTFrameDraw(frame, CGCONTEXT(cgcontext));
 

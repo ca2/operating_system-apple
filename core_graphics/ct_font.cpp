@@ -34,26 +34,76 @@ ct_font::~ct_font()
 }
 
 
-void ct_font::create_font_with_name(const char *pszName, float fPointSize)
+void ct_font::create_font_with_name(const char *pszName, float fPointSize, int iFontWeight, bool bItalic)
 
 {
+   ct_font_release(m_ctfont);
    
-   
-   auto cfstr = create_cf_string(pszName, (int) strlen(pszName));
-   
-   
+   auto cfstr =
+      create_cf_string(
+         pszName,
+         (int)strlen(pszName));
 
-   //
-   // Convert NSFont -> CTFont
-   //
-   CTFontRef ctfont = CTFontCreateWithName(
-      CFSTRING(cfstr),
-      fPointSize,
-      nullptr);
-   
-   
-   cf_release(cfstr);
+      //
+      // Base font
+      //
+      CTFontRef baseFont =
+      CTFontCreateWithName(
+         CFSTRING(cfstr),
+         fPointSize,
+         nullptr);
 
+      cf_release(cfstr);
+
+      //
+      // Build symbolic traits
+      //
+      CTFontSymbolicTraits traits = 0;
+
+      if (bItalic)
+      {
+
+         traits |= kCTFontItalicTrait;
+
+      }
+
+      if (iFontWeight >= 600)
+      {
+
+         traits |= kCTFontBoldTrait;
+
+      }
+
+      //
+      // Apply traits
+      //
+      CTFontRef finalFont =
+      CTFontCreateCopyWithSymbolicTraits(
+         baseFont,
+         0.0,
+         nullptr,
+         traits,
+         traits);
+
+      //
+      // Fallback:
+      // if traits version unavailable,
+      // use original font
+      //
+      if(finalFont)
+      {
+
+         CFRelease(baseFont);
+
+         m_ctfont.m_u = (::uptr) finalFont;
+
+      }
+      else
+      {
+
+         m_ctfont.m_u =(::uptr) baseFont;
+
+      }
 }
 
 

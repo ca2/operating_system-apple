@@ -16,7 +16,6 @@
 namespace core_graphics
 {
 
-
    class core_graphics;
 
    class cg_image;
@@ -24,6 +23,8 @@ namespace core_graphics
    class cg_context;
 
    class cg_color;
+
+   class cg_dib;
 
 } // namespace core_graphics
 

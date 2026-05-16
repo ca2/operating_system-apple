@@ -40,6 +40,25 @@ namespace core_graphics
    }
 
 
+   void cg_image::initialize_dib(const ::i32_size & size)
+   {
+      
+      cg_size cgsize;
+      
+      cgsize.w = size.cx;
+      
+      cgsize.h = size.cy;
+      
+      m_cgimage = cg_image_create(cgsize);
+      
+   }
+::pointer < cg_image > cg_image_from_cg_image_uptr(::uptr u)
+{
+   auto pcgimage = ::system()->create_newø<cg_image>();
+   pcgimage->m_cgimage.m_u = u;
+   return pcgimage;
+}
+
 } //  namespace core_graphics
 
 

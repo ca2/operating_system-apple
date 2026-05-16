@@ -32,6 +32,9 @@
 		9A0B95552FB30C1D00EEAAE1 /* cg_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B95542FB30C1A00EEAAE1 /* cg_image.cpp */; };
 		9A0B95572FB30C2900EEAAE1 /* cg_image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B95562FB30C2200EEAAE1 /* cg_image.mm */; };
 		9A13BC962FB320CD007F4EFA /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A13BC952FB320CD007F4EFA /* libacme.dylib */; };
+		9A8536A02FB566A500267545 /* cg_dib.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8536972FB5669600267545 /* cg_dib.h */; };
+		9A8536A22FB566BD00267545 /* cg_dib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8536A12FB566B900267545 /* cg_dib.cpp */; };
+		9A8536A42FB566D600267545 /* cg_dib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A8536A32FB566CB00267545 /* cg_dib.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		9A13BC972FB320DE007F4EFA /* acme.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme.xcodeproj; path = ../../../source/app/acme/acme.xcodeproj; sourceTree = SOURCE_ROOT; };
 		9A6A2C122FB3E276004C0ACF /* _____debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
 		9A6A2C132FB3E276004C0ACF /* _____release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
+		9A8536972FB5669600267545 /* cg_dib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cg_dib.h; sourceTree = "<group>"; };
+		9A8536A12FB566B900267545 /* cg_dib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cg_dib.cpp; sourceTree = "<group>"; };
+		9A8536A32FB566CB00267545 /* cg_dib.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = cg_dib.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 				9A09CD9D2FB349E500E22155 /* cg_context.mm */,
 				9A09CD9B2FB349C400E22155 /* cg_context.cpp */,
 				9A09CD972FB349A900E22155 /* cg_context.h */,
+				9A8536A32FB566CB00267545 /* cg_dib.mm */,
+				9A8536A12FB566B900267545 /* cg_dib.cpp */,
+				9A8536972FB5669600267545 /* cg_dib.h */,
 				9A0B95562FB30C2200EEAAE1 /* cg_image.mm */,
 				9A0B95542FB30C1A00EEAAE1 /* cg_image.cpp */,
 				9A0B95492FB30BDC00EEAAE1 /* cg_image.h */,
@@ -168,6 +177,7 @@
 				9A0B95522FB30C0400EEAAE1 /* framework.h in Headers */,
 				9A09CDAE2FB36F0000E22155 /* _mm.h in Headers */,
 				9A0B95532FB30C0400EEAAE1 /* _.h in Headers */,
+				9A8536A02FB566A500267545 /* cg_dib.h in Headers */,
 				9A09CDB02FB37BCF00E22155 /* ct_font.h in Headers */,
 				9A09CDAC2FB36E2E00E22155 /* _struct.h in Headers */,
 				9A09CDA62FB35E4400E22155 /* cg_color.h in Headers */,
@@ -244,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A0B954F2FB30C0400EEAAE1 /* _.cpp in Sources */,
+				9A8536A22FB566BD00267545 /* cg_dib.cpp in Sources */,
 				9A09CD9C2FB349CB00E22155 /* cg_context.cpp in Sources */,
 				9A09CD772FB3334B00E22155 /* core_graphics.cpp in Sources */,
 				9A09CDB82FB37EE000E22155 /* cf_string.cpp in Sources */,
@@ -251,6 +262,7 @@
 				9A09CDA82FB35E4F00E22155 /* cg_color.cpp in Sources */,
 				9A0B95502FB30C0400EEAAE1 /* framework.cpp in Sources */,
 				9A0B95512FB30C0400EEAAE1 /* _factory.cpp in Sources */,
+				9A8536A42FB566D600267545 /* cg_dib.mm in Sources */,
 				9A09CDB22FB37BD400E22155 /* ct_font.cpp in Sources */,
 				9A09CDAA2FB35E6100E22155 /* cg_color.mm in Sources */,
 				9A0B95572FB30C2900EEAAE1 /* cg_image.mm in Sources */,

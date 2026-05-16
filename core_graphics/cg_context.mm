@@ -8,6 +8,23 @@
 
 #include <Cocoa/Cocoa.h>
 #include "_mm.h"
+#include "cg_image.h"
+
+
+
+void cg_context_release(cg_context_t & cgcontext)
+{
+ 
+   if(cgcontext.is_set())
+   {
+      
+      CGContextRelease(CGCONTEXT(cgcontext));
+      
+      cgcontext.clear();
+      
+   }
+}
+
 
 //#define CGCONTEXT(cgcontext) ((CGContextRef)cgcontext)
 
@@ -680,7 +697,9 @@ void cg_context_fill_rect(cg_context_t cgcontext, cg_rect rect)
    cgrect.size.width = rect.size.w;
    cgrect.size.height = rect.size.h;
    
-   CGContextFillRect(CGCONTEXT(cgcontext), cgrect);
+   auto cgcontextref = CGCONTEXT(cgcontext);
+   
+   CGContextFillRect(cgcontextref, cgrect);
    
 }
 
@@ -718,13 +737,28 @@ void cg_context_fill_ellipse(cg_context_t cgcontext, cg_rect rect)
 void cg_context_set_fill_color_with_color(cg_context_t cgcontext, cg_color_t cgcolor)
 {
    
-   CGContextSetFillColorWithColor(CGCONTEXT(cgcontext), CGCOLOR(cgcolor));
+   auto cgcontextref = CGCONTEXT(cgcontext);
+   
+   auto cgcolorref = CGCOLOR(cgcolor);
+   
+   CGContextSetFillColorWithColor(cgcontextref, cgcolorref);
 
 }
 
 
 void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_rect rect)
 {
+   
+   auto cgcontextref = CGCONTEXT(cgcontext);
+   
+   auto cgimageref = CGIMAGE(cgimage);
+   
+   CGContextSaveGState(cgcontextref);
+   
+   auto imageHeight = (::i32) CGImageGetHeight(cgimageref);
+   
+   CGContextTranslateCTM(cgcontextref, 0, imageHeight);
+   CGContextScaleCTM(cgcontextref, 1.0, -1.0);
    
    CGRect cgrectDraw;
    
@@ -733,14 +767,25 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_rect r
    cgrectDraw.size.width = rect.size.w;
    cgrectDraw.size.height = rect.size.h;
 
-   CGContextDrawImage(CGCONTEXT(cgcontext), cgrectDraw, CGIMAGE(cgimage));
+   CGContextDrawImage(cgcontextref, cgrectDraw, cgimageref);
    
-   
+   CGContextRestoreGState(cgcontextref);
 }
 
 void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_point point, cg_rect rect)
 {
    
+   auto cgcontextref = CGCONTEXT(cgcontext);
+   
+   auto cgimageref = CGIMAGE(cgimage);
+   
+   CGContextSaveGState(cgcontextref);
+   
+   auto imageHeight = (::i32) CGImageGetHeight(cgimageref);
+   
+   CGContextTranslateCTM(cgcontextref, 0, imageHeight);
+   CGContextScaleCTM(cgcontextref, 1.0, -1.0);
+
    CGRect cgrectDraw;
    
    cgrectDraw.origin.x = point.x;
@@ -762,6 +807,8 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_point 
    CGContextDrawImage(CGCONTEXT(cgcontext), cgrectDraw, subImage);
    
    CGImageRelease(subImage);
+   
+   CGContextRestoreGState(cgcontextref);
    
 }
 
@@ -798,5 +845,21 @@ void cg_context_set_line_width(cg_context_t cgcontext, cg_float fLineWidth)
 
    CGContextSetLineWidth(CGCONTEXT(cgcontext), fLineWidth);
 
+}
+
+void cg_context_draw_dib(cg_context_t cgcontext, cg_dib_t * pdib)
+{
+   
+   auto cgcontextref = CGCONTEXT(cgcontext);
+   
+   CGRect r{};
+   
+   r.size.width = pdib->m_cgsize.w;
+   r.size.height = pdib->m_cgsize.h;
+   
+   auto cgimageref = CGIMAGE(pdib->m_pcgimage->m_cgimage);
+   
+   CGContextDrawImage(cgcontextref, r, cgimageref);
+   
 }
 

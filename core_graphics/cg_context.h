@@ -137,7 +137,11 @@ virtual public ::particle
             unsigned int format,
             enum_align ealign);
       
+      virtual void draw_dib(cg_dib * pdib);
+      
    };
+
+::pointer < cg_context > cg_context_from_cg_context_uptr(::uptr u);
 
 
 } // namespace innate_subsystem_macos

@@ -21,6 +21,7 @@ using namespace core_foundation;
 using namespace core_graphics;
 using namespace core_text;
 
+void cg_context_release(cg_context_t & cgcontext);
 void cg_context_draw_line(cg_context_t cgcontext, cg_point point1, cg_point point2);
 void cg_context_draw_rect(cg_context_t cgcontext, cg_rect rect);
 void cg_context_fill_rect(cg_context_t cgcontext, cg_rect rect);
@@ -44,10 +45,15 @@ void cg_context_draw_text(
       unsigned int format,
       enum_align ealign);
 
+void cg_context_draw_dib(cg_context_t cgcontext, cg_dib_t * pdib);
+
 
 void cg_color_release(cg_color_t & cgcolor);
 cg_color_t cg_color_create(cg_float rgba[4]);
 
+
+cg_image_t cg_image_create(cg_size size);
+void cg_image_from_cg_bitmap_context(cg_image_t & cgimage, cg_context_t cgcontext);
 void cg_image_release(cg_image_t & cgimage);
 cg_size cg_image_get_size(cg_image_t cgimage);
 
@@ -57,5 +63,9 @@ void ct_font_release(ct_font_t & ctfont);
 cf_string_t create_cf_string(const char * psz, int size);
 void cf_release(cf_string_t & cfstring);
 
+
+void cg_dib_release(cg_dib_t & cgdib);
+bool cg_dib_create_from_cg_image(cg_dib_t & cgdib, cg_image_t sourceImage);
+bool cg_dib_create(cg_dib_t & cgdib, cg_size size, bool bOpaque);
 
 

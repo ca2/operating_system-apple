@@ -12,6 +12,7 @@
 #include "framework.h"
 #include "cg_color.h"
 #include "cg_context.h"
+#include "cg_dib.h"
 #include "cg_image.h"
 #include "ct_font.h"
 #include "_mm.h"
@@ -759,5 +760,24 @@ void cg_context::draw_text(
    
    }
 
+void cg_context::draw_dib(cg_dib * pdib)
+{
+   
+   pdib->update_image();
+   
+   cg_context_draw_dib(
+                        m_cgcontext,
+                        &pdib->m_cgdib);
+   
+}
+
+::pointer < cg_context > cg_context_from_cg_context_uptr(::uptr u)
+{
+   auto pcgcontext = ::system()->create_newø<cg_context>();
+   pcgcontext->m_cgcontext.m_u = u;
+   return pcgcontext;
+}
 
 } // namespace core_graphics
+
+

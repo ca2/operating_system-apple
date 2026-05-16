@@ -35,10 +35,10 @@ cg_color::~cg_color()
 void cg_color::create_color(const ::color::color & color)
 {
    
-   cg_float red = 1.0;
-   cg_float green = 0.0;
-   cg_float blue = 0.0;
-   cg_float alpha = 1.0;
+   cg_float red = color.f32_red();
+   cg_float green = color.f32_green();
+   cg_float blue = color.f32_blue();
+   cg_float alpha = color.f32_opacity();
    
    cg_float rgba[4] = {red, green, blue, alpha};
    

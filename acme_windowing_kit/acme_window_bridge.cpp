@@ -6,6 +6,7 @@
 #include "framework.h"
 #include "window.h"
 #include "acme_window_bridge.h"
+#include "acme/constant/user_key.h"
 #include "acme/nano/graphics/device.h"
 #include "acme/constant/id.h"
 #include "acme/handler/topic.h"
@@ -13,6 +14,7 @@
 #include "acme/platform/node.h"
 #include "acme/user/micro/elemental.h"
 #include "acme/user/user/frame_interaction.h"
+#include "acme/user/user/key.h"
 #include "acme/user/user/mouse.h"
 #include "acme/windowing/window.h"
 #include <CoreGraphics/CoreGraphics.h>
@@ -21,8 +23,9 @@ void ns_main_post(dispatch_block_t block);
 
 bool ns_app_is_running();
 
-//void ns_app_run(int argc, char ** args, const char * pszClass);
+::user::e_button_state ns_pressed_buttons_to_e_button_state(unsigned int pressedButtons);
 
+//void ns_app_run(int argc, char ** args, const char * pszClass);
 
 void ns_app_stop();
 
@@ -33,6 +36,7 @@ void screen_coordinates_aware_copy(CGRect & rect, const ::i32_rectangle &rectang
 void screen_coordinates_aware_copy(CGPoint & cgpoint, const ::i32_point & point);
 
 void screen_coordinates_aware_copy(::i32_point & point, const CGPoint & cgpoint);
+
 namespace apple_kit
 {
 
@@ -53,12 +57,18 @@ namespace apple_kit
 //   
 //   
 //}
-void acme_window_bridge::on_left_button_up(double xHost, double yHost, double xAbsolute, double yAbsolute)
+
+
+void acme_window_bridge::on_left_button_up(::user::e_button_state ebuttonstate, double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
    
    auto pmouse = pacmewindowingwindow->create_newø <::user::mouse>();
+   
+   pmouse->m_eusermessage = ::user::e_message_left_button_up;
+   
+   pmouse->m_ebuttonstate = ebuttonstate;
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -80,12 +90,16 @@ void acme_window_bridge::on_left_button_up(double xHost, double yHost, double xA
 }
 
 
-void acme_window_bridge::on_left_button_down(double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_left_button_down(::user::e_button_state ebuttonstate, double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
    
    auto pmouse = pacmewindowingwindow->create_newø <::user::mouse>();
+   
+   pmouse->m_eusermessage = ::user::e_message_left_button_down;
+   
+   pmouse->m_ebuttonstate = ebuttonstate;
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -107,12 +121,16 @@ void acme_window_bridge::on_left_button_down(double xHost, double yHost, double 
 }
 
 
-void acme_window_bridge::on_right_button_up(double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_right_button_up(::user::e_button_state ebuttonstate, double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
    
    auto pmouse = pacmewindowingwindow->create_newø <::user::mouse>();
+   
+   pmouse->m_eusermessage = ::user::e_message_right_button_up;
+   
+   pmouse->m_ebuttonstate = ebuttonstate;
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -134,12 +152,16 @@ void acme_window_bridge::on_right_button_up(double xHost, double yHost, double x
 }
 
 
-void acme_window_bridge::on_right_button_down(double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_right_button_down(::user::e_button_state ebuttonstate, double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
    
    auto pmouse = pacmewindowingwindow->create_newø <::user::mouse>();
+   
+   pmouse->m_eusermessage = ::user::e_message_right_button_down;
+   
+   pmouse->m_ebuttonstate = ebuttonstate;
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -161,12 +183,16 @@ void acme_window_bridge::on_right_button_down(double xHost, double yHost, double
 }
 
 
-void acme_window_bridge::on_mouse_move(double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_mouse_move(::user::e_button_state ebuttonstate, double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
    
    auto pmouse = pacmewindowingwindow->create_newø <::user::mouse>();
+   
+   pmouse->m_eusermessage = ::user::e_message_mouse_move;
+   
+   pmouse->m_ebuttonstate = ebuttonstate;
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -184,6 +210,57 @@ void acme_window_bridge::on_mouse_move(double xHost, double yHost, double xAbsol
    }
    
    pelemental->back_on_mouse_move(pmouse);
+   
+}
+
+
+bool acme_window_bridge::on_key_down(::user::enum_key euserkey)
+{
+   
+   auto pacmewindowingwindow = acme_windowing_window();
+   
+   auto pkey = pacmewindowingwindow->create_newø <::user::key>();
+   
+   //::user::enum_key ekey = ::user::e_key_none;
+   
+   pkey->m_eusermessage = ::user::e_message_key_down;
+   
+   pkey->m_ekey = euserkey;
+   //throw "todo";
+   
+   ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
+   
+   pelemental->on_key_down(pkey);
+
+   
+}
+ bool acme_window_bridge::on_key_up(::user::enum_key euserkey)
+{
+   
+   auto pacmewindowingwindow = acme_windowing_window();
+   
+   auto pkey = pacmewindowingwindow->create_newø <::user::key>();
+    
+    //throw "todo";
+    pkey->m_ekey = euserkey;
+    
+    pkey->m_eusermessage = ::user::e_message_key_up;
+   
+   ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
+   
+   pelemental->on_key_up(pkey);
+   
+}
+
+
+void acme_window_bridge::on_create()
+{
+   
+   auto pacmewindowingwindow = acme_windowing_window();
+   
+   ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
+
+   pelemental->on_create();
    
 }
 
@@ -331,3 +408,43 @@ void acme_window_bridge::do_tasks()
 
 
 } // namespace apple_kit
+
+
+::user::e_button_state ns_pressed_buttons_to_e_button_state(unsigned int pressedButtons)
+{
+   
+   bool leftDown = (pressedButtons & (1 << 0)) != 0;
+   
+   bool rightDown = (pressedButtons & (1 << 1)) != 0;
+   
+   bool middleDown = (pressedButtons & (1 << 2)) != 0;
+   
+   ::user::e_button_state ebuttonstate = ::user::e_button_state_none;
+   
+   if(leftDown)
+   {
+      
+      ebuttonstate |= ::user::e_button_state_left;
+      
+   }
+   
+   if(rightDown)
+   {
+      
+      ebuttonstate |= ::user::e_button_state_right;
+      
+   }
+   
+   if(middleDown)
+   {
+      
+      ebuttonstate |= ::user::e_button_state_middle;
+      
+   }
+   
+   return ebuttonstate;
+   
+}
+
+
+

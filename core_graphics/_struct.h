@@ -51,6 +51,9 @@ namespace core_foundation
 namespace core_graphics
 {
 
+   struct cg_context;
+   struct cg_image;
+
    using cg_float = double;
 
 
@@ -61,6 +64,32 @@ namespace core_graphics
    struct cg_point { cg_float x; cg_float y;};
    struct cg_size { cg_float w; cg_float h;};
    struct cg_rect { cg_point origin; cg_size size;};
+
+   struct cg_dib_t
+   {
+      
+      void *                     m_p = nullptr;
+      cg_size                    m_cgsize = {};
+      int                        m_iBytesPerRow = 0;
+      
+      ::pointer < cg_context >   m_pcgcontext;
+      ::pointer < cg_image >     m_pcgimage;
+      
+      bool is_ok() const
+      {
+         
+         return ::is_set(m_p) & (m_cgsize.w > 0) && (m_cgsize.h > 0) && (m_iBytesPerRow > 0);
+         
+      }
+      
+      bool is_null() const
+      {
+         
+         return !is_ok();
+         
+      }
+      
+   };
 
 } // namespace core_graphics
 

@@ -24,12 +24,15 @@ namespace core_graphics
       cg_image();
       ~cg_image();
       
+      virtual void initialize_dib(const ::i32_size & size);
       
       virtual ::i32_size get_size();
       
       
       
    };
+
+::pointer < cg_image > cg_image_from_cg_image_uptr(::uptr u);
 
 } // namespace core_graphics
 

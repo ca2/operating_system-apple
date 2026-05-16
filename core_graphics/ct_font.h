@@ -24,7 +24,7 @@ public:
    ~ct_font() override;
    
    
-   virtual void create_font_with_name(const char * pszName, float fPointSize);
+   virtual void create_font_with_name(const char * pszName, float fPointSize, int iFontWeight, bool bItalic);
    
 };
 

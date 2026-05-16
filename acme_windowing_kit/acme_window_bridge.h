@@ -59,17 +59,21 @@ class window;
 //
       virtual void do_tasks();
       
-      virtual void on_left_button_up(double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_left_button_up(::user::e_button_state emouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
-      virtual void on_left_button_down(double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_left_button_down(::user::e_button_state emouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
-      virtual void on_right_button_up(double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_right_button_up(::user::e_button_state emouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
-      virtual void on_right_button_down(double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_right_button_down(::user::e_button_state emouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
-      virtual void on_mouse_move(double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_mouse_move(::user::e_button_state emouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
+      virtual bool on_key_down(::user::enum_key euserkey);
+      virtual bool on_key_up(::user::enum_key euserkey);
+
       
+      virtual void on_create();
 //      virtual void on_char(int iChar);
 //      
       virtual void _on_draw_background(CGContextRef cg, CGSize sizeFrame);

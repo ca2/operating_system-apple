@@ -772,6 +772,7 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_rect r
    CGContextRestoreGState(cgcontextref);
 }
 
+
 void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_point point, cg_rect rect)
 {
    
@@ -782,14 +783,11 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_point 
    CGContextSaveGState(cgcontextref);
    
    auto imageHeight = (::i32) CGImageGetHeight(cgimageref);
-   
-   CGContextTranslateCTM(cgcontextref, 0, imageHeight);
-   CGContextScaleCTM(cgcontextref, 1.0, -1.0);
 
    CGRect cgrectDraw;
    
    cgrectDraw.origin.x = point.x;
-   cgrectDraw.origin.y = point.y;
+   cgrectDraw.origin.y = -point.y - rect.size.h;
    cgrectDraw.size.width = rect.size.w;
    cgrectDraw.size.height = rect.size.h;
 
@@ -799,10 +797,12 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_point 
    cgrect.origin.y = rect.origin.y;
    cgrect.size.width = rect.size.w;
    cgrect.size.height = rect.size.h;
+   
+   CGContextTranslateCTM(cgcontextref, 0, cgrectDraw.origin.y + cgrectDraw.size.height);
+   
+   CGContextScaleCTM(cgcontextref, 1.0, -1.0);
 
-   CGImageRef subImage =
-   CGImageCreateWithImageInRect(CGIMAGE(cgimage),
-      cgrect);
+   CGImageRef subImage = CGImageCreateWithImageInRect(CGIMAGE(cgimage), cgrect);
 
    CGContextDrawImage(CGCONTEXT(cgcontext), cgrectDraw, subImage);
    

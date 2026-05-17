@@ -179,9 +179,9 @@ namespace acme_apple
 //      if(hFile == hFileNull)
 //      {
 //
-//         auto cerrornumber = c_error_number();
+//         auto cerrno = c_errno();
 //
-//         if(cerrornumber != ENOENT && cerrornumber != ENFILE)
+//         if(cerrno != ENOENT && cerrno != ENFILE)
 //         {
 //            /*         if (pException != nullptr)
 //             {
@@ -201,9 +201,9 @@ namespace acme_apple
 //
 //            //            vfxThrowFileexception(::macos::file_exception::os_error_to_exception(dwLastError), dwLastError, m_strFileName);
 //            
-//            auto estatus = cerrornumber.estatus();
+//            auto estatus = cerrno.estatus();
 //            
-//            throw ::icloud_file::exception(estatus, cerrornumber, m_path, eopen, "open == -1");
+//            throw ::icloud_file::exception(estatus, cerrno, m_path, eopen, "open == -1");
 //
 //            //}
 //
@@ -242,7 +242,7 @@ namespace acme_apple
 //
 //            //            vfxThrowFileexception(::macos::file_exception::os_error_to_exception(dwLastError), dwLastError, m_strFileName);
 //            
-//            m_estatus = cerrornumber.estatus();
+//            m_estatus = cerrno.estatus();
 //            
 //            if(eopen & ::icloud_file::e_open_no_exception_on_open)
 //            {
@@ -258,7 +258,7 @@ namespace acme_apple
 //               
 //            }
 //
-//            throw ::icloud_file::exception(m_estatus, cerrornumber, m_path, eopen, "open == -1");
+//            throw ::icloud_file::exception(m_estatus, cerrno, m_path, eopen, "open == -1");
 //
 //            //}
 //
@@ -302,16 +302,16 @@ namespace acme_apple
 //         if(iRead == -1)
 //         {
 //            
-//            auto cerrornumber = c_error_number();
+//            auto cerrno = c_errno();
 //            
-//            if(cerrornumber == EAGAIN)
+//            if(cerrno == EAGAIN)
 //            {
 //
 //            }
 //            
-//            auto estatus = cerrornumber.estatus();
+//            auto estatus = cerrno.estatus();
 //            
-//            throw ::icloud_file::exception(estatus, cerrornumber, m_path, m_eopen, "read == -1");
+//            throw ::icloud_file::exception(estatus, cerrno, m_path, m_eopen, "read == -1");
 //            
 //         }
 //         else if(iRead == 0)
@@ -362,11 +362,11 @@ namespace acme_apple
 //         if(iWrite == -1)
 //         {
 //            
-//            auto cerrornumber = c_error_number();
+//            auto cerrno = c_errno();
 //            
-//            auto estatus = cerrornumber.estatus();
+//            auto estatus = cerrno.estatus();
 //            
-//            throw ::icloud_file::exception(estatus,cerrornumber, m_path, m_eopen, "write == -1");
+//            throw ::icloud_file::exception(estatus,cerrno, m_path, m_eopen, "write == -1");
 //            
 //         }
 //         
@@ -386,11 +386,11 @@ namespace acme_apple
 //      {
 //       //  ::icloud_file::throw_os_error( (int)0);
 //         
-//         c_error_number cerrornumber(c_error_number_t{}, -1);
+//         c_errno cerrno(c_errno_t{}, -1);
 //         
 //         ::e_status estatus = ::error_failed;
 //         
-//         throw ::icloud_file::exception(estatus, cerrornumber, m_path, m_eopen, "m_iFile == -1");
+//         throw ::icloud_file::exception(estatus, cerrno, m_path, m_eopen, "m_iFile == -1");
 //         
 //      }
 //
@@ -407,11 +407,11 @@ namespace acme_apple
 //      if(posNew  == (filesize)-1)
 //      {
 //         
-//         auto cerrornumber = c_error_number();
+//         auto cerrno = c_errno();
 //         
-//         auto estatus = cerrornumber.estatus();
+//         auto estatus = cerrno.estatus();
 //         
-//         throw ::icloud_file::exception(estatus, cerrornumber, m_path, m_eopen, "lsize == -1");
+//         throw ::icloud_file::exception(estatus, cerrno, m_path, m_eopen, "lsize == -1");
 //         
 //      }
 //
@@ -432,11 +432,11 @@ namespace acme_apple
 //      {
 //         
 //         
-//         auto cerrornumber = c_error_number();
+//         auto cerrno = c_errno();
 //         
-//         auto estatus = cerrornumber.estatus();
+//         auto estatus = cerrno.estatus();
 //         
-//         throw ::icloud_file::exception(estatus, cerrornumber, m_path, m_eopen, "lseek == -1");
+//         throw ::icloud_file::exception(estatus, cerrno, m_path, m_eopen, "lseek == -1");
 //
 //    
 //         
@@ -568,11 +568,11 @@ namespace acme_apple
 //      if (bError)
 //      {
 //         
-//         auto cerrornumber = c_error_number();
+//         auto cerrno = c_errno();
 //         
-//         auto estatus = cerrornumber.estatus();
+//         auto estatus = cerrno.estatus();
 //         
-//         throw ::icloud_file::exception(estatus, cerrornumber, m_path, m_eopen, "close != 0");
+//         throw ::icloud_file::exception(estatus, cerrno, m_path, m_eopen, "close != 0");
 //
 //         
 //      }
@@ -631,11 +631,11 @@ namespace acme_apple
 //      if (::ftruncate(m_iFile, dwNewLen) == -1)
 //      {
 //         
-//         auto cerrornumber = c_error_number();
+//         auto cerrno = c_errno();
 //         
-//         auto estatus = cerrornumber.estatus();
+//         auto estatus = cerrno.estatus();
 //         
-//         throw ::icloud_file::exception(estatus, cerrornumber, m_path, m_eopen, "ftruncate == -1");
+//         throw ::icloud_file::exception(estatus, cerrno, m_path, m_eopen, "ftruncate == -1");
 //
 //      }
 //      

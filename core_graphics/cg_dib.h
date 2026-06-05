@@ -30,7 +30,7 @@ namespace core_graphics
       
       //virtual void draw_image(cg_image * pimage);
       
-      virtual void initialize_dib(const ::i32_size & size, bool bOpaque);
+      virtual void initialize_dib(const ::i32_size & size);
       
       virtual void initialize_from_cg_image(cg_image * pcgimage);
       

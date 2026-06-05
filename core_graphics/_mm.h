@@ -66,6 +66,6 @@ void cf_release(cf_string_t & cfstring);
 
 void cg_dib_release(cg_dib_t & cgdib);
 bool cg_dib_create_from_cg_image(cg_dib_t & cgdib, cg_image_t sourceImage);
-bool cg_dib_create(cg_dib_t & cgdib, cg_size size, bool bOpaque);
+bool cg_dib_create(cg_dib_t & cgdib, cg_size size);
 
 

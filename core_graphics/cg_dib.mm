@@ -99,7 +99,7 @@ bool cg_dib_create_from_cg_image(cg_dib_t & cgdib, cg_image_t sourceImage)
 
 
 
-bool cg_dib_create(cg_dib_t &cgdib, cg_size size, bool bOpaque)
+bool cg_dib_create(cg_dib_t &cgdib, cg_size size)
 {
    
    cg_dib_release(cgdib);
@@ -119,7 +119,9 @@ bool cg_dib_create(cg_dib_t &cgdib, cg_size size, bool bOpaque)
 
    CGColorSpaceRef colorSpace =
         CGColorSpaceCreateDeviceRGB();
-   bOpaque = false;
+   
+   
+   //bOpaque = false;
 
    CGContextRef context =
         CGBitmapContextCreate(
@@ -129,9 +131,9 @@ bool cg_dib_create(cg_dib_t &cgdib, cg_size size, bool bOpaque)
             8,
             bytesPerRow,
             colorSpace,
-            (bOpaque ?
-             kCGImageAlphaNoneSkipFirst :
-             kCGImageAlphaPremultipliedFirst)
+            //(bOpaque ?
+             //kCGImageAlphaNoneSkipFirst :
+             kCGImageAlphaPremultipliedFirst
             | kCGBitmapByteOrder32Little);
 
     CGColorSpaceRelease(colorSpace);

@@ -50,7 +50,7 @@ namespace core_graphics
    }
 
 
-   void cg_dib::initialize_dib(const ::i32_size & size, bool bOpaque)
+   void cg_dib::initialize_dib(const ::i32_size & size)
    {
       
       cg_dib_release(m_cgdib);
@@ -60,7 +60,7 @@ namespace core_graphics
       cgsize.w = size.cx;
       cgsize.h = size.cy;
 
-      cg_dib_create(m_cgdib, cgsize, bOpaque);
+      cg_dib_create(m_cgdib, cgsize);
 
    }
 

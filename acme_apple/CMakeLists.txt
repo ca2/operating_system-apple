@@ -8,14 +8,14 @@ project(acme_apple CXX OBJCXX)
 list(APPEND library_source
    _.cpp
    _.h
-   _acme_apple.h
+   #_acme_apple.h
    _apple.mm
         _c_mm.h
         _mm.h
         _mm_common.h
-        apple_timer.cpp
-        DDInvocationGrabber.h
-        DDInvocationGrabber.mm
+        #apple_timer.cpp
+        #DDInvocationGrabber.h
+        #DDInvocationGrabber.mm
         debug.cpp
    _factory.cpp
    framework.cpp
@@ -23,14 +23,14 @@ list(APPEND library_source
         image.mm
    node.cpp
    node.h
-        NSObject+DDExtensions.h
-        NSObject+DDExtensions.mm
-        NSString+SymlinksAndAliases.h
-        NSString+SymlinksAndAliases.mm
+        #NSObject+DDExtensions.h
+        #NSObject+DDExtensions.mm
+        #NSString+SymlinksAndAliases.h
+        #NSString+SymlinksAndAliases.mm
         resource.cpp
         timer.mm
-        translator.cpp
-        translator.h
+        #translator.cpp
+        #translator.h
         UncaughtExceptionHandler.h
         UncaughtExceptionHandler.mm
    )

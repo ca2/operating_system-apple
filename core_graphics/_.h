@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "acme/_.h"
+#include "operating_system-apple/core_foundation/_.h"
 
 
 #if defined(_core_graphics_project)
@@ -26,13 +26,19 @@ namespace core_graphics
 
    class cg_dib;
 
+   class cg_path;
+
+   class cg_affine_transform;
+
+   class cg_font;
+
 } // namespace core_graphics
 
 
 namespace core_text
 {
 
-   class ct_font;
+   class ct_line;
 
 } // namespace core_text
 

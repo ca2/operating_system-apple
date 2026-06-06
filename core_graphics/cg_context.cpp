@@ -14,8 +14,7 @@
 #include "cg_context.h"
 #include "cg_dib.h"
 #include "cg_image.h"
-#include "ct_font.h"
-#include "_mm.h"
+#include "cg_font.h"
 #include "acme/prototype/geometry2d/rectangle.h"
 //#import <Cocoa/Cocoa.h>
 //#import <CoreText/CoreText.h>
@@ -45,7 +44,7 @@ namespace core_graphics
 //
 //      int m_iBkMode = TRANSPARENT;
 //
-//      ::i32_point m_pointCurrent;
+//      ::f64_point m_pointCurrent;
 //
 //      Graphics();
 //      virtual ~Graphics();
@@ -74,21 +73,21 @@ namespace core_graphics
 //
 //      void setFont(::innate_subsystem::FontInterface * pfont);
 //
-//      void moveTo(const ::i32_point & point);
+//      void moveTo(const ::f64_point & point);
 //
-//      void lineTo(const ::i32_point & point);
+//      void lineTo(const ::f64_point & point);
 //
 //      void fillRect(
-//         const ::i32_rectangle & rectangle,
+//         const ::f64_rectangle & rectangle,
 //         ::innate_subsystem::BrushInterface * pbrush);
 //
 //      void fillRect(
-//         const ::i32_rectangle & rectangle,
+//         const ::f64_rectangle & rectangle,
 //         const ::color::color & color);
 //
-//      void ellipse(const ::i32_rectangle & rectangle);
+//      void ellipse(const ::f64_rectangle & rectangle);
 //
-//      void rectangle(const ::i32_rectangle & rectangle);
+//      void rectangle(const ::f64_rectangle & rectangle);
 //
 //      void drawBitmap(
 //         ::innate_subsystem::BitmapInterface * pbitmap,
@@ -102,7 +101,7 @@ namespace core_graphics
 //      void drawText(
 //         const char * text,
 //         int cchText,
-//         ::i32_rectangle & rectangle,
+//         ::f64_rectangle & rectangle,
 //         unsigned int format,
 //         enum_align ealign);
 //
@@ -249,7 +248,7 @@ namespace core_graphics
 //   }
 //
 //
-//   void Graphics::moveTo(const ::i32_point & point)
+//   void Graphics::moveTo(const ::f64_point & point)
 //   {
 //
 //      m_pointCurrent = point;
@@ -257,7 +256,7 @@ namespace core_graphics
 //   }
 //
 //
-//   void Graphics::lineTo(const ::i32_point & point)
+//   void Graphics::lineTo(const ::f64_point & point)
 //   {
 //
 //      auto cgpen = m_ppen->impl<::innate_subsystem_macos::Pen>();
@@ -292,7 +291,7 @@ namespace core_graphics
 //
 //
 //   void Graphics::fillRect(
-//      const ::i32_rectangle & rectangle,
+//      const ::f64_rectangle & rectangle,
 //      ::innate_subsystem::BrushInterface * pbrush)
 //   {
 //
@@ -317,7 +316,7 @@ namespace core_graphics
 //
 //
 //   void Graphics::fillRect(
-//      const ::i32_rectangle & rectangle,
+//      const ::f64_rectangle & rectangle,
 //      const ::color::color & color)
 //   {
 //
@@ -348,7 +347,7 @@ namespace core_graphics
 //   }
 //
 //
-//   void Graphics::ellipse(const ::i32_rectangle & rectangle)
+//   void Graphics::ellipse(const ::f64_rectangle & rectangle)
 //   {
 //
 //      auto pbrushMac =
@@ -384,7 +383,7 @@ namespace core_graphics
 //   }
 //
 //
-//   void Graphics::rectangle(const ::i32_rectangle & rectangle)
+//   void Graphics::rectangle(const ::f64_rectangle & rectangle)
 //   {
 //
 //      auto pbrushMac =
@@ -513,7 +512,7 @@ namespace core_graphics
 //   void Graphics::drawText(
 //      const char * text,
 //      int cchText,
-//      ::i32_rectangle & rectangle,
+//      ::f64_rectangle & rectangle,
 //      unsigned int format,
 //      enum_align ealign)
 //   {
@@ -580,7 +579,41 @@ namespace core_graphics
 //         withAttributes:attributes];
 //
 //   }
- void cg_context::draw_line(const ::i32_point & point1, const ::i32_point & point2)
+
+
+void cg_context::save_g_state()
+{
+   
+   cg_context_save_g_state(m_cgcontext);
+   
+}
+
+
+void cg_context::restore_g_state()
+{
+   
+   cg_context_restore_g_state(m_cgcontext);
+   
+}
+
+
+void cg_context::scale_ctm(::f64 x, ::f64 y)
+{
+   
+   cg_context_scale_ctm(m_cgcontext, x, y);
+   
+}
+
+
+void cg_context::translate_ctm(::f64 x, ::f64 y)
+{
+   
+   cg_context_translate_ctm(m_cgcontext, x, y);
+   
+}
+
+
+ void cg_context::draw_line(const ::f64_point & point1, const ::f64_point & point2)
 {
     
     cg_point cgpoint1;
@@ -595,7 +628,7 @@ namespace core_graphics
    
 }
 
-void cg_context::draw_rect(const ::i32_rectangle & rectangle)
+void cg_context::draw_rect(const ::f64_rectangle & rectangle)
 {
    
    cg_rect cgrect;
@@ -605,12 +638,12 @@ void cg_context::draw_rect(const ::i32_rectangle & rectangle)
    cgrect.size.w = rectangle.width();
    cgrect.size.h = rectangle.height();
    
-   cg_context_draw_rect(m_cgcontext, cgrect);
+   cg_context_stroke_rect(m_cgcontext, cgrect);
    
 }
 
 
-void cg_context::fill_ellipse(const ::i32_rectangle & rectangle)
+void cg_context::fill_ellipse(const ::f64_rectangle & rectangle)
 {
    
    cg_rect cgrect;
@@ -624,7 +657,7 @@ void cg_context::fill_ellipse(const ::i32_rectangle & rectangle)
    
 }
 
-void cg_context::draw_ellipse(const ::i32_rectangle & rectangle)
+void cg_context::draw_ellipse(const ::f64_rectangle & rectangle)
 {
    
    cg_rect cgrect;
@@ -634,12 +667,12 @@ void cg_context::draw_ellipse(const ::i32_rectangle & rectangle)
    cgrect.size.w = rectangle.width();
    cgrect.size.h = rectangle.height();
 
-   cg_context_draw_ellipse(m_cgcontext, cgrect);
+   cg_context_stroke_ellipse(m_cgcontext, cgrect);
    
 }
 
 
-void cg_context::fill_rect(const ::i32_rectangle & rectangle)
+void cg_context::fill_rect(const ::f64_rectangle & rectangle)
 {
    
    cg_rect cgrect;
@@ -732,9 +765,9 @@ void cg_context::set_line_width(float fWidth)
 
 void cg_context::draw_text(
       const ::scoped_string & scopedstr,
-      const ::i32_rectangle & rectangle,
+      const ::f64_rectangle & rectangle,
       cg_color * pcgcolor,
-      ::core_text::ct_font * pctfont,
+      ::core_graphics::cg_font * pcgfont,
       unsigned int format,
       enum_align ealign)
 {
@@ -753,12 +786,20 @@ void cg_context::draw_text(
                         scopedstr.c_str(), scopedstr.length(),
                         cgrect,
                         pcgcolor->m_cgcolor,
-                        pctfont->m_ctfont,
+                        pcgfont->m_cgfont,
                         format,
                         ealign
                         );
    
    }
+
+
+void cg_context::set_text_position(::f64 x, ::f64 y)
+{
+   
+   cg_context_set_text_position(m_cgcontext, x, y);
+   
+}
 
 void cg_context::draw_dib(cg_dib * pdib)
 {

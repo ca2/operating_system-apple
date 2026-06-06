@@ -7,7 +7,7 @@
 #include "window.h"
 #include "acme_window_bridge.h"
 #include "acme/constant/user_key.h"
-#include "acme/nano/graphics/device.h"
+#include "acme/nano/graphics/context.h"
 #include "acme/constant/id.h"
 #include "acme/handler/topic.h"
 //#include "acme/platform/sequencer.h"
@@ -23,7 +23,7 @@ void ns_main_post(dispatch_block_t block);
 
 bool ns_app_is_running();
 
-::user::e_button_state ns_pressed_buttons_to_e_button_state(unsigned int pressedButtons);
+::user::e_key_state ns_pressed_buttons_to_e_button_state(unsigned int pressedButtons);
 
 //void ns_app_run(int argc, char ** args, const char * pszClass);
 
@@ -59,7 +59,7 @@ namespace apple_kit
 //}
 
 
-void acme_window_bridge::on_left_button_up(::user::e_button_state ebuttonstate, double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_left_button_up(const ::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -68,7 +68,7 @@ void acme_window_bridge::on_left_button_up(::user::e_button_state ebuttonstate, 
    
    pmouse->m_eusermessage = ::user::e_message_left_button_up;
    
-   pmouse->m_ebuttonstate = ebuttonstate;
+   pmouse->m_keystate = ekeystateMouse;
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -90,7 +90,7 @@ void acme_window_bridge::on_left_button_up(::user::e_button_state ebuttonstate, 
 }
 
 
-void acme_window_bridge::on_left_button_down(::user::e_button_state ebuttonstate, double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_left_button_down(const ::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -99,7 +99,7 @@ void acme_window_bridge::on_left_button_down(::user::e_button_state ebuttonstate
    
    pmouse->m_eusermessage = ::user::e_message_left_button_down;
    
-   pmouse->m_ebuttonstate = ebuttonstate;
+   pmouse->m_keystate = ekeystateMouse;
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -121,7 +121,7 @@ void acme_window_bridge::on_left_button_down(::user::e_button_state ebuttonstate
 }
 
 
-void acme_window_bridge::on_right_button_up(::user::e_button_state ebuttonstate, double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_right_button_up(const ::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -130,7 +130,7 @@ void acme_window_bridge::on_right_button_up(::user::e_button_state ebuttonstate,
    
    pmouse->m_eusermessage = ::user::e_message_right_button_up;
    
-   pmouse->m_ebuttonstate = ebuttonstate;
+   pmouse->m_keystate = ekeystateMouse;
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -152,7 +152,7 @@ void acme_window_bridge::on_right_button_up(::user::e_button_state ebuttonstate,
 }
 
 
-void acme_window_bridge::on_right_button_down(::user::e_button_state ebuttonstate, double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_right_button_down(const ::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -161,7 +161,7 @@ void acme_window_bridge::on_right_button_down(::user::e_button_state ebuttonstat
    
    pmouse->m_eusermessage = ::user::e_message_right_button_down;
    
-   pmouse->m_ebuttonstate = ebuttonstate;
+   pmouse->m_keystate = ekeystateMouse;
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -183,7 +183,7 @@ void acme_window_bridge::on_right_button_down(::user::e_button_state ebuttonstat
 }
 
 
-void acme_window_bridge::on_mouse_move(::user::e_button_state ebuttonstate, double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_mouse_move(const ::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -192,7 +192,7 @@ void acme_window_bridge::on_mouse_move(::user::e_button_state ebuttonstate, doub
    
    pmouse->m_eusermessage = ::user::e_message_mouse_move;
    
-   pmouse->m_ebuttonstate = ebuttonstate;
+   pmouse->m_keystate = ekeystateMouse;
    
    pmouse->m_pointHost = {xHost, yHost};
    
@@ -214,7 +214,7 @@ void acme_window_bridge::on_mouse_move(::user::e_button_state ebuttonstate, doub
 }
 
 
-bool acme_window_bridge::on_key_down(::user::enum_key euserkey)
+bool acme_window_bridge::on_key_down(::user::e_key  euserkey)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -234,7 +234,7 @@ bool acme_window_bridge::on_key_down(::user::enum_key euserkey)
 
    
 }
- bool acme_window_bridge::on_key_up(::user::enum_key euserkey)
+ bool acme_window_bridge::on_key_up(::user::e_key euserkey)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -410,7 +410,7 @@ void acme_window_bridge::do_tasks()
 } // namespace apple_kit
 
 
-::user::e_button_state ns_pressed_buttons_to_e_button_state(unsigned int pressedButtons)
+::user::e_key_state ns_pressed_buttons_to_e_button_state(unsigned int pressedButtons)
 {
    
    bool leftDown = (pressedButtons & (1 << 0)) != 0;
@@ -419,30 +419,30 @@ void acme_window_bridge::do_tasks()
    
    bool middleDown = (pressedButtons & (1 << 2)) != 0;
    
-   ::user::e_button_state ebuttonstate = ::user::e_button_state_none;
+   ::user::e_key_state ekeystateMouse = ::user::e_key_state_none;
    
    if(leftDown)
    {
       
-      ebuttonstate |= ::user::e_button_state_left;
+      ekeystateMouse |= ::user::e_key_state_left_button;
       
    }
    
    if(rightDown)
    {
       
-      ebuttonstate |= ::user::e_button_state_right;
+      ekeystateMouse |= ::user::e_key_state_right_button;
       
    }
    
    if(middleDown)
    {
       
-      ebuttonstate |= ::user::e_button_state_middle;
+      ekeystateMouse |= ::user::e_key_state_middle_button;
       
    }
    
-   return ebuttonstate;
+   return ekeystateMouse;
    
 }
 

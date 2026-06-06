@@ -59,18 +59,18 @@ class window;
 //
       virtual void do_tasks();
       
-      virtual void on_left_button_up(::user::e_button_state emouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_left_button_up(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
-      virtual void on_left_button_down(::user::e_button_state emouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_left_button_down(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
-      virtual void on_right_button_up(::user::e_button_state emouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_right_button_up(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
-      virtual void on_right_button_down(::user::e_button_state emouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_right_button_down(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
-      virtual void on_mouse_move(::user::e_button_state emouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_mouse_move(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
-      virtual bool on_key_down(::user::enum_key euserkey);
-      virtual bool on_key_up(::user::enum_key euserkey);
+      virtual bool on_key_down(::user::e_key euserkey);
+      virtual bool on_key_up(::user::e_key euserkey);
 
       
       virtual void on_create();

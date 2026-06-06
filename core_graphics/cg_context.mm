@@ -651,6 +651,45 @@ void cg_context_draw_text(
 }
 
 
+void cg_context_save_g_state(cg_context_t cgcontext)
+{
+   
+   CGContextSaveGState(CGCONTEXT(cgcontext));
+   
+}
+
+
+void cg_context_restore_g_state(cg_context_t cgcontext)
+{
+   
+   CGContexRestoreGState(CGCONTEXT(cgcontext));
+   
+}
+
+void cg_context_scale_ctm(cg_context_t cgcontext, cg_float x, cg_float y)
+{
+   
+   CGContextScaleCTM(CGCONTEXT(cgcontext), x, y);
+   
+}
+
+
+void cg_context_translate_ctm(cg_context_t cgcontext, cg_float x, cg_float y)
+{
+   
+   CGContextranslateCTM(CGCONTEXT(cgcontext), x, y);
+   
+}
+
+
+void cg_context_set_text_position(cg_context_t cgcontext, cg_float x, cg_float y)
+{
+   
+   CGContextSetTextPosition(CGCONTEXT(cgcontext), x, y);
+   
+}
+
+
 void cg_context_draw_line(cg_context_t cgcontext, cg_point point1, cg_point point2)
 {
    
@@ -672,7 +711,7 @@ void cg_context_draw_line(cg_context_t cgcontext, cg_point point1, cg_point poin
 }
 
 
-void cg_context_draw_rect(cg_context_t cgcontext, cg_rect rect)
+void cg_context_stroke_rect(cg_context_t cgcontext, cg_rect rect)
 {
    
    CGRect cgrect;
@@ -704,7 +743,8 @@ void cg_context_fill_rect(cg_context_t cgcontext, cg_rect rect)
 }
 
 
-void cg_context_draw_ellipse(cg_context_t cgcontext, cg_rect rect)
+
+void cg_context_stroke_ellipse(cg_context_t cgcontext, cg_rect rect)
 {
    
    CGRect cgrect;

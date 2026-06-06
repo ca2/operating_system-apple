@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "acme/_.h"
+#include "operating_system-apple/core_graphics/_.h"
 
 
 #if defined(_nano_graphics_quartz2d_project)
@@ -22,7 +22,11 @@ namespace graphics
 {
 
 
-class device;
+class context;
+
+class pen;
+class brush;
+class font;
 
 }
 

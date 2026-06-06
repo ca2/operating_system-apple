@@ -49,7 +49,7 @@ virtual public ::particle
 //
 //      int m_iBkMode = TRANSPARENT;
 //
-//      ::i32_point m_pointCurrent;
+//      ::f64_point m_pointCurrent;
 //
 //      Graphics();
 //      virtual ~Graphics();
@@ -78,21 +78,21 @@ virtual public ::particle
 //
 //      void setFont(::innate_subsystem::FontInterface * pfont);
 //
-//      void moveTo(const ::i32_point & point);
+//      void moveTo(const ::f64_point & point);
 //
-//      void lineTo(const ::i32_point & point);
+//      void lineTo(const ::f64_point & point);
 //
 //      void fillRect(
-//         const ::i32_rectangle & rectangle,
+//         const ::f64_rectangle & rectangle,
 //         ::innate_subsystem::BrushInterface * pbrush);
 //
 //      void fillRect(
-//         const ::i32_rectangle & rectangle,
+//         const ::f64_rectangle & rectangle,
 //         const ::color::color & color);
 //
-//      void ellipse(const ::i32_rectangle & rectangle);
+//      void ellipse(const ::f64_rectangle & rectangle);
 //
-//      void rectangle(const ::i32_rectangle & rectangle);
+//      void rectangle(const ::f64_rectangle & rectangle);
 //
 //      void drawBitmap(
 //         ::innate_subsystem::BitmapInterface * pbitmap,
@@ -106,7 +106,7 @@ virtual public ::particle
 //      void drawText(
 //         const char * text,
 //         int cchText,
-//         ::i32_rectangle & rectangle,
+//         ::f64_rectangle & rectangle,
 //         unsigned int format,
 //         enum_align ealign);
 //
@@ -116,11 +116,17 @@ virtual public ::particle
 //      
 //
       
-      virtual void draw_line(const ::i32_point & point1, const ::i32_point & point2);
-      virtual void draw_rect(const ::i32_rectangle & rectangle);
-      virtual void fill_rect(const ::i32_rectangle & rectangle);
-      virtual void draw_ellipse(const ::i32_rectangle & rectangle);
-      virtual void fill_ellipse(const ::i32_rectangle & rectangle);
+      virtual void save_g_state();
+      virtual void restore_g_state();
+      
+      virtual void scale_ctm(::f64 x, ::f64 y);
+      virtual void translate_ctm(::f64 x, ::f64 y);
+      
+      virtual void draw_line(const ::f64_point & point1, const ::f64_point & point2);
+      virtual void draw_rect(const ::f64_rectangle & rectangle);
+      virtual void fill_rect(const ::f64_rectangle & rectangle);
+      virtual void draw_ellipse(const ::f64_rectangle & rectangle);
+      virtual void fill_ellipse(const ::f64_rectangle & rectangle);
       virtual void draw_image(::core_graphics::cg_image * pcgimage, const ::i32_rectangle & rectangle);
       virtual void draw_image(::core_graphics::cg_image * pcgimage, const ::i32_point& point, const ::i32_rectangle & rectangle);
       virtual void set_blend_mode_on(bool bSet);
@@ -131,11 +137,13 @@ virtual public ::particle
       
       virtual void draw_text(
             const ::scoped_string & scopedstr,
-            const ::i32_rectangle & rectangle,
+            const ::f64_rectangle & rectangle,
             cg_color * pcgcolor,
-            ::core_text::ct_font * pctfont,
+            ::core_graphics::cg_font * pcgfont,
             unsigned int format,
             enum_align ealign);
+      
+      virtual void set_text_position(::f64 x, ::f64 y);
       
       virtual void draw_dib(cg_dib * pdib);
       
@@ -143,6 +151,29 @@ virtual public ::particle
 
 ::pointer < cg_context > cg_context_from_cg_context_uptr(::uptr u);
 
+
+   class keep_cgcontext
+   {
+   public:
+      
+      cg_context * m_pcgcontext;
+      
+      keep_cgcontext(cg_context * pcgcontext) :
+      m_pcgcontext(pcgcontext)
+      {
+         m_pcgcontext->save_g_state();
+      }
+      
+      ~keep_cgcontext()
+      {
+       
+         m_pcgcontext->restore_g_state();
+         
+      }
+    
+   
+   
+   };
 
 } // namespace innate_subsystem_macos
 

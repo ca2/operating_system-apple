@@ -7,7 +7,8 @@
 //
 //
 #include "framework.h"
-#include "device.h"
+#include "context.h"
+#include "operating_system-apple/core_graphics/cg_context.h"
 //#ifdef APPLE_IOS
 //#import <UIKit/UIKit.h>
 //#elif defined(MACOS)
@@ -57,12 +58,12 @@ void icon::load_image_file(const void *p, memsize size)
 
       
       
-      void icon::_draw_in_context(::quartz2d::nano::graphics::device * pdevice, int x, int y, int cx, int cy)
+      void icon::_draw_in_context(::quartz2d::nano::graphics::context * pcontext, int x, int y, int cx, int cy)
       {
          
 #ifdef MACOS
          
-         auto pnsgraphicscontext = [NSGraphicsContext graphicsContextWithCGContext:pdevice->m_cgcontext flipped: true];
+         auto pnsgraphicscontext = [NSGraphicsContext graphicsContextWithCGContext:(CGContextRef)pcontext->m_pcgcontext->m_cgcontext.m_u flipped: true];
          
          [ NSGraphicsContext setCurrentContext:pnsgraphicscontext ];
          

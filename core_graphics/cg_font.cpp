@@ -6,43 +6,44 @@
 //  <3ThomasBorregaardSørensen!!
 //
 #include "framework.h"
-#include "ct_font.h"
-#include <CoreText/CoreText.h>
-#include "_mm.h"
+#include "cg_font.h"
 
 
-namespace core_text
+namespace core_graphics
 {
 
-ct_font::ct_font()
+cg_font::cg_font()
 {
    
    
    
 }
 
-ct_font::~ct_font()
+cg_font::~cg_font()
 {
    
-   if(m_ctfont.is_set())
+   if(m_cgfont.is_set())
    {
       
-      ct_font_release(m_ctfont);
+      cg_font_release(m_cgfont);
       
    }
    
 }
 
 
-void ct_font::create_font_with_name(const char *pszName, float fPointSize, int iFontWeight, bool bItalic)
+void cg_font::create_font_with_name(const char *pszName, float fPointSize, int iFontWeight, bool bItalic)
 
 {
-   ct_font_release(m_ctfont);
-   
-   auto cfstr =
+   cg_font_release(m_cgfont);
+
+   auto cfstring =
       create_cf_string(
          pszName,
          (int)strlen(pszName));
+
+   create_font_with_name_and_attributes_1(cfstring, fPointSize, iFontWeight, bItalic);
+   
 
       //
       // Base font
@@ -95,13 +96,13 @@ void ct_font::create_font_with_name(const char *pszName, float fPointSize, int i
 
          CFRelease(baseFont);
 
-         m_ctfont.m_u = (::uptr) finalFont;
+         m_cgfont.m_u = (::uptr) finalFont;
 
       }
       else
       {
 
-         m_ctfont.m_u =(::uptr) baseFont;
+         m_cgfont.m_u =(::uptr) baseFont;
 
       }
 }

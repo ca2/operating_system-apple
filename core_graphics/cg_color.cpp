@@ -7,7 +7,6 @@
 //
 #include "framework.h"
 #include "cg_color.h"
-#include "_mm.h"
 
 namespace core_graphics
 {

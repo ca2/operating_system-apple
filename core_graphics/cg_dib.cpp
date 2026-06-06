@@ -9,7 +9,6 @@
 #include "cg_dib.h"
 #include "cg_image.h"
 #include "acme/prototype/geometry2d/size.h"
-#include "_mm.h"
 
 
 namespace core_graphics

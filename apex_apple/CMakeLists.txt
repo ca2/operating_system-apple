@@ -8,7 +8,7 @@ project(apex_apple CXX OBJCXX)
 list(APPEND library_source
         _.cpp
    _.h
-        _apex_apple.h
+        #_apex_apple.h
         _apple.mm
         _c_mm.h
         _mm.h
@@ -16,19 +16,19 @@ list(APPEND library_source
    datetime.cpp
    datetime.h
    _factory.cpp
-   file_context.cpp
-   file_context.h
+   #file_context.cpp
+   #file_context.h
    framework.cpp
    framework.h
    node.cpp
    node.h
         process.cpp
         process.h
-   system_color.cpp
-   system_time.cpp
+   #system_color.cpp
+   #system_time.cpp
         timer.mm
-        user.cpp
-        user.h
+        #user.cpp
+        #user.h
    )
 
 

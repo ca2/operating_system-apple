@@ -9,27 +9,27 @@
 
 
 
-namespace core_text
+namespace core_graphics
 {
 
-   class CLASS_DECL_CORE_GRAPHICS ct_font :
+   class CLASS_DECL_CORE_GRAPHICS cg_font :
    virtual public ::particle
    {
    public:
       
       
-      ct_font_t m_ctfont;
+      cg_font_t m_cgfont;
       
-      ct_font();
-      ~ct_font() override;
+      cg_font();
+      ~cg_font() override;
       
       
-      virtual void create_font_with_name(const char * pszName, float fPointSize, int iFontWeight, bool bItalic, bool bUnderline);
-      
+//      virtual void create_font_with_name(const char * pszName, float fPointSize, int iFontWeight, bool bItalic, bool bUnderline);
+//      
    };
 
 
-} // namespace core_text
+} // namespace core_graphics
 
 
 

@@ -4,13 +4,13 @@ project(audio_core_audio CXX)
 
 list(APPEND library_source
         _.h
-        aligned.cpp
-        aligned.h
-        aligned_pointer.cpp
-        aligned_pointer.h
+        #aligned.cpp
+        #aligned.h
+        #aligned_pointer.cpp
+        #aligned_pointer.h
         command.h
         _factory.cpp
-        factory_exchange.h
+        #factory_exchange.h
         framework.cpp
         framework.h
         toolbox.cpp

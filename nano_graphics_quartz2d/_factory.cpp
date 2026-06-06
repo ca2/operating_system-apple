@@ -9,7 +9,7 @@
 #include "acme/nano/graphics/pen.h"
 #include "acme/nano/graphics/font.h"
 #include "acme/nano/graphics/graphics.h"
-#include "device.h"
+#include "context.h"
 
 
 IMPLEMENT_FACTORY(nano_graphics_quartz2d)
@@ -31,7 +31,7 @@ IMPLEMENT_FACTORY(nano_graphics_quartz2d)
    pfactory->add_factory_item < ::nano::graphics::font >();
    pfactory->add_factory_item < ::nano::graphics::brush >();
    pfactory->add_factory_item < ::nano::graphics::pen >();
-   pfactory->add_factory_item < ::quartz2d::nano::graphics::device, ::nano::graphics::device >();
+   pfactory->add_factory_item < ::quartz2d::nano::graphics::context, ::nano::graphics::context >();
 
 }
 

@@ -45,7 +45,7 @@ namespace quartz2d
          
          //void __icon_release();
          
-         void _draw_in_context(::quartz2d::nano::graphics::device * pdevice, int x, int y, int cx, int cy);
+         void _draw_in_context(::quartz2d::nano::graphics::context * pcontext, int x, int y, int cx, int cy);
          
       };
       } // namespace graphics

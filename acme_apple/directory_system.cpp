@@ -694,7 +694,7 @@ namespace acme_apple
                
                listing.m_pathUser = icloud_container2();
                
-               if(listing.m_eflag == 0)
+               if(listing.m_eflag == ::file::e_flag_none)
                {
                   
                   listing.m_eflag = ::file::e_flag_file_or_folder;

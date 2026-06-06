@@ -8,15 +8,15 @@ project(aura_apple CXX)
 list(APPEND library_source
    _.cpp
    _.h
-   _aura_apple.h
+   #_aura_apple.h
         _mm.h
    _factory.cpp
-   factory_exchange.h
+   #factory_exchange.h
    framework.cpp
    framework.h
    node.cpp
    node.h
-        user.h
+        #user.h
 
    )
 

@@ -11,6 +11,8 @@
 
 void ct_font_release(ct_font_t & ctfont)
 {
+   
+   
    if(ctfont.is_set())
    {
       
@@ -19,6 +21,7 @@ void ct_font_release(ct_font_t & ctfont)
       ctfont.clear();
       
    }
+   
    
 }
 

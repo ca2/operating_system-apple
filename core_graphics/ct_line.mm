@@ -15,7 +15,7 @@ void ct_line_release(ct_line_t & ctline)
    if(ctline.is_set())
    {
       
-      CTLineRelease(CTLINE(ctline));
+      CFRelease(CTLINE(ctline));
       
       ctline.clear();
       
@@ -24,34 +24,48 @@ void ct_line_release(ct_line_t & ctline)
 }
 
 
-ct_line_t ct_line_create_from_text_and_font(cf_string_t cfstr, cg_font_t cgfont)
+ct_line_t ct_line_create_from_text_and_font(cf_string_t cfstr, ct_font_t ctfont)
 {
    
    
    // Step 3: Create an attributes dictionary
-   auto attributes = as_CFRef(CFDictionaryCreate(
+   auto attributes = CFDictionaryCreate(
                                                  NULL,
                                                  (const void *[]){ kCTFontAttributeName },
-                                                 (const void *[]){ CGFONT(cgfont) },
+                                                 (const void *[]){ CTFONT(ctfont) },
                                                  1,
                                                  &kCFTypeDictionaryKeyCallBacks,
-                                                 &kCFTypeDictionaryValueCallBacks));
+                                                 &kCFTypeDictionaryValueCallBacks);
    
    // Step 4: Create an attributed string
-   auto attrString = as_CFRef(CFAttributedStringCreate(NULL, CFSTRING(cfstr), attributes));
+   auto attrString = CFAttributedStringCreate(NULL, CFSTRING(cfstr), attributes);
    
    // Step 5: Create a CTLine from the attributed string
-   auto line = as_CFRef(CTLineCreateWithAttributedString(attrString));
+   auto line = CTLineCreateWithAttributedString(attrString);
    
+   CFRelease(attributes);
+   
+   CFRelease(attrString);
+   
+   return {(::uptr)line};
    
 }
 
 
-cg_float ct_line_get_typographics_bounds(ct_line_t ctline, cg_float * pascent, cg_float * pdescent, cg_float & pleading)
+cg_float ct_line_get_typographic_bounds(ct_line_t ctline, cg_float * pascent, cg_float * pdescent, cg_float * pleading)
 {
    
    double width = CTLineGetTypographicBounds(CTLINE(ctline), pascent, pdescent, pleading);
    
    return width;
+   
+}
+
+
+
+void ct_line_draw(ct_line_t ctline, cg_context_t cgcontext)
+{
+   
+   CTLineDraw(CTLINE(ctline), CGCONTEXT(cgcontext));
    
 }

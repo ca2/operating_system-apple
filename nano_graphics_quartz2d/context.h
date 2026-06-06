@@ -113,14 +113,25 @@ namespace quartz2d
       ~context() override;
 
       
+      ::pointer < ::nano::graphics::image > create_bitmap_context(void * pdata,
+                                                                 const ::i32_size & size, int iBytesPerRow) override;
+      
+      void update_bitmap_context_image(::pointer < ::nano::graphics::image > & pimage) override;
+      
+      
+      void set_blend_mode(::nano::graphics::enum_blend_mode eblendmode) override;
+      void set_smoothing_mode(::nano::graphics::enum_smoothing_mode esmoothingmode) override;
+
       void set_pen(::nano::graphics::pen * ppen) override;
       void set_brush(::nano::graphics::brush * pbrush) override;
       void set_font(::nano::graphics::font * pfont) override;
 
       
+      void line(const ::f64_point& point1, const ::f64_point& point2) override;
+      
       void attach(void * posdata, const ::i32_size & size, ::i32 iType) override;
-      void _draw_text(const ::scoped_string & scopedstr, const ::f64_rectangle & rectangleText, const ::e_align & ealign,
-                      const ::e_draw_text & edrawtext) override;
+      void _draw_text(const ::scoped_string & scopedstr, const ::f64_rectangle & rectangleText,
+                      const ::e_draw_text & edrawtext, const ::e_align & ealign) override;
       
       ::f64_size get_text_extents(const ::scoped_string & scopedstr) override;
 
@@ -129,9 +140,9 @@ namespace quartz2d
       void ellipse(const ::f64_rectangle & rectangle) override;
 
       
-      void draw_icon(::nano::graphics::icon * picon, int x, int y, int cx, int cy) override;
-      void draw_image(::nano::graphics::image * pimage, const ::f64_rectangle & rectangle) override;
-      void draw_image(::nano::graphics::image * pimage, const ::f64_point & point, const ::f64_rectangle & rectangle) override;
+      void draw_icon(int x, int y, int cx, int cy, ::nano::graphics::icon * picon) override;
+      void draw_image(const ::f64_rectangle & rectangle, ::nano::graphics::image * pimage) override;
+      void draw_image(const ::f64_point & point, const ::f64_rectangle & rectangle, ::nano::graphics::image * pimage) override;
 
       
       void _set_source(const ::color::color & color);
@@ -145,6 +156,8 @@ namespace quartz2d
       //void _select_font(::nano::graphics::font * pnanofont);
       
       void translate(::f64 x, ::f64 y) override;
+      
+      void do_path(::nano::graphics::path *ppath) override;
       
    };
 

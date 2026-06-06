@@ -28,6 +28,10 @@ class pen;
 class brush;
 class font;
 
+class image;
+class dib;
+class path;
+
 }
 
 }

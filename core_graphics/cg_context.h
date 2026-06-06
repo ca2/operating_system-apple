@@ -116,6 +116,10 @@ virtual public ::particle
 //      
 //
       
+      virtual ::pointer < cg_image > create_bitmap_context(void * pdata, const ::i32_size & size, ::i32 iBytesPerRow);
+      
+      virtual void update_bitmap_context_image(::pointer < cg_image > & pcgimage);
+      
       virtual void save_g_state();
       virtual void restore_g_state();
       
@@ -127,8 +131,8 @@ virtual public ::particle
       virtual void fill_rect(const ::f64_rectangle & rectangle);
       virtual void draw_ellipse(const ::f64_rectangle & rectangle);
       virtual void fill_ellipse(const ::f64_rectangle & rectangle);
-      virtual void draw_image(::core_graphics::cg_image * pcgimage, const ::i32_rectangle & rectangle);
-      virtual void draw_image(::core_graphics::cg_image * pcgimage, const ::i32_point& point, const ::i32_rectangle & rectangle);
+      virtual void draw_image(const ::i32_rectangle & rectangle, ::core_graphics::cg_image * pcgimage);
+      virtual void draw_image(const ::i32_point& point, const ::i32_rectangle & rectangle, ::core_graphics::cg_image * pcgimage);
       virtual void set_blend_mode_on(bool bSet);
       virtual void set_anti_alias_on(bool bSet);
       virtual void set_line_width(float fWidth);
@@ -145,7 +149,15 @@ virtual public ::particle
       
       virtual void set_text_position(::f64 x, ::f64 y);
       
-      virtual void draw_dib(cg_dib * pdib);
+      
+      virtual void add_path(::core_graphics::cg_path * pcgpath);
+      virtual void draw_path();
+      virtual void fill_path();
+
+      
+      //virtual void draw_dib(cg_dib * pdib);
+      
+      //virtual void draw_image(cg_image_t cgimage);
       
    };
 

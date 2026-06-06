@@ -12,9 +12,9 @@
 #include "framework.h"
 #include "cg_color.h"
 #include "cg_context.h"
-#include "cg_dib.h"
 #include "cg_image.h"
 #include "cg_font.h"
+#include "cg_path.h"
 #include "acme/prototype/geometry2d/rectangle.h"
 //#import <Cocoa/Cocoa.h>
 //#import <CoreText/CoreText.h>
@@ -22,6 +22,37 @@
 
 namespace core_graphics
 {
+
+
+   ::pointer < cg_image > cg_context::create_bitmap_context(void * pdata, const ::i32_size & size, int iBytesPerRow)
+   {
+      
+      cg_size cgsize;
+      
+      cgsize.w = size.cx;
+      cgsize.h = size.cy;
+      
+      auto pcgimage = create_newø<cg_image>();
+      
+      m_cgcontext = cg_bitmap_context_create(&pcgimage->m_cgimage, pdata, cgsize, iBytesPerRow);
+      
+      return pcgimage;
+      
+   }
+
+void cg_context::update_bitmap_context_image(::pointer < cg_image > & pcgimage)
+{
+   
+   defer_construct_newø(pcgimage);
+   if(pcgimage->m_cgimage.m_u)
+   {
+      cg_image_release(pcgimage->m_cgimage);
+   }
+   cg_image_from_cg_bitmap_context(pcgimage->m_cgimage, m_cgcontext);
+   
+}
+
+
 
 //   constexpr int TRANSPARENT = 1;
 //   constexpr int OPAQUE = 2;
@@ -687,7 +718,7 @@ void cg_context::fill_rect(const ::f64_rectangle & rectangle)
 }
 
 
-void cg_context::draw_image(::core_graphics::cg_image * pcgimage, const ::i32_rectangle & rectangle)
+void cg_context::draw_image(const ::i32_rectangle & rectangle, ::core_graphics::cg_image * pcgimage)
 {
    
    cg_rect cgrect;
@@ -697,14 +728,14 @@ void cg_context::draw_image(::core_graphics::cg_image * pcgimage, const ::i32_re
    cgrect.size.w = rectangle.width();
    cgrect.size.h = rectangle.height();
 
-   cg_context_draw_image(m_cgcontext, pcgimage->m_cgimage, cgrect);
+   cg_context_draw_image(m_cgcontext, cgrect, pcgimage->m_cgimage);
    
    
 }
 
 
 
-void cg_context::draw_image(::core_graphics::cg_image * pcgimage, const ::i32_point & point, const ::i32_rectangle & rectangle)
+void cg_context::draw_image(const ::i32_point & point, const ::i32_rectangle & rectangle, ::core_graphics::cg_image * pcgimage)
 {
 
    cg_point cgpoint;
@@ -719,7 +750,7 @@ void cg_context::draw_image(::core_graphics::cg_image * pcgimage, const ::i32_po
    cgrect.size.w = rectangle.width();
    cgrect.size.h = rectangle.height();
 
-   cg_context_draw_image(m_cgcontext, pcgimage->m_cgimage, cgpoint, cgrect);
+   cg_context_draw_image(m_cgcontext, cgpoint, cgrect, pcgimage->m_cgimage);
    
    
 }
@@ -801,16 +832,39 @@ void cg_context::set_text_position(::f64 x, ::f64 y)
    
 }
 
-void cg_context::draw_dib(cg_dib * pdib)
+
+void cg_context::add_path(::core_graphics::cg_path * pcgpath)
 {
    
-   pdib->update_image();
-   
-   cg_context_draw_dib(
-                        m_cgcontext,
-                        &pdib->m_cgdib);
+   cg_context_add_path(m_cgcontext, pcgpath->m_cgpath);
    
 }
+
+void cg_context::draw_path()
+{
+   
+   cg_context_stroke_path(m_cgcontext);
+   
+}
+
+void cg_context::fill_path()
+{
+   
+   cg_context_fill_path(m_cgcontext);
+   
+}
+
+
+//void cg_context::draw_dib(cg_dib * pdib)
+//{
+//   
+//   pdib->update_image();
+//   
+//   cg_context_draw_dib(
+//                        m_cgcontext,
+//                        &pdib->m_cgdib);
+//   
+//}
 
 ::pointer < cg_context > cg_context_from_cg_context_uptr(::uptr u)
 {

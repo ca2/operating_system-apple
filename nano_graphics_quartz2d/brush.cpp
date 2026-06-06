@@ -27,6 +27,7 @@
 // camilo on 2026-06-05 ~17:00 <3ThomasBorregaardSørensen!! Mummi!! Bilbo!!
 #include "framework.h"
 #include "brush.h"
+#include "operating_system-apple/core_graphics/cg_color.h"
 
 
 namespace quartz2d
@@ -52,6 +53,17 @@ namespace quartz2d
 
    }
 
+      
+      void brush::create_solid_brush(const ::color::color& color)
+      {
+         
+         
+         m_pcgcolor = create_newø<::core_graphics::cg_color>();
+         
+         m_pcgcolor->create_color(color);
+         
+         
+      }
 
    // void *Brush::_HGDIOBJ()
    // {

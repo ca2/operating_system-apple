@@ -52,6 +52,10 @@ namespace quartz2d
 
       brush();
       ~brush() override;
+      
+      
+      void create_solid_brush(const ::color::color& color) override;
+
 
 
       //void * _HGDIOBJ() override;

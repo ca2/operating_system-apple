@@ -39,7 +39,7 @@ void ct_line::create_with_text_and_font(::core_foundation::cf_string * pcfstring
 ::f64 ct_line::get_typographic_bounds(cg_float * pascent, cg_float * pdescent, cg_float * pleading)
 {
    
-   return ct_line_get_typographic_founds(m_ctline, pascent, pdescent, pleading);
+   return ct_line_get_typographic_bounds(m_ctline, pascent, pdescent, pleading);
    
 }
 

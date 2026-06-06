@@ -33,31 +33,31 @@ namespace core_graphics
 
    struct cg_affine_transform_t;
 
-   struct cg_dib_t
-   {
-      
-      void *                     m_p = nullptr;
-      cg_size                    m_cgsize = {};
-      int                        m_iBytesPerRow = 0;
-      
-      ::pointer < cg_context >   m_pcgcontext;
-      ::pointer < cg_image >     m_pcgimage;
-      
-      bool is_ok() const
-      {
-         
-         return ::is_set(m_p) & (m_cgsize.w > 0) && (m_cgsize.h > 0) && (m_iBytesPerRow > 0);
-         
-      }
-      
-      bool is_null() const
-      {
-         
-         return !is_ok();
-         
-      }
-      
-   };
+//   struct cg_dib_t
+//   {
+//      
+//      void *                     m_p = nullptr;
+//      cg_size                    m_cgsize = {};
+//      int                        m_iBytesPerRow = 0;
+//      
+//      ::pointer < cg_context >   m_pcgcontext;
+//      ::pointer < cg_image >     m_pcgimage;
+//      
+//      bool is_ok() const
+//      {
+//         
+//         return ::is_set(m_p) & (m_cgsize.w > 0) && (m_cgsize.h > 0) && (m_iBytesPerRow > 0);
+//         
+//      }
+//      
+//      bool is_null() const
+//      {
+//         
+//         return !is_ok();
+//         
+//      }
+//      
+//   };
 
 } // namespace core_graphics
 
@@ -85,6 +85,10 @@ using namespace core_graphics;
 using namespace core_text;
 
 
+cg_context_t cg_bitmap_context_create(cg_image_t * pcgimage, void * pdata, cg_size cgsize, ::i32 iBytesPerRow);
+
+
+
 void cg_context_save_g_state(cg_context_t cgcontext);
 void cg_context_restore_g_state(cg_context_t cgcontext);
 
@@ -99,8 +103,14 @@ void cg_context_stroke_rect(cg_context_t cgcontext, cg_rect rect);
 void cg_context_fill_rect(cg_context_t cgcontext, cg_rect rect);
 void cg_context_fill_ellipse(cg_context_t cgcontext, cg_rect rect);
 void cg_context_stroke_ellipse(cg_context_t cgcontext, cg_rect rect);
-void cg_context_draw_image(cg_context_t cgcontext, cg_image_t nsimage, cg_point point, cg_rect rect);
-void cg_context_draw_image(cg_context_t cgcontext, cg_image_t nsimage, cg_rect rect);
+
+
+void cg_context_draw_image(cg_context_t cgcontext, cg_point cgpoint, cg_rect cgrect, cg_image_t cgimage);
+
+void cg_context_draw_image(cg_context_t cgcontext, cg_rect cgrect, cg_image_t cgimage);
+
+//void cg_context_draw_image(cg_context_t cgcontext, cg_image_t nsimage, cg_point point, cg_rect rect);
+//void cg_context_draw_image(cg_context_t cgcontext, cg_image_t nsimage, cg_rect rect);
 void cg_context_set_blend_mode_on(cg_context_t cgcontext, bool bSet);
 void cg_context_set_anti_alias_on(cg_context_t cgcontext, bool bSet);
 void cg_context_set_stroke_color_with_color(cg_context_t cgcontext, cg_color_t cgcolor);
@@ -117,9 +127,13 @@ void cg_context_draw_text(
       unsigned int format,
       enum_align ealign);
 
+void cg_context_add_path(cg_context_t cgcontext, cg_path_t cgpath);
+void cg_context_stroke_path(cg_context_t cgcontext);
+void cg_context_fill_path(cg_context_t cgcontext);
+
 void cg_context_set_text_position(cg_context_t cgcontext, cg_float x, cg_float y);
 
-void cg_context_draw_dib(cg_context_t cgcontext, cg_dib_t * pdib);
+//void cg_context_draw_image(cg_context_t cgcontext, cg_image_t pimage);
 
 void cg_path_release(cg_path_t & cgpath);
 cg_path_t cg_mutable_path_create();
@@ -143,9 +157,9 @@ cf_string_t create_cf_string(const char * psz, int size);
 void cf_release(cf_string_t & cfstring);
 
 
-void cg_dib_release(cg_dib_t & cgdib);
-bool cg_dib_create_from_cg_image(cg_dib_t & cgdib, cg_image_t sourceImage);
-bool cg_dib_create(cg_dib_t & cgdib, cg_size size);
+//void cg_dib_release(cg_dib_t & cgdib);
+//bool cg_dib_create_from_cg_image(cg_dib_t & cgdib, cg_image_t sourceImage);
+//bool cg_dib_create(cg_dib_t & cgdib, cg_size size);
 
 
 void cg_font_release(cg_font_t & cgfont);
@@ -155,7 +169,7 @@ ct_font_t ct_font_create_with_name_and_attributes_1(cf_string_t cfstring, cg_flo
 
 void ct_line_release(ct_line_t & ctline);
 ct_line_t ct_line_create_from_text_and_font(cf_string_t cfstrint, ct_font_t ctfont);
-cg_float ct_line_get_typographic_founds(ct_line_t ctline, cg_float * pascent, cg_float * pdescent, cg_float * pleading);
+cg_float ct_line_get_typographic_bounds(ct_line_t ctline, cg_float * pascent, cg_float * pdescent, cg_float * pleading);
 void ct_line_draw(ct_line_t ctline, cg_context_t cgcontext);
 
 

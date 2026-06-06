@@ -11,7 +11,6 @@
 #include "cg_image.h"
 
 
-
 void cg_context_release(cg_context_t & cgcontext)
 {
  
@@ -24,6 +23,65 @@ void cg_context_release(cg_context_t & cgcontext)
       
    }
 }
+
+
+cg_context_t cg_bitmap_context_create(cg_image_t * pcgimage, void * pdata, cg_size cgsize, ::i32 iBytesPerRow)
+{
+   
+   
+   size_t width  = (int) cgsize.w;
+   size_t height = (int) cgsize.h;
+   
+   //size_t bytesPerPixel = 4;
+   //size_t bytesPerRow = width * bytesPerPixel;
+   
+   //void * data = calloc(height, bytesPerRow);
+   //
+   //if(data == NULL)
+   //{
+   //   return false;
+   //}
+   
+   CGColorSpaceRef colorSpace =
+   CGColorSpaceCreateDeviceRGB();
+   
+   
+   CGContextRef context =
+   CGBitmapContextCreate(
+                         pdata,
+                         width,
+                         height,
+                         8,
+                         iBytesPerRow,
+                         colorSpace,
+                         //(bOpaque ?
+                         //kCGImageAlphaNoneSkipFirst :
+                         kCGImageAlphaPremultipliedFirst
+                         | kCGBitmapByteOrder32Little);
+   
+   CGColorSpaceRelease(colorSpace);
+   
+   
+
+   CGImageRef cgimageref = CGBitmapContextCreateImage(context);
+
+   //cgdib.m_p = data;
+   //cgdib.m_cgsize.w = width;
+   //cgdib.m_cgsize.h = height;
+   //cgdib.m_iBytesPerRow = bytesPerRow;
+//   ::system()->construct_newø(cgdib.m_pcgcontext);
+//      cgdib.m_pcgcontext->m_cgcontext.m_u = (::uptr) context;
+//   ::system()->construct_newø(cgdib.m_pcgimage);
+//   cgdib.m_pcgimage->m_cgimage.m_u = (::uptr) image;
+   //cgdib.m_pcgcontext = cg_context_from_cg_context_uptr((::uptr) context);
+   //cgdib.m_pcgimage = cg_image_from_cg_image_uptr((::uptr) cgimageref);
+
+   pcgimage->m_u = (::uptr) cgimageref;
+   
+   return { (::uptr) context};
+   
+}
+
 
 
 //#define CGCONTEXT(cgcontext) ((CGContextRef)cgcontext)
@@ -521,14 +579,14 @@ void cg_context_release(cg_context_t & cgcontext)
 
 
 void cg_context_draw_text(
-      cg_context_t cgcontext,
-      const char * text,
-      int cchText,
-      cg_rect rect,
-      cg_color_t cgcolor,
-      ct_font_t ctfont,
-      unsigned int format,
-      enum_align ealign)
+                          cg_context_t cgcontext,
+                          const char * text,
+                          int cchText,
+                          cg_rect rect,
+                          cg_color_t cgcolor,
+                          cg_font_t ctfont,
+                          unsigned int format,
+                          enum_align ealign)
 {
 
    
@@ -650,6 +708,28 @@ void cg_context_draw_text(
 
 }
 
+void cg_context_add_path(cg_context_t cgcontext, cg_path_t cgpath)
+{
+   
+   CGContextAddPath(CGCONTEXT(cgcontext), CGPATH(cgpath));
+   
+}
+
+void cg_context_stroke_path(cg_context_t cgcontext)
+{
+   
+   CGContextStrokePath(CGCONTEXT(cgcontext));
+   
+}
+
+void cg_context_fill_path(cg_context_t cgcontext)
+{
+   
+   CGContextFillPath(CGCONTEXT(cgcontext));
+   
+}
+
+
 
 void cg_context_save_g_state(cg_context_t cgcontext)
 {
@@ -662,7 +742,7 @@ void cg_context_save_g_state(cg_context_t cgcontext)
 void cg_context_restore_g_state(cg_context_t cgcontext)
 {
    
-   CGContexRestoreGState(CGCONTEXT(cgcontext));
+   CGContextRestoreGState(CGCONTEXT(cgcontext));
    
 }
 
@@ -677,7 +757,7 @@ void cg_context_scale_ctm(cg_context_t cgcontext, cg_float x, cg_float y)
 void cg_context_translate_ctm(cg_context_t cgcontext, cg_float x, cg_float y)
 {
    
-   CGContextranslateCTM(CGCONTEXT(cgcontext), x, y);
+   CGContextTranslateCTM(CGCONTEXT(cgcontext), x, y);
    
 }
 
@@ -743,7 +823,6 @@ void cg_context_fill_rect(cg_context_t cgcontext, cg_rect rect)
 }
 
 
-
 void cg_context_stroke_ellipse(cg_context_t cgcontext, cg_rect rect)
 {
    
@@ -786,7 +865,7 @@ void cg_context_set_fill_color_with_color(cg_context_t cgcontext, cg_color_t cgc
 }
 
 
-void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_rect rect)
+void cg_context_draw_image(cg_context_t cgcontext, cg_rect rect, cg_image_t cgimage)
 {
    
    auto cgcontextref = CGCONTEXT(cgcontext);
@@ -797,8 +876,8 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_rect r
    
    auto imageHeight = (::i32) CGImageGetHeight(cgimageref);
    
-   CGContextTranslateCTM(cgcontextref, 0, imageHeight);
-   CGContextScaleCTM(cgcontextref, 1.0, -1.0);
+   //CGContextTranslateCTM(cgcontextref, 0, imageHeight);
+   //CGContextScaleCTM(cgcontextref, 1.0, -1.0);
    
    CGRect cgrectDraw;
    
@@ -810,10 +889,11 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_rect r
    CGContextDrawImage(cgcontextref, cgrectDraw, cgimageref);
    
    CGContextRestoreGState(cgcontextref);
+   
 }
 
 
-void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_point point, cg_rect rect)
+void cg_context_draw_image(cg_context_t cgcontext, cg_point point, cg_rect rect, cg_image_t cgimage)
 {
    
    auto cgcontextref = CGCONTEXT(cgcontext);
@@ -853,7 +933,6 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_image_t cgimage, cg_point 
 }
 
 
-
 void cg_context_set_stroke_color_with_color(cg_context_t cgcontext, cg_color_t cgcolor)
 {
    
@@ -887,19 +966,38 @@ void cg_context_set_line_width(cg_context_t cgcontext, cg_float fLineWidth)
 
 }
 
-void cg_context_draw_dib(cg_context_t cgcontext, cg_dib_t * pdib)
-{
-   
-   auto cgcontextref = CGCONTEXT(cgcontext);
-   
-   CGRect r{};
-   
-   r.size.width = pdib->m_cgsize.w;
-   r.size.height = pdib->m_cgsize.h;
-   
-   auto cgimageref = CGIMAGE(pdib->m_pcgimage->m_cgimage);
-   
-   CGContextDrawImage(cgcontextref, r, cgimageref);
-   
-}
+//void cg_context_draw_dib(cg_context_t cgcontext, cg_dib_t * pdib)
+//{
+//   
+//   auto cgcontextref = CGCONTEXT(cgcontext);
+//   
+//   CGRect r{};
+//   
+//   r.size.width = pdib->m_cgsize.w;
+//   r.size.height = pdib->m_cgsize.h;
+//   
+//   auto cgimageref = CGIMAGE(pdib->m_pcgimage->m_cgimage);
+//   
+//   CGContextDrawImage(cgcontextref, r, cgimageref);
+//   
+//}
 
+
+
+//void cg_context_draw_image(cg_context_t cgcontext, cg_rect cgrect, cg_image_t cgimage)
+//{
+//   
+//   auto cgcontextref = CGCONTEXT(cgcontext);
+//   
+//   CGRect r{};
+//   
+//   r.origin.x = cgrect.origin.x;
+//   r.origin.y = cgrect.origin.y;
+//   r.size.width = cgrect.size.w;
+//   r.size.height = cgrect.size.h;
+//   
+//   auto cgimageref = CGIMAGE(cgimage);
+//   
+//   CGContextDrawImage(cgcontextref, r, cgimageref);
+//   
+//}

@@ -51,7 +51,7 @@ namespace quartz2d
          void image::_draw_in_context(::quartz2d::nano::graphics::context * pcontext, const ::f64_point & point,   const ::f64_rectangle & rectangle)
          {
       
-      
+            
             
          }
 

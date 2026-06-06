@@ -29,28 +29,36 @@ void cg_path_release(cg_path_t & cgpath)
 cg_path_t cg_mutable_path_create()
 {
    
-   CGMutablePathRef mutablepathref = CGMutablePathCreate();
+   CGMutablePathRef mutablepathref = CGPathCreateMutable();
 
    return {(::uptr) mutablepathref};
 
 }
 
 
-
-
 void cg_path_add_arc(cg_path_t cgpath,
-                     const cg_affine_transform_t * ptransfrom,
+                     const cg_affine_transform_t * ptransform,
                      cg_float x, cg_float y, cg_float radius, cg_float startAngle, cg_float endAngle,
                      bool clockwise)
 {
    
-   CGPathAddArc(CGPATH(cgpath), ptransform, x, y, radius, startAngle, endAngle, clockwise);
+   
+   CGPathAddArc((CGMutablePathRef) CGPATH(cgpath),
+                 ptransform,
+                x, y, radius, startAngle, endAngle, clockwise);
+   
    
 }
+
+
 void cg_path_close_subpath(cg_path_t cgpath)
 {
    
-   CGPathCloseSubPath(CGPATH(cgpath));
+   
+   CGPathCloseSubpath((CGMutablePathRef) CGPATH(cgpath));
+   
+   
 }
+
 
 

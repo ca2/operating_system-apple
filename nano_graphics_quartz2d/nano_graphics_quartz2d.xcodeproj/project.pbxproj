@@ -47,6 +47,12 @@
 		9AE47AB32FD365E9003088D6 /* brush.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE47AB12FD365E9003088D6 /* brush.cpp */; };
 		9AE47AB42FD365E9003088D6 /* brush.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AE47AB12FD365E9003088D6 /* brush.cpp */; };
 		9AE47AB52FD365E9003088D6 /* brush.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE47AB02FD365E9003088D6 /* brush.h */; };
+		9AF57E732FD3E4C000728206 /* libcore_foundation.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF57E722FD3E4C000728206 /* libcore_foundation.dylib */; };
+		9AF57E742FD3E55000728206 /* libcore_graphics.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A50C0592FD366CF003AF0A5 /* libcore_graphics.dylib */; };
+		9AF57E7A2FD3EC9200728206 /* dib.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AF57E792FD3EC8F00728206 /* dib.h */; };
+		9AF57E7B2FD3EC9200728206 /* dib.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AF57E792FD3EC8F00728206 /* dib.h */; };
+		9AF57E7D2FD3EC9900728206 /* dib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AF57E7C2FD3EC9800728206 /* dib.cpp */; };
+		9AF57E7E2FD3EC9900728206 /* dib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AF57E7C2FD3EC9800728206 /* dib.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +99,9 @@
 		9AE47AB02FD365E9003088D6 /* brush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = brush.h; sourceTree = "<group>"; };
 		9AE47AB12FD365E9003088D6 /* brush.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = brush.cpp; sourceTree = "<group>"; };
 		9AE47AB62FD366B8003088D6 /* core_graphics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = core_graphics.xcodeproj; path = ../core_graphics/core_graphics.xcodeproj; sourceTree = SOURCE_ROOT; };
+		9AF57E722FD3E4C000728206 /* libcore_foundation.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libcore_foundation.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AF57E792FD3EC8F00728206 /* dib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dib.h; sourceTree = "<group>"; };
+		9AF57E7C2FD3EC9800728206 /* dib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dib.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF57E742FD3E55000728206 /* libcore_graphics.dylib in Frameworks */,
+				9AF57E732FD3E4C000728206 /* libcore_foundation.dylib in Frameworks */,
 				9A7E17432C9DF5F700EE8CA6 /* AppKit.framework in Frameworks */,
 				9A7E17402C9DF5E700EE8CA6 /* libacme.dylib in Frameworks */,
 			);
@@ -138,6 +149,7 @@
 		9A7E173E2C9DF5E700EE8CA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AF57E722FD3E4C000728206 /* libcore_foundation.dylib */,
 				9A7E17422C9DF5F700EE8CA6 /* AppKit.framework */,
 				9A7E173F2C9DF5E700EE8CA6 /* libacme.dylib */,
 			);
@@ -156,6 +168,8 @@
 				9AE47AB12FD365E9003088D6 /* brush.cpp */,
 				9A52435E2CD4B3B7006ED868 /* context.h */,
 				9A52435F2CD4B3B7006ED868 /* context.cpp */,
+				9AF57E792FD3EC8F00728206 /* dib.h */,
+				9AF57E7C2FD3EC9800728206 /* dib.cpp */,
 				9A50C0622FD36913003AF0A5 /* font.h */,
 				9A50C0632FD36913003AF0A5 /* font.cpp */,
 				9A2FCFCF2C9D3C3F000CF701 /* framework.h */,
@@ -183,6 +197,7 @@
 				9AE47AAB2FD3621A003088D6 /* path.h in Headers */,
 				9A28CBB72CF413D500C6D8B1 /* _.h in Headers */,
 				9A50C0642FD36913003AF0A5 /* font.h in Headers */,
+				9AF57E7A2FD3EC9200728206 /* dib.h in Headers */,
 				9A28CBB82CF413D500C6D8B1 /* context.h in Headers */,
 				9AC722ED2FD3C74800F3C118 /* image.h in Headers */,
 				9AE47AB52FD365E9003088D6 /* brush.h in Headers */,
@@ -199,6 +214,7 @@
 				9AE47AAD2FD3621A003088D6 /* path.h in Headers */,
 				9A2FCFCA2C9D3C27000CF701 /* _.h in Headers */,
 				9A50C0662FD36913003AF0A5 /* font.h in Headers */,
+				9AF57E7B2FD3EC9200728206 /* dib.h in Headers */,
 				9A5243602CD4B3B7006ED868 /* context.h in Headers */,
 				9AC722EE2FD3C74800F3C118 /* image.h in Headers */,
 				9AE47AB22FD365E9003088D6 /* brush.h in Headers */,
@@ -334,6 +350,7 @@
 				9A50C05F2FD367CD003AF0A5 /* pen.cpp in Sources */,
 				9AE47AAA2FD3621A003088D6 /* path.cpp in Sources */,
 				9A28CBBE2CF413D500C6D8B1 /* _factory.cpp in Sources */,
+				9AF57E7D2FD3EC9900728206 /* dib.cpp in Sources */,
 				9AC722F02FD3C75D00F3C118 /* image.cpp in Sources */,
 				9A28CBBF2CF413D500C6D8B1 /* icon.mm in Sources */,
 				9A28CBC02CF413D500C6D8B1 /* context.cpp in Sources */,
@@ -351,6 +368,7 @@
 				9A50C0612FD367CD003AF0A5 /* pen.cpp in Sources */,
 				9AE47AAC2FD3621A003088D6 /* path.cpp in Sources */,
 				9A2FCFCC2C9D3C27000CF701 /* _factory.cpp in Sources */,
+				9AF57E7E2FD3EC9900728206 /* dib.cpp in Sources */,
 				9AC722F12FD3C75D00F3C118 /* image.cpp in Sources */,
 				9A5244272CD72179006ED868 /* icon.mm in Sources */,
 				9A5243612CD4B3B7006ED868 /* context.cpp in Sources */,

@@ -13,11 +13,14 @@
 
 static ::pointer <::core_graphics::core_graphics > g_pcoregraphics;
 
+
 namespace core_graphics
 {
 
+
    core_graphics::core_graphics()
    {
+      
       
       if(::system()->has_property("core_graphics::core_graphics"))
       {

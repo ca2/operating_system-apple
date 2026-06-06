@@ -18,14 +18,22 @@
 		9AC722C72FD3985900F3C118 /* cf_string.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AC722BC2FD3985900F3C118 /* cf_string.mm */; };
 		9AC722C82FD3985900F3C118 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC722BE2FD3985900F3C118 /* framework.cpp */; };
 		9AC722CA2FD3992700F3C118 /* _struct.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC722C92FD3992700F3C118 /* _struct.h */; };
+		9AF57E6E2FD3E2F900728206 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF57E682FD3E2D900728206 /* libacme.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9AC722CE2FD39C4100F3C118 /* PBXContainerItemProxy */ = {
+		9AF57E622FD3E2D800728206 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9AC722CB2FD39C4100F3C118 /* acme.xcodeproj */;
+			containerPortal = 9A50C09E2FD397CA003AF0A5 /* acme.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 9A68A41325114352008DABD2;
+			remoteInfo = acme;
+		};
+		9AF57E672FD3E2D900728206 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A50C09E2FD397CA003AF0A5 /* acme.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A68A41425114352008DABD2;
 			remoteInfo = acme;
 		};
 /* End PBXContainerItemProxy section */
@@ -46,7 +54,6 @@
 		9AC722BD2FD3985900F3C118 /* framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
 		9AC722BE2FD3985900F3C118 /* framework.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
 		9AC722C92FD3992700F3C118 /* _struct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _struct.h; sourceTree = "<group>"; };
-		9AC722CB2FD39C4100F3C118 /* acme.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme.xcodeproj; path = /Volumes/hapid/remoting/main/source/app/acme/acme.xcodeproj; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF57E6E2FD3E2F900728206 /* libacme.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +73,8 @@
 			children = (
 				9A50C09E2FD397CA003AF0A5 /* acme.xcodeproj */,
 				9AC722B22FD3980500F3C118 /* core_foundation */,
+				9AF57E6D2FD3E2F900728206 /* Frameworks */,
 				9A50C0902FD39772003AF0A5 /* Products */,
-				9AC722CB2FD39C4100F3C118 /* acme.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +106,19 @@
 			name = core_foundation;
 			sourceTree = "<group>";
 		};
-		9AC722CC2FD39C4100F3C118 /* Products */ = {
+		9AEA32442FD3E2A200794E76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AF57E682FD3E2D900728206 /* libacme.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9AF57E6D2FD3E2F900728206 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +151,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9AC722CF2FD39C4100F3C118 /* PBXTargetDependency */,
+				9AF57E632FD3E2D800728206 /* PBXTargetDependency */,
 			);
 			name = core_foundation;
 			packageProductDependencies = (
@@ -172,8 +188,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9AC722CC2FD39C4100F3C118 /* Products */;
-					ProjectRef = 9AC722CB2FD39C4100F3C118 /* acme.xcodeproj */;
+					ProductGroup = 9AEA32442FD3E2A200794E76 /* Products */;
+					ProjectRef = 9A50C09E2FD397CA003AF0A5 /* acme.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -182,6 +198,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9AF57E682FD3E2D900728206 /* libacme.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libacme.dylib;
+			remoteRef = 9AF57E672FD3E2D900728206 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9A50C08C2FD39772003AF0A5 /* Sources */ = {
@@ -199,10 +225,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9AC722CF2FD39C4100F3C118 /* PBXTargetDependency */ = {
+		9AF57E632FD3E2D800728206 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = acme;
-			targetProxy = 9AC722CE2FD39C4100F3C118 /* PBXContainerItemProxy */;
+			targetProxy = 9AF57E622FD3E2D800728206 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -7,6 +7,7 @@
 #include "brush.h"
 #include "font.h"
 #include "image.h"
+#include "path.h"
 #include "pen.h"
 #include "acme/nano/graphics/font.h"
 #include "acme/nano/graphics/font_family.h"
@@ -15,6 +16,7 @@
 #include "operating_system-apple/core_foundation/cf_string.h"
 #include "operating_system-apple/core_graphics/cg_context.h"
 #include "operating_system-apple/core_graphics/cg_font.h"
+#include "operating_system-apple/core_graphics/cg_image.h"
 #include "operating_system-apple/core_graphics/ct_line.h"
 #include "acme/prototype/geometry2d/rectangle.h"
 //#include <CoreText/CoreText.h>
@@ -90,6 +92,31 @@ namespace quartz2d
    }
       
       
+      ::pointer < ::nano::graphics::image > context::create_bitmap_context(void * pdata,
+                                                                 const ::i32_size & size, int iBytesPerRow)
+      {
+         
+         construct_newø(m_pcgcontext);
+         
+         auto pimage = create_newø<::quartz2d::nano::graphics::image >();
+         
+         pimage->m_pcgimage = m_pcgcontext->create_bitmap_context(pdata, size, iBytesPerRow);
+         
+         return pimage;
+         
+      }
+      
+      
+      void context::update_bitmap_context_image(::pointer < ::nano::graphics::image > & pimage)
+      {
+         
+         ::cast < ::quartz2d::nano::graphics::image > pimageQuartz2d = pimage;
+         
+         m_pcgcontext->update_bitmap_context_image(pimageQuartz2d->m_pcgimage);
+         
+      }
+      
+      
       void context::set_pen(::nano::graphics::pen * ppen)
       {
       
@@ -113,10 +140,61 @@ namespace quartz2d
          
       }
 
+      
+      void context::set_blend_mode(::nano::graphics::enum_blend_mode eblendmode)
+      {
+
+         if(eblendmode == ::nano::graphics::e_blend_mode_copy)
+         {
+            
+            m_pcgcontext->set_blend_mode_on(false);
+            
+         }
+         else
+         {
+          
+            m_pcgcontext->set_blend_mode_on(true);
+            
+         }
+         
+         // 2. Set the C enum blend mode constant
+           //CGContextSetBlendMode(context, kCGBlendModeMultiply);
+
+      }
+
+      
+      void context::set_smoothing_mode(::nano::graphics::enum_smoothing_mode esmoothingmode)
+      {
+
+         
+         if(esmoothingmode == ::nano::graphics::e_smoothing_mode_high_quality)
+         {
+            
+            m_pcgcontext->set_anti_alias_on(true);
+            
+         }
+         else
+         {
+          
+            m_pcgcontext->set_anti_alias_on(false);
+            
+         }
+         
+
+      }
+      
+      
+      void context::line(const ::f64_point& point1, const ::f64_point& point2)
+      {
+
+         _set_pen(m_ppen);
+         m_pcgcontext->draw_line(point1, point2);
+
+      }
 
 
-   void context::_draw_text(const ::scoped_string & scopedstr, const ::f64_rectangle & rectangleText, const ::e_align & ealign,
-                            const ::e_draw_text & edrawtext)
+   void context::_draw_text(const ::scoped_string & scopedstr, const ::f64_rectangle & rectangleText,
+                            const ::e_draw_text & edrawtext, const ::e_align & ealign)
    {
       
       //_select_font(pnanofont);
@@ -395,7 +473,7 @@ namespace quartz2d
    
          _set_brush(m_pbrush);
 
-         m_pcgcontext->draw_rect(rectangle);
+         m_pcgcontext->fill_rect(rectangle);
 
       }
 
@@ -411,6 +489,36 @@ namespace quartz2d
    }
 
       
+      void context::ellipse(const ::f64_rectangle & rectangle)
+      {
+
+   //      CGRect rect;
+   //
+   //      rect.origin.x = rectangle.left;
+   //      rect.origin.y = rectangle.top;
+   //      rect.size.width = rectangle.width();
+   //      rect.size.height = rectangle.height();
+
+         if (m_pbrush && m_pbrush->m_color.has_opacity())
+         {
+      
+            _set_brush(m_pbrush);
+
+            m_pcgcontext->fill_ellipse(rectangle);
+
+         }
+
+         if(m_ppen && m_ppen->m_fWidth > 0)
+         {
+
+            _set_pen(m_ppen);
+
+            m_pcgcontext->draw_ellipse(rectangle);
+
+         }
+
+      }
+
       void context::attach(void * posdata, const ::i32_size & size, ::i32 iType)
       {
          
@@ -438,7 +546,7 @@ namespace quartz2d
       }
       
       
-      void context::draw_icon(::nano::graphics::icon * picon, int x, int y, int cx, int cy)
+      void context::draw_icon(int x, int y, int cx, int cy, ::nano::graphics::icon * picon)
       {
          
          ::cast < ::quartz2d::nano::graphics::icon > pquartz2dicon = picon;
@@ -448,7 +556,7 @@ namespace quartz2d
       }
       
       
-      void context::draw_image(::nano::graphics::image * pimage, const ::f64_rectangle & rectangle)
+      void context::draw_image(const ::f64_rectangle & rectangle, ::nano::graphics::image * pimage)
       {
          
          ::cast < ::quartz2d::nano::graphics::image > pquartz2dimage = pimage;
@@ -458,12 +566,13 @@ namespace quartz2d
       }
 
       
-      void context::draw_image(::nano::graphics::image * pimage, const ::f64_point & point, const ::f64_rectangle & rectangle)
+      void context::draw_image(const ::f64_point & point, const ::f64_rectangle & rectangle, ::nano::graphics::image * pimage)
       {
          
          ::cast < ::quartz2d::nano::graphics::image > pquartz2dimage = pimage;
          
-         pquartz2dimage->_draw_in_context(this, point, rectangle);
+         m_pcgcontext->draw_image(point, rectangle, pquartz2dimage->m_pcgimage);
+         //pquartz2dimage->_draw_in_context(this, point, rectangle);
          
       }
 
@@ -511,7 +620,47 @@ namespace quartz2d
          m_pcgcontext->translate_ctm(x, y);
          
       }
+
+      void context::do_path(::nano::graphics::path *ppath)
+      {
+         
+         bool bHasBrush = m_pbrush && m_pbrush->m_color.has_opacity();
+         
+         bool bHasPen = m_ppen && m_ppen->m_fWidth > 0 && m_ppen->m_color.has_opacity();
+         
+         if(!bHasBrush && !bHasPen)
+         {
+            
+            return;
+            
+         }
+         
+         ::cast < ::quartz2d::nano::graphics::path > ppathQuartz2d = ppath;
+
+         if (bHasBrush)
+         {
       
+            _set_brush(m_pbrush);
+
+            m_pcgcontext->add_path(ppathQuartz2d->m_pcgpath);
+            
+            m_pcgcontext->fill_path();
+
+         }
+
+         if(bHasPen)
+         {
+
+            _set_pen(m_ppen);
+
+            m_pcgcontext->add_path(ppathQuartz2d->m_pcgpath);
+            
+            m_pcgcontext->draw_path();
+
+         }
+
+
+      }
 
       } //namespace user
 

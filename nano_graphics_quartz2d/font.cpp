@@ -67,6 +67,8 @@ font::~font()
 //destroyGraphicsObject();
 
       construct_newø(m_pctfont);
+         
+         m_pfontfamily = pfontfamily;
       
          ::string strFontFamilyName = pfontfamily->get_font_family_name();
 

@@ -220,7 +220,7 @@ namespace draw2d_quartz2d
    void image::_draw_raw(const ::i32_rectangle & rectDst, ::image::image * pimageSrc, const ::i32_point & pointSrc)
    {
    
-      double_rectangle rectangleSource(pointSrc, rectDst.size());
+      f64_rectangle rectangleSource(pointSrc, rectDst.size());
    
       ::image::image_source imagesource(pimageSrc, rectangleSource);
       
@@ -253,7 +253,7 @@ namespace draw2d_quartz2d
       
          ::image::image_source imagesource(picon);
          
-         auto rectangle = ::double_rectangle_dimension(0, 0, cx, cy);
+         auto rectangle = ::f64_rectangle_dimension(0, 0, cx, cy);
          
          ::image::image_drawing_options imagedrawingoptions(rectangle);
          
@@ -272,7 +272,7 @@ namespace draw2d_quartz2d
       
          ::image::image_source imagesource(picon);
          
-         auto rectangle = ::double_rectangle_dimension(0, 0, cx, cy);
+         auto rectangle = ::f64_rectangle_dimension(0, 0, cx, cy);
          
          ::image::image_drawing_options imagedrawingoptions(rectangle);
          
@@ -289,7 +289,7 @@ namespace draw2d_quartz2d
       
          ::image::image_source imagesource(picon);
          
-         auto rectangle = ::double_rectangle_dimension(0, 0, cx, cy);
+         auto rectangle = ::f64_rectangle_dimension(0, 0, cx, cy);
          
          ::image::image_drawing_options imagedrawingoptions(rectangle);
          

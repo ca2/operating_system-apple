@@ -2,6 +2,7 @@
 
 
 #include "aura/graphics/write_text/font.h"
+#include "acme/operating_system/apple/cfref.h"
 
 
 namespace draw2d_quartz2d
@@ -37,9 +38,9 @@ namespace draw2d_quartz2d
 //      };
       
 //      string_map < metrics >  m_mapMetrics;
-      CTFontRef               m_font;
-      CTFontDescriptorRef     m_fontdescriptor;
-      CFStringRef             m_fontName;
+      ::cfref<CTFontRef>               m_font;
+      ::cfref<CTFontDescriptorRef>     m_fontdescriptor;
+      ::cfref<CFStringRef>             m_fontName;
       
       
       font();

@@ -42,7 +42,7 @@ namespace opengl
 {
 
 
-   //inline void vertex2f(const ::double_rectangle & rectangle, float fZ)
+   //inline void vertex2f(const ::f64_rectangle & rectangle, float fZ)
    //{
 
    //   glVertex3f((GLfloat)rectangle.left, (GLfloat)rectangle.top, fZ);
@@ -53,7 +53,7 @@ namespace opengl
    //}
 
   
-      //inline void vertex2f(const ::double_polygon& a, float fZ)
+      //inline void vertex2f(const ::f64_polygon& a, float fZ)
       //{
       //   for (auto& p : a)
       //   {

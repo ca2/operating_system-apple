@@ -341,7 +341,7 @@ namespace quartz2d
 //      CGContextSetTextDrawingMode (m_cgcontext, kCGTextFill);
 //      CGAffineTransform trans = CGAffineTransformMakeScale(1, -1);
 //      CGContextSetTextMatrix(m_cgcontext, trans);
-//      CGContextSetRGBFillColor (m_cgcontext, __expand_float_rgba(pnanobrushText->m_color));
+//      CGContextSetRGBFillColor (m_cgcontext, __expand_f32_rgba(pnanobrushText->m_color));
 
 //      double x = rectangleText.left;
 //      
@@ -546,7 +546,7 @@ namespace quartz2d
       }
       
       
-      void context::draw_icon(int x, int y, int cx, int cy, ::nano::graphics::icon * picon)
+      void context::draw_icon(::f64 x, ::f64 y, ::f64 cx, ::f64 cy, ::nano::graphics::icon * picon)
       {
          
          ::cast < ::quartz2d::nano::graphics::icon > pquartz2dicon = picon;

@@ -7,54 +7,6 @@
 #include "acme/nano/graphics/context.h"
 
 
-//#include <CoreGraphics/CoreGraphics.h>
-
-template < typename CORE_FOUNDATION_TYPE >
-class core_foundation_reference
-{
-public:
-   
-   CORE_FOUNDATION_TYPE      m_cftype;
-   
-   core_foundation_reference()
-   {
-      m_cftype = nullptr;
-   }
-   core_foundation_reference(CORE_FOUNDATION_TYPE cftype)
-   {
-      m_cftype = cftype;
-   }
-
-   ~core_foundation_reference()
-   {
-    
-      if(m_cftype)
-      {
-       
-         CFRelease(m_cftype);
-         
-      }
-      
-   }
-   
-   
-   operator CORE_FOUNDATION_TYPE()
-   {
-    
-      return m_cftype;
-      
-   }
-      
-   
-};
-
-template < typename CORE_FOUNDATION_TYPE >
-::core_foundation_reference < CORE_FOUNDATION_TYPE > as_CFRef(CORE_FOUNDATION_TYPE cftype)
-{
- 
-   return ::core_foundation_reference < CORE_FOUNDATION_TYPE >(cftype);
-   
-}
 
 //
 //class keep_cgcontext
@@ -140,7 +92,7 @@ namespace quartz2d
       void ellipse(const ::f64_rectangle & rectangle) override;
 
       
-      void draw_icon(int x, int y, int cx, int cy, ::nano::graphics::icon * picon) override;
+      void draw_icon(::f64 x, ::f64 y, ::f64 cx, ::f64 cy, ::nano::graphics::icon * picon) override;
       void draw_image(const ::f64_rectangle & rectangle, ::nano::graphics::image * pimage) override;
       void draw_image(const ::f64_point & point, const ::f64_rectangle & rectangle, ::nano::graphics::image * pimage) override;
 

@@ -6,7 +6,6 @@
 #include "acme/platform/application.h"
 #include "aura/platform/system.h"
 
-
 double nsfont_get_ctweight(int iWeight);
 
 
@@ -17,11 +16,11 @@ namespace draw2d_quartz2d
    font::font()
    {
       
-      m_font = nullptr;
-      
-      m_fontdescriptor = nullptr;
-      
-      m_fontName = nullptr;
+//      m_font = nullptr;
+//      
+//      m_fontdescriptor = nullptr;
+//      
+//      m_fontName = nullptr;
       
    }
    
@@ -45,7 +44,8 @@ namespace draw2d_quartz2d
    void font::create(::draw2d::graphics * pgraphics, char iCreate)
    {
    
-      array < CFTypeRef >  cfrel;
+      //array < CFTypeRef >  cfrel;
+      ::ref_array refa;
       
       CGFontRef fontref = nullptr;
       
@@ -114,9 +114,9 @@ namespace draw2d_quartz2d
          if(dCoreTextWeight != 0.0)
          {
             
-            CFNumberRef dFontWeight = CFNumberCreate(kCFAllocatorDefault, kCFNumberDoubleType, &dCoreTextWeight);
+            cfref<CFNumberRef> dFontWeight(refa, CFNumberCreate(kCFAllocatorDefault, kCFNumberDoubleType, &dCoreTextWeight));
             
-            cfrel.add(dFontWeight);
+            //cfrel.add(dFontWeight);
             
             pkeyTraits.add(kCTFontWeightTrait);
             
@@ -142,46 +142,46 @@ namespace draw2d_quartz2d
             
          }
          
-         CFDictionaryRef traits1 = nullptr;
+         cfref<CFDictionaryRef> traits1;
          
          if(pkeyTraits.has_elements())
          {
             
-            traits1 = CFDictionaryCreate(
+            traits1.set(refa, CFDictionaryCreate(
                                          kCFAllocatorDefault,
                                          pkeyTraits.data(),
                                          pvalTraits.data(),
                                          pkeyTraits.size(),
                                          &kCFTypeDictionaryKeyCallBacks,
-                                         &kCFTypeDictionaryValueCallBacks);
+                                         &kCFTypeDictionaryValueCallBacks));
             
             pkeyAttrs.add(kCTFontTraitsAttribute);
             
             pvalAttrs.add(traits1);
             
-            cfrel.add(traits1);
+            //cfrel.add(traits1);
             
          }
          
-         CFDictionaryRef attributes1 = nullptr;
+         cfref<CFDictionaryRef> attributes1;
          
          if(pkeyAttrs.has_elements())
          {
             
-            attributes1 = CFDictionaryCreate(
+            attributes1.set(refa, CFDictionaryCreate(
                                              kCFAllocatorDefault,
                                              pkeyAttrs.data(),
                                              pvalAttrs.data(),
                                              pkeyAttrs.size(),
                                              &kCFTypeDictionaryKeyCallBacks,
-                                             &kCFTypeDictionaryValueCallBacks);
+                                             &kCFTypeDictionaryValueCallBacks));
             
-            cfrel.add(attributes1);
+            //cfrel.add(attributes1);
             
          }
          
          
-         CTFontDescriptorRef fontdescriptor = nullptr;
+         cfref<CTFontDescriptorRef> fontdescriptor;
          
          if(m_path.contains("FontAwesome"))
          {
@@ -196,7 +196,7 @@ namespace draw2d_quartz2d
             if(m_fontName != nullptr)
             {
                
-               fontdescriptor = CTFontDescriptorCreateWithNameAndSize(m_fontName, 0.0);
+               fontdescriptor.set(refa, CTFontDescriptorCreateWithNameAndSize(m_fontName, 0.0));
                
             }
             
@@ -206,22 +206,22 @@ namespace draw2d_quartz2d
                if(fontdescriptor == nullptr)
                {
                   
-                  fontdescriptor = CTFontDescriptorCreateWithAttributes(attributes1);
+                  fontdescriptor.set(refa, CTFontDescriptorCreateWithAttributes(attributes1));
                   
                }
                else
                {
                
-                  CTFontDescriptorRef fontdescriptorAttributes1 = CTFontDescriptorCreateCopyWithAttributes(fontdescriptor, attributes1);
+                  cfref<CTFontDescriptorRef> fontdescriptorAttributes1 (refa, CTFontDescriptorCreateCopyWithAttributes(fontdescriptor, attributes1));
                
-                  if(fontdescriptorAttributes1 != nullptr)
-                  {
+//                  if(fontdescriptorAttributes1 != nullptr)
+  //                {
                   
-                     CFRelease(fontdescriptor);
+    //                 CFRelease(fontdescriptor);
                   
                      fontdescriptor = fontdescriptorAttributes1;
                   
-                  }
+      //            }
 
                }
                
@@ -234,13 +234,13 @@ namespace draw2d_quartz2d
                {
 
 
-                  CTFontDescriptorRef fontdescriptorSymbolicTraits = CTFontDescriptorCreateCopyWithSymbolicTraits(fontdescriptor, symbolicTraitsVal,
-   symbolicTraitsMsk);
+                  cfref<CTFontDescriptorRef> fontdescriptorSymbolicTraits (refa, CTFontDescriptorCreateCopyWithSymbolicTraits(fontdescriptor, symbolicTraitsVal,
+   symbolicTraitsMsk));
                
-                  if(fontdescriptorSymbolicTraits != nullptr)
+                  //if(fontdescriptorSymbolicTraits != nullptr)
                   {
                   
-                     CFRelease(fontdescriptor);
+                    // CFRelease(fontdescriptor);
                   
                      fontdescriptor = fontdescriptorSymbolicTraits;
                   
@@ -262,7 +262,7 @@ namespace draw2d_quartz2d
          if(fontref != nullptr)
          {
             
-            m_font = CTFontCreateWithGraphicsFont(fontref, m_fontsize.as_double() * pgraphics->size_scaler(), nullptr, m_fontdescriptor);
+            m_font = CTFontCreateWithGraphicsFont(fontref, m_fontsize.as_f64() * pgraphics->size_scaler(), nullptr, m_fontdescriptor);
             
             if(m_fontName)
             {
@@ -289,7 +289,7 @@ namespace draw2d_quartz2d
          else if(m_fontdescriptor == nullptr)
          {
             
-            auto pfont = CTFontCreateWithName(m_fontName, m_fontsize.as_double() * pgraphics->size_scaler(), nullptr);
+            auto pfont = CTFontCreateWithName(m_fontName, m_fontsize.as_f64() * pgraphics->size_scaler(), nullptr);
             
             m_font = pfont;
 
@@ -297,22 +297,22 @@ namespace draw2d_quartz2d
          else
          {
             
-            m_font =  CTFontCreateWithFontDescriptor(m_fontdescriptor, m_fontsize.as_double() * pgraphics->size_scaler(), nullptr);
+            m_font =  CTFontCreateWithFontDescriptor(m_fontdescriptor, m_fontsize.as_f64() * pgraphics->size_scaler(), nullptr);
             
          }
          
       }
 
-      for(::collection::index i = 0; i < cfrel.count(); i++)
-      {
-         
-         CFRelease(cfrel[i]);
-         
-      }
+//      for(::collection::index i = 0; i < cfrel.count(); i++)
+//      {
+//         
+//         CFRelease(cfrel[i]);
+//         
+//      }
       
-      m_osdata[0] = (void *) m_font;
+      m_osdata[0] = (void *) (CTFontRef) m_font;
       
-      m_osdata[1] = (void *) m_fontdescriptor;
+      m_osdata[1] = (void *) (CTFontDescriptorRef) m_fontdescriptor;
       
       if(m_font == nullptr)
       {
@@ -337,32 +337,32 @@ namespace draw2d_quartz2d
    void font::destroy_os_data()
    {
 
-      if(m_fontName != nullptr)
-      {
-         
-         CFRelease(m_fontName);
-         
-         m_fontName = nullptr;
-         
-      }
+//      if(m_fontName != nullptr)
+//      {
+//         
+//         CFRelease(m_fontName);
+//         
+//         m_fontName = nullptr;
+//         
+//      }
       
-      if(m_fontdescriptor != nullptr)
-      {
-         
-         CFRelease(m_fontdescriptor);
-         
-         m_fontdescriptor = nullptr;
-         
-      }
+//      if(m_fontdescriptor != nullptr)
+//      {
+//         
+//         CFRelease(m_fontdescriptor);
+//         
+//         m_fontdescriptor = nullptr;
+//         
+//      }
       
-      if(m_font != nullptr)
-      {
-         
-         CFRelease(m_font);
-         
-         m_font = nullptr;
-         
-      }
+//      if(m_font != nullptr)
+//      {
+//         
+//         CFRelease(m_font);
+//         
+//         m_font = nullptr;
+//         
+//      }
       
    }
 

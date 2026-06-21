@@ -78,14 +78,14 @@ namespace draw2d_quartz2d
       virtual int save_graphics_context() override;
       virtual void restore_graphics_context(int iSavedGraphicsContext) override;
       int GetDeviceCaps(int nIndex) override;
-      ::u32 SetBoundsRect(const ::double_rectangle & rectBounds, ::u32 flags) override;
-      ::u32 GetBoundsRect(::double_rectangle * rectBounds, ::u32 flags) override;
+      ::u32 SetBoundsRect(const ::f64_rectangle & rectBounds, ::u32 flags) override;
+      ::u32 GetBoundsRect(::f64_rectangle * rectBounds, ::u32 flags) override;
       // xxx      bool ResetDC(const DEVMODE* lpDevMode);
 
       // Drawing-Tool Functions
-      double_point GetBrushOrg() override;
-      double_point SetBrushOrg(double x, double y) override;
-      double_point SetBrushOrg(const ::double_point & point) override;
+      f64_point GetBrushOrg() override;
+      f64_point SetBrushOrg(double x, double y) override;
+      f64_point SetBrushOrg(const ::f64_point & point) override;
 //      int EnumObjects(int nObjectType,
 //                          int (CALLBACK* lpfn)(void *, LPARAM), LPARAM lpData) override;
 
@@ -148,44 +148,44 @@ namespace draw2d_quartz2d
 
 //      // Mapping Functions
 ////      virtual int GetMapMode() override;
-//      virtual double_point get_origin() override;
+//      virtual f64_point get_origin() override;
 ////      virtual int SetMapMode(int nMapMode) override;
 ////      // Viewport Origin
-//      virtual double_point set_origin(double x, double y) override;
-//      virtual double_point set_origin(const ::double_point & point) override;
-//      virtual double_point offset_origin(double nWidth, double nHeight) override;
+//      virtual f64_point set_origin(double x, double y) override;
+//      virtual f64_point set_origin(const ::f64_point & point) override;
+//      virtual f64_point offset_origin(double nWidth, double nHeight) override;
 
       // Viewport Extent
-      virtual double_size get_extents() override;
-      virtual double_size set_extents(double cx, double cy) override;
-      virtual double_size set_extents(const ::double_size & size) override;
-      virtual double_size scale_extents(double xNum, double xDenom, double yNum, double yDenom) override;
+      virtual f64_size get_extents() override;
+      virtual f64_size set_extents(double cx, double cy) override;
+      virtual f64_size set_extents(const ::f64_size & size) override;
+      virtual f64_size scale_extents(double xNum, double xDenom, double yNum, double yDenom) override;
 
       // Window Origin
-      double_point GetWindowOrg() override;
-      double_point SetWindowOrg(double x, double y) override;
-      double_point SetWindowOrg(const ::double_point & point) override;
-      double_point offset_window_org(double nWidth, double nHeight) override;
+      f64_point GetWindowOrg() override;
+      f64_point SetWindowOrg(double x, double y) override;
+      f64_point SetWindowOrg(const ::f64_point & point) override;
+      f64_point offset_window_org(double nWidth, double nHeight) override;
 
       // Window extent
-      double_size GetWindowExt() override;
-//      virtual double_size set_window_ext(double cx, double cy) override;
-//      double_size set_window_ext(const ::double_size & size) override;
-//      virtual double_size scale_window_ext(double xNum, double xDenom, double yNum, double yDenom) override;
+      f64_size GetWindowExt() override;
+//      virtual f64_size set_window_ext(double cx, double cy) override;
+//      f64_size set_window_ext(const ::f64_size & size) override;
+//      virtual f64_size scale_window_ext(double xNum, double xDenom, double yNum, double yDenom) override;
 
       // Coordinate Functions
-      void DPtoLP(::double_point * ppoints, int nCount = 1) const;
-      void DPtoLP(::double_rectangle * prectangle) override;
-      void DPtoLP(::double_size * psize) override;
-      void LPtoDP(::double_point * ppoints, int nCount = 1) const;
-      void LPtoDP(::double_rectangle * prectangle) override;
-      void LPtoDP(::double_size * psize) override;
+      void DPtoLP(::f64_point * ppoints, int nCount = 1) const;
+      void DPtoLP(::f64_rectangle * prectangle) override;
+      void DPtoLP(::f64_size * psize) override;
+      void LPtoDP(::f64_point * ppoints, int nCount = 1) const;
+      void LPtoDP(::f64_rectangle * prectangle) override;
+      void LPtoDP(::f64_size * psize) override;
 
       // Special Coordinate Functions (useful for dealing with metafiles and OLE)
-      void DPtoHIMETRIC(::double_size * psize) override;
-      void LPtoHIMETRIC(::double_size * psize) override;
-      void HIMETRICtoDP(::double_size * psize) override;
-      void HIMETRICtoLP(::double_size * psize) override;
+      void DPtoHIMETRIC(::f64_size * psize) override;
+      void LPtoHIMETRIC(::f64_size * psize) override;
+      void HIMETRICtoDP(::f64_size * psize) override;
+      void HIMETRICtoLP(::f64_size * psize) override;
 
       // Region Functions
       void fill_region(::draw2d::region * pregion, ::draw2d::brush * pbrush) override;
@@ -194,18 +194,18 @@ namespace draw2d_quartz2d
       void paint_region(::draw2d::region * pregion) override;
 
       // Clipping Functions
-      int get_clip_box(::double_rectangle & rectangle) override;
+      int get_clip_box(::f64_rectangle & rectangle) override;
       //void PtVisible(double x, double y) override;
-      //void PtVisible(const ::double_point & point) override;
-      //void RectVisible(const ::double_rectangle & rectangle) override;
+      //void PtVisible(const ::f64_point & point) override;
+      //void RectVisible(const ::f64_rectangle & rectangle) override;
 //      virtual int SelectClipRgn(::draw2d::region* pRgn) override;
 //      virtual int ExcludeClipRect(double x1, double y1, double x2, double y2) override;
-//      virtual int ExcludeClipRect(const ::double_rectangle & rectangle) override;
+//      virtual int ExcludeClipRect(const ::f64_rectangle & rectangle) override;
       //int ExcludeUpdateRgn(::user::interaction * pWnd);
       //virtual int IntersectClipRect(double x1, double y1, double x2, double y2) override;
-      //virtual int IntersectClipRect(const ::double_rectangle & rectangle) override;
+      //virtual int IntersectClipRect(const ::f64_rectangle & rectangle) override;
       //virtual int OffsetClipRgn(double x, double y) override;
-      //virtual int OffsetClipRgn(const ::double_size & size) override;
+      //virtual int OffsetClipRgn(const ::f64_size & size) override;
       //virtual int SelectClipRgn(::draw2d::region* pRgn, int nMode) override;
       
       
@@ -214,112 +214,112 @@ namespace draw2d_quartz2d
       void _eo_clip() override;
       
       
-      void intersect_clip(const ::double_rectangle & rectangle) override;
-//      void intersect_clip(const ::double_ellipse & ellipse) override;
-//      void intersect_clip(const ::double_polygon & polygon) override;
+      void intersect_clip(const ::f64_rectangle & rectangle) override;
+//      void intersect_clip(const ::f64_ellipse & ellipse) override;
+//      void intersect_clip(const ::f64_polygon & polygon) override;
       
       
       
       
-//      void _add_clipping_shape(const ::double_rectangle & rectangle, ::draw2d::region * pregion) override;
-      void _add_shape(const ::double_rectangle & rectangle) override;
-//      void _add_clipping_shape(const ::double_ellipse & ellipse, ::draw2d::region * pregion) override;
-      void _add_shape(const ::double_ellipse & ellipse) override;
-//      void _add_clipping_shape(const ::double_polygon & polygon, ::draw2d::region * pregion) override;
-      void _add_shape(const ::double_polygon_base & polygon) override;
+//      void _add_clipping_shape(const ::f64_rectangle & rectangle, ::draw2d::region * pregion) override;
+      void _add_shape(const ::f64_rectangle & rectangle) override;
+//      void _add_clipping_shape(const ::f64_ellipse & ellipse, ::draw2d::region * pregion) override;
+      void _add_shape(const ::f64_ellipse & ellipse) override;
+//      void _add_clipping_shape(const ::f64_polygon & polygon, ::draw2d::region * pregion) override;
+      void _add_shape(const ::f64_polygon_base & polygon) override;
 
       
       //virtual void on_apply_clip_region() override;
 
       // Line-Output Functions
-      virtual double_point current_position() override;
-      //      ::double_point MoveTo(double x, double y);
-      //    ::double_point MoveTo(const ::double_point & point);
+      virtual f64_point current_position() override;
+      //      ::f64_point MoveTo(double x, double y);
+      //    ::f64_point MoveTo(const ::f64_point & point);
       //void line(double x1, double y1, double x2, double y2) override;
-      //  bool LineTo(const ::double_point & point);
+      //  bool LineTo(const ::f64_point & point);
 //      void Arc(double x1, double y1, int w, int h, double start, double extends) override;
   //    void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
 //      void Arc(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
-      void arc(double x, double y, double w, double h, ::double_angle start, ::double_angle end) override;
-//      void Arc(const ::double_rectangle & rectangle, const ::double_point & pointStart, const ::double_point & pointEnd) override;
-      void polyline(const ::double_point* lpPoints, ::collection::count nCount) override;
+      void arc(double x, double y, double w, double h, ::f64_angle start, ::f64_angle end) override;
+//      void Arc(const ::f64_rectangle & rectangle, const ::f64_point & pointStart, const ::f64_point & pointEnd) override;
+      void polyline(const ::f64_point* lpPoints, ::collection::count nCount) override;
 
-      void angle_arc(double x, double y, double dRadius, ::double_angle fStartAngle, ::double_angle fSweepAngle) override;
+      void angle_arc(double x, double y, double dRadius, ::f64_angle fStartAngle, ::f64_angle fSweepAngle) override;
 //      void ArcTo(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
-      void arc_to(const ::double_rectangle & rectangle, const ::double_point & pointStart, const ::double_point & pointEnd) override;
+      void arc_to(const ::f64_rectangle & rectangle, const ::f64_point & pointStart, const ::f64_point & pointEnd) override;
 //      virtual int GetArcDirection() override;
 //      virtual int SetArcDirection(int nArcDirection) override;
 
-//      bool PolyDraw(const ::double_point* lpPoints, const unsigned char* lpTypes, int nCount) override;
-//      bool polyline_to(const ::double_point* lpPoints, int nCount);
-//      bool poly_polyline(const ::double_point* lpPoints,
+//      bool PolyDraw(const ::f64_point* lpPoints, const unsigned char* lpTypes, int nCount) override;
+//      bool polyline_to(const ::f64_point* lpPoints, int nCount);
+//      bool poly_polyline(const ::f64_point* lpPoints,
 //                        const ::u32* lpPolyPoints, int nCount);
 //
-//      bool poly_bezier(const ::double_point* lpPoints, int nCount);
-//      bool poly_bezier_to(const ::double_point* lpPoints, int nCount);
+//      bool poly_bezier(const ::f64_point* lpPoints, int nCount);
+//      bool poly_bezier_to(const ::f64_point* lpPoints, int nCount);
 
       // Simple Drawing Functions
-      void fill_rectangle(const ::double_rectangle & rectangle, ::draw2d::brush* pbrush) override;
-      void draw_rectangle(const ::double_rectangle & rectangle, ::draw2d::pen* ppen) override;
+      void fill_rectangle(const ::f64_rectangle & rectangle, ::draw2d::brush* pbrush) override;
+      void draw_rectangle(const ::f64_rectangle & rectangle, ::draw2d::pen* ppen) override;
 
-      void rectangle(const ::double_rectangle & rectangle) override;
-      void draw_rectangle(const ::double_rectangle & rectangle) override;
-      void fill_rectangle(const ::double_rectangle & rectangle) override;
+      void rectangle(const ::f64_rectangle & rectangle) override;
+      void draw_rectangle(const ::f64_rectangle & rectangle) override;
+      void fill_rectangle(const ::f64_rectangle & rectangle) override;
 
-      void frame_rectangle(const ::double_rectangle & rectangle, ::draw2d::brush* pbrush) override;
-      void invert_rectangle(const ::double_rectangle & rectangle) override;
+      void frame_rectangle(const ::f64_rectangle & rectangle, ::draw2d::brush* pbrush) override;
+      void invert_rectangle(const ::f64_rectangle & rectangle) override;
       
       
 //      void draw_icon(double x, double y, ::draw2d::icon * picon) override;
-//      void draw_icon(const ::double_point & point, ::draw2d::icon * picon) override;
+//      void draw_icon(const ::f64_point & point, ::draw2d::icon * picon) override;
 //      void draw_icon(double x, double y, ::draw2d::icon * picon, int cx, int cy, ::u32 istepIfAniCur, HBRUSH hbrFlickerFreeDraw, ::u32 diFlags) override;
-//      void DrawState(const ::double_point & point, const ::double_size & size, HBITMAP hBitmap, ::u32 nFlags,
+//      void DrawState(const ::f64_point & point, const ::f64_size & size, HBITMAP hBitmap, ::u32 nFlags,
 //                             HBRUSH hBrush = nullptr) override;
-//      void DrawState(const ::double_point & point, const ::double_size & size, ::draw2d::bitmap* pBitmap, ::u32 nFlags,
+//      void DrawState(const ::f64_point & point, const ::f64_size & size, ::draw2d::bitmap* pBitmap, ::u32 nFlags,
 //                             ::draw2d::brush* pBrush = nullptr) override;
-      /*      bool DrawState(const ::double_point & point, const ::double_size & size, HICON hIcon, ::u32 nFlags,
+      /*      bool DrawState(const ::f64_point & point, const ::f64_size & size, HICON hIcon, ::u32 nFlags,
                            HBRUSH hBrush = nullptr);
-            bool DrawState(const ::double_point & point, const ::double_size & size, HICON hIcon, ::u32 nFlags,
+            bool DrawState(const ::f64_point & point, const ::f64_size & size, HICON hIcon, ::u32 nFlags,
                            ::draw2d::brush* pBrush = nullptr);*/
-//      void DrawState(const ::double_point & point, const ::double_size & size, const char * lpszText, ::u32 nFlags,
+//      void DrawState(const ::f64_point & point, const ::f64_size & size, const char * lpszText, ::u32 nFlags,
 //                             bool bPrefixText = true, int nTextLen = 0, HBRUSH hBrush = nullptr) override;
-//      void DrawState(const ::double_point & point, const ::double_size & size, const char * lpszText, ::u32 nFlags,
+//      void DrawState(const ::f64_point & point, const ::f64_size & size, const char * lpszText, ::u32 nFlags,
 //                             bool bPrefixText = true, int nTextLen = 0, ::draw2d::brush* pBrush = nullptr) override;
-      //xxx      bool DrawState(const ::double_point & point, const ::double_size & size, DRAWSTATEPROC lpDrawProc,
+      //xxx      bool DrawState(const ::f64_point & point, const ::f64_size & size, DRAWSTATEPROC lpDrawProc,
       //xxx         LPARAM lData, ::u32 nFlags, HBRUSH hBrush = nullptr);
-      //xxx      bool DrawState(const ::double_point & point, const ::double_size & size, DRAWSTATEPROC lpDrawProc,
+      //xxx      bool DrawState(const ::f64_point & point, const ::f64_size & size, DRAWSTATEPROC lpDrawProc,
       //xxx         LPARAM lData, ::u32 nFlags, ::draw2d::brush* pBrush = nullptr);
 
       // Ellipse and Polygon Functions
 //      void Chord(double x1, double y1, double x2, double y2, double x3, double y3,
 //                         double x4, double y4) override;
-//      void Chord(const ::double_rectangle & rectangle, const ::double_point & pointStart, const ::double_point & pointEnd) override;
-      void DrawFocusRect(const ::double_rectangle& rectangle) override;
+//      void Chord(const ::f64_rectangle & rectangle, const ::f64_point & pointStart, const ::f64_point & pointEnd) override;
+      void DrawFocusRect(const ::f64_rectangle& rectangle) override;
 
 //      bool DrawEllipse(double x1, double y1, double x2, double y2) override;
-//      bool DrawEllipse(const ::double_rectangle & rectangle) override;
+//      bool DrawEllipse(const ::f64_rectangle & rectangle) override;
 //
 //      bool FillEllipse(double x1, double y1, double x2, double y2) override;
-//      bool FillEllipse(const ::double_rectangle & rectangle) override;
+//      bool FillEllipse(const ::f64_rectangle & rectangle) override;
 
       //bool draw(double x1, double y1, double x2, double y2) override;
-      void draw_ellipse(const ::double_rectangle & rectangle) override;
+      void draw_ellipse(const ::f64_rectangle & rectangle) override;
 
       //void FillEllipse(double x1, double y1, double x2, double y2) override;
-      void fill_ellipse(const ::double_rectangle & rectangle) override;
+      void fill_ellipse(const ::f64_rectangle & rectangle) override;
 
 //      void Pie(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) override;
-  //    void Pie(const ::double_rectangle & rectangle, const ::double_point & pointStart, const ::double_point & pointEnd) override;
+  //    void Pie(const ::f64_rectangle & rectangle, const ::f64_point & pointStart, const ::f64_point & pointEnd) override;
       void set_polygon(const DOUBLE_POINT * lpPoints, ::collection::count nCount);
-      void set_polygon(const ::double_point * lpPoints, ::collection::count nCount);
+      void set_polygon(const ::f64_point * lpPoints, ::collection::count nCount);
       void set_polygon(const DOUBLE_POINT * lpPoints, ::collection::count nCount, const ::DOUBLE_POINT & pointOffset);
-      void set_polygon(const ::double_point * lpPoints, ::collection::count nCount, const ::double_point & pointOffset);
-      void fill_polygon(const ::double_point * lpPoints, ::collection::count nCount) override;
-//      void fill_polygon(const ::double_point* lpPoints, count nCount) override;
-      void draw_polygon(const ::double_point * lpPoints, ::collection::count nCount) override;
-//      void draw_polygon(const ::double_point * lpPoints, count nCount) override;
-      void polygon(const ::double_point * ppoint, ::collection::count nCount) override;
-      void round_rectangle(const ::double_rectangle & rectangle, double dRadius) override;
+      void set_polygon(const ::f64_point * lpPoints, ::collection::count nCount, const ::f64_point & pointOffset);
+      void fill_polygon(const ::f64_point * lpPoints, ::collection::count nCount) override;
+//      void fill_polygon(const ::f64_point* lpPoints, count nCount) override;
+      void draw_polygon(const ::f64_point * lpPoints, ::collection::count nCount) override;
+//      void draw_polygon(const ::f64_point * lpPoints, count nCount) override;
+      void polygon(const ::f64_point * ppoint, ::collection::count nCount) override;
+      void round_rectangle(const ::f64_rectangle & rectangle, double dRadius) override;
       
       
       void _draw_raw(const ::image::image_drawing & imagedrawing) override;
@@ -332,18 +332,18 @@ namespace draw2d_quartz2d
 //      void StretchBltRaw(double x, double y, double nWidth, double nHeight, ::draw2d::graphics * pgraphicsSrc,
 //                                 double xSrc, double ySrc, int nSrcWidth, int nSrcHeight, ::u32 dwRop) override;
       ::color::color GetPixel(double x, double y) override;
-      ::color::color GetPixel(const ::double_point & point) override;
+      ::color::color GetPixel(const ::f64_point & point) override;
       ::color::color SetPixel(double x, double y, const ::color::color & color) override;
-      ::color::color SetPixel(const ::double_point & point, const ::color::color & color) override;
+      ::color::color SetPixel(const ::f64_point & point, const ::color::color & color) override;
 //      void FloodFill(double x, double y, const ::color::color & color) override;
 //      void ExtFloodFill(double x, double y, const ::color::color & color, ::u32 nFillType) override;
 //      void MaskBlt(double x, double y, double dWidth, double dHeight, ::draw2d::graphics * pgraphicsSrc,
 //                   double xSrc, double ySrc, ::draw2d::bitmap& maskBitmap, double xMask, double yMask,
 //                   ::u32 dwRop) override;
-//      void PlgBlt(::double_point * lpPoint, ::draw2d::graphics * pgraphicsSrc, double xSrc, double ySrc,
+//      void PlgBlt(::f64_point * lpPoint, ::draw2d::graphics * pgraphicsSrc, double xSrc, double ySrc,
 //                  double dWidth, double dHeight, ::draw2d::bitmap& maskBitmap, double xMask, double yMask) override;
       void SetPixelV(double x, double y, const ::color::color & color) override;
-      void SetPixelV(const ::double_point & point, const ::color::color & color) override;
+      void SetPixelV(const ::f64_point & point, const ::color::color & color) override;
 //      void GradientFill(TRIVERTEX* pVertices, WINULONG nVertices,
 //                        void * pMesh, WINULONG nMeshElements, ::u32 dwMode) override;
 //      void TransparentBlt(double xDest, double yDest, int nDestWidth, int nDestHeight,
@@ -376,34 +376,34 @@ namespace draw2d_quartz2d
 //      void text_out(double x, double y, const string & str) override;
       void TextOutRaw(double x, double y, const ::scoped_string & scopedstr) override;
 //      void text_out(double x, double y, const string & str) override;
-//      void ExtTextOut(double x, double y, ::u32 nOptions, const ::double_rectangle & rectangle,
+//      void ExtTextOut(double x, double y, ::u32 nOptions, const ::f64_rectangle & rectangle,
 //                              const char * lpszString, ::u32 nCount, int * lpDxWidths);
-//      void ExtTextOut(double x, double y, ::u32 nOptions, const ::double_rectangle & rectangle,
+//      void ExtTextOut(double x, double y, ::u32 nOptions, const ::f64_rectangle & rectangle,
 //                      const string & str, int * lpDxWidths) override;
-//      virtual double_size TabbedTextOut(double x, double y, const char * lpszString, int nCount,
+//      virtual f64_size TabbedTextOut(double x, double y, const char * lpszString, int nCount,
 //                                 int nTabPositions, int * lpnTabStopPositions, int nTabOrigin);
-//      double_size TabbedTextOut(double x, double y, const string & str,
+//      f64_size TabbedTextOut(double x, double y, const string & str,
 //                         int nTabPositions, int * lpnTabStopPositions, int nTabOrigin);
 
-//      int draw_text(const char * lpszString, int nCount, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
-//      void draw_text(const string & str, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
-      void draw_text(const ::scoped_string & strParam,const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
+//      int draw_text(const char * lpszString, int nCount, const ::f64_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
+//      void draw_text(const string & str, const ::f64_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
+      void draw_text(const ::scoped_string & strParam,const ::f64_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none) override;
 
-//      virtual int draw_text_ex(char * lpszString, int nCount, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams);
-//      void draw_text_ex(const string & str, const ::double_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams) override;
+//      virtual int draw_text_ex(char * lpszString, int nCount, const ::f64_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams);
+//      void draw_text_ex(const string & str, const ::f64_rectangle & rectangle, const ::e_align & ealign = e_align_top_left, const ::e_draw_text & edrawtext = e_draw_text_none, LPDRAWTEXTPARAMS lpDTParams) override;
 
-      double_size _get_text_extent(const ::scoped_string & scopedstr, ::collection::index iIndex) override;
-      double_size _get_text_extent(const ::scoped_string & scopedstr) override;
-      //double_size get_text_extent(const block & block) override;
-//      void get_text_extent(double_size & size, const char * lpszString, character_count nCount, int iIndex) ;
-//      void get_text_extent(double_size & size, const char * lpszString, character_count nCount) override;
-//      void get_text_extent(double_size & size, const string & str) override;
-//      double_size GetOutputTextExtent(const char * lpszString, character_count nCount) override;
-//      double_size GetOutputTextExtent(const string & str) override;
-//      double_size GetTabbedTextExtent(const char * lpszString, character_count nCount, int nTabPositions, int * lpnTabStopPositions);
-//      double_size GetTabbedTextExtent(const string & str, int nTabPositions, int * lpnTabStopPositions);
-//      double_size GetOutputTabbedTextExtent(const char * lpszString, character_count nCount, int nTabPositions, int * lpnTabStopPositions);
-//      double_size GetOutputTabbedTextExtent(const string & str, int nTabPositions, int * lpnTabStopPositions) ;
+      f64_size _get_text_extent(const ::scoped_string & scopedstr, ::collection::index iIndex) override;
+      f64_size _get_text_extent(const ::scoped_string & scopedstr) override;
+      //f64_size get_text_extent(const block & block) override;
+//      void get_text_extent(f64_size & size, const char * lpszString, character_count nCount, int iIndex) ;
+//      void get_text_extent(f64_size & size, const char * lpszString, character_count nCount) override;
+//      void get_text_extent(f64_size & size, const string & str) override;
+//      f64_size GetOutputTextExtent(const char * lpszString, character_count nCount) override;
+//      f64_size GetOutputTextExtent(const string & str) override;
+//      f64_size GetTabbedTextExtent(const char * lpszString, character_count nCount, int nTabPositions, int * lpnTabStopPositions);
+//      f64_size GetTabbedTextExtent(const string & str, int nTabPositions, int * lpnTabStopPositions);
+//      f64_size GetOutputTabbedTextExtent(const char * lpszString, character_count nCount, int nTabPositions, int * lpnTabStopPositions);
+//      f64_size GetOutputTabbedTextExtent(const string & str, int nTabPositions, int * lpnTabStopPositions) ;
 //      void GrayString(::draw2d::brush* pBrush,
 //                              void (CALLBACK* lpfnOutput)(HDC, LPARAM, int), LPARAM lpData,
 //                              int nCount, double x, double y, double dWidth, double dHeight) override;
@@ -430,18 +430,18 @@ namespace draw2d_quartz2d
 
 
 //      // Advanced Drawing
-//      void DrawEdge(double_rectangle * prectangle, ::u32 nEdge, ::u32 nFlags);
-//      void DrawFrameControl(double_rectangle * prectangle, ::u32 nType, ::u32 nState);
+//      void DrawEdge(f64_rectangle * prectangle, ::u32 nEdge, ::u32 nFlags);
+//      void DrawFrameControl(f64_rectangle * prectangle, ::u32 nType, ::u32 nState);
 
 //      // Scrolling Functions
-//      void ScrollDC(int Δx, int Δy, const ::double_rectangle & rectScroll, const ::double_rectangle & rectClip,
-//                    ::draw2d::region* pRgnUpdate, double_rectangle * lpRectUpdate) override;
+//      void ScrollDC(int Δx, int Δy, const ::f64_rectangle & rectScroll, const ::f64_rectangle & rectClip,
+//                    ::draw2d::region* pRgnUpdate, f64_rectangle * lpRectUpdate) override;
 //
 //      // font Functions
 //      void GetCharWidth(::u32 nFirstChar, ::u32 nLastChar, int * lpBuffer) override;
 //      void GetOutputCharWidth(::u32 nFirstChar, ::u32 nLastChar, int * lpBuffer) override;
 //      ::u32 SetMapperFlags(::u32 dwFlag) override;
-//      double_size GetAspectRatioFilter() override;
+//      f64_size GetAspectRatioFilter() override;
 //
 //      //xxx      void GetCharABCWidths(::u32 nFirstChar, ::u32 nLastChar, LPABC lpabc) const;
 //      ::u32 GetFontData(::u32 dwTable, ::u32 dwOffset, void * lpData, ::u32 cbData) override;
@@ -480,7 +480,7 @@ namespace draw2d_quartz2d
 
       // MetaFile Functions
       //xxx      void PlayMetaFile(HMETAFILE hMF);
-//      void PlayMetaFile(HENHMETAFILE hEnhMetaFile, const ::double_rectangle & rectBounds);
+//      void PlayMetaFile(HENHMETAFILE hEnhMetaFile, const ::f64_rectangle & rectBounds);
 //      void AddMetaFileComment(::u32 nDataSize, const unsigned char* pCommentData) override;
       // can be used for enhanced metafiles only
 
@@ -510,16 +510,16 @@ namespace draw2d_quartz2d
 
       float GetMiterLimit() override;
       void SetMiterLimit(float fMiterLimit) override;
-      //int GetPath(::double_point * lpPoints, LPBYTE lpTypes, int nCount) ;
+      //int GetPath(::f64_point * lpPoints, LPBYTE lpTypes, int nCount) ;
       //void SelectClipPath(int nMode) override;
 
       // Misc Helper Functions
 //      static ::draw2d::brush* PASCAL GetHalftoneBrush(::base::application * papp);
-//      void DrawDragRect(const ::double_rectangle & rectangle, const ::double_size & size,
-//                        const ::double_rectangle & rectLast, const ::double_size & sizeLast,
+//      void DrawDragRect(const ::f64_rectangle & rectangle, const ::f64_size & size,
+//                        const ::f64_rectangle & rectLast, const ::f64_size & sizeLast,
 //                        ::draw2d::brush* pBrush = nullptr, ::draw2d::brush* pBrushLast = nullptr) override;
-      void fill_rectangle(const ::double_rectangle & rectangle, const ::color::color & color) override;
-//      void draw_3drect(const ::double_rectangle & rectangle, const ::color::color & colorTopLeft, const ::color::color & colorBottomRight, const ::e_border & eborder = e_border_all) override;
+      void fill_rectangle(const ::f64_rectangle & rectangle, const ::color::color & color) override;
+//      void draw_3drect(const ::f64_rectangle & rectangle, const ::color::color & colorTopLeft, const ::color::color & colorBottomRight, const ::e_border & eborder = e_border_all) override;
 
       //virtual void assert_ok() const override;
 //      virtual void dump(dump_context & dumpcontext) const override;
@@ -539,7 +539,7 @@ namespace draw2d_quartz2d
 
       //xxx      virtual Gdiplus::FillMode gdiplus_get_fill_mode();
 
-      void blur(bool bExpand, double dRadius, const ::double_rectangle & rectangle) override;
+      void blur(bool bExpand, double dRadius, const ::f64_rectangle & rectangle) override;
 
 
       // platform-specific or platform-internals

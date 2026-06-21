@@ -59,6 +59,8 @@ class window;
 //
       virtual void do_tasks();
       
+      virtual void set_last_present_time();
+      
       virtual void on_left_button_up(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
       virtual void on_left_button_down(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);

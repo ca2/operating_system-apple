@@ -75,7 +75,7 @@ namespace typeface_quartz2d
       //void mult_alpha(::image::image *pimageWork, bool bPreserveAlpha = true);
       //void set_rgb(int R, int G, int B);
 
-      //void rotate(::image::image *pimage, const ::double_rectangle & rectangle, double dAngle, double dScale);
+      //void rotate(::image::image *pimage, const ::f64_rectangle & rectangle, double dAngle, double dScale);
       //void rotate(::image::image *pimage, double dAngle, double dScale);
       //void Rotate034(::image::image *pimage, double dAngle, double dScale);
 

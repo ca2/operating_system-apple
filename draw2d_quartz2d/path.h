@@ -26,7 +26,7 @@ namespace draw2d_quartz2d
       
       virtual bool internal_begin_figure(bool bFill, ::draw2d::enum_fill_mode efillmode);
       virtual bool internal_close(bool bClose);
-      virtual bool internal_add_arc(const ::double_rectangle & rectangle, double dStart, double dAngle, bool bClockwise);
+      virtual bool internal_add_arc(const ::f64_rectangle & rectangle, double dStart, double dAngle, bool bClockwise);
       virtual bool internal_add_line(double x1, double y1, double x2, double y2);
       virtual bool internal_add_line(double x, double y);
       virtual bool internal_add_move(double x, double y);
@@ -40,16 +40,16 @@ namespace draw2d_quartz2d
       void * detach() override;
       
       bool _set(::draw2d::graphics * pgraphics, const ::draw2d::enum_item & eitem) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::double_arc & arc) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::double_rectangle & rectangle) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::double_ellipse & ellipse) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::double_line & double_line) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::double_lines & lines) override;
-      bool _set(::draw2d::graphics * pgraphics, const ::double_polygon & polygon) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::f64_arc & arc) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::f64_rectangle & rectangle) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::f64_ellipse & ellipse) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::f64_line & f64_line) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::f64_lines & lines) override;
+      bool _set(::draw2d::graphics * pgraphics, const ::f64_polygon & polygon) override;
       bool _set(::draw2d::graphics * pgraphics, const ::write_text::text_out & textout) override;
       bool _set(::draw2d::graphics * pgraphics, const ::write_text::draw_text & drawtext) override;
    
-      bool contains(::draw2d::graphics_pointer & pgraphics, const ::double_point & point) override;
+      bool contains(::draw2d::graphics_pointer & pgraphics, const ::f64_point & point) override;
       
       
    };

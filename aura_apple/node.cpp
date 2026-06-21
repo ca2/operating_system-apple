@@ -246,7 +246,9 @@ void node::on_system_main()
 //
 //   defer_create_windowing_application_delegate(papp, papp->application_menu(), papp);
    
-   system()->acme_windowing()->windowing_application_main_loop();
+   //system()->acme_windowing()->windowing_application_main_loop();
+   
+   system()->acme_windowing()->run();
 
 }
 

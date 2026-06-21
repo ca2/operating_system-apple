@@ -200,7 +200,7 @@ namespace quartz2d
 //      CGContextSetTextDrawingMode (m_cgcontext, kCGTextFill);
 //      CGAffineTransform trans = CGAffineTransformMakeScale(1, -1);
 //      CGContextSetTextMatrix(m_cgcontext, trans);
-//      CGContextSetRGBFillColor (m_cgcontext, __expand_float_rgba(pnanobrushText->m_color));
+//      CGContextSetRGBFillColor (m_cgcontext, __expand_f32_rgba(pnanobrushText->m_color));
 
 //      double x = rectangleText.left;
 //      
@@ -326,7 +326,7 @@ namespace quartz2d
          
          CGContextAddRect(m_cgcontext, rect);
          
-         CGContextSetRGBStrokeColor(m_cgcontext, __expand_float_rgba(pnanopen->m_color));
+         CGContextSetRGBStrokeColor(m_cgcontext, __expand_f32_rgba(pnanopen->m_color));
          
          CGContextSetLineWidth(m_cgcontext, pnanopen->m_iWidth);
          
@@ -369,7 +369,7 @@ namespace quartz2d
    void device::_set_fill_color(const ::color::color & color)
    {
 
-      CGContextSetRGBFillColor(m_cgcontext, __expand_float_rgba(color));
+      CGContextSetRGBFillColor(m_cgcontext, __expand_f32_rgba(color));
 
    }
 

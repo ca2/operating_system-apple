@@ -70,10 +70,10 @@ namespace quartz2d
 
 
       //void * _HGDIOBJ() override;
-      virtual void create_pen(::nano::graphics::enum_pen epen, ::f64 fWidth, const ::color::color &color);
+      void create_pen(::nano::graphics::enum_pen epen, ::f64 fWidth, const ::color::color &color) override;
 
-      virtual void set_start_cap(::nano::graphics::enum_line_cap elinecap);
-      virtual void set_end_cap(::nano::graphics::enum_line_cap elinecap);
+      void set_start_cap(::nano::graphics::enum_line_cap elinecap) override;
+      void set_end_cap(::nano::graphics::enum_line_cap elinecap) override;
 
 
 

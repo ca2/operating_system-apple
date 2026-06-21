@@ -18,6 +18,8 @@
 #include "aura/platform/context.h"
 #include "acme/platform/node.h"
 #include "acme/platform/system.h"
+#include "acme/operating_system/apple/cfref.h"
+#include "acme/operating_system/apple/cgref.h"
 //#include <math.h>
 //#include <memory.h>
 #include <CoreFoundation/CFDictionary.h>
@@ -194,32 +196,32 @@ namespace draw2d_quartz2d
    }
 
 
-   double_point graphics::GetBrushOrg()
+   f64_point graphics::GetBrushOrg()
    {
 
       throw ::exception(error_not_implemented);
       
-      return ::double_point();
+      return ::f64_point();
 
    }
 
 
-   double_point graphics::SetBrushOrg(double x, double y)
+   f64_point graphics::SetBrushOrg(double x, double y)
    {
 
       throw ::exception(error_not_implemented);
       
-      return ::double_point();
+      return ::f64_point();
 
    }
 
 
-   double_point graphics::SetBrushOrg(const ::double_point & point)
+   f64_point graphics::SetBrushOrg(const ::f64_point & point)
    {
 
       throw ::exception(error_not_implemented);
       
-      return ::double_point();
+      return ::f64_point();
 
    }
 
@@ -243,31 +245,31 @@ namespace draw2d_quartz2d
    }
 
 
-   double_size graphics::get_extents()
+   f64_size graphics::get_extents()
    {
 
-      return ::double_size(0, 0);
+      return ::f64_size(0, 0);
       
    }
 
    
-   double_point graphics::GetWindowOrg()
+   f64_point graphics::GetWindowOrg()
    {
 
-      return ::double_point();
+      return ::f64_point();
       
    }
 
 
-   double_size graphics::GetWindowExt()
+   f64_size graphics::GetWindowExt()
    {
 
-      return ::double_size(0, 0);
+      return ::f64_size(0, 0);
       
    }
 
 
-//   double_point graphics::set_origin(const ::double_point & point)
+//   f64_point graphics::set_origin(const ::f64_point & point)
 //   {
 //
 //      return set_origin(point.x, point.y);
@@ -275,37 +277,37 @@ namespace draw2d_quartz2d
 //   }
 
 
-   double_size graphics::set_extents(const ::double_size & size)
+   f64_size graphics::set_extents(const ::f64_size & size)
    {
 
-      return ::double_size(0, 0);
+      return ::f64_size(0, 0);
       
    }
 
 
-   double_point graphics::SetWindowOrg(const ::double_point & point)
+   f64_point graphics::SetWindowOrg(const ::f64_point & point)
    {
 
-      return ::double_point();
+      return ::f64_point();
       
    }
 
 
-//   double_size graphics::set_window_ext(const ::double_size & size)
+//   f64_size graphics::set_window_ext(const ::f64_size & size)
 //   {
 //
-//      return ::double_size(0, 0);
+//      return ::f64_size(0, 0);
 //      
 //   }
 
 
-   void graphics::DPtoLP(::double_rectangle * prectangle)
+   void graphics::DPtoLP(::f64_rectangle * prectangle)
    {
 
    }
 
 
-   void graphics::LPtoDP(::double_rectangle * prectangle)
+   void graphics::LPtoDP(::f64_rectangle * prectangle)
    {
       
    }
@@ -343,7 +345,7 @@ namespace draw2d_quartz2d
    }
 
 
-   double_point graphics::current_position()
+   f64_point graphics::current_position()
    {
 
       return m_point;
@@ -351,7 +353,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::arc(double x, double y, double w, double h, ::double_angle start, ::double_angle extends)
+   void graphics::arc(double x, double y, double w, double h, ::f64_angle start, ::f64_angle extends)
    {
 
       double end = start + extends;
@@ -371,7 +373,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::polyline(const double_point* lpPoints, ::collection::count nCount)
+   void graphics::polyline(const f64_point* lpPoints, ::collection::count nCount)
    {
 
       if(nCount < 2)
@@ -390,7 +392,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::fill_rectangle(const ::double_rectangle & rectParam, ::draw2d::brush * pbrush)
+   void graphics::fill_rectangle(const ::f64_rectangle & rectParam, ::draw2d::brush * pbrush)
    {
 
       CGRect rectangle;
@@ -406,7 +408,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::fill_rectangle(const ::double_rectangle & rectangle)
+   void graphics::fill_rectangle(const ::f64_rectangle & rectangle)
    {
 
       fill_rectangle(rectangle, m_pbrush);
@@ -414,7 +416,7 @@ namespace draw2d_quartz2d
    }
    
    
-   void graphics::frame_rectangle(const ::double_rectangle & rectParam, ::draw2d::brush* pBrush)
+   void graphics::frame_rectangle(const ::f64_rectangle & rectParam, ::draw2d::brush* pBrush)
    {
 
       CGRect rectangle;
@@ -430,7 +432,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::draw_rectangle(const ::double_rectangle & rectParam, ::draw2d::pen* ppen)
+   void graphics::draw_rectangle(const ::f64_rectangle & rectParam, ::draw2d::pen* ppen)
    {
 
       CGRect rectangle;
@@ -461,7 +463,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::draw_rectangle(const ::double_rectangle & rectangle)
+   void graphics::draw_rectangle(const ::f64_rectangle & rectangle)
    {
 
       draw_rectangle(rectangle, m_ppen);
@@ -469,7 +471,7 @@ namespace draw2d_quartz2d
    }
    
   
-   void graphics::invert_rectangle(const ::double_rectangle & rectangle)
+   void graphics::invert_rectangle(const ::f64_rectangle & rectangle)
    {
 
       throw ::exception(error_not_implemented);
@@ -477,7 +479,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::DrawFocusRect(const ::double_rectangle & rectangle)
+   void graphics::DrawFocusRect(const ::f64_rectangle & rectangle)
    {
 
       throw ::exception(error_not_implemented);;
@@ -485,7 +487,7 @@ namespace draw2d_quartz2d
    }
    
 
-   void graphics::draw_ellipse(const ::double_rectangle & rectParam)
+   void graphics::draw_ellipse(const ::f64_rectangle & rectParam)
    {
       
       CGRect rectangle;
@@ -499,7 +501,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::fill_ellipse(const ::double_rectangle & rectParam)
+   void graphics::fill_ellipse(const ::f64_rectangle & rectParam)
    {
 
        
@@ -533,7 +535,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::set_polygon(const double_point * p, ::collection::count c)
+   void graphics::set_polygon(const f64_point * p, ::collection::count c)
    {
 
       set_polygon((const DOUBLE_POINT *) p, c);
@@ -558,7 +560,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::set_polygon(const double_point * p, ::collection::count c, const double_point & pointOffset)
+   void graphics::set_polygon(const f64_point * p, ::collection::count c, const f64_point & pointOffset)
    {
 
       set_polygon((const DOUBLE_POINT *) p, c, (const DOUBLE_POINT &) pointOffset);
@@ -566,7 +568,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::fill_polygon(const ::double_point * pa, ::collection::count nCount)
+   void graphics::fill_polygon(const ::f64_point * pa, ::collection::count nCount)
    {
 
       if(nCount <= 0)
@@ -585,7 +587,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::draw_polygon(const ::double_point * pa, ::collection::count nCount)
+   void graphics::draw_polygon(const ::f64_point * pa, ::collection::count nCount)
    {
 
       if(nCount <= 0)
@@ -604,7 +606,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::polygon(const ::double_point * pa, ::collection::count nCount)
+   void graphics::polygon(const ::f64_point * pa, ::collection::count nCount)
    {
 
       if(nCount <= 0)
@@ -623,7 +625,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::rectangle(const ::double_rectangle & rectParam)
+   void graphics::rectangle(const ::f64_rectangle & rectParam)
    {
 
       CGRect rectangle;
@@ -639,7 +641,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::round_rectangle(const ::double_rectangle & rectangle, const double dRadius)
+   void graphics::round_rectangle(const ::f64_rectangle & rectangle, const double dRadius)
    {
 
       ::draw2d::graphics::round_rectangle(rectangle, dRadius);
@@ -846,7 +848,7 @@ namespace draw2d_quartz2d
          double nSrcWidth;
          double nSrcHeight;
 
-         ::double_rectangle rectFinal = imagedrawing.m_rectangleTarget;
+         ::f64_rectangle rectFinal = imagedrawing.m_rectangleTarget;
 
          nDstWidth = imagedrawing.m_rectangleTarget.width();
          nDstHeight = imagedrawing.m_rectangleTarget.height();
@@ -985,7 +987,7 @@ namespace draw2d_quartz2d
    }
 
 
-   ::color::color graphics::GetPixel(const ::double_point & point)
+   ::color::color graphics::GetPixel(const ::f64_point & point)
    {
 
       throw ::exception(error_not_implemented);
@@ -1005,7 +1007,7 @@ namespace draw2d_quartz2d
    }
 
 
-   ::color::color graphics::SetPixel(const ::double_point & point, const ::color::color & color)
+   ::color::color graphics::SetPixel(const ::f64_point & point, const ::color::color & color)
    {
 
       throw ::exception(error_not_implemented);
@@ -1027,9 +1029,9 @@ namespace draw2d_quartz2d
       if (m_pimageAlphaBlend)
       {
 
-         ::double_rectangle rectIntersect(m_pointAlphaBlend, m_pimageAlphaBlend->size());
+         ::f64_rectangle rectIntersect(m_pointAlphaBlend, m_pimageAlphaBlend->size());
 
-         auto rectText = ::double_rectangle(::double_point(x, y), ::double_size(get_text_extent(scopedstr)));
+         auto rectText = ::f64_rectangle(::f64_point(x, y), ::f64_size(get_text_extent(scopedstr)));
 
          if (rectIntersect.intersect(rectIntersect, rectText))
          {
@@ -1043,14 +1045,14 @@ namespace draw2d_quartz2d
             pimage1->get_graphics()->set(get_current_brush());
             pimage1->get_graphics()->text_out(0, 0, scopedstr);
 
-            pimage1->blend(::double_point(), m_pimageAlphaBlend, double_point((int)maximum(0, x - m_pointAlphaBlend.x), (int)maximum(0, y - m_pointAlphaBlend.y)), rectText.size());
+            pimage1->blend(::f64_point(), m_pimageAlphaBlend, f64_point((int)maximum(0, x - m_pointAlphaBlend.x), (int)maximum(0, y - m_pointAlphaBlend.y)), rectText.size());
 
             set_alpha_mode(::draw2d::e_alpha_mode_blend);
 
             auto rectangleDst=i32_rectangle(::i32_point((int)x, (int)y),
                                  rectText.size());
             
-            double_rectangle rectangleSource(i32_point(), rectangleDst.size());
+            f64_rectangle rectangleSource(i32_point(), rectangleDst.size());
             
             ::image::image_source imagesource(pimage1, rectangleSource);
             
@@ -1092,7 +1094,7 @@ namespace draw2d_quartz2d
 
 
    // graphics 3.1 Specific functions
-   ::u32 graphics::SetBoundsRect(const ::double_rectangle & rectBounds, ::u32 flags)
+   ::u32 graphics::SetBoundsRect(const ::f64_rectangle & rectBounds, ::u32 flags)
    {
 
       throw ::exception(error_not_implemented);
@@ -1102,7 +1104,7 @@ namespace draw2d_quartz2d
    }
 
 
-   ::u32 graphics::GetBoundsRect(::double_rectangle * rectBounds, ::u32 flags)
+   ::u32 graphics::GetBoundsRect(::f64_rectangle * rectBounds, ::u32 flags)
    {
 
       throw ::exception(error_not_implemented);
@@ -1160,7 +1162,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::SetPixelV(const ::double_point & point, const ::color::color & color)
+   void graphics::SetPixelV(const ::f64_point & point, const ::color::color & color)
    {
 
       throw ::exception(error_not_implemented);
@@ -1168,7 +1170,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::angle_arc(double x, double y, double dRadius, ::double_angle fStartAngle, ::double_angle fSweepAngle)
+   void graphics::angle_arc(double x, double y, double dRadius, ::f64_angle fStartAngle, ::f64_angle fSweepAngle)
    {
 
       throw ::exception(error_not_implemented);;
@@ -1176,7 +1178,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::arc_to(const ::double_rectangle & rectangle, const ::double_point & pointStart, const ::double_point & pointEnd)
+   void graphics::arc_to(const ::f64_rectangle & rectangle, const ::f64_point & pointStart, const ::f64_point & pointEnd)
    {
 
       throw ::exception(error_not_implemented);;
@@ -1317,7 +1319,7 @@ namespace draw2d_quartz2d
 
 
 
-   void graphics::DPtoHIMETRIC(::double_size * psize)
+   void graphics::DPtoHIMETRIC(::f64_size * psize)
    {
 
       throw ::exception(error_not_implemented);;
@@ -1325,7 +1327,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::HIMETRICtoDP(::double_size * psize)
+   void graphics::HIMETRICtoDP(::f64_size * psize)
    {
 
       throw ::exception(error_not_implemented);;
@@ -1333,10 +1335,10 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::LPtoHIMETRIC(::double_size * psize)
+   void graphics::LPtoHIMETRIC(::f64_size * psize)
    {
       
-      ASSERT(::is_memory_segment_ok(psize, sizeof(double_size)));
+      ASSERT(::is_memory_segment_ok(psize, sizeof(f64_size)));
 
       LPtoDP(psize);
       
@@ -1345,10 +1347,10 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::HIMETRICtoLP(::double_size * psize)
+   void graphics::HIMETRICtoLP(::f64_size * psize)
    {
       
-      ASSERT(::is_memory_segment_ok(psize, sizeof(double_size)));
+      ASSERT(::is_memory_segment_ok(psize, sizeof(f64_size)));
 
       HIMETRICtoDP(psize);
       
@@ -1448,7 +1450,7 @@ namespace draw2d_quartz2d
    }
 
 
-//   double_point graphics::get_origin()
+//   f64_point graphics::get_origin()
 //   {
 //
 //      return ::draw2d::graphics::get_origin();
@@ -1501,10 +1503,10 @@ namespace draw2d_quartz2d
    }
 
 
-//   double_point graphics::set_origin(double x, double y)
+//   f64_point graphics::set_origin(double x, double y)
 //   {
 //
-//      double_point pt =get_origin();
+//      f64_point pt =get_origin();
 //      
 //      pt.x = x - pt.x;
 //      pt.y = y - pt.y;
@@ -1514,7 +1516,7 @@ namespace draw2d_quartz2d
 //   }
 
 
-//   double_point graphics::offset_origin(double nWidth, double nHeight)
+//   f64_point graphics::offset_origin(double nWidth, double nHeight)
 //   {
 //
 //      return ::draw2d::graphics::offset_origin(nWidth, nHeight);
@@ -1528,17 +1530,17 @@ namespace draw2d_quartz2d
    }
 
 
-   double_size graphics::set_extents(double x, double y)
+   f64_size graphics::set_extents(double x, double y)
    {
 
       throw ::exception(error_not_implemented);
       
-      return ::double_size(0, 0);
+      return ::f64_size(0, 0);
 
    }
 
 
-   double_size graphics::scale_extents(double xNum, double xDenom, double yNum, double yDenom)
+   f64_size graphics::scale_extents(double xNum, double xDenom, double yNum, double yDenom)
    {
 
       return ::draw2d::graphics::scale_extents(xNum, xDenom, yNum, yDenom);
@@ -1546,48 +1548,48 @@ namespace draw2d_quartz2d
    }
 
 
-   double_point graphics::SetWindowOrg(double x, double y)
+   f64_point graphics::SetWindowOrg(double x, double y)
    {
 
       throw ::exception(error_not_implemented);
       
-      return ::double_point();
+      return ::f64_point();
 
    }
 
 
-   double_point graphics::offset_window_org(double nWidth, double nHeight)
+   f64_point graphics::offset_window_org(double nWidth, double nHeight)
    {
 
       throw ::exception(error_not_implemented);
       
-      return ::double_point();
+      return ::f64_point();
 
 
    }
 
 
-//   double_size graphics::set_window_ext(double x, double y)
+//   f64_size graphics::set_window_ext(double x, double y)
 //   {
 //
 //      throw ::exception(error_not_implemented);
 //      
-//      return ::double_size(0, 0);
+//      return ::f64_size(0, 0);
 //
 //   }
 
 //
-//   double_size graphics::scale_window_ext(double xNum, double xDenom, double yNum, double yDenom)
+//   f64_size graphics::scale_window_ext(double xNum, double xDenom, double yNum, double yDenom)
 //   {
 //
 //      throw ::exception(error_not_implemented);
 //      
-//      return ::double_size(0, 0);
+//      return ::f64_size(0, 0);
 //
 //   }
 
 
-   int graphics::get_clip_box(::double_rectangle & rectangle)
+   int graphics::get_clip_box(::f64_rectangle & rectangle)
    {
 
       CGRect cgrect = CGContextGetClipBoundingBox (m_cgcontext);
@@ -1657,7 +1659,7 @@ namespace draw2d_quartz2d
    }
 
    
-   void graphics::intersect_clip(const ::double_rectangle & rectangle)
+   void graphics::intersect_clip(const ::f64_rectangle & rectangle)
    {
 
       CGRect r;
@@ -1679,7 +1681,7 @@ namespace draw2d_quartz2d
    }
 
 
-//   void graphics::intersect_clip(const ::double_ellipse & ellipse)
+//   void graphics::intersect_clip(const ::f64_ellipse & ellipse)
 //   {
 //
 //      CGRect r;
@@ -1699,7 +1701,7 @@ namespace draw2d_quartz2d
 //   }
 //
 //
-//   void graphics::intersect_clip(const ::double_polygon & polygon)
+//   void graphics::intersect_clip(const ::f64_polygon & polygon)
 //   {
 //
 //      CGContextBeginPath(m_cgcontext);
@@ -1711,7 +1713,7 @@ namespace draw2d_quartz2d
 //   }
 //
 //
-//   void graphics::_add_clipping_shape(const ::double_rectangle & rectangle, ::draw2d::region * pregion)
+//   void graphics::_add_clipping_shape(const ::f64_rectangle & rectangle, ::draw2d::region * pregion)
 //   {
 //
 //      _add_shape(rectangle);
@@ -1721,7 +1723,7 @@ namespace draw2d_quartz2d
 //   }
 //
 //
-//   void graphics::_add_clipping_shape(const ::double_ellipse & ellipse, ::draw2d::region * pregion)
+//   void graphics::_add_clipping_shape(const ::f64_ellipse & ellipse, ::draw2d::region * pregion)
 //   {
 //
 //      _add_shape(ellipse);
@@ -1731,7 +1733,7 @@ namespace draw2d_quartz2d
 //   }
 //
 //
-//   void graphics::_add_clipping_shape(const ::double_polygon & polygon, ::draw2d::region * pregion)
+//   void graphics::_add_clipping_shape(const ::f64_polygon & polygon, ::draw2d::region * pregion)
 //   {
 //
 //      _add_shape(polygon);
@@ -1756,7 +1758,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_shape(const ::double_rectangle & rectangle)
+   void graphics::_add_shape(const ::f64_rectangle & rectangle)
    {
    
       CGRect r;
@@ -1772,7 +1774,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_shape(const ::double_ellipse & ellipse)
+   void graphics::_add_shape(const ::f64_ellipse & ellipse)
    {
    
       CGRect r;
@@ -1786,7 +1788,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::_add_shape(const ::double_polygon_base & polygon)
+   void graphics::_add_shape(const ::f64_polygon_base & polygon)
    {
    
       //CGContextBeginPath(m_cgcontext);
@@ -1796,7 +1798,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::LPtoDP(::double_size * psize)
+   void graphics::LPtoDP(::f64_size * psize)
    {
 
       throw ::exception(error_not_implemented);;
@@ -1806,7 +1808,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::DPtoLP(::double_size * psize)
+   void graphics::DPtoLP(::f64_size * psize)
    {
 
       throw ::exception(error_not_implemented);;
@@ -1816,7 +1818,7 @@ namespace draw2d_quartz2d
    }
 
 //
-//   int graphics::draw_text(const char * lpszString, int nCount, const ::double_rectangle & rectangle, const ::e_align & ealign, const ::e_draw_text & edrawtext)
+//   int graphics::draw_text(const char * lpszString, int nCount, const ::f64_rectangle & rectangle, const ::e_align & ealign, const ::e_draw_text & edrawtext)
 //   {
 //
 //      draw_text(string(lpszString, nCount), rectangle, ealign, edrawtext);
@@ -1826,34 +1828,34 @@ namespace draw2d_quartz2d
 //   }
 
 
-//   double_size graphics::get_text_extent(const ::scoped_string * lpszString, character_count nCount, int iIndex)
+//   f64_size graphics::get_text_extent(const ::scoped_string * lpszString, character_count nCount, int iIndex)
 //   {
 //
-//      double_size sz;
+//      f64_size sz;
 //
 //      get_text_extent(sz, lpszString, nCount, iIndex);
 //
-//      return double_size((int) sz.cx, (int) sz.cy);
+//      return f64_size((int) sz.cx, (int) sz.cy);
 //
 //   }
 //
 //
-//   double_size graphics::get_text_extent(const char * lpszString, character_count nCount)
+//   f64_size graphics::get_text_extent(const char * lpszString, character_count nCount)
 //   {
 //
-//      ::double_size double_size;
+//      ::f64_size f64_size;
 //
-//      get_text_extent(double_size, lpszString, nCount, (int) nCount);
+//      get_text_extent(f64_size, lpszString, nCount, (int) nCount);
 //
-//      return ::double_size(double_size.cx, double_size.cy);
+//      return ::f64_size(f64_size.cx, f64_size.cy);
 //
 //   }
 
 
-//   double_size graphics::get_text_extent(const block & block)
+//   f64_size graphics::get_text_extent(const block & block)
 //   {
 //
-//      ::double_size size;
+//      ::f64_size size;
 //
 //      get_text_extent(size, (const char *) block.get_data(), (int)block.get_size());
 //
@@ -1862,7 +1864,7 @@ namespace draw2d_quartz2d
 //   }
 
 
-   ::double_size graphics::_get_text_extent(const ::scoped_string & scopedstr, ::collection::index iIndex)
+   ::f64_size graphics::_get_text_extent(const ::scoped_string & scopedstr, ::collection::index iIndex)
    {
       
       _synchronous_lock synchronouslock(synchronization());
@@ -1875,7 +1877,7 @@ namespace draw2d_quartz2d
 
       stra.add_lines(range);
       
-      ::double_size size;
+      ::f64_size size;
 
       size.cy = 0;
 
@@ -1904,7 +1906,7 @@ namespace draw2d_quartz2d
    }
 
 
-   ::double_size graphics::_get_text_extent(const ::scoped_string & scopedstr)
+   ::f64_size graphics::_get_text_extent(const ::scoped_string & scopedstr)
    {
 
       return _get_text_extent(scopedstr, (int) scopedstr.size());
@@ -1912,7 +1914,7 @@ namespace draw2d_quartz2d
    }
 
 
-//   void graphics::get_text_extent(double_size & size, const string & str)
+//   void graphics::get_text_extent(f64_size & size, const string & str)
 //   {
 //
 //      return ::draw2d::graphics::get_text_extent(size, str);
@@ -1920,7 +1922,7 @@ namespace draw2d_quartz2d
 //   }
 
 
-   void graphics::fill_rectangle(const ::double_rectangle & rectParam, const ::color::color & color)
+   void graphics::fill_rectangle(const ::f64_rectangle & rectParam, const ::color::color & color)
    {
 
       CGRect rectangle;
@@ -2002,7 +2004,7 @@ namespace draw2d_quartz2d
    }
 
 //
-//   void graphics::line(const ::double_point & p1, const ::double_point & p2)
+//   void graphics::line(const ::f64_point & p1, const ::f64_point & p2)
 //   {
 //
 //      CGContextBeginPath(m_cgcontext);
@@ -2083,7 +2085,7 @@ namespace draw2d_quartz2d
    }
 
 
-   void graphics::blur(bool bExpand, double dRadius, const ::double_rectangle & rectangle)
+   void graphics::blur(bool bExpand, double dRadius, const ::f64_rectangle & rectangle)
    {
 
 
@@ -2109,7 +2111,7 @@ namespace draw2d_quartz2d
          
       }
 
-      CGContextSetRGBFillColor(m_cgcontext, __expand_float_rgba(pbrush->m_color));
+      CGContextSetRGBFillColor(m_cgcontext, __expand_f32_rgba(pbrush->m_color));
 
    }
 
@@ -2130,7 +2132,7 @@ namespace draw2d_quartz2d
          if(ppen->m_pbrush->m_ebrush == ::draw2d::e_brush_solid)
          {
 
-            CGContextSetRGBStrokeColor(m_cgcontext, __expand_float_rgba(ppen->m_pbrush->m_color));
+            CGContextSetRGBStrokeColor(m_cgcontext, __expand_f32_rgba(ppen->m_pbrush->m_color));
 
          }
 
@@ -2138,7 +2140,7 @@ namespace draw2d_quartz2d
       else
       {
 
-         CGContextSetRGBStrokeColor(m_cgcontext, __expand_float_rgba(ppen->m_color));
+         CGContextSetRGBStrokeColor(m_cgcontext, __expand_f32_rgba(ppen->m_color));
 
       }
       
@@ -2172,7 +2174,7 @@ namespace draw2d_quartz2d
 
       }
 
-      CGContextSetRGBStrokeColor(m_cgcontext, __expand_float_rgba(pbrush->m_color));
+      CGContextSetRGBStrokeColor(m_cgcontext, __expand_f32_rgba(pbrush->m_color));
 
       CGContextSetLineWidth(m_cgcontext, dWidth);
 
@@ -2229,8 +2231,8 @@ namespace draw2d_quartz2d
 
          _clip(m_pregion);
          
-         float_rectangle outer(pbrush->m_point, pbrush->m_size);
-         float_rectangle inner(outer);
+         f32_rectangle outer(pbrush->m_point, pbrush->m_size);
+         f32_rectangle inner(outer);
          
          float fRadius = pbrush->m_dRadius;
          
@@ -2309,7 +2311,7 @@ namespace draw2d_quartz2d
          r.size.width = inner.width() + f5 * 2.0f;
          r.size.height = inner.height() + f5 * 2.0f;
 
-         CGContextSetRGBFillColor(m_cgcontext, __expand_float_rgba(pbrush->m_color1));
+         CGContextSetRGBFillColor(m_cgcontext, __expand_f32_rgba(pbrush->m_color1));
          CGContextFillRect(m_cgcontext, r);
          
          float f2 = 0.444f;
@@ -2885,12 +2887,12 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
    void graphics::internal_set_fill_color(const ::color::color & color)
    {
 
-      CGContextSetRGBFillColor(m_cgcontext, __expand_float_rgba(color));
+      CGContextSetRGBFillColor(m_cgcontext, __expand_f32_rgba(color));
 
    }
 
 
-   void graphics::draw_text(const ::scoped_string & strParam,const ::double_rectangle & rectangle, const ::e_align & ealign, const ::e_draw_text & edrawtext)
+   void graphics::draw_text(const ::scoped_string & strParam,const ::f64_rectangle & rectangle, const ::e_align & ealign, const ::e_draw_text & edrawtext)
    {
 
       string str(strParam);
@@ -3042,9 +3044,9 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
          else if(ealign & e_align_vertical_center)
          {
 
-            double_rectangle rectUpper(rectangle);
+            f64_rectangle rectUpper(rectangle);
 
-            double_rectangle rectLower(rectangle);
+            f64_rectangle rectLower(rectangle);
 
             rectUpper.bottom = y;
 
@@ -3253,11 +3255,13 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       }
 
-//      ::draw2d_quartz2d::font::metrics & m = f->m_mapMetrics[str];
+      // ::draw2d_quartz2d::font::metrics & m = f->m_mapMetrics[str];
+      
+      ref_array refa;
 
-      CFStringRef string = CFStringCreateWithCString(nullptr, str, kCFStringEncodingUTF8);
+      cfref<CFStringRef> cfrefString(refa, CFStringCreateWithCString(nullptr, str, kCFStringEncodingUTF8));
 
-      if(string == nullptr)
+      if(!cfrefString)
       {
 
          throw exception(error_null_pointer);
@@ -3268,9 +3272,9 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       
       array < const void * > pvals;
       
-      array < CFTypeRef > cfrel;
+      //array < cftyperef > cftyperefa;
       
-      array < CGColorRef > crrel;
+      //array < cgcolorref > cgcolorrefa;
       
       pkeys.add(kCTFontAttributeName);
 
@@ -3281,19 +3285,17 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
          int iUnderlineStyle = kCTUnderlineStyleSingle;
 
-         CFNumberRef num = CFNumberCreate(kCFAllocatorDefault, kCFNumberIntType, &iUnderlineStyle);
-
          pkeys.add(kCTUnderlineStyleAttributeName);
-         pvals.add(num);
-         cfrel.add(num);
+         pvals.add(cftyperef(refa, CFNumberCreate(kCFAllocatorDefault, kCFNumberIntType, &iUnderlineStyle)));
+         //cftyperefa.add(num);
 
       }
 
-//      if(emode != kCGTextInvisible && bDraw && (bFill || bStroke || emode == kCGTextClip))
-         if(emode != kCGTextInvisible && bDraw && (bFill || bStroke))
+      // if(emode != kCGTextInvisible && bDraw && (bFill || bStroke || emode == kCGTextClip))
+      if(emode != kCGTextInvisible && bDraw && (bFill || bStroke))
       {
 
-         CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+         cgcolorspaceref rgbColorSpace(refa, CGColorSpaceCreateDeviceRGB());
          
          CGFloat components[4];
 
@@ -3307,20 +3309,19 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
             components[3] = colorFill.f32_opacity();
 
             pkeys.add(kCTForegroundColorAttributeName);
-            auto color = CGColorCreate(rgbColorSpace, components);
-            pvals.add(color);
-            crrel.add(color);
+            pvals.add(cgcolorref(refa, CGColorCreate(rgbColorSpace, components)));
+            //cgcolorrefa.add(color);
 
          }
 
          if(bStroke)
          {
 
-            double dStroke = ::is_null(ppen) ? 3.0 : ppen->m_dWidth * 100.0 / pfont->m_fontsize.as_double();
+            double dStroke = ::is_null(ppen) ? 3.0 : ppen->m_dWidth * 100.0 / pfont->m_fontsize.as_f64();
 
             pkeys.add(kCTStrokeWidthAttributeName);
-            pvals.add(CFNumberCreate(kCFAllocatorDefault, kCFNumberDoubleType, &dStroke));
-            cfrel.add(pvals.last());
+            pvals.add(cftyperef(refa, CFNumberCreate(kCFAllocatorDefault, kCFNumberDoubleType, &dStroke)));
+            //cftyperefa.add(pvals.last());
 
             components[0] = colorStroke.f32_red();
             components[1] = colorStroke.f32_green();
@@ -3328,48 +3329,33 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
             components[3] = colorStroke.f32_opacity();
 
             pkeys.add(kCTStrokeColorAttributeName);
-            auto color = CGColorCreate(rgbColorSpace, components);
-            pvals.add(color);
-            crrel.add(color);
+            pvals.add(cgcolorref(refa,CGColorCreate(rgbColorSpace, components)));
+            //cgcolorrefa.add(color);
 
          }
 
-         CGColorSpaceRelease(rgbColorSpace);
+         //CGColorSpaceRelease(rgbColorSpace);
 
       }
       
-      ///int iSize = pkeys.get_size();
+      auto iSize = pkeys.get_size();
 
 
-      CFDictionaryRef attributes = CFDictionaryCreate(
+      cfref<CFDictionaryRef> attributes(refa, CFDictionaryCreate(
                                    kCFAllocatorDefault,
                                    pkeys.data(),
                                    pvals.data(),
-                                   pkeys.size(),
+                                   iSize,
                                    &kCFTypeDictionaryKeyCallBacks,
-                                   &kCFTypeDictionaryValueCallBacks);
+                                   &kCFTypeDictionaryValueCallBacks));
 
-      CFAttributedStringRef attrString = CFAttributedStringCreate(kCFAllocatorDefault, string, attributes);
-      CFRelease(string);
-      CFRelease(attributes);
+      cfref<CFAttributedStringRef> cfrefAttrString(refa, CFAttributedStringCreate(kCFAllocatorDefault, cfrefString, attributes));
+      //CFRelease(string);
+      //CFRelease(attributes);
       
-      for(::collection::index i = 0; i < cfrel.count(); i++)
-      {
+      cfref <CTLineRef> cfrefLine(refa, CTLineCreateWithAttributedString(cfrefAttrString));
 
-         CFRelease(cfrel[i]);
-
-      }
-
-      for(::collection::index i = 0; i < crrel.count(); i++)
-      {
-
-         CGColorRelease(crrel[i]);
-
-      }
-      
-      CTLineRef line = CTLineCreateWithAttributedString(attrString);
-
-      CFRelease(attrString);
+      //CFRelease(attrString);
       
       CGFloat width;
       
@@ -3379,7 +3365,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
       
       CGFloat leading;
       
-      width = CTLineGetTypographicBounds(line, &ascent,  &descent, &leading);
+      width = CTLineGetTypographicBounds(cfrefLine, &ascent,  &descent, &leading);
                   
       if(bDraw)
       {
@@ -3428,7 +3414,7 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 //            pbrush->m_point2.y += ascent;
 //
 //         }
-         internal_draw_text(emode, x, y + ascent, line, pbrush);
+         internal_draw_text(emode, x, y + ascent, cfrefLine, pbrush);
          //internal_draw_text(emode, x, y, line, pbrush);
 //         if(pbrush)
 //         {
@@ -3440,12 +3426,12 @@ void graphics::_draw_inline(::write_text::text_out & textout, ::draw2d::pen * pp
 
       }
 
-      if(line)
-      {
-
-         CFRelease(line);
-
-      }
+//      if(line)
+//      {
+//
+//         CFRelease(line);
+//
+//      }
 
       if(pascent)
       {
@@ -3539,6 +3525,4 @@ CGContextRef cg_create_bitmap_context(CGSize size)
    return ctx;
 
 }
-
-
 

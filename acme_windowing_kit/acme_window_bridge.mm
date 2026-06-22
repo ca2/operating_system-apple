@@ -78,8 +78,10 @@ void acme_window_bridge::attach_ns_acme_window(CGRect CGRect)
 }
 
 
-void acme_window_bridge::display()
+void acme_window_bridge::ns_show()
 {
+   
+   throw ::interface_only();
    
 //   ns_main_post(^()
 //                {
@@ -144,8 +146,10 @@ void acme_window_bridge::display()
 }
 
 
-void acme_window_bridge::hide()
+void acme_window_bridge::ns_hide()
 {
+   
+   throw ::interface_only();
    
 //   auto pnsacmewindow =  (__bridge ns_acme_window *) m_pnsacmewindow;
 //   
@@ -308,6 +312,13 @@ void acme_window_bridge::set_position(int x, int y)
 //   
 }
 
+
+void acme_window_bridge::ns_redraw()
+{
+   
+   throw ::interface_only();
+   
+}
 
 //bool apple_is_action_key(int i)
 //{

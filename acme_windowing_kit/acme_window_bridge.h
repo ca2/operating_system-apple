@@ -53,9 +53,9 @@ class window;
       
 //      void attach_ns_acme_window(CGRect cgrect);
 //      
-      virtual void display();
+      virtual void ns_show();
 //
-      virtual void hide();
+      virtual void ns_hide();
 //
       virtual void do_tasks();
       
@@ -90,7 +90,12 @@ class window;
       virtual void close();
 //      
       virtual void set_position(int x, int y);
-//      
+      
+      
+      virtual void ns_redraw();
+      
+      
+//
 //      virtual void on_layout(int x, int y, int w, int h);
 //      
 //      virtual void ios_window_become_main();

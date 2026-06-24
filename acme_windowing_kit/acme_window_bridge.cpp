@@ -90,12 +90,12 @@ void acme_window_bridge::on_left_button_up(const ::user::e_key_state ekeystateMo
 }
 
 
-void acme_window_bridge::set_last_present_time()
+void acme_window_bridge::set_last_present_request_time()
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
    
-   pacmewindowingwindow->set_last_present_time();
+   pacmewindowingwindow->set_last_present_request_time();
    
 }
 

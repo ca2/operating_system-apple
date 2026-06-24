@@ -39,6 +39,12 @@ window::~window()
    
 }
 
+void window::macos_window_draw(CGContextRef cgc, CGRect cgrect)
+{
+   
+   
+}
+
 
 void window::_draw_background(CGContextRef cgcontextref)
 {

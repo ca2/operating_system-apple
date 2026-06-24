@@ -77,10 +77,12 @@ class window;
       
       virtual void on_create();
 //      virtual void on_char(int iChar);
-//      
-      virtual void _on_draw_background(CGContextRef cg, CGSize sizeFrame);
+//
+      virtual void macos_window_draw(CGContextRef cgc, CGRect rect);
+
+      virtual void _on_draw_background(CGContextRef cg, CGRect rect);
       
-      virtual void _on_draw_foreground(CGContextRef cg, CGSize sizeFrame);
+      virtual void _on_draw_foreground(CGContextRef cg, CGRect rect);
 
 //      
       virtual void redraw();

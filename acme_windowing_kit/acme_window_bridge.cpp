@@ -265,11 +265,13 @@ bool acme_window_bridge::on_key_down(::user::e_key  euserkey)
 void acme_window_bridge::on_create()
 {
    
-   auto pacmewindowingwindow = acme_windowing_window();
+   //auto pacmewindowingwindow = acme_windowing_window();
    
-   ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
+   //::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
 
-   pelemental->on_create();
+   //pelemental->on_create();
+   
+   m_papplekitacmewindowingwindow->on_window_create(nullptr);
    
 }
 
@@ -282,7 +284,16 @@ void acme_window_bridge::on_create()
 //}
 //
 //
-void acme_window_bridge::_on_draw_background(CGContextRef cg, CGSize sizeFrame)
+
+
+void acme_window_bridge::macos_window_draw(CGContextRef cgc, CGRect cgrect)
+{
+   
+   m_papplekitacmewindowingwindow->macos_window_draw(cgc, cgrect);
+   
+}
+
+void acme_window_bridge::_on_draw_background(CGContextRef cg, CGRect rect)
 {
    
    //::pointer<quartz2d::nano::graphics::device>pnanodevice = ::place(new quartz2d::nano::graphics::device(cg));
@@ -292,7 +303,7 @@ void acme_window_bridge::_on_draw_background(CGContextRef cg, CGSize sizeFrame)
 }
 
 
-void acme_window_bridge::_on_draw_foreground(CGContextRef cg, CGSize sizeFrame)
+void acme_window_bridge::_on_draw_foreground(CGContextRef cg, CGRect rect)
 {
    
    //::pointer<quartz2d::nano::graphics::device>pnanodevice = ::place(new quartz2d::nano::graphics::device(cg));

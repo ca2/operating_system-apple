@@ -66,10 +66,11 @@ font::~font()
    {
 //destroyGraphicsObject();
 
+         
+         ::nano::graphics::font::create_pixel_font(pfontfamily, fPixelHeight, bBold, bItalic, bUnderline);
+
       construct_newø(m_pctfont);
          
-         m_pfontfamily = pfontfamily;
-      
          ::string strFontFamilyName = pfontfamily->get_font_family_name();
 
          m_pctfont->create_font_with_name(strFontFamilyName, fPixelHeight, bBold, bItalic, bUnderline);
@@ -84,6 +85,8 @@ font::~font()
       void font::create_point_font(::nano::graphics::font_family * pfontfamily, ::f64 fPointHeight, bool bBold, bool bItalic, bool bUnderline)
 {
 //destroyGraphicsObject();
+         
+         ::nano::graphics::font::create_point_font(pfontfamily, fPointHeight, bBold, bItalic, bUnderline);
 
    construct_newø(m_pctfont);
          

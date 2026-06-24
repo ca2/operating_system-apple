@@ -39,7 +39,7 @@ public:
 
    ::particle * get_acme_window_bridge() override;
 
-
+   virtual void macos_window_draw(CGContextRef cgc, CGRect cgrect);
    virtual void _draw_background(CGContextRef cgcontextref);
    
    virtual void _draw_foreground(CGContextRef cgcontextref);

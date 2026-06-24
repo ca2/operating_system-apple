@@ -57,6 +57,7 @@ namespace quartz2d
       void brush::create_solid_brush(const ::color::color& color)
       {
          
+         ::nano::graphics::brush::create_solid_brush(color);
          
          m_pcgcolor = create_newø<::core_graphics::cg_color>();
          

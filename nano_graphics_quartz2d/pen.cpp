@@ -76,9 +76,10 @@ namespace quartz2d
    void pen::create_pen(::nano::graphics::enum_pen epen, ::f64 fWidth, const color::color& color)
    {
 
+      ::nano::graphics::pen::create_pen(epen, fWidth, color);
       //destroyGraphicsObject();
       
-      m_fWidth = fWidth;
+      //m_fWidth = fWidth;
       
       m_pcgcolor = CoreGraphics().create_color(color);
 

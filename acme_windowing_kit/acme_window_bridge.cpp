@@ -59,7 +59,7 @@ namespace apple_kit
 //}
 
 
-void acme_window_bridge::on_left_button_up(const ::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_left_button_up(::user::mouse * pusermouse)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -68,12 +68,12 @@ void acme_window_bridge::on_left_button_up(const ::user::e_key_state ekeystateMo
    
    pmouse->m_eusermessage = ::user::e_message_left_button_up;
    
-   pmouse->m_keystate = ekeystateMouse;
+   pmouse->m_keystate = pusermouse->m_keystate;
    
-   pmouse->m_pointHost = {xHost, yHost};
+   pmouse->m_pointHost = pusermouse->m_pointHost;
    
-   pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
-   
+   pmouse->m_pointAbsolute = pusermouse->m_pointAbsolute;
+
    ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
    pelemental->fore_on_left_button_up(pmouse);
@@ -99,7 +99,7 @@ void acme_window_bridge::set_last_present_request_time()
    
 }
 
-void acme_window_bridge::on_left_button_down(const ::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_left_button_down(::user::mouse * pusermouse)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -108,12 +108,12 @@ void acme_window_bridge::on_left_button_down(const ::user::e_key_state ekeystate
    
    pmouse->m_eusermessage = ::user::e_message_left_button_down;
    
-   pmouse->m_keystate = ekeystateMouse;
+   pmouse->m_keystate = pusermouse->m_keystate;
    
-   pmouse->m_pointHost = {xHost, yHost};
+   pmouse->m_pointHost = pusermouse->m_pointHost;
    
-   pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
-   
+   pmouse->m_pointAbsolute = pusermouse->m_pointAbsolute;
+
    ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
    pelemental->fore_on_left_button_down(pmouse);
@@ -130,7 +130,7 @@ void acme_window_bridge::on_left_button_down(const ::user::e_key_state ekeystate
 }
 
 
-void acme_window_bridge::on_right_button_up(const ::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_right_button_up(::user::mouse * pusermouse)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -139,12 +139,12 @@ void acme_window_bridge::on_right_button_up(const ::user::e_key_state ekeystateM
    
    pmouse->m_eusermessage = ::user::e_message_right_button_up;
    
-   pmouse->m_keystate = ekeystateMouse;
+   pmouse->m_keystate = pusermouse->m_keystate;
    
-   pmouse->m_pointHost = {xHost, yHost};
+   pmouse->m_pointHost = pusermouse->m_pointHost;
    
-   pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
-   
+   pmouse->m_pointAbsolute = pusermouse->m_pointAbsolute;
+
    ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
    pelemental->fore_on_right_button_up(pmouse);
@@ -161,7 +161,7 @@ void acme_window_bridge::on_right_button_up(const ::user::e_key_state ekeystateM
 }
 
 
-void acme_window_bridge::on_right_button_down(const ::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_right_button_down(::user::mouse * pusermouse)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -170,12 +170,12 @@ void acme_window_bridge::on_right_button_down(const ::user::e_key_state ekeystat
    
    pmouse->m_eusermessage = ::user::e_message_right_button_down;
    
-   pmouse->m_keystate = ekeystateMouse;
+   pmouse->m_keystate = pusermouse->m_keystate;
    
-   pmouse->m_pointHost = {xHost, yHost};
+   pmouse->m_pointHost = pusermouse->m_pointHost;
    
-   pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
-   
+   pmouse->m_pointAbsolute = pusermouse->m_pointAbsolute;
+
    ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
    pelemental->fore_on_right_button_down(pmouse);
@@ -192,7 +192,7 @@ void acme_window_bridge::on_right_button_down(const ::user::e_key_state ekeystat
 }
 
 
-void acme_window_bridge::on_mouse_move(const ::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
+void acme_window_bridge::on_mouse_move(::user::mouse * pusermouse)
 {
    
    auto pacmewindowingwindow = acme_windowing_window();
@@ -201,12 +201,12 @@ void acme_window_bridge::on_mouse_move(const ::user::e_key_state ekeystateMouse,
    
    pmouse->m_eusermessage = ::user::e_message_mouse_move;
    
-   pmouse->m_keystate = ekeystateMouse;
+   pmouse->m_keystate = pusermouse->m_keystate;
    
-   pmouse->m_pointHost = {xHost, yHost};
+   pmouse->m_pointHost = pusermouse->m_pointHost;
    
-   pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
-   
+   pmouse->m_pointAbsolute = pusermouse->m_pointAbsolute;
+
    ::cast < ::micro::elemental > pelemental = pacmewindowingwindow->m_pacmeuserinteraction;
    
    pelemental->fore_on_mouse_move(pmouse);

@@ -7,57 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A1B921B24F8EFC80032BAEA /* time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B921124F8EFC80032BAEA /* time.cpp */; };
-		9A1B921C24F8EFC80032BAEA /* sequencer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A1B921224F8EFC80032BAEA /* sequencer.h */; };
-		9A1B921D24F8EFC80032BAEA /* time.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A1B921324F8EFC80032BAEA /* time.h */; };
-		9A1B921E24F8EFC80032BAEA /* message_in.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B921424F8EFC80032BAEA /* message_in.cpp */; };
-		9A1B921F24F8EFC80032BAEA /* message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B921524F8EFC80032BAEA /* message_out.cpp */; };
-		9A1B922024F8EFC80032BAEA /* input_base.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A1B921624F8EFC80032BAEA /* input_base.h */; };
-		9A1B922124F8EFC80032BAEA /* message_out.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A1B921724F8EFC80032BAEA /* message_out.h */; };
-		9A1B922224F8EFC80032BAEA /* sequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B921824F8EFC80032BAEA /* sequencer.cpp */; };
-		9A1B922324F8EFC80032BAEA /* message_in.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A1B921924F8EFC80032BAEA /* message_in.h */; };
-		9A1B922424F8EFC80032BAEA /* input_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B921A24F8EFC80032BAEA /* input_base.cpp */; };
-		9A27DA8924DCF86E0002AAE3 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A27DA8724DCF8340002AAE3 /* AudioUnit.framework */; };
-		9A27DA8B24DCF86E0002AAE3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A27DA8A24DCF86E0002AAE3 /* AudioToolbox.framework */; };
-		9A2E648D252672B20001CC7E /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2E648C252672B20001CC7E /* libaqua.dylib */; };
-		9A44075624DDD01600175A63 /* libveriwell_multimedia.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5209A922F144E5007056D2 /* libveriwell_multimedia.dylib */; };
-		9A4E5D60251937CD00CC6817 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E5D5F251937CD00CC6817 /* libacme.dylib */; };
-		9A4E5D62251937CD00CC6817 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E5D61251937CD00CC6817 /* libapex.dylib */; };
-		9ABD6B6C2454F63E00380EB2 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52096122F1440C007056D2 /* framework.cpp */; };
-		9ABD6B6D2454F63E00380EB2 /* output_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52097022F1440C007056D2 /* output_base.cpp */; };
-		9ABD6B6E2454F63E00380EB2 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52096C22F1440C007056D2 /* _factory.cpp */; };
-		9ABD6B6F2454F63E00380EB2 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52097122F1440C007056D2 /* translation.cpp */; };
-		9ABD6B702454F63E00380EB2 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A52095722F1440C007056D2 /* midi.cpp */; };
-		9ABD6B862455087C00380EB2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABD6B852455087C00380EB2 /* CoreFoundation.framework */; };
-		9ABD6B872455088B00380EB2 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5209B322F146F1007056D2 /* CoreMIDI.framework */; };
-		9ABD6B892455089C00380EB2 /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABD6B882455089C00380EB2 /* libaura.dylib */; };
+		D43FE8525B3D413D6151C93F /* time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91FB53915C02198A71DFE90F /* time.cpp */; };
+		23A9BD90093ACCF10B4AAD40 /* sequencer.h in Headers */ = {isa = PBXBuildFile; fileRef = D856BEBAEC52F1A0D9A293AD /* sequencer.h */; };
+		8CEE50B5701ED9D02FBD633F /* time.h in Headers */ = {isa = PBXBuildFile; fileRef = FCC0EA55E47BFA78F4FD67B7 /* time.h */; };
+		EC3432C31D55344E17669AEC /* message_in.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA60767611F273589FFF87 /* message_in.cpp */; };
+		0FD91C821D3D9E65916FDE15 /* message_out.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21E996152D70A5C2F0130EF1 /* message_out.cpp */; };
+		F343C6F69BBD68CFB96C4F2C /* input_base.h in Headers */ = {isa = PBXBuildFile; fileRef = AFD346742BE70A38DD014A87 /* input_base.h */; };
+		8CA92E00146FDD8EDD10A399 /* message_out.h in Headers */ = {isa = PBXBuildFile; fileRef = 728FE57934BB5F1DF27AF182 /* message_out.h */; };
+		80FD0DE0C02AFA801A994DF8 /* sequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C18193273FBC053296A3DD0 /* sequencer.cpp */; };
+		2A06783A2D3263CD61A80033 /* message_in.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE41D23444DC51180A7F3C7 /* message_in.h */; };
+		44BEEAB97212C69498456E82 /* input_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C01DD50E6E40B348C7DA10CB /* input_base.cpp */; };
+		9F7FEC48643BD2624BD34933 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8181F08B5B7482A13C44B545 /* AudioUnit.framework */; };
+		3C8D45940C5FC3C86AC2E0A6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7968ED46AF2D12BEE80D2C /* AudioToolbox.framework */; };
+		3A6BDFD163C09FF0D42A995A /* libaqua.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6B8F20F22D8196A4FF1165 /* libaqua.dylib */; };
+		3F12CA28CFB8065DF395BA6B /* libveriwell_multimedia.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 907781A57E0E54058D77CC77 /* libveriwell_multimedia.dylib */; };
+		90BBBA5BEAF1A5803BDFF1A6 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1917098DDAAFDD3CCD0674 /* libacme.dylib */; };
+		7399353F2DD87103E1848210 /* libapex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEB02CB9C9FB12B35F45E86 /* libapex.dylib */; };
+		0B5A68DF817FA95740747B68 /* framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF2491288A06CDBBAF8AB8BD /* framework.cpp */; };
+		241D03E09B7CE10D5C308589 /* output_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89C2764FFBF9925596718FF5 /* output_base.cpp */; };
+		AAF18CB53D7FFE2AFFE56A75 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 151305EFB70A839AF3ACE947 /* _factory.cpp */; };
+		7D330FE784FBB27E8A0ED5C6 /* translation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75BF8F21AB66B7152A4BA1D2 /* translation.cpp */; };
+		EE183CC470572C5D44D20E4F /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93574450DB85979221B6C933 /* midi.cpp */; };
+		0FB1F61B60D909E7C1D69F43 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87362C8FC584B3DA1F29849A /* CoreFoundation.framework */; };
+		66E23B036BDFA84E6D94490E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD766F32E46B505DD77D2F4 /* CoreMIDI.framework */; };
+		10F526E5AD3106124C1FD62A /* libaura.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 85BB0816FDF1977D5F7B3EBC /* libaura.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9A44075424DDD00F00175A63 /* PBXContainerItemProxy */ = {
+		5596E523F9A5127DBB13FBDD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A5209A222F144E5007056D2 /* veriwell_multimedia.xcodeproj */;
+			containerPortal = FAA5E1BD8AB735D4B73D5058 /* veriwell_multimedia.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 9A4406D324DDCF5C00175A63;
 			remoteInfo = veriwell_multimedia;
 		};
-		9A5209A822F144E5007056D2 /* PBXContainerItemProxy */ = {
+		EF242D7659C6BE25F2FF6AE3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A5209A222F144E5007056D2 /* veriwell_multimedia.xcodeproj */;
+			containerPortal = FAA5E1BD8AB735D4B73D5058 /* veriwell_multimedia.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9AEB75A316F78DF10085103B;
 			remoteInfo = veriwell_multimedia;
 		};
-		9A5209AC22F144E5007056D2 /* PBXContainerItemProxy */ = {
+		1D9D0D9CBAFD45C80B4DB1C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A5209A222F144E5007056D2 /* veriwell_multimedia.xcodeproj */;
+			containerPortal = FAA5E1BD8AB735D4B73D5058 /* veriwell_multimedia.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 07B6584B190F3CE7002DAADE;
 			remoteInfo = veriwell_multimedia_iosTests;
 		};
-		9A5209AE22F144EF007056D2 /* PBXContainerItemProxy */ = {
+		57E9F101FCD96DFAE45BAC4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A5209A222F144E5007056D2 /* veriwell_multimedia.xcodeproj */;
+			containerPortal = FAA5E1BD8AB735D4B73D5058 /* veriwell_multimedia.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 9A4406D324DDCF5C00175A63;
 			remoteInfo = veriwell_multimedia;
@@ -65,150 +65,150 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07E25F501B4FFC2100752DE1 /* libios_music_midi_core_midi.lib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_music_midi_core_midi.lib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A1B921124F8EFC80032BAEA /* time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = time.cpp; sourceTree = "<group>"; };
-		9A1B921224F8EFC80032BAEA /* sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sequencer.h; sourceTree = "<group>"; };
-		9A1B921324F8EFC80032BAEA /* time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
-		9A1B921424F8EFC80032BAEA /* message_in.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = message_in.cpp; sourceTree = "<group>"; };
-		9A1B921524F8EFC80032BAEA /* message_out.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = message_out.cpp; sourceTree = "<group>"; };
-		9A1B921624F8EFC80032BAEA /* input_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input_base.h; sourceTree = "<group>"; };
-		9A1B921724F8EFC80032BAEA /* message_out.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message_out.h; sourceTree = "<group>"; };
-		9A1B921824F8EFC80032BAEA /* sequencer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sequencer.cpp; sourceTree = "<group>"; };
-		9A1B921924F8EFC80032BAEA /* message_in.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message_in.h; sourceTree = "<group>"; };
-		9A1B921A24F8EFC80032BAEA /* input_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input_base.cpp; sourceTree = "<group>"; };
-		9A27DA8724DCF8340002AAE3 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
-		9A27DA8A24DCF86E0002AAE3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		9A2E648C252672B20001CC7E /* libaqua.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaqua.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A4E5D5F251937CD00CC6817 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A4E5D61251937CD00CC6817 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A52095722F1440C007056D2 /* midi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi.cpp; sourceTree = "<group>"; };
-		9A52096122F1440C007056D2 /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
-		9A52096C22F1440C007056D2 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
-		9A52096E22F1440C007056D2 /* translation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = translation.h; sourceTree = "<group>"; };
-		9A52096F22F1440C007056D2 /* factory_exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = factory_exchange.h; sourceTree = "<group>"; };
-		9A52097022F1440C007056D2 /* output_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = output_base.cpp; sourceTree = "<group>"; };
-		9A52097122F1440C007056D2 /* translation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = translation.cpp; sourceTree = "<group>"; };
-		9A52097622F1440C007056D2 /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
-		9A52097822F1440C007056D2 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
-		9A52097C22F1440C007056D2 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
-		9A52097E22F1440C007056D2 /* output_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output_base.h; sourceTree = "<group>"; };
-		9A5209A222F144E5007056D2 /* veriwell_multimedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = veriwell_multimedia.xcodeproj; path = "../../app-veriwell/multimedia/veriwell_multimedia.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		9A5209B322F146F1007056D2 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
-		9A8997BC177D0E7D00C7761E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		9AA1B449176361950019E812 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		9AA2192D1DC6B1A300C06987 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		9ABD6B852455087C00380EB2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		9ABD6B882455089C00380EB2 /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AF4C42F1F83D6D400197385 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		9AF4C4311F83D76600197385 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
-		9AF4C4331F83D79200197385 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		9AF4C4351F83D7B400197385 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		9AF8E7991F9FE721003CBDB4 /* libaura.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libaura.dylib; path = ../../../../Volumes/apple/archive/Xcode/DerivedData/Build/Products/Release/libaura.dylib; sourceTree = "<group>"; };
-		9AF9B6FD2454BAF60023FB6B /* libmusic_midi_core_midi.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libmusic_midi_core_midi.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		78F560A3B6DD0D16C0184664 /* libios_music_midi_core_midi.lib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_music_midi_core_midi.lib; sourceTree = BUILT_PRODUCTS_DIR; };
+		91FB53915C02198A71DFE90F /* time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = time.cpp; sourceTree = "<group>"; };
+		D856BEBAEC52F1A0D9A293AD /* sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sequencer.h; sourceTree = "<group>"; };
+		FCC0EA55E47BFA78F4FD67B7 /* time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
+		3DDA60767611F273589FFF87 /* message_in.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = message_in.cpp; sourceTree = "<group>"; };
+		21E996152D70A5C2F0130EF1 /* message_out.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = message_out.cpp; sourceTree = "<group>"; };
+		AFD346742BE70A38DD014A87 /* input_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input_base.h; sourceTree = "<group>"; };
+		728FE57934BB5F1DF27AF182 /* message_out.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message_out.h; sourceTree = "<group>"; };
+		6C18193273FBC053296A3DD0 /* sequencer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sequencer.cpp; sourceTree = "<group>"; };
+		0AE41D23444DC51180A7F3C7 /* message_in.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message_in.h; sourceTree = "<group>"; };
+		C01DD50E6E40B348C7DA10CB /* input_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input_base.cpp; sourceTree = "<group>"; };
+		8181F08B5B7482A13C44B545 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		4E7968ED46AF2D12BEE80D2C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1B6B8F20F22D8196A4FF1165 /* libaqua.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaqua.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1917098DDAAFDD3CCD0674 /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AEB02CB9C9FB12B35F45E86 /* libapex.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libapex.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		93574450DB85979221B6C933 /* midi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi.cpp; sourceTree = "<group>"; };
+		DF2491288A06CDBBAF8AB8BD /* framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
+		151305EFB70A839AF3ACE947 /* _factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
+		66842A29ED2A4CAB3DCFF47C /* translation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = translation.h; sourceTree = "<group>"; };
+		1214DF0D278F07E275B2F0FA /* factory_exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = factory_exchange.h; sourceTree = "<group>"; };
+		89C2764FFBF9925596718FF5 /* output_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = output_base.cpp; sourceTree = "<group>"; };
+		75BF8F21AB66B7152A4BA1D2 /* translation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = translation.cpp; sourceTree = "<group>"; };
+		1017CCCE2F3A24781393F580 /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
+		510B3D0B603114F71119CFC7 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
+		25E80C4C237D2161D7E27788 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
+		255D93F4A3C2C8135CDB1CB1 /* output_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output_base.h; sourceTree = "<group>"; };
+		FAA5E1BD8AB735D4B73D5058 /* veriwell_multimedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = veriwell_multimedia.xcodeproj; path = "../../app-veriwell/multimedia/veriwell_multimedia.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		9DD766F32E46B505DD77D2F4 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		D785BD4B91E90E166208CD59 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		5D9D591FC53BD6C796EFAECD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		B48EE39FDCA2FEB6CCCB8CBE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		87362C8FC584B3DA1F29849A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		85BB0816FDF1977D5F7B3EBC /* libaura.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libaura.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6D72F0E34FC0E7777DF91B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		FA3784EFA12DA69CAFDE0AAE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		6D01798DB0B00CE986FE00A4 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		C93E58AE7C7EACA47BAAA2A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		79B8B4D3BA7D60DD08B4C5D8 /* libaura.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libaura.dylib; path = ../../../../Volumes/apple/archive/Xcode/DerivedData/Build/Products/Release/libaura.dylib; sourceTree = "<group>"; };
+		A295AEF5B03BE1BC962ECA14 /* libmusic_midi_core_midi.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libmusic_midi_core_midi.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		07E25F3A1B4FFC2100752DE1 /* Frameworks */ = {
+		C0F75515D76456F163F95C4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9AF9B6F82454BAF60023FB6B /* Frameworks */ = {
+		B9123AFF70A27C3D4980B06E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A2E648D252672B20001CC7E /* libaqua.dylib in Frameworks */,
-				9A4E5D60251937CD00CC6817 /* libacme.dylib in Frameworks */,
-				9A4E5D62251937CD00CC6817 /* libapex.dylib in Frameworks */,
-				9A44075624DDD01600175A63 /* libveriwell_multimedia.dylib in Frameworks */,
-				9A27DA8B24DCF86E0002AAE3 /* AudioToolbox.framework in Frameworks */,
-				9A27DA8924DCF86E0002AAE3 /* AudioUnit.framework in Frameworks */,
-				9ABD6B892455089C00380EB2 /* libaura.dylib in Frameworks */,
-				9ABD6B872455088B00380EB2 /* CoreMIDI.framework in Frameworks */,
-				9ABD6B862455087C00380EB2 /* CoreFoundation.framework in Frameworks */,
+				3A6BDFD163C09FF0D42A995A /* libaqua.dylib in Frameworks */,
+				90BBBA5BEAF1A5803BDFF1A6 /* libacme.dylib in Frameworks */,
+				7399353F2DD87103E1848210 /* libapex.dylib in Frameworks */,
+				3F12CA28CFB8065DF395BA6B /* libveriwell_multimedia.dylib in Frameworks */,
+				3C8D45940C5FC3C86AC2E0A6 /* AudioToolbox.framework in Frameworks */,
+				9F7FEC48643BD2624BD34933 /* AudioUnit.framework in Frameworks */,
+				10F526E5AD3106124C1FD62A /* libaura.dylib in Frameworks */,
+				66E23B036BDFA84E6D94490E /* CoreMIDI.framework in Frameworks */,
+				0FB1F61B60D909E7C1D69F43 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A52095422F1440C007056D2 /* music_midi_core_midi */ = {
+		0AC3A6342D2ADE0C5631036A /* music_midi_core_midi */ = {
 			isa = PBXGroup;
 			children = (
-				9A52097C22F1440C007056D2 /* _.h */,
-				9A52096C22F1440C007056D2 /* _factory.cpp */,
-				9A52096F22F1440C007056D2 /* factory_exchange.h */,
-				9A52096122F1440C007056D2 /* framework.cpp */,
-				9A52097822F1440C007056D2 /* framework.h */,
-				9A1B921A24F8EFC80032BAEA /* input_base.cpp */,
-				9A1B921624F8EFC80032BAEA /* input_base.h */,
-				9A1B921424F8EFC80032BAEA /* message_in.cpp */,
-				9A1B921924F8EFC80032BAEA /* message_in.h */,
-				9A1B921524F8EFC80032BAEA /* message_out.cpp */,
-				9A1B921724F8EFC80032BAEA /* message_out.h */,
-				9A52095722F1440C007056D2 /* midi.cpp */,
-				9A52097622F1440C007056D2 /* midi.h */,
-				9A52097022F1440C007056D2 /* output_base.cpp */,
-				9A52097E22F1440C007056D2 /* output_base.h */,
-				9A1B921824F8EFC80032BAEA /* sequencer.cpp */,
-				9A1B921224F8EFC80032BAEA /* sequencer.h */,
-				9A1B921124F8EFC80032BAEA /* time.cpp */,
-				9A1B921324F8EFC80032BAEA /* time.h */,
-				9A52097122F1440C007056D2 /* translation.cpp */,
-				9A52096E22F1440C007056D2 /* translation.h */,
+				25E80C4C237D2161D7E27788 /* _.h */,
+				151305EFB70A839AF3ACE947 /* _factory.cpp */,
+				1214DF0D278F07E275B2F0FA /* factory_exchange.h */,
+				DF2491288A06CDBBAF8AB8BD /* framework.cpp */,
+				510B3D0B603114F71119CFC7 /* framework.h */,
+				C01DD50E6E40B348C7DA10CB /* input_base.cpp */,
+				AFD346742BE70A38DD014A87 /* input_base.h */,
+				3DDA60767611F273589FFF87 /* message_in.cpp */,
+				0AE41D23444DC51180A7F3C7 /* message_in.h */,
+				21E996152D70A5C2F0130EF1 /* message_out.cpp */,
+				728FE57934BB5F1DF27AF182 /* message_out.h */,
+				93574450DB85979221B6C933 /* midi.cpp */,
+				1017CCCE2F3A24781393F580 /* midi.h */,
+				89C2764FFBF9925596718FF5 /* output_base.cpp */,
+				255D93F4A3C2C8135CDB1CB1 /* output_base.h */,
+				6C18193273FBC053296A3DD0 /* sequencer.cpp */,
+				D856BEBAEC52F1A0D9A293AD /* sequencer.h */,
+				91FB53915C02198A71DFE90F /* time.cpp */,
+				FCC0EA55E47BFA78F4FD67B7 /* time.h */,
+				75BF8F21AB66B7152A4BA1D2 /* translation.cpp */,
+				66842A29ED2A4CAB3DCFF47C /* translation.h */,
 			);
 			name = music_midi_core_midi;
 			sourceTree = "<group>";
 		};
-		9A5209A322F144E5007056D2 /* Products */ = {
+		D49FAD021EA035DEB0158781 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A5209A922F144E5007056D2 /* libveriwell_multimedia.dylib */,
-				9A5209AD22F144E5007056D2 /* veriwell_multimedia_iosTests.xctest */,
+				907781A57E0E54058D77CC77 /* libveriwell_multimedia.dylib */,
+				2FB4FA38CB7E7AF3ACA56991 /* veriwell_multimedia_iosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9AA2192C1DC6B1A300C06987 /* Frameworks */ = {
+		F15DAF299DF534B05AF29EB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9A2E648C252672B20001CC7E /* libaqua.dylib */,
-				9A4E5D5F251937CD00CC6817 /* libacme.dylib */,
-				9A4E5D61251937CD00CC6817 /* libapex.dylib */,
-				9A27DA8A24DCF86E0002AAE3 /* AudioToolbox.framework */,
-				9A27DA8724DCF8340002AAE3 /* AudioUnit.framework */,
-				9ABD6B882455089C00380EB2 /* libaura.dylib */,
-				9ABD6B852455087C00380EB2 /* CoreFoundation.framework */,
-				9A5209B322F146F1007056D2 /* CoreMIDI.framework */,
-				9AF8E7991F9FE721003CBDB4 /* libaura.dylib */,
-				9AF4C4351F83D7B400197385 /* UIKit.framework */,
-				9AF4C4331F83D79200197385 /* CoreFoundation.framework */,
-				9AF4C4311F83D76600197385 /* CoreText.framework */,
-				9AF4C42F1F83D6D400197385 /* CoreGraphics.framework */,
-				9AA2192D1DC6B1A300C06987 /* UIKit.framework */,
+				1B6B8F20F22D8196A4FF1165 /* libaqua.dylib */,
+				3F1917098DDAAFDD3CCD0674 /* libacme.dylib */,
+				5AEB02CB9C9FB12B35F45E86 /* libapex.dylib */,
+				4E7968ED46AF2D12BEE80D2C /* AudioToolbox.framework */,
+				8181F08B5B7482A13C44B545 /* AudioUnit.framework */,
+				85BB0816FDF1977D5F7B3EBC /* libaura.dylib */,
+				87362C8FC584B3DA1F29849A /* CoreFoundation.framework */,
+				9DD766F32E46B505DD77D2F4 /* CoreMIDI.framework */,
+				79B8B4D3BA7D60DD08B4C5D8 /* libaura.dylib */,
+				C93E58AE7C7EACA47BAAA2A1 /* UIKit.framework */,
+				6D01798DB0B00CE986FE00A4 /* CoreFoundation.framework */,
+				FA3784EFA12DA69CAFDE0AAE /* CoreText.framework */,
+				F6D72F0E34FC0E7777DF91B3 /* CoreGraphics.framework */,
+				B48EE39FDCA2FEB6CCCB8CBE /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A1CFD76D154F5EA7007447E2 = {
+		E91D67A98580D77CA134FDFA = {
 			isa = PBXGroup;
 			children = (
-				9A5209A222F144E5007056D2 /* veriwell_multimedia.xcodeproj */,
-				9A8997BC177D0E7D00C7761E /* Carbon.framework */,
-				9AA1B449176361950019E812 /* Cocoa.framework */,
-				9A52095422F1440C007056D2 /* music_midi_core_midi */,
-				A1CFD779154F5EAA007447E2 /* Products */,
-				9AA2192C1DC6B1A300C06987 /* Frameworks */,
+				FAA5E1BD8AB735D4B73D5058 /* veriwell_multimedia.xcodeproj */,
+				D785BD4B91E90E166208CD59 /* Carbon.framework */,
+				5D9D591FC53BD6C796EFAECD /* Cocoa.framework */,
+				0AC3A6342D2ADE0C5631036A /* music_midi_core_midi */,
+				CD320FF6B1FD383CE05ABFC1 /* Products */,
+				F15DAF299DF534B05AF29EB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		A1CFD779154F5EAA007447E2 /* Products */ = {
+		CD320FF6B1FD383CE05ABFC1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07E25F501B4FFC2100752DE1 /* libios_music_midi_core_midi.lib */,
-				9AF9B6FD2454BAF60023FB6B /* libmusic_midi_core_midi.dylib */,
+				78F560A3B6DD0D16C0184664 /* libios_music_midi_core_midi.lib */,
+				A295AEF5B03BE1BC962ECA14 /* libmusic_midi_core_midi.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,74 +216,74 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		07E25F3E1B4FFC2100752DE1 /* Headers */ = {
+		4082EFFD4E8248A2DF7060F9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9AF9B6F92454BAF60023FB6B /* Headers */ = {
+		356FDEE672E0067E4493CAD3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A1B921C24F8EFC80032BAEA /* sequencer.h in Headers */,
-				9A1B922324F8EFC80032BAEA /* message_in.h in Headers */,
-				9A1B922024F8EFC80032BAEA /* input_base.h in Headers */,
-				9A1B921D24F8EFC80032BAEA /* time.h in Headers */,
-				9A1B922124F8EFC80032BAEA /* message_out.h in Headers */,
+				23A9BD90093ACCF10B4AAD40 /* sequencer.h in Headers */,
+				2A06783A2D3263CD61A80033 /* message_in.h in Headers */,
+				F343C6F69BBD68CFB96C4F2C /* input_base.h in Headers */,
+				8CEE50B5701ED9D02FBD633F /* time.h in Headers */,
+				8CA92E00146FDD8EDD10A399 /* message_out.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		07E25F291B4FFC2100752DE1 /* ios_music_midi_core_midi */ = {
+		1D7AD50129DEFC7CF7AEB227 /* ios_music_midi_core_midi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07E25F4D1B4FFC2100752DE1 /* Build configuration list for PBXNativeTarget "ios_music_midi_core_midi" */;
+			buildConfigurationList = C9EC8472B488311E970CDBB6 /* Build configuration list for PBXNativeTarget "ios_music_midi_core_midi" */;
 			buildPhases = (
-				07E25F2C1B4FFC2100752DE1 /* Sources */,
-				07E25F3A1B4FFC2100752DE1 /* Frameworks */,
-				07E25F3E1B4FFC2100752DE1 /* Headers */,
+				19EF2692F942E2375B913DEE /* Sources */,
+				C0F75515D76456F163F95C4E /* Frameworks */,
+				4082EFFD4E8248A2DF7060F9 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9A5209AF22F144EF007056D2 /* PBXTargetDependency */,
+				E16144E7B9A4FB5FCC9A1E18 /* PBXTargetDependency */,
 			);
 			name = ios_music_midi_core_midi;
 			productName = os;
-			productReference = 07E25F501B4FFC2100752DE1 /* libios_music_midi_core_midi.lib */;
+			productReference = 78F560A3B6DD0D16C0184664 /* libios_music_midi_core_midi.lib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		9AF9B6F42454BAF60023FB6B /* music_midi_core_midi */ = {
+		E54221121A3A3EFECBAF07F4 /* music_midi_core_midi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9AF9B6FA2454BAF60023FB6B /* Build configuration list for PBXNativeTarget "music_midi_core_midi" */;
+			buildConfigurationList = DA5B072A0521621EFBC7956C /* Build configuration list for PBXNativeTarget "music_midi_core_midi" */;
 			buildPhases = (
-				9AF9B6F72454BAF60023FB6B /* Sources */,
-				9AF9B6F82454BAF60023FB6B /* Frameworks */,
-				9AF9B6F92454BAF60023FB6B /* Headers */,
+				027B36F47331A4FA32A30ABC /* Sources */,
+				B9123AFF70A27C3D4980B06E /* Frameworks */,
+				356FDEE672E0067E4493CAD3 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9A44075524DDD00F00175A63 /* PBXTargetDependency */,
+				BC1DFB32244655ACF4AC9330 /* PBXTargetDependency */,
 			);
 			name = music_midi_core_midi;
 			productName = os;
-			productReference = 9AF9B6FD2454BAF60023FB6B /* libmusic_midi_core_midi.dylib */;
+			productReference = A295AEF5B03BE1BC962ECA14 /* libmusic_midi_core_midi.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A1CFD76F154F5EA7007447E2 /* Project object */ = {
+		A89D971BD3FDAFDA55BD1AB0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "ca2 Desenvolvimento de Sofware Ltda.";
 			};
-			buildConfigurationList = A1CFD772154F5EA7007447E2 /* Build configuration list for PBXProject "music_midi_core_midi" */;
+			buildConfigurationList = DCDACF28C75AD82C63C8B89B /* Build configuration list for PBXProject "music_midi_core_midi" */;
 			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -291,82 +291,82 @@
 				en,
 				Base,
 			);
-			mainGroup = A1CFD76D154F5EA7007447E2;
-			productRefGroup = A1CFD779154F5EAA007447E2 /* Products */;
+			mainGroup = E91D67A98580D77CA134FDFA;
+			productRefGroup = CD320FF6B1FD383CE05ABFC1 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9A5209A322F144E5007056D2 /* Products */;
-					ProjectRef = 9A5209A222F144E5007056D2 /* veriwell_multimedia.xcodeproj */;
+					ProductGroup = D49FAD021EA035DEB0158781 /* Products */;
+					ProjectRef = FAA5E1BD8AB735D4B73D5058 /* veriwell_multimedia.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				9AF9B6F42454BAF60023FB6B /* music_midi_core_midi */,
-				07E25F291B4FFC2100752DE1 /* ios_music_midi_core_midi */,
+				E54221121A3A3EFECBAF07F4 /* music_midi_core_midi */,
+				1D7AD50129DEFC7CF7AEB227 /* ios_music_midi_core_midi */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A5209A922F144E5007056D2 /* libveriwell_multimedia.dylib */ = {
+		907781A57E0E54058D77CC77 /* libveriwell_multimedia.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libveriwell_multimedia.dylib;
-			remoteRef = 9A5209A822F144E5007056D2 /* PBXContainerItemProxy */;
+			remoteRef = EF242D7659C6BE25F2FF6AE3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A5209AD22F144E5007056D2 /* veriwell_multimedia_iosTests.xctest */ = {
+		2FB4FA38CB7E7AF3ACA56991 /* veriwell_multimedia_iosTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = veriwell_multimedia_iosTests.xctest;
-			remoteRef = 9A5209AC22F144E5007056D2 /* PBXContainerItemProxy */;
+			remoteRef = 1D9D0D9CBAFD45C80B4DB1C9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
-		07E25F2C1B4FFC2100752DE1 /* Sources */ = {
+		19EF2692F942E2375B913DEE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9AF9B6F72454BAF60023FB6B /* Sources */ = {
+		027B36F47331A4FA32A30ABC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A1B922224F8EFC80032BAEA /* sequencer.cpp in Sources */,
-				9A1B921E24F8EFC80032BAEA /* message_in.cpp in Sources */,
-				9ABD6B6C2454F63E00380EB2 /* framework.cpp in Sources */,
-				9ABD6B6D2454F63E00380EB2 /* output_base.cpp in Sources */,
-				9A1B921B24F8EFC80032BAEA /* time.cpp in Sources */,
-				9A1B921F24F8EFC80032BAEA /* message_out.cpp in Sources */,
-				9ABD6B6E2454F63E00380EB2 /* _factory.cpp in Sources */,
-				9A1B922424F8EFC80032BAEA /* input_base.cpp in Sources */,
-				9ABD6B6F2454F63E00380EB2 /* translation.cpp in Sources */,
-				9ABD6B702454F63E00380EB2 /* midi.cpp in Sources */,
+				80FD0DE0C02AFA801A994DF8 /* sequencer.cpp in Sources */,
+				EC3432C31D55344E17669AEC /* message_in.cpp in Sources */,
+				0B5A68DF817FA95740747B68 /* framework.cpp in Sources */,
+				241D03E09B7CE10D5C308589 /* output_base.cpp in Sources */,
+				D43FE8525B3D413D6151C93F /* time.cpp in Sources */,
+				0FD91C821D3D9E65916FDE15 /* message_out.cpp in Sources */,
+				AAF18CB53D7FFE2AFFE56A75 /* _factory.cpp in Sources */,
+				44BEEAB97212C69498456E82 /* input_base.cpp in Sources */,
+				7D330FE784FBB27E8A0ED5C6 /* translation.cpp in Sources */,
+				EE183CC470572C5D44D20E4F /* midi.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9A44075524DDD00F00175A63 /* PBXTargetDependency */ = {
+		BC1DFB32244655ACF4AC9330 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = veriwell_multimedia;
-			targetProxy = 9A44075424DDD00F00175A63 /* PBXContainerItemProxy */;
+			targetProxy = 5596E523F9A5127DBB13FBDD /* PBXContainerItemProxy */;
 		};
-		9A5209AF22F144EF007056D2 /* PBXTargetDependency */ = {
+		E16144E7B9A4FB5FCC9A1E18 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = veriwell_multimedia;
-			targetProxy = 9A5209AE22F144EF007056D2 /* PBXContainerItemProxy */;
+			targetProxy = 57E9F101FCD96DFAE45BAC4C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		07E25F4E1B4FFC2100752DE1 /* Debug */ = {
+		BB2D401CC3F04047652D1A73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_EXTENSION = lib;
@@ -374,7 +374,7 @@
 			};
 			name = Debug;
 		};
-		07E25F4F1B4FFC2100752DE1 /* Release */ = {
+		80512D24BDA9288F072CF31C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_EXTENSION = lib;
@@ -382,21 +382,21 @@
 			};
 			name = Release;
 		};
-		9AF9B6FB2454BAF60023FB6B /* Debug */ = {
+		53F0AC1739A9AEDE6582858F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Debug;
 		};
-		9AF9B6FC2454BAF60023FB6B /* Release */ = {
+		8CAD2A028CBB7559E7A5B8B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Release;
 		};
-		A1CFD77A154F5EAA007447E2 /* Debug */ = {
+		D13201E57B8C70942E084035 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -470,7 +470,7 @@
 			};
 			name = Debug;
 		};
-		A1CFD77B154F5EAA007447E2 /* Release */ = {
+		9A8A9AB3DD740B84BFC2D53C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -538,34 +538,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		07E25F4D1B4FFC2100752DE1 /* Build configuration list for PBXNativeTarget "ios_music_midi_core_midi" */ = {
+		C9EC8472B488311E970CDBB6 /* Build configuration list for PBXNativeTarget "ios_music_midi_core_midi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07E25F4E1B4FFC2100752DE1 /* Debug */,
-				07E25F4F1B4FFC2100752DE1 /* Release */,
+				BB2D401CC3F04047652D1A73 /* Debug */,
+				80512D24BDA9288F072CF31C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9AF9B6FA2454BAF60023FB6B /* Build configuration list for PBXNativeTarget "music_midi_core_midi" */ = {
+		DA5B072A0521621EFBC7956C /* Build configuration list for PBXNativeTarget "music_midi_core_midi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9AF9B6FB2454BAF60023FB6B /* Debug */,
-				9AF9B6FC2454BAF60023FB6B /* Release */,
+				53F0AC1739A9AEDE6582858F /* Debug */,
+				8CAD2A028CBB7559E7A5B8B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1CFD772154F5EA7007447E2 /* Build configuration list for PBXProject "music_midi_core_midi" */ = {
+		DCDACF28C75AD82C63C8B89B /* Build configuration list for PBXProject "music_midi_core_midi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1CFD77A154F5EAA007447E2 /* Debug */,
-				A1CFD77B154F5EAA007447E2 /* Release */,
+				D13201E57B8C70942E084035 /* Debug */,
+				9A8A9AB3DD740B84BFC2D53C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A1CFD76F154F5EA7007447E2 /* Project object */;
+	rootObject = A89D971BD3FDAFDA55BD1AB0 /* Project object */;
 }

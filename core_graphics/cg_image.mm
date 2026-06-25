@@ -4,7 +4,7 @@
 //
 //  Created by Camilo Sasuke Thomas Borregaard Sørensen on 12/05/26.
 //
-#include <AppKit/AppKit.h>
+#include <CoreGraphics/CoreGraphics.h>
 #include "_mm.h"
 
 CGImageRef CreateRGBAImage(int width, int height)

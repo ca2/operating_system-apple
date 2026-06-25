@@ -6,7 +6,8 @@
 //  <3ThomasBorregaardSørensen!!
 //
 
-#include <Cocoa/Cocoa.h>
+#include <CoreGraphics/CoreGraphics.h>
+#include <CoreText/CoreText.h>
 #include "_mm.h"
 #include "cg_image.h"
 

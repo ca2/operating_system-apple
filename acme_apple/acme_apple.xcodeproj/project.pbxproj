@@ -7,351 +7,351 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A08443F29367CC1009F7FF4 /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A08443E29367CC1009F7FF4 /* libacme_posix.dylib */; };
-		9A0E3BB62C611DE9004A0972 /* get_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E3BB42C611DE9004A0972 /* get_icloud_data.mm */; };
-		9A0E3BB72C611DE9004A0972 /* get_icloud_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0E3BB52C611DE9004A0972 /* get_icloud_data.h */; };
-		9A0E3BB82C611F78004A0972 /* get_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E3BB42C611DE9004A0972 /* get_icloud_data.mm */; };
-		9A0E3BBB2C613402004A0972 /* meta_data_query_result_item.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E3BBA2C613402004A0972 /* meta_data_query_result_item.mm */; };
-		9A1BD67E2A0073EA00152CD1 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94028D29E62F5E00C8C249 /* _cg_context.cpp */; };
-		9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFCC276118A6001E14CC /* Carbon.framework */; };
-		9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A21AFE1276122CB001E14CC /* Cocoa.framework */; };
-		9A238E912B7AF79800C199F5 /* icloud_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */; };
-		9A238E922B7AF79800C199F5 /* icloud_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */; };
-		9A238E932B7AF79800C199F5 /* icloud_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */; };
-		9A238E942B7AF79800C199F5 /* icloud_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A238E902B7AF79800C199F5 /* icloud_file.h */; };
-		9A238E952B7AF79800C199F5 /* icloud_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A238E902B7AF79800C199F5 /* icloud_file.h */; };
-		9A238E962B7AF79800C199F5 /* icloud_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A238E902B7AF79800C199F5 /* icloud_file.h */; };
-		9A28E3DB2B73FEF900ABB2C5 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E3DA2B73FEF900ABB2C5 /* file.mm */; };
-		9A28E3DC2B73FFA800ABB2C5 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E3DA2B73FEF900ABB2C5 /* file.mm */; };
-		9A40BDBA2B6B65D90077053E /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
-		9A40BDF42B6B997B0077053E /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */; };
-		9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A412438266C3ECE00C3FF0E /* libacme.dylib */; };
-		9A50DCB82B50CAEB00DAD9CF /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */; };
-		9A5404EB2CE727B50009869E /* get_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E3BB42C611DE9004A0972 /* get_icloud_data.mm */; };
-		9A5404EC2CE727D00009869E /* set_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA56BB42C61AF5900BF56ED /* set_icloud_data.mm */; };
-		9A734A52284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
-		9A734A53284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
-		9A741591266BD2B700552531 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A74158F266BD25B00552531 /* debug.cpp */; };
-		9A756981283D4477000D9C84 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E64264E22CB003DF8A0 /* _.cpp */; };
-		9A787E6E264E234B003DF8A0 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E65264E22CB003DF8A0 /* _factory.cpp */; };
-		9A787E6F264E2351003DF8A0 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
-		9A787E70264E2355003DF8A0 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5E264E22CB003DF8A0 /* node.cpp */; };
-		9A787E75264E31BC003DF8A0 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */; };
-		9A787E76264E31C2003DF8A0 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */; };
-		9A787E80264E89F4003DF8A0 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A787E7F264E89F4003DF8A0 /* CoreServices.framework */; };
-		9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
-		9A78F40928E7A953007F62C0 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A78F40728E7A945007F62C0 /* exception_translator.cpp */; };
-		9A78F40A28E7A953007F62C0 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A78F40728E7A945007F62C0 /* exception_translator.cpp */; };
-		9A78FC342B7AFE57006B95FB /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3F95F2A9498D3004283CA /* file_context.cpp */; };
-		9A78FC352B7AFE5A006B95FB /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3F95F2A9498D3004283CA /* file_context.cpp */; };
-		9A86610D296732AA000C82F0 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A86610B296732A9000C82F0 /* UniformTypeIdentifiers.framework */; };
-		9A8E9DA7282A2F61005FF778 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
-		9A8E9DA9282A2F61005FF778 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */; };
-		9A8E9DAA282A2F61005FF778 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A74158F266BD25B00552531 /* debug.cpp */; };
-		9A8E9DAB282A2F61005FF778 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E65264E22CB003DF8A0 /* _factory.cpp */; };
-		9A8E9DAC282A2F61005FF778 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */; };
-		9A8E9DAF282A2F61005FF778 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
-		9A8E9DB0282A2F61005FF778 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5E264E22CB003DF8A0 /* node.cpp */; };
-		9A93B95A28471D7D005ACD11 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B95828471D39005ACD11 /* image.cpp */; };
-		9A93B95B28471D7F005ACD11 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B95828471D39005ACD11 /* image.cpp */; };
-		9A94028E29E62F5E00C8C249 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94028D29E62F5E00C8C249 /* _cg_context.cpp */; };
-		9A94DEDC282C4B1C00F5C1CA /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E64264E22CB003DF8A0 /* _.cpp */; };
-		9A94DEDD282C4B1C00F5C1CA /* resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5B264E22CB003DF8A0 /* resource.cpp */; };
-		9A94DEF4282C5F6600F5C1CA /* directory_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* directory_system.h */; };
-		9A94DEF5282C5F6600F5C1CA /* path_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEF282C5F6600F5C1CA /* path_system.h */; };
-		9A94DEF6282C5F6600F5C1CA /* directory_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */; };
-		9A94DEF7282C5F6600F5C1CA /* path_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* path_system.cpp */; };
-		9A94DEF8282C5F6600F5C1CA /* file_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEF2282C5F6600F5C1CA /* file_system.h */; };
-		9A94DEF9282C5F6600F5C1CA /* file_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* file_system.cpp */; };
-		9A94DEFA282C606300F5C1CA /* file_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* file_system.cpp */; };
-		9A94DEFB282C606600F5C1CA /* path_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* path_system.cpp */; };
-		9A94DEFC282C606900F5C1CA /* directory_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */; };
-		9A9C50B42BF05C7D0045F581 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9C50B32BF05C7C0045F581 /* AVFoundation.framework */; };
-		9A9DCBDD29B8482F00D1255B /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9DCB6729B823BB00D1255B /* libacme_darwin.dylib */; };
-		9AA3F9622A9498D3004283CA /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3F95F2A9498D3004283CA /* file_context.cpp */; };
-		9AA3F9632A9498D3004283CA /* file_context.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA3F9612A9498D3004283CA /* file_context.h */; };
-		9AA56BB52C61AF5A00BF56ED /* set_icloud_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA56BB32C61AF5900BF56ED /* set_icloud_data.h */; };
-		9AA56BB62C61AF5A00BF56ED /* set_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA56BB42C61AF5900BF56ED /* set_icloud_data.mm */; };
-		9AA56BB72C61B38E00BF56ED /* set_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA56BB42C61AF5900BF56ED /* set_icloud_data.mm */; };
-		9AA74F6128484887009BB762 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
-		9AB09AA62B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */; };
-		9AB09AA72B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */; };
-		9AB09AA82B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */; };
-		9AB09AAC2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */; };
-		9AB09AAD2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */; };
-		9AB09AAE2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */; };
-		9AB09ACC2B73C59000E2C3A5 /* file_listing_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09ACA2B73C58D00E2C3A5 /* file_listing_handler.cpp */; };
-		9AB09ACD2B73C59100E2C3A5 /* file_listing_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09ACA2B73C58D00E2C3A5 /* file_listing_handler.cpp */; };
-		9AB09ACE2B73C59100E2C3A5 /* file_listing_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AB09ACA2B73C58D00E2C3A5 /* file_listing_handler.cpp */; };
-		9AB09ACF2B73C59100E2C3A5 /* file_listing_handler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AB09ACB2B73C58F00E2C3A5 /* file_listing_handler.h */; };
-		9AB09AD02B73C59100E2C3A5 /* file_listing_handler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AB09ACB2B73C58F00E2C3A5 /* file_listing_handler.h */; };
-		9AB09AD12B73C59100E2C3A5 /* file_listing_handler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AB09ACB2B73C58F00E2C3A5 /* file_listing_handler.h */; };
-		9ABBFE562B3FDCEC0036DF8C /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */; };
-		9AC080542B7449BB008BF988 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E3DA2B73FEF900ABB2C5 /* file.mm */; };
-		9AC14D01297B3410006D9BD3 /* directory_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEE282C5F6500F5C1CA /* directory_system.h */; };
-		9AC14D02297B3410006D9BD3 /* file_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEF2282C5F6600F5C1CA /* file_system.h */; };
-		9AC14D04297B3410006D9BD3 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A787E60264E22CB003DF8A0 /* node.h */; };
-		9AC14D05297B3410006D9BD3 /* path_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A94DEEF282C5F6600F5C1CA /* path_system.h */; };
-		9AC14D07297B3410006D9BD3 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */; };
-		9AC14D08297B3410006D9BD3 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B95828471D39005ACD11 /* image.cpp */; };
-		9AC14D09297B3410006D9BD3 /* path_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF1282C5F6600F5C1CA /* path_system.cpp */; };
-		9AC14D0A297B3410006D9BD3 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A74158F266BD25B00552531 /* debug.cpp */; };
-		9AC14D0B297B3410006D9BD3 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A78F40728E7A945007F62C0 /* exception_translator.cpp */; };
-		9AC14D0C297B3410006D9BD3 /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E65264E22CB003DF8A0 /* _factory.cpp */; };
-		9AC14D0D297B3410006D9BD3 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E64264E22CB003DF8A0 /* _.cpp */; };
-		9AC14D0E297B3410006D9BD3 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */; };
-		9AC14D12297B3410006D9BD3 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E59264E22CB003DF8A0 /* _apple.mm */; };
-		9AC14D13297B3410006D9BD3 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0705FD26627549004E8CB4 /* image.mm */; };
-		9AC14D14297B3410006D9BD3 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A787E5E264E22CB003DF8A0 /* node.cpp */; };
-		9AC14D15297B3410006D9BD3 /* directory_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */; };
-		9AC14D16297B3410006D9BD3 /* file_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94DEF3282C5F6600F5C1CA /* file_system.cpp */; };
-		9AC14D17297B3410006D9BD3 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */; };
-		9AC88B042B6B4D6D008F1C20 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A94028D29E62F5E00C8C249 /* _cg_context.cpp */; };
+		B208A624485255BC3D68DCDB /* libacme_posix.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 988D7D50123C2EE7CDEAC891 /* libacme_posix.dylib */; };
+		ACC829FB54F867799508D0B3 /* get_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09C3D141EA071B3E73D2EC3F /* get_icloud_data.mm */; };
+		7B2FD1523ACFA994093042B0 /* get_icloud_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 89FAB00B92C8E64F6E59AAD2 /* get_icloud_data.h */; };
+		322B673E56B7A57D8EB25E57 /* get_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09C3D141EA071B3E73D2EC3F /* get_icloud_data.mm */; };
+		CE41A6FD10C12E1DB4E1BFDE /* meta_data_query_result_item.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60BE8462E14BDB4EFE07A39F /* meta_data_query_result_item.mm */; };
+		A4C82DF8C2860527AEB59CC2 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D37561C8075583711E0737EA /* _cg_context.cpp */; };
+		C311E3D2395C14981A8863D7 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDDD6991202303CBA864BD31 /* Carbon.framework */; };
+		97453724767575D80897F9B8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BBF53C45203A40F9ACCA10 /* Cocoa.framework */; };
+		E6DB30C35717AAF0C6985A82 /* icloud_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ECE69C294C4C55BCD60BDAC /* icloud_file.cpp */; };
+		C82E24D43DA9DBB16EA9DE1C /* icloud_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ECE69C294C4C55BCD60BDAC /* icloud_file.cpp */; };
+		C512F06179BEFEE4FA563082 /* icloud_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ECE69C294C4C55BCD60BDAC /* icloud_file.cpp */; };
+		8BAB2FB69978A3A0423368C2 /* icloud_file.h in Headers */ = {isa = PBXBuildFile; fileRef = CA6E08FD0A941C76374622B8 /* icloud_file.h */; };
+		4A2FC90921AAA41C7308A677 /* icloud_file.h in Headers */ = {isa = PBXBuildFile; fileRef = CA6E08FD0A941C76374622B8 /* icloud_file.h */; };
+		AD681C3CC04075C0ECDE78B3 /* icloud_file.h in Headers */ = {isa = PBXBuildFile; fileRef = CA6E08FD0A941C76374622B8 /* icloud_file.h */; };
+		B77CC4D63752B16E266394A4 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8FDD4E49DD84EAFF1B858570 /* file.mm */; };
+		7AD91AC3F86AB9C401B275B7 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8FDD4E49DD84EAFF1B858570 /* file.mm */; };
+		C8FC1E95D09B9D61DE731ED6 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8013AB8205DFBB567FB91572 /* image.mm */; };
+		83BC637106C5E671A31CA470 /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BB316265DC9E2FFB42E3C1 /* node_process_identifier_modules_paths.cpp */; };
+		C2F3CAE6A626F6F4CA2E54C5 /* libacme.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DF91CEA730A58C8FB645615D /* libacme.dylib */; };
+		829B99BD0FD35E6ED30C0061 /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BB316265DC9E2FFB42E3C1 /* node_process_identifier_modules_paths.cpp */; };
+		6AE949F2F59222EB8934AE99 /* get_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09C3D141EA071B3E73D2EC3F /* get_icloud_data.mm */; };
+		F14F174170248141ABB88DBD /* set_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = F6508BA8AED0F234AF9DAD2F /* set_icloud_data.mm */; };
+		5EFF98EB0DC2591BDE6A2806 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E876C1EE52C8BE9E15BFC24 /* CAHostTimeBase.cpp */; };
+		D28BCDC60FECC69CF9DCCEAD /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E876C1EE52C8BE9E15BFC24 /* CAHostTimeBase.cpp */; };
+		F274C93663861C6CD6BD37B5 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB491075D46ED7DB7A361CB /* debug.cpp */; };
+		859D0AAAF9342C51621E8573 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AE75F3D5C040E6DB76B8DB2 /* _.cpp */; };
+		AF4E3135FCE83A805DB1DB8A /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 022C620EA0BCC9A151BE2B66 /* _factory.cpp */; };
+		F991E8E3B1D8C529FEF7D329 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5CE35C963DA60601DE4644 /* node.h */; };
+		C3D68C0AE3A59BFEE373743E /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 617C762E88109F7BD9670B67 /* node.cpp */; };
+		808D603EDFA58ECAEC6DE538 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = B1A598341BE3999B0B56051D /* NSString+SymlinksAndAliases.mm */; };
+		F9AD623485460076F95057E9 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = B79DBD333FB452567BC8FC81 /* UncaughtExceptionHandler.mm */; };
+		EF8224E8C0F04E68365C6C53 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F55EE445C51E5B504FECD5C /* CoreServices.framework */; };
+		B1AACEA303E6FA5DD7DCB026 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = EF16CB0ABFA9A8A802D66016 /* _apple.mm */; };
+		96E0C660E264F7266FCF1E31 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F425DE29231DA869C634010 /* exception_translator.cpp */; };
+		2B4A054C7ED8D1EAC4C599AD /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F425DE29231DA869C634010 /* exception_translator.cpp */; };
+		3CD14F903B338F424FDCCC4A /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844BA79E81A11E69B783BD78 /* file_context.cpp */; };
+		0BE5BD2A087CFEB2A193B704 /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844BA79E81A11E69B783BD78 /* file_context.cpp */; };
+		FD828649D29D63781241B97F /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44ED4EB1DA50BE6499185B8 /* UniformTypeIdentifiers.framework */; };
+		8CFB065C63A7BE78F1FF9EBA /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5CE35C963DA60601DE4644 /* node.h */; };
+		22755E91EFF91F92B8BD7B82 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = B1A598341BE3999B0B56051D /* NSString+SymlinksAndAliases.mm */; };
+		78E051A3768E1737F9BAE9EB /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB491075D46ED7DB7A361CB /* debug.cpp */; };
+		303148912D2663748BAB9AFA /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 022C620EA0BCC9A151BE2B66 /* _factory.cpp */; };
+		A8163D42C75E650DC693AE79 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = B79DBD333FB452567BC8FC81 /* UncaughtExceptionHandler.mm */; };
+		FB5ACE413682E70678BC31D4 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = EF16CB0ABFA9A8A802D66016 /* _apple.mm */; };
+		6BF5A444BE9BD9A3061C0725 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 617C762E88109F7BD9670B67 /* node.cpp */; };
+		0B6D797D90E61DC01853AD9E /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25494A331D8B35CF0F97602D /* image.cpp */; };
+		3320A472ECFE53551CD6EAEF /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25494A331D8B35CF0F97602D /* image.cpp */; };
+		1DE2D05F33E21EFB4A80D426 /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D37561C8075583711E0737EA /* _cg_context.cpp */; };
+		5B998E3016DA4BC8A275C7DA /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AE75F3D5C040E6DB76B8DB2 /* _.cpp */; };
+		3E51920EA8BCCC4C29023BE0 /* resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A43B0F1ECB6932F2290A53 /* resource.cpp */; };
+		6B7DC0DA62E9CE80044500A0 /* directory_system.h in Headers */ = {isa = PBXBuildFile; fileRef = ECAB497778235A7FBD7CACDB /* directory_system.h */; };
+		CFA1935D8A3E4F6526AA9681 /* path_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F43CD6777AF500B6CAB5A28 /* path_system.h */; };
+		A8776AD86E22362BA62A37DD /* directory_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5512931BD27918408C4BDB02 /* directory_system.cpp */; };
+		1F71A9EAA8ACDF75E0D61984 /* path_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFC40951B19C3AB05656157B /* path_system.cpp */; };
+		6DD9F07ED4219F6D6F7AD9BE /* file_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 87DBF487A51C6626AF26AAE9 /* file_system.h */; };
+		33F3800DA4049E73B7896691 /* file_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15E9B113349803C5D7EB263E /* file_system.cpp */; };
+		D3BDEC15DBD6F0B8C6DB19B3 /* file_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15E9B113349803C5D7EB263E /* file_system.cpp */; };
+		923321DDBF5B00E47B6C8662 /* path_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFC40951B19C3AB05656157B /* path_system.cpp */; };
+		195A9DB93174E4F8D95DDB54 /* directory_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5512931BD27918408C4BDB02 /* directory_system.cpp */; };
+		3396B1A9BAA078A2E2AABBEC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C34296C72983FE716CDF16F /* AVFoundation.framework */; };
+		1B0698B8D8458CAC4840C1A3 /* libacme_darwin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3881AF1603C09CB47499A1E /* libacme_darwin.dylib */; };
+		89E9A7C0A1B7FE45681995B7 /* file_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844BA79E81A11E69B783BD78 /* file_context.cpp */; };
+		3DB4B89DA641B7430FDB5E18 /* file_context.h in Headers */ = {isa = PBXBuildFile; fileRef = 13A894AE34B438615060C968 /* file_context.h */; };
+		3261565329CDBAAB7E6B6B29 /* set_icloud_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 2198E7B9409882FB736A6EE0 /* set_icloud_data.h */; };
+		62774F3BD3D147FF50D34B2B /* set_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = F6508BA8AED0F234AF9DAD2F /* set_icloud_data.mm */; };
+		24A91183736D41542A68B55A /* set_icloud_data.mm in Sources */ = {isa = PBXBuildFile; fileRef = F6508BA8AED0F234AF9DAD2F /* set_icloud_data.mm */; };
+		58D915C5683C4494FD79A749 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8013AB8205DFBB567FB91572 /* image.mm */; };
+		70FFF8C4F42AA6266F81368E /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = CD6112DA158615262D955348 /* NSMetadataQueryHandler.mm */; };
+		B2E04F116175177C691FFD3E /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = CD6112DA158615262D955348 /* NSMetadataQueryHandler.mm */; };
+		4336758EFB480824EC1E060A /* NSMetadataQueryHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = CD6112DA158615262D955348 /* NSMetadataQueryHandler.mm */; };
+		6BF2AE33704DC0FF078C6F62 /* ns_metadata_query_callback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F3080D82C1E3D6281C9B6 /* ns_metadata_query_callback.cpp */; };
+		18EEC59D0042E96CAB556CCE /* ns_metadata_query_callback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F3080D82C1E3D6281C9B6 /* ns_metadata_query_callback.cpp */; };
+		EF9EE10C70555EFBACD14E63 /* ns_metadata_query_callback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F3080D82C1E3D6281C9B6 /* ns_metadata_query_callback.cpp */; };
+		7FBD4ED1CE16689AFE76CC84 /* file_listing_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2C8F1F31BE646A29ED572E /* file_listing_handler.cpp */; };
+		6B835409320FF2AFA0B3CB96 /* file_listing_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2C8F1F31BE646A29ED572E /* file_listing_handler.cpp */; };
+		737D113F224BCEFEEEC570E4 /* file_listing_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2C8F1F31BE646A29ED572E /* file_listing_handler.cpp */; };
+		80E011AB7285BAC51C482368 /* file_listing_handler.h in Headers */ = {isa = PBXBuildFile; fileRef = 64E58176F04BCD4D98E6F6B4 /* file_listing_handler.h */; };
+		3EBD0D76E9DE93D39FF287B1 /* file_listing_handler.h in Headers */ = {isa = PBXBuildFile; fileRef = 64E58176F04BCD4D98E6F6B4 /* file_listing_handler.h */; };
+		230ED0E99EBCC24C49397200 /* file_listing_handler.h in Headers */ = {isa = PBXBuildFile; fileRef = 64E58176F04BCD4D98E6F6B4 /* file_listing_handler.h */; };
+		04E09AC006AEAF1A571BAE93 /* node_process_identifier_modules_paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BB316265DC9E2FFB42E3C1 /* node_process_identifier_modules_paths.cpp */; };
+		0CA02F593F5BA41388E237C5 /* file.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8FDD4E49DD84EAFF1B858570 /* file.mm */; };
+		3AA57813B1C799A8163C9057 /* directory_system.h in Headers */ = {isa = PBXBuildFile; fileRef = ECAB497778235A7FBD7CACDB /* directory_system.h */; };
+		3F5448770906FCFE974C0F60 /* file_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 87DBF487A51C6626AF26AAE9 /* file_system.h */; };
+		A61D161FA08C28A1B97B1543 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5CE35C963DA60601DE4644 /* node.h */; };
+		1A4A12D7D25E0C92900F9EC5 /* path_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F43CD6777AF500B6CAB5A28 /* path_system.h */; };
+		555B85022473BCED6944DA62 /* NSString+SymlinksAndAliases.mm in Sources */ = {isa = PBXBuildFile; fileRef = B1A598341BE3999B0B56051D /* NSString+SymlinksAndAliases.mm */; };
+		C7E3F6C9F1273FB6B35CC99E /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25494A331D8B35CF0F97602D /* image.cpp */; };
+		DD28DB8A43D002970F8516E4 /* path_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFC40951B19C3AB05656157B /* path_system.cpp */; };
+		237A6BB6C2D5BDDC2EABFF9F /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB491075D46ED7DB7A361CB /* debug.cpp */; };
+		19E75B1EC06504FB29670457 /* exception_translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F425DE29231DA869C634010 /* exception_translator.cpp */; };
+		DE61BAD5D8ACDD4E26AB347E /* _factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 022C620EA0BCC9A151BE2B66 /* _factory.cpp */; };
+		09739D33F40F4884BAD2B800 /* _.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AE75F3D5C040E6DB76B8DB2 /* _.cpp */; };
+		9352A382E34A4CF69FF20FFD /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = B79DBD333FB452567BC8FC81 /* UncaughtExceptionHandler.mm */; };
+		52164AF4BEFE86D06E4DD140 /* _apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = EF16CB0ABFA9A8A802D66016 /* _apple.mm */; };
+		51E0301387291D0E265A1370 /* image.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8013AB8205DFBB567FB91572 /* image.mm */; };
+		8E4F29D620D888BCAA815443 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 617C762E88109F7BD9670B67 /* node.cpp */; };
+		C7244AFC678E10F0A23E1F89 /* directory_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5512931BD27918408C4BDB02 /* directory_system.cpp */; };
+		B922840B024593752A2BF9DA /* file_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15E9B113349803C5D7EB263E /* file_system.cpp */; };
+		20EF234C3A937772BDCF56D7 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E876C1EE52C8BE9E15BFC24 /* CAHostTimeBase.cpp */; };
+		D970156D20BAF42F96091A0D /* _cg_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D37561C8075583711E0737EA /* _cg_context.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9A9DCB6629B823BB00D1255B /* PBXContainerItemProxy */ = {
+		E5AB86B65EDAC6E4D77BC6F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */;
+			containerPortal = 9EC6C08E4E1B0B3134DB78B0 /* acme_darwin.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9AFD807F297B578700BAD9DD;
+			remoteGlobalIDString = 1CCA5CC9E5BBA11748CCA6BE;
 			remoteInfo = acme_darwin;
 		};
-		9A9DCB6829B823BB00D1255B /* PBXContainerItemProxy */ = {
+		8CD6CD9360C4322D34050AB6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */;
+			containerPortal = 9EC6C08E4E1B0B3134DB78B0 /* acme_darwin.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9AB15D3929A8811400DFDF90;
+			remoteGlobalIDString = 323025C44704422621D52824;
 			remoteInfo = ios_acme_darwin;
 		};
-		9A9DCB6A29B823BB00D1255B /* PBXContainerItemProxy */ = {
+		E28C396AB10B1575D858515E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */;
+			containerPortal = 9EC6C08E4E1B0B3134DB78B0 /* acme_darwin.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9AFD80BA297B584000BAD9DD;
+			remoteGlobalIDString = C0D96E71D16BB7E91315D868;
 			remoteInfo = static_acme_darwin;
 		};
-		9A9DCB7D29B8246500D1255B /* PBXContainerItemProxy */ = {
+		3050733542416821070585B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */;
+			containerPortal = 9EC6C08E4E1B0B3134DB78B0 /* acme_darwin.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9AFD807E297B578700BAD9DD;
+			remoteGlobalIDString = A58F4A9B4622F87266489C17;
 			remoteInfo = acme_darwin;
 		};
-		9A9DCB7F29B8246D00D1255B /* PBXContainerItemProxy */ = {
+		9AB30CF1D5E4E74A4A851BAC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */;
+			containerPortal = 9EC6C08E4E1B0B3134DB78B0 /* acme_darwin.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9AFD80B3297B584000BAD9DD;
+			remoteGlobalIDString = 3915152EA83DBAE6B2815D26;
 			remoteInfo = static_acme_darwin;
 		};
-		9AC107552B6ACC250053DB45 /* PBXContainerItemProxy */ = {
+		5536A76526968B437227E73B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */;
+			containerPortal = 9EC6C08E4E1B0B3134DB78B0 /* acme_darwin.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9AB15D2229A8811400DFDF90;
+			remoteGlobalIDString = 472F741E3A8A7BD00073A38E;
 			remoteInfo = ios_acme_darwin;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9A0705FD26627549004E8CB4 /* image.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image.mm; sourceTree = "<group>"; };
-		9A08443E29367CC1009F7FF4 /* libacme_posix.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_posix.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A0E3BB42C611DE9004A0972 /* get_icloud_data.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = get_icloud_data.mm; sourceTree = "<group>"; };
-		9A0E3BB52C611DE9004A0972 /* get_icloud_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = get_icloud_data.h; sourceTree = "<group>"; };
-		9A0E3BB92C613322004A0972 /* meta_data_query_result_item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = meta_data_query_result_item.h; sourceTree = "<group>"; };
-		9A0E3BBA2C613402004A0972 /* meta_data_query_result_item.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = meta_data_query_result_item.mm; sourceTree = "<group>"; };
-		9A15A582264B536C0080670E /* libacme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A21AFCA276117F4001E14CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9A21AFCC276118A6001E14CC /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		9A21AFD727612016001E14CC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		9A21AFD92761203B001E14CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9A21AFDB2761205C001E14CC /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		9A21AFE1276122CB001E14CC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = icloud_file.cpp; sourceTree = "<group>"; };
-		9A238E902B7AF79800C199F5 /* icloud_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icloud_file.h; sourceTree = "<group>"; };
-		9A28E3DA2B73FEF900ABB2C5 /* file.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = file.mm; sourceTree = "<group>"; };
-		9A412438266C3ECE00C3FF0E /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A734A50284F5E37003986C7 /* CAHostTimeBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAHostTimeBase.h; sourceTree = "<group>"; };
-		9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAHostTimeBase.cpp; sourceTree = "<group>"; };
-		9A74158F266BD25B00552531 /* debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = debug.cpp; sourceTree = "<group>"; };
-		9A7724A52A257C3500B9A835 /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
-		9A7724A62A257C3500B9A835 /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
-		9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SymlinksAndAliases.h"; sourceTree = "<group>"; };
-		9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+SymlinksAndAliases.mm"; sourceTree = "<group>"; };
-		9A787E58264E22CB003DF8A0 /* _mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm.h; sourceTree = "<group>"; };
-		9A787E59264E22CB003DF8A0 /* _apple.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = _apple.mm; sourceTree = "<group>"; };
-		9A787E5B264E22CB003DF8A0 /* resource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = resource.cpp; sourceTree = "<group>"; };
-		9A787E5C264E22CB003DF8A0 /* framework.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
-		9A787E5D264E22CB003DF8A0 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
-		9A787E5E264E22CB003DF8A0 /* node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = node.cpp; sourceTree = "<group>"; };
-		9A787E60264E22CB003DF8A0 /* node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
-		9A787E63264E22CB003DF8A0 /* _mm_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm_common.h; sourceTree = "<group>"; };
-		9A787E64264E22CB003DF8A0 /* _.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
-		9A787E65264E22CB003DF8A0 /* _factory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
-		9A787E66264E22CB003DF8A0 /* framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
-		9A787E68264E22CB003DF8A0 /* _c_mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _c_mm.h; sourceTree = "<group>"; };
-		9A787E69264E22CB003DF8A0 /* _library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
-		9A787E6A264E22CB003DF8A0 /* timer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = timer.mm; sourceTree = "<group>"; };
-		9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UncaughtExceptionHandler.mm; sourceTree = "<group>"; };
-		9A787E6D264E22CB003DF8A0 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
-		9A787E7F264E89F4003DF8A0 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
-		9A787E81264E8C46003DF8A0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		9A78F40728E7A945007F62C0 /* exception_translator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = exception_translator.cpp; sourceTree = "<group>"; };
-		9A78F40828E7A945007F62C0 /* exception_translator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exception_translator.h; sourceTree = "<group>"; };
-		9A86610B296732A9000C82F0 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
-		9A8E9DBA282A2F61005FF778 /* libios_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A93B95828471D39005ACD11 /* image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image.cpp; sourceTree = "<group>"; };
-		9A93B95928471D39005ACD11 /* image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image.h; sourceTree = "<group>"; };
-		9A94028D29E62F5E00C8C249 /* _cg_context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _cg_context.cpp; sourceTree = "<group>"; };
-		9A94DEEE282C5F6500F5C1CA /* directory_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = directory_system.h; sourceTree = "<group>"; };
-		9A94DEEF282C5F6600F5C1CA /* path_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = path_system.h; sourceTree = "<group>"; };
-		9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = directory_system.cpp; sourceTree = "<group>"; };
-		9A94DEF1282C5F6600F5C1CA /* path_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = path_system.cpp; sourceTree = "<group>"; };
-		9A94DEF2282C5F6600F5C1CA /* file_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_system.h; sourceTree = "<group>"; };
-		9A94DEF3282C5F6600F5C1CA /* file_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_system.cpp; sourceTree = "<group>"; };
-		9A9C50B32BF05C7C0045F581 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_darwin.xcodeproj; path = "../../operating_system-darwin/acme_darwin/acme_darwin.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		9A9DCBDE29B8490900D1255B /* libios_acme_posix.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libios_acme_posix.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AA3F95F2A9498D3004283CA /* file_context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_context.cpp; sourceTree = "<group>"; };
-		9AA3F9612A9498D3004283CA /* file_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_context.h; sourceTree = "<group>"; };
-		9AA56BB32C61AF5900BF56ED /* set_icloud_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = set_icloud_data.h; sourceTree = "<group>"; };
-		9AA56BB42C61AF5900BF56ED /* set_icloud_data.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = set_icloud_data.mm; sourceTree = "<group>"; };
-		9AB09AA42B72BA7200E2C3A5 /* NSMetadataQueryHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSMetadataQueryHandler.h; sourceTree = "<group>"; };
-		9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NSMetadataQueryHandler.mm; sourceTree = "<group>"; };
-		9AB09AAA2B72C7B500E2C3A5 /* ns_metadata_query_callback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ns_metadata_query_callback.h; sourceTree = "<group>"; };
-		9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ns_metadata_query_callback.cpp; sourceTree = "<group>"; };
-		9AB09ACA2B73C58D00E2C3A5 /* file_listing_handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_listing_handler.cpp; sourceTree = "<group>"; };
-		9AB09ACB2B73C58F00E2C3A5 /* file_listing_handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_listing_handler.h; sourceTree = "<group>"; };
-		9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_process_identifier_modules_paths.cpp; sourceTree = "<group>"; };
-		9AC14D23297B3410006D9BD3 /* libstatic_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libstatic_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8013AB8205DFBB567FB91572 /* image.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image.mm; sourceTree = "<group>"; };
+		988D7D50123C2EE7CDEAC891 /* libacme_posix.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme_posix.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		09C3D141EA071B3E73D2EC3F /* get_icloud_data.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = get_icloud_data.mm; sourceTree = "<group>"; };
+		89FAB00B92C8E64F6E59AAD2 /* get_icloud_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = get_icloud_data.h; sourceTree = "<group>"; };
+		DF038FE2B9EAC0FDBB880E8B /* meta_data_query_result_item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = meta_data_query_result_item.h; sourceTree = "<group>"; };
+		60BE8462E14BDB4EFE07A39F /* meta_data_query_result_item.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = meta_data_query_result_item.mm; sourceTree = "<group>"; };
+		A85A9D1A4C48D0ED5DCFCE23 /* libacme_apple.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libacme_apple.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		8798ED15A37023ADA4A6E6C7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EDDD6991202303CBA864BD31 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		5853C53ABAC82A9D4E4094CC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		55AAAB897ED0C0A06AD5C072 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D1ED1996F16657F832788299 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		65BBF53C45203A40F9ACCA10 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7ECE69C294C4C55BCD60BDAC /* icloud_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = icloud_file.cpp; sourceTree = "<group>"; };
+		CA6E08FD0A941C76374622B8 /* icloud_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icloud_file.h; sourceTree = "<group>"; };
+		8FDD4E49DD84EAFF1B858570 /* file.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = file.mm; sourceTree = "<group>"; };
+		DF91CEA730A58C8FB645615D /* libacme.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libacme.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE56E72742AED3D8B91C3555 /* CAHostTimeBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAHostTimeBase.h; sourceTree = "<group>"; };
+		0E876C1EE52C8BE9E15BFC24 /* CAHostTimeBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAHostTimeBase.cpp; sourceTree = "<group>"; };
+		BAB491075D46ED7DB7A361CB /* debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = debug.cpp; sourceTree = "<group>"; };
+		AF8F317D7F981A2C3318F516 /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
+		74949703C462FB8C26E50A52 /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
+		716069B4C2F7539FFC9CC73F /* NSString+SymlinksAndAliases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SymlinksAndAliases.h"; sourceTree = "<group>"; };
+		B1A598341BE3999B0B56051D /* NSString+SymlinksAndAliases.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+SymlinksAndAliases.mm"; sourceTree = "<group>"; };
+		0B78CAB3FF27CAD5DA62146A /* _mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm.h; sourceTree = "<group>"; };
+		EF16CB0ABFA9A8A802D66016 /* _apple.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = _apple.mm; sourceTree = "<group>"; };
+		09A43B0F1ECB6932F2290A53 /* resource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = resource.cpp; sourceTree = "<group>"; };
+		A0B08A188B9862CBCAF64675 /* framework.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framework.cpp; sourceTree = "<group>"; };
+		911C47EDE857A116081AA806 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		617C762E88109F7BD9670B67 /* node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = node.cpp; sourceTree = "<group>"; };
+		AD5CE35C963DA60601DE4644 /* node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
+		D839AFFC8E407CFF1CE2ADA7 /* _mm_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _mm_common.h; sourceTree = "<group>"; };
+		4AE75F3D5C040E6DB76B8DB2 /* _.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _.cpp; sourceTree = "<group>"; };
+		022C620EA0BCC9A151BE2B66 /* _factory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _factory.cpp; sourceTree = "<group>"; };
+		C260B938D64F6E88885C8560 /* framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
+		AB55DA5293E6C224C393732A /* _c_mm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _c_mm.h; sourceTree = "<group>"; };
+		B40A8EBE01C1C5EA4496510D /* _library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _library.h; sourceTree = "<group>"; };
+		0CFA47C1D948F5E2D4F918EC /* timer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = timer.mm; sourceTree = "<group>"; };
+		B79DBD333FB452567BC8FC81 /* UncaughtExceptionHandler.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UncaughtExceptionHandler.mm; sourceTree = "<group>"; };
+		671BC42C571F51697562AAE8 /* _.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
+		9F55EE445C51E5B504FECD5C /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		BD5D333799DF4642336F5B5A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		9F425DE29231DA869C634010 /* exception_translator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = exception_translator.cpp; sourceTree = "<group>"; };
+		191789D8ECA0EF60DFBD49BF /* exception_translator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exception_translator.h; sourceTree = "<group>"; };
+		E44ED4EB1DA50BE6499185B8 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
+		256BF4F22EA0AAACFD8118B0 /* libios_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		25494A331D8B35CF0F97602D /* image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image.cpp; sourceTree = "<group>"; };
+		4687E802B3E814FAD49D138A /* image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image.h; sourceTree = "<group>"; };
+		D37561C8075583711E0737EA /* _cg_context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = _cg_context.cpp; sourceTree = "<group>"; };
+		ECAB497778235A7FBD7CACDB /* directory_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = directory_system.h; sourceTree = "<group>"; };
+		4F43CD6777AF500B6CAB5A28 /* path_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = path_system.h; sourceTree = "<group>"; };
+		5512931BD27918408C4BDB02 /* directory_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = directory_system.cpp; sourceTree = "<group>"; };
+		DFC40951B19C3AB05656157B /* path_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = path_system.cpp; sourceTree = "<group>"; };
+		87DBF487A51C6626AF26AAE9 /* file_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_system.h; sourceTree = "<group>"; };
+		15E9B113349803C5D7EB263E /* file_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_system.cpp; sourceTree = "<group>"; };
+		1C34296C72983FE716CDF16F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9EC6C08E4E1B0B3134DB78B0 /* acme_darwin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = acme_darwin.xcodeproj; path = "../../operating_system-darwin/acme_darwin/acme_darwin.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		20C380675C9F638CEAF4C29F /* libios_acme_posix.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libios_acme_posix.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		844BA79E81A11E69B783BD78 /* file_context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_context.cpp; sourceTree = "<group>"; };
+		13A894AE34B438615060C968 /* file_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_context.h; sourceTree = "<group>"; };
+		2198E7B9409882FB736A6EE0 /* set_icloud_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = set_icloud_data.h; sourceTree = "<group>"; };
+		F6508BA8AED0F234AF9DAD2F /* set_icloud_data.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = set_icloud_data.mm; sourceTree = "<group>"; };
+		B1E915DBFBD4E13C5EDF87DA /* NSMetadataQueryHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSMetadataQueryHandler.h; sourceTree = "<group>"; };
+		CD6112DA158615262D955348 /* NSMetadataQueryHandler.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NSMetadataQueryHandler.mm; sourceTree = "<group>"; };
+		316AB5658CF2A61C03D37644 /* ns_metadata_query_callback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ns_metadata_query_callback.h; sourceTree = "<group>"; };
+		1C5F3080D82C1E3D6281C9B6 /* ns_metadata_query_callback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ns_metadata_query_callback.cpp; sourceTree = "<group>"; };
+		6B2C8F1F31BE646A29ED572E /* file_listing_handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_listing_handler.cpp; sourceTree = "<group>"; };
+		64E58176F04BCD4D98E6F6B4 /* file_listing_handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_listing_handler.h; sourceTree = "<group>"; };
+		F2BB316265DC9E2FFB42E3C1 /* node_process_identifier_modules_paths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_process_identifier_modules_paths.cpp; sourceTree = "<group>"; };
+		CE142958DE0585E78F3A7409 /* libstatic_acme_apple.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libstatic_acme_apple.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9A15A580264B536C0080670E /* Frameworks */ = {
+		0C1581DE10B62FB24F1D4710 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A9C50B42BF05C7D0045F581 /* AVFoundation.framework in Frameworks */,
-				9A08443F29367CC1009F7FF4 /* libacme_posix.dylib in Frameworks */,
-				9A9DCBDD29B8482F00D1255B /* libacme_darwin.dylib in Frameworks */,
-				9A787E80264E89F4003DF8A0 /* CoreServices.framework in Frameworks */,
-				9A21AFE2276122CB001E14CC /* Cocoa.framework in Frameworks */,
-				9A86610D296732AA000C82F0 /* UniformTypeIdentifiers.framework in Frameworks */,
-				9A21AFCD276118A6001E14CC /* Carbon.framework in Frameworks */,
-				9A412439266C3ECE00C3FF0E /* libacme.dylib in Frameworks */,
+				3396B1A9BAA078A2E2AABBEC /* AVFoundation.framework in Frameworks */,
+				B208A624485255BC3D68DCDB /* libacme_posix.dylib in Frameworks */,
+				1B0698B8D8458CAC4840C1A3 /* libacme_darwin.dylib in Frameworks */,
+				EF8224E8C0F04E68365C6C53 /* CoreServices.framework in Frameworks */,
+				97453724767575D80897F9B8 /* Cocoa.framework in Frameworks */,
+				FD828649D29D63781241B97F /* UniformTypeIdentifiers.framework in Frameworks */,
+				C311E3D2395C14981A8863D7 /* Carbon.framework in Frameworks */,
+				C2F3CAE6A626F6F4CA2E54C5 /* libacme.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A15A579264B536C0080670E = {
+		EC7EE34679DAC5EDD1A0728A = {
 			isa = PBXGroup;
 			children = (
-				9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */,
-				9A787E4F264E22CB003DF8A0 /* acme_apple */,
-				9A15A583264B536C0080670E /* Products */,
-				9A787E7C264E8935003DF8A0 /* Frameworks */,
+				9EC6C08E4E1B0B3134DB78B0 /* acme_darwin.xcodeproj */,
+				31653A41AA94D33C278441AF /* acme_apple */,
+				625C2747CE9E1DBD10BB8899 /* Products */,
+				B38A105319C458FE2DF6513A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		9A15A583264B536C0080670E /* Products */ = {
+		625C2747CE9E1DBD10BB8899 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A15A582264B536C0080670E /* libacme_apple.dylib */,
-				9A8E9DBA282A2F61005FF778 /* libios_acme_apple.a */,
-				9AC14D23297B3410006D9BD3 /* libstatic_acme_apple.a */,
+				A85A9D1A4C48D0ED5DCFCE23 /* libacme_apple.dylib */,
+				256BF4F22EA0AAACFD8118B0 /* libios_acme_apple.a */,
+				CE142958DE0585E78F3A7409 /* libstatic_acme_apple.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A787E4F264E22CB003DF8A0 /* acme_apple */ = {
+		31653A41AA94D33C278441AF /* acme_apple */ = {
 			isa = PBXGroup;
 			children = (
-				9A787E6D264E22CB003DF8A0 /* _.h */,
-				9A787E64264E22CB003DF8A0 /* _.cpp */,
-				9A7724A52A257C3500B9A835 /* _____debug.xcconfig */,
-				9A7724A62A257C3500B9A835 /* _____release.xcconfig */,
-				9A787E59264E22CB003DF8A0 /* _apple.mm */,
-				9A787E68264E22CB003DF8A0 /* _c_mm.h */,
-				9A94028D29E62F5E00C8C249 /* _cg_context.cpp */,
-				9A787E65264E22CB003DF8A0 /* _factory.cpp */,
-				9A787E69264E22CB003DF8A0 /* _library.h */,
-				9A787E58264E22CB003DF8A0 /* _mm.h */,
-				9A787E63264E22CB003DF8A0 /* _mm_common.h */,
-				9A734A50284F5E37003986C7 /* CAHostTimeBase.h */,
-				9A734A51284F5E37003986C7 /* CAHostTimeBase.cpp */,
-				9A74158F266BD25B00552531 /* debug.cpp */,
-				9A94DEEE282C5F6500F5C1CA /* directory_system.h */,
-				9A94DEF0282C5F6600F5C1CA /* directory_system.cpp */,
-				9A78F40828E7A945007F62C0 /* exception_translator.h */,
-				9A78F40728E7A945007F62C0 /* exception_translator.cpp */,
-				9A28E3DA2B73FEF900ABB2C5 /* file.mm */,
-				9AA3F9612A9498D3004283CA /* file_context.h */,
-				9AA3F95F2A9498D3004283CA /* file_context.cpp */,
-				9AB09ACB2B73C58F00E2C3A5 /* file_listing_handler.h */,
-				9AB09ACA2B73C58D00E2C3A5 /* file_listing_handler.cpp */,
-				9A94DEF2282C5F6600F5C1CA /* file_system.h */,
-				9A94DEF3282C5F6600F5C1CA /* file_system.cpp */,
-				9A787E66264E22CB003DF8A0 /* framework.h */,
-				9A787E5C264E22CB003DF8A0 /* framework.cpp */,
-				9A0E3BB52C611DE9004A0972 /* get_icloud_data.h */,
-				9A0E3BB42C611DE9004A0972 /* get_icloud_data.mm */,
-				9A238E902B7AF79800C199F5 /* icloud_file.h */,
-				9A238E8F2B7AF79800C199F5 /* icloud_file.cpp */,
-				9A93B95928471D39005ACD11 /* image.h */,
-				9A93B95828471D39005ACD11 /* image.cpp */,
-				9A0705FD26627549004E8CB4 /* image.mm */,
-				9A0E3BB92C613322004A0972 /* meta_data_query_result_item.h */,
-				9A0E3BBA2C613402004A0972 /* meta_data_query_result_item.mm */,
-				9A787E60264E22CB003DF8A0 /* node.h */,
-				9A787E5E264E22CB003DF8A0 /* node.cpp */,
-				9ABBFE542B3FDCEB0036DF8C /* node_process_identifier_modules_paths.cpp */,
-				9AB09AAA2B72C7B500E2C3A5 /* ns_metadata_query_callback.h */,
-				9AB09AAB2B72C86A00E2C3A5 /* ns_metadata_query_callback.cpp */,
-				9AB09AA42B72BA7200E2C3A5 /* NSMetadataQueryHandler.h */,
-				9AB09AA52B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm */,
-				9A787E51264E22CB003DF8A0 /* NSString+SymlinksAndAliases.h */,
-				9A787E52264E22CB003DF8A0 /* NSString+SymlinksAndAliases.mm */,
-				9A94DEEF282C5F6600F5C1CA /* path_system.h */,
-				9A94DEF1282C5F6600F5C1CA /* path_system.cpp */,
-				9A787E5B264E22CB003DF8A0 /* resource.cpp */,
-				9AA56BB32C61AF5900BF56ED /* set_icloud_data.h */,
-				9AA56BB42C61AF5900BF56ED /* set_icloud_data.mm */,
-				9A787E6A264E22CB003DF8A0 /* timer.mm */,
-				9A787E5D264E22CB003DF8A0 /* UncaughtExceptionHandler.h */,
-				9A787E6C264E22CB003DF8A0 /* UncaughtExceptionHandler.mm */,
+				671BC42C571F51697562AAE8 /* _.h */,
+				4AE75F3D5C040E6DB76B8DB2 /* _.cpp */,
+				AF8F317D7F981A2C3318F516 /* _____debug.xcconfig */,
+				74949703C462FB8C26E50A52 /* _____release.xcconfig */,
+				EF16CB0ABFA9A8A802D66016 /* _apple.mm */,
+				AB55DA5293E6C224C393732A /* _c_mm.h */,
+				D37561C8075583711E0737EA /* _cg_context.cpp */,
+				022C620EA0BCC9A151BE2B66 /* _factory.cpp */,
+				B40A8EBE01C1C5EA4496510D /* _library.h */,
+				0B78CAB3FF27CAD5DA62146A /* _mm.h */,
+				D839AFFC8E407CFF1CE2ADA7 /* _mm_common.h */,
+				FE56E72742AED3D8B91C3555 /* CAHostTimeBase.h */,
+				0E876C1EE52C8BE9E15BFC24 /* CAHostTimeBase.cpp */,
+				BAB491075D46ED7DB7A361CB /* debug.cpp */,
+				ECAB497778235A7FBD7CACDB /* directory_system.h */,
+				5512931BD27918408C4BDB02 /* directory_system.cpp */,
+				191789D8ECA0EF60DFBD49BF /* exception_translator.h */,
+				9F425DE29231DA869C634010 /* exception_translator.cpp */,
+				8FDD4E49DD84EAFF1B858570 /* file.mm */,
+				13A894AE34B438615060C968 /* file_context.h */,
+				844BA79E81A11E69B783BD78 /* file_context.cpp */,
+				64E58176F04BCD4D98E6F6B4 /* file_listing_handler.h */,
+				6B2C8F1F31BE646A29ED572E /* file_listing_handler.cpp */,
+				87DBF487A51C6626AF26AAE9 /* file_system.h */,
+				15E9B113349803C5D7EB263E /* file_system.cpp */,
+				C260B938D64F6E88885C8560 /* framework.h */,
+				A0B08A188B9862CBCAF64675 /* framework.cpp */,
+				89FAB00B92C8E64F6E59AAD2 /* get_icloud_data.h */,
+				09C3D141EA071B3E73D2EC3F /* get_icloud_data.mm */,
+				CA6E08FD0A941C76374622B8 /* icloud_file.h */,
+				7ECE69C294C4C55BCD60BDAC /* icloud_file.cpp */,
+				4687E802B3E814FAD49D138A /* image.h */,
+				25494A331D8B35CF0F97602D /* image.cpp */,
+				8013AB8205DFBB567FB91572 /* image.mm */,
+				DF038FE2B9EAC0FDBB880E8B /* meta_data_query_result_item.h */,
+				60BE8462E14BDB4EFE07A39F /* meta_data_query_result_item.mm */,
+				AD5CE35C963DA60601DE4644 /* node.h */,
+				617C762E88109F7BD9670B67 /* node.cpp */,
+				F2BB316265DC9E2FFB42E3C1 /* node_process_identifier_modules_paths.cpp */,
+				316AB5658CF2A61C03D37644 /* ns_metadata_query_callback.h */,
+				1C5F3080D82C1E3D6281C9B6 /* ns_metadata_query_callback.cpp */,
+				B1E915DBFBD4E13C5EDF87DA /* NSMetadataQueryHandler.h */,
+				CD6112DA158615262D955348 /* NSMetadataQueryHandler.mm */,
+				716069B4C2F7539FFC9CC73F /* NSString+SymlinksAndAliases.h */,
+				B1A598341BE3999B0B56051D /* NSString+SymlinksAndAliases.mm */,
+				4F43CD6777AF500B6CAB5A28 /* path_system.h */,
+				DFC40951B19C3AB05656157B /* path_system.cpp */,
+				09A43B0F1ECB6932F2290A53 /* resource.cpp */,
+				2198E7B9409882FB736A6EE0 /* set_icloud_data.h */,
+				F6508BA8AED0F234AF9DAD2F /* set_icloud_data.mm */,
+				0CFA47C1D948F5E2D4F918EC /* timer.mm */,
+				911C47EDE857A116081AA806 /* UncaughtExceptionHandler.h */,
+				B79DBD333FB452567BC8FC81 /* UncaughtExceptionHandler.mm */,
 			);
 			name = acme_apple;
 			sourceTree = "<group>";
 		};
-		9A787E7C264E8935003DF8A0 /* Frameworks */ = {
+		B38A105319C458FE2DF6513A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9A9C50B32BF05C7C0045F581 /* AVFoundation.framework */,
-				9A9DCBDE29B8490900D1255B /* libios_acme_posix.a */,
-				9A86610B296732A9000C82F0 /* UniformTypeIdentifiers.framework */,
-				9A08443E29367CC1009F7FF4 /* libacme_posix.dylib */,
-				9A21AFE1276122CB001E14CC /* Cocoa.framework */,
-				9A21AFDB2761205C001E14CC /* IOKit.framework */,
-				9A21AFD92761203B001E14CC /* Foundation.framework */,
-				9A21AFD727612016001E14CC /* AppKit.framework */,
-				9A21AFCC276118A6001E14CC /* Carbon.framework */,
-				9A21AFCA276117F4001E14CC /* CoreGraphics.framework */,
-				9A412438266C3ECE00C3FF0E /* libacme.dylib */,
-				9A787E81264E8C46003DF8A0 /* CoreFoundation.framework */,
-				9A787E7F264E89F4003DF8A0 /* CoreServices.framework */,
+				1C34296C72983FE716CDF16F /* AVFoundation.framework */,
+				20C380675C9F638CEAF4C29F /* libios_acme_posix.a */,
+				E44ED4EB1DA50BE6499185B8 /* UniformTypeIdentifiers.framework */,
+				988D7D50123C2EE7CDEAC891 /* libacme_posix.dylib */,
+				65BBF53C45203A40F9ACCA10 /* Cocoa.framework */,
+				D1ED1996F16657F832788299 /* IOKit.framework */,
+				55AAAB897ED0C0A06AD5C072 /* Foundation.framework */,
+				5853C53ABAC82A9D4E4094CC /* AppKit.framework */,
+				EDDD6991202303CBA864BD31 /* Carbon.framework */,
+				8798ED15A37023ADA4A6E6C7 /* CoreGraphics.framework */,
+				DF91CEA730A58C8FB645615D /* libacme.dylib */,
+				BD5D333799DF4642336F5B5A /* CoreFoundation.framework */,
+				9F55EE445C51E5B504FECD5C /* CoreServices.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9A9DCB6029B823BB00D1255B /* Products */ = {
+		262FAA01C94BACB38A87589C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A9DCB6729B823BB00D1255B /* libacme_darwin.dylib */,
-				9A9DCB6929B823BB00D1255B /* libios_acme_darwin.a */,
-				9A9DCB6B29B823BB00D1255B /* libstatic_acme_darwin.a */,
+				D3881AF1603C09CB47499A1E /* libacme_darwin.dylib */,
+				38BE71F532923E2BD532E234 /* libios_acme_darwin.a */,
+				88D09C7858FED38730E0CF98 /* libstatic_acme_darwin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -359,117 +359,117 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9A15A57E264B536C0080670E /* Headers */ = {
+		A618BEA119CA15ABE33CC5DD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A94DEF4282C5F6600F5C1CA /* directory_system.h in Headers */,
-				9A238E942B7AF79800C199F5 /* icloud_file.h in Headers */,
-				9A94DEF8282C5F6600F5C1CA /* file_system.h in Headers */,
-				9AB09ACF2B73C59100E2C3A5 /* file_listing_handler.h in Headers */,
-				9AA56BB52C61AF5A00BF56ED /* set_icloud_data.h in Headers */,
-				9AA3F9632A9498D3004283CA /* file_context.h in Headers */,
-				9A787E6F264E2351003DF8A0 /* node.h in Headers */,
-				9A94DEF5282C5F6600F5C1CA /* path_system.h in Headers */,
-				9A0E3BB72C611DE9004A0972 /* get_icloud_data.h in Headers */,
+				6B7DC0DA62E9CE80044500A0 /* directory_system.h in Headers */,
+				8BAB2FB69978A3A0423368C2 /* icloud_file.h in Headers */,
+				6DD9F07ED4219F6D6F7AD9BE /* file_system.h in Headers */,
+				80E011AB7285BAC51C482368 /* file_listing_handler.h in Headers */,
+				3261565329CDBAAB7E6B6B29 /* set_icloud_data.h in Headers */,
+				3DB4B89DA641B7430FDB5E18 /* file_context.h in Headers */,
+				F991E8E3B1D8C529FEF7D329 /* node.h in Headers */,
+				CFA1935D8A3E4F6526AA9681 /* path_system.h in Headers */,
+				7B2FD1523ACFA994093042B0 /* get_icloud_data.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A8E9DA6282A2F61005FF778 /* Headers */ = {
+		3258E035EDBD4BF1C15E5FBB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A238E952B7AF79800C199F5 /* icloud_file.h in Headers */,
-				9AB09AD02B73C59100E2C3A5 /* file_listing_handler.h in Headers */,
-				9A8E9DA7282A2F61005FF778 /* node.h in Headers */,
+				4A2FC90921AAA41C7308A677 /* icloud_file.h in Headers */,
+				3EBD0D76E9DE93D39FF287B1 /* file_listing_handler.h in Headers */,
+				8CFB065C63A7BE78F1FF9EBA /* node.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9AC14D00297B3410006D9BD3 /* Headers */ = {
+		BB8C3B69254379EFCE139BF7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A238E962B7AF79800C199F5 /* icloud_file.h in Headers */,
-				9AC14D01297B3410006D9BD3 /* directory_system.h in Headers */,
-				9AC14D02297B3410006D9BD3 /* file_system.h in Headers */,
-				9AB09AD12B73C59100E2C3A5 /* file_listing_handler.h in Headers */,
-				9AC14D04297B3410006D9BD3 /* node.h in Headers */,
-				9AC14D05297B3410006D9BD3 /* path_system.h in Headers */,
+				AD681C3CC04075C0ECDE78B3 /* icloud_file.h in Headers */,
+				3AA57813B1C799A8163C9057 /* directory_system.h in Headers */,
+				3F5448770906FCFE974C0F60 /* file_system.h in Headers */,
+				230ED0E99EBCC24C49397200 /* file_listing_handler.h in Headers */,
+				A61D161FA08C28A1B97B1543 /* node.h in Headers */,
+				1A4A12D7D25E0C92900F9EC5 /* path_system.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9A15A581264B536C0080670E /* acme_apple */ = {
+		D6FAD48925D44034D218C93B /* acme_apple */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A15A58B264B536C0080670E /* Build configuration list for PBXNativeTarget "acme_apple" */;
+			buildConfigurationList = 8C8BFD28FB8CB60AFA7D5E20 /* Build configuration list for PBXNativeTarget "acme_apple" */;
 			buildPhases = (
-				9A15A57E264B536C0080670E /* Headers */,
-				9A15A57F264B536C0080670E /* Sources */,
-				9A15A580264B536C0080670E /* Frameworks */,
-				9A5955AE2D6D8E0800B096D0 /* ShellScript */,
+				A618BEA119CA15ABE33CC5DD /* Headers */,
+				298D45CAAFAD43E7E94FBA98 /* Sources */,
+				0C1581DE10B62FB24F1D4710 /* Frameworks */,
+				DEE33BC783073285ACAA7284 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9A9DCB7E29B8246500D1255B /* PBXTargetDependency */,
+				71B3C0BEF2BFBE85579F06F1 /* PBXTargetDependency */,
 			);
 			name = acme_apple;
 			productName = acme_apple;
-			productReference = 9A15A582264B536C0080670E /* libacme_apple.dylib */;
+			productReference = A85A9D1A4C48D0ED5DCFCE23 /* libacme_apple.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		9A8E9DA3282A2F61005FF778 /* ios_acme_apple */ = {
+		07ABC36A0E64C62DDF109117 /* ios_acme_apple */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A8E9DB7282A2F61005FF778 /* Build configuration list for PBXNativeTarget "ios_acme_apple" */;
+			buildConfigurationList = 59EE6A228AFBCDFCA8F89E9A /* Build configuration list for PBXNativeTarget "ios_acme_apple" */;
 			buildPhases = (
-				9A8E9DA6282A2F61005FF778 /* Headers */,
-				9A8E9DA8282A2F61005FF778 /* Sources */,
+				3258E035EDBD4BF1C15E5FBB /* Headers */,
+				D0F1B6DAB12054504EDBF272 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9AC107562B6ACC250053DB45 /* PBXTargetDependency */,
+				D31314D7CE85E1315D611423 /* PBXTargetDependency */,
 			);
 			name = ios_acme_apple;
 			productName = acme_apple;
-			productReference = 9A8E9DBA282A2F61005FF778 /* libios_acme_apple.a */;
+			productReference = 256BF4F22EA0AAACFD8118B0 /* libios_acme_apple.a */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		9AC14CFD297B3410006D9BD3 /* static_acme_apple */ = {
+		1E8A632FB5CABED6FC8B47D9 /* static_acme_apple */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9AC14D20297B3410006D9BD3 /* Build configuration list for PBXNativeTarget "static_acme_apple" */;
+			buildConfigurationList = CF46FA1435131031E6506BAE /* Build configuration list for PBXNativeTarget "static_acme_apple" */;
 			buildPhases = (
-				9AC14D00297B3410006D9BD3 /* Headers */,
-				9AC14D06297B3410006D9BD3 /* Sources */,
+				BB8C3B69254379EFCE139BF7 /* Headers */,
+				D92431792D922009D1D502F4 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9A9DCB8029B8246D00D1255B /* PBXTargetDependency */,
+				551335259A934FC97D166F4C /* PBXTargetDependency */,
 			);
 			name = static_acme_apple;
 			productName = acme_apple;
-			productReference = 9AC14D23297B3410006D9BD3 /* libstatic_acme_apple.a */;
+			productReference = CE142958DE0585E78F3A7409 /* libstatic_acme_apple.a */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9A15A57A264B536C0080670E /* Project object */ = {
+		6063811EBD59FF4D801C0F01 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = "ca2 Software Development";
 				TargetAttributes = {
-					9A15A581264B536C0080670E = {
+					D6FAD48925D44034D218C93B = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
-			buildConfigurationList = 9A15A57D264B536C0080670E /* Build configuration list for PBXProject "acme_apple" */;
+			buildConfigurationList = 7C1CAA551BD9BB993785CE12 /* Build configuration list for PBXProject "acme_apple" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -477,50 +477,50 @@
 				en,
 				Base,
 			);
-			mainGroup = 9A15A579264B536C0080670E;
-			productRefGroup = 9A15A583264B536C0080670E /* Products */;
+			mainGroup = EC7EE34679DAC5EDD1A0728A;
+			productRefGroup = 625C2747CE9E1DBD10BB8899 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9A9DCB6029B823BB00D1255B /* Products */;
-					ProjectRef = 9A9DCB5F29B823BB00D1255B /* acme_darwin.xcodeproj */;
+					ProductGroup = 262FAA01C94BACB38A87589C /* Products */;
+					ProjectRef = 9EC6C08E4E1B0B3134DB78B0 /* acme_darwin.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				9A15A581264B536C0080670E /* acme_apple */,
-				9A8E9DA3282A2F61005FF778 /* ios_acme_apple */,
-				9AC14CFD297B3410006D9BD3 /* static_acme_apple */,
+				D6FAD48925D44034D218C93B /* acme_apple */,
+				07ABC36A0E64C62DDF109117 /* ios_acme_apple */,
+				1E8A632FB5CABED6FC8B47D9 /* static_acme_apple */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A9DCB6729B823BB00D1255B /* libacme_darwin.dylib */ = {
+		D3881AF1603C09CB47499A1E /* libacme_darwin.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libacme_darwin.dylib;
-			remoteRef = 9A9DCB6629B823BB00D1255B /* PBXContainerItemProxy */;
+			remoteRef = E5AB86B65EDAC6E4D77BC6F7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A9DCB6929B823BB00D1255B /* libios_acme_darwin.a */ = {
+		38BE71F532923E2BD532E234 /* libios_acme_darwin.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libios_acme_darwin.a;
-			remoteRef = 9A9DCB6829B823BB00D1255B /* PBXContainerItemProxy */;
+			remoteRef = 8CD6CD9360C4322D34050AB6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9A9DCB6B29B823BB00D1255B /* libstatic_acme_darwin.a */ = {
+		88D09C7858FED38730E0CF98 /* libstatic_acme_darwin.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libstatic_acme_darwin.a;
-			remoteRef = 9A9DCB6A29B823BB00D1255B /* PBXContainerItemProxy */;
+			remoteRef = E28C396AB10B1575D858515E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9A5955AE2D6D8E0800B096D0 /* ShellScript */ = {
+		DEE33BC783073285ACAA7284 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -543,125 +543,125 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9A15A57F264B536C0080670E /* Sources */ = {
+		298D45CAAFAD43E7E94FBA98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AB09AAC2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */,
-				9A94028E29E62F5E00C8C249 /* _cg_context.cpp in Sources */,
-				9ABBFE562B3FDCEC0036DF8C /* node_process_identifier_modules_paths.cpp in Sources */,
-				9A787E75264E31BC003DF8A0 /* NSString+SymlinksAndAliases.mm in Sources */,
-				9A93B95A28471D7D005ACD11 /* image.cpp in Sources */,
-				9AA3F9622A9498D3004283CA /* file_context.cpp in Sources */,
-				9A94DEF7282C5F6600F5C1CA /* path_system.cpp in Sources */,
-				9AB09ACC2B73C59000E2C3A5 /* file_listing_handler.cpp in Sources */,
-				9A741591266BD2B700552531 /* debug.cpp in Sources */,
-				9A78F40928E7A953007F62C0 /* exception_translator.cpp in Sources */,
-				9A787E6E264E234B003DF8A0 /* _factory.cpp in Sources */,
-				9A756981283D4477000D9C84 /* _.cpp in Sources */,
-				9A28E3DB2B73FEF900ABB2C5 /* file.mm in Sources */,
-				9AB09AA62B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
-				9A787E76264E31C2003DF8A0 /* UncaughtExceptionHandler.mm in Sources */,
-				9A787E8F264E91A0003DF8A0 /* _apple.mm in Sources */,
-				9AA74F6128484887009BB762 /* image.mm in Sources */,
-				9A787E70264E2355003DF8A0 /* node.cpp in Sources */,
-				9A94DEF6282C5F6600F5C1CA /* directory_system.cpp in Sources */,
-				9A94DEF9282C5F6600F5C1CA /* file_system.cpp in Sources */,
-				9A0E3BB62C611DE9004A0972 /* get_icloud_data.mm in Sources */,
-				9A734A52284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */,
-				9A238E912B7AF79800C199F5 /* icloud_file.cpp in Sources */,
-				9AA56BB62C61AF5A00BF56ED /* set_icloud_data.mm in Sources */,
-				9A0E3BBB2C613402004A0972 /* meta_data_query_result_item.mm in Sources */,
+				6BF2AE33704DC0FF078C6F62 /* ns_metadata_query_callback.cpp in Sources */,
+				1DE2D05F33E21EFB4A80D426 /* _cg_context.cpp in Sources */,
+				04E09AC006AEAF1A571BAE93 /* node_process_identifier_modules_paths.cpp in Sources */,
+				808D603EDFA58ECAEC6DE538 /* NSString+SymlinksAndAliases.mm in Sources */,
+				0B6D797D90E61DC01853AD9E /* image.cpp in Sources */,
+				89E9A7C0A1B7FE45681995B7 /* file_context.cpp in Sources */,
+				1F71A9EAA8ACDF75E0D61984 /* path_system.cpp in Sources */,
+				7FBD4ED1CE16689AFE76CC84 /* file_listing_handler.cpp in Sources */,
+				F274C93663861C6CD6BD37B5 /* debug.cpp in Sources */,
+				96E0C660E264F7266FCF1E31 /* exception_translator.cpp in Sources */,
+				AF4E3135FCE83A805DB1DB8A /* _factory.cpp in Sources */,
+				859D0AAAF9342C51621E8573 /* _.cpp in Sources */,
+				B77CC4D63752B16E266394A4 /* file.mm in Sources */,
+				70FFF8C4F42AA6266F81368E /* NSMetadataQueryHandler.mm in Sources */,
+				F9AD623485460076F95057E9 /* UncaughtExceptionHandler.mm in Sources */,
+				B1AACEA303E6FA5DD7DCB026 /* _apple.mm in Sources */,
+				58D915C5683C4494FD79A749 /* image.mm in Sources */,
+				C3D68C0AE3A59BFEE373743E /* node.cpp in Sources */,
+				A8776AD86E22362BA62A37DD /* directory_system.cpp in Sources */,
+				33F3800DA4049E73B7896691 /* file_system.cpp in Sources */,
+				ACC829FB54F867799508D0B3 /* get_icloud_data.mm in Sources */,
+				5EFF98EB0DC2591BDE6A2806 /* CAHostTimeBase.cpp in Sources */,
+				E6DB30C35717AAF0C6985A82 /* icloud_file.cpp in Sources */,
+				62774F3BD3D147FF50D34B2B /* set_icloud_data.mm in Sources */,
+				CE41A6FD10C12E1DB4E1BFDE /* meta_data_query_result_item.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A8E9DA8282A2F61005FF778 /* Sources */ = {
+		D0F1B6DAB12054504EDBF272 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AB09AAD2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */,
-				9AC88B042B6B4D6D008F1C20 /* _cg_context.cpp in Sources */,
-				9A40BDF42B6B997B0077053E /* node_process_identifier_modules_paths.cpp in Sources */,
-				9A94DEFB282C606600F5C1CA /* path_system.cpp in Sources */,
-				9A94DEDD282C4B1C00F5C1CA /* resource.cpp in Sources */,
-				9A94DEFC282C606900F5C1CA /* directory_system.cpp in Sources */,
-				9A78F40A28E7A953007F62C0 /* exception_translator.cpp in Sources */,
-				9AB09ACD2B73C59100E2C3A5 /* file_listing_handler.cpp in Sources */,
-				9A40BDBA2B6B65D90077053E /* image.mm in Sources */,
-				9A94DEFA282C606300F5C1CA /* file_system.cpp in Sources */,
-				9A28E3DC2B73FFA800ABB2C5 /* file.mm in Sources */,
-				9A8E9DA9282A2F61005FF778 /* NSString+SymlinksAndAliases.mm in Sources */,
-				9A0E3BB82C611F78004A0972 /* get_icloud_data.mm in Sources */,
-				9A8E9DAA282A2F61005FF778 /* debug.cpp in Sources */,
-				9AB09AA72B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
-				9A8E9DAB282A2F61005FF778 /* _factory.cpp in Sources */,
-				9A94DEDC282C4B1C00F5C1CA /* _.cpp in Sources */,
-				9A78FC342B7AFE57006B95FB /* file_context.cpp in Sources */,
-				9A8E9DAC282A2F61005FF778 /* UncaughtExceptionHandler.mm in Sources */,
-				9A734A53284F5E3D003986C7 /* CAHostTimeBase.cpp in Sources */,
-				9A8E9DAF282A2F61005FF778 /* _apple.mm in Sources */,
-				9A8E9DB0282A2F61005FF778 /* node.cpp in Sources */,
-				9A93B95B28471D7F005ACD11 /* image.cpp in Sources */,
-				9AA56BB72C61B38E00BF56ED /* set_icloud_data.mm in Sources */,
-				9A238E922B7AF79800C199F5 /* icloud_file.cpp in Sources */,
+				18EEC59D0042E96CAB556CCE /* ns_metadata_query_callback.cpp in Sources */,
+				D970156D20BAF42F96091A0D /* _cg_context.cpp in Sources */,
+				83BC637106C5E671A31CA470 /* node_process_identifier_modules_paths.cpp in Sources */,
+				923321DDBF5B00E47B6C8662 /* path_system.cpp in Sources */,
+				3E51920EA8BCCC4C29023BE0 /* resource.cpp in Sources */,
+				195A9DB93174E4F8D95DDB54 /* directory_system.cpp in Sources */,
+				2B4A054C7ED8D1EAC4C599AD /* exception_translator.cpp in Sources */,
+				6B835409320FF2AFA0B3CB96 /* file_listing_handler.cpp in Sources */,
+				C8FC1E95D09B9D61DE731ED6 /* image.mm in Sources */,
+				D3BDEC15DBD6F0B8C6DB19B3 /* file_system.cpp in Sources */,
+				7AD91AC3F86AB9C401B275B7 /* file.mm in Sources */,
+				22755E91EFF91F92B8BD7B82 /* NSString+SymlinksAndAliases.mm in Sources */,
+				322B673E56B7A57D8EB25E57 /* get_icloud_data.mm in Sources */,
+				78E051A3768E1737F9BAE9EB /* debug.cpp in Sources */,
+				B2E04F116175177C691FFD3E /* NSMetadataQueryHandler.mm in Sources */,
+				303148912D2663748BAB9AFA /* _factory.cpp in Sources */,
+				5B998E3016DA4BC8A275C7DA /* _.cpp in Sources */,
+				3CD14F903B338F424FDCCC4A /* file_context.cpp in Sources */,
+				A8163D42C75E650DC693AE79 /* UncaughtExceptionHandler.mm in Sources */,
+				D28BCDC60FECC69CF9DCCEAD /* CAHostTimeBase.cpp in Sources */,
+				FB5ACE413682E70678BC31D4 /* _apple.mm in Sources */,
+				6BF5A444BE9BD9A3061C0725 /* node.cpp in Sources */,
+				3320A472ECFE53551CD6EAEF /* image.cpp in Sources */,
+				24A91183736D41542A68B55A /* set_icloud_data.mm in Sources */,
+				C82E24D43DA9DBB16EA9DE1C /* icloud_file.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9AC14D06297B3410006D9BD3 /* Sources */ = {
+		D92431792D922009D1D502F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A1BD67E2A0073EA00152CD1 /* _cg_context.cpp in Sources */,
-				9AB09ACE2B73C59100E2C3A5 /* file_listing_handler.cpp in Sources */,
-				9AC14D07297B3410006D9BD3 /* NSString+SymlinksAndAliases.mm in Sources */,
-				9AB09AA82B72BB4F00E2C3A5 /* NSMetadataQueryHandler.mm in Sources */,
-				9AC14D08297B3410006D9BD3 /* image.cpp in Sources */,
-				9AC14D09297B3410006D9BD3 /* path_system.cpp in Sources */,
-				9AC14D0A297B3410006D9BD3 /* debug.cpp in Sources */,
-				9AC080542B7449BB008BF988 /* file.mm in Sources */,
-				9AC14D0B297B3410006D9BD3 /* exception_translator.cpp in Sources */,
-				9AC14D0C297B3410006D9BD3 /* _factory.cpp in Sources */,
-				9A238E932B7AF79800C199F5 /* icloud_file.cpp in Sources */,
-				9AC14D0D297B3410006D9BD3 /* _.cpp in Sources */,
-				9A5404EC2CE727D00009869E /* set_icloud_data.mm in Sources */,
-				9AB09AAE2B72C86B00E2C3A5 /* ns_metadata_query_callback.cpp in Sources */,
-				9AC14D0E297B3410006D9BD3 /* UncaughtExceptionHandler.mm in Sources */,
-				9AC14D12297B3410006D9BD3 /* _apple.mm in Sources */,
-				9AC14D13297B3410006D9BD3 /* image.mm in Sources */,
-				9AC14D14297B3410006D9BD3 /* node.cpp in Sources */,
-				9AC14D15297B3410006D9BD3 /* directory_system.cpp in Sources */,
-				9AC14D16297B3410006D9BD3 /* file_system.cpp in Sources */,
-				9AC14D17297B3410006D9BD3 /* CAHostTimeBase.cpp in Sources */,
-				9A5404EB2CE727B50009869E /* get_icloud_data.mm in Sources */,
-				9A50DCB82B50CAEB00DAD9CF /* node_process_identifier_modules_paths.cpp in Sources */,
-				9A78FC352B7AFE5A006B95FB /* file_context.cpp in Sources */,
+				A4C82DF8C2860527AEB59CC2 /* _cg_context.cpp in Sources */,
+				737D113F224BCEFEEEC570E4 /* file_listing_handler.cpp in Sources */,
+				555B85022473BCED6944DA62 /* NSString+SymlinksAndAliases.mm in Sources */,
+				4336758EFB480824EC1E060A /* NSMetadataQueryHandler.mm in Sources */,
+				C7E3F6C9F1273FB6B35CC99E /* image.cpp in Sources */,
+				DD28DB8A43D002970F8516E4 /* path_system.cpp in Sources */,
+				237A6BB6C2D5BDDC2EABFF9F /* debug.cpp in Sources */,
+				0CA02F593F5BA41388E237C5 /* file.mm in Sources */,
+				19E75B1EC06504FB29670457 /* exception_translator.cpp in Sources */,
+				DE61BAD5D8ACDD4E26AB347E /* _factory.cpp in Sources */,
+				C512F06179BEFEE4FA563082 /* icloud_file.cpp in Sources */,
+				09739D33F40F4884BAD2B800 /* _.cpp in Sources */,
+				F14F174170248141ABB88DBD /* set_icloud_data.mm in Sources */,
+				EF9EE10C70555EFBACD14E63 /* ns_metadata_query_callback.cpp in Sources */,
+				9352A382E34A4CF69FF20FFD /* UncaughtExceptionHandler.mm in Sources */,
+				52164AF4BEFE86D06E4DD140 /* _apple.mm in Sources */,
+				51E0301387291D0E265A1370 /* image.mm in Sources */,
+				8E4F29D620D888BCAA815443 /* node.cpp in Sources */,
+				C7244AFC678E10F0A23E1F89 /* directory_system.cpp in Sources */,
+				B922840B024593752A2BF9DA /* file_system.cpp in Sources */,
+				20EF234C3A937772BDCF56D7 /* CAHostTimeBase.cpp in Sources */,
+				6AE949F2F59222EB8934AE99 /* get_icloud_data.mm in Sources */,
+				829B99BD0FD35E6ED30C0061 /* node_process_identifier_modules_paths.cpp in Sources */,
+				0BE5BD2A087CFEB2A193B704 /* file_context.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9A9DCB7E29B8246500D1255B /* PBXTargetDependency */ = {
+		71B3C0BEF2BFBE85579F06F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = acme_darwin;
-			targetProxy = 9A9DCB7D29B8246500D1255B /* PBXContainerItemProxy */;
+			targetProxy = 3050733542416821070585B9 /* PBXContainerItemProxy */;
 		};
-		9A9DCB8029B8246D00D1255B /* PBXTargetDependency */ = {
+		551335259A934FC97D166F4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = static_acme_darwin;
-			targetProxy = 9A9DCB7F29B8246D00D1255B /* PBXContainerItemProxy */;
+			targetProxy = 9AB30CF1D5E4E74A4A851BAC /* PBXContainerItemProxy */;
 		};
-		9AC107562B6ACC250053DB45 /* PBXTargetDependency */ = {
+		D31314D7CE85E1315D611423 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ios_acme_darwin;
-			targetProxy = 9AC107552B6ACC250053DB45 /* PBXContainerItemProxy */;
+			targetProxy = 5536A76526968B437227E73B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		9A15A589264B536C0080670E /* Debug */ = {
+		7603ECAF3EB1EC8FEA52F0F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A7724A52A257C3500B9A835 /* _____debug.xcconfig */;
+			baseConfigurationReference = AF8F317D7F981A2C3318F516 /* _____debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -782,9 +782,9 @@
 			};
 			name = Debug;
 		};
-		9A15A58A264B536C0080670E /* Release */ = {
+		92312682551C397E20C4FCCB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A7724A62A257C3500B9A835 /* _____release.xcconfig */;
+			baseConfigurationReference = 74949703C462FB8C26E50A52 /* _____release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -904,7 +904,7 @@
 			};
 			name = Release;
 		};
-		9A15A58C264B536C0080670E /* Debug */ = {
+		E37C8A49C21E95188C0D7D0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -915,7 +915,7 @@
 			};
 			name = Debug;
 		};
-		9A15A58D264B536C0080670E /* Release */ = {
+		0FCCA3DA845770C3D19DBE93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -926,7 +926,7 @@
 			};
 			name = Release;
 		};
-		9A8E9DB8282A2F61005FF778 /* Debug */ = {
+		25D7B18B36CBAAE6FD4DEDF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEAD_CODE_STRIPPING = NO;
@@ -938,7 +938,7 @@
 			};
 			name = Debug;
 		};
-		9A8E9DB9282A2F61005FF778 /* Release */ = {
+		A61579A8C6A441139D433F38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEAD_CODE_STRIPPING = NO;
@@ -950,7 +950,7 @@
 			};
 			name = Release;
 		};
-		9AC14D21297B3410006D9BD3 /* Debug */ = {
+		FED22271863ABC5F69A8B814 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEAD_CODE_STRIPPING = NO;
@@ -966,7 +966,7 @@
 			};
 			name = Debug;
 		};
-		9AC14D22297B3410006D9BD3 /* Release */ = {
+		2F5DB32EB4D0D4FA53A34ACB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEAD_CODE_STRIPPING = NO;
@@ -981,43 +981,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9A15A57D264B536C0080670E /* Build configuration list for PBXProject "acme_apple" */ = {
+		7C1CAA551BD9BB993785CE12 /* Build configuration list for PBXProject "acme_apple" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A15A589264B536C0080670E /* Debug */,
-				9A15A58A264B536C0080670E /* Release */,
+				7603ECAF3EB1EC8FEA52F0F7 /* Debug */,
+				92312682551C397E20C4FCCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A15A58B264B536C0080670E /* Build configuration list for PBXNativeTarget "acme_apple" */ = {
+		8C8BFD28FB8CB60AFA7D5E20 /* Build configuration list for PBXNativeTarget "acme_apple" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A15A58C264B536C0080670E /* Debug */,
-				9A15A58D264B536C0080670E /* Release */,
+				E37C8A49C21E95188C0D7D0B /* Debug */,
+				0FCCA3DA845770C3D19DBE93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A8E9DB7282A2F61005FF778 /* Build configuration list for PBXNativeTarget "ios_acme_apple" */ = {
+		59EE6A228AFBCDFCA8F89E9A /* Build configuration list for PBXNativeTarget "ios_acme_apple" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A8E9DB8282A2F61005FF778 /* Debug */,
-				9A8E9DB9282A2F61005FF778 /* Release */,
+				25D7B18B36CBAAE6FD4DEDF8 /* Debug */,
+				A61579A8C6A441139D433F38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9AC14D20297B3410006D9BD3 /* Build configuration list for PBXNativeTarget "static_acme_apple" */ = {
+		CF46FA1435131031E6506BAE /* Build configuration list for PBXNativeTarget "static_acme_apple" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9AC14D21297B3410006D9BD3 /* Debug */,
-				9AC14D22297B3410006D9BD3 /* Release */,
+				FED22271863ABC5F69A8B814 /* Debug */,
+				2F5DB32EB4D0D4FA53A34ACB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9A15A57A264B536C0080670E /* Project object */;
+	rootObject = 6063811EBD59FF4D801C0F01 /* Project object */;
 }

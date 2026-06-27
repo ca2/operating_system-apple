@@ -4,6 +4,7 @@
 #include "aura/graphics/write_text/fonts.h"
 #include "aura/graphics/draw2d/draw2d.h"
 #include "acme/platform/application.h"
+#include "acme/platform/node.h"
 #include "aura/platform/system.h"
 
 double nsfont_get_ctweight(int iWeight);
@@ -73,14 +74,31 @@ namespace draw2d_quartz2d
             if(::is_set(pwritetext))
             {
                
-               auto * pfonts = pwritetext->fonts();
-               
-               auto * pfontenumeration = pfonts->enumeration("system");
-               
-               if(pfontenumeration->m_happeningReady.lock(2_s))
+               if(m_pfontfamily->m_efont == ::e_font_with_family_name)
                {
-
-                  pfontenumeration->adapt_font_name(m_pfontfamily->m_strFamilyName);
+                  
+                  auto * pfonts = pwritetext->fonts();
+                  
+                  auto * pfontenumeration = pfonts->enumeration("system");
+                  
+                  if(pfontenumeration->m_happeningReady.lock(2_s))
+                  {
+                     
+                     auto efont = m_pfontfamily->m_efont;
+                     
+                     ::string strFamilyName = m_pfontfamily->m_strFamilyName;
+                     
+                     auto pszFamilyName = strFamilyName.c_str();
+                     
+                     pfontenumeration->adapt_font_name(m_pfontfamily->m_strFamilyName);
+                     
+                  }
+                  
+               }
+               else
+               {
+                  
+                  m_pfontfamily->m_strFamilyName = node()->font_name(m_pfontfamily->m_efont);
                   
                }
                

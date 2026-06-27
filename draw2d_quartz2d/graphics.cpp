@@ -1601,7 +1601,7 @@ namespace draw2d_quartz2d
 //      prectangle->right = prectangle->left + rectangle.size.width;
 //      prectangle->bottom = prectangle->top + rectangle.size.height;
 
-      return 0;
+      return rectangle.is_empty() ? 0 : 1;
 
    }
 

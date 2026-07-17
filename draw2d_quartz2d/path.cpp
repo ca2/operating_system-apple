@@ -463,8 +463,12 @@ namespace draw2d_quartz2d
    }
    
 
-   bool path::contains(::draw2d::graphics_pointer & pgraphics, const ::f64_point & point)
+   bool path::path_contains_point( const ::f64_point & point)
    {
+       
+       auto pgraphics = createø<::draw2d::graphics>();
+       
+       pgraphics->create_memory_graphics({256, 256});
     
       CGMutablePathRef ppath = get_os_data <CGMutablePathRef>(pgraphics);
       
@@ -480,6 +484,23 @@ namespace draw2d_quartz2d
    }
 
    
+
+bool path::_path_contains_point(::draw2d::graphics_pointer & pgraphics, const ::f64_point & point)
+{
+ 
+   CGMutablePathRef ppath = get_os_data <CGMutablePathRef>(pgraphics);
+   
+   if(::is_null(ppath))
+   {
+      
+      return false;
+      
+   }
+   
+   return CGPathContainsPoint(ppath, nullptr,CGPointMake(point.x, point.y), false);
+   
+}
+
 } // namespace draw2d_quartz2d
 
 

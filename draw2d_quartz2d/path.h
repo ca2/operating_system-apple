@@ -49,8 +49,9 @@ namespace draw2d_quartz2d
       bool _set(::draw2d::graphics * pgraphics, const ::write_text::text_out & textout) override;
       bool _set(::draw2d::graphics * pgraphics, const ::write_text::draw_text & drawtext) override;
    
-      bool contains(::draw2d::graphics_pointer & pgraphics, const ::f64_point & point) override;
-      
+      bool path_contains_point( const ::f64_point & point) override;
+       virtual bool _path_contains_point(::draw2d::graphics_pointer & pgraphics, const ::f64_point & point) ;
+
       
    };
    

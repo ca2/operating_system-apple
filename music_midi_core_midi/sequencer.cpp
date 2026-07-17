@@ -47,12 +47,17 @@ namespace music
             printf("MIDI Notify, messageId=%d,", message->messageID);
          }
          
+      
+      sequencer::sequencer()
+      {
+          
+          
+      }
    
-         sequencer::sequencer(::music::midi::sequence * psequence, const string & strDevice):
-         ::music::midi::sequencer(psequence, strDevice)
+        void  sequencer::initialize_music_midi_sequencer(::music::midi::sequence * psequence, const ::scoped_string & scopedstrDevice)
          {
            
-            m_pmidi = psequence->get_midi(strDevice);
+            m_pmidi = psequence->get_midi(scopedstrDevice);
             
             ::collection::index iDevice = m_iDevice;
             
@@ -63,7 +68,7 @@ namespace music
                
             }
             
-            auto pmessageout = m_pmidi->get_message_out(strDevice);
+            auto pmessageout = m_pmidi->get_message_out(scopedstrDevice);
             
             m_pmessageout = pmessageout;
 

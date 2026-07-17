@@ -32,8 +32,12 @@ namespace music
             ::pointer < ::music::midi::core_midi::midi > m_pmidi;
             
             
-            sequencer(::music::midi::sequence * psequence, const string & strDevice);
+            //sequencer(::music::midi::sequence * psequence, const string & strDevice);
+             sequencer();
             ~sequencer() override;
+             
+             
+             void initialize_music_midi_sequencer(::music::midi::sequence * psequence, const ::scoped_string & strDevice) override;
             
             
             virtual void preroll(player_command* pcommand) override;

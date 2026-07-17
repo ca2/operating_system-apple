@@ -232,7 +232,13 @@ namespace music
                
                auto pmessageout = get_message_out(scopedstrDevice);
                
-               return new ::music::midi::sequencer(psequence, pmessageout);
+                auto psequencer = createø < ::music::midi::sequencer>();
+                
+                psequencer->initialize_music_midi_sequencer(psequence, pmessageout)
+                ;
+                
+                return psequencer;
+                //(psequence, pmessageout);
                
             }
             

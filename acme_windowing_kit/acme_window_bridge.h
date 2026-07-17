@@ -66,15 +66,11 @@ class window;
       virtual void on_right_button_up(::user::mouse * pmouse);
       virtual void on_right_button_down(::user::mouse * pmouse);
       virtual void on_mouse_move(::user::mouse * pmouse);
-      //virtual void on_left_button_up(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
-      
-      ///virtual void on_left_button_down(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
-      
-//      virtual void on_right_button_up(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
-//      
-//      virtual void on_right_button_down(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
-//      
-//      virtual void on_mouse_move(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_left_button_up(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_left_button_down(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_right_button_up(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_right_button_down(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
+      virtual void on_mouse_move(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute);
       
       virtual bool on_key_down(::user::e_key euserkey);
       virtual bool on_key_up(::user::e_key euserkey);
@@ -132,6 +128,5 @@ class window;
 
 
 } // namespace apple_kit
-
 
 

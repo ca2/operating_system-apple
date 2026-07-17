@@ -41,6 +41,75 @@ namespace apple_kit
 {
 
 
+namespace
+{
+
+
+   ::pointer < ::user::mouse > create_mouse(
+      ::apple_kit::acme_window_bridge * pbridge,
+      ::user::enum_message eusermessage,
+      ::user::e_key_state ekeystateMouse,
+      double xHost,
+      double yHost,
+      double xAbsolute,
+      double yAbsolute)
+   {
+
+      auto pmouse = pbridge->acme_windowing_window()->create_newø < ::user::mouse >();
+
+      pmouse->m_eusermessage = eusermessage;
+      pmouse->m_keystate.m_ekeystate = ekeystateMouse;
+      pmouse->m_pointHost = {xHost, yHost};
+      pmouse->m_pointAbsolute = {xAbsolute, yAbsolute};
+
+      return pmouse;
+
+   }
+
+
+} // namespace
+
+
+void acme_window_bridge::on_left_button_up(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
+{
+
+   on_left_button_up(create_mouse(this, ::user::e_message_left_button_up, ekeystateMouse, xHost, yHost, xAbsolute, yAbsolute));
+
+}
+
+
+void acme_window_bridge::on_left_button_down(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
+{
+
+   on_left_button_down(create_mouse(this, ::user::e_message_left_button_down, ekeystateMouse, xHost, yHost, xAbsolute, yAbsolute));
+
+}
+
+
+void acme_window_bridge::on_right_button_up(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
+{
+
+   on_right_button_up(create_mouse(this, ::user::e_message_right_button_up, ekeystateMouse, xHost, yHost, xAbsolute, yAbsolute));
+
+}
+
+
+void acme_window_bridge::on_right_button_down(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
+{
+
+   on_right_button_down(create_mouse(this, ::user::e_message_right_button_down, ekeystateMouse, xHost, yHost, xAbsolute, yAbsolute));
+
+}
+
+
+void acme_window_bridge::on_mouse_move(::user::e_key_state ekeystateMouse, double xHost, double yHost, double xAbsolute, double yAbsolute)
+{
+
+   on_mouse_move(create_mouse(this, ::user::e_message_mouse_move, ekeystateMouse, xHost, yHost, xAbsolute, yAbsolute));
+
+}
+
+
 //acme_window_bridge::acme_window_bridge()
 //{
 //   
@@ -408,6 +477,8 @@ void acme_window_bridge::do_tasks()
    ::task_run();
    
 }
+
+
 //
 //
 //
@@ -465,6 +536,3 @@ void acme_window_bridge::do_tasks()
    return ekeystateMouse;
    
 }
-
-
-

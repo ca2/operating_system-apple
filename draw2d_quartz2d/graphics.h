@@ -25,8 +25,8 @@ namespace draw2d_quartz2d
       
       int                           m_iSaveGraphicsContext;
       bool                          m_bOwnGraphicsContext;
-      ::cfref < CGContextRef >      m_cgcontextref;
-      ::cfref < CGLayerRef >        m_cglayerref;
+      ::cfref<CGContextRef>         m_cgcontextref;
+      ::cfref<CGLayerRef>           m_cglayerref;
 
       int                           m_iType;
 #ifdef __OBJECTIVE_CPP__

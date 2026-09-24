@@ -9,6 +9,63 @@
 
 
 
+BOOL IsFontUsable(NSString *fontName)
+{
+    if (fontName == nil || fontName.length == 0)
+    {
+        return NO;
+    }
+
+    CTFontRef font = CTFontCreateWithName(
+        (__bridge CFStringRef)fontName,
+        12.0,
+        NULL);
+
+    if (font == NULL)
+    {
+        return NO;
+    }
+
+    BOOL usable = YES;
+
+    CFStringRef familyName =
+        CTFontCopyName(font, kCTFontFamilyNameKey);
+
+    if (familyName != NULL)
+    {
+        NSString *family =
+            (__bridge NSString *)familyName;
+
+        if ([family caseInsensitiveCompare:@"GB18030 Bitmap"] == NSOrderedSame)
+        {
+            usable = NO;
+        }
+
+        CFRelease(familyName);
+    }
+
+    if (usable)
+    {
+        CFDataRef head = CTFontCopyTable(
+            font,
+            kCTFontTableHead,
+            kCTFontTableOptionNoOptions);
+
+        if (head == NULL)
+        {
+            usable = NO;
+        }
+        else
+        {
+            CFRelease(head);
+        }
+    }
+
+    CFRelease(font);
+
+    return usable;
+}
+
 unsigned long apple_get_fonts(char ***p)
 {
     
@@ -30,16 +87,27 @@ unsigned long apple_get_fonts(char ***p)
    
    *p = (char **) malloc(sizeof(char *) * c);
    
+   int iFinalCount = 0;
+   
    for(unsigned long u = 0; u < c; u++)
    {
       
       NSString * pstr =[fonts objectAtIndex: u];
       
-      (*p)[u] = strdup([pstr UTF8String]);
+      if(!IsFontUsable(pstr))
+      {
+         
+         continue;
+         
+      }
+      
+      (*p)[iFinalCount] = strdup([pstr UTF8String]);
+      
+      iFinalCount++;
       
    }
    
-   return c;
+   return iFinalCount;
 
 }
 

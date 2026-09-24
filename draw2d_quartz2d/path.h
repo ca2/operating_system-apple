@@ -3,6 +3,7 @@
 
 #include "object.h"
 #include "aura/graphics/draw2d/path.h"
+#include "acme/operating_system/apple/cgref.h"
 
 
 namespace draw2d_quartz2d
@@ -16,8 +17,8 @@ namespace draw2d_quartz2d
    public:
       
       
-      CGMutablePathRef        m_cgmutablepathref;
-      bool                    m_bBegin;
+      ::cfref<CGMutablePathRef>     m_cgmutablepathref;
+      bool                          m_bBegin;
       
       
       path();

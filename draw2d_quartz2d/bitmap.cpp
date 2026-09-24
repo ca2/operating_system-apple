@@ -2,6 +2,7 @@
 #include "bitmap.h"
 #include "graphics.h"
 #include "acme/graphics/image/pixmap.h"
+#include "aura/graphics/image/image.h"
 #include "aura/graphics/draw2d/domain.h"
 
 
@@ -30,76 +31,74 @@ namespace draw2d_quartz2d
    
    void bitmap::CreateBitmap(::draw2d::graphics * pgraphics, const ::i32_size & size, ::u32 nPlanes, ::u32 nBitcount, const void * pdata, int iStride)
    {
-      
+
       if(nPlanes != 1 || nBitcount != 32)
       {
-         
-         throw ::exception(error_not_implemented);;
-         
+
+         throw ::exception(error_not_implemented);
+
       }
-      
-      destroy();
-      
-      try
+
+      if(size.cx <= 0 || size.cy <= 0 || iStride <= 0
+         || (::i64) iStride < (::i64) size.cx * sizeof(color32_t))
       {
-      
-         m_memoryDraw2dBitmap.set_size(size.cy * iStride);
-         
+
+         throw ::exception(error_bad_argument);
+
       }
-      catch(...)
+
+      // Tie the pixels to the context lifetime. Graphics may retain an older
+      // context after the bitmap is resized, so it cannot borrow resizable memory.
+      ::cfref<CGColorSpaceRef> colorspace = CGColorSpaceCreateDeviceRGB();
+      ::cfref<CGContextRef> contextNew = CGBitmapContextCreate(nullptr,
+         size.cx, size.cy, 8, iStride, colorspace, kCGImageAlphaPremultipliedLast);
+
+      if(contextNew == nullptr)
       {
-         
+
+         throw ::exception(error_resource);
+
       }
-      
-      m_pdata = (color32_t *) m_memoryDraw2dBitmap.data();
-      
-      if(m_pdata == nullptr)
+
+      auto pdataNew = (color32_t *) CGBitmapContextGetData(contextNew);
+      auto iStrideNew = (int) CGBitmapContextGetBytesPerRow(contextNew);
+
+      if(!pdataNew || iStrideNew < iStride)
       {
-         
-         throw exception(error_no_memory);
-         
-      }
-      
-      CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
-      
-      m_cgcontextref = CGBitmapContextCreate(m_pdata, size.cx, size.cy, 8, iStride, colorspace, kCGImageAlphaPremultipliedLast);
-      
-      CGColorSpaceRelease(colorspace);
-      
-      if(m_cgcontextref == nullptr)
-      {
-         
-         destroy();
-         
-         throw exception(::error_resource);
-         
-      }
-      
-      m_iStride = (int) CGBitmapContextGetBytesPerRow(m_cgcontextref);
-      
-      if(m_iStride <= 0)
-      {
-         
-         destroy();
-         
+
          throw ::exception(error_failed);
-         
+
       }
-      
-      if(pdata != nullptr)
+
+      if(pdata)
       {
-      
-         ::memory_copy(m_pdata, pdata, size.cy * iStride);
-         
+
+         for(int y = 0; y < size.cy; y++)
+         {
+
+            ::memory_copy((::u8 *) pdataNew + (::memsize) y * iStrideNew,
+               (const ::u8 *) pdata + (::memsize) y * iStride, iStride);
+
+         }
+
       }
-      
+      else
+      {
+
+         ::memory_set(pdataNew, 0, (::memsize) iStrideNew * size.cy);
+
+      }
+
+      // Commit only after allocation and copying succeed (pdata may alias us).
+      m_cgcontextref = contextNew;
+      m_pdata = pdataNew;
+      m_iStride = iStrideNew;
       m_size = size;
-      
-      //m_osdata[0] = m_cgcontextref;
-      
+
    }
-   
+
   
+
    //void bitmap::create_bitmap(::draw2d::graphics * pgraphics, const ::i32_size & size, void ** //ppdata, int * piStride)
 void bitmap::create_bitmap(::draw2d::graphics * pgraphics, const ::i32_size & size)
    {
@@ -137,18 +136,28 @@ void bitmap::update_bitmap_as_image_render_target(
    ::draw2d::bitmap::update_bitmap_as_image_render_target(pimage, pdraw2ddomain, pdraw2dgraphics);
    
    //::draw2d::bitmap::update_bitmap_as_image_render_target(pimage, pdraw2dgraphics);
+
+   // Resizing can replace the context even when no graphics argument was
+   // supplied. The image may already have graphics cached for the old context.
+   ::cast<::draw2d_quartz2d::graphics> pgraphicsOwned = pimage->m_pgraphicsOwned;
+   if(pgraphicsOwned)
+   {
+
+      pgraphicsOwned->create_bitmap_graphics(this, pdraw2ddomain);
+
+   }
    
    if(::is_set(pdraw2dgraphics))
    {
       
       ::cast < ::draw2d_quartz2d::graphics> pgraphics = pdraw2dgraphics;
       
-      pgraphics->m_cgcontextref = m_cgcontextref;
+      pgraphics->create_bitmap_graphics(this, pdraw2ddomain);
       
-      if(!pgraphics->m_pdraw2ddomain)
+      if(::is_null(pgraphics->draw2d_domain()))
       {
          
-         pgraphics->m_pdraw2ddomain = pdraw2ddomain;
+         pgraphics->set_draw2d_domain(pdraw2ddomain);
          
       }
       
@@ -407,6 +416,96 @@ void bitmap::update_bitmap_as_image_render_target(
    }
 
 
+   void bitmap::preserve_image(const ::i32_size & size, ::image::image * pimage)
+   {
+
+      if(!pimage || size.is_empty() || pimage->m_pdraw2dbitmap != this)
+      {
+
+         throw ::exception(error_bad_argument);
+
+      }
+
+      if(pimage->has_active_destination_graphics_lease()
+         || pimage->m_pimagepixmaplease
+         || (pimage->m_ppixmapOwned && pimage->m_ppixmapOwned->m_interlockedcountMap > 0))
+      {
+
+         throw ::exception(error_wrong_state,
+            "Cannot preserve an image while it is mapped or has active destination graphics");
+
+      }
+
+      if(m_cgcontextref == nullptr || !CGBitmapContextGetData(m_cgcontextref))
+      {
+
+         throw ::exception(error_wrong_state, "Quartz bitmap has no storage to preserve");
+
+      }
+
+      auto sizeRawNew = pimage->raw_size().maximum(pimage->m_point + size);
+
+      if(sizeRawNew == pimage->raw_size())
+      {
+
+         pimage->m_size = size;
+         return;
+
+      }
+
+      // Prepare the replacement before releasing the original storage.
+      // Let CoreGraphics own the allocation, including its row alignment.
+      ::cfref<CGContextRef> contextNew;
+      contextNew = CGBitmapContextCreate(nullptr, sizeRawNew.cx, sizeRawNew.cy,
+         CGBitmapContextGetBitsPerComponent(m_cgcontextref), 0,
+         CGBitmapContextGetColorSpace(m_cgcontextref),
+         CGBitmapContextGetBitmapInfo(m_cgcontextref));
+
+      if(contextNew == nullptr)
+      {
+
+         throw ::exception(error_resource, "Could not allocate the preserved Quartz bitmap");
+
+      }
+
+      auto pdataNew = (color32_t *) CGBitmapContextGetData(contextNew);
+      auto iStrideNew = (::i32) CGBitmapContextGetBytesPerRow(contextNew);
+      ::memory_set(pdataNew, 0, (::memsize) iStrideNew * sizeRawNew.cy);
+
+      // Mapping may have made the CPU pixels newer than the native bitmap.
+      if(pimage->m_bWasMappedAfterLastGraphicsAcquisition && pimage->m_ppixmapOwned)
+      {
+
+         defer_write_pixels(*pimage->m_ppixmapOwned);
+
+      }
+
+      read_pixels(m_size, {}, (::image32_t *) pdataNew, iStrideNew);
+
+      m_cgcontextref = contextNew;
+      m_pdata = pdataNew;
+      m_size = sizeRawNew;
+      m_iStride = iStrideNew;
+
+      // Owned graphics must stop referring to the context that was replaced.
+      ::cast<::draw2d_quartz2d::graphics> pgraphics = pimage->m_pgraphicsOwned;
+      if(pgraphics)
+      {
+
+         pgraphics->create_bitmap_graphics(this, pimage->draw2d_domain());
+
+      }
+
+      pimage->m_size = size;
+      pimage->m_sizeRaw = sizeRawNew;
+      pimage->m_iScan = m_iStride;
+      pimage->m_ppixmapOwned.release();
+      pimage->m_bGraphicsWasAcquiredAfterLastMap = true;
+      pimage->m_bWasMappedAfterLastGraphicsAcquisition = false;
+
+   }
+
+
    void bitmap::LoadBitmap(const char * lpszResourceName)
    {
       
@@ -547,11 +646,11 @@ void bitmap::update_bitmap_as_image_render_target(
          
          auto size = m_size;
          
-         CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+         auto colorspace = ::as_cfref(CGColorSpaceCreateDeviceRGB());
          
          m_cgcontextref = CGBitmapContextCreate(m_pdata, size.cx, size.cy, 8, m_iStride, colorspace, kCGImageAlphaPremultipliedLast);
          
-         CGColorSpaceRelease(colorspace);
+         //CGColorSpaceRelease(colorspace);
          
          if(not m_cgcontextref)
          {

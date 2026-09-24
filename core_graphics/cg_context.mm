@@ -10,6 +10,7 @@
 #include <CoreText/CoreText.h>
 #include "_mm.h"
 #include "cg_image.h"
+#include "acme/operating_system/apple/cgref.h"
 
 
 void cg_context_release(cg_context_t & cgcontext)
@@ -687,7 +688,8 @@ void cg_context_draw_text(
       path,
       nullptr);
 
-   CGContextSaveGState(CGCONTEXT(cgcontext));
+   cg_context_scope cgcontextscoped(CGCONTEXT(cgcontext));
+   //CGContextSaveGState(CGCONTEXT(cgcontext));
 
 //   CGContextTranslateCTM(
 //                         CGCONTEXT(cgcontext),
@@ -698,7 +700,7 @@ void cg_context_draw_text(
 
    CTFrameDraw(frame, CGCONTEXT(cgcontext));
 
-   CGContextRestoreGState(CGCONTEXT(cgcontext));
+   //CGContextRestoreGState(CGCONTEXT(cgcontext));
 
    CFRelease(frame);
    CFRelease(path);
@@ -873,7 +875,8 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_rect rect, cg_image_t cgim
    
    auto cgimageref = CGIMAGE(cgimage);
    
-   CGContextSaveGState(cgcontextref);
+   cg_context_scope cgcontextscoped(cgcontextref);
+   //CGContextSaveGState(cgcontextref);
    
    auto imageHeight = (::i32) CGImageGetHeight(cgimageref);
    
@@ -889,7 +892,7 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_rect rect, cg_image_t cgim
 
    CGContextDrawImage(cgcontextref, cgrectDraw, cgimageref);
    
-   CGContextRestoreGState(cgcontextref);
+   //CGContextRestoreGState(cgcontextref);
    
 }
 
@@ -901,7 +904,8 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_point point, cg_rect rect,
    
    auto cgimageref = CGIMAGE(cgimage);
    
-   CGContextSaveGState(cgcontextref);
+   cg_context_scope cgcontextscoped(cgcontextref);
+   //CGContextSaveGState(cgcontextref);
    
    auto imageHeight = (::i32) CGImageGetHeight(cgimageref);
 
@@ -923,13 +927,13 @@ void cg_context_draw_image(cg_context_t cgcontext, cg_point point, cg_rect rect,
    
    CGContextScaleCTM(cgcontextref, 1.0, -1.0);
 
-   CGImageRef subImage = CGImageCreateWithImageInRect(CGIMAGE(cgimage), cgrect);
+   auto subImage = ::as_cfref(CGImageCreateWithImageInRect(CGIMAGE(cgimage), cgrect));
 
    CGContextDrawImage(CGCONTEXT(cgcontext), cgrectDraw, subImage);
    
-   CGImageRelease(subImage);
+   //CGImageRelease(subImage);
    
-   CGContextRestoreGState(cgcontextref);
+   //CGContextRestoreGState(cgcontextref);
    
 }
 

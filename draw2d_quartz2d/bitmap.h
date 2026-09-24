@@ -44,6 +44,7 @@ namespace draw2d_quartz2d
       void create_bitmap(::draw2d::graphics * pdraw2dgraphics, const ::i32_size & size) override;
       void create_bitmap(::draw2d::graphics * pdraw2dgraphics, const ::i32_size & size, ::pixmap * ppixmap) override;
       void set_size(const ::i32_size & size, bool bPreserve = true) override;
+      void preserve_image(const ::i32_size & size, ::image::image * pimage) override;
       //void CreateDiscardableBitmap(::draw2d::graphics * pgraphics, int nWidth, int nHeight) override;
       //void create_bitmap(::draw2d::graphics * pgraphics, const ::i32_size & size, void **ppvBits, int * piStride) override;
       //void CreateDIBitmap(::draw2d::graphics * pgraphics, int cx, int cy, ::u32 flInit, const void *pjBits, ::u32 iUsage) override;
@@ -78,4 +79,3 @@ namespace draw2d_quartz2d
 
    
 } // namespace draw2d_quartz2d
-

@@ -61,15 +61,15 @@ namespace draw2d_quartz2d
          
       }
    
-      CFDataRef dataref = CFDataCreate(nullptr, pmemory->data(), pmemory->size());
+      auto dataref = ::as_cfref(CFDataCreate(nullptr, pmemory->data(), pmemory->size()));
    
-      CGDataProviderRef dataproviderref = CGDataProviderCreateWithCFData(dataref);
+      auto dataproviderref = ::as_cfref(CGDataProviderCreateWithCFData(dataref));
 
-      CFRelease(dataref);
+      //CFRelease(dataref);
 
       pprivatefont->m_cgfontref = CGFontCreateWithDataProvider(dataproviderref);
 
-      CGDataProviderRelease(dataproviderref);
+      //CGDataProviderRelease(dataproviderref);
    
       return pprivatefont->m_cgfontref;
       

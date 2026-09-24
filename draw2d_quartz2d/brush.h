@@ -3,6 +3,7 @@
 
 #include "object.h"
 #include "aura/graphics/draw2d/brush.h"
+#include "acme/operating_system/apple/cgref.h"
 
 
 namespace draw2d_quartz2d
@@ -16,9 +17,9 @@ namespace draw2d_quartz2d
    public:
       
       
-      CGGradientRef     m_cggradientref;
-      CGColorRef        m_cgcolorref;
-      CGColorSpaceRef   m_cgcolorspaceref;
+      ::cfref<CGGradientRef>     m_cggradientref;
+      ::cfref<CGColorRef>        m_cgcolorref;
+      ::cfref<CGColorSpaceRef>   m_cgcolorspaceref;
       
       
       brush();

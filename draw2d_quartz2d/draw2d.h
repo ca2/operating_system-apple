@@ -2,6 +2,7 @@
 
 
 #include "aura/graphics/draw2d/draw2d.h"
+#include "acme/operating_system/apple/cgref.h"
 
 
 namespace draw2d_quartz2d
@@ -18,7 +19,7 @@ namespace draw2d_quartz2d
       {
       public:
          
-         CGFontRef         m_cgfontref;
+         cfref<CGFontRef>     m_cgfontref;
          
       };
       

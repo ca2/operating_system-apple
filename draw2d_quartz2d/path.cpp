@@ -185,7 +185,8 @@ namespace draw2d_quartz2d
       x+= m_pointOffset.x;
       y+= m_pointOffset.y;
       
-      CGContextSaveGState(p->m_cgcontextref);
+      cg_context_scope cgcontextscoped(p->m_cgcontextref);
+      //CGContextSaveGState(p->m_cgcontextref);
       
       p->internal_show_text(x, y, 0, strText, kCGTextInvisible, e_align_top_left, e_draw_text_none, true,
          nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
@@ -193,7 +194,7 @@ namespace draw2d_quartz2d
       
       CGPathAddPath(m_cgmutablepathref, nullptr, CGContextCopyPath(p->m_cgcontextref));
 
-      CGContextSaveGState(p->m_cgcontextref);
+      //CGContextSaveGState(p->m_cgcontextref);
 
       return true;
       
@@ -265,13 +266,14 @@ namespace draw2d_quartz2d
    void path::destroy()
    {
 
-      if(m_cgmutablepathref)
-      {
-
-         CGPathRelease(m_cgmutablepathref);
-         m_cgmutablepathref = nullptr;
-
-      }
+      m_cgmutablepathref.release();
+//      if(m_cgmutablepathref)
+//      {
+//
+//         CGPathRelease(m_cgmutablepathref);
+//         m_cgmutablepathref = nullptr;
+//
+//      }
 
    }
 

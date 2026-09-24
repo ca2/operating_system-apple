@@ -136,6 +136,8 @@ void bitmap::update_bitmap_as_image_render_target(
    
    ::draw2d::bitmap::update_bitmap_as_image_render_target(pimage, pdraw2ddomain, pdraw2dgraphics);
    
+   //::draw2d::bitmap::update_bitmap_as_image_render_target(pimage, pdraw2dgraphics);
+   
    if(::is_set(pdraw2dgraphics))
    {
       

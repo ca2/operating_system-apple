@@ -2,6 +2,7 @@
 
 
 #include "aura/graphics/draw2d/graphics.h"
+#include "acme/operating_system/apple/cgref.h"
 
 
 namespace draw2d_quartz2d
@@ -24,8 +25,8 @@ namespace draw2d_quartz2d
       
       int                           m_iSaveGraphicsContext;
       bool                          m_bOwnGraphicsContext;
-      CGContextRef                  m_cgcontext;
-      CGLayerRef                    m_cglayer;
+      ::cfref < CGContextRef >      m_cgcontextref;
+      ::cfref < CGLayerRef >        m_cglayerref;
 
       int                           m_iType;
 #ifdef __OBJECTIVE_CPP__
@@ -38,8 +39,8 @@ namespace draw2d_quartz2d
 
       bool                          m_bForeColor;
       bool                          m_bBackColor;
-      ::u64                           m_uiForeColor;
-      ::u64                           m_uiBackColor;
+      ::u64                         m_uiForeColor;
+      ::u64                         m_uiBackColor;
       bool                          m_bPrinting;
 
       
@@ -48,7 +49,7 @@ namespace draw2d_quartz2d
       
       
       void destroy() override;
-      void destroy_os_data() override;
+      //void destroy_os_data() override;
 
 
       //bool IsPrinting() override;            // true if being used for printing
@@ -70,8 +71,10 @@ namespace draw2d_quartz2d
       // Constructors
 //      bool CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
 //      bool CreateIC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
-      void create_compatible_graphics(::draw2d::graphics * pgraphics) override;
-
+      //void create_compatible_graphics(::draw2d::graphics * pgraphics) override;
+      void _create_memory_graphics(const ::i32_size& size = {}, ::draw2d::domain * pdraw2ddomain = nullptr) override;
+      void create_bitmap_graphics(::draw2d::bitmap * pdraw2dbitmap, ::draw2d::domain * pdraw2ddomain) override;
+   
       void DeleteDC() override;
 
       // Device-Context Functions
@@ -533,9 +536,11 @@ namespace draw2d_quartz2d
       //    virtual HDC get_handle1() const;
       //  virtual HDC get_handle2() const;
 
-      void attach(void * pdata) override;
-      virtual void * detach() override;
+      void _attach(CGContextRef cgcontextref, bool bLightAttachment);
+      CGContextRef _detach();
 
+      
+      void attach(void * p) override;
 
       //xxx      virtual Gdiplus::FillMode gdiplus_get_fill_mode();
 

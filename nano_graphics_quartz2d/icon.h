@@ -37,7 +37,7 @@ namespace quartz2d
          icon();
          ~icon() override;
          
-         void load_image_file(const void *p, memsize size) override;
+         void load_image_file(const ::block & block) override;
 
          
          ///void _create() override;

@@ -31,14 +31,14 @@ namespace quartz2d
    {
 
 
-void icon::load_image_file(const void *p, memsize size)
+void icon::load_image_file(const ::block & block)
 
 {
    
    //auto buffer = m_memory.data();
    //auto size = m_memory.size();
    
-   NSData *imageData = [[NSData alloc] initWithBytes:p length:size];
+   NSData *imageData = [[NSData alloc] initWithBytes: block.data() length: block.size()];
 #ifdef APPLE_IOS
     // Create NSImage from NSData
     UIImage *image = [[UIImage alloc] initWithData:imageData];

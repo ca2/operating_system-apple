@@ -21,27 +21,29 @@ namespace draw2d_quartz2d
       image();
       ~image() override;
 
-      void map(bool bApplyAlphaTransform = true) const override;
-      void _unmap() override;
+//      void map(bool bApplyAlphaTransform = true) const override;
+//      void _unmap() override;
 
       
       //void detach(::image * pimage) override;
       
 
-      ::draw2d::graphics * _get_graphics() const override;
-      ::draw2d::bitmap_pointer get_bitmap() const override;
+      //::draw2d::graphics * _get_graphics() const override;
+      //::draw2d::bitmap_pointer get_bitmap() const override;
       ::draw2d::bitmap_pointer detach_bitmap() override;
+      ::draw2d::bitmap_pointer get_bitmap_as_source(::draw2d::graphics * pdraw2dgraphics = nullptr) const override; // is semantically const (besides may not be implementationly constant)
+      ::draw2d::bitmap_pointer get_bitmap_as_target(::draw2d::graphics * pdraw2dgraphics = nullptr) const override; // is semantically const (besides may not be implementationly constant)
 
 
       //virtual const color32_t * get_data() const override;
 
-      void stretch_image(::image::image * pimage) override;
-
-      void dc_select(bool bSelect = true) override;
-
-      void create(const ::i32_size & size, ::enum_flag eflagCreate = DEFAULT_CREATE_IMAGE_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
-      //::e_status create(int iWidth, int iHeight, ::eobject eobjectCreate = DEFAULT_CREATE_IMAGE_OBJECT_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
-      void create(::draw2d::graphics * pgraphics) override;
+//      void stretch_image(::image::image * pimage) override;
+//
+//      void dc_select(bool bSelect = true) override;
+//
+//      void create(const ::i32_size & size, ::enum_flag eflagCreate = DEFAULT_CREATE_IMAGE_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
+//      //::e_status create(int iWidth, int iHeight, ::eobject eobjectCreate = DEFAULT_CREATE_IMAGE_OBJECT_FLAG, int iGoodStride = -1, bool bPreserve = false) override;
+//      void create(::draw2d::graphics * pgraphics) override;
       void destroy() override;
 
 
@@ -49,13 +51,18 @@ namespace draw2d_quartz2d
 //      bool from(const ::i32_point & pointDest, ::draw2d::graphics * pgraphics, const ::i32_point & point, const ::i32_size & sz) override;
 //      bool to(::draw2d::graphics * pgraphics, const ::i32_point & point, const ::i32_size & size, const ::i32_point & pointSrc) override;
 
-      void _draw_raw(const ::i32_rectangle & rectDst, ::image::image * pimageSrc, const ::i32_point & pointSrc) override;
+//      void _draw_raw(const ::i32_rectangle & rectDst, ::image::image * pimageSrc, const ::i32_point & pointSrc) override;
+//      
+//      void SetIconMask(::image::icon * picon, int cx, int cy) override;
+//
+//      void set_mapped() override;
+
+//      void blend(const ::i32_point & pointDst, ::image::image * pimplSrc, const ::i32_point & pointSrc, const ::i32_size & size, unsigned char bA) override;
+
+   protected:
       
-      void SetIconMask(::image::icon * picon, int cx, int cy) override;
-
-      void set_mapped() override;
-
-      void blend(const ::i32_point & pointDst, ::image::image * pimplSrc, const ::i32_point & pointSrc, const ::i32_size & size, unsigned char bA) override;
+      ::image_pixmap_lease _map(::image::enum_map emap, const ::i32_rectangle & rectangle) override;
+      void _unmap(::image_pixmap_lease * pimagepixmaplease) override;
 
 
    };

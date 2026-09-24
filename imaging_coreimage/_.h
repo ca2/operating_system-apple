@@ -44,7 +44,7 @@
 //#include "factory_exchange.h"
 
 
-#include "context_image.h"
+#include "image_context.h"
 
 #endif
 

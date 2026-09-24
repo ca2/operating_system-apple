@@ -16,7 +16,7 @@ namespace draw2d_quartz2d
    public:
       
       
-      CGMutablePathRef        m_path;
+      CGMutablePathRef        m_cgmutablepathref;
       bool                    m_bBegin;
       
       
@@ -32,12 +32,12 @@ namespace draw2d_quartz2d
       virtual bool internal_add_move(double x, double y);
       virtual bool internal_add_text_out(double x, double y, const string & strText, ::write_text::font * pfont, ::draw2d_quartz2d::graphics * p);
       
-      void create(::draw2d::graphics * pgraphics, char iCreate) override;
+      void update(::draw2d::graphics * pgraphics) override;
 
       void destroy() override;
-      void destroy_os_data() override;
+      //void destroy_os_data() override;
 
-      void * detach() override;
+      //void * detach() override;
       
       bool _set(::draw2d::graphics * pgraphics, const ::draw2d::enum_item & eitem) override;
       bool _set(::draw2d::graphics * pgraphics, const ::f64_arc & arc) override;

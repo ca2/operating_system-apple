@@ -22,35 +22,28 @@ namespace draw2d_quartz2d
    }
 
 
+//   void region::destroy()
+//   {
+//
+//      destroy_os_data();
+//      
+//      ::draw2d::region::destroy();
+//      
+//   }
+
+
    void region::destroy()
    {
-
-      destroy_os_data();
       
-      ::draw2d::region::destroy();
+      m_cgmutablepathref.release();
       
    }
 
 
-   void region::destroy_os_data()
-   {
-      
-      if(m_path != nullptr)
-      {
-
-         CGPathRelease(m_path);
-
-         m_path = nullptr;
-
-      }
-      
-   }
-
-
-   void region::create(::draw2d::graphics * pgraphics, char iCreate)
+   void region::update(::draw2d::graphics * pgraphics)
    {
 
-      auto ppath = CGPathCreateMutable();
+      auto cgmutablepathref = ::as_cfref(CGPathCreateMutable());
 
       if(m_pitem->type() == ::draw2d::e_item_rectangle)
       {
@@ -65,7 +58,7 @@ namespace draw2d_quartz2d
 //         rectangle.size.width = m_x2 - m_x1;
 //         rectangle.size.height = m_y2 - m_y1;
          
-         CGPathAddRect (ppath, nullptr, rectangle);
+         CGPathAddRect (cgmutablepathref, nullptr, rectangle);
 
       }
       else if(m_pitem->type() == ::draw2d::e_item_polygon)
@@ -76,12 +69,12 @@ namespace draw2d_quartz2d
          if(pitem->m_polygon.has_element())
          {
             
-            CGPathMoveToPoint(ppath, nullptr, pitem->m_polygon[0].x, pitem->m_polygon[0].y);
+            CGPathMoveToPoint(cgmutablepathref, nullptr, pitem->m_polygon[0].x, pitem->m_polygon[0].y);
 
             for(int i = 1; i < pitem->m_polygon.size(); i++)
             {
 
-               CGPathAddLineToPoint(ppath, nullptr, pitem->m_polygon[i].x, pitem->m_polygon[i].y);
+               CGPathAddLineToPoint(cgmutablepathref, nullptr, pitem->m_polygon[i].x, pitem->m_polygon[i].y);
 
             }
 
@@ -101,7 +94,7 @@ namespace draw2d_quartz2d
 //         rectangle.size.width = m_x2 - m_x1;
 //         rectangle.size.height = m_y2 - m_y1;
 
-         CGPathAddEllipseInRect(ppath, nullptr, rectangle);
+         CGPathAddEllipseInRect(cgmutablepathref, nullptr, rectangle);
 
       }
       else if(m_pitem->type() == ::draw2d::e_item_combine)
@@ -111,25 +104,21 @@ namespace draw2d_quartz2d
 
       }
 
-      CGPathCloseSubpath(ppath);
+      CGPathCloseSubpath(cgmutablepathref);
       
       CGAffineTransform transformTranslation = CGAffineTransformMakeTranslation(m_pointOffset.x, m_pointOffset.y);
       
-      m_path = CGPathCreateMutableCopyByTransformingPath(ppath, &transformTranslation);
+      m_cgmutablepathref = CGPathCreateMutableCopyByTransformingPath(cgmutablepathref, &transformTranslation);
       
-      CGPathRelease(ppath);
+      //CGPathRelease(ppath);
 
    }
 
 
-   void * region::detach()
+   CGMutablePathRef region::_detach()
    {
 
-      void * ppath = m_path;
-
-      m_path = nullptr;
-
-      return ppath;
+      return m_cgmutablepathref.detach();
 
    }
 

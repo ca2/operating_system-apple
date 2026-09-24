@@ -9,11 +9,11 @@ namespace draw2d_quartz2d
    brush::brush()
    {
       
-      m_colorspaceref = nullptr;
+      m_cgcolorspaceref = nullptr;
       
-      m_colorref = nullptr;
+      m_cgcolorref = nullptr;
       
-      m_gradientref = nullptr;
+      m_cggradientref = nullptr;
       
    }
    
@@ -34,51 +34,53 @@ namespace draw2d_quartz2d
 //   }
 //
 //   
+//   void brush::destroy()
+//   {
+//      
+//      destroy_os_data();
+//      
+//      ::draw2d::brush::destroy();
+//      
+//   }
+//
+
    void brush::destroy()
    {
       
-      destroy_os_data();
-      
-      ::draw2d::brush::destroy();
-      
-   }
-
-
-   void brush::destroy_os_data()
-   {
-      
-      if(m_gradientref != nullptr)
+      if(m_cggradientref != nullptr)
       {
          
-         CGGradientRelease(m_gradientref);
+         CGGradientRelease(m_cggradientref);
          
-         m_gradientref = nullptr;
+         m_cggradientref = nullptr;
          
       }
       
-      if(m_colorref != nullptr)
+      if(m_cgcolorref != nullptr)
       {
          
-         CGColorRelease(m_colorref);
+         CGColorRelease(m_cgcolorref);
          
-         m_colorref = nullptr;
+         m_cgcolorref = nullptr;
          
       }
       
-      if(m_colorspaceref != nullptr)
+      if(m_cgcolorspaceref != nullptr)
       {
          
-         CGColorSpaceRelease(m_colorspaceref);
+         CGColorSpaceRelease(m_cgcolorspaceref);
          
-         m_colorspaceref = nullptr;
+         m_cgcolorspaceref = nullptr;
          
       }
       
    }
 
    
-   void brush::create(::draw2d::graphics * pgraphics, char iCreate)
+   void brush::update(::draw2d::graphics * pgraphics)
    {
+      
+      destroy();
       
       if(m_ebrush == ::draw2d::e_brush_linear_gradient_point_color || m_ebrush == ::draw2d::e_brush_radial_gradient_color || m_ebrush == ::draw2d::e_brush_box_gradient)
       {
@@ -86,10 +88,10 @@ namespace draw2d_quartz2d
          CGFloat locations[2];
          CGFloat components[8];
          
-         if(m_colorspaceref == nullptr)
+         if(m_cgcolorspaceref == nullptr)
          {
          
-            m_colorspaceref = CGColorSpaceCreateDeviceRGB();
+            m_cgcolorspaceref = CGColorSpaceCreateDeviceRGB();
             
          }
          
@@ -105,16 +107,16 @@ namespace draw2d_quartz2d
          locations[0] = 0.0;
          locations[1] = 1.0;
          
-         if(m_gradientref)
+         if(m_cggradientref)
          {
             
             throw "";
             
          }
          
-         m_gradientref = CGGradientCreateWithColorComponents(m_colorspaceref, components, locations, 2);
+         m_cggradientref = CGGradientCreateWithColorComponents(m_cgcolorspaceref, components, locations, 2);
          
-         m_osdata[0] = m_gradientref;
+         //m_osdata[0] = m_gradientref;
          
       }
       else if(m_ebrush == ::draw2d::e_brush_solid)
@@ -122,10 +124,10 @@ namespace draw2d_quartz2d
 
          CGFloat components[4];
          
-         if(m_colorspaceref == nullptr)
+         if(m_cgcolorspaceref == nullptr)
          {
             
-            m_colorspaceref = CGColorSpaceCreateDeviceRGB();
+            m_cgcolorspaceref = CGColorSpaceCreateDeviceRGB();
             
          }
 
@@ -134,16 +136,16 @@ namespace draw2d_quartz2d
          components[2] = m_color.f32_blue();
          components[3] = m_color.f32_opacity();
          
-         if(m_colorref)
+         if(m_cgcolorref)
          {
             
             throw "";
             
          }
          
-         m_colorref = CGColorCreate(m_colorspaceref, components);
+         m_cgcolorref = CGColorCreate(m_cgcolorspaceref, components);
          
-         m_osdata[0] = m_colorref;
+         //m_osdata[0] = m_colorref;
          
       }
       

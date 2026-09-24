@@ -4,6 +4,7 @@
 #include "object.h"
 #include "aura/graphics/draw2d/bitmap.h"
 #include "acme/prototype/prototype/memory.h"
+#include "acme/operating_system/apple/cgref.h"
 
 
 namespace draw2d_quartz2d
@@ -17,10 +18,10 @@ namespace draw2d_quartz2d
    public:
       
 
-      memory                        m_memory;
-      ::i32_size                    m_size;
-      CGContextRef                  m_cgcontext;
-      int                           m_iScan;
+      //memory                        m_memory;
+      //::i32_size                    m_size;
+      ::cfref < CGContextRef >      m_cgcontextref;
+      //int                           m_iScan;
       color32_t *                   m_pdata;
       
       
@@ -39,31 +40,42 @@ namespace draw2d_quartz2d
 //#endif
       void CreateBitmap(::draw2d::graphics * pgraphics, const ::i32_size & size, ::u32 nPlanes, ::u32 nBitcount, const void * lpBits, int iStride) override;
 //      void CreateBitmapIndirect(::draw2d::graphics * pgraphics, LPBITMAP lpBitmap) override;
-      void CreateCompatibleBitmap(::draw2d::graphics * pgraphics, int nWidth, int nHeight) override;
-      void CreateDiscardableBitmap(::draw2d::graphics * pgraphics, int nWidth, int nHeight) override;
-      void create_bitmap(::draw2d::graphics * pgraphics, const ::i32_size & size, void **ppvBits, int * piStride) override;
-      void CreateDIBitmap(::draw2d::graphics * pgraphics, int cx, int cy, ::u32 flInit, const void *pjBits, ::u32 iUsage) override;
+      //void CreateCompatibleBitmap(::draw2d::graphics * pgraphics, int nWidth, int nHeight) override;
+      void create_bitmap(::draw2d::graphics * pdraw2dgraphics, const ::i32_size & size) override;
+      void create_bitmap(::draw2d::graphics * pdraw2dgraphics, const ::i32_size & size, ::pixmap * ppixmap) override;
+      void set_size(const ::i32_size & size, bool bPreserve = true) override;
+      //void CreateDiscardableBitmap(::draw2d::graphics * pgraphics, int nWidth, int nHeight) override;
+      //void create_bitmap(::draw2d::graphics * pgraphics, const ::i32_size & size, void **ppvBits, int * piStride) override;
+      //void CreateDIBitmap(::draw2d::graphics * pgraphics, int cx, int cy, ::u32 flInit, const void *pjBits, ::u32 iUsage) override;
       
       //int GetBitmap(BITMAP* pBitMap);
-      
+      void update_bitmap_as_image_render_target(
+         ::image::image * pimage,
+         ::draw2d::domain * pdraw2ddomain,
+         ::draw2d::graphics * pdraw2dgraphics) override;
+
       ::u32 SetBitmapBits(::u32 dwCount, const void * lpBits) override;
       ::u32 GetBitmapBits(::u32 dwCount, void * lpBits) const override;
       ::i32_size SetBitmapDimension(int nWidth, int nHeight);
-      ::i32_size GetBitmapDimension() const override;
+      ::i32_size size() const override;
+
+      void read_pixels(const ::i32_size & size, const ::i32_point & point, ::image32_t * pimage32, ::i32 iScan) override;
+      void write_pixels(const ::i32_size & size, const ::i32_point & point, const ::image32_t * pimage32, ::i32 iScan, bool bTopDown) override;
       
       //void dump(dump_context & dumpcontext) const override;
       
-      virtual void Attach(void * posdata);
+      virtual void _attach(CGContextRef cgcontextref);
       
       void destroy() override;
-      void destroy_os_data() override;
+      CGContextRef _detach();
+      
+      
+      virtual CGContextRef _cg_context_ref();
+      //void destroy_os_data() override;
 
       
    };
 
    
 } // namespace draw2d_quartz2d
-
-
-
 

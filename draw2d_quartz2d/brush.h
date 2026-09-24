@@ -16,9 +16,9 @@ namespace draw2d_quartz2d
    public:
       
       
-      CGGradientRef     m_gradientref;
-      CGColorRef        m_colorref;
-      CGColorSpaceRef   m_colorspaceref;
+      CGGradientRef     m_cggradientref;
+      CGColorRef        m_cgcolorref;
+      CGColorSpaceRef   m_cgcolorspaceref;
       
       
       brush();
@@ -27,10 +27,10 @@ namespace draw2d_quartz2d
       
       //virtual void * get_os_data() const;
       
-      void create(::draw2d::graphics * pgraphics, char iCreate) override;
+      void update(::draw2d::graphics * pgraphics) override;
 
       void destroy() override;
-      void destroy_os_data() override;
+      //void destroy_os_data() override;
      
       //void dump(dump_context & dumpcontext) const override;
 

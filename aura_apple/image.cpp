@@ -12,10 +12,12 @@
 
 CGImageRef cgimageref_from_image(const ::image::image * pimage)
 {
+   
+   auto ppixmapImage = ((::image::image *) pimage)->map();
 
    ::acme::malloc < image32_t * > pdst;
 
-   pdst.alloc(pimage->scan_size() * pimage->height());
+   pdst.alloc(ppixmapImage->m_iScan * pimage->height());
 
    if(pdst == nullptr)
    {
@@ -24,17 +26,15 @@ CGImageRef cgimageref_from_image(const ::image::image * pimage)
 
    }
    
-   pimage->map();
-
-   pdst->_001ProperCopyColorref(pimage->width(), pimage->height(), pimage->scan_size(), pimage->get_data(), pimage->scan_size());
+   pdst->_001ProperCopyColorref(ppixmapImage->width(), ppixmapImage->height(), ppixmapImage->scan_size(), ppixmapImage->data(), ppixmapImage->scan_size());
 
    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
 
    CGContextRef context = CGBitmapContextCreate(
                           pdst,
-                          pimage->width(),
-                          pimage->height(), 8,
-                          pimage->scan_size(), colorspace, kCGImageAlphaPremultipliedLast);
+                                                ppixmapImage->width(),
+                                                ppixmapImage->height(), 8,
+                                                ppixmapImage->scan_size(), colorspace, kCGImageAlphaPremultipliedLast);
 
    CGColorSpaceRelease(colorspace);
 

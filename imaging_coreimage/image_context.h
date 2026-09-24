@@ -21,6 +21,9 @@ namespace coreimage_imaging
 
       void _load_image(::pixmap * ppixmap, ::pointer<::image::image_frame_array> & pframea, memory & memory) override;
       void save_image(memory & memory, ::image::image * pimage, const ::image::encoding_options & encodingoptions) override;
+      
+      void _os_load_image(::image::load_image *ploadimage, memory & memory) override;
+
 
 //      virtual void * create_os_cursor(oswindow oswindow, const image * pimage, int xHotSpot, int yHotSpot);
 //      //virtual HCURSOR load_default_cursor(e_cursor ecursor) override;

@@ -17,16 +17,27 @@ namespace draw2d_quartz2d
    void graphics::get_text_metrics(::write_text::text_metric * pmetric)
    {
 
-      if(!m_pfont)
+      if(!m_pwritetextfont)
       {
        
          throw exception(::error_null_pointer);
          
       }
       
-      CTFontRef pfont = (CTFontRef) m_pfont->get_os_data(this);
+      m_pwritetextfont->defer_update(this);
+      
+      ::cast < ::draw2d_quartz2d::font > pdraw2dquartz2dfont = m_pwritetextfont;
+      
+      if(::is_null(pdraw2dquartz2dfont))
+      {
+         
+         throw exception(::error_null_pointer);
+         
+      }
+      
+      auto ctfontref = pdraw2dquartz2dfont->m_ctfontref;
 
-      if(pfont == nullptr)
+      if(!ctfontref)
       {
        
          throw exception(::error_null_pointer);
@@ -43,9 +54,9 @@ namespace draw2d_quartz2d
       
       pkeys.add(kCTFontAttributeName);
       
-      pvals.add(pfont);
+      pvals.add(ctfontref);
       
-      if(m_pfont->m_bUnderline)
+      if(m_pwritetextfont->m_bUnderline)
       {
          
          int iUnderlineStyle = kCTUnderlineStyleSingle;

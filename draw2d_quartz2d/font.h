@@ -38,9 +38,9 @@ namespace draw2d_quartz2d
 //      };
       
 //      string_map < metrics >  m_mapMetrics;
-      ::cfref<CTFontRef>               m_font;
-      ::cfref<CTFontDescriptorRef>     m_fontdescriptor;
-      ::cfref<CFStringRef>             m_fontName;
+      ::cfref<CTFontRef>               m_ctfontref;
+      ::cfref<CTFontDescriptorRef>     m_ctfontdescriptorref;
+      ::cfref<CFStringRef>             m_cfstringrefFontName;
       
       
       font();
@@ -48,8 +48,8 @@ namespace draw2d_quartz2d
       
       
       void destroy() override;
-      void destroy_os_data() override;
-      void create(::draw2d::graphics * pgraphics, char iCreate) override;
+      //void destroy_os_data() override;
+      void update(::draw2d::graphics * pgraphics) override;
 
       //virtual void * get_os_data() const override;
       

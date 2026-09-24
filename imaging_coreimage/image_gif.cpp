@@ -5,8 +5,8 @@
 //  Created by Camilo Sasuke Thomas Borregaard Sørensen on 21/10/17.
 //
 #include "framework.h"
-#include "aura/graphics/image/frame.h"
-#include "aura/graphics/image/frame_array.h"
+#include "acme/graphics/image/frame.h"
+#include "acme/graphics/image/frame_array.h"
 #include "aura/platform/context.h"
 #include "acme/_operating_system.h"
 #include "acme/constant/data_type.h"
@@ -28,7 +28,7 @@ namespace coreimage_imaging
 {
 
 
-   void image_context::_load_image(::image::image * pimage, ::pointer < ::image::image_frame_array > & pframea, memory & memory)
+   void image_context::_load_image(::pixmap * ppixmap, ::pointer < ::image::image_frame_array > & pframea, memory & memory)
    {
 
       if(memory.is_empty())
@@ -155,14 +155,14 @@ namespace coreimage_imaging
 
             auto p = allocateø ::image::image_frame();
 
-            p->m_pimage = this->create_image();
+            construct_newø(p->m_ppixmap);
             
-            p->m_pimage->create({ w, h });
+            p->m_ppixmap->create_as_descriptor({ w, h });
 
             //if(p->m_pimage->create({ w, h }))
             //{
 
-            p->m_pimage->image32()->vertical_swap_copy(w, h, p->m_pimage->scan_size(), pdata, iScan);
+            p->m_ppixmap->y_swap_copy({w, h}, pdata, iScan);
 
                p->m_edisposal = ::draw2d::e_disposal_none;
 
@@ -232,7 +232,7 @@ namespace coreimage_imaging
 
                }
 
-               p->m_pimage->create_helper_map();
+               //p->m_pimage->create_helper_map();
 
                pframea->m_timeTotal += p->m_time;
 

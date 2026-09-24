@@ -3,6 +3,7 @@
 
 #include "object.h"
 #include "aura/graphics/draw2d/region.h"
+#include "acme/operating_system/apple/cgref.h"
 
 
 namespace draw2d_quartz2d
@@ -16,7 +17,7 @@ namespace draw2d_quartz2d
    public:
 
 
-      CGMutablePathRef        m_path;
+      ::cfref<CGMutablePathRef>        m_cgmutablepathref;
 
       // xxx     Gdiplus::Region *       m_pregion;
 
@@ -64,11 +65,13 @@ namespace draw2d_quartz2d
       //bool get_combine(cairo_t * pdc);
 
       void destroy() override;
-      void destroy_os_data() override;
+      //void destroy_os_data() override;
 
-      void create(::draw2d::graphics * pgraphics, char iCreate) override;
+      //void create(::draw2d::graphics * pgraphics, char iCreate) override;
+      
+      void update(::draw2d::graphics * pdraw2dgraphics) override;
 
-      virtual void * detach();
+      CGMutablePathRef _detach();
       
 
    };

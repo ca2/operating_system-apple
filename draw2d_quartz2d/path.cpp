@@ -26,7 +26,7 @@ namespace draw2d_quartz2d
    path::path()
    {
       
-      m_path = nullptr;
+      m_cgmutablepathref = nullptr;
       
       m_bBegin = true;
       
@@ -57,7 +57,7 @@ namespace draw2d_quartz2d
       if(bClose)
       {
          
-         CGPathCloseSubpath(m_path);
+         CGPathCloseSubpath(m_cgmutablepathref);
          
       }
       
@@ -88,7 +88,7 @@ namespace draw2d_quartz2d
       if(d1 == d2)
       {
          
-         CGPathAddArc(m_path, nullptr, x, y, d1/2.0, dBeg, dEnd, bClockwise ? 1 : 0);
+         CGPathAddArc(m_cgmutablepathref, nullptr, x, y, d1/2.0, dBeg, dEnd, bClockwise ? 1 : 0);
 
       }
       else
@@ -100,14 +100,14 @@ namespace draw2d_quartz2d
 //      
 //      CGFloat y1 = y + d1 * sin(dBeg);
       
-//      if(CGPathIsEmpty(m_path))
+//      if(CGPathIsEmpty(m_cgmutablepathref))
 //      {
 //
 //         internal_add_move(x1, y1);
 //
 //      }
       
-         CGPathAddArc(m_path, &t, x, y, d1/2.0, dBeg, dEnd, bClockwise ? 1 : 0);
+         CGPathAddArc(m_cgmutablepathref, &t, x, y, d1/2.0, dBeg, dEnd, bClockwise ? 1 : 0);
          
       }
       
@@ -124,7 +124,7 @@ namespace draw2d_quartz2d
       x2+= m_pointOffset.x;
       y2+= m_pointOffset.y;
 
-      if(CGPathIsEmpty(m_path))
+      if(CGPathIsEmpty(m_cgmutablepathref))
       {
          
          internal_add_move(x1, y1);
@@ -133,11 +133,11 @@ namespace draw2d_quartz2d
       else
       {
       
-         CGPathAddLineToPoint(m_path, nullptr, x1, y1);
+         CGPathAddLineToPoint(m_cgmutablepathref, nullptr, x1, y1);
          
       }
 
-      CGPathAddLineToPoint(m_path, nullptr, x2, y2);
+      CGPathAddLineToPoint(m_cgmutablepathref, nullptr, x2, y2);
       
       m_pointBegin.x = x1;
       m_pointBegin.y = y1;
@@ -157,7 +157,7 @@ namespace draw2d_quartz2d
       
       m_pointBegin = m_pointEnd;
       
-      if(CGPathIsEmpty(m_path))
+      if(CGPathIsEmpty(m_cgmutablepathref))
       {
          
          internal_add_move(x, y);
@@ -166,7 +166,7 @@ namespace draw2d_quartz2d
       else
       {
          
-         CGPathAddLineToPoint(m_path, nullptr, x, y);
+         CGPathAddLineToPoint(m_cgmutablepathref, nullptr, x, y);
          
       }
       
@@ -185,15 +185,15 @@ namespace draw2d_quartz2d
       x+= m_pointOffset.x;
       y+= m_pointOffset.y;
       
-      CGContextSaveGState(p->m_cgcontext);
+      CGContextSaveGState(p->m_cgcontextref);
       
       p->internal_show_text(x, y, 0, strText, kCGTextInvisible, e_align_top_left, e_draw_text_none, true,
          nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
          pfont);
       
-      CGPathAddPath(m_path, nullptr, CGContextCopyPath(p->m_cgcontext));
+      CGPathAddPath(m_cgmutablepathref, nullptr, CGContextCopyPath(p->m_cgcontextref));
 
-      CGContextSaveGState(p->m_cgcontext);
+      CGContextSaveGState(p->m_cgcontextref);
 
       return true;
       
@@ -237,7 +237,7 @@ namespace draw2d_quartz2d
       
       m_pointBegin = m_pointEnd;
       
-      CGPathMoveToPoint(m_path, nullptr, x, y);
+      CGPathMoveToPoint(m_cgmutablepathref, nullptr, x, y);
       
       m_pointEnd.x = x;
       m_pointEnd.y = y;
@@ -248,78 +248,59 @@ namespace draw2d_quartz2d
       
    }
    
-   
-   void * path::detach()
-   {
-      
-      void * ppath = m_path;
-      
-      m_path = nullptr;
-      m_osdata[0] = nullptr;
-      
-      return ppath;
-      
-   }
-   
+//   
+//   void * path::detach()
+//   {
+//      
+//      void * ppath = m_cgmutablepathref;
+//      
+//      m_cgmutablepathref = nullptr;
+//      m_osdata[0] = nullptr;
+//      
+//      return ppath;
+//      
+//   }
+//   
    
    void path::destroy()
    {
-      
-      destroy_os_data();
-      
-      ::draw2d::path::destroy();
-      
-   }
-   
-   
-   void path::destroy_os_data()
-   {
-      
-      if(m_path != nullptr)
+
+      if(m_cgmutablepathref)
       {
-         
-         CGPathRelease(m_path);
-         
-         m_path = nullptr;
-         
+
+         CGPathRelease(m_cgmutablepathref);
+         m_cgmutablepathref = nullptr;
+
       }
-      
+
    }
 
 
-   void path::create(::draw2d::graphics * pgraphics, char iCreate)
+   void path::update(::draw2d::graphics * pgraphics)
    {
-      
-      if(m_path)
-      {
-         
-         throw "";
-         
-      }
-      
-      m_path = CGPathCreateMutable();
-      
+
+      // A modified logical path replaces its previous native geometry.
+      destroy();
+      m_cgmutablepathref = CGPathCreateMutable();
       _set_create(pgraphics);
-      
-      m_osdata[0] = m_path;
-      
+
    }
 
-   
+
    bool path::_set(::draw2d::graphics * pgraphics, const ::draw2d::enum_item & eitem)
    {
       
       if(eitem == ::draw2d::e_item_close_figure)
       {
          
-         if(CGPathIsEmpty(m_path))
+         if(CGPathIsEmpty(m_cgmutablepathref))
          {
             
             return true;
             
          }
          
-         CGPathCloseSubpath(m_path);
+         CGPathCloseSubpath(m_cgmutablepathref);
          
       }
 
@@ -356,7 +337,7 @@ namespace draw2d_quartz2d
       r.origin.x += m_pointOffset.x;
       r.origin.y += m_pointOffset.y;
       
-      CGPathAddRect(m_path, nullptr, r);
+      CGPathAddRect(m_cgmutablepathref, nullptr, r);
                     
       return true;
       
@@ -376,7 +357,7 @@ namespace draw2d_quartz2d
       r.origin.x += m_pointOffset.x;
       r.origin.y += m_pointOffset.y;
       
-      CGPathAddEllipseInRect(m_path, nullptr, r);
+      CGPathAddEllipseInRect(m_cgmutablepathref, nullptr, r);
                     
       return true;
       
@@ -399,7 +380,7 @@ namespace draw2d_quartz2d
          
       }
       
-      CGPathAddLines(m_path, nullptr, points.data(), points.count());
+      CGPathAddLines(m_cgmutablepathref, nullptr, points.data(), points.count());
                     
       return true;
       
@@ -423,9 +404,9 @@ namespace draw2d_quartz2d
          
       }
       
-      CGPathAddLines(m_path, nullptr, points.data(), points.count());
+      CGPathAddLines(m_cgmutablepathref, nullptr, points.data(), points.count());
 
-      CGPathCloseSubpath(m_path);
+      CGPathCloseSubpath(m_cgmutablepathref);
       
       return true;
       
@@ -468,18 +449,20 @@ namespace draw2d_quartz2d
        
        auto pgraphics = createø<::draw2d::graphics>();
        
-       pgraphics->create_memory_graphics({256, 256});
-    
-      CGMutablePathRef ppath = get_os_data <CGMutablePathRef>(pgraphics);
+       pgraphics->_create_memory_graphics({256, 256});
       
-      if(::is_null(ppath))
+      defer_update(pgraphics);
+    
+      CGMutablePathRef cgmutablepathref = m_cgmutablepathref;
+      
+      if(::is_null(cgmutablepathref))
       {
          
          return false;
          
       }
       
-      return CGPathContainsPoint(ppath, nullptr,CGPointMake(point.x, point.y), false);
+      return CGPathContainsPoint(cgmutablepathref, nullptr,CGPointMake(point.x, point.y), false);
       
    }
 
@@ -488,16 +471,16 @@ namespace draw2d_quartz2d
 bool path::_path_contains_point(::draw2d::graphics_pointer & pgraphics, const ::f64_point & point)
 {
  
-   CGMutablePathRef ppath = get_os_data <CGMutablePathRef>(pgraphics);
+   CGMutablePathRef cgmutablepathref = m_cgmutablepathref;
    
-   if(::is_null(ppath))
+   if(::is_null(cgmutablepathref))
    {
       
       return false;
       
    }
    
-   return CGPathContainsPoint(ppath, nullptr,CGPointMake(point.x, point.y), false);
+   return CGPathContainsPoint(cgmutablepathref, nullptr,CGPointMake(point.x, point.y), false);
    
 }
 

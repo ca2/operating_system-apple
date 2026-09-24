@@ -7,6 +7,7 @@
 #include "framework.h"
 #include "acme/filesystem/filesystem/file_context.h"
 #include "aura/graphics/image/encoding_options.h"
+#include "aura/graphics/image/load_image.h"
 #include "aura/platform/context.h"
 #include <CoreGraphics/CoreGraphics.h>
 
@@ -36,7 +37,7 @@ namespace coreimage_imaging
    void image_context::save_image(memory & memory, ::image::image * pimage, const ::image::encoding_options & encodingoptions)
    {
 
-      if(pimage->is_empty())
+      if(pimage->nok())
       {
 
          throw exception(error_invalid_parameter);
@@ -99,10 +100,10 @@ namespace coreimage_imaging
    }
 
 
-   void image_context::_load_image(::image::image * pimage, const ::payload & varFile, const ::image::load_options & options)
+   void image_context::_load_image(::image::load_image * ploadimage, const ::payload & payloadFile, const ::image::load_options & options)
    {
       
-      if(::is_null(pimage))
+      if(::is_null(ploadimage))
       {
          
          throw exception(error_invalid_parameter);
@@ -116,13 +117,13 @@ namespace coreimage_imaging
       if(options.toy)
       {
          
-         papplication->file()->safe_get_memory(varFile, memory);
+         papplication->file()->safe_get_memory(payloadFile, memory);
          
       }
       else
       {
          
-         papplication->file()->as_memory(varFile, memory);
+         papplication->file()->as_memory(payloadFile, memory);
 
    
       }
@@ -141,22 +142,24 @@ namespace coreimage_imaging
       if(memory.is_empty())
       {
          
-         pimage->m_estatus = error_invalid_empty_argument;
-         
-         pimage->set_nok();
-         
-         if(options.functionLoaded)
-         {
-          
-            options.functionLoaded(pimage);
-            
-         }
+//         ploadimage->m_estatus = error_invalid_empty_argument;
+//         
+//         ploadimage->set_nok();
+//         
+//         //if(options.functionLoaded)
+//         {
+//          
+//           // options.functionLoaded(pimage);
+//            
+//         }
+//         
+         ploadimage->on_image_loaded(error_invalid_empty_argument);
          
          return;
          
       }
 
-      auto pszData = memory.data();
+         auto pszData = memory.data();
 
       auto size = memory.size();
 
@@ -193,9 +196,9 @@ namespace coreimage_imaging
 
          //estatus =
          
-         this->load_svg(pimage, memory);
+         this->load_svg(ploadimage, memory);
 
-         if (::is_set(pimage) && pimage->is_ok())
+         if (::is_set(ploadimage) && ploadimage->is_ok())
          {
 
             return;
@@ -208,26 +211,42 @@ namespace coreimage_imaging
 
       //m_psystem->file_system()->put_contents("/home/camilo/a.gif", memory);
 
-         _load_multi_frame_image(pimage, memory);
+         _load_multi_frame_image(ploadimage, memory);
 
          //if (!)
  /*        {
             pimage->set_nok();
             return pimage->m_estatus;
          }*/
-
-         pimage->on_load_image();
-
-         pimage->set_ok_flag();
-
-         pimage->m_estatus = ::success;
          
-         if(options.functionLoaded)
+         if (ploadimage->has_failed_status())
          {
-            
-            options.functionLoaded(pimage);
-            
+
+            ploadimage->set_nok();
+
+            ploadimage->m_estatus = ::error_failed;
+
+            return;
+
          }
+
+         ///ploadimage->m_ppixmap->defer_update_image();
+
+         ploadimage->on_image_loaded(::success);
+
+
+//         pimage->on_load_image();
+//
+//         pimage->set_ok_flag();
+//
+//         pimage->m_estatus = ::success;
+//         
+//         if(options.functionLoaded)
+//         {
+//            
+//            options.functionLoaded(pimage);
+//            
+//         }
 
          return;
 
@@ -235,50 +254,68 @@ namespace coreimage_imaging
 
       }
       
+      _os_load_image(ploadimage, memory);
+
+   }
+
+
+
+
+   void image_context::_os_load_image(::image::load_image *ploadimage, memory & memory)
+   {
+      
+     
       int w = 0;
-
+      
       int h = 0;
-
+      
       int iScan = 0;
-
+      
       ::acme::malloc < image32_t * > pimage32;
-
+      
       pimage32 = file_memory_to_image_data(w, h, iScan, memory.data(), memory.size());
       
       if(pimage32 == nullptr)
       {
          
-         pimage->set_nok();
-
-         pimage->m_estatus = ::error_failed;
+         ploadimage->on_image_loaded(error_failed);
          
-         if(options.functionLoaded)
-         {
-            
-            options.functionLoaded(pimage);
-            
-         }
-
+         //         ploadimage->set_nok();
+         //
+         //         ploadimage->m_estatus = ::error_failed;
+         //
+         //         if(options.functionLoaded)
+         //         {
+         //
+         //            options.functionLoaded(pimage);
+         //
+         //         }
+         
          return;
-
-      }
-      
-      pimage->create({w, h});
-      
-      pimage->map();
-      
-      pimage->image32()->vertical_swap_copy(w, h, pimage->scan_size(), pimage32, iScan);
-      
-      pimage->set_ok_flag();
-      
-      if(options.functionLoaded)
-      {
-         
-         options.functionLoaded(pimage);
          
       }
+      
+      ploadimage->on_load_image({(::i32)w, (::i32)h}, (::image32_t *)pimage32, iScan);
+      
+   //   ploadimage->m_pimag
+   //
+   //   ploadimage->m_ppixmap->create_as_descriptor({w, h});
+   //
+   //   pimage->map();
+   //
+   //   pimage->image32()->y_swap_copy(w, h, pimage->scan_size(), pimage32, iScan);
+   //
+   //   pimage->set_ok_flag();
+   //
+   //   if(options.functionLoaded)
+   //   {
+   //
+   //      options.functionLoaded(pimage);
+   //
+   //   }
       //return true;
-
+      
+      
    }
 
 

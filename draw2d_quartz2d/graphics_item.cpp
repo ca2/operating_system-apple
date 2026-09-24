@@ -93,7 +93,7 @@ namespace draw2d_quartz2d
    //         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
    //         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
          
-         CGContextAddRect (m_cgcontext, rectangle);
+         CGContextAddRect (m_cgcontextref, rectangle);
 
       }
       else if(pitem->type() == ::draw2d::e_item_polygon)
@@ -101,7 +101,7 @@ namespace draw2d_quartz2d
          
          ::pointer < ::geometry2d::polygon_item > ppolygonitem = pitem;
 
-         CGContextBeginPath (m_cgcontext);
+         CGContextBeginPath (m_cgcontextref);
 
          set_polygon(ppolygonitem->m_polygon.data(), ppolygonitem->m_polygon.size());
 
@@ -120,7 +120,7 @@ namespace draw2d_quartz2d
    //         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
    //         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
 
-         CGContextAddEllipseInRect(m_cgcontext, rectangle);
+         CGContextAddEllipseInRect(m_cgcontextref, rectangle);
 
       }
 
@@ -173,7 +173,7 @@ namespace draw2d_quartz2d
    //         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
    //         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
 
-         CGContextAddRect (m_cgcontext, rectangle);
+         CGContextAddRect (m_cgcontextref, rectangle);
 
       }
       else if(pitem->type() == ::draw2d::e_item_polygon)
@@ -181,7 +181,7 @@ namespace draw2d_quartz2d
 
          ::pointer < ::geometry2d::polygon_item > ppolygonitem = pitem;
 
-         CGContextBeginPath (m_cgcontext);
+         CGContextBeginPath (m_cgcontextref);
 
          set_polygon(ppolygonitem->m_polygon.data(), ppolygonitem->m_polygon.size());
 
@@ -200,7 +200,7 @@ namespace draw2d_quartz2d
    //         rectangle.size.width = pregion->m_x2 - pregion->m_x1;
    //         rectangle.size.height = pregion->m_y2 - pregion->m_y1;
 
-         CGContextAddEllipseInRect(m_cgcontext, rectangle);
+         CGContextAddEllipseInRect(m_cgcontextref, rectangle);
 
       }
       else if(pitem->type() == ::draw2d::e_item_combine)

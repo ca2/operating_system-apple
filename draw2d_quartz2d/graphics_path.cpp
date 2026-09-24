@@ -36,14 +36,26 @@ namespace draw2d_quartz2d
          }
 
       }
-
-      auto path = ppath->template get_os_data < CGMutablePathRef >(this);
       
-      CGContextAddPath(m_cgcontext, path);
+      ::cast < ::draw2d_quartz2d::path > pdraw2dquartz2dpath = ppath;
+
+      if(m_bTargetRectangleModified)
+      {
+
+         defer_on_target_rectangle_update();
+
+      }
+
+      pdraw2dquartz2dpath->defer_update(this);
+
+      auto cgmutablepathref = pdraw2dquartz2dpath->m_cgmutablepathref;
+      
+      CGContextBeginPath(m_cgcontextref);
+      CGContextAddPath(m_cgcontextref, cgmutablepathref);
 
       _fill();
 
-      _fill_inline(ppath, m_pbrush);
+      _fill_inline(ppath, m_pdraw2dbrush);
 
    }
 
@@ -70,9 +82,21 @@ namespace draw2d_quartz2d
 
       }
 
-      auto path = ppath->template get_os_data < CGMutablePathRef >(this);
-      
-      CGContextAddPath(m_cgcontext, path);
+      ::cast < ::draw2d_quartz2d::path > pdraw2dquartz2dpath = ppath;
+
+      if(m_bTargetRectangleModified)
+      {
+
+         defer_on_target_rectangle_update();
+
+      }
+
+      pdraw2dquartz2dpath->defer_update(this);
+
+      auto cgmutablepathref = pdraw2dquartz2dpath->m_cgmutablepathref;
+
+      CGContextBeginPath(m_cgcontextref);
+      CGContextAddPath(m_cgcontextref, cgmutablepathref);
 
       _draw(ppen);
 
@@ -103,9 +127,21 @@ namespace draw2d_quartz2d
 
       }
 
-      auto path = ppath->template get_os_data < CGMutablePathRef >(this);
-      
-      CGContextAddPath(m_cgcontext, path);
+      ::cast < ::draw2d_quartz2d::path > pdraw2dquartz2dpath = ppath;
+
+      if(m_bTargetRectangleModified)
+      {
+
+         defer_on_target_rectangle_update();
+
+      }
+
+      pdraw2dquartz2dpath->defer_update(this);
+
+      auto cgmutablepathref = pdraw2dquartz2dpath->m_cgmutablepathref;
+
+      CGContextBeginPath(m_cgcontextref);
+      CGContextAddPath(m_cgcontextref, cgmutablepathref);
 
       _fill(pbrush);
 
@@ -136,13 +172,25 @@ namespace draw2d_quartz2d
 
       }
 
-      auto path = ppath->template get_os_data < CGMutablePathRef >(this);
-      
-      CGContextAddPath(m_cgcontext, path);
+      ::cast < ::draw2d_quartz2d::path > pdraw2dquartz2dpath = ppath;
+
+      if(m_bTargetRectangleModified)
+      {
+
+         defer_on_target_rectangle_update();
+
+      }
+
+      pdraw2dquartz2dpath->defer_update(this);
+
+      auto cgmutablepathref = pdraw2dquartz2dpath->m_cgmutablepathref;
+
+      CGContextBeginPath(m_cgcontextref);
+      CGContextAddPath(m_cgcontextref, cgmutablepathref);
 
       _draw();
 
-      _draw_inline(ppath, m_ppen);
+      _draw_inline(ppath, m_pdraw2dpen);
 
    }
 
@@ -169,9 +217,21 @@ namespace draw2d_quartz2d
 
       }
 
-      auto path = ppath->template get_os_data < CGMutablePathRef >(this);
-      
-      CGContextAddPath(m_cgcontext, path);
+      ::cast < ::draw2d_quartz2d::path > pdraw2dquartz2dpath = ppath;
+
+      if(m_bTargetRectangleModified)
+      {
+
+         defer_on_target_rectangle_update();
+
+      }
+
+      pdraw2dquartz2dpath->defer_update(this);
+
+      auto cgmutablepathref = pdraw2dquartz2dpath->m_cgmutablepathref;
+
+      CGContextBeginPath(m_cgcontextref);
+      CGContextAddPath(m_cgcontextref, cgmutablepathref);
       
       _intersect_clip();
 

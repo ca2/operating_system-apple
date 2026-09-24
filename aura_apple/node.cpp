@@ -193,10 +193,10 @@ namespace aura_apple
 
 
 
-::image::image_pointer node::get_file_image_by_type_identifier(int iSize, const ::scoped_string & scopedstrTypeIdentifier)
+::image::image_pointer node::get_file_image_by_type_identifier(int iSize, const ::scoped_string & scopedstrTypeIdentifier, ::acme::user::interaction * pacmeuserinteractionAffinity)
 {
 
-   auto pimage = image()->create_image( { iSize, iSize } );
+   auto pimage = image()->create_image( { iSize, iSize }, pacmeuserinteractionAffinity);
 
    _synchronous_lock synchronouslock(this->synchronization());
 
@@ -212,11 +212,11 @@ namespace aura_apple
 }
 
 
-::image::image_pointer node::get_file_image(int iSize, const ::file::path & path)
+::image::image_pointer node::get_file_image(int iSize, const ::file::path & path, ::acme::user::interaction * pacmeuserinteractionAffinity)
 {
    
 
-   auto pimage = image()->create_image( { iSize, iSize } );
+   auto pimage = image()->create_image( { iSize, iSize }, pacmeuserinteractionAffinity);
 
 _synchronous_lock synchronouslock(this->synchronization());
 

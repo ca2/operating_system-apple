@@ -237,25 +237,27 @@ void bitmap::update_bitmap_as_image_render_target(
 
       }
 
-      auto psource = pdata + (::memsize) point.y * iSourceStride
-         + (::memsize) point.x * sizeof(color32_t);
-      auto ptarget = (::u8 *) pimage32;
+      auto psource = (::image32_t *)(pdata + (::memsize) point.y * iSourceStride
+         + (::memsize) point.x * sizeof(color32_t));
+      auto ptarget = (::image32_t *)((::u8 *) pimage32);
+      
+      ptarget->y_swap_copy(size.cx, size.cy, iScan, psource, iSourceStride);
 
-      // Preserve Quartz's native premultiplied RGBA pixels and row order.
-      for(::i32 y = 0; y < size.cy; y++)
-      {
-
-         if(ptarget != psource)
-         {
-
-            ::memory_copy(ptarget, psource, iRowBytes);
-
-         }
-
-         psource += iSourceStride;
-         ptarget += iScan;
-
-      }
+//      // Preserve Quartz's native premultiplied RGBA pixels and row order.
+//      for(::i32 y = 0; y < size.cy; y++)
+//      {
+//
+//         if(ptarget != psource)
+//         {
+//
+//            ::memory_copy(ptarget, psource, iRowBytes);
+//
+//         }
+//
+//         psource += iSourceStride;
+//         ptarget += iScan;
+//
+//      }
 
    }
 
@@ -315,12 +317,19 @@ void bitmap::update_bitmap_as_image_render_target(
          throw ::exception(error_wrong_state);
 
       }
+      
+      if(!bTopDown)
+      {
+         
+         information("!bTopDown");
+         
+      }
 
       // Copy native premultiplied RGBA pixels without touching row padding.
       for(::i32 y = 0; y < size.cy; y++)
       {
 
-         auto ySource = bTopDown ? y : size.cy - 1 - y;
+         auto ySource = bTopDown ? size.cy - 1 - y : y;
          auto psource = (const ::u8 *) pimage32 + (::memsize) ySource * iScan;
          auto ptarget = pdata + ((::memsize) point.y + y) * iTargetStride
             + (::memsize) point.x * sizeof(color32_t);

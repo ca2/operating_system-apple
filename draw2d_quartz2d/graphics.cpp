@@ -795,7 +795,22 @@ namespace draw2d_quartz2d
       
    }
    
+static bool cg_context_has_y_flip(CGContextRef context)
+{
+   if (!context)
+      return false;
 
+   CGAffineTransform t = CGContextGetCTM(context);
+
+   // Where does the context's +Y unit vector point in device space?
+   CGPoint p0 = CGPointApplyAffineTransform(
+      CGPointMake(0.0, 0.0), t);
+
+   CGPoint py = CGPointApplyAffineTransform(
+      CGPointMake(0.0, 1.0), t);
+
+   return py.y < p0.y;
+}
    void graphics::_draw_raw(const ::image::image_drawing & imagedrawing)
    {
       
@@ -937,6 +952,27 @@ namespace draw2d_quartz2d
 
             if(xSrc == 0 && ySrc == 0 && nWidth == SrcW && nHeight == SrcH)
             {
+               
+//               if(cg_context_has_y_flip(m_cgcontextref))
+//               {
+//                  
+//                  information("y-flipped");
+//               }
+//               else{
+//                  
+//                  information("normal quartz2d");
+//                  
+//               }
+//               cg_context_scope cgcontextscope1(m_cgcontextref);
+//               CGContextTranslateCTM(
+//                                     m_cgcontextref,
+//                  0.0,
+//                  CGRectGetMinY(rectangle) + CGRectGetMaxY(rectangle));
+//
+//               CGContextScaleCTM(
+//                                 m_cgcontextref,
+//                  1.0,
+//                  -1.0);
 
                CGContextDrawImage(m_cgcontextref, rectangle, cgimageref);
 

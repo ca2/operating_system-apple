@@ -162,7 +162,7 @@ namespace coreimage_imaging
             //if(p->m_pimage->create({ w, h }))
             //{
 
-            p->m_ppixmap->y_swap_copy({w, h}, pdata, iScan);
+            p->m_ppixmap->copy({w, h}, pdata, iScan);
 
                p->m_edisposal = ::draw2d::e_disposal_none;
 

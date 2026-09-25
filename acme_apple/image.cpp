@@ -20,6 +20,7 @@
 #include "image.h"
 
 
+/// pixels itself are top down
 void * cg_image_get_image_data(int & width, int & height, int & iScan, CGImageRef image)
 {
 
@@ -59,6 +60,7 @@ void * cg_image_get_image_data(int & width, int & height, int & iScan, CGImageRe
 
    CGContextRelease(context);
 
+   /// pixels itself are top down
    return pixels;
 
 }

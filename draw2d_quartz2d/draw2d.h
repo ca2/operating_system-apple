@@ -35,7 +35,7 @@ namespace draw2d_quartz2d
 
       
       CGFontRef private_cgfontref(::platform::context * pcontext, const ::file::path & path);
-      
+      bool is_image_draw2_graphics_backed_by_backend_bitmap() override;
       
    };
 

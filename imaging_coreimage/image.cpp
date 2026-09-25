@@ -295,7 +295,7 @@ namespace coreimage_imaging
          
       }
       
-      ploadimage->on_load_image({(::i32)w, (::i32)h}, (::image32_t *)pimage32, iScan);
+      ploadimage->on_load_image({(::i32)w, (::i32)h}, (::image32_t *)pimage32, iScan, true);
       
    //   ploadimage->m_pimag
    //

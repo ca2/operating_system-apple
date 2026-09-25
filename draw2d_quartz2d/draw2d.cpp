@@ -75,6 +75,13 @@ namespace draw2d_quartz2d
       
    }
 
+bool draw2d::is_image_draw2_graphics_backed_by_backend_bitmap()
+{
+ 
+   return true;
+}
+
+
 
 } // namespace draw2d_quartz2d
 

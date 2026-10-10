@@ -100,7 +100,7 @@ namespace coreimage_imaging
    }
 
 
-   void image_context::_load_image(::image::load_image * ploadimage, const ::payload & payloadFile, const ::image::load_options & options)
+   void image_context::_load_image(::image::load_image * ploadimage, const ::payload & payloadFile)
    {
       
       if(::is_null(ploadimage))
@@ -114,7 +114,7 @@ namespace coreimage_imaging
       
       auto papplication = m_papplication;
       
-      if(options.toy)
+      if(ploadimage->m_loadoptions.toy)
       {
          
          papplication->file()->safe_get_memory(payloadFile, memory);

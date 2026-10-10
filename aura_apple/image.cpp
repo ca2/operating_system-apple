@@ -26,7 +26,7 @@ CGImageRef cgimageref_from_image(const ::image::image * pimage)
 
    }
    
-   pdst->_001ProperCopyColorref(ppixmapImage->width(), ppixmapImage->height(), ppixmapImage->scan_size(), ppixmapImage->data(), ppixmapImage->scan_size());
+   pdst->copy(ppixmapImage->size(), ppixmapImage->scan_size(), ppixmapImage->data(), ppixmapImage->scan_size());
 
    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
 

@@ -55,13 +55,13 @@ namespace draw2d_quartz2d
       
 //      void dump(dump_context & dumpcontext) const override;
       
-      double get_ascent(::draw2d::graphics * pgraphics) override;
-      
-      double get_descent(::draw2d::graphics * pgraphics) override;
-      
-      double get_leading(::draw2d::graphics * pgraphics) override;
-      
-      double get_height(::draw2d::graphics * pgraphics) override;
+//      double get_ascent(::draw2d::graphics * pgraphics) override;
+//      
+//      double get_descent(::draw2d::graphics * pgraphics) override;
+//      
+//      double get_leading(::draw2d::graphics * pgraphics) override;
+//      
+//      double get_height(::draw2d::graphics * pgraphics) override;
       
       
    };

@@ -338,6 +338,15 @@ namespace draw2d_quartz2d
 //      
 //      m_osdata[1] = (void *) (CTFontDescriptorRef) m_fontdescriptor;
       
+      m_textmetric4.m_dAscent = CTFontGetAscent(m_ctfontref);
+      m_textmetric4.m_dDescent = CTFontGetDescent(m_ctfontref);
+      m_textmetric4.m_dInternalLeading = CTFontGetLeading(m_ctfontref);
+      m_textmetric4.m_dExternalLeading = 0.f;
+      m_textmetric4.m_dHeight = m_textmetric4.m_dAscent + m_textmetric4.m_dDescent ;
+      
+
+      
+      
       if(m_ctfontref == nullptr)
       {
          
@@ -358,72 +367,72 @@ namespace draw2d_quartz2d
    }
 
 
-   double font::get_ascent(::draw2d::graphics * pgraphics)
-   {
-      
-      defer_update(pgraphics);
-      
-      if(m_ctfontref == nil)
-      {
-       
-         return 0.0;
-         
-      }
-      
-      return CTFontGetAscent(m_ctfontref);
-      
-   }
-   
-   
-   double font::get_descent(::draw2d::graphics * pgraphics)
-   {
-      
-      defer_update(pgraphics);
-      
-      if(m_ctfontref == nil)
-      {
-         
-         return 0.0;
-         
-      }
-      
-      return CTFontGetDescent(m_ctfontref);
-      
-   }
-   
-   
-   double font::get_leading(::draw2d::graphics * pgraphics)
-   {
-      
-      defer_update(pgraphics);
-      
-      if(m_ctfontref == nil)
-      {
-         
-         return 0.0;
-         
-      }
-      
-      return CTFontGetLeading(m_ctfontref);
-      
-   }
-   
-   
-   double font::get_height(::draw2d::graphics * pgraphics)
-   {
-      
-      defer_update(pgraphics);
-      
-      if(m_ctfontref == nil)
-      {
-         
-         return 0.0;
-         
-      }
-      
-      return CTFontGetAscent(m_ctfontref) + CTFontGetDescent(m_ctfontref) + CTFontGetLeading(m_ctfontref);
-      
-   }
+//   double font::get_ascent(::draw2d::graphics * pgraphics)
+//   {
+//      
+//      defer_update(pgraphics);
+//      
+//      if(m_ctfontref == nil)
+//      {
+//       
+//         return 0.0;
+//         
+//      }
+//      
+//      return CTFontGetAscent(m_ctfontref);
+//      
+//   }
+//   
+//   
+//   double font::get_descent(::draw2d::graphics * pgraphics)
+//   {
+//      
+//      defer_update(pgraphics);
+//      
+//      if(m_ctfontref == nil)
+//      {
+//         
+//         return 0.0;
+//         
+//      }
+//      
+//      return CTFontGetDescent(m_ctfontref);
+//      
+//   }
+//   
+//   
+//   double font::get_leading(::draw2d::graphics * pgraphics)
+//   {
+//      
+//      defer_update(pgraphics);
+//      
+//      if(m_ctfontref == nil)
+//      {
+//         
+//         return 0.0;
+//         
+//      }
+//      
+//      return CTFontGetLeading(m_ctfontref);
+//      
+//   }
+//   
+//   
+//   double font::get_height(::draw2d::graphics * pgraphics)
+//   {
+//      
+//      defer_update(pgraphics);
+//      
+//      if(m_ctfontref == nil)
+//      {
+//         
+//         return 0.0;
+//         
+//      }
+//      
+//      return CTFontGetAscent(m_ctfontref) + CTFontGetDescent(m_ctfontref) + CTFontGetLeading(m_ctfontref);
+//      
+//   }
    
    
 } // namespace draw2d_quartz2d

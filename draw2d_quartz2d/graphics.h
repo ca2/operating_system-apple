@@ -66,7 +66,7 @@ namespace draw2d_quartz2d
       ::u32 SetLayout(::u32 dwLayout) override;
 
 
-      virtual double get_dpix() override;
+      virtual ::f32 get_density_dpi() override;
 
       // Constructors
 //      bool CreateDC(const ::string & lpszDriverName, const ::string & lpszDeviceName, const ::string & lpszOutput, const void * lpInitData) override;
